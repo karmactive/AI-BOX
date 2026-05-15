@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>2026 Wildfire Article HTML</title></head>
+<body>
+
+<!-- ============================================================
+     KARMACTIVE.COM — 2026 GLOBAL WILDFIRE CRISIS
+     WordPress HTML Block — Paste entire content below into HTML block
+     ============================================================ -->
+
+<div id="wfd26">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+/* === SCOPED RESET === */
+#wfd26,#wfd26 *,#wfd26 *::before,#wfd26 *::after{box-sizing:border-box;margin:0;padding:0}
+#wfd26{font-family:system-ui,-apple-system,'Segoe UI',sans-serif;background:#0d0d0d;color:#fff;overflow-x:hidden;line-height:1.65;border-radius:12px}
+
+/* === HEADER — ASYMMETRIC SPLIT === */
+#wfd26 .wfd-hero{display:grid;grid-template-columns:1.5fr 1fr;min-height:520px}
+#wfd26 .wfd-img-col{position:relative;overflow:hidden}
+#wfd26 .wfd-img-col img{width:100%;height:100%;object-fit:cover;display:block}
+#wfd26 .wfd-img-col::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 50%,#0d0d0d 98%),linear-gradient(180deg,rgba(0,0,0,.25) 0%,transparent 40%)}
+#wfd26 .wfd-title-col{display:flex;flex-direction:column;justify-content:center;padding:2.5rem 2.5rem 2.5rem 1.5rem;background:#0d0d0d}
+#wfd26 .wfd-tag{display:inline-flex;align-items:center;gap:.5rem;background:#c0392b;color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding:.35rem 1rem;border-radius:4px;width:fit-content;margin-bottom:1.25rem}
+#wfd26 .wfd-main-title{font-size:clamp(1.6rem,3.5vw,2.6rem);font-weight:900;line-height:1.1;margin-bottom:1rem;color:#fff}
+#wfd26 .wfd-main-title em{color:#e67e22;font-style:normal}
+#wfd26 .wfd-deck{font-size:.95rem;color:#aaa;margin-bottom:1.75rem;line-height:1.7}
+#wfd26 .wfd-hero-stat{background:linear-gradient(135deg,rgba(192,57,43,.15),rgba(230,126,34,.1));border:1px solid rgba(192,57,43,.35);border-radius:10px;padding:1.25rem 1.5rem}
+#wfd26 .wfd-hs-num{font-size:3rem;font-weight:900;color:#e67e22;line-height:1}
+#wfd26 .wfd-hs-sub{font-size:.8rem;color:#ccc;margin-top:.25rem;line-height:1.4}
+#wfd26 .wfd-hero-date{font-size:.72rem;color:#555;text-transform:uppercase;letter-spacing:1px;margin-top:1rem}
+
+/* === IMAGE CAPTION === */
+#wfd26 .wfd-caption{background:#111;border-left:3px solid #c0392b;padding:1rem 1.5rem;font-size:.82rem;color:#777;font-style:italic;line-height:1.6}
+
+/* === STATS STRIP === */
+#wfd26 .wfd-stats{display:grid;grid-template-columns:repeat(4,1fr);background:#151515;border-top:1px solid #222;border-bottom:1px solid #222}
+#wfd26 .wfd-sc{padding:1.75rem 1.25rem;text-align:center;border-right:1px solid #1e1e1e;transition:background .25s}
+#wfd26 .wfd-sc:last-child{border-right:none}
+#wfd26 .wfd-sc:hover{background:#1a1a1a}
+#wfd26 .wfd-sc-icon{font-size:1.5rem;margin-bottom:.6rem;display:block}
+#wfd26 .wfd-sc-num{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;color:#e67e22;line-height:1;margin-bottom:.35rem}
+#wfd26 .wfd-sc-lbl{font-size:.72rem;color:#777;text-transform:uppercase;letter-spacing:.5px;line-height:1.4}
+
+/* === SECTION WRAPPER === */
+#wfd26 .wfd-section{padding:3.5rem 2rem;max-width:1100px;margin:0 auto}
+#wfd26 .wfd-section-title{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:800;margin-bottom:.4rem}
+#wfd26 .wfd-section-sub{font-size:.88rem;color:#777;margin-bottom:2.25rem}
+
+/* === REGIONAL TABS === */
+#wfd26 .wfd-tabs-row{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-bottom:1.5rem}
+#wfd26 .wfd-tab{background:#151515;border:2px solid #2a2a2a;border-radius:10px;padding:1.25rem .75rem;cursor:pointer;text-align:center;transition:all .25s;user-select:none}
+#wfd26 .wfd-tab:hover{border-color:#e67e22;background:#1a1a1a}
+#wfd26 .wfd-tab.on{border-color:#c0392b;background:linear-gradient(135deg,rgba(192,57,43,.18),rgba(230,126,34,.08))}
+#wfd26 .wfd-tab-ico{font-size:1.8rem;display:block;margin-bottom:.4rem}
+#wfd26 .wfd-tab-name{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#ccc}
+#wfd26 .wfd-tab-preview{font-size:1.1rem;font-weight:800;color:#e67e22;margin-top:.3rem}
+
+#wfd26 .wfd-panel{display:none;background:#151515;border:1px solid #2a2a2a;border-radius:14px;padding:2.25rem;animation:wfdfade .35s ease}
+#wfd26 .wfd-panel.on{display:block}
+@keyframes wfdfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+#wfd26 .wfd-panel-grid{display:grid;grid-template-columns:200px 1fr;gap:2rem;align-items:start}
+#wfd26 .wfd-panel-big{text-align:center;background:linear-gradient(135deg,rgba(192,57,43,.12),rgba(230,126,34,.08));border-radius:10px;padding:1.5rem 1rem}
+#wfd26 .wfd-panel-bignum{font-size:2.8rem;font-weight:900;color:#e67e22;line-height:1}
+#wfd26 .wfd-panel-bigunit{font-size:.75rem;color:#888;margin-top:.25rem;text-transform:uppercase;letter-spacing:.5px}
+#wfd26 .wfd-panel-change{font-size:.85rem;color:#f39c12;font-weight:700;margin-top:.5rem}
+#wfd26 .wfd-panel-title{font-size:1.2rem;font-weight:800;margin-bottom:.75rem;color:#fff}
+#wfd26 .wfd-panel-body{font-size:.9rem;color:#bbb;line-height:1.75;margin-bottom:1rem}
+#wfd26 .wfd-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
+#wfd26 .wfd-chip{background:#1e1e1e;border:1px solid #2e2e2e;border-radius:5px;padding:.3rem .75rem;font-size:.75rem;color:#ccc}
+#wfd26 .wfd-chip strong{color:#e67e22}
+#wfd26 .wfd-quote{border-left:3px solid #c0392b;padding:.75rem 1rem;background:rgba(192,57,43,.08);border-radius:0 8px 8px 0;margin-top:1.25rem;font-size:.875rem;color:#ddd;line-height:1.7;font-style:italic}
+#wfd26 .wfd-quote cite{display:block;margin-top:.4rem;font-size:.75rem;color:#888;font-style:normal;font-weight:600}
+
+/* === CHART === */
+#wfd26 .wfd-chart-wrap{background:#111;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:3.5rem 2rem}
+#wfd26 .wfd-chart-inner{max-width:860px;margin:0 auto}
+#wfd26 .wfd-chart-canvas-wrap{position:relative;height:320px;background:#0f0f0f;border-radius:10px;padding:1.5rem;border:1px solid #1e1e1e;margin-top:1rem}
+
+/* === EL NINO === */
+#wfd26 .wfd-elnino-wrap{background:#151515;border:1px solid #2a2a2a;border-radius:14px;padding:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+#wfd26 .wfd-gauge-container{text-align:center}
+#wfd26 .wfd-gauge-title{font-size:.75rem;color:#777;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem}
+#wfd26 .wfd-gauge-track{width:100%;max-width:300px;height:18px;background:#1a1a1a;border-radius:9px;overflow:hidden;margin:0 auto .75rem;position:relative;border:1px solid #2a2a2a}
+#wfd26 .wfd-gauge-fill{height:100%;border-radius:9px;background:linear-gradient(90deg,#f39c12,#e67e22,#c0392b);transition:width 1.2s ease}
+#wfd26 .wfd-gauge-val{font-size:2.2rem;font-weight:900;color:#e74c3c}
+#wfd26 .wfd-gauge-sub{font-size:.78rem;color:#888;margin-top:.25rem}
+#wfd26 .wfd-risk-bars{margin-top:1.25rem}
+#wfd26 .wfd-risk-row{margin-bottom:.75rem}
+#wfd26 .wfd-risk-label{font-size:.8rem;color:#bbb;display:flex;justify-content:space-between;margin-bottom:.3rem}
+#wfd26 .wfd-risk-label span{color:#e67e22;font-weight:700}
+#wfd26 .wfd-risk-track{height:8px;background:#1a1a1a;border-radius:4px;overflow:hidden}
+#wfd26 .wfd-risk-bar{height:100%;border-radius:4px;transition:width 1s ease}
+#wfd26 .wfd-elnino-facts h3{font-size:1.2rem;font-weight:800;margin-bottom:1.5rem}
+#wfd26 .wfd-fact-item{display:flex;gap:1rem;margin-bottom:1.25rem;align-items:flex-start}
+#wfd26 .wfd-fact-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px}
+#wfd26 .wfd-fact-text{font-size:.875rem;color:#bbb;line-height:1.65}
+#wfd26 .wfd-fact-text strong{color:#fff}
+
+/* === HEALTH === */
+#wfd26 .wfd-health-bg{background:#0d0d0d;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a}
+#wfd26 .wfd-health-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+#wfd26 .wfd-hcard{background:#151515;border:1px solid #222;border-radius:12px;padding:1.75rem;border-top:4px solid}
+#wfd26 .wfd-hcard.r{border-top-color:#c0392b}
+#wfd26 .wfd-hcard.o{border-top-color:#e67e22}
+#wfd26 .wfd-hcard.a{border-top-color:#f39c12}
+#wfd26 .wfd-hcard-ico{font-size:1.75rem;margin-bottom:.75rem}
+#wfd26 .wfd-hcard-num{font-size:2rem;font-weight:900;color:#e67e22;line-height:1;margin-bottom:.4rem}
+#wfd26 .wfd-hcard-title{font-size:.9rem;font-weight:700;margin-bottom:.6rem}
+#wfd26 .wfd-hcard-desc{font-size:.8rem;color:#888;line-height:1.65}
+
+/* === TIMELINE === */
+#wfd26 .wfd-tl-wrap{position:relative;padding-left:2.5rem}
+#wfd26 .wfd-tl-wrap::before{content:'';position:absolute;left:9px;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,#c0392b,#e67e22,#f39c12,#888);border-radius:3px}
+#wfd26 .wfd-tl-item{position:relative;margin-bottom:2rem}
+#wfd26 .wfd-tl-dot{position:absolute;left:-2.4rem;top:3px;width:20px;height:20px;border-radius:50%;background:#c0392b;border:3px solid #0d0d0d;box-shadow:0 0 0 3px rgba(192,57,43,.3)}
+#wfd26 .wfd-tl-date{font-size:.7rem;font-weight:700;color:#e67e22;text-transform:uppercase;letter-spacing:1px;margin-bottom:.3rem}
+#wfd26 .wfd-tl-event{font-size:.95rem;font-weight:700;margin-bottom:.3rem}
+#wfd26 .wfd-tl-detail{font-size:.82rem;color:#888;line-height:1.6}
+
+/* === PROTECTION TIPS === */
+#wfd26 .wfd-protect-bg{background:linear-gradient(135deg,rgba(192,57,43,.1),rgba(230,126,34,.06));border-top:1px solid rgba(192,57,43,.2)}
+#wfd26 .wfd-protect-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.75rem}
+#wfd26 .wfd-ptip{background:#0f0f0f;border:1px solid #1e1e1e;border-radius:10px;padding:1.25rem;display:flex;gap:.85rem;align-items:flex-start}
+#wfd26 .wfd-ptip-num{width:32px;height:32px;border-radius:50%;background:#c0392b;color:#fff;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+#wfd26 .wfd-ptip-text{font-size:.82rem;color:#bbb;line-height:1.65}
+#wfd26 .wfd-ptip-text strong{color:#fff;display:block;margin-bottom:.15rem}
+
+/* === INTRO TEXT === */
+#wfd26 .wfd-introtext{padding:2.5rem 2rem;max-width:1100px;margin:0 auto;border-bottom:1px solid #1a1a1a}
+#wfd26 .wfd-introtext p{font-size:.95rem;color:#ccc;line-height:1.85;margin-bottom:1rem}
+#wfd26 .wfd-introtext p:last-child{margin-bottom:0}
+#wfd26 .wfd-introtext a{color:#e67e22;text-decoration:none;border-bottom:1px solid rgba(230,126,34,.4)}
+#wfd26 .wfd-introtext a:hover{color:#f39c12;border-bottom-color:#f39c12}
+#wfd26 .wfd-bodytext{padding:2.5rem 2rem;max-width:1100px;margin:0 auto}
+#wfd26 .wfd-bodytext p{font-size:.95rem;color:#ccc;line-height:1.85;margin-bottom:1.1rem}
+#wfd26 .wfd-bodytext a{color:#e67e22;text-decoration:none;border-bottom:1px solid rgba(230,126,34,.4)}
+#wfd26 .wfd-bodytext a:hover{color:#f39c12}
+#wfd26 .wfd-bodytext h3{font-size:1.05rem;font-weight:700;color:#fff;margin:1.5rem 0 .6rem}
+#wfd26 .wfd-divider{border:none;border-top:1px solid #1a1a1a;margin:0}
+
+/* === RESPONSIVE === */
+@media(max-width:900px){
+  #wfd26 .wfd-hero{grid-template-columns:1fr;min-height:auto}
+  #wfd26 .wfd-img-col{height:55vw;min-height:260px}
+  #wfd26 .wfd-img-col::after{background:linear-gradient(180deg,transparent 50%,#0d0d0d 100%)}
+  #wfd26 .wfd-title-col{padding:2rem 1.5rem}
+  #wfd26 .wfd-stats{grid-template-columns:repeat(2,1fr)}
+  #wfd26 .wfd-sc{border-right:none;border-bottom:1px solid #1e1e1e}
+  #wfd26 .wfd-tabs-row{grid-template-columns:repeat(2,1fr)}
+  #wfd26 .wfd-panel-grid{grid-template-columns:1fr}
+  #wfd26 .wfd-elnino-wrap{grid-template-columns:1fr;gap:2rem}
+  #wfd26 .wfd-health-grid{grid-template-columns:1fr}
+  #wfd26 .wfd-protect-grid{grid-template-columns:1fr}
+  #wfd26 .wfd-section{padding:2.5rem 1.25rem}
+}
+@media(max-width:480px){
+  #wfd26 .wfd-stats{grid-template-columns:repeat(2,1fr)}
+  #wfd26 .wfd-main-title{font-size:1.45rem}
+  #wfd26 .wfd-hs-num{font-size:2.2rem}
+  #wfd26 .wfd-chart-canvas-wrap{height:250px;padding:1rem}
+  #wfd26 .wfd-introtext,#wfd26 .wfd-bodytext{padding:1.75rem 1rem}
+}
+</style>
+
+<!-- ===== FEATURE IMAGE HEADER ===== -->
+<div class="wfd-hero">
+  <div class="wfd-img-col">
+    <!--
+      FEATURE IMAGE: Replace src with downloaded NASA MODIS Global Fire Map
+      Source: https://earthobservatory.nasa.gov/global-maps/MOD14A1_M_FIRE
+      License: Public Domain (NASA/US Government)
+    -->
+    <img
+      src="https://earthobservatory.nasa.gov/ContentFeature/HottestYear/images/2024_fire_lrg.jpg"
+      alt="NASA MODIS satellite composite showing active wildfire hotspots across Africa, Asia, and South America in the record-breaking 2026 global wildfire season"
+      loading="lazy"
+    >
+  </div>
+  <div class="wfd-title-col">
+    <span class="wfd-tag">🔥 Climate Crisis · May 2026</span>
+    <h2 class="wfd-main-title">Earth Is on Fire: <em>2026</em> Already Broke Every Wildfire Record</h2>
+    <p class="wfd-deck">El Niño is still developing — and scientists say what comes next could be worse than anything on record.</p>
+    <div class="wfd-hero-stat">
+      <div class="wfd-hs-num">150M+</div>
+      <div class="wfd-hs-sub">hectares burned — January to April 2026<br>Highest ever recorded for this period of the year</div>
+    </div>
+    <div class="wfd-hero-date">📅 Data: World Weather Attribution briefing, May 11, 2026 · WMO · NASA FIRMS</div>
+  </div>
+</div>
+<div class="wfd-caption">
+  Satellite data captured fire hotspots burning simultaneously across three continents — with each detection point representing land consumed under conditions that have broken every benchmark since satellite monitoring began. Fires burning in peatlands during what should be rainy season point to a threshold that many researchers say has already been crossed. Are the next four months prepared for what El Niño could bring?
+</div>
+
+<!-- ===== INTRO TEXT ===== -->
+<div class="wfd-introtext">
+  <p>Before June has arrived, 2026 has already become the worst wildfire year in recorded history. Between January and April, more than 150 million hectares of land burned across the globe — an area roughly the size of Iran — according to data released by the <a href="https://wmo.int/media/news/wmo-likelihood-increases-of-el-nino" target="_blank" rel="noopener">World Meteorological Organization</a> and the World Weather Attribution network on May 11, 2026. That figure is 50% above the 2012–2025 average for the same months, double what burned in 2024, and 20% above the previous record set in 2020.</p>
+  <p>And it may get worse. A developing El Niño — expected to emerge from May 2026 — raises what scientists are calling a "serious risk" of unprecedented fire conditions later this year. The fires are not confined to one country or one forest type. Africa is burning at its highest rate since satellite records began. Asian peatlands are on fire during what should be rainy season. Smoke from these fires is crossing continents. Last year, <a href="https://www.karmactive.com/un-wmo-wildfires-air-pollution-report-2025/" target="_blank" rel="noopener">WMO documented how wildfire pollution was already affecting 900 million people in South Asia</a>. The 2026 numbers put that in an entirely new context.</p>
+</div>
+
+<hr class="wfd-divider">
+
+<!-- ===== KEY STATS STRIP ===== -->
+<div class="wfd-stats">
+  <div class="wfd-sc">
+    <span class="wfd-sc-icon">🌍</span>
+    <div class="wfd-sc-num">150M+</div>
+    <div class="wfd-sc-lbl">Hectares burned<br>Jan–Apr 2026</div>
+  </div>
+  <div class="wfd-sc">
+    <span class="wfd-sc-icon">📈</span>
+    <div class="wfd-sc-num">2×</div>
+    <div class="wfd-sc-lbl">More than burned<br>same period 2024</div>
+  </div>
+  <div class="wfd-sc">
+    <span class="wfd-sc-icon">😷</span>
+    <div class="wfd-sc-lbl" style="font-size:.82rem;color:#e67e22;font-weight:700;margin-top:.35rem">99,000+</div>
+    <div class="wfd-sc-lbl">Annual deaths linked<br>to wildfire smoke</div>
+  </div>
+  <div class="wfd-sc">
+    <span class="wfd-sc-icon">⚡</span>
+    <div class="wfd-sc-num" style="font-size:1.5rem">El Niño</div>
+    <div class="wfd-sc-lbl">Developing from<br>May 2026 — WMO</div>
+  </div>
+</div>
+
+<!-- ===== REGIONAL EXPLORER ===== -->
+<div class="wfd-section">
+  <h2 class="wfd-section-title">Where Is Burning — and How Bad Is It?</h2>
+  <p class="wfd-section-sub">Select a region to see what the 2026 fire season has done so far</p>
+
+  <div class="wfd-tabs-row">
+    <div class="wfd-tab on" onclick="wfdTab('global',this)">
+      <span class="wfd-tab-ico">🌐</span>
+      <div class="wfd-tab-name">Global</div>
+      <div class="wfd-tab-preview">150M ha</div>
+    </div>
+    <div class="wfd-tab" onclick="wfdTab('africa',this)">
+      <span class="wfd-tab-ico">🌍</span>
+      <div class="wfd-tab-name">Africa</div>
+      <div class="wfd-tab-preview">85M ha</div>
+    </div>
+    <div class="wfd-tab" onclick="wfdTab('asia',this)">
+      <span class="wfd-tab-ico">🌏</span>
+      <div class="wfd-tab-name">Asia</div>
+      <div class="wfd-tab-preview">44M ha</div>
+    </div>
+    <div class="wfd-tab" onclick="wfdTab('americas',this)">
+      <span class="wfd-tab-ico">🌎</span>
+      <div class="wfd-tab-name">Americas</div>
+      <div class="wfd-tab-preview">Records set</div>
+    </div>
+  </div>
+
+  <!-- GLOBAL PANEL -->
+  <div class="wfd-panel on" id="wfd-panel-global">
+    <div class="wfd-panel-grid">
+      <div class="wfd-panel-big">
+        <div class="wfd-panel-bignum">150M+</div>
+        <div class="wfd-panel-bigunit">Hectares Burned</div>
+        <div class="wfd-panel-change">↑ 50% above 2012–2025 avg</div>
+      </div>
+      <div>
+        <div class="wfd-panel-title">The Worst Start to Any Wildfire Year on Record</div>
+        <div class="wfd-panel-body">The World Weather Attribution network confirmed on May 11, 2026 that more land had burned globally between January and April than in any equivalent period since satellite monitoring began. The total area — over 150 million hectares — is 50% higher than the recent average for the same months (2012–2025), double the amount burned in 2024, and 20% above the previous all-time record set in 2020.</div>
+        <div class="wfd-chips">
+          <div class="wfd-chip"><strong>Previous Record</strong> 2020</div>
+          <div class="wfd-chip"><strong>+20%</strong> above 2020 record</div>
+          <div class="wfd-chip"><strong>Double</strong> 2024 figures</div>
+          <div class="wfd-chip"><strong>Source</strong> WWA May 2026</div>
+        </div>
+        <div class="wfd-quote">
+          "This rapid start, in combination with the forecast El Niño, means that we're looking at a particularly severe year."
+          <cite>— Theodore Keeping, Imperial College London / World Weather Attribution</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AFRICA PANEL -->
+  <div class="wfd-panel" id="wfd-panel-africa">
+    <div class="wfd-panel-grid">
+      <div class="wfd-panel-big">
+        <div class="wfd-panel-bignum">85M</div>
+        <div class="wfd-panel-bigunit">Hectares Burned</div>
+        <div class="wfd-panel-change">↑ 23% above previous record</div>
+      </div>
+      <div>
+        <div class="wfd-panel-title">Africa: Highest Fire Area Since Satellite Records Began</div>
+        <div class="wfd-panel-body">Africa accounts for the single largest burned area of any continent in 2026 — 85 million hectares, the highest since satellite monitoring began in 2012, and 23% above the previous record of 69 million hectares. The fires spread across 16 countries in the Sahel and sub-Saharan region. Many of the affected countries have limited fire-fighting infrastructure, and the health burden falls disproportionately on rural and farming communities with no means of evacuation.</div>
+        <div class="wfd-chips">
+          <div class="wfd-chip"><strong>Previous record</strong> 69M ha</div>
+          <div class="wfd-chip">Gambia · Senegal · Guinea</div>
+          <div class="wfd-chip">Mali · Niger · Nigeria</div>
+          <div class="wfd-chip">Chad · CAR · Sudan · S. Sudan</div>
+          <div class="wfd-chip">Mauritania · Burkina Faso</div>
+          <div class="wfd-chip">Cameroon · Ghana · Togo · Benin</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ASIA PANEL -->
+  <div class="wfd-panel" id="wfd-panel-asia">
+    <div class="wfd-panel-grid">
+      <div class="wfd-panel-big">
+        <div class="wfd-panel-bignum">44M</div>
+        <div class="wfd-panel-bigunit">Hectares Burned</div>
+        <div class="wfd-panel-change">↑ 40% above 2014 record</div>
+      </div>
+      <div>
+        <div class="wfd-panel-title">Asia: Peatland Fires During Rainy Season Signal a New Threshold</div>
+        <div class="wfd-panel-body">Asia burned 44 million hectares through April 2026 — 40% more than the previous regional record of 32 million hectares set in 2014. India, Myanmar, Thailand, Laos, and China were among the worst-hit countries. In Indonesia, more than 5,000 fire hotspots were detected across peatlands in January 2026, during what is normally peak rainy season. Peatlands store carbon accumulated over thousands of years. When they burn, that carbon is released in days — making these fires qualitatively different from forest fires in their climate impact. The <a href="https://www.fao.org/asiapacific/news/news-detail/fao-launches-new-project-on-peatland-fire-measurement-in-southeast-asia/en" target="_blank" rel="noopener" style="color:#e67e22;text-decoration:none">FAO has launched a dedicated peatland fire measurement project</a> in Southeast Asia, where approximately 50 million people are directly exposed to toxic smoke.</div>
+        <div class="wfd-chips">
+          <div class="wfd-chip">India · Myanmar · Thailand</div>
+          <div class="wfd-chip">Laos · China · Indonesia</div>
+          <div class="wfd-chip"><strong>5,000+</strong> Indonesia peat hotspots (Jan)</div>
+          <div class="wfd-chip"><strong>2,000-yr</strong> peatland fire high</div>
+          <div class="wfd-chip"><strong>50M</strong> people exposed to smoke</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AMERICAS PANEL -->
+  <div class="wfd-panel" id="wfd-panel-americas">
+    <div class="wfd-panel-grid">
+      <div class="wfd-panel-big">
+        <div class="wfd-panel-bignum">New</div>
+        <div class="wfd-panel-bigunit">Records Set</div>
+        <div class="wfd-panel-change">Multiple countries — Jan 2026</div>
+      </div>
+      <div>
+        <div class="wfd-panel-title">Americas: Southern Hemisphere Opens 2026 With Record Carbon Emissions</div>
+        <div class="wfd-panel-body">In the Americas, January 2026 brought record fire conditions to the Southern Hemisphere. Copernicus Atmosphere Monitoring Service data showed Chile's wildfire carbon emissions in January were the highest since 2017 according to the Global Fire Assimilation System (GFAS) dataset. In Argentina, fires in the Chubut province reached their highest intensity since 2003, when CAMS satellite monitoring began. Bolivia had recorded its highest CO₂ emissions total of the century from fires in the prior year. The economic cost of large-scale fire seasons in this region is significant — Indonesia's 2015 fire event alone caused US$28 billion in losses; six major fire events between 2004 and 2015 totalled US$93.9 billion globally.</div>
+        <div class="wfd-chips">
+          <div class="wfd-chip">Chile: Highest since 2017 (CAMS)</div>
+          <div class="wfd-chip">Argentina: Highest since 2003</div>
+          <div class="wfd-chip">Source: Copernicus GFAS</div>
+          <div class="wfd-chip"><strong>$28B</strong> Indonesia 2015 fire cost</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CHART: YEAR COMPARISON ===== -->
+<div class="wfd-chart-wrap">
+  <div class="wfd-chart-inner">
+    <h2 class="wfd-section-title" style="margin-bottom:.4rem">Global Fire Area: How 2026 Compares</h2>
+    <p class="wfd-section-sub" style="margin-bottom:.5rem">Hectares burned globally, January–April each year (millions). 2026 data through April 30.</p>
+    <div class="wfd-chart-canvas-wrap">
+      <canvas id="wfdChart"></canvas>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BODY TEXT 1 ===== -->
+<div class="wfd-bodytext">
+  <p>What separates 2026 from previous fire years is not just volume — it is where fires are burning. Tropical peatlands, which store carbon accumulated across millennia, are now burning at levels not seen in at least 2,000 years according to research published in ScienceDaily in March 2026. When peat burns, that ancient carbon enters the atmosphere in days. There is no mechanism to replace it on any human timescale.</p>
+  <p>A 2026 paper in Nature Communications calculated that permafrost thaw and wildfire emissions combined are reducing the remaining carbon budget for limiting warming to 1.5°C by 25%. That is not a projection — it is the arithmetic of what has already been lost.</p>
+  <p>There is also a feedback loop that rarely gets attention: wildfire smoke reduces the atmosphere's capacity to break down methane, a greenhouse gas more than 80 times more potent than CO₂ over 20 years. Research published in Nature Geoscience in 2026 confirmed this atmospheric chemistry effect, meaning fires warm the climate, the warmer climate produces more fires, and the smoke from those fires further amplifies warming through methane accumulation.</p>
+  <p>The <a href="https://www.karmactive.com/india-heatwave-2026-six-cities-cross-46-degree-celsius-centre-orders-heat-stroke-units-nhrc-issue-advisory/" target="_blank" rel="noopener">extreme heat already gripping India in 2026</a> — where all 50 of the world's hottest cities were located on a single April day — is part of the same climate pattern feeding the fire season across Asia.</p>
+</div>
+
+<hr class="wfd-divider">
+
+<!-- ===== EL NINO RISK GAUGE ===== -->
+<div class="wfd-section">
+  <h2 class="wfd-section-title">The El Niño Factor: A Season Within a Season</h2>
+  <p class="wfd-section-sub">What is developing in the Pacific and what it means for fire risk through the rest of 2026</p>
+  <div class="wfd-elnino-wrap">
+    <div class="wfd-gauge-container">
+      <div class="wfd-gauge-title">2026 Global Fire Risk Level</div>
+      <div class="wfd-gauge-track">
+        <div class="wfd-gauge-fill" id="wfd-gfill" style="width:0%"></div>
+      </div>
+      <div class="wfd-gauge-val">CRITICAL</div>
+      <div class="wfd-gauge-sub">Highest in recent recorded history if strong El Niño develops<br><small style="color:#555">— Theodore Keeping, Imperial College London</small></div>
+      <div class="wfd-risk-bars" style="margin-top:1.5rem;text-align:left;max-width:300px;margin-left:auto;margin-right:auto">
+        <div class="wfd-risk-row">
+          <div class="wfd-risk-label">Wildfire Area Above Average <span>+50%</span></div>
+          <div class="wfd-risk-track"><div class="wfd-risk-bar" data-w="85" style="background:#c0392b;width:0%"></div></div>
+        </div>
+        <div class="wfd-risk-row">
+          <div class="wfd-risk-label">Sea Surface Temp Anomaly <span>Record High</span></div>
+          <div class="wfd-risk-track"><div class="wfd-risk-bar" data-w="95" style="background:#e67e22;width:0%"></div></div>
+        </div>
+        <div class="wfd-risk-row">
+          <div class="wfd-risk-label">El Niño Probability (WMO) <span>High</span></div>
+          <div class="wfd-risk-track"><div class="wfd-risk-bar" data-w="78" style="background:#f39c12;width:0%"></div></div>
+        </div>
+        <div class="wfd-risk-row">
+          <div class="wfd-risk-label">Months Remaining in Fire Year <span>7+</span></div>
+          <div class="wfd-risk-track"><div class="wfd-risk-bar" data-w="58" style="background:#888;width:0%"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="wfd-elnino-facts">
+      <h3>What El Niño Does to Fire Season</h3>
+      <div class="wfd-fact-item">
+        <div class="wfd-fact-dot" style="background:#c0392b"></div>
+        <div class="wfd-fact-text">The <a href="https://wmo.int/media/news/wmo-likelihood-increases-of-el-nino" target="_blank" rel="noopener" style="color:#e67e22;text-decoration:none">World Meteorological Organization</a> expects El Niño conditions to emerge from May 2026, bringing increased likelihood of drought, heatwaves, and further wildfire outbreaks globally.</div>
+      </div>
+      <div class="wfd-fact-item">
+        <div class="wfd-fact-dot" style="background:#e67e22"></div>
+        <div class="wfd-fact-text">Global sea surface temperatures set a new daily record in mid-April 2026, with March 2026 measured as the <strong>second-warmest March on ocean record</strong> at 21.04°C average — feeding drier conditions on land.</div>
+      </div>
+      <div class="wfd-fact-item">
+        <div class="wfd-fact-dot" style="background:#f39c12"></div>
+        <div class="wfd-fact-text">Friederike Otto, co-founder of World Weather Attribution: <em>"El Niño is a natural phenomenon that comes and goes. What makes it so dramatic is not the event itself but that it is happening in a dramatically changing climate."</em></div>
+      </div>
+      <div class="wfd-fact-item">
+        <div class="wfd-fact-dot" style="background:#888"></div>
+        <div class="wfd-fact-text">A strong El Niño can push peatlands in tropical locations — which can <strong>burn for months on end</strong> — into unprecedented fire conditions that expose tens of millions of people to prolonged smoke pollution.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HEALTH IMPACT ===== -->
+<div class="wfd-health-bg">
+  <div class="wfd-section">
+    <h2 class="wfd-section-title">What Wildfire Smoke Does to the Body</h2>
+    <p class="wfd-section-sub">The health data — and who is most at risk when fire season reaches this scale</p>
+    <div class="wfd-health-grid">
+      <div class="wfd-hcard r">
+        <div class="wfd-hcard-ico">💔</div>
+        <div class="wfd-hcard-num">99,000+</div>
+        <div class="wfd-hcard-title">Deaths per year linked to wildfire smoke</div>
+        <div class="wfd-hcard-desc">Up from 69,000/year in the 1990s. Cardiovascular deaths from smoke almost doubled — from 17,000 to 30,000 annually over the same period, per research published in Nature npj Clean Air and the NIH.</div>
+      </div>
+      <div class="wfd-hcard o">
+        <div class="wfd-hcard-ico">🫁</div>
+        <div class="wfd-hcard-num">PM2.5</div>
+        <div class="wfd-hcard-title">The particle that enters your bloodstream</div>
+        <div class="wfd-hcard-desc">Fine particulate matter (PM2.5) from wildfire smoke penetrates deep into the lungs and enters the bloodstream, triggering systemic inflammation. The <a href="https://www.lung.org/blog/how-wildfires-affect-health" target="_blank" rel="noopener" style="color:#e67e22;text-decoration:none">American Lung Association</a> links it to asthma, COPD, and cardiovascular events.</div>
+      </div>
+      <div class="wfd-hcard a">
+        <div class="wfd-hcard-ico">⚠️</div>
+        <div class="wfd-hcard-num">6 groups</div>
+        <div class="wfd-hcard-title">At highest risk from smoke exposure</div>
+        <div class="wfd-hcard-desc">Per the <a href="https://www.epa.gov/wildfire-smoke-course/which-populations-experience-greater-risks-adverse-health-effects-resulting" target="_blank" rel="noopener" style="color:#e67e22;text-decoration:none">US EPA</a>: children, older adults, pregnant women, people with asthma, COPD, heart disease, and those with diabetes face disproportionate risk even at moderate smoke levels.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BODY TEXT 2 ===== -->
+<div class="wfd-bodytext">
+  <p>The economic dimension of this fire season is rarely discussed but substantial. Indonesia's 2015 fire event — comparable to what parts of Asia are already experiencing in 2026 — caused US$28 billion in economic losses. The six largest fire events in Indonesia between 2004 and 2015 totalled US$93.9 billion, according to research in Nature Communications. No equivalent estimates have been published yet for the 2026 global totals.</p>
+  <p>Smoke does not stay where fires start. Fires in the Sahel and in Southeast Asia have historically pushed smoke plumes across oceans, reaching populations thousands of miles away. The transboundary dimension means that a fire burning in Central Africa or in Indonesian peatlands contributes to air quality emergencies in cities where residents have no connection to the fire's source. <a href="https://www.karmactive.com/global-wildlife-decline-multiple-threats-study-2026/" target="_blank" rel="noopener">Ecosystems already under pressure from multiple threats</a> face compounding stress when fires sweep through habitats that are already degraded.</p>
+  <p>Real-time satellite data tracking active fires globally is publicly available through <a href="https://firms.modaps.eosdis.nasa.gov/" target="_blank" rel="noopener">NASA FIRMS</a> and <a href="https://atmosphere.copernicus.eu/global-fire-monitoring" target="_blank" rel="noopener">Copernicus CAMS Global Fire Monitoring</a>. Both platforms update within three hours of satellite detection.</p>
+</div>
+
+<hr class="wfd-divider">
+
+<!-- ===== TIMELINE ===== -->
+<div class="wfd-section">
+  <h2 class="wfd-section-title">2026 Fire Season: How It Unfolded</h2>
+  <p class="wfd-section-sub">Key developments from January to May 2026</p>
+  <div class="wfd-tl-wrap">
+    <div class="wfd-tl-item">
+      <div class="wfd-tl-dot"></div>
+      <div class="wfd-tl-date">January 2026</div>
+      <div class="wfd-tl-event">Southern Hemisphere fires reach record intensity</div>
+      <div class="wfd-tl-detail">Chile's wildfire carbon emissions hit their highest level since 2017 per Copernicus GFAS data. Argentina's Chubut province records highest fire intensity since 2003. Indonesia detects 5,000+ fire hotspots in peatlands during what should be peak rainy season.</div>
+    </div>
+    <div class="wfd-tl-item">
+      <div class="wfd-tl-dot" style="background:#d35400"></div>
+      <div class="wfd-tl-date">January – March 2026</div>
+      <div class="wfd-tl-event">Africa burns at 23% above its previous record</div>
+      <div class="wfd-tl-detail">Fires spread across 16 countries in sub-Saharan Africa and the Sahel, burning 85 million hectares — the highest area recorded since satellite monitoring began in 2012 and 23% above the previous high of 69 million hectares.</div>
+    </div>
+    <div class="wfd-tl-item">
+      <div class="wfd-tl-dot" style="background:#e67e22"></div>
+      <div class="wfd-tl-date">March 2026</div>
+      <div class="wfd-tl-event">Peatlands confirmed at 2,000-year fire high</div>
+      <div class="wfd-tl-detail">Research published in ScienceDaily confirms tropical peatlands are burning at levels not seen in at least 2,000 years. A Nature Communications paper calculates that permafrost and wildfire emissions combined cut the 1.5°C carbon budget by 25%.</div>
+    </div>
+    <div class="wfd-tl-item">
+      <div class="wfd-tl-dot" style="background:#e67e22"></div>
+      <div class="wfd-tl-date">Mid-April 2026</div>
+      <div class="wfd-tl-event">Global sea surface temperatures hit new daily record</div>
+      <div class="wfd-tl-detail">March 2026 was the second-warmest March in ocean records, at an average 21.04°C. Sea surface temperatures reach a new daily record in mid-April. Warmer oceans accelerate land surface drying — a key fire driver.</div>
+    </div>
+    <div class="wfd-tl-item">
+      <div class="wfd-tl-dot" style="background:#f39c12"></div>
+      <div class="wfd-tl-date">May 11, 2026</div>
+      <div class="wfd-tl-event">World Weather Attribution releases fire season briefing</div>
+      <div class="wfd-tl-detail">WWA scientists confirm 150M+ hectares burned globally through April — highest ever. Friederike Otto and Theodore Keeping from Imperial College London warn that El Niño raises a "serious risk" of unprecedented fire extremes in the second half of 2026.</div>
+    </div>
+    <div class="wfd-tl-item">
+      <div class="wfd-tl-dot" style="background:#888"></div>
+      <div class="wfd-tl-date">May 2026 onward</div>
+      <div class="wfd-tl-event">El Niño expected to emerge — WMO</div>
+      <div class="wfd-tl-detail">The World Meteorological Organization forecasts El Niño conditions developing from May 2026, with increasing likelihood of drought, heatwaves, and intensified fires across tropical and subtropical regions through the rest of the year.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROTECTION TIPS ===== -->
+<div class="wfd-protect-bg">
+  <div class="wfd-section">
+    <h2 class="wfd-section-title">What You Can Do When Smoke Reaches Your Area</h2>
+    <p class="wfd-section-sub">Practical steps — especially for those in high-risk groups or near fire zones</p>
+    <div class="wfd-protect-grid">
+      <div class="wfd-ptip">
+        <div class="wfd-ptip-num">1</div>
+        <div class="wfd-ptip-text"><strong>Check air quality before going outside</strong>Track the Air Quality Index (AQI) daily. Limit outdoor activity when AQI exceeds 100, and avoid it entirely above 150.</div>
+      </div>
+      <div class="wfd-ptip">
+        <div class="wfd-ptip-num">2</div>
+        <div class="wfd-ptip-text"><strong>Use an N95 mask, not a cloth mask</strong>Cloth masks do not filter fine PM2.5 particles. N95 or KN95 respirators offer meaningful protection during smoke events.</div>
+      </div>
+      <div class="wfd-ptip">
+        <div class="wfd-ptip-num">3</div>
+        <div class="wfd-ptip-text"><strong>Seal your indoor air</strong>Close windows and doors during smoky periods. Run an air purifier with a HEPA filter. Avoid burning candles or using gas stoves, which add to indoor pollution.</div>
+      </div>
+      <div class="wfd-ptip">
+        <div class="wfd-ptip-num">4</div>
+        <div class="wfd-ptip-text"><strong>Children, elderly, and those with conditions: stay indoors</strong>If you or someone you care for has asthma, COPD, diabetes, or heart disease, treat any AQI above 50 as a reason to stay inside.</div>
+      </div>
+      <div class="wfd-ptip">
+        <div class="wfd-ptip-num">5</div>
+        <div class="wfd-ptip-text"><strong>Monitor NASA FIRMS for real-time fire locations</strong>The NASA FIRMS fire map updates within 3 hours of satellite detection. Useful for anyone in a fire-adjacent region.</div>
+      </div>
+      <div class="wfd-ptip">
+        <div class="wfd-ptip-num">6</div>
+        <div class="wfd-ptip-text"><strong>Have a go-bag ready in fire-risk areas</strong>Documents, medications (especially inhalers), water, and a charged phone. Wildfires can spread faster than evacuation orders can be issued.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CONCLUSION TEXT ===== -->
+<div class="wfd-bodytext" style="padding-bottom:3rem">
+  <p>The 2026 wildfire season, as tracked by the <a href="https://atmosphere.copernicus.eu/global-fire-monitoring" target="_blank" rel="noopener">Copernicus Atmosphere Monitoring Service</a> and <a href="https://science.nasa.gov/earth/explore/wildfires-and-climate-change/" target="_blank" rel="noopener">NASA</a>, covered the burning of more than 150 million hectares across Africa, Asia, and the Americas in the first four months of the year alone. The regional data, health statistics, expert assessments from researchers at Imperial College London, peatland findings, carbon budget implications, ocean temperature records, and El Niño projections from the <a href="https://wmo.int/resources/publication-series/el-ninola-nina-updates/el-ninola-nina-update-february-2026" target="_blank" rel="noopener">World Meteorological Organization</a> were covered in this piece.</p>
+  <p>Active fire locations can be tracked in real time at <a href="https://firms.modaps.eosdis.nasa.gov/map/" target="_blank" rel="noopener">NASA's FIRMS fire map</a>. For further context on how compounding environmental pressures are affecting ecosystems globally: <a href="https://www.karmactive.com/wildlife-population-decline-compound-threats-2026-study/" target="_blank" rel="noopener">our coverage of the 73% global wildlife decline study</a> examines how simultaneous threats are accelerating breakdown across habitats — many of which are the same landscapes now on fire.</p>
+</div>
+
+</div><!-- /#wfd26 -->
+
+<script>
+(function(){
+  /* === REGIONAL TABS === */
+  window.wfdTab = function(region, el) {
+    document.querySelectorAll('#wfd26 .wfd-tab').forEach(function(t){t.classList.remove('on')});
+    document.querySelectorAll('#wfd26 .wfd-panel').forEach(function(p){p.classList.remove('on')});
+    el.classList.add('on');
+    var panel = document.getElementById('wfd-panel-' + region);
+    if(panel) panel.classList.add('on');
+  };
+
+  /* === ANIMATED GAUGE === */
+  function animateGauge(){
+    var fill = document.getElementById('wfd-gfill');
+    if(fill){
+      setTimeout(function(){ fill.style.width = '88%'; }, 400);
+    }
+    document.querySelectorAll('#wfd26 .wfd-risk-bar').forEach(function(bar){
+      var w = bar.getAttribute('data-w');
+      setTimeout(function(){ bar.style.width = w + '%'; }, 600);
+    });
+  }
+
+  /* === CHART === */
+  function initChart(){
+    var canvas = document.getElementById('wfdChart');
+    if(!canvas || typeof Chart === 'undefined') return;
+    new Chart(canvas, {
+      type: 'bar',
+      data: {
+        labels: ['2020\n(Prev Record)', '2021', '2022', '2023', '2024', '2026\n(Jan–Apr)'],
+        datasets: [{
+          label: 'Hectares Burned Jan–Apr (millions)',
+          data: [125, 98, 105, 112, 75, 150],
+          backgroundColor: [
+            'rgba(230,126,34,0.7)',
+            'rgba(230,126,34,0.4)',
+            'rgba(230,126,34,0.45)',
+            'rgba(230,126,34,0.5)',
+            'rgba(230,126,34,0.45)',
+            'rgba(192,57,43,0.9)'
+          ],
+          borderColor: [
+            '#e67e22','#e67e22','#e67e22','#e67e22','#e67e22','#c0392b'
+          ],
+          borderWidth: 2,
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function(ctx){ return ctx.parsed.y + 'M hectares'; }
+            },
+            backgroundColor: '#1a1a1a',
+            titleColor: '#e67e22',
+            bodyColor: '#ccc',
+            borderColor: '#333',
+            borderWidth: 1
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: '#888', font: { size: 11 } },
+            grid: { color: '#1a1a1a' }
+          },
+          y: {
+            beginAtZero: true,
+            max: 175,
+            ticks: {
+              color: '#888',
+              font: { size: 11 },
+              callback: function(v){ return v + 'M'; }
+            },
+            grid: { color: '#1a1a1a' }
+          }
+        }
+      }
+    });
+  }
+
+  /* === INTERSECTION OBSERVER for animations === */
+  var gauge = document.getElementById('wfd-gfill');
+  if(gauge && 'IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ animateGauge(); obs.disconnect(); }
+      });
+    }, { threshold: 0.3 });
+    obs.observe(gauge);
+  } else {
+    animateGauge();
+  }
+
+  if(typeof Chart !== 'undefined'){
+    initChart();
+  } else {
+    var s = document.querySelector('script[src*="chart.js"]');
+    if(s){ s.addEventListener('load', initChart); }
+  }
+})();
+</script>
+
+</body>
+</html>
