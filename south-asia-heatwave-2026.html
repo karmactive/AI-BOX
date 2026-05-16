@@ -1,0 +1,1421 @@
+<article class="ka-heat">
+<style>
+/* =============================================
+   KA HEAT ARTICLE — ALL STYLES SCOPED TO .ka-heat
+   ============================================= */
+  .ka-heat *,
+  .ka-heat *::before,
+  .ka-heat *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ka-heat {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: #fff8f0;
+    color: #1a0800;
+    line-height: 1.7;
+    font-size: 18px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* ---- TYPOGRAPHY ---- */
+  .ka-heat h1 {
+    font-family: 'Georgia', serif;
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
+    line-height: 1.2;
+    color: #1a0800;
+    font-weight: 700;
+  }
+
+  .ka-heat h2 {
+    font-family: 'Georgia', serif;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    color: #3d0d00;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #ff6b35;
+    display: inline-block;
+  }
+
+  .ka-heat h3 {
+    font-family: 'Georgia', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: #3d0d00;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  .ka-heat p {
+    margin-bottom: 1.25rem;
+    color: #2a0a00;
+  }
+
+  .ka-heat a {
+    color: #ff6b35;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+  }
+
+  .ka-heat a:hover {
+    color: #3d0d00;
+  }
+
+  /* ---- HEADER SPLIT SCREEN ---- */
+  .ka-heat__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 520px;
+    background: #1a0800;
+  }
+
+  .ka-heat__header-image {
+    position: relative;
+    overflow: hidden;
+    background: #3d0d00;
+  }
+
+  .ka-heat__header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.85) saturate(1.2);
+  }
+
+  .ka-heat__header-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(26,8,0,0.7), transparent);
+  }
+
+  .ka-heat__header-content {
+    padding: 2.5rem 2rem 2rem 2.5rem;
+    background: #1a0800;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .ka-heat__category {
+    display: inline-block;
+    background: #ff6b35;
+    color: #fff8f0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.8rem;
+    border-radius: 2px;
+    width: fit-content;
+  }
+
+  .ka-heat__header h1 {
+    color: #fff8f0;
+    font-size: clamp(1.5rem, 3.5vw, 2.6rem);
+  }
+
+  .ka-heat__header-sub {
+    color: #ffb899;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .ka-heat__header-meta {
+    color: #ff8c42;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* ---- KEY STATS GRID IN HEADER ---- */
+  .ka-heat__header-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .ka-heat__header-stat {
+    background: rgba(255,107,53,0.15);
+    border: 1px solid rgba(255,107,53,0.3);
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  .ka-heat__header-stat-num {
+    display: block;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #ff8c42;
+    line-height: 1.1;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .ka-heat__header-stat-label {
+    display: block;
+    font-size: 0.7rem;
+    color: #ffb899;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.3;
+    margin-top: 0.25rem;
+  }
+
+  /* ---- MAIN CONTENT WRAPPER ---- */
+  .ka-heat__body {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+
+  /* ---- INTRO ---- */
+  .ka-heat__intro {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.8;
+    color: #2a0a00;
+    border-left: 4px solid #ff6b35;
+    padding-left: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  /* ---- ANIMATED STAT CARDS ---- */
+  .ka-heat__stats-section {
+    margin: 3rem 0;
+  }
+
+  .ka-heat__stat-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .ka-heat__stat-card {
+    background: linear-gradient(135deg, #3d0d00, #5a1500);
+    border-radius: 10px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    box-shadow: 0 4px 20px rgba(61,13,0,0.25);
+  }
+
+  .ka-heat__stat-card.ka-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .ka-heat__stat-card:nth-child(2) { transition-delay: 0.1s; }
+  .ka-heat__stat-card:nth-child(3) { transition-delay: 0.2s; }
+  .ka-heat__stat-card:nth-child(4) { transition-delay: 0.3s; }
+
+  .ka-heat__stat-card-num {
+    display: block;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: #ff8c42;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.1;
+  }
+
+  .ka-heat__stat-card-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #ffb899;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+
+  /* ---- SECTION WRAPPER ---- */
+  .ka-heat__section {
+    margin: 3.5rem 0;
+  }
+
+  /* ---- PULL QUOTE ---- */
+  .ka-heat__pullquote {
+    background: linear-gradient(135deg, #fff3eb, #ffe8d6);
+    border-left: 6px solid #ff6b35;
+    border-radius: 0 10px 10px 0;
+    padding: 1.75rem 2rem;
+    margin: 2.5rem 0;
+    position: relative;
+  }
+
+  .ka-heat__pullquote::before {
+    content: '\201C';
+    font-size: 5rem;
+    color: #ff6b35;
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    line-height: 1;
+    font-family: Georgia, serif;
+    opacity: 0.4;
+  }
+
+  .ka-heat__pullquote p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-style: italic;
+    color: #3d0d00;
+    margin-bottom: 0.75rem;
+    padding-left: 1rem;
+  }
+
+  .ka-heat__pullquote cite {
+    display: block;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.82rem;
+    color: #ff6b35;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding-left: 1rem;
+  }
+
+  /* ---- NIGHT HEAT GRID ---- */
+  .ka-heat__night-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.75rem;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .ka-heat__night-card {
+    background: #1a0800;
+    border-radius: 10px;
+    padding: 1.25rem 0.75rem;
+    text-align: center;
+    border: 1px solid #3d0d00;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ka-heat__night-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, #ff6b35, transparent);
+    opacity: 0.18;
+  }
+
+  .ka-heat__night-card[data-intensity="5"]::before { height: 90%; opacity: 0.30; }
+  .ka-heat__night-card[data-intensity="4"]::before { height: 70%; opacity: 0.24; }
+  .ka-heat__night-card[data-intensity="3"]::before { height: 52%; opacity: 0.20; }
+  .ka-heat__night-card[data-intensity="2"]::before { height: 36%; opacity: 0.16; }
+  .ka-heat__night-card[data-intensity="1"]::before { height: 22%; opacity: 0.12; }
+
+  .ka-heat__night-city {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    color: #ffb899;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ka-heat__night-num {
+    display: block;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: #ff8c42;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ka-heat__night-unit {
+    display: block;
+    font-size: 0.72rem;
+    color: #cc5522;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0.35rem;
+    line-height: 1.3;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ---- TABBED GROUP EXPLORER ---- */
+  .ka-heat__tabs {
+    background: #fff3eb;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ffd4b5;
+    margin: 1.5rem 0;
+  }
+
+  .ka-heat__tab-nav {
+    display: flex;
+    background: #3d0d00;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .ka-heat__tab-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ka-heat__tab-btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 0.9rem 0.75rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: #ffb899;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .ka-heat__tab-btn:hover {
+    color: #ff8c42;
+    background: rgba(255,107,53,0.1);
+  }
+
+  .ka-heat__tab-btn.ka-active {
+    color: #ff8c42;
+    border-bottom-color: #ff6b35;
+    background: rgba(255,107,53,0.15);
+  }
+
+  .ka-heat__tab-panels {
+    padding: 0;
+  }
+
+  .ka-heat__tab-panel {
+    display: none;
+    padding: 2rem;
+  }
+
+  .ka-heat__tab-panel.ka-active {
+    display: block;
+  }
+
+  .ka-heat__tab-panel p {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .ka-heat__tips {
+    background: linear-gradient(135deg, #1a0800, #2d0800);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 1rem;
+    border-left: 4px solid #ff6b35;
+  }
+
+  .ka-heat__tips h4 {
+    color: #ff8c42;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .ka-heat__tips ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .ka-heat__tips ul li {
+    color: #ffb899;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.88rem;
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+    border-bottom: 1px solid rgba(255,107,53,0.12);
+  }
+
+  .ka-heat__tips ul li:last-child {
+    border-bottom: none;
+  }
+
+  .ka-heat__tips ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #ff6b35;
+    font-size: 0.85rem;
+  }
+
+  /* ---- TIMELINE ---- */
+  .ka-heat__timeline {
+    position: relative;
+    padding-left: 2.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .ka-heat__timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.6rem;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 3px;
+    background: linear-gradient(to bottom, #ff6b35, #3d0d00);
+    border-radius: 2px;
+  }
+
+  .ka-heat__timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .ka-heat__timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.1rem;
+    top: 0.45rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ff6b35;
+    border: 3px solid #fff8f0;
+    box-shadow: 0 0 0 2px #ff6b35;
+  }
+
+  .ka-heat__timeline-date {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ff8c42;
+    background: #fff3eb;
+    border: 1px solid #ffd4b5;
+    border-radius: 20px;
+    padding: 0.2rem 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .ka-heat__timeline-text {
+    font-size: 0.97rem;
+    color: #2a0a00;
+    line-height: 1.65;
+  }
+
+  /* ---- CHART SECTION ---- */
+  .ka-heat__chart-wrap {
+    background: #fff3eb;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border: 1px solid #ffd4b5;
+  }
+
+  .ka-heat__chart-wrap h3 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .ka-heat__chart-canvas {
+    max-width: 100%;
+  }
+
+  /* ---- WHAT IS WORKING ---- */
+  .ka-heat__working {
+    background: linear-gradient(135deg, #fff3eb, #ffe8d6);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid #ffd4b5;
+    margin: 1.5rem 0;
+  }
+
+  /* ---- RELATED LINKS BOX ---- */
+  .ka-heat__related {
+    background: #1a0800;
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    margin: 3rem 0 1rem;
+  }
+
+  .ka-heat__related h3 {
+    color: #ff8c42;
+    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #3d0d00;
+    padding-bottom: 0.75rem;
+  }
+
+  .ka-heat__related ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .ka-heat__related ul li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #3d0d00;
+  }
+
+  .ka-heat__related ul li:last-child {
+    border-bottom: none;
+  }
+
+  .ka-heat__related ul li a {
+    color: #ffb899;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    transition: color 0.2s ease;
+  }
+
+  .ka-heat__related ul li a::before {
+    content: '→';
+    color: #ff6b35;
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  .ka-heat__related ul li a:hover {
+    color: #ff8c42;
+  }
+
+  /* ---- CONCLUSION ---- */
+  .ka-heat__conclusion {
+    background: #fff3eb;
+    border-top: 4px solid #ff6b35;
+    border-radius: 0 0 12px 12px;
+    padding: 2rem;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #2a0a00;
+  }
+
+  /* ---- AGRICULTURE CALLOUT ---- */
+  .ka-heat__agri-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .ka-heat__agri-stat {
+    background: #fff3eb;
+    border: 1px solid #ffd4b5;
+    border-radius: 10px;
+    padding: 1.25rem 1rem;
+    text-align: center;
+  }
+
+  .ka-heat__agri-stat-crop {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ff6b35;
+    margin-bottom: 0.5rem;
+  }
+
+  .ka-heat__agri-stat-num {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #3d0d00;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1;
+  }
+
+  .ka-heat__agri-stat-desc {
+    font-size: 0.76rem;
+    color: #7a3020;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0.4rem;
+    line-height: 1.3;
+  }
+
+  /* ---- SECTION DIVIDER ---- */
+  .ka-heat__divider {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #ff6b35, transparent);
+    margin: 2.5rem 0;
+    border-radius: 2px;
+  }
+
+  /* ============================
+     RESPONSIVE — TABLET
+     ============================ */
+  @media (max-width: 768px) {
+    .ka-heat {
+      font-size: 16px;
+    }
+
+    .ka-heat__header {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .ka-heat__header-image {
+      height: 260px;
+    }
+
+    .ka-heat__header-content {
+      padding: 1.75rem 1.25rem;
+    }
+
+    .ka-heat__header-stats {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ka-heat__stat-cards {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ka-heat__night-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ka-heat__night-grid .ka-heat__night-card:nth-child(4),
+    .ka-heat__night-grid .ka-heat__night-card:nth-child(5) {
+      /* keep them flowing naturally */
+    }
+
+    .ka-heat__agri-stats {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ka-heat__body {
+      padding: 2rem 1.25rem;
+    }
+
+    .ka-heat__tab-btn {
+      min-width: 100px;
+      font-size: 0.7rem;
+      padding: 0.8rem 0.5rem;
+    }
+
+    .ka-heat__tab-panel {
+      padding: 1.5rem 1.25rem;
+    }
+  }
+
+  /* ============================
+     RESPONSIVE — MOBILE
+     ============================ */
+  @media (max-width: 480px) {
+    .ka-heat {
+      font-size: 15px;
+    }
+
+    .ka-heat__header-image {
+      height: 220px;
+    }
+
+    .ka-heat__header-content {
+      padding: 1.5rem 1rem;
+    }
+
+    .ka-heat__header-stats {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ka-heat__stat-cards {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ka-heat__night-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ka-heat__agri-stats {
+      grid-template-columns: 1fr;
+    }
+
+    .ka-heat__pullquote {
+      padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+    }
+
+    .ka-heat__pullquote::before {
+      font-size: 3.5rem;
+    }
+
+    .ka-heat__timeline {
+      padding-left: 2rem;
+    }
+
+    .ka-heat__working,
+    .ka-heat__conclusion,
+    .ka-heat__related {
+      padding: 1.5rem 1rem;
+    }
+
+    .ka-heat__body {
+      padding: 1.5rem 1rem;
+    }
+
+    .ka-heat__tab-btn {
+      min-width: 90px;
+      font-size: 0.65rem;
+      padding: 0.75rem 0.4rem;
+    }
+  }
+</style>
+
+<!-- ============================================================
+     SPLIT-SCREEN HEADER
+     ============================================================ -->
+<header class="ka-heat__header">
+  <!-- LEFT: Feature Image -->
+  <div class="ka-heat__header-image">
+    <!-- REPLACE src WITH ACTUAL NASA IMAGE URL FROM: https://science.nasa.gov/earth/earth-observatory/early-season-heat-waves-strike-india-149766/ -->
+    <img
+      src="https://placehold.co/900x600/3d0d00/ff8c42?text=NASA+Earth+Observatory%0ASouth+Asia+Heatwave+2026"
+      alt="Satellite image of South Asia heatwave 2026 — extreme heat across the Indian subcontinent"
+      width="900"
+      height="600"
+      loading="eager"
+    />
+    <div class="ka-heat__header-image-overlay"></div>
+  </div>
+
+  <!-- RIGHT: Title + Stats -->
+  <div class="ka-heat__header-content">
+    <span class="ka-heat__category">Climate &amp; Health</span>
+    <h1>South Asia's Deadliest Heat: Now a Regular Reality Every Five Years</h1>
+    <p class="ka-heat__header-sub">From scorched fields to powerless nights — what happens when extreme heat stops being the exception</p>
+    <p class="ka-heat__header-meta">May 2026 &nbsp;·&nbsp; South Asia</p>
+
+    <!-- 4 Key Stats -->
+    <div class="ka-heat__header-stats">
+      <div class="ka-heat__header-stat">
+        <span class="ka-heat__header-stat-num">50/50</span>
+        <span class="ka-heat__header-stat-label">of Earth's hottest cities in India on one April day</span>
+      </div>
+      <div class="ka-heat__header-stat">
+        <span class="ka-heat__header-stat-num">1-in-5</span>
+        <span class="ka-heat__header-stat-label">years this extreme heat is now expected to recur</span>
+      </div>
+      <div class="ka-heat__header-stat">
+        <span class="ka-heat__header-stat-num">380M</span>
+        <span class="ka-heat__header-stat-label">workers in heat-exposed jobs with no alternative</span>
+      </div>
+      <div class="ka-heat__header-stat">
+        <span class="ka-heat__header-stat-num">46°C+</span>
+        <span class="ka-heat__header-stat-label">peak temperatures across Indian cities in April</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     MAIN BODY
+     ============================================================ -->
+<div class="ka-heat__body">
+
+  <!-- INTRO -->
+  <div class="ka-heat__intro" role="note">
+    <p>On one day in April 2026, every single one of the 50 hottest cities on the planet was located in India. Not a few. All 50. A new rapid attribution study by <a href="https://www.worldweatherattribution.org/climate-change-exposes-hundreds-of-millions-to-longer-and-deadlier-pre-monsoon-heat-in-south-asia/" target="_blank" rel="noopener">World Weather Attribution</a> confirmed what many feared: this is no longer a rare event. It is now expected once every five years.</p>
+  </div>
+
+  <!-- ANIMATED STAT CARDS -->
+  <section class="ka-heat__stats-section" id="ka-stats-anchor" aria-label="Key statistics">
+    <div class="ka-heat__stat-cards">
+      <div class="ka-heat__stat-card" data-target="37" data-suffix="+" data-label="heat deaths confirmed in India">
+        <span class="ka-heat__stat-card-num" data-counter>37+</span>
+        <span class="ka-heat__stat-card-label">heat deaths confirmed in India</span>
+      </div>
+      <div class="ka-heat__stat-card" data-target="10" data-suffix="+" data-label="died in Karachi in a single day">
+        <span class="ka-heat__stat-card-num" data-counter>10+</span>
+        <span class="ka-heat__stat-card-label">died in Karachi in a single day</span>
+      </div>
+      <div class="ka-heat__stat-card" data-target="194" data-prefix="$" data-suffix="B" data-label="potential income losses from heat in 2024">
+        <span class="ka-heat__stat-card-num" data-counter>$194B</span>
+        <span class="ka-heat__stat-card-label">potential income losses from heat in 2024</span>
+      </div>
+      <div class="ka-heat__stat-card" data-target="256" data-suffix="GW" data-label="record power demand hit India's grid">
+        <span class="ka-heat__stat-card-num" data-counter>256GW</span>
+        <span class="ka-heat__stat-card-label">record power demand hit India's grid</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="ka-heat__divider" />
+
+  <!-- SECTION 1: THE SCIENCE -->
+  <section class="ka-heat__section">
+    <h2>The Science Behind the Scorching</h2>
+    <p>The 2026 heatwave gripped India, Pakistan, and Bangladesh since mid-April, pushing temperatures above 46°C across Indian cities and to 44°C in Karachi — the highest Pakistan's largest city has recorded since 2018. At least 37 people died of heat-related causes in India. At least 10 died in Karachi in a single day. Climate change tripled the probability of this event, and the same conditions would have been 1°C cooler without human-induced warming.</p>
+    <p>April heat is intensifying faster than May — meaning South Asians now face both intense dry heat early in the season and humid heat as the monsoon approaches. The window for the body to recover is narrowing from both ends of the calendar.</p>
+
+    <!-- PULL QUOTE -->
+    <blockquote class="ka-heat__pullquote">
+      <p>It is imperative for the government to, first of all, give the correct numbers, collect the real data, and then let the world know that it is a calamity.</p>
+      <cite>Fahad Saeed — Climate Expert, Pakistan</cite>
+    </blockquote>
+  </section>
+
+  <hr class="ka-heat__divider" />
+
+  <!-- SECTION 2: THE NIGHT CRISIS -->
+  <section class="ka-heat__section">
+    <h2>The Night Crisis: When Darkness Brings No Relief</h2>
+    <p>One of the most dangerous aspects of 2026 is what happens after dark. India's nights are no longer cooling. Research found that 70% of districts experienced five or more additional very warm nights per summer over the last decade. Only 28% saw a similar increase in very hot days. Nights are heating faster than days — and that is where the body's recovery fails.</p>
+    <p>The comparison below shows how many extra very warm nights per summer Indian cities have been experiencing over the last decade.</p>
+
+    <!-- NIGHT HEAT VISUAL GRID -->
+    <div class="ka-heat__night-grid" role="list" aria-label="Extra warm nights per summer by city">
+      <div class="ka-heat__night-card" data-intensity="5" role="listitem">
+        <span class="ka-heat__night-city">Mumbai</span>
+        <span class="ka-heat__night-num">+15</span>
+        <span class="ka-heat__night-unit">extra warm nights per summer</span>
+      </div>
+      <div class="ka-heat__night-card" data-intensity="4" role="listitem">
+        <span class="ka-heat__night-city">Bengaluru</span>
+        <span class="ka-heat__night-num">+11</span>
+        <span class="ka-heat__night-unit">extra warm nights per summer</span>
+      </div>
+      <div class="ka-heat__night-card" data-intensity="3" role="listitem">
+        <span class="ka-heat__night-city">Bhopal</span>
+        <span class="ka-heat__night-num">+7</span>
+        <span class="ka-heat__night-unit">extra warm nights per summer</span>
+      </div>
+      <div class="ka-heat__night-card" data-intensity="2" role="listitem">
+        <span class="ka-heat__night-city">Delhi</span>
+        <span class="ka-heat__night-num">+6</span>
+        <span class="ka-heat__night-unit">extra warm nights per summer</span>
+      </div>
+      <div class="ka-heat__night-card" data-intensity="1" role="listitem">
+        <span class="ka-heat__night-city">Chennai</span>
+        <span class="ka-heat__night-num">+4</span>
+        <span class="ka-heat__night-unit">extra warm nights per summer</span>
+      </div>
+    </div>
+
+    <!-- BAR CHART -->
+    <div class="ka-heat__chart-wrap">
+      <h3>Extra Very Warm Nights Per Summer (last decade)</h3>
+      <canvas id="kaHeatNightChart" class="ka-heat__chart-canvas" height="220" aria-label="Bar chart: extra warm nights by city"></canvas>
+    </div>
+  </section>
+
+  <hr class="ka-heat__divider" />
+
+  <!-- SECTION 3: 380 MILLION WORKERS -->
+  <section class="ka-heat__section">
+    <h2>380 Million Workers With No Place to Hide</h2>
+    <p>About 75% of India's workforce — roughly 380 million people — work in heat-exposed conditions. Construction, agriculture, delivery, street vending. These are people for whom "work from home" is not an option. Net earnings for Delhi's informal workers drop by as much as 40% during heatwaves. In 2024 alone, heat caused an estimated $194 billion in potential income losses.</p>
+    <p>India's record power demand of 256 GW strained the grid and triggered localised blackouts across a country <a href="https://www.karmactive.com/india-2-4-trillion-climate-resilient-cities-world-bank-report/" target="_blank" rel="noopener">already navigating serious climate infrastructure gaps</a>. A white paper from the <a href="https://salatainstitute.harvard.edu/rethinking-how-india-adapts-to-extreme-heat/" target="_blank" rel="noopener">Harvard Salata Institute</a> warns India's GDP could face a 5.4% drag by 2030 from heat stress alone.</p>
+  </section>
+
+  <hr class="ka-heat__divider" />
+
+  <!-- SECTION 4: AGRICULTURE -->
+  <section class="ka-heat__section">
+    <h2>When the Harvest Fails Before the Monsoon Arrives</h2>
+    <p>The heatwave arrived before farmers were ready. Agricultural drought now covers more than one million square kilometres across South Asia. Punjab and Haryana wheat farmers were forced into emergency irrigation. Mango and banana plantations in southern India saw flower and fruit drops.</p>
+
+    <!-- Crop loss stat cards -->
+    <div class="ka-heat__agri-stats">
+      <div class="ka-heat__agri-stat">
+        <div class="ka-heat__agri-stat-crop">Wheat</div>
+        <div class="ka-heat__agri-stat-num">&#8211;6%</div>
+        <div class="ka-heat__agri-stat-desc">yield loss per 1°C temperature rise</div>
+      </div>
+      <div class="ka-heat__agri-stat">
+        <div class="ka-heat__agri-stat-crop">Maize</div>
+        <div class="ka-heat__agri-stat-num">&#8211;7%+</div>
+        <div class="ka-heat__agri-stat-desc">yield loss per 1°C temperature rise</div>
+      </div>
+      <div class="ka-heat__agri-stat">
+        <div class="ka-heat__agri-stat-crop">Rice</div>
+        <div class="ka-heat__agri-stat-num">&#8211;3%+</div>
+        <div class="ka-heat__agri-stat-desc">yield loss per 1°C temperature rise</div>
+      </div>
+    </div>
+
+    <p>The <a href="https://wmo.int/media/news/south-asia-expected-receive-below-average-monsoon-rainfall" target="_blank" rel="noopener">World Meteorological Organization has forecast below-average monsoon rainfall for South Asia in 2026</a> — meaning crop and water recovery will be limited.</p>
+  </section>
+
+  <hr class="ka-heat__divider" />
+
+  <!-- SECTION 5: POWER & WATER CASCADE -->
+  <section class="ka-heat__section">
+    <h2>Power Out, Water Gone: The Cascade No City Can Afford</h2>
+    <p>India's power demand peaked at a record 256 GW. In parts of Pakistan's Balochistan, power cuts lasted up to 16 hours a day. When power fails, water pumping stations go offline — leaving Karachi, Lahore, and Hyderabad residents without tap water during extreme heat. Heat becomes hardest to bear precisely when the systems meant to help fail together.</p>
+  </section>
+
+  <hr class="ka-heat__divider" />
+
+  <!-- TIMELINE -->
+  <section class="ka-heat__section">
+    <h2>How 2026 Unfolded: A Timeline</h2>
+    <div class="ka-heat__timeline" role="list">
+
+      <div class="ka-heat__timeline-item" role="listitem">
+        <span class="ka-heat__timeline-date">March 2026</span>
+        <p class="ka-heat__timeline-text">Early season heat begins. Several Indian states record highest-ever March temperatures, signalling an unusual start to the pre-monsoon period.</p>
+      </div>
+
+      <div class="ka-heat__timeline-item" role="listitem">
+        <span class="ka-heat__timeline-date">April 2026</span>
+        <p class="ka-heat__timeline-text">All 50 of Earth's hottest cities are in India on one day. The India Meteorological Department declares above-normal heatwave risk for April through June.</p>
+      </div>
+
+      <div class="ka-heat__timeline-item" role="listitem">
+        <span class="ka-heat__timeline-date">Late April 2026</span>
+        <p class="ka-heat__timeline-text">A 15-day extreme heatwave begins. Temperatures exceed 46°C. Agricultural drought spreads across more than one million km². Power demand hits a record 256 GW.</p>
+      </div>
+
+      <div class="ka-heat__timeline-item" role="listitem">
+        <span class="ka-heat__timeline-date">2 May 2026</span>
+        <p class="ka-heat__timeline-text">At least 10 people die in a single day in Karachi. Pakistan's Balochistan province faces power cuts lasting 16 hours a day.</p>
+      </div>
+
+      <div class="ka-heat__timeline-item" role="listitem">
+        <span class="ka-heat__timeline-date">8 May 2026</span>
+        <p class="ka-heat__timeline-text">World Weather Attribution publishes its rapid study confirming that climate change tripled the probability of this event. Extreme April heat in South Asia is now a one-in-five-year occurrence.</p>
+      </div>
+
+      <div class="ka-heat__timeline-item" role="listitem">
+        <span class="ka-heat__timeline-date">May 2026 (ongoing)</span>
+        <p class="ka-heat__timeline-text">The World Meteorological Organization warns of below-average monsoon rainfall. Crop and water recovery across the region remains severely limited.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="ka-heat__divider" />
+
+  <!-- TABBED GROUP EXPLORER -->
+  <section class="ka-heat__section">
+    <h2>Who Bears the Brunt</h2>
+    <p>Extreme heat does not hit everyone equally. Scroll through the five groups most exposed — and find out what practical steps can help.</p>
+
+    <div class="ka-heat__tabs" role="tablist" aria-label="Who Bears the Brunt group explorer">
+
+      <!-- Tab Navigation -->
+      <nav class="ka-heat__tab-nav">
+        <button class="ka-heat__tab-btn ka-active" role="tab" aria-selected="true" aria-controls="ka-tab-workers" id="ka-tablink-workers">Outdoor Workers</button>
+        <button class="ka-heat__tab-btn" role="tab" aria-selected="false" aria-controls="ka-tab-elderly" id="ka-tablink-elderly">Elderly</button>
+        <button class="ka-heat__tab-btn" role="tab" aria-selected="false" aria-controls="ka-tab-farmers" id="ka-tablink-farmers">Farmers</button>
+        <button class="ka-heat__tab-btn" role="tab" aria-selected="false" aria-controls="ka-tab-urban" id="ka-tablink-urban">Urban Poor</button>
+        <button class="ka-heat__tab-btn" role="tab" aria-selected="false" aria-controls="ka-tab-children" id="ka-tablink-children">Children</button>
+      </nav>
+
+      <!-- Panels -->
+      <div class="ka-heat__tab-panels">
+
+        <!-- TAB 1: Outdoor Workers -->
+        <div class="ka-heat__tab-panel ka-active" id="ka-tab-workers" role="tabpanel" aria-labelledby="ka-tablink-workers">
+          <h3>Outdoor Workers</h3>
+          <p>Agricultural labourers are 35 times more likely to die from heat stress than workers in other sectors. Most of India's 380 million heat-exposed workers have no health insurance, no labour protections, and no option to stop. Earnings drop 40% during heatwaves for informal workers in cities like Delhi.</p>
+          <div class="ka-heat__tips">
+            <h4>Practical Steps</h4>
+            <ul>
+              <li>Drink 1 litre per hour during heavy outdoor work</li>
+              <li>Take 15–20 minute shade breaks every hour</li>
+              <li>Shift heavy work to before 9am or after 5pm</li>
+              <li>Wear light, loose, long-sleeved clothing and a hat</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TAB 2: Elderly -->
+        <div class="ka-heat__tab-panel" id="ka-tab-elderly" role="tabpanel" aria-labelledby="ka-tablink-elderly">
+          <h3>Elderly</h3>
+          <p>Heat deaths among those over 65 have risen 70% over two decades. The elderly cannot regulate body temperature as efficiently and many live alone. Research warns that 200 million or more people in India will face deadly heat by 2030.</p>
+          <div class="ka-heat__tips">
+            <h4>Practical Steps</h4>
+            <ul>
+              <li>Check on elderly relatives and neighbours daily</li>
+              <li>Ensure they drink water even when not thirsty</li>
+              <li>Keep them in the coolest room with windows shaded by day</li>
+              <li>A wet cloth on the neck and forehead gives significant relief</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TAB 3: Farmers -->
+        <div class="ka-heat__tab-panel" id="ka-tab-farmers" role="tabpanel" aria-labelledby="ka-tablink-farmers">
+          <h3>Farmers</h3>
+          <p>Heat at grain-filling stage shrinks wheat and mustard yields. Punjab and Haryana farmers faced emergency irrigation demands. Every 1°C rise cuts wheat yields approximately 6%. With below-average monsoons forecast, no seasonal relief is guaranteed.</p>
+          <div class="ka-heat__tips">
+            <h4>Practical Steps</h4>
+            <ul>
+              <li>Use mulching to retain soil moisture</li>
+              <li>Irrigate in early morning or evening</li>
+              <li>Work in fields only before 10am and after 4pm</li>
+              <li>Carry ORS and water at all times</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TAB 4: Urban Poor -->
+        <div class="ka-heat__tab-panel" id="ka-tab-urban" role="tabpanel" aria-labelledby="ka-tablink-urban">
+          <h3>Urban Poor</h3>
+          <p>Urban poor communities live in crowded settlements with little ventilation. Indoor temperatures stay dangerous hours after sunset. No air conditioning, no alternatives. When power cuts kill pumping stations, they lose water too. Wealthier residents' air conditioning units expel heat outdoors — worsening conditions on the streets.</p>
+          <div class="ka-heat__tips">
+            <h4>Practical Steps</h4>
+            <ul>
+              <li>Use a fan with a bowl of ice — it drops air temperature noticeably</li>
+              <li>Soak feet in cool water; keep windows open at night</li>
+              <li>Use public cooling centres when available</li>
+              <li>Avoid cooking during 11am–4pm if possible</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TAB 5: Children -->
+        <div class="ka-heat__tab-panel" id="ka-tab-children" role="tabpanel" aria-labelledby="ka-tablink-children">
+          <h3>Children</h3>
+          <p>Children's bodies heat up faster and cool less efficiently. They often don't notice their own dehydration. Schools without ventilation become heat chambers during peak hours.</p>
+          <div class="ka-heat__tips">
+            <h4>Practical Steps</h4>
+            <ul>
+              <li>Children should drink water every 20–30 minutes, especially during play</li>
+              <li>Keep school bags light during heatwave days</li>
+              <li>Limit outdoor activity between 11am and 4pm</li>
+              <li>Watch for: unusual drowsiness, dry mouth, no tears when crying</li>
+            </ul>
+          </div>
+        </div>
+
+      </div><!-- end tab-panels -->
+    </div><!-- end tabs -->
+  </section>
+
+  <hr class="ka-heat__divider" />
+
+  <!-- SECTION 6: WHAT IS WORKING -->
+  <section class="ka-heat__section">
+    <h2>What Is Working</h2>
+    <div class="ka-heat__working">
+      <p>Some cities are showing what is possible. <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2255487&reg=3&lang=1" target="_blank" rel="noopener">Ahmedabad's Heat Action Plan</a> combines early warning systems, heatstroke management units, increased green cover, and work schedule shifts for outdoor labourers. Mumbai's 3.5-acre urban forest in Marol has reduced local temperatures by up to 4°C for nearly 173,000 residents nearby. Cool roofs using reflective materials have been adopted across multiple states.</p>
+      <p>The <a href="https://www.ceew.in/publications/mapping-climate-risks-and-impacts-of-extreme-heatwave-disaster-in-indian-districts" target="_blank" rel="noopener">Council on Energy, Environment and Water</a> has called for night-time temperatures to formally enter heat risk planning, heat insurance to protect livelihoods, and a national repository of Heat Action Plans.</p>
+    </div>
+  </section>
+
+  <hr class="ka-heat__divider" />
+
+  <!-- RELATED LINKS BOX -->
+  <aside class="ka-heat__related" aria-label="Related articles from Karmactive">
+    <h3>Read More on Karmactive</h3>
+    <ul>
+      <li>
+        <a href="https://www.karmactive.com/india-heatwave-2026-six-cities-cross-46-degree-celsius-centre-orders-heat-stroke-units-nhrc-issue-advisory/" target="_blank" rel="noopener">India Heatwave 2026: 6 Cities Cross 46°C, Centre Orders Heat Stroke Units</a>
+      </li>
+      <li>
+        <a href="https://www.karmactive.com/heatwave-deaths-prediction-system-week-advance-forecasting/" target="_blank" rel="noopener">New System Predicts Heat-Related Deaths a Week Before Heatwaves Strike</a>
+      </li>
+      <li>
+        <a href="https://www.karmactive.com/india-2-4-trillion-climate-resilient-cities-world-bank-report/" target="_blank" rel="noopener">World Bank: $2.4T Urban Climate Shield as Indian Cities Face $30B Annual Flood Risk</a>
+      </li>
+      <li>
+        <a href="https://www.karmactive.com/global-water-crisis-threatens-50-of-food-production-economy-faces-8-gdp-loss-by-2050/" target="_blank" rel="noopener">Global Water Crisis Threatens 50% of Food Production</a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- CONCLUSION -->
+  <section class="ka-heat__section" aria-label="Summary and context">
+    <h2>Documented Conditions, 2026</h2>
+    <div class="ka-heat__conclusion">
+      <p>The World Weather Attribution team assessed the 2026 South Asia heatwave against both current and pre-industrial climate conditions. The India Meteorological Department issued warnings covering heatwave conditions across multiple states from April through June. The World Meteorological Organization published a monsoon outlook forecasting below-average rainfall for the region.</p>
+      <p>The Council on Energy, Environment and Water mapped how 57% of India's districts — encompassing three-quarters of its population — now fall into high to very high heat risk categories. A white paper supported by Harvard University's Salata Institute examined how heat reshapes livelihoods and labour across a workforce of 380 million in heat-exposed jobs.</p>
+      <p>These were the conditions documented in 2026 — in cities where heat action plans are being expanded, in fields where crops were under irrigation emergency, in districts where nights refused to cool, and in communities where power cuts, water shortages, and extreme heat arrived together.</p>
+    </div>
+  </section>
+
+</div><!-- end ka-heat__body -->
+</article>
+
+<!-- ============================================================
+     CHART.JS CDN
+     ============================================================ -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+<!-- ============================================================
+     ARTICLE JAVASCRIPT
+     ============================================================ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ----------------------------------------------------------
+     1. INTERSECTION OBSERVER — ANIMATED STAT CARDS
+     ---------------------------------------------------------- */
+  var statCards = document.querySelectorAll('.ka-heat__stat-card');
+
+  if ('IntersectionObserver' in window && statCards.length) {
+    var cardObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('ka-visible');
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    statCards.forEach(function (card) {
+      cardObserver.observe(card);
+    });
+  } else {
+    // Fallback for older browsers — show immediately
+    statCards.forEach(function (card) {
+      card.classList.add('ka-visible');
+    });
+  }
+
+  /* ----------------------------------------------------------
+     2. ANIMATED NUMBER COUNTERS (triggered by IntersectionObserver)
+     ---------------------------------------------------------- */
+  var counterCards = document.querySelectorAll('.ka-heat__stat-card[data-target]');
+  var countersStarted = false;
+
+  function easeOutQuart(t) {
+    return 1 - Math.pow(1 - t, 4);
+  }
+
+  function animateCounter(el, target, prefix, suffix, duration) {
+    var start = null;
+    var numEl = el.querySelector('[data-counter]');
+    if (!numEl) return;
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      var elapsed = timestamp - start;
+      var progress = Math.min(elapsed / duration, 1);
+      var eased = easeOutQuart(progress);
+      var current = Math.floor(eased * target);
+      numEl.textContent = (prefix || '') + current + (suffix || '');
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        numEl.textContent = (prefix || '') + target + (suffix || '');
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  function startAllCounters() {
+    if (countersStarted) return;
+    countersStarted = true;
+    counterCards.forEach(function (card, i) {
+      var target = parseInt(card.getAttribute('data-target'), 10);
+      var prefix = card.getAttribute('data-prefix') || '';
+      var suffix = card.getAttribute('data-suffix') || '';
+      setTimeout(function () {
+        animateCounter(card, target, prefix, suffix, 1400);
+      }, i * 120);
+    });
+  }
+
+  if ('IntersectionObserver' in window && counterCards.length) {
+    var counterObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          startAllCounters();
+          counterObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    counterCards.forEach(function (card) {
+      counterObserver.observe(card);
+    });
+  }
+
+  /* ----------------------------------------------------------
+     3. TAB SWITCHER — WHO BEARS THE BRUNT
+     ---------------------------------------------------------- */
+  var tabBtns = document.querySelectorAll('.ka-heat__tab-btn');
+  var tabPanels = document.querySelectorAll('.ka-heat__tab-panel');
+
+  function activateTab(btn) {
+    var targetId = btn.getAttribute('aria-controls');
+
+    tabBtns.forEach(function (b) {
+      b.classList.remove('ka-active');
+      b.setAttribute('aria-selected', 'false');
+    });
+
+    tabPanels.forEach(function (p) {
+      p.classList.remove('ka-active');
+    });
+
+    btn.classList.add('ka-active');
+    btn.setAttribute('aria-selected', 'true');
+
+    var targetPanel = document.getElementById(targetId);
+    if (targetPanel) {
+      targetPanel.classList.add('ka-active');
+    }
+  }
+
+  tabBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      activateTab(btn);
+    });
+
+    // Keyboard navigation
+    btn.addEventListener('keydown', function (e) {
+      var idx = Array.prototype.indexOf.call(tabBtns, btn);
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        var next = tabBtns[idx + 1] || tabBtns[0];
+        next.focus();
+        activateTab(next);
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        var prev = tabBtns[idx - 1] || tabBtns[tabBtns.length - 1];
+        prev.focus();
+        activateTab(prev);
+      }
+    });
+  });
+
+  /* ----------------------------------------------------------
+     4. CHART.JS — NIGHT HEAT BAR CHART
+     ---------------------------------------------------------- */
+  function initChart() {
+    var canvas = document.getElementById('kaHeatNightChart');
+    if (!canvas || typeof Chart === 'undefined') return;
+
+    var ctx = canvas.getContext('2d');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Mumbai', 'Bengaluru', 'Bhopal', 'Delhi', 'Chennai'],
+        datasets: [{
+          label: 'Extra very warm nights per summer (last decade)',
+          data: [15, 11, 7, 6, 4],
+          backgroundColor: [
+            'rgba(255, 107, 53, 0.85)',
+            'rgba(255, 120, 65, 0.80)',
+            'rgba(255, 140, 66, 0.75)',
+            'rgba(255, 160, 80, 0.70)',
+            'rgba(255, 180, 100, 0.65)'
+          ],
+          borderColor: [
+            '#ff6b35',
+            '#ff7840',
+            '#ff8c42',
+            '#ffa050',
+            '#ffb464'
+          ],
+          borderWidth: 2,
+          borderRadius: 6,
+          borderSkipped: false
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            backgroundColor: '#1a0800',
+            titleColor: '#ff8c42',
+            bodyColor: '#ffb899',
+            borderColor: '#ff6b35',
+            borderWidth: 1,
+            padding: 12,
+            callbacks: {
+              label: function (context) {
+                return '+' + context.parsed.y + ' extra warm nights per summer';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: {
+              color: 'rgba(255, 107, 53, 0.08)',
+              drawBorder: false
+            },
+            ticks: {
+              color: '#7a3020',
+              font: {
+                family: 'Arial, Helvetica, sans-serif',
+                size: 12,
+                weight: '700'
+              }
+            }
+          },
+          y: {
+            beginAtZero: true,
+            max: 18,
+            grid: {
+              color: 'rgba(255, 107, 53, 0.1)',
+              drawBorder: false
+            },
+            ticks: {
+              color: '#7a3020',
+              font: {
+                family: 'Arial, Helvetica, sans-serif',
+                size: 11
+              },
+              callback: function (value) {
+                return '+' + value;
+              }
+            }
+          }
+        },
+        animation: {
+          duration: 1200,
+          easing: 'easeOutQuart'
+        }
+      }
+    });
+  }
+
+  // Wait for Chart.js to load if needed
+  if (typeof Chart !== 'undefined') {
+    initChart();
+  } else {
+    var chartScript = document.querySelector('script[src*="chart.js"]');
+    if (chartScript) {
+      chartScript.addEventListener('load', initChart);
+    }
+    // Also try on window load as fallback
+    window.addEventListener('load', function () {
+      if (typeof Chart !== 'undefined') {
+        initChart();
+      }
+    });
+  }
+
+})();
+</script>
