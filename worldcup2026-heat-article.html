@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIFA World Cup 2026 Heat Risk Interactive Dashboard</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+/* ==============================
+   RESET & BASE
+   ============================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.wc-heat-wrap {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1a1a2e;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px 60px;
+  line-height: 1.6;
+}
+
+/* ==============================
+   ASYMMETRIC HEADER
+   ============================== */
+.wc-header {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 0;
+  min-height: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  margin-bottom: 48px;
+}
+
+.wc-header-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.wc-header-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.wc-header-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(185,28,28,0.35) 0%, rgba(146,64,14,0.2) 100%);
+}
+
+.wc-header-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #DC2626;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.wc-header-content {
+  background: #1a1a2e;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wc-header-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #F59E0B;
+  margin-bottom: 12px;
+}
+
+.wc-header-title {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.18;
+  margin-bottom: 16px;
+}
+
+.wc-header-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.wc-header-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.wc-stat-pill {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.wc-stat-pill .val {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #F59E0B;
+  line-height: 1;
+}
+
+.wc-stat-pill .lbl {
+  display: block;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 4px;
+  line-height: 1.3;
+}
+
+/* ==============================
+   SECTION LABEL
+   ============================== */
+.wc-section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.wc-section-label .line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, #DC2626, transparent);
+}
+
+.wc-section-label span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #DC2626;
+  white-space: nowrap;
+}
+
+/* ==============================
+   WBGT EXPLAINER
+   ============================== */
+.wc-wbgt-section {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FFF7ED 100%);
+  border-radius: 16px;
+  padding: 32px 28px;
+  margin-bottom: 40px;
+  border: 1px solid #FDE68A;
+}
+
+.wc-wbgt-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #92400E;
+  margin-bottom: 8px;
+}
+
+.wc-wbgt-subtitle {
+  font-size: 0.9rem;
+  color: #78350F;
+  margin-bottom: 28px;
+  max-width: 680px;
+}
+
+.wc-wbgt-scale {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.wc-wbgt-level {
+  border-radius: 12px;
+  padding: 18px 14px;
+  text-align: center;
+  transition: transform 0.25s ease;
+  cursor: default;
+}
+
+.wc-wbgt-level:hover { transform: translateY(-4px); }
+
+.wc-wbgt-level.l1 { background: #D1FAE5; border: 2px solid #6EE7B7; }
+.wc-wbgt-level.l2 { background: #FEF9C3; border: 2px solid #FDE047; }
+.wc-wbgt-level.l3 { background: #FFEDD5; border: 2px solid #FCA5A5; }
+.wc-wbgt-level.l4 { background: #FEE2E2; border: 2px solid #F87171; }
+
+.wc-wbgt-temp {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.l1 .wc-wbgt-temp { color: #065F46; }
+.l2 .wc-wbgt-temp { color: #92400E; }
+.l3 .wc-wbgt-temp { color: #C2410C; }
+.l4 .wc-wbgt-temp { color: #991B1B; }
+
+.wc-wbgt-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.l1 .wc-wbgt-label { color: #065F46; }
+.l2 .wc-wbgt-label { color: #92400E; }
+.l3 .wc-wbgt-label { color: #C2410C; }
+.l4 .wc-wbgt-label { color: #991B1B; }
+
+.wc-wbgt-desc {
+  font-size: 0.8rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.wc-wbgt-note {
+  margin-top: 18px;
+  font-size: 0.8rem;
+  color: #78350F;
+  background: rgba(255,255,255,0.6);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+/* ==============================
+   CITY HEAT RISK DASHBOARD
+   ============================== */
+.wc-cities-section {
+  margin-bottom: 40px;
+}
+
+.wc-cities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.wc-city-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border-left: 5px solid #e5e7eb;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.wc-city-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+}
+
+.wc-city-card.risk-critical { border-left-color: #DC2626; }
+.wc-city-card.risk-high     { border-left-color: #EA580C; }
+.wc-city-card.risk-moderate { border-left-color: #D97706; }
+.wc-city-card.risk-elevated { border-left-color: #CA8A04; }
+.wc-city-card.risk-managed  { border-left-color: #16A34A; }
+
+.wc-city-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.wc-city-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.wc-city-country {
+  font-size: 0.72rem;
+  color: #6B7280;
+  font-weight: 500;
+}
+
+.wc-risk-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.risk-critical .wc-risk-badge { background: #FEE2E2; color: #991B1B; }
+.risk-high     .wc-risk-badge { background: #FFEDD5; color: #C2410C; }
+.risk-moderate .wc-risk-badge { background: #FEF3C7; color: #92400E; }
+.risk-elevated .wc-risk-badge { background: #FEF9C3; color: #713F12; }
+.risk-managed  .wc-risk-badge { background: #DCFCE7; color: #14532D; }
+
+.wc-city-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.wc-city-tag {
+  font-size: 0.72rem;
+  background: #F3F4F6;
+  color: #374151;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.wc-city-tag.cooling {
+  background: #DBEAFE;
+  color: #1D4ED8;
+}
+
+.wc-city-bar-wrap {
+  height: 6px;
+  background: #F3F4F6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.wc-city-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+
+.risk-critical .wc-city-bar { background: #DC2626; }
+.risk-high     .wc-city-bar { background: #EA580C; }
+.risk-moderate .wc-city-bar { background: #D97706; }
+.risk-elevated .wc-city-bar { background: #CA8A04; }
+.risk-managed  .wc-city-bar { background: #16A34A; }
+
+.wc-city-detail {
+  display: none;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #F3F4F6;
+  font-size: 0.82rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.wc-city-card.open .wc-city-detail { display: block; }
+.wc-city-card.open { background: #FAFAFA; }
+
+/* ==============================
+   MAP
+   ============================== */
+.wc-map-section { margin-bottom: 40px; }
+
+.wc-map-container {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.13);
+  height: 420px;
+}
+
+.wc-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: #F9FAFB;
+  border-radius: 10px;
+  border: 1px solid #E5E7EB;
+}
+
+.wc-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #374151;
+  font-weight: 600;
+}
+
+.wc-legend-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ==============================
+   CHART SECTION
+   ============================== */
+.wc-chart-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  margin-bottom: 40px;
+}
+
+.wc-chart-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.wc-chart-sub {
+  font-size: 0.82rem;
+  color: #6B7280;
+  margin-bottom: 20px;
+}
+
+.wc-chart-canvas { max-height: 320px; }
+
+/* ==============================
+   TIMELINE
+   ============================== */
+.wc-timeline-section { margin-bottom: 40px; }
+
+.wc-timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.wc-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #DC2626, #D97706, #16A34A);
+  border-radius: 2px;
+}
+
+.wc-tl-item {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.wc-tl-dot {
+  position: absolute;
+  left: -24px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px currentColor;
+}
+
+.wc-tl-dot.red   { color: #DC2626; background: #DC2626; }
+.wc-tl-dot.amber { color: #D97706; background: #D97706; }
+.wc-tl-dot.green { color: #16A34A; background: #16A34A; }
+
+.wc-tl-date {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #9CA3AF;
+  margin-bottom: 3px;
+}
+
+.wc-tl-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.wc-tl-body {
+  font-size: 0.85rem;
+  color: #4B5563;
+  line-height: 1.6;
+}
+
+/* ==============================
+   FAN SAFETY SECTION
+   ============================== */
+.wc-safety-section {
+  background: linear-gradient(135deg, #1E3A5F 0%, #1a1a2e 100%);
+  border-radius: 16px;
+  padding: 32px 28px;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.wc-safety-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.wc-safety-sub {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 24px;
+}
+
+.wc-safety-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.wc-safety-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 12px;
+  padding: 18px 16px;
+  transition: background 0.2s ease;
+}
+
+.wc-safety-card:hover { background: rgba(255,255,255,0.14); }
+
+.wc-safety-icon {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.wc-safety-card-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #F59E0B;
+  margin-bottom: 5px;
+}
+
+.wc-safety-card-text {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.55;
+}
+
+/* ==============================
+   CONFLICT CALLOUT
+   ============================== */
+.wc-conflict-box {
+  border-radius: 14px;
+  background: #FFF7ED;
+  border: 1px solid #FED7AA;
+  padding: 24px 22px;
+  margin-bottom: 40px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.wc-conflict-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.wc-conflict-content {}
+
+.wc-conflict-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #92400E;
+  margin-bottom: 6px;
+}
+
+.wc-conflict-text {
+  font-size: 0.83rem;
+  color: #78350F;
+  line-height: 1.65;
+}
+
+/* ==============================
+   QUOTES
+   ============================== */
+.wc-quotes-section {
+  margin-bottom: 40px;
+}
+
+.wc-quote-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.wc-quote-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 22px 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border-top: 4px solid;
+}
+
+.wc-quote-card:nth-child(1) { border-color: #DC2626; }
+.wc-quote-card:nth-child(2) { border-color: #D97706; }
+.wc-quote-card:nth-child(3) { border-color: #1D4ED8; }
+
+.wc-quote-text {
+  font-size: 0.88rem;
+  color: #374151;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+
+.wc-quote-text::before { content: '\201C'; font-size: 1.3em; color: #9CA3AF; }
+.wc-quote-text::after  { content: '\201D'; font-size: 1.3em; color: #9CA3AF; }
+
+.wc-quote-author {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.wc-quote-role {
+  font-size: 0.72rem;
+  color: #6B7280;
+  margin-top: 2px;
+}
+
+/* ==============================
+   CONCLUSION
+   ============================== */
+.wc-conclusion {
+  background: #F9FAFB;
+  border-radius: 14px;
+  padding: 28px 24px;
+  border: 1px solid #E5E7EB;
+}
+
+.wc-conclusion-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.wc-conclusion-text {
+  font-size: 0.88rem;
+  color: #374151;
+  line-height: 1.75;
+}
+
+.wc-conclusion-text a {
+  color: #DC2626;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+@media (max-width: 768px) {
+  .wc-header {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .wc-header-img { height: 240px; }
+  .wc-header-content { padding: 24px 20px; }
+  .wc-header-stats { grid-template-columns: repeat(2, 1fr); }
+  .wc-wbgt-scale { grid-template-columns: repeat(2, 1fr); }
+  .wc-cities-grid { grid-template-columns: 1fr; }
+  .wc-map-container { height: 320px; }
+  .wc-safety-grid { grid-template-columns: 1fr; }
+  .wc-quote-cards { grid-template-columns: 1fr; }
+  .wc-conflict-box { flex-direction: column; gap: 10px; }
+}
+
+@media (max-width: 420px) {
+  .wc-wbgt-scale { grid-template-columns: 1fr; }
+  .wc-header-stats { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="wc-heat-wrap">
+
+  <!-- ============================================================
+       HEADER: ASYMMETRIC LAYOUT
+       ============================================================ -->
+  <header class="wc-header">
+    <!-- Left: Feature Image -->
+    <div class="wc-header-img">
+      <!-- Replace src with your actual feature image URL from Unsplash -->
+      <img
+        src="https://images.unsplash.com/photo-1556056504-5c7696c4c28d?w=900&auto=format&fit=crop&q=80"
+        alt="Outdoor FIFA World Cup 2026 stadium packed with fans under blazing summer sun, illustrating the dangerous heat risk from climate change affecting the tournament"
+        loading="lazy"
+      />
+      <div class="wc-header-img-overlay"></div>
+      <span class="wc-header-badge">Climate &amp; Sport</span>
+    </div>
+
+    <!-- Right: Title + Stats -->
+    <div class="wc-header-content">
+      <div>
+        <p class="wc-header-eyebrow">FIFA World Cup 2026</p>
+        <h1 class="wc-header-title">1 in 4 Matches Could Be Played in Dangerous Heat</h1>
+        <p class="wc-header-subtitle">Climate scientists warn that 26 of 104 World Cup 2026 games could exceed safe temperature limits — and the final itself is not exempt.</p>
+      </div>
+
+      <div class="wc-header-stats">
+        <div class="wc-stat-pill">
+          <span class="val">26</span>
+          <span class="lbl">Matches at heat strain risk</span>
+        </div>
+        <div class="wc-stat-pill">
+          <span class="val">5</span>
+          <span class="lbl">Matches at postponement-level heat</span>
+        </div>
+        <div class="wc-stat-pill">
+          <span class="val">9</span>
+          <span class="lbl">High-risk games — no stadium cooling</span>
+        </div>
+        <div class="wc-stat-pill">
+          <span class="val">2×</span>
+          <span class="lbl">Higher risk vs. 1994 World Cup</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       WBGT EXPLAINER
+       ============================================================ -->
+  <div class="wc-wbgt-section">
+    <div class="wc-section-label">
+      <span>The Heat Scale That Matters</span>
+      <div class="line"></div>
+    </div>
+    <h2 class="wc-wbgt-title">What Is WBGT — and Why Does It Decide Whether Games Are Safe?</h2>
+    <p class="wc-wbgt-subtitle">Wet Bulb Globe Temperature (WBGT) is the global medical standard for measuring heat stress. Unlike a simple thermometer, it factors in temperature, humidity, sun exposure, and wind — capturing how the human body actually experiences heat during physical exertion.</p>
+
+    <div class="wc-wbgt-scale">
+      <div class="wc-wbgt-level l1">
+        <div class="wc-wbgt-temp">Below 26°C</div>
+        <div class="wc-wbgt-label">Safe to Play</div>
+        <div class="wc-wbgt-desc">Normal conditions. Standard match protocols apply.</div>
+      </div>
+      <div class="wc-wbgt-level l2">
+        <div class="wc-wbgt-temp">26°C</div>
+        <div class="wc-wbgt-label">Cooling Breaks Required</div>
+        <div class="wc-wbgt-desc">FIFPRO: heat strain becomes a real risk. Mandatory cooling breaks must be implemented.</div>
+      </div>
+      <div class="wc-wbgt-level l3">
+        <div class="wc-wbgt-temp">28°C</div>
+        <div class="wc-wbgt-label">FIFPRO: Postpone</div>
+        <div class="wc-wbgt-desc">Global players' union recommends delaying or calling off matches. Equivalent to ~38°C dry heat.</div>
+      </div>
+      <div class="wc-wbgt-level l4">
+        <div class="wc-wbgt-temp">32°C</div>
+        <div class="wc-wbgt-label">FIFA's Threshold</div>
+        <div class="wc-wbgt-desc">Only at this level does FIFA's current rules consider postponement — 4°C higher than FIFPRO's science-based limit.</div>
+      </div>
+    </div>
+
+    <p class="wc-wbgt-note">⚠️ Scientists describe the gap between FIFA's 32°C threshold and FIFPRO's 28°C recommendation as &ldquo;impossible to justify&rdquo; based on current sports medicine research. An open letter signed by 20 health and climate experts formally called on FIFA to close this gap before the tournament begins.</p>
+  </div>
+
+  <!-- ============================================================
+       CITY HEAT RISK DASHBOARD
+       ============================================================ -->
+  <div class="wc-cities-section">
+    <div class="wc-section-label">
+      <span>City-by-City Heat Risk</span>
+      <div class="line"></div>
+    </div>
+    <h2 style="font-size:1.15rem;font-weight:800;color:#111827;margin-bottom:6px;">Tap Any City to See the Heat Risk Detail</h2>
+    <p style="font-size:0.85rem;color:#6B7280;margin-bottom:20px;">Based on World Weather Attribution analysis. WBGT risk = Wet Bulb Globe Temperature at match time. Outdoor risk = conditions outside the stadium.</p>
+
+    <div class="wc-cities-grid" id="citiesGrid">
+      <!-- Cards injected by JS -->
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAP
+       ============================================================ -->
+  <div class="wc-map-section">
+    <div class="wc-section-label">
+      <span>Interactive Heat Risk Map</span>
+      <div class="line"></div>
+    </div>
+    <h2 style="font-size:1.15rem;font-weight:800;color:#111827;margin-bottom:16px;">All 16 Host Cities — Heat Risk at a Glance</h2>
+    <div class="wc-map-container" id="wcMap"></div>
+    <div class="wc-map-legend">
+      <div class="wc-legend-item"><div class="wc-legend-dot" style="background:#DC2626"></div> Critical / Near-Certain High Heat</div>
+      <div class="wc-legend-item"><div class="wc-legend-dot" style="background:#EA580C"></div> High Risk</div>
+      <div class="wc-legend-item"><div class="wc-legend-dot" style="background:#D97706"></div> Moderate Risk</div>
+      <div class="wc-legend-item"><div class="wc-legend-dot" style="background:#CA8A04"></div> Elevated Risk</div>
+      <div class="wc-legend-item"><div class="wc-legend-dot" style="background:#16A34A"></div> Lower Risk / Managed</div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       BAR CHART: WBGT RISK COMPARISON
+       ============================================================ -->
+  <div class="wc-chart-section">
+    <div class="wc-section-label">
+      <span>1994 vs 2026 Comparison</span>
+      <div class="line"></div>
+    </div>
+    <h2 class="wc-chart-title">How Climate Change Widened the Heat Gap Between 1994 and 2026</h2>
+    <p class="wc-chart-sub">Estimated number of matches at each WBGT threshold — last US World Cup vs. this year's tournament. Source: World Weather Attribution, May 2026.</p>
+    <canvas id="wcChart" class="wc-chart-canvas"></canvas>
+  </div>
+
+  <!-- ============================================================
+       CONFLICT CALLOUT
+       ============================================================ -->
+  <div class="wc-conflict-box">
+    <div class="wc-conflict-icon">⚡</div>
+    <div class="wc-conflict-content">
+      <h3 class="wc-conflict-title">The Sponsorship Problem Nobody Is Talking About</h3>
+      <p class="wc-conflict-text">
+        In 2024, FIFA signed Saudi Aramco — the world's largest oil producer — as a major worldwide partner in a deal reported at approximately $100 million per year, covering the 2026 and 2027 tournaments. Fossil fuel combustion is the primary driver of the climate change that is now making World Cup conditions measurably more dangerous. Researchers estimate the 2026 World Cup will generate over 9 million tonnes of CO₂e — the most polluting tournament in the event's 95-year history. An additional 30 million tonnes CO₂e could be linked to Aramco's promotional activities associated with the deal. Thirty soccer players have formally asked FIFA to end fossil fuel sponsorships. The governing body has not altered its stance.
+        <br><br>
+        <a href="https://www.karmactive.com/nasa-warns-of-uninhabitability-in-southern-asia-eastern-china-and-select-us-states-by-2050-due-to-climate-heat-risks/" target="_blank" rel="noopener" style="color:#92400E;font-weight:700;">Read: How extreme heat is already making regions uninhabitable, per NASA →</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       EXPERT QUOTES
+       ============================================================ -->
+  <div class="wc-quotes-section">
+    <div class="wc-section-label">
+      <span>What Scientists Are Saying</span>
+      <div class="line"></div>
+    </div>
+    <div class="wc-quote-cards">
+      <div class="wc-quote-card">
+        <p class="wc-quote-text">That the World Cup Final itself — one of the biggest sporting occasions on the planet — faces a non-insignificant risk of being played in 'cancellation-level' heat should be a wake-up call for FIFA and fans.</p>
+        <div class="wc-quote-author">Dr Friederike Otto</div>
+        <div class="wc-quote-role">Climate Scientist, Imperial College London / World Weather Attribution</div>
+      </div>
+      <div class="wc-quote-card">
+        <p class="wc-quote-text">Our findings show conditions associated with these physiological heat-stress conditions have now become more likely and more intense than during the previous World Cup.</p>
+        <div class="wc-quote-author">Joyce Kimutai</div>
+        <div class="wc-quote-role">Research Associate in Extreme Weather & Climate Change, Imperial College London</div>
+      </div>
+      <div class="wc-quote-card">
+        <p class="wc-quote-text">We know high temperatures influence players' performance and that it can affect their health negatively. In some cases, excessive heat can lead to heatstroke.</p>
+        <div class="wc-quote-author">Dr Vincent Gouttebarge</div>
+        <div class="wc-quote-role">Medical Director, FIFPRO (Global Players' Union)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TIMELINE
+       ============================================================ -->
+  <div class="wc-timeline-section">
+    <div class="wc-section-label">
+      <span>The Road Here</span>
+      <div class="line"></div>
+    </div>
+    <h2 style="font-size:1.15rem;font-weight:800;color:#111827;margin-bottom:22px;">A Timeline: Climate, Football, and the Heat Warning</h2>
+    <div class="wc-timeline">
+
+      <div class="wc-tl-item">
+        <div class="wc-tl-dot red"></div>
+        <div class="wc-tl-date">1994 — USA World Cup</div>
+        <div class="wc-tl-title">The Last US-Hosted Tournament — A Cooler Era</div>
+        <div class="wc-tl-body">Approximately 21 matches played at or near the 26°C WBGT threshold. Heat was a concern, but science had not yet drawn a direct line from climate change to match conditions. Cooling breaks did not exist in tournament rules.</div>
+      </div>
+
+      <div class="wc-tl-item">
+        <div class="wc-tl-dot amber"></div>
+        <div class="wc-tl-date">2021 — Qatar Bid &amp; Climate Concerns</div>
+        <div class="wc-tl-title">Qatar 2022: The First Winter World Cup in History</div>
+        <div class="wc-tl-body">Qatar moved the tournament from summer to November–December to avoid lethal heat — an unprecedented scheduling shift that underlined how climate was already reshaping sport. Air-conditioned stadiums were built at enormous energy cost.</div>
+      </div>
+
+      <div class="wc-tl-item">
+        <div class="wc-tl-dot amber"></div>
+        <div class="wc-tl-date">2023 — FIFPRO Publishes Heat Guidelines</div>
+        <div class="wc-tl-title">Players' Union Sets the 26°C / 28°C Thresholds</div>
+        <div class="wc-tl-body">FIFPRO published formal science-based heat safety thresholds for professional football, calling for cooling breaks at 26°C WBGT and match postponement at 28°C WBGT. FIFA's own threshold remained at 32°C — a gap that would grow into a formal dispute by 2026.</div>
+      </div>
+
+      <div class="wc-tl-item">
+        <div class="wc-tl-dot amber"></div>
+        <div class="wc-tl-date">2024 — The Aramco Deal</div>
+        <div class="wc-tl-title">FIFA Partners with the World's Largest Oil Producer</div>
+        <div class="wc-tl-body">FIFA announced Saudi Aramco as a major worldwide partner in a deal valued at approximately $100 million per year. Over 130 female players had already written to FIFA urging it to reconsider fossil fuel sponsorships. FIFA proceeded regardless.</div>
+      </div>
+
+      <div class="wc-tl-item">
+        <div class="wc-tl-dot red"></div>
+        <div class="wc-tl-date">May 2026 — WWA Report Published</div>
+        <div class="wc-tl-title">Scientists Formally Warn FIFA: 26 Matches at Risk</div>
+        <div class="wc-tl-body">The World Weather Attribution group released its peer-reviewed analysis on May 13, 2026, finding 26 of 104 matches face heat strain conditions and 5 face postponement-level heat. Climate change directly attributed. An open letter signed by 20 scientists followed, calling FIFA's 3-minute breaks "impossible to justify."</div>
+      </div>
+
+      <div class="wc-tl-item">
+        <div class="wc-tl-dot green"></div>
+        <div class="wc-tl-date">June 11, 2026 — Tournament Begins</div>
+        <div class="wc-tl-title">Opening Match: Mexico vs. South Africa at Estadio Azteca</div>
+        <div class="wc-tl-body">The tournament opens in Mexico City. FIFA's tiered heat mitigation plan — including mandatory 3-minute hydration breaks in both halves — is in effect. Whether it is sufficient remains disputed by the scientific community. 3.5 billion people are expected to watch at least one match.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FAN SAFETY
+       ============================================================ -->
+  <div class="wc-safety-section">
+    <div class="wc-section-label" style="margin-bottom:14px;">
+      <span style="color:#F59E0B;">If You're Going</span>
+      <div class="line" style="background:linear-gradient(to right,#F59E0B,transparent);"></div>
+    </div>
+    <h2 class="wc-safety-title">Protect Yourself at the World Cup — Fan Heat Safety</h2>
+    <p class="wc-safety-sub">Players have medical teams, cooling breaks, and climate-controlled benches. Fans outside stadiums and at fan festivals have none of that. Here's what to do.</p>
+    <div class="wc-safety-grid">
+      <div class="wc-safety-card">
+        <div class="wc-safety-icon">💧</div>
+        <div class="wc-safety-card-title">Hydrate Before You Arrive</div>
+        <div class="wc-safety-card-text">Waiting until you're thirsty is too late. Drink 500ml of water in the two hours before entering the stadium. You can bring sealed water bottles into most venues.</div>
+      </div>
+      <div class="wc-safety-card">
+        <div class="wc-safety-icon">🧢</div>
+        <div class="wc-safety-card-title">Cover Up — Light Colours, Wide Brim</div>
+        <div class="wc-safety-card-text">Light-coloured, loose-fitting clothing and a wide-brimmed hat reduce radiant heat load significantly. Avoid dark synthetic fabrics in outdoor sections.</div>
+      </div>
+      <div class="wc-safety-card">
+        <div class="wc-safety-icon">🌡️</div>
+        <div class="wc-safety-card-title">Know the Signs of Heat Illness</div>
+        <div class="wc-safety-card-text">Dizziness, nausea, rapid heartbeat, or confusion can indicate heat exhaustion. Move to a cool, shaded area immediately and seek medical help if symptoms worsen.</div>
+      </div>
+      <div class="wc-safety-card">
+        <div class="wc-safety-icon">👴</div>
+        <div class="wc-safety-card-title">Higher Risk: Elderly, Chronic Conditions</div>
+        <div class="wc-safety-card-text">Older adults, children, and those with cardiovascular, kidney, or metabolic conditions face sharply elevated risk above 28°C WBGT. Plan for indoor breaks and avoid peak afternoon heat.</div>
+      </div>
+      <div class="wc-safety-card">
+        <div class="wc-safety-icon">🏟️</div>
+        <div class="wc-safety-card-title">Know Your Venue's Cooling Status</div>
+        <div class="wc-safety-card-text">Atlanta, Dallas, Houston, and Vancouver have fully air-conditioned stadiums. Miami, Kansas City, Philadelphia, and MetLife (the final) are open-air — check your city card above before attending.</div>
+      </div>
+      <div class="wc-safety-card">
+        <div class="wc-safety-icon">🌬️</div>
+        <div class="wc-safety-card-title">Use Fan Zones With Misting Stations</div>
+        <div class="wc-safety-card-text">FIFA has committed to expanded water distribution, shaded areas, and cooling buses at high-risk venues. Locate the nearest cooling zone when you arrive — don't wait until you need it.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CONCLUSION TEXT
+       ============================================================ -->
+  <div class="wc-conclusion">
+    <h2 class="wc-conclusion-title">What the Study Covered</h2>
+    <p class="wc-conclusion-text">
+      The World Weather Attribution group's May 2026 study examined all 104 FIFA World Cup 2026 matches across 16 host cities in the United States, Mexico, and Canada, calculating Wet Bulb Globe Temperature risk at each venue based on current climate conditions. The analysis compared findings to the 1994 US World Cup and attributed observed increases in heat stress directly to human-caused climate change. The report found 26 matches at or above FIFPRO's 26°C strain threshold and 5 matches at or above FIFPRO's 28°C postponement threshold — conditions that apply to both players on the pitch and the hundreds of thousands of fans in stadiums and at outdoor fan events. FIFA's response included mandatory 3-minute hydration breaks and tiered stadium cooling measures, while an open letter from 20 scientists described the current protocols as scientifically inadequate. The tournament runs June 11 through July 19, 2026. The final is scheduled at open-air MetLife Stadium in New Jersey.
+      <br><br>
+      For context on long-term heat trends, see Karmactive's coverage of <a href="https://www.karmactive.com/nasa-warns-of-uninhabitability-in-southern-asia-eastern-china-and-select-us-states-by-2050-due-to-climate-heat-risks/" target="_blank" rel="noopener">NASA's heat uninhabitability warnings for 2050</a> and the <a href="https://www.karmactive.com/sbti-trend-tracker-2025-corporate-climate-targets/" target="_blank" rel="noopener">corporate climate target shifts shaping industrial emissions</a>.
+      <br><br>
+      Primary sources: <a href="https://www.worldweatherattribution.org/climate-change-big-player-at-fifa-world-cup-2026/" target="_blank" rel="noopener">World Weather Attribution report</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11947059/" target="_blank" rel="noopener">PLOS ONE peer-reviewed paper</a> | <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/host-cities" target="_blank" rel="noopener">FIFA official host cities</a>
+    </p>
+  </div>
+
+</div><!-- end wc-heat-wrap -->
+
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLmA=" crossorigin=""></script>
+
+<script>
+/* ----------------------------------------------------------
+   CITY DATA
+   ---------------------------------------------------------- */
+const cities = [
+  {
+    name: "Miami", country: "USA", risk: "critical",
+    riskLabel: "Critical", bar: 98,
+    cooling: false, matches: 6,
+    wbgt: "Near-certain >26°C WBGT",
+    detail: "Hard Rock Stadium is open-air with no roof and no cooling system. Miami's humidity and summer temperatures push WBGT to near-certain dangerous levels. Nearly every match here is expected to exceed FIFPRO's 26°C threshold. Fans attending outdoor areas and fan festivals face the highest sustained heat exposure of any venue.",
+    lat: 25.958, lng: -80.239
+  },
+  {
+    name: "Dallas", country: "USA", risk: "critical",
+    riskLabel: "Critical (outdoors)", bar: 96,
+    cooling: true, matches: 7,
+    wbgt: "Near-certain >28°C WBGT outdoors",
+    detail: "AT&T Stadium has a retractable roof and full air conditioning — conditions inside the stadium are controlled. However, outdoor WBGT around the stadium is near-certain to exceed 28°C, the FIFPRO postponement threshold. Fans travelling to and from the venue, at tailgate events, or in queue face serious heat exposure. July wet-bulb temperatures regularly exceed FIFA safety thresholds outdoors.",
+    lat: 32.748, lng: -97.094
+  },
+  {
+    name: "Houston", country: "USA", risk: "high",
+    riskLabel: "High", bar: 86,
+    cooling: true, matches: 6,
+    wbgt: "High risk >26°C WBGT outdoors",
+    detail: "NRG Stadium has a retractable roof and air conditioning — in-stadium conditions are managed. Like Dallas, outdoor heat in Houston during June–July is among the most extreme of any host city. High humidity amplifies WBGT readings. Fans outside the climate-controlled envelope need careful heat management.",
+    lat: 29.685, lng: -95.411
+  },
+  {
+    name: "Kansas City", country: "USA", risk: "high",
+    riskLabel: "High", bar: 82,
+    cooling: false, matches: 6,
+    wbgt: "High risk — no stadium cooling",
+    detail: "Arrowhead Stadium is open-air with no roof cooling. Kansas City was specifically flagged by the WWA study as a high-risk venue. Summer humidity combined with afternoon temperatures routinely pushes outdoor WBGT above 26°C. Several matches are scheduled during peak afternoon heat windows.",
+    lat: 39.049, lng: -94.484
+  },
+  {
+    name: "Philadelphia", country: "USA", risk: "high",
+    riskLabel: "High", bar: 80,
+    cooling: false, matches: 6,
+    wbgt: "High risk — open-air stadium",
+    detail: "Lincoln Financial Field is open-air. Philadelphia summers are hot and humid, and the WWA study identified it as a flagged venue. July heat and humidity can push WBGT above 26°C, particularly for afternoon kick-offs. Fans in the stands will have no relief from ambient cooling.",
+    lat: 39.901, lng: -75.168
+  },
+  {
+    name: "New York / New Jersey", country: "USA", risk: "high",
+    riskLabel: "High — Final Venue", bar: 78,
+    cooling: false, matches: 8,
+    wbgt: "1-in-8 chance of ≥26°C; 2.7% risk of ≥28°C WBGT",
+    detail: "MetLife Stadium hosts the World Cup Final on July 19 — an open-air stadium in peak summer. The average 3pm temperature on July 19 over the past 30 years in East Rutherford is 83°F (28°C) with a RealFeel of 89°F. Dr Friederike Otto described the final as facing a 'non-insignificant risk' of cancellation-level heat. East Rutherford was classified by FIFPRO as 'high risk' for heat-related injury.",
+    lat: 40.814, lng: -74.074
+  },
+  {
+    name: "Atlanta", country: "USA", risk: "managed",
+    riskLabel: "Managed (AC)", bar: 35,
+    cooling: true, matches: 6,
+    wbgt: "Controlled — indoor climate",
+    detail: "Mercedes-Benz Stadium has a retractable roof and full air conditioning. Atlanta has experienced the smallest climate-change-attributed WBGT increase among all host cities. In-stadium conditions are expected to remain well within safe limits. However, the outdoor heat surrounding the venue is still significant in July.",
+    lat: 33.756, lng: -84.401
+  },
+  {
+    name: "Boston", country: "USA", risk: "elevated",
+    riskLabel: "Elevated", bar: 55,
+    cooling: false, matches: 5,
+    wbgt: "Moderate–elevated risk",
+    detail: "Gillette Stadium is open-air. Boston's summers are milder than southern US cities, but climate change has raised average WBGT at this venue. Afternoon matches in July carry elevated risk, particularly for fans in uncovered seating sections.",
+    lat: 42.091, lng: -71.264
+  },
+  {
+    name: "Los Angeles", country: "USA", risk: "elevated",
+    riskLabel: "Elevated", bar: 60,
+    cooling: false, matches: 7,
+    wbgt: "Elevated risk — translucent roof, no AC",
+    detail: "SoFi Stadium has a translucent roof that provides shade but no active cooling. LA's dry summer heat can push ambient temperatures high, but lower humidity than Gulf cities moderates WBGT readings. Still flagged as a venue requiring careful heat management for multiple matches.",
+    lat: 33.953, lng: -118.339
+  },
+  {
+    name: "San Francisco Bay Area", country: "USA", risk: "elevated",
+    riskLabel: "Lower–Elevated", bar: 45,
+    cooling: false, matches: 5,
+    wbgt: "Lower risk — bay cooling effect",
+    detail: "Levi's Stadium benefits from Bay Area marine layer and coastal cooling, keeping temperatures more moderate. Still a summer venue, and climate change has contributed to more frequent heat events in the Bay Area. Afternoon heat without bay breeze can elevate WBGT.",
+    lat: 37.403, lng: -121.970
+  },
+  {
+    name: "Seattle", country: "USA", risk: "elevated",
+    riskLabel: "Elevated — Fastest Warming", bar: 58,
+    cooling: false, matches: 5,
+    wbgt: "Elevated — largest climate-change increase of any US city",
+    detail: "Lumen Field is open-air. Seattle and Vancouver recorded the largest climate-change-attributed WBGT increases of all 16 host cities — a counterintuitive finding that reflects how northern Pacific cities have warmed disproportionately. While absolute temperatures remain lower than southern venues, the rate of change is the most pronounced.",
+    lat: 47.596, lng: -122.332
+  },
+  {
+    name: "Vancouver", country: "Canada", risk: "managed",
+    riskLabel: "Managed (AC)", bar: 40,
+    cooling: true, matches: 5,
+    wbgt: "Managed — largest climate increase, but AC",
+    detail: "BC Place Stadium has a retractable roof and air conditioning, which controls in-stadium conditions. Like Seattle, Vancouver has seen the largest climate-change-attributed WBGT increases of any host city — the direction of change is significant even if the baseline is cooler. The AC manages in-stadium risk.",
+    lat: 49.278, lng: -123.112
+  },
+  {
+    name: "Toronto", country: "Canada", risk: "moderate",
+    riskLabel: "Moderate", bar: 63,
+    cooling: false, matches: 6,
+    wbgt: "Moderate risk — humid summer",
+    detail: "BMO Field is open-air. Toronto summers are warm and humid, with WBGT rising meaningfully during afternoon matches. The combination of temperature and humidity places Toronto in a moderate risk category — not the most dangerous, but requiring careful hydration planning for fans.",
+    lat: 43.633, lng: -79.419
+  },
+  {
+    name: "Mexico City", country: "Mexico", risk: "elevated",
+    riskLabel: "Elevated — Opening Match", bar: 62,
+    cooling: false, matches: 6,
+    wbgt: "Elevated — altitude + heat combination",
+    detail: "Estadio Azteca hosts the opening match (Mexico vs. South Africa) and sits at 2,240m altitude. High altitude reduces oxygen availability and increases physiological stress during exertion, compounding heat risk for non-adapted players. The combination of altitude and heat represents a unique physiological challenge not captured by WBGT alone.",
+    lat: 19.303, lng: -99.151
+  },
+  {
+    name: "Guadalajara", country: "Mexico", risk: "moderate",
+    riskLabel: "Moderate", bar: 65,
+    cooling: false, matches: 5,
+    wbgt: "Moderate risk",
+    detail: "Estadio Akron is open-air at moderate altitude. Guadalajara's tropical highland climate makes it warm but less humid than coastal venues. Matches in June and early July carry moderate heat risk, with afternoon kick-offs presenting the highest WBGT readings.",
+    lat: 20.686, lng: -103.463
+  },
+  {
+    name: "Monterrey", country: "Mexico", risk: "critical",
+    riskLabel: "Critical", bar: 94,
+    cooling: false, matches: 6,
+    wbgt: "Extreme risk — wet-bulb can exceed 32°C afternoons",
+    detail: "Estadio BBVA is open-air and Monterrey is among the hottest host cities, with wet-bulb globe temperatures routinely exceeding 30°C on summer afternoons. Studies have flagged Monterrey alongside Dallas and Houston as facing the most extreme heat conditions. Afternoon WBGT here has potential to reach FIFA's own 32°C postponement limit.",
+    lat: 25.670, lng: -100.244
+  }
+];
+
+/* ----------------------------------------------------------
+   RENDER CITY CARDS
+   ---------------------------------------------------------- */
+const grid = document.getElementById('citiesGrid');
+cities.forEach((c, i) => {
+  const card = document.createElement('div');
+  card.className = `wc-city-card risk-${c.risk}`;
+  card.innerHTML = `
+    <div class="wc-city-top">
+      <div>
+        <div class="wc-city-name">${c.name}</div>
+        <div class="wc-city-country">${c.country}</div>
+      </div>
+      <span class="wc-risk-badge">${c.riskLabel}</span>
+    </div>
+    <div class="wc-city-meta">
+      <span class="wc-city-tag">${c.matches} matches</span>
+      ${c.cooling ? '<span class="wc-city-tag cooling">AC Stadium</span>' : '<span class="wc-city-tag">Open Air</span>'}
+    </div>
+    <div class="wc-city-bar-wrap">
+      <div class="wc-city-bar" style="width:0%" data-width="${c.bar}%"></div>
+    </div>
+    <div class="wc-city-detail">
+      <strong style="font-size:0.8rem;color:#374151;">WBGT Assessment:</strong> ${c.wbgt}<br><br>
+      ${c.detail}
+    </div>
+  `;
+  card.addEventListener('click', () => {
+    const wasOpen = card.classList.contains('open');
+    document.querySelectorAll('.wc-city-card').forEach(el => el.classList.remove('open'));
+    if (!wasOpen) card.classList.add('open');
+  });
+  grid.appendChild(card);
+});
+
+// Animate bars on load
+setTimeout(() => {
+  document.querySelectorAll('.wc-city-bar').forEach(bar => {
+    bar.style.width = bar.dataset.width;
+  });
+}, 300);
+
+/* ----------------------------------------------------------
+   LEAFLET MAP
+   ---------------------------------------------------------- */
+const riskColors = {
+  critical: '#DC2626',
+  high: '#EA580C',
+  moderate: '#D97706',
+  elevated: '#CA8A04',
+  managed: '#16A34A'
+};
+
+const map = L.map('wcMap', { scrollWheelZoom: false }).setView([35, -95], 4);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+cities.forEach(c => {
+  const color = riskColors[c.risk];
+  const icon = L.divIcon({
+    html: `<div style="
+      width:20px;height:20px;border-radius:50%;
+      background:${color};border:3px solid #fff;
+      box-shadow:0 2px 8px rgba(0,0,0,0.35);
+    "></div>`,
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
+    className: ''
+  });
+  L.marker([c.lat, c.lng], { icon })
+    .addTo(map)
+    .bindPopup(`
+      <strong style="font-size:0.9rem">${c.name}, ${c.country}</strong><br>
+      <span style="font-size:0.78rem;color:#6B7280">Risk: ${c.riskLabel}</span><br>
+      <span style="font-size:0.78rem">${c.wbgt}</span><br>
+      <span style="font-size:0.78rem">${c.matches} matches · ${c.cooling ? 'AC Stadium' : 'Open Air'}</span>
+    `);
+});
+
+/* ----------------------------------------------------------
+   CHART.JS — 1994 vs 2026 COMPARISON
+   ---------------------------------------------------------- */
+const ctx = document.getElementById('wcChart').getContext('2d');
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['At ≥26°C WBGT\n(strain risk)', 'At ≥28°C WBGT\n(FIFPRO postpone level)', 'At ≥32°C WBGT\n(FIFA postpone level)'],
+    datasets: [
+      {
+        label: '1994 US World Cup (est.)',
+        data: [21, 3, 0],
+        backgroundColor: 'rgba(59,130,246,0.75)',
+        borderColor: '#2563EB',
+        borderWidth: 2,
+        borderRadius: 6
+      },
+      {
+        label: '2026 World Cup',
+        data: [26, 5, 1],
+        backgroundColor: 'rgba(220,38,38,0.8)',
+        borderColor: '#B91C1C',
+        borderWidth: 2,
+        borderRadius: 6
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: { position: 'top', labels: { font: { size: 12 } } },
+      tooltip: {
+        callbacks: {
+          label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y} matches`
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        title: { display: true, text: 'Number of Matches', font: { size: 11 } },
+        ticks: { stepSize: 5 }
+      },
+      x: {
+        ticks: { font: { size: 10 }, maxRotation: 0 }
+      }
+    }
+  }
+});
+</script>
+
+</body>
+</html>
