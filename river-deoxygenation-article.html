@@ -1,0 +1,1592 @@
+<style>
+/* ============================================================
+   KAX — River Deoxygenation Article Styles
+   Prefix: kax-
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap');
+
+/* Base Reset */
+.kax-wrap *,
+.kax-wrap *::before,
+.kax-wrap *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.kax-wrap {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.75;
+  color: #e2e8f0;
+  background: #0f172a;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   MAGAZINE ASYMMETRIC HEADER
+   ============================================================ */
+.kax-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 520px;
+}
+
+.kax-header-title-card {
+  background: #0f172a;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.kax-header-title-card::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.kax-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(249, 115, 22, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.4);
+  color: #fb923c;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 3px;
+  margin-bottom: 1.2rem;
+  width: fit-content;
+}
+
+.kax-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f97316;
+  animation: kax-pulse 2s ease-in-out infinite;
+}
+
+@keyframes kax-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.kax-header h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #f8fafc;
+  margin-bottom: 1rem;
+}
+
+.kax-header h1 .kax-highlight {
+  color: #38bdf8;
+}
+
+.kax-subheading {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.kax-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: auto;
+}
+
+.kax-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.kax-meta-sep {
+  color: #334155;
+}
+
+.kax-header-image-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.kax-header-image-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.kax-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(12, 74, 110, 0.35) 0%, transparent 60%);
+}
+
+.kax-caption-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(8, 47, 73, 0.92);
+  backdrop-filter: blur(6px);
+  padding: 10px 16px;
+}
+
+.kax-caption-text {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  line-height: 1.45;
+  font-style: italic;
+}
+
+.kax-caption-source {
+  font-size: 0.65rem;
+  color: #475569;
+  margin-top: 2px;
+}
+
+/* ============================================================
+   ARTICLE LAYOUT
+   ============================================================ */
+.kax-article-body {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.kax-section {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid rgba(30, 58, 138, 0.2);
+}
+
+.kax-section:last-child {
+  border-bottom: none;
+}
+
+.kax-section h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 1.25rem;
+  padding-left: 1rem;
+  border-left: 4px solid #0ea5e9;
+  line-height: 1.3;
+}
+
+.kax-section h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin: 1.5rem 0 0.5rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.kax-section p {
+  color: #cbd5e1;
+  margin-bottom: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.kax-section p:last-child {
+  margin-bottom: 0;
+}
+
+.kax-section a {
+  color: #38bdf8;
+  text-decoration: underline;
+  text-decoration-color: rgba(56, 189, 248, 0.4);
+  text-underline-offset: 3px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+
+.kax-section a:hover {
+  color: #7dd3fc;
+  text-decoration-color: rgba(125, 211, 252, 0.7);
+}
+
+/* ============================================================
+   STAT COUNTER CARDS
+   ============================================================ */
+.kax-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 2.5rem 0;
+}
+
+.kax-stat-card {
+  background: linear-gradient(135deg, #082f49 0%, #0c4a6e 100%);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  border-radius: 12px;
+  padding: 1.5rem 1.25rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.kax-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(14, 165, 233, 0.18);
+}
+
+.kax-stat-card::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.kax-stat-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.kax-stat-number {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #38bdf8;
+  line-height: 1;
+  display: block;
+  transition: color 0.3s;
+}
+
+.kax-stat-card.kax-danger .kax-stat-number {
+  color: #f97316;
+}
+
+.kax-stat-label {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 0.4rem;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   PULL QUOTE
+   ============================================================ */
+.kax-pull-quote {
+  background: linear-gradient(135deg, #082f49 0%, #0c4a6e 60%, #082f49 100%);
+  border-left: 5px solid #0ea5e9;
+  border-radius: 0 12px 12px 0;
+  padding: 2rem 2rem 2rem 2.2rem;
+  margin: 2.5rem 0;
+  position: relative;
+}
+
+.kax-pull-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 6rem;
+  color: rgba(14, 165, 233, 0.2);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.kax-pull-quote p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 700;
+  font-style: italic;
+  color: #e2e8f0;
+  line-height: 1.6;
+  margin-bottom: 0.75rem !important;
+  position: relative;
+  z-index: 1;
+}
+
+.kax-pull-quote cite {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-style: normal;
+  font-weight: 500;
+  display: block;
+}
+
+/* ============================================================
+   OXYGEN SLIDER
+   ============================================================ */
+.kax-slider-module {
+  background: #082f49;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2.5rem 0;
+}
+
+.kax-slider-module h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 0.4rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.kax-slider-intro {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.kax-slider-track-wrap {
+  margin-bottom: 1.5rem;
+}
+
+.kax-slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.kax-do-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #dc2626 0%, #f97316 25%, #eab308 50%, #22c55e 70%, #0ea5e9 100%);
+  outline: none;
+  cursor: pointer;
+}
+
+.kax-do-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f8fafc;
+  border: 3px solid #0ea5e9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  cursor: pointer;
+  transition: border-color 0.3s, transform 0.2s;
+}
+
+.kax-do-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.kax-do-slider::-moz-range-thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f8fafc;
+  border: 3px solid #0ea5e9;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+.kax-slider-readout {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.kax-do-value-badge {
+  font-size: 2.2rem;
+  font-weight: 900;
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #38bdf8;
+  min-width: 100px;
+  line-height: 1;
+  transition: color 0.4s;
+}
+
+.kax-do-unit {
+  font-size: 0.78rem;
+  color: #475569;
+}
+
+.kax-do-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.4s, color 0.4s;
+}
+
+.kax-do-status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.kax-slider-result-card {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 10px;
+  padding: 1.25rem;
+  transition: border-color 0.4s;
+}
+
+.kax-slider-result-card .kax-result-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 0.4rem;
+}
+
+.kax-slider-result-card .kax-result-desc {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  line-height: 1.55;
+  margin-bottom: 0.6rem !important;
+}
+
+.kax-slider-result-card .kax-result-species {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* ============================================================
+   MAP MODULE
+   ============================================================ */
+.kax-map-module {
+  margin: 2.5rem 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.kax-map-header {
+  background: #082f49;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.kax-map-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.kax-map-subtitle {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.kax-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.kax-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.68rem;
+  color: #94a3b8;
+}
+
+.kax-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+#kax-river-map {
+  height: 380px;
+  width: 100%;
+  background: #0c1a2e;
+}
+
+/* ============================================================
+   TIMELINE
+   ============================================================ */
+.kax-timeline {
+  position: relative;
+  padding: 1.5rem 0;
+  margin: 2rem 0;
+}
+
+.kax-timeline::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, #0c4a6e 10%, #0ea5e9 50%, #0c4a6e 90%, transparent);
+}
+
+.kax-tl-item {
+  display: flex;
+  gap: 1.25rem;
+  padding: 0 0 2.2rem 0;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+.kax-tl-item.kax-tl-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.kax-tl-node {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #0c4a6e;
+  border: 2px solid #0ea5e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #38bdf8;
+  text-align: center;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+
+.kax-tl-node.kax-tl-critical {
+  background: rgba(220, 38, 38, 0.2);
+  border-color: #dc2626;
+  color: #fca5a5;
+}
+
+.kax-tl-node.kax-tl-warn {
+  background: rgba(249, 115, 22, 0.15);
+  border-color: #f97316;
+  color: #fdba74;
+}
+
+.kax-tl-node.kax-tl-key {
+  background: rgba(14, 165, 233, 0.2);
+  border-color: #0ea5e9;
+  color: #7dd3fc;
+}
+
+.kax-tl-content {
+  padding-top: 8px;
+  flex: 1;
+}
+
+.kax-tl-year {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #475569;
+  margin-bottom: 2px;
+}
+
+.kax-tl-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 0.35rem;
+}
+
+.kax-tl-body {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.55;
+}
+
+/* ============================================================
+   WARMING FEEDBACK LOOP DIAGRAM
+   ============================================================ */
+.kax-feedback-box {
+  background: linear-gradient(135deg, #0f172a 0%, #082f49 100%);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2.5rem 0;
+  text-align: center;
+}
+
+.kax-feedback-box h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fca5a5;
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 1.5rem;
+}
+
+.kax-feedback-loop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.kax-feedback-node {
+  background: rgba(220, 38, 38, 0.12);
+  border: 1px solid rgba(220, 38, 38, 0.35);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fca5a5;
+  min-width: 120px;
+}
+
+.kax-feedback-arrow {
+  color: #dc2626;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.kax-feedback-note {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* ============================================================
+   ACTION CARDS
+   ============================================================ */
+.kax-action-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 2rem 0;
+}
+
+.kax-action-card {
+  background: linear-gradient(135deg, #082f49 0%, #0c4a6e 100%);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.kax-action-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 10px 28px rgba(14, 165, 233, 0.12);
+}
+
+.kax-action-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.kax-action-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 0.4rem;
+}
+
+.kax-action-desc {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   SOURCES FOOTER
+   ============================================================ */
+.kax-sources {
+  background: #082f49;
+  border-top: 1px solid rgba(14, 165, 233, 0.15);
+  padding: 2rem 1.5rem;
+  margin-top: 3rem;
+}
+
+.kax-sources h4 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #475569;
+  margin-bottom: 1rem;
+}
+
+.kax-sources ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.kax-sources li {
+  font-size: 0.72rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.kax-sources a {
+  color: #334155;
+  text-decoration: underline;
+  text-decoration-color: rgba(51, 65, 85, 0.5);
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+
+.kax-sources a:hover {
+  color: #64748b;
+}
+
+/* ============================================================
+   FULL-WIDTH WRAPPER SECTIONS
+   ============================================================ */
+.kax-full-bg {
+  background: #082f49;
+  padding: 3rem 0;
+}
+
+.kax-full-bg-dark {
+  background: #060f1e;
+  padding: 3rem 0;
+}
+
+/* ============================================================
+   RISK BAND
+   ============================================================ */
+.kax-risk-band {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 2.5rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(14, 165, 233, 0.15);
+}
+
+.kax-risk-cell {
+  padding: 1rem 0.8rem;
+  text-align: center;
+}
+
+.kax-risk-cell:nth-child(1) { background: rgba(220, 38, 38, 0.25); border-right: 1px solid rgba(220,38,38,0.2); }
+.kax-risk-cell:nth-child(2) { background: rgba(249, 115, 22, 0.2); border-right: 1px solid rgba(249,115,22,0.2); }
+.kax-risk-cell:nth-child(3) { background: rgba(234, 179, 8, 0.15); border-right: 1px solid rgba(234,179,8,0.2); }
+.kax-risk-cell:nth-child(4) { background: rgba(34, 197, 94, 0.1); }
+
+.kax-risk-cell-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.3rem;
+}
+
+.kax-risk-cell:nth-child(1) .kax-risk-cell-label { color: #fca5a5; }
+.kax-risk-cell:nth-child(2) .kax-risk-cell-label { color: #fdba74; }
+.kax-risk-cell:nth-child(3) .kax-risk-cell-label { color: #fde047; }
+.kax-risk-cell:nth-child(4) .kax-risk-cell-label { color: #86efac; }
+
+.kax-risk-cell-val {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #e2e8f0;
+  margin-bottom: 0.2rem;
+}
+
+.kax-risk-cell-desc {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .kax-header {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .kax-header-image-panel {
+    order: -1;
+    min-height: 240px;
+  }
+
+  .kax-header-title-card {
+    padding: 2rem 1.25rem;
+    order: 1;
+  }
+
+  .kax-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .kax-stat-card {
+    padding: 1rem;
+  }
+
+  .kax-action-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kax-risk-band {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .kax-risk-cell:nth-child(1) { border-bottom: 1px solid rgba(220,38,38,0.2); }
+  .kax-risk-cell:nth-child(2) { border-right: none; border-bottom: 1px solid rgba(249,115,22,0.2); }
+  .kax-risk-cell:nth-child(3) { border-right: 1px solid rgba(234,179,8,0.2); }
+
+  .kax-feedback-loop {
+    flex-direction: column;
+  }
+
+  .kax-feedback-arrow {
+    transform: rotate(90deg);
+  }
+
+  .kax-map-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #kax-river-map {
+    height: 300px;
+  }
+
+  .kax-article-body {
+    padding: 0 1rem;
+  }
+
+  .kax-pull-quote {
+    padding: 1.5rem 1.25rem 1.5rem 1.5rem;
+  }
+
+  .kax-slider-module {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .kax-slider-readout {
+    flex-wrap: wrap;
+  }
+
+  .kax-tl-item {
+    gap: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .kax-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .kax-stat-number {
+    font-size: 1.8rem;
+  }
+
+  .kax-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .kax-meta-sep {
+    display: none;
+  }
+}
+</style>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<!-- ============================================================
+     KAX ARTICLE WRAPPER
+     ============================================================ -->
+<div class="kax-wrap">
+
+  <!-- ── MAGAZINE ASYMMETRIC HEADER ── -->
+  <header class="kax-header">
+
+    <!-- Left: Title Card -->
+    <div class="kax-header-title-card">
+      <span class="kax-eyebrow">
+        <span class="kax-eyebrow-dot"></span>
+        Breaking Research &nbsp;·&nbsp; May 15, 2026
+      </span>
+
+      <h1>
+        <span class="kax-highlight">4 in 5</span> of the World's Rivers Are Running Out of Oxygen
+      </h1>
+
+      <p class="kax-subheading">
+        Forty years of satellite data. 21,439 rivers. One slow, invisible emergency unfolding beneath the surface.
+      </p>
+
+      <div class="kax-meta">
+        <span class="kax-meta-item">Published May 19, 2026</span>
+        <span class="kax-meta-sep">·</span>
+        <span class="kax-meta-item">Source: <em>Science Advances</em></span>
+        <span class="kax-meta-sep">·</span>
+        <span class="kax-meta-item">NIGLAS, Chinese Academy of Sciences</span>
+      </div>
+    </div>
+
+    <!-- Right: Feature Image -->
+    <div class="kax-header-image-panel">
+      <img
+        src="[FEATURE_IMAGE_URL]"
+        alt="Freshwater river ecosystem showing dissolved oxygen measurement — global river deoxygenation study 2026"
+        title="Global River Deoxygenation: Climate Change Driving Oxygen Loss in World's Rivers"
+        loading="eager"
+      />
+      <div class="kax-image-overlay"></div>
+      <div class="kax-caption-bar">
+        <p class="kax-caption-text">"One milligram per liter of oxygen separates a thriving river from a dying one — and across 21,439 rivers studied, that margin is shrinking decade by decade."</p>
+        <p class="kax-caption-source">Photo: U.S. Geological Survey / Public Domain</p>
+      </div>
+    </div>
+  </header>
+  <!-- /HEADER -->
+
+  <!-- ── INTRO + STAT CARDS ── -->
+  <section class="kax-full-bg">
+    <div class="kax-article-body">
+      <div class="kax-section" style="border-bottom:none; padding-top:0;">
+
+        <p>Four out of five rivers monitored across the globe are losing oxygen. A <a href="https://www.science.org/doi/10.1126/sciadv.aef3132" target="_blank" rel="noopener">study published May 15, 2026, in <em>Science Advances</em></a> tracked dissolved oxygen concentrations in 21,439 rivers over nearly four decades. Researchers from <a href="https://english.cas.cn/newsroom/cas-in-media/202605/t20260518_1159547.shtml" target="_blank" rel="noopener">NIGLAS at the Chinese Academy of Sciences</a> used Landsat satellite observations and artificial intelligence to map the slow but measurable decline.</p>
+
+        <p>Tropical rivers — including those across India and the Amazon basin — face the steepest losses. Dissolved oxygen is what keeps river ecosystems functioning. When it falls, fish die, water quality degrades, and freshwater food webs break apart. <a href="https://www.karmactive.com/global-wildlife-decline-multiple-threats-study-2026/" target="_blank" rel="noopener">Freshwater vertebrate populations have already dropped 85% since 1970</a> — the steepest collapse of any ecosystem type on Earth.</p>
+
+        <!-- ANIMATED STAT COUNTER CARDS -->
+        <div class="kax-stats-grid" id="kax-stats-grid">
+          <div class="kax-stat-card">
+            <span class="kax-stat-icon">🌊</span>
+            <span class="kax-stat-number" data-target="78.8" data-suffix="%" data-decimals="1" id="kax-stat-1">0%</span>
+            <p class="kax-stat-label">of 21,439 rivers<br>losing dissolved oxygen</p>
+          </div>
+          <div class="kax-stat-card kax-danger">
+            <span class="kax-stat-icon">📉</span>
+            <span class="kax-stat-number" data-target="2.1" data-suffix="%" data-decimals="1" id="kax-stat-2">0%</span>
+            <p class="kax-stat-label">average oxygen drop<br>since 1985</p>
+          </div>
+          <div class="kax-stat-card">
+            <span class="kax-stat-icon">🌡️</span>
+            <span class="kax-stat-number" data-target="60" data-suffix="%" data-decimals="0" id="kax-stat-3">0%</span>
+            <p class="kax-stat-label">of changes driven<br>by rising temperatures</p>
+          </div>
+          <div class="kax-stat-card kax-danger">
+            <span class="kax-stat-icon">🔮</span>
+            <span class="kax-stat-number" data-target="4" data-suffix="%" data-decimals="0" id="kax-stat-4">0%</span>
+            <p class="kax-stat-label">additional oxygen loss<br>projected by 2100</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- /INTRO -->
+
+  <!-- ── HOW IT WORKS ── -->
+  <div class="kax-article-body">
+    <section class="kax-section">
+      <h2>Why Rivers Are Losing Oxygen</h2>
+
+      <p>Warm water holds less dissolved oxygen. As global temperatures rise, rivers warm, and warming rivers shed oxygen. The NIGLAS study found that reduced oxygen solubility caused by rising temperatures accounts for <strong>over 60% of the observed deoxygenation</strong>. The rate of decline sits at –0.045 mg/L per decade — quiet enough to miss year-to-year, devastating enough to reshape ecosystems over a generation.</p>
+
+      <p>What fewer reports discuss is the compounding role of nutrient pollution. Agricultural runoff — rich in nitrogen and phosphorus from fertilisers — fuels algal blooms. When that algae dies and decomposes, bacteria consume the remaining oxygen. The result: rivers under both agricultural and thermal stress lose oxygen faster than either factor alone would predict.</p>
+
+      <p>The danger thresholds are well established. The <a href="https://www.epa.gov/caddis/dissolved-oxygen" target="_blank" rel="noopener">EPA's minimum dissolved oxygen standard for aquatic life</a> is 5 mg/L. Fish begin to show signs of stress below that level. Below 3 mg/L, sustained exposure kills fish. Below 1 mg/L, a river becomes hypoxic — functionally dead for most vertebrate life. Cold-water species like trout and salmon are the first displaced, even before rivers cross those thresholds.</p>
+
+      <!-- OXYGEN LEVEL SLIDER -->
+      <div class="kax-slider-module">
+        <h3>What Happens at Each Oxygen Level?</h3>
+        <p class="kax-slider-intro">Drag the slider to explore dissolved oxygen (DO) levels and see what they mean for river ecosystems.</p>
+
+        <div class="kax-slider-track-wrap">
+          <div class="kax-slider-labels">
+            <span>0 mg/L — Dead Zone</span>
+            <span>12 mg/L — Pristine</span>
+          </div>
+          <input type="range" class="kax-do-slider" id="kax-do-slider" min="0" max="12" step="0.1" value="7" />
+        </div>
+
+        <div class="kax-slider-readout">
+          <div>
+            <span class="kax-do-value-badge" id="kax-do-value">7.0</span>
+            <span class="kax-do-unit">mg/L dissolved oxygen</span>
+          </div>
+          <span class="kax-do-status-badge" id="kax-do-status">
+            <span class="kax-do-status-dot" id="kax-do-status-dot"></span>
+            <span id="kax-do-status-text">Healthy</span>
+          </span>
+        </div>
+
+        <div class="kax-slider-result-card" id="kax-slider-result">
+          <div class="kax-result-title">Ecosystem Status</div>
+          <p class="kax-result-desc" id="kax-result-desc">This level supports a full, diverse freshwater community including game fish, amphibians, and invertebrates. Rivers at this level are biologically rich.</p>
+          <p class="kax-result-species" id="kax-result-species">Species present: Trout, salmon, bass, mayfly, freshwater mussels, otters</p>
+        </div>
+      </div>
+      <!-- /SLIDER -->
+
+      <!-- FEEDBACK LOOP -->
+      <div class="kax-feedback-box">
+        <h3>The Warming–Deoxygenation Feedback Loop</h3>
+        <div class="kax-feedback-loop">
+          <div class="kax-feedback-node">🌡️ Rising Temperatures</div>
+          <span class="kax-feedback-arrow">→</span>
+          <div class="kax-feedback-node">💧 River Deoxygenation</div>
+          <span class="kax-feedback-arrow">→</span>
+          <div class="kax-feedback-node">💨 More Methane Released</div>
+          <span class="kax-feedback-arrow">→</span>
+          <div class="kax-feedback-node">🔄 Accelerated Warming</div>
+        </div>
+        <p class="kax-feedback-note">Hypoxic rivers produce significantly more methane — a greenhouse gas more potent than CO₂ over short timeframes — creating a self-reinforcing cycle.</p>
+      </div>
+
+      <p>There is another dimension rarely discussed: hypoxic rivers generate more methane — a greenhouse gas more potent than CO₂ over short timeframes. Warming drives deoxygenation. Deoxygenation increases methane output. Methane accelerates warming. This feedback loop is not yet fully quantified, but its direction is not in dispute.</p>
+
+      <p>The consequences for food systems are also real. <a href="https://www.karmactive.com/the-risks-of-eating-freshwater-fish-in-the-us-equivalent-to-a-month-of-contaminated-water-consumption/" target="_blank" rel="noopener">Freshwater fish in the US already carry contamination risks equivalent to a month of polluted water consumption</a> — and declining oxygen only compounds those risks as stressed ecosystems concentrate toxins and disrupt nutrient cycles.</p>
+    </section>
+  </div>
+  <!-- /HOW IT WORKS -->
+
+  <!-- ── EXPERT QUOTE ── -->
+  <div class="kax-article-body">
+    <div class="kax-pull-quote">
+      <p>"Deoxygenation is a very slow process. If we have a long period, the negative impact will attack the river ecosystems. The low level of oxygen can cause a series of ecological crises such as biodiversity decline, water quality degradation and maybe some fish will die."</p>
+      <cite>— Dr. Qi Guan, NIGLAS, Chinese Academy of Sciences</cite>
+    </div>
+  </div>
+
+  <!-- ── HISTORICAL CONTEXT + TIMELINE ── -->
+  <section class="kax-full-bg-dark">
+    <div class="kax-article-body">
+      <div class="kax-section" style="border-bottom:none;">
+        <h2>A Crisis With Deep Roots</h2>
+
+        <p>The Gulf of Mexico's <a href="https://www.epa.gov/ms-htf/hypoxia-101" target="_blank" rel="noopener">dead zone</a> — the largest area of oxygen-depleted coastal water in the western Atlantic — has existed in measurable form since 1972. The Chesapeake Bay has suffered <a href="https://oceanservice.noaa.gov/hazards/hypoxia/" target="_blank" rel="noopener">seasonal hypoxia</a> since at least the 1950s. The 2026 NIGLAS study reveals that the conditions feeding those dead zones are now spreading upstream, into rivers themselves.</p>
+
+        <p>This is not an isolated phenomenon. <a href="https://www.karmactive.com/wildlife-population-decline-compound-threats-2026-study/" target="_blank" rel="noopener">Multiple compound threats — habitat loss, pollution, and now deoxygenation — are converging on freshwater species simultaneously</a>. Each stressor makes the others worse. A river losing oxygen is also more likely to carry agricultural runoff, face warmer summers, and support fewer species capable of absorbing ecological shocks.</p>
+
+        <!-- ANIMATED TIMELINE -->
+        <div class="kax-timeline" id="kax-timeline">
+
+          <div class="kax-tl-item" data-delay="0">
+            <div class="kax-tl-node kax-tl-critical">1950s</div>
+            <div class="kax-tl-content">
+              <p class="kax-tl-year">1950s onward</p>
+              <p class="kax-tl-heading">Chesapeake Bay Seasonal Hypoxia Documented</p>
+              <p class="kax-tl-body">Scientists first record seasonal dead zones in the Chesapeake Bay — driven by agricultural runoff and nutrient loading from the surrounding watershed. One of the first systematic observations of human-linked freshwater hypoxia in the US.</p>
+            </div>
+          </div>
+
+          <div class="kax-tl-item" data-delay="150">
+            <div class="kax-tl-node kax-tl-critical">1972</div>
+            <div class="kax-tl-content">
+              <p class="kax-tl-year">1972</p>
+              <p class="kax-tl-heading">Gulf of Mexico Dead Zone Confirmed</p>
+              <p class="kax-tl-body">The Gulf of Mexico dead zone is formally documented — an area of near-zero dissolved oxygen at the mouth of the Mississippi River. It remains one of the most monitored hypoxic zones in the world, expanding and contracting with seasonal nutrient flows.</p>
+            </div>
+          </div>
+
+          <div class="kax-tl-item" data-delay="300">
+            <div class="kax-tl-node kax-tl-key">1985</div>
+            <div class="kax-tl-content">
+              <p class="kax-tl-year">1985</p>
+              <p class="kax-tl-heading">Landsat Satellite Monitoring Baseline Begins</p>
+              <p class="kax-tl-body">The NIGLAS study's four-decade analysis begins here. Landsat satellite data starts providing consistent, global river observations — the same data later used with AI and machine learning to detect dissolved oxygen trends at a scale no field measurement program could achieve alone.</p>
+            </div>
+          </div>
+
+          <div class="kax-tl-item" data-delay="450">
+            <div class="kax-tl-node kax-tl-warn">2024</div>
+            <div class="kax-tl-content">
+              <p class="kax-tl-year">2024</p>
+              <p class="kax-tl-heading">WWF Living Planet Report: 85% Freshwater Vertebrate Decline</p>
+              <p class="kax-tl-body">The WWF Living Planet Report 2024 quantifies what scientists had long suspected: freshwater vertebrate populations have collapsed by 85% since 1970 — the steepest decline of any ecosystem type. River deoxygenation is now recognized as one of several compounding causes.</p>
+            </div>
+          </div>
+
+          <div class="kax-tl-item" data-delay="600">
+            <div class="kax-tl-node kax-tl-key">2026</div>
+            <div class="kax-tl-content">
+              <p class="kax-tl-year">May 15, 2026</p>
+              <p class="kax-tl-heading">NIGLAS Study Published in <em>Science Advances</em></p>
+              <p class="kax-tl-body">Prof. Kun Shi and Dr. Qi Guan publish the largest-ever analysis of global river dissolved oxygen — 21,439 rivers, 38 years of Landsat data, AI-assisted analysis. Finding: 78.8% of rivers are losing oxygen at –0.045 mg/L per decade, with tropical rivers hardest hit and an additional 4% projected loss by 2100.</p>
+            </div>
+          </div>
+
+        </div>
+        <!-- /TIMELINE -->
+
+      </div>
+    </div>
+  </section>
+  <!-- /HISTORICAL CONTEXT -->
+
+  <!-- ── GLOBAL MAP ── -->
+  <div class="kax-article-body">
+    <section class="kax-section">
+      <h2>Where the Risk Is Highest</h2>
+
+      <p>The study identifies a clear geographic pattern. Tropical rivers between 20°S and 20°N are most affected — this band encompasses the Amazon basin, Central Africa, Southeast Asia, and India. Rivers in the Eastern United States and across the Indian subcontinent face the highest risk of crossing into hypoxic territory. Colder, higher-altitude rivers in Scandinavia and parts of Canada show the lowest current risk, though warming is already beginning to affect them.</p>
+
+      <!-- LEAFLET MAP -->
+      <div class="kax-map-module">
+        <div class="kax-map-header">
+          <div>
+            <p class="kax-map-title">Global River Deoxygenation Risk Map</p>
+            <p class="kax-map-subtitle">Based on NIGLAS study findings — 21,439 rivers, 1985–2023</p>
+          </div>
+          <div class="kax-map-legend">
+            <div class="kax-legend-item"><span class="kax-legend-dot" style="background:#dc2626;"></span>Critical (Tropical)</div>
+            <div class="kax-legend-item"><span class="kax-legend-dot" style="background:#f97316;"></span>High Risk</div>
+            <div class="kax-legend-item"><span class="kax-legend-dot" style="background:#eab308;"></span>Moderate</div>
+            <div class="kax-legend-item"><span class="kax-legend-dot" style="background:#22c55e;"></span>Lower Risk</div>
+          </div>
+        </div>
+        <div id="kax-river-map"></div>
+      </div>
+      <!-- /MAP -->
+
+      <p>For India specifically, research projects a 2–12% reduction in dissolved oxygen saturation by 2071–2100 under climate change scenarios. India's rivers supply water to over a billion people and support fisheries that underpin food security for hundreds of millions. <a href="https://www.karmactive.com/nasa-satellite-images-reveal-the-extent-of-indias-air-pollution-crisis/" target="_blank" rel="noopener">India already faces compounding environmental pressures across its air, water, and land systems</a> — river deoxygenation adds a slower-moving but equally serious threat to that burden.</p>
+
+      <!-- RISK BAND -->
+      <div class="kax-risk-band">
+        <div class="kax-risk-cell">
+          <p class="kax-risk-cell-label">Critical</p>
+          <p class="kax-risk-cell-val">Tropics</p>
+          <p class="kax-risk-cell-desc">20°S–20°N band, Amazon, Congo, SE Asia</p>
+        </div>
+        <div class="kax-risk-cell">
+          <p class="kax-risk-cell-label">High Risk</p>
+          <p class="kax-risk-cell-val">India / E. US</p>
+          <p class="kax-risk-cell-desc">Agricultural + thermal compound stress</p>
+        </div>
+        <div class="kax-risk-cell">
+          <p class="kax-risk-cell-label">Moderate</p>
+          <p class="kax-risk-cell-val">Europe / China</p>
+          <p class="kax-risk-cell-desc">Warming accelerating, some cold-water refuges</p>
+        </div>
+        <div class="kax-risk-cell">
+          <p class="kax-risk-cell-label">Lower Risk</p>
+          <p class="kax-risk-cell-val">Far North</p>
+          <p class="kax-risk-cell-desc">Canada, Scandinavia — cooling buffers still active</p>
+        </div>
+      </div>
+
+    </section>
+  </div>
+  <!-- /MAP SECTION -->
+
+  <!-- ── PROJECTIONS ── -->
+  <section class="kax-full-bg">
+    <div class="kax-article-body">
+      <div class="kax-section" style="border-bottom:none;">
+        <h2>What the Numbers Look Like by 2100</h2>
+
+        <p>If current trends hold, the world's rivers will lose an additional 4% of their oxygen by 2100 on average — up to 5% in the most vulnerable systems. These are not catastrophic numbers in isolation. But at the margins of life support, small changes carry large consequences.</p>
+
+        <p>The EPA's threshold for aquatic life — 5 mg/L — is not a comfortable buffer. Many rivers in agricultural regions are already running at 6–7 mg/L. A 4% reduction from already-stressed baselines can push those systems below viable thresholds for entire species communities. Trout and salmon — cold-water specialists with narrow oxygen tolerances — will be the first displaced. Hardier, pollution-tolerant species will follow over longer timescales.</p>
+
+        <p>The freshwater vertebrate decline already stands at 85% since 1970. Deoxygenation adds another mechanism to the forces already documented as drivers of that decline — on top of habitat destruction, invasive species, and pollution. It is not a new crisis but a new dimension of an existing one.</p>
+
+      </div>
+    </div>
+  </section>
+  <!-- /PROJECTIONS -->
+
+  <!-- ── WHAT YOU CAN DO ── -->
+  <div class="kax-article-body">
+    <section class="kax-section">
+      <h2>What Can Actually Be Done</h2>
+
+      <p>Reducing fertiliser runoff from gardens and lawns, supporting river restoration projects, choosing native plants, and reducing personal carbon footprints all contribute. At a policy level, the science is explicit: combined water quality and climate strategies — not separate ones — are what the evidence calls for. Treating river health and climate change as independent problems misses the compound nature of the threat.</p>
+
+      <div class="kax-action-grid">
+        <div class="kax-action-card">
+          <span class="kax-action-icon">🌱</span>
+          <p class="kax-action-title">Reduce Garden Runoff</p>
+          <p class="kax-action-desc">Switch to slow-release or organic fertilisers. Excess nitrogen and phosphorus from lawns and gardens flows directly into waterways, feeding the algal blooms that strip oxygen.</p>
+        </div>
+        <div class="kax-action-card">
+          <span class="kax-action-icon">🌿</span>
+          <p class="kax-action-title">Plant River Buffers</p>
+          <p class="kax-action-desc">Native vegetation along riverbanks filters runoff, stabilises banks, shades the water (keeping it cooler and oxygen-richer), and provides habitat. It is one of the most effective low-cost interventions.</p>
+        </div>
+        <div class="kax-action-card">
+          <span class="kax-action-icon">🗳️</span>
+          <p class="kax-action-title">Support Integrated Policy</p>
+          <p class="kax-action-desc">Advocate for water quality regulations that account for climate projections — not just current conditions. The 2026 study makes the case for unified climate-water policy frameworks at every governance level.</p>
+        </div>
+        <div class="kax-action-card">
+          <span class="kax-action-icon">🔬</span>
+          <p class="kax-action-title">Monitor Local Waterways</p>
+          <p class="kax-action-desc">Citizen science programs that track dissolved oxygen, temperature, and species presence build the local data that feeds into global analyses. Community monitoring is not symbolic — it is data collection.</p>
+        </div>
+        <div class="kax-action-card">
+          <span class="kax-action-icon">🌡️</span>
+          <p class="kax-action-title">Reduce Your Carbon Footprint</p>
+          <p class="kax-action-desc">Temperature drives more than 60% of the observed deoxygenation. Every fraction of a degree of avoided warming has a measurable effect on how much oxygen rivers can hold.</p>
+        </div>
+        <div class="kax-action-card">
+          <span class="kax-action-icon">🐟</span>
+          <p class="kax-action-title">Choose Sustainable Seafood</p>
+          <p class="kax-action-desc">Supporting sustainable fisheries and reducing demand for farmed fish that require intensive feed cycles reduces the agricultural runoff pressure on freshwater systems upstream.</p>
+        </div>
+      </div>
+
+    </section>
+  </div>
+  <!-- /ACTION -->
+
+  <!-- ── CONCLUSION ── -->
+  <section class="kax-full-bg-dark">
+    <div class="kax-article-body">
+      <div class="kax-section" style="border-bottom:none;">
+        <h2>In Summary</h2>
+
+        <p>The study, conducted by researchers at the Nanjing Institute of Geography and Limnology and published in <em>Science Advances</em> on May 15, 2026, covered dissolved oxygen trends across 21,439 rivers globally from 1985 to 2023. The analysis identified sustained deoxygenation in 78.8% of those rivers, with warming-driven changes in oxygen solubility identified as the leading cause, accounting for over 60% of the observed change.</p>
+
+        <p>Tropical rivers between 20°S and 20°N were identified as the most affected zone. A projected additional 4% oxygen loss by 2100 was outlined under current trajectory conditions, with up to 5% in the most vulnerable systems. The study also noted that rivers in the Eastern United States and India were among those most at risk of reaching hypoxic thresholds — with Indian rivers facing a projected 2–12% reduction in oxygen saturation by 2071–2100.</p>
+
+        <p>The data covers 38 years and 21,439 waterways. The trend line across those rivers points in one direction. What happens from here depends on the choices made in the decades the analysis does not yet cover.</p>
+
+      </div>
+    </div>
+  </section>
+  <!-- /CONCLUSION -->
+
+  <!-- ── SOURCES ── -->
+  <footer class="kax-sources">
+    <div class="kax-article-body" style="max-width:820px; margin:0 auto;">
+      <h4>Sources &amp; Further Reading</h4>
+      <ul>
+        <li><a href="https://www.science.org/doi/10.1126/sciadv.aef3132" target="_blank" rel="noopener">Shi, K. &amp; Guan, Q. et al. (2026). Global river deoxygenation trends. <em>Science Advances</em>. DOI: 10.1126/sciadv.aef3132</a></li>
+        <li><a href="https://english.cas.cn/newsroom/cas-in-media/202605/t20260518_1159547.shtml" target="_blank" rel="noopener">Chinese Academy of Sciences — CAS in Media coverage of the NIGLAS study (May 2026)</a></li>
+        <li><a href="https://www.epa.gov/caddis/dissolved-oxygen" target="_blank" rel="noopener">U.S. EPA — Dissolved Oxygen and Aquatic Life Standards</a></li>
+        <li><a href="https://www.epa.gov/ms-htf/hypoxia-101" target="_blank" rel="noopener">U.S. EPA — Hypoxia 101: What Is Hypoxia and Why Does It Matter?</a></li>
+        <li><a href="https://oceanservice.noaa.gov/hazards/hypoxia/" target="_blank" rel="noopener">NOAA Ocean Service — Hypoxia and Dead Zones</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</div>
+<!-- /KAX WRAP -->
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ============================================================
+     STAT COUNTER ANIMATION
+     ============================================================ */
+  function kaxAnimateCounter(el) {
+    var target = parseFloat(el.dataset.target);
+    var suffix = el.dataset.suffix || '';
+    var decimals = parseInt(el.dataset.decimals) || 0;
+    var duration = 1800;
+    var start = null;
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      var progress = Math.min((timestamp - start) / duration, 1);
+      // Ease-out cubic
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var current = eased * target;
+      el.textContent = current.toFixed(decimals) + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = target.toFixed(decimals) + suffix;
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  var statsObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var cards = entry.target.querySelectorAll('[data-target]');
+        cards.forEach(function (card, i) {
+          setTimeout(function () {
+            kaxAnimateCounter(card);
+          }, i * 200);
+        });
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  var statsGrid = document.getElementById('kax-stats-grid');
+  if (statsGrid) statsObserver.observe(statsGrid);
+
+  /* ============================================================
+     TIMELINE ANIMATION
+     ============================================================ */
+  var tlObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var delay = parseInt(entry.target.dataset.delay) || 0;
+        setTimeout(function () {
+          entry.target.classList.add('kax-tl-visible');
+        }, delay);
+        tlObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.25 });
+
+  document.querySelectorAll('.kax-tl-item').forEach(function (item) {
+    tlObserver.observe(item);
+  });
+
+  /* ============================================================
+     OXYGEN LEVEL SLIDER
+     ============================================================ */
+  var sliderData = [
+    {
+      max: 1,
+      status: 'Dead Zone',
+      color: '#dc2626',
+      bg: 'rgba(220,38,38,0.15)',
+      desc: 'This river is functionally dead for most aquatic life. Bacteria dominate. The water emits hydrogen sulfide. Methane production is high. Fish and invertebrates cannot survive here — not even briefly.',
+      species: 'Species present: Anaerobic bacteria only. All vertebrate life absent.'
+    },
+    {
+      max: 3,
+      status: 'Hypoxic',
+      color: '#f97316',
+      bg: 'rgba(249,115,22,0.15)',
+      desc: 'This is the hypoxic threshold. Fish experience acute stress and begin to die with sustained exposure. Invertebrates suffocate. River productivity collapses. Only the most stress-tolerant organisms survive.',
+      species: 'Species present: Pollution-tolerant worms, sludge worms. All fish species absent.'
+    },
+    {
+      max: 5,
+      status: 'Critically Low',
+      color: '#f97316',
+      bg: 'rgba(249,115,22,0.12)',
+      desc: 'Below the EPA minimum standard for aquatic life. Cold-water fish like trout and salmon are already gone. Warm-water fish face chronic stress. Reproductive failure begins before mortality. Biodiversity is sharply reduced.',
+      species: 'Species present: Carp, catfish, some hardy invertebrates. Trout and salmon absent.'
+    },
+    {
+      max: 6,
+      status: 'Stressed',
+      color: '#eab308',
+      bg: 'rgba(234,179,8,0.12)',
+      desc: 'At the lower edge of acceptable range. Sensitive species are displaced. Feeding behaviour in fish is disrupted. Reproduction is impaired. The river looks normal but is biologically compromised.',
+      species: 'Species present: Warm-water generalists. Cold-water specialists gone.'
+    },
+    {
+      max: 9,
+      status: 'Healthy',
+      color: '#22c55e',
+      bg: 'rgba(34,197,94,0.1)',
+      desc: 'This level supports a full, diverse freshwater community including game fish, amphibians, and invertebrates. Rivers at this level are biologically rich and resilient.',
+      species: 'Species present: Trout, salmon, bass, mayfly, freshwater mussels, otters'
+    },
+    {
+      max: 12,
+      status: 'Pristine',
+      color: '#0ea5e9',
+      bg: 'rgba(14,165,233,0.1)',
+      desc: 'Cold, fast-flowing, pristine water. The most oxygen-rich conditions support even the most demanding species. Typical of mountain streams and cold northern rivers far from human activity.',
+      species: 'Species present: Full biodiversity — native trout, salmon, crayfish, amphibians, all invertebrate orders'
+    }
+  ];
+
+  function kaxGetSliderLevel(val) {
+    for (var i = 0; i < sliderData.length; i++) {
+      if (val <= sliderData[i].max) return sliderData[i];
+    }
+    return sliderData[sliderData.length - 1];
+  }
+
+  var slider = document.getElementById('kax-do-slider');
+  var doValueEl = document.getElementById('kax-do-value');
+  var doStatusEl = document.getElementById('kax-do-status');
+  var doStatusTextEl = document.getElementById('kax-do-status-text');
+  var doStatusDotEl = document.getElementById('kax-do-status-dot');
+  var resultDescEl = document.getElementById('kax-result-desc');
+  var resultSpeciesEl = document.getElementById('kax-result-species');
+  var resultCardEl = document.getElementById('kax-slider-result');
+  var doValueBadgeEl = document.querySelector('.kax-do-value-badge');
+
+  function kaxUpdateSlider() {
+    var val = parseFloat(slider.value);
+    var level = kaxGetSliderLevel(val);
+
+    doValueEl.textContent = val.toFixed(1);
+    if (doValueBadgeEl) doValueBadgeEl.style.color = level.color;
+
+    doStatusEl.style.background = level.bg;
+    doStatusEl.style.color = level.color;
+    doStatusTextEl.textContent = level.status;
+    doStatusDotEl.style.background = level.color;
+
+    resultCardEl.style.borderColor = level.color.replace(')', ', 0.4)').replace('rgb', 'rgba');
+    resultDescEl.textContent = level.desc;
+    resultSpeciesEl.textContent = level.species;
+
+    // Update slider thumb color to match
+    slider.style.setProperty('--thumb-color', level.color);
+  }
+
+  if (slider) {
+    slider.addEventListener('input', kaxUpdateSlider);
+    kaxUpdateSlider();
+  }
+
+  /* ============================================================
+     LEAFLET MAP
+     ============================================================ */
+  var mapEl = document.getElementById('kax-river-map');
+  if (mapEl && typeof L !== 'undefined') {
+
+    var map = L.map('kax-river-map', {
+      center: [10, 20],
+      zoom: 2,
+      zoomControl: true,
+      scrollWheelZoom: false,
+      attributionControl: true
+    });
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    function kaxCircleMarker(latlng, color, radius, label, detail) {
+      return L.circleMarker(latlng, {
+        radius: radius,
+        fillColor: color,
+        color: color,
+        weight: 1.5,
+        opacity: 0.9,
+        fillOpacity: 0.55
+      }).bindPopup(
+        '<div style="background:#082f49;color:#e2e8f0;padding:10px 12px;border-radius:8px;font-family:Inter,sans-serif;min-width:180px;">' +
+        '<strong style="color:#f1f5f9;font-size:0.9rem;">' + label + '</strong>' +
+        '<br><span style="font-size:0.75rem;color:#94a3b8;">' + detail + '</span>' +
+        '</div>',
+        { className: 'kax-map-popup' }
+      );
+    }
+
+    // CRITICAL — Tropical Rivers (Red)
+    var criticalRivers = [
+      [[-3, -60], 'Amazon Basin, Brazil', 'Most affected tropical river system — severe deoxygenation trend'],
+      [[5, 20], 'Congo Basin, Central Africa', 'Critical tropical zone — 20°S–20°N band, highest risk tier'],
+      [[15, 80], 'Ganges-Brahmaputra, India', 'Projected 2–12% DO saturation loss by 2071–2100'],
+      [[13, 2], 'Niger Basin, West Africa', 'Tropical river system — critical deoxygenation zone'],
+      [[10, 105], 'Mekong River, SE Asia', 'Tropical zone — warming + agricultural compound stress'],
+      [[-8, 115], 'Java River Systems, Indonesia', 'High-density tropical agricultural runoff + warming'],
+      [[22, 92], 'Brahmaputra, Bangladesh', 'Extreme vulnerability — tropical + high nutrient loading'],
+    ];
+
+    criticalRivers.forEach(function (r) {
+      kaxCircleMarker(r[0], '#dc2626', 10, r[1], r[2]).addTo(map);
+    });
+
+    // HIGH RISK — India / Eastern US (Orange)
+    var highRiskRivers = [
+      [[37, -80], 'Eastern US Rivers', 'High risk of hypoxia — agricultural runoff + warming'],
+      [[38, -77], 'Chesapeake Bay Tributaries', 'Seasonal hypoxia documented since 1950s — worsening'],
+      [[30, -91], 'Mississippi River Delta', 'Gulf of Mexico dead zone source — documented since 1972'],
+      [[27, 78], 'Yamuna River, India', 'High nutrient load + thermal stress — hypoxia risk'],
+      [[23, 87], 'Hooghly River, India', 'Agricultural and industrial compound deoxygenation'],
+      [[19, 73], 'Ulhas River, India', 'Urban + agricultural stress — moderate–high risk tier'],
+      [[16, 74], 'Krishna River, India', 'Southern India river under compound climate stress'],
+      [[12, 76], 'Kaveri River, India', 'Warming + seasonal low flow driving oxygen decline'],
+    ];
+
+    highRiskRivers.forEach(function (r) {
+      kaxCircleMarker(r[0], '#f97316', 8, r[1], r[2]).addTo(map);
+    });
+
+    // MODERATE — Europe / East Asia (Yellow)
+    var moderateRivers = [
+      [[48, 2], 'Seine River, France', 'Moderate deoxygenation — summer warming stress growing'],
+      [[52, 13], 'Elbe River, Germany', 'Nutrient loading and warming — monitored deterioration'],
+      [[47, 19], 'Danube River, Europe', 'Agricultural runoff + warming across long river corridor'],
+      [[35, 114], 'Yellow River, China', 'High sedimentation + warming — oxygen stress growing'],
+      [[30, 120], 'Yangtze River, China', 'Seasonal hypoxic events increasing with warming'],
+      [[36, 138], 'Tone River, Japan', 'Urban catchment — moderate warming-driven stress'],
+      [[-33, 150], 'Hunter River, Australia', 'Southern hemisphere warming accelerating'],
+    ];
+
+    moderateRivers.forEach(function (r) {
+      kaxCircleMarker(r[0], '#eab308', 7, r[1], r[2]).addTo(map);
+    });
+
+    // LOWER RISK — Far North / Cold Regions (Green)
+    var lowerRiskRivers = [
+      [[64, 26], 'Finnish Lake Rivers', 'Cold climate buffer — lower risk, but warming accelerating'],
+      [[60, 11], 'Norwegian Fjord Rivers', 'Cold, fast-flowing — still oxygen-rich; monitoring shows early trends'],
+      [[55, -120], 'Peace River, Canada', 'Cold northern system — lower current risk tier'],
+      [[62, -114], 'Mackenzie Basin, Canada', 'Arctic-adjacent cold system — currently lower risk'],
+      [[-42, 171], 'Waimakariri River, NZ', 'Cold Southern Alps fed — lower risk, good baseline DO'],
+      [[68, 20], 'Torne River, Sweden-Finland', 'Sub-Arctic — cold-water refuge, monitoring required'],
+    ];
+
+    lowerRiskRivers.forEach(function (r) {
+      kaxCircleMarker(r[0], '#22c55e', 7, r[1], r[2]).addTo(map);
+    });
+
+  }
+  /* ============================================================ */
+
+})();
+</script>
