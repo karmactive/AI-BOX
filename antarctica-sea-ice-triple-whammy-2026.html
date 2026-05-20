@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta -->
+    <meta name="description" content="A May 2026 study published in Science Advances has identified the three-phase mechanism that collapsed Antarctic sea ice after 2015 — reaching a 2023 record low that scientists called a 1-in-3.5-million event.">
+    <meta name="keywords" content="Antarctic sea ice collapse 2026, triple whammy Antarctica, Southern Ocean warming, emperor penguin endangered, sea level rise Antarctica, Circumpolar Deep Water, Southern Ocean carbon sink">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <style>
+        /* =====================================================
+           ALL STYLES SCOPED UNDER .karm-art TO AVOID
+           AFFECTING ANY OTHER WORDPRESS ELEMENTS
+        ====================================================== */
+
+        .karm-art *,
+        .karm-art *::before,
+        .karm-art *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .karm-art {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #1a202c;
+            line-height: 1.7;
+            max-width: 940px;
+            margin: 0 auto;
+            padding: 0 1rem 2rem;
+        }
+
+        /* ---- HEADER: Magazine Split Layout ---- */
+        .karm-header {
+            display: grid;
+            grid-template-columns: 1.35fr 1fr;
+            min-height: 460px;
+            margin: 0 0 2.5rem;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+        }
+
+        .karm-header-img-side {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .karm-feature-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .karm-img-caption-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.8rem 1rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.72), transparent);
+            color: rgba(255,255,255,0.88);
+            font-size: 0.75rem;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .karm-header-text-side {
+            background: linear-gradient(160deg, #0a2240 0%, #0d1f38 55%, #071629 100%);
+            padding: 2.25rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .karm-tag {
+            display: inline-block;
+            padding: 0.3rem 0.85rem;
+            background: #1a8fce;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-radius: 4px;
+            margin-bottom: 1.1rem;
+            width: fit-content;
+        }
+
+        .karm-main-title {
+            font-size: clamp(1.35rem, 2.8vw, 2rem);
+            font-weight: 900;
+            line-height: 1.22;
+            color: #ffffff;
+            margin-bottom: 0.85rem;
+        }
+
+        .karm-deck {
+            font-size: clamp(0.82rem, 1.4vw, 0.95rem);
+            color: rgba(255,255,255,0.78);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .karm-hero-stat {
+            background: rgba(255,255,255,0.09);
+            border-left: 4px solid #1a8fce;
+            padding: 0.7rem 1rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 0.65rem;
+        }
+
+        .karm-hero-stat-val {
+            font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+            font-weight: 900;
+            color: #5ecfff;
+            line-height: 1;
+        }
+
+        .karm-hero-stat-lbl {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.65);
+            margin-top: 0.18rem;
+            line-height: 1.4;
+        }
+
+        /* ---- BODY TEXT ---- */
+        .karm-text {
+            font-size: 1rem;
+            line-height: 1.82;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+        }
+
+        .karm-text p {
+            margin-bottom: 1.15rem;
+        }
+
+        .karm-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .karm-text a,
+        .karm-cascade-detail a {
+            color: #1a6fa8;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: color 0.2s;
+        }
+
+        .karm-text a:hover,
+        .karm-cascade-detail a:hover {
+            color: #0d4f82;
+        }
+
+        /* ---- SECTION HEADER ---- */
+        .karm-sec-eyebrow {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #1a8fce;
+            margin-bottom: 0.4rem;
+        }
+
+        .karm-sec-h2 {
+            font-size: clamp(1.2rem, 2.4vw, 1.65rem);
+            font-weight: 800;
+            color: #0a2240;
+            line-height: 1.28;
+            margin-bottom: 1rem;
+        }
+
+        /* ---- PULLQUOTE ---- */
+        .karm-pullquote {
+            border-left: 5px solid #1a8fce;
+            padding: 1.1rem 1.4rem;
+            background: #edf6ff;
+            border-radius: 0 10px 10px 0;
+            margin: 2rem 0;
+        }
+
+        .karm-pullquote p {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: #0a2240;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .karm-pullquote cite {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #4a5568;
+            font-style: normal;
+        }
+
+        /* ---- STATS GRID ---- */
+        .karm-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0 2.5rem;
+        }
+
+        .karm-stat-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.25rem 1rem;
+            border-top: 4px solid #1a8fce;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .karm-stat-card .sc-val {
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            font-weight: 900;
+            color: #0a2240;
+            line-height: 1.1;
+            margin-bottom: 0.35rem;
+        }
+
+        .karm-stat-card .sc-lbl {
+            font-size: 0.78rem;
+            color: #718096;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* ---- TRIPLE WHAMMY SECTION ---- */
+        .karm-whammy {
+            background: #edf4fc;
+            border-radius: 16px;
+            padding: 2.25rem 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .karm-phase-tabs {
+            display: flex;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1.75rem;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.1);
+        }
+
+        .karm-phase-tab {
+            flex: 1;
+            padding: 1rem 0.75rem;
+            border: none;
+            background: #c9dff0;
+            color: #0a2240;
+            font-weight: 700;
+            font-size: clamp(0.7rem, 1.3vw, 0.85rem);
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.25s, color 0.25s;
+            line-height: 1.4;
+        }
+
+        .karm-phase-tab .ptab-year {
+            display: block;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 900;
+            margin-bottom: 0.2rem;
+        }
+
+        .karm-phase-tab.active {
+            background: #0a2240;
+            color: #fff;
+        }
+
+        .karm-phase-tab:hover:not(.active) {
+            background: #b3d1e8;
+        }
+
+        .karm-phase-panel {
+            display: none;
+            background: #fff;
+            border-left: 6px solid #1a8fce;
+            border-radius: 0 12px 12px 0;
+            padding: 1.75rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+            animation: karm-fadein 0.3s ease;
+        }
+
+        .karm-phase-panel.active {
+            display: block;
+        }
+
+        @keyframes karm-fadein {
+            from { opacity: 0; transform: translateY(6px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .karm-phase-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: #deeefb;
+            color: #1a6fa8;
+            font-size: 0.78rem;
+            font-weight: 700;
+            border-radius: 20px;
+            margin-bottom: 0.85rem;
+        }
+
+        .karm-phase-panel h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #0a2240;
+            margin-bottom: 0.85rem;
+            line-height: 1.3;
+        }
+
+        .karm-phase-panel p {
+            font-size: 0.95rem;
+            color: #4a5568;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .karm-flow-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .karm-flow-item {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.55rem 0.9rem;
+            background: #f0f7ff;
+            border-radius: 7px;
+            font-size: 0.88rem;
+            color: #2d3748;
+        }
+
+        .karm-flow-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #1a8fce;
+            flex-shrink: 0;
+        }
+
+        /* ---- CHART ---- */
+        .karm-chart-wrap {
+            background: #fff;
+            border-radius: 16px;
+            padding: 1.75rem 1.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+        }
+
+        .karm-chart-canvas-box {
+            position: relative;
+            height: 300px;
+        }
+
+        .karm-chart-legend {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            margin-top: 0.85rem;
+        }
+
+        .karm-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.78rem;
+            color: #4a5568;
+        }
+
+        .karm-legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
+        /* ---- CASCADE SECTION ---- */
+        .karm-cascade {
+            background: linear-gradient(160deg, #0a2240 0%, #071629 100%);
+            border-radius: 16px;
+            padding: 2.25rem 2rem;
+            margin-bottom: 2.5rem;
+            color: #fff;
+        }
+
+        .karm-cascade .karm-sec-eyebrow {
+            color: #5ecfff;
+        }
+
+        .karm-cascade .karm-sec-h2 {
+            color: #fff;
+        }
+
+        .karm-cascade-intro {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.72);
+            margin-bottom: 1.5rem;
+            line-height: 1.65;
+        }
+
+        .karm-cascade-item {
+            margin-bottom: 0;
+        }
+
+        .karm-cascade-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.1rem 0.85rem;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background 0.25s;
+        }
+
+        .karm-cascade-header:hover {
+            background: rgba(255,255,255,0.07);
+        }
+
+        .karm-cascade-header.open {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .karm-cascade-num {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+            border-radius: 50%;
+            background: #1a8fce;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.88rem;
+            color: #fff;
+            margin-top: 0.05rem;
+        }
+
+        .karm-cascade-title {
+            font-size: 0.97rem;
+            font-weight: 700;
+            color: #fff;
+            flex: 1;
+            line-height: 1.45;
+            padding-top: 0.15rem;
+        }
+
+        .karm-cascade-arrow {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 0.2rem;
+            transition: transform 0.25s;
+            flex-shrink: 0;
+        }
+
+        .karm-cascade-header.open .karm-cascade-arrow {
+            transform: rotate(90deg);
+        }
+
+        .karm-cascade-detail {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.38s ease;
+        }
+
+        .karm-cascade-detail.open {
+            max-height: 300px;
+        }
+
+        .karm-cascade-detail-inner {
+            padding: 0 0.85rem 1.1rem 3.3rem;
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.73);
+            line-height: 1.72;
+        }
+
+        .karm-cascade-detail-inner a {
+            color: #5ecfff;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .karm-cascade-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+            margin: 0 0.85rem;
+        }
+
+        /* ---- HISTORY BOX ---- */
+        .karm-history-box {
+            background: #fff8ed;
+            border-radius: 12px;
+            border-left: 5px solid #ed8936;
+            padding: 1.4rem 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .karm-history-box p {
+            font-size: 0.93rem;
+            color: #4a3728;
+            line-height: 1.75;
+            margin-bottom: 0.75rem;
+        }
+
+        .karm-history-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .karm-history-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #c05621;
+            margin-bottom: 0.65rem;
+        }
+
+        /* ---- CONCLUSION ---- */
+        .karm-conclusion {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 1.75rem 1.75rem;
+            margin-top: 2rem;
+        }
+
+        .karm-conclusion p {
+            font-size: 0.97rem;
+            color: #2d3748;
+            line-height: 1.82;
+            margin-bottom: 1rem;
+        }
+
+        .karm-conclusion p:last-child {
+            margin-bottom: 0;
+        }
+
+        .karm-conclusion a {
+            color: #1a6fa8;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* ---- MOBILE ---- */
+        @media (max-width: 768px) {
+            .karm-header {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .karm-header-img-side {
+                min-height: 240px;
+            }
+
+            .karm-header-text-side {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .karm-stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .karm-phase-tabs {
+                flex-direction: column;
+            }
+
+            .karm-phase-tab {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                text-align: left;
+                padding: 0.85rem 1rem;
+            }
+
+            .karm-phase-tab .ptab-year {
+                font-size: 1rem;
+                margin-bottom: 0;
+                min-width: 55px;
+            }
+
+            .karm-whammy {
+                padding: 1.5rem 1rem;
+            }
+
+            .karm-cascade {
+                padding: 1.75rem 1rem;
+            }
+
+            .karm-chart-canvas-box {
+                height: 240px;
+            }
+
+            .karm-phase-panel {
+                padding: 1.25rem;
+            }
+
+            .karm-cascade-detail-inner {
+                padding-left: 2.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .karm-stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.75rem;
+            }
+
+            .karm-stat-card {
+                padding: 1rem 0.75rem;
+            }
+
+            .karm-art {
+                padding: 0 0.6rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="karm-art" itemscope itemtype="https://schema.org/NewsArticle">
+
+    <!-- ===== HEADER ===== -->
+    <header class="karm-header">
+        <!-- Feature Image Side -->
+        <div class="karm-header-img-side">
+            <!--
+                FEATURE IMAGE:
+                Source: NASA Earth Observatory — "Exceptionally Low Antarctic Sea Ice" (August 2023)
+                Page: https://earthobservatory.nasa.gov/images/151692/exceptionally-low-antarctic-sea-ice
+                Image Credit: Lauren Dauphin / NASA Earth Observatory, using NSIDC data. Public Domain.
+                If this URL does not load, download the image from the NASA page above and upload it
+                to your WordPress media library, then replace the src below.
+            -->
+            <img
+                class="karm-feature-img"
+                src="https://eoimages.gsfc.nasa.gov/images/imagerecords/151000/151692/seaiceantarctic_atms_20230807_lrg.jpg"
+                alt="NASA ATMS satellite image showing exceptionally low Antarctic sea ice extent in August 2023, with dramatically reduced white ice coverage across the Southern Ocean"
+                title="Antarctic Sea Ice at Record Low — NASA Earth Observatory, August 2023"
+                loading="eager"
+                onerror="this.src='https://svs.gsfc.nasa.gov/vis/a000000/a005100/a005163/antarctic_sea_ice_max_2023_print.jpg'"
+                itemprop="image"
+            >
+            <div class="karm-img-caption-bar">
+                By the numbers, 2023 should not have been possible — yet satellites watched it unfold in real time: Antarctic sea ice shrank to levels so far outside the historical record that scientists put the odds of it occurring by chance at roughly one in 3.5 million. Each square kilometre of missing ice became a heat-absorbing surface, feeding the very cycle that made less ice possible the following year.
+                <br><em>(Image: Lauren Dauphin / NASA Earth Observatory, using NSIDC data. Public Domain.)</em>
+            </div>
+        </div>
+
+        <!-- Title and Stats Side -->
+        <div class="karm-header-text-side">
+            <span class="karm-tag">Environment &amp; Climate</span>
+            <h1 class="karm-main-title" itemprop="headline">Three Forces Quietly Dismantled the World's Largest Natural Air Conditioner</h1>
+            <p class="karm-deck">Scientists have mapped the precise sequence of events that collapsed Antarctic sea ice after 2015 — and why a partial recovery in 2026 does not change the bigger picture.</p>
+
+            <div class="karm-hero-stat">
+                <div class="karm-hero-stat-val">1-in-3.5M</div>
+                <div class="karm-hero-stat-lbl">Statistical probability of the 2023 ice low occurring by natural chance alone</div>
+            </div>
+            <div class="karm-hero-stat">
+                <div class="karm-hero-stat-val">Greenland-Sized</div>
+                <div class="karm-hero-stat-lbl">Area of sea ice lost at the 2023 record low extent</div>
+            </div>
+        </div>
+    </header>
+    <!-- /HEADER -->
+
+    <!-- ===== INTRO TEXT ===== -->
+    <div class="karm-text" itemprop="articleBody">
+        <p>
+            For much of the last century, Antarctica's sea ice seemed untouched by global warming. The Arctic was shrinking fast; Antarctica held its ground. Scientists debated why. Then, in 2015, something shifted — and by 2023, the Southern Ocean had lost a Greenland-sized area of ice, an event so far outside normal that researchers put the statistical probability at roughly <a href="https://www.nature.com/articles/s43247-023-00961-9" rel="noopener" target="_blank">one in 3.5 million</a>.
+        </p>
+        <p>
+            A study published in <em>Science Advances</em> in May 2026, led by the <a href="https://www.unsw.edu.au/newsroom/news/2026/05/drivers-of-antarctic-dramatic-sea-ice-decline-could-accelerate-global-warming" rel="noopener" target="_blank">University of Southampton</a>, has now identified the exact sequence of three interacting forces that drove this collapse. It resolves a long-standing puzzle about why Antarctica appeared immune to warming for so long — and explains why the answer was always temporary.
+        </p>
+        <p>
+            This is not simply a story about ice. The Southern Ocean surrounding Antarctica absorbs a significant share of the world's excess heat and carbon dioxide, regulates global ocean circulation, and sustains a food web that feeds everything from krill to blue whales. When it behaves differently, the effects don't stay local.
+        </p>
+    </div>
+
+    <!-- ===== KEY STATS ===== -->
+    <section class="karm-stats-grid" aria-label="Key statistics on Antarctic sea ice">
+        <div class="karm-stat-card">
+            <div class="sc-val">1.79M km²</div>
+            <div class="sc-lbl">2023 Record-Low Minimum (Feb 21) — lowest in 48 years of satellite data</div>
+        </div>
+        <div class="karm-stat-card">
+            <div class="sc-val">2.58M km²</div>
+            <div class="sc-lbl">2026 Sea Ice Minimum — still 260,000 km² below the 1981–2010 average</div>
+        </div>
+        <div class="karm-stat-card">
+            <div class="sc-val">5σ below</div>
+            <div class="sc-lbl">Standard deviations below average: how far the 2023 low sat outside the historical range</div>
+        </div>
+        <div class="karm-stat-card">
+            <div class="sc-val">98%</div>
+            <div class="sc-lbl">Emperor penguin colonies projected to face extinction pressure by 2100 under current emissions</div>
+        </div>
+    </section>
+
+    <!-- ===== TRIPLE WHAMMY INTERACTIVE ===== -->
+    <section class="karm-whammy" aria-label="The Triple Whammy: Three phases of Antarctica's sea ice collapse">
+        <div class="karm-sec-eyebrow">Interactive — The Research</div>
+        <h2 class="karm-sec-h2">The Triple Whammy: Three Phases That Changed Everything</h2>
+        <p style="font-size:0.95rem;color:#4a5568;margin-bottom:1.6rem;line-height:1.7;">
+            The researchers did not find a single cause. They found three, each making the next worse. Select a phase to understand what actually happened to the ice.
+        </p>
+
+        <!-- Tabs -->
+        <div class="karm-phase-tabs" role="tablist" aria-label="Sea ice collapse phases">
+            <button class="karm-phase-tab active" onclick="karmShowPhase(0)" role="tab" aria-selected="true" aria-controls="kphase-0">
+                <span class="ptab-year">2013</span>
+                Phase 1: The Wind Shift
+            </button>
+            <button class="karm-phase-tab" onclick="karmShowPhase(1)" role="tab" aria-selected="false" aria-controls="kphase-1">
+                <span class="ptab-year">2015</span>
+                Phase 2: Heat at the Surface
+            </button>
+            <button class="karm-phase-tab" onclick="karmShowPhase(2)" role="tab" aria-selected="false" aria-controls="kphase-2">
+                <span class="ptab-year">2018 →</span>
+                Phase 3: The Locked Loop
+            </button>
+        </div>
+
+        <!-- Panel 1 -->
+        <div id="kphase-0" class="karm-phase-panel active" role="tabpanel">
+            <span class="karm-phase-badge">🌬️ Phase 1 — Around 2013</span>
+            <h3>The Winds Around Antarctica Strengthened — and Pulled Up What Was Below</h3>
+            <p>
+                Both greenhouse gas emissions and the depletion of the ozone layer worked together to intensify the westerly winds that circle Antarctica. These stronger winds began dragging a mass of warm, dense, salty water — called Circumpolar Deep Water — upward from the deep ocean. Normally, this water stays far below the surface, insulated by a layer of lighter, cooler water above it.
+            </p>
+            <p>
+                On the surface, the ice still looked normal. But the conditions were being set for what followed. As the lead author, Dr. Aditya Narayanan, described it: <em>"greenhouse gas emissions and the ozone hole strengthened the winds surrounding Antarctica, which hauled warm, salty water up to the surface."</em>
+            </p>
+            <div class="karm-flow-list">
+                <div class="karm-flow-item"><span class="karm-flow-dot"></span>Ozone hole + greenhouse gases → wind belt around Antarctica strengthens</div>
+                <div class="karm-flow-item"><span class="karm-flow-dot"></span>Stronger winds pull Circumpolar Deep Water toward the surface</div>
+                <div class="karm-flow-item"><span class="karm-flow-dot"></span>Warm, salty water rises — but does not yet reach the ice</div>
+            </div>
+        </div>
+
+        <!-- Panel 2 -->
+        <div id="kphase-1" class="karm-phase-panel" role="tabpanel">
+            <span class="karm-phase-badge">🌊 Phase 2 — 2015</span>
+            <h3>An Intense Wind Event Mixed the Heat Directly Into the Surface — and the Ice Retreated Fast</h3>
+            <p>
+                In 2015, a particularly strong wind event did something different: it mixed the rising warm deep water directly into the surface layer of the ocean. That heat — accumulated in the deep ocean over decades — was suddenly at the top, in direct contact with sea ice.
+            </p>
+            <p>
+                The ice responded immediately. Sea ice began retreating across the Southern Ocean, and in particular across East Antarctica — a region that had previously appeared more resilient. The study identifies this as the moment the Southern Ocean shifted from accumulation to loss. Dr. Narayanan described what followed: the mixing of that water <em>"unleashed its heat."</em>
+            </p>
+            <div class="karm-flow-list">
+                <div class="karm-flow-item"><span class="karm-flow-dot"></span>Intense 2015 wind event mixes rising deep water into the ocean surface layer</div>
+                <div class="karm-flow-item"><span class="karm-flow-dot"></span>Decades of accumulated deep-ocean heat reaches the ice</div>
+                <div class="karm-flow-item"><span class="karm-flow-dot"></span>Sea ice decline begins — East Antarctica particularly affected</div>
+            </div>
+        </div>
+
+        <!-- Panel 3 -->
+        <div id="kphase-2" class="karm-phase-panel" role="tabpanel">
+            <span class="karm-phase-badge">🔁 Phase 3 — 2018 Onwards</span>
+            <h3>The System Got Trapped in a Cycle It Cannot Easily Break</h3>
+            <p>
+                When sea ice melts, it normally leaves behind a layer of fresh water on the ocean surface. That freshwater layer — being lighter than the salty water below — forms a lid that prevents warm deep water from mixing upward, effectively protecting the next year's ice formation. But when so much ice melted so rapidly, that freshwater barrier never fully formed. The surface stayed salty and warm.
+            </p>
+            <p>
+                Without the freshwater lid, warm deep water can mix upward more easily each year — preventing new ice from forming and deepening the cycle. Professor Alberto Naveira Garabato of the University of Southampton put it directly: if low sea-ice coverage continues into 2030 and beyond, <strong>"the ocean may transition from a stabilizer of the world's climate to a powerful new driver of global warming."</strong>
+            </p>
+            <div class="karm-flow-list">
+                <div class="karm-flow-item"><span class="karm-flow-dot"></span>Less ice melting → less freshwater on the ocean surface</div>
+                <div class="karm-flow-item"><span class="karm-flow-dot"></span>Saltier surface allows deeper warm water to keep mixing upward</div>
+                <div class="karm-flow-item"><span class="karm-flow-dot"></span>Ice formation is blocked → a self-reinforcing loop takes hold</div>
+            </div>
+        </div>
+    </section>
+    <!-- /TRIPLE WHAMMY -->
+
+    <!-- ===== BODY TEXT 2 ===== -->
+    <div class="karm-text">
+        <p>
+            The study, published as "Compound drivers of Antarctic sea ice loss and Southern Ocean destratification" (<a href="https://www.science.org/doi/10.1126/sciadv.aeb0166" rel="noopener" target="_blank"><em>Science Advances</em>, Vol. 12(19), eaeb0166</a>), analysed observational data and oceanographic records to reconstruct how each phase built on the previous one. It is the first study to connect all three mechanisms into a single causal chain explaining the post-2015 collapse.
+        </p>
+    </div>
+
+    <!-- ===== PULLQUOTE ===== -->
+    <blockquote class="karm-pullquote">
+        <p>"The ocean may transition from a stabilizer of the world's climate to a powerful new driver of global warming."</p>
+        <cite>— Professor Alberto Naveira Garabato, University of Southampton, co-author of the Science Advances study</cite>
+    </blockquote>
+
+    <!-- ===== SEA ICE CHART ===== -->
+    <section class="karm-chart-wrap" aria-label="Antarctic sea ice annual minimum extent chart, 2010–2026">
+        <div class="karm-sec-eyebrow">Data</div>
+        <h2 class="karm-sec-h2">Antarctic Sea Ice Annual Minimum Extent, 2010–2026 (approximate values)</h2>
+        <p style="font-size:0.9rem;color:#4a5568;margin-bottom:1.25rem;line-height:1.7;">
+            The 2023 minimum was so far outside the historical range it cannot be attributed to natural variation. The 2026 partial rebound — while closer to the long-term average — remains below the 1981–2010 baseline, and scientists attribute the improvement to shifting wind patterns rather than any reversal of the underlying ocean conditions.
+        </p>
+        <div class="karm-chart-canvas-box">
+            <canvas id="karmSeaIceChart" aria-label="Bar chart showing Antarctic sea ice annual minimum from 2010 to 2026, with 2023 at record low and 2026 at partial rebound"></canvas>
+        </div>
+        <div class="karm-chart-legend">
+            <div class="karm-legend-item"><span class="karm-legend-dot" style="background:#f56565;"></span>2023 Record Low</div>
+            <div class="karm-legend-item"><span class="karm-legend-dot" style="background:#48bb78;"></span>2026 Partial Rebound</div>
+            <div class="karm-legend-item"><span class="karm-legend-dot" style="background:#fc8181;"></span>Below-Average Years</div>
+            <div class="karm-legend-item"><span class="karm-legend-dot" style="background:#4299e1;"></span>Near/Above Average</div>
+        </div>
+        <p style="font-size:0.75rem;color:#a0aec0;margin-top:0.6rem;">
+            Data source: <a href="https://earth.gsfc.nasa.gov/cryo/data/current-state-sea-ice-cover" rel="noopener" target="_blank" style="color:#718096;">NASA Goddard Space Flight Center</a> / <a href="https://nsidc.org/news-analyses/news-stories/antarctic-sea-ice-extent-arrives-near-average-minimum" rel="noopener" target="_blank" style="color:#718096;">National Snow and Ice Data Center (NSIDC)</a>. Values are approximate annual summer minimums (million km²). Confirmed data points: 2022 (1.92M), 2023 (1.79M), 2026 (2.58M).
+        </p>
+    </section>
+
+    <!-- ===== BODY TEXT 3 ===== -->
+    <div class="karm-text">
+        <p>
+            In 2026, the sea ice minimum reached 2.58 million square kilometres — the 16th lowest in the 48-year satellite record, and 730,000 km² above the 2023 record low. <a href="https://nsidc.org/news-analyses/news-stories/antarctic-sea-ice-extent-arrives-near-average-minimum" rel="noopener" target="_blank">Scientists at NSIDC</a> attributed the improvement primarily to shifting southern winds that pushed ice outward from the continent. The ocean's surface temperature, however, remained elevated — meaning the structural conditions identified in the triple-whammy study have not changed.
+        </p>
+    </div>
+
+    <!-- ===== HISTORY BOX ===== -->
+    <div class="karm-history-box">
+        <div class="karm-history-label">Context: Why Antarctica Appeared Immune — Until It Wasn't</div>
+        <p>
+            From the 1980s through roughly 2014, Antarctic sea ice was growing slightly — a fact that climate-denial arguments often cited as evidence that warming was not global. The triple-whammy research explains this apparent anomaly too. The same stratification that temporarily protected Antarctic sea ice was itself a byproduct of earlier decades of melt from the 1970s and 1980s, which deposited fresh water on the surface and formed a lid insulating the ice from the deep ocean's heat.
+        </p>
+        <p>
+            That lid was never a permanent fix. It was always a delay. Once it broke down — through the three phases the study describes — the deep ocean's stored heat had a direct path to the surface. Antarctica's immunity was borrowed time, and the collapse, when it came, happened fast.
+        </p>
+        <p>
+            The ozone hole's role is worth noting separately. The Montreal Protocol, signed in 1987, phased out ozone-depleting substances, and the ozone hole has been gradually recovering since then. Researchers note this as a rare instance where coordinated international action stopped a self-reinforcing atmospheric problem — a precedent the study's authors implicitly invoke.
+        </p>
+    </div>
+
+    <!-- ===== CASCADE IMPACTS SECTION ===== -->
+    <section class="karm-cascade" aria-label="Chain of consequences from Antarctic sea ice loss">
+        <div class="karm-sec-eyebrow">What It Means</div>
+        <h2 class="karm-sec-h2">When the Ice Goes: A Chain of Consequences</h2>
+        <p class="karm-cascade-intro">Each loss of sea ice activates the next problem. Select any step to read the detail.</p>
+
+        <!-- Item 1 -->
+        <div class="karm-cascade-item">
+            <div class="karm-cascade-header open" onclick="karmToggleCascade(this)" aria-expanded="true">
+                <div class="karm-cascade-num">1</div>
+                <div class="karm-cascade-title">Less Ice → Darker Ocean → More Heat Absorbed</div>
+                <span class="karm-cascade-arrow">▶</span>
+            </div>
+            <div class="karm-cascade-detail open">
+                <div class="karm-cascade-detail-inner">
+                    Sea ice is white and reflects the majority of solar radiation back into space — a property called albedo. Open ocean water is dark and absorbs it. Every square kilometre of ice that disappears becomes a heat sink. The Southern Ocean is already warming as a result, making future ice formation harder and reinforcing the cycle the triple-whammy study describes.
+                </div>
+            </div>
+        </div>
+        <div class="karm-cascade-divider"></div>
+
+        <!-- Item 2 -->
+        <div class="karm-cascade-item">
+            <div class="karm-cascade-header" onclick="karmToggleCascade(this)" aria-expanded="false">
+                <div class="karm-cascade-num">2</div>
+                <div class="karm-cascade-title">Sea Ice Algae Vanishes → Krill Decline → Food Web Disruption</div>
+                <span class="karm-cascade-arrow">▶</span>
+            </div>
+            <div class="karm-cascade-detail">
+                <div class="karm-cascade-detail-inner">
+                    Antarctic krill — a small crustacean that forms the base of the Southern Ocean food web — depends heavily on sea ice. Ice algae growing on and within the ice is krill's primary food source through winter. As ice shrinks, krill populations face food shortages during their most vulnerable developmental stages. Everything that depends on krill — penguins, seals, whales, and large commercial fisheries — is downstream of this loss.
+                </div>
+            </div>
+        </div>
+        <div class="karm-cascade-divider"></div>
+
+        <!-- Item 3 -->
+        <div class="karm-cascade-item">
+            <div class="karm-cascade-header" onclick="karmToggleCascade(this)" aria-expanded="false">
+                <div class="karm-cascade-num">3</div>
+                <div class="karm-cascade-title">Emperor Penguins Declared Endangered — 98% of Colonies at Risk by 2100</div>
+                <span class="karm-cascade-arrow">▶</span>
+            </div>
+            <div class="karm-cascade-detail">
+                <div class="karm-cascade-detail-inner">
+                    On April 9, 2026, the <a href="https://iucn.org/press-release/202604/emperor-penguin-and-antarctic-fur-seal-now-endangered-due-climate-change-iucn" rel="noopener" target="_blank">IUCN officially listed emperor penguins as Endangered</a> — moved up from Near Threatened. The species requires stable sea ice for at least nine months a year to breed, raise chicks, and moult. In 2022, four of five known breeding sites in the Bellingshausen Sea experienced complete failure — thousands of chicks drowned or froze when the ice broke up too early. You can read more about this in <a href="https://www.karmactive.com/emperor-penguin-antarctic-fur-seal-endangered-iucn-red-list-2026/" rel="noopener" target="_blank">our earlier coverage of the IUCN listing</a>. The population stands at approximately 595,000 adults, down roughly 10 percent between 2009 and 2018.
+                </div>
+            </div>
+        </div>
+        <div class="karm-cascade-divider"></div>
+
+        <!-- Item 4 -->
+        <div class="karm-cascade-item">
+            <div class="karm-cascade-header" onclick="karmToggleCascade(this)" aria-expanded="false">
+                <div class="karm-cascade-num">4</div>
+                <div class="karm-cascade-title">Southern Ocean Carbon Sink Weakens</div>
+                <span class="karm-cascade-arrow">▶</span>
+            </div>
+            <div class="karm-cascade-detail">
+                <div class="karm-cascade-detail-inner">
+                    The Southern Ocean absorbs a significant share of the CO₂ that human activity puts into the atmosphere. But research published in early 2026 found that ice loss — and the ocean warming it accelerates — is reducing this absorption capacity. The surface stratification that once kept deep, carbon-rich water from mixing upward has weakened. Some models project the Southern Ocean could eventually shift from a carbon sink to a carbon source, releasing stored CO₂ and amplifying global warming.
+                </div>
+            </div>
+        </div>
+        <div class="karm-cascade-divider"></div>
+
+        <!-- Item 5 -->
+        <div class="karm-cascade-item">
+            <div class="karm-cascade-header" onclick="karmToggleCascade(this)" aria-expanded="false">
+                <div class="karm-cascade-num">5</div>
+                <div class="karm-cascade-title">Hidden Subglacial Channels Amplify Ice Shelf Melt and Sea Level Rise</div>
+                <span class="karm-cascade-arrow">▶</span>
+            </div>
+            <div class="karm-cascade-detail">
+                <div class="karm-cascade-detail-inner">
+                    A separate study published in May 2026 identified long channels carved into the underside of Antarctic ice shelves that trap warm ocean water, dramatically speeding up melting from below. Research published in <em>Nature Communications</em> found that incorporating subglacial water can amplify ice discharge by up to three times above standard model projections, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11976955/" rel="noopener" target="_blank">potentially contributing an additional 2.2 metres to global sea level rise by 2300</a>. East Antarctica, previously considered relatively stable, may be far more vulnerable than current models suggest.
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /CASCADE -->
+
+    <!-- ===== BODY TEXT 4 ===== -->
+    <div class="karm-text">
+        <p>
+            The consequences of sea ice loss do not stay contained to Antarctic ecosystems. The Southern Ocean's behaviour affects global ocean circulation — the same system that moves heat from the tropics toward the poles and moderates climates across Europe, Africa, and the Americas. <a href="https://www.karmactive.com/global-wildlife-decline-multiple-threats-study-2026/" rel="noopener" target="_blank">Research tracking global wildlife declines</a> has consistently found that multiple simultaneous pressures — ice loss, warming, disease, habitat disruption — compound faster than individual threats managed separately. Antarctica is not an exception to this pattern.
+        </p>
+        <p>
+            The long-term picture depends on a question that the study does not claim to resolve: whether the Southern Ocean will stabilise at a new, lower sea-ice equilibrium, or whether it will continue declining. What the research does establish is that the feedback loop identified in Phase 3 is now active — meaning recovery, if it occurs, would require sustained reductions in the greenhouse gas concentrations and ozone-depleting substances that set the original mechanism in motion.
+        </p>
+        <p>
+            Corporate and government climate commitments — tracked annually through frameworks like the <a href="https://www.karmactive.com/sbti-trend-tracker-2025-corporate-climate-targets/" rel="noopener" target="_blank">Science Based Targets initiative</a>, which reported 9,764 validated science-based targets by the end of 2025 — represent one side of that equation. The other side, the physical ocean, will take far longer to respond.
+        </p>
+        <p>
+            The British Antarctic Survey has documented <a href="https://www.bas.ac.uk/news/loss-of-sea-ice-causes-catastrophic-breeding-failure-for-emperor-penguins/" rel="noopener" target="_blank">multiple instances of catastrophic breeding failure</a> at emperor penguin colonies as a direct result of early sea ice break-up. The IUCN's <a href="https://iucn.org/press-release/202604/emperor-penguin-and-antarctic-fur-seal-now-endangered-due-climate-change-iucn" rel="noopener" target="_blank">April 2026 listing</a> also placed the Antarctic fur seal — whose population fell from approximately 2.19 million in 1999 to roughly 944,000 by 2025 — in the Endangered category. These are visible, documented species responding in real time to the same ocean changes the triple-whammy study describes at the physical level.
+        </p>
+        <p>
+            What Antarctica has historically done — absorb heat, store carbon, reflect sunlight, sustain marine life — it did quietly, without drawing attention. The research published in May 2026 makes a different kind of argument: that these services are not guaranteed, that the mechanisms which provided them operated within specific physical conditions, and that those conditions have changed. The <a href="https://www.karmactive.com/wildlife-population-decline-compound-threats-2026-study/" rel="noopener" target="_blank">broader pattern of accelerating biodiversity loss</a> under multiple simultaneous stressors applies here as much as anywhere else on the planet.
+        </p>
+    </div>
+
+    <!-- ===== CONCLUSION ===== -->
+    <div class="karm-conclusion" role="contentinfo" aria-label="Article summary">
+        <p>
+            The <em>Science Advances</em> study covered the three-phase mechanism — wind strengthening from ozone depletion and greenhouse gases, the 2015 deep-heat mixing event, and the post-2018 salinity feedback loop — through which Antarctic sea ice declined sharply after 2015 and reached its lowest recorded extent in 2023. The <a href="https://nsidc.org/news-analyses/news-stories/antarctic-sea-ice-extent-arrives-near-average-minimum" rel="noopener" target="_blank">2026 minimum data from NSIDC</a>, the <a href="https://iucn.org/press-release/202604/emperor-penguin-and-antarctic-fur-seal-now-endangered-due-climate-change-iucn" rel="noopener" target="_blank">IUCN's April 2026 listing of emperor penguins and Antarctic fur seals as Endangered</a>, the separate findings on subglacial water channels amplifying sea level projections, and the Southern Ocean's weakening carbon sink function were also discussed.
+        </p>
+        <p>
+            The contributing roles of the ozone hole, Circumpolar Deep Water, krill ecology, ice-shelf dynamics, and global ocean circulation — and their documented interactions with the changes described in the research — were covered as part of the chain of effects present in the current scientific literature.
+        </p>
+    </div>
+
+</div>
+<!-- /karm-art -->
+
+<script>
+(function() {
+    // ---- TRIPLE WHAMMY PHASE SWITCHER ----
+    window.karmShowPhase = function(index) {
+        var tabs    = document.querySelectorAll('.karm-phase-tab');
+        var panels  = document.querySelectorAll('.karm-phase-panel');
+
+        tabs.forEach(function(tab, i) {
+            tab.classList.toggle('active', i === index);
+            tab.setAttribute('aria-selected', i === index ? 'true' : 'false');
+        });
+
+        panels.forEach(function(panel, i) {
+            panel.classList.toggle('active', i === index);
+        });
+    };
+
+    // ---- CASCADE ACCORDION ----
+    window.karmToggleCascade = function(header) {
+        var detail  = header.nextElementSibling;
+        var isOpen  = header.classList.contains('open');
+
+        if (isOpen) {
+            header.classList.remove('open');
+            detail.classList.remove('open');
+            header.setAttribute('aria-expanded', 'false');
+        } else {
+            header.classList.add('open');
+            detail.classList.add('open');
+            header.setAttribute('aria-expanded', 'true');
+        }
+    };
+
+    // ---- SEA ICE EXTENT BAR CHART ----
+    var ctx = document.getElementById('karmSeaIceChart').getContext('2d');
+
+    var years   = ['2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'];
+    var extents = [3.01,  2.57,  3.41,  3.13,  3.21,  2.49,  2.25,  2.19,  2.18,  2.60,  3.24,  2.63,  1.92,  1.79,  2.14,  2.38,  2.58];
+
+    var barColors = extents.map(function(v, i) {
+        if (i === 12) return '#f56565'; // 2023 record low — red
+        if (i === 16) return '#48bb78'; // 2026 partial rebound — green
+        if (v < 2.4)  return '#fc8181'; // below-average years — light red
+        return '#4299e1';               // near/above-average — blue
+    });
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: years,
+            datasets: [{
+                label: 'Annual Minimum (million km²)',
+                data: extents,
+                backgroundColor: barColors,
+                borderRadius: 4,
+                borderSkipped: false
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: function(ctx) {
+                            var yr   = years[ctx.dataIndex];
+                            var val  = ctx.parsed.y.toFixed(2);
+                            var note = '';
+                            if (yr === '2023') note = ' ← Record Low';
+                            if (yr === '2026') note = ' ← Partial Rebound';
+                            if (yr === '2022') note = ' ← 2nd Lowest (at the time)';
+                            return val + 'M km²' + note;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    min: 1.5,
+                    max: 3.9,
+                    title: {
+                        display: true,
+                        text: 'Million km²',
+                        color: '#718096',
+                        font: { size: 11 }
+                    },
+                    grid: { color: '#e2e8f0' },
+                    ticks: { color: '#718096', font: { size: 11 } }
+                },
+                x: {
+                    grid: { display: false },
+                    ticks: { color: '#718096', font: { size: 11 } }
+                }
+            }
+        }
+    });
+
+}());
+</script>
+
+</body>
+</html>
