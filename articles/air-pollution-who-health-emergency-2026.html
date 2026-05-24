@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.9 Million Deaths a Year: WHO Calls for a Global Air Pollution Emergency | Karmactive</title>
+    <meta name="description" content="WHO launched a landmark 2025–2028 advocacy plan on May 18, 2026. European health leaders are calling for a formal global health emergency declaration over air pollution and climate change. Here's what 7.9 million annual deaths looks like.">
+    <style>
+        /* ============================================
+           SCOPED TO .ka-air — no interference with WP
+        ============================================ */
+        .ka-air * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .ka-air {
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0d1117;
+            color: #e2e8f0;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        /* ---- SPLIT-SCREEN HEADER ---- */
+        .ka-header {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            min-height: 75vh;
+            max-height: 700px;
+        }
+        .ka-header-img-wrap {
+            position: relative;
+            overflow: hidden;
+        }
+        .ka-header-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.65) saturate(0.75);
+            display: block;
+        }
+        .ka-header-img-fade {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(13,17,23,0) 40%, rgba(13,17,23,1) 100%);
+            pointer-events: none;
+        }
+        .ka-header-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2.5rem 2.5rem 2.5rem 2rem;
+            background: #0d1117;
+        }
+        .ka-badge {
+            display: inline-block;
+            background: #c0392b;
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.35rem 0.9rem;
+            border-radius: 3px;
+            width: fit-content;
+            margin-bottom: 1.1rem;
+        }
+        .ka-meta-line {
+            font-size: 0.8rem;
+            color: #5a6478;
+            margin-bottom: 0.85rem;
+            letter-spacing: 0.3px;
+        }
+        .ka-title {
+            font-size: clamp(1.5rem, 2.8vw, 2.55rem);
+            font-weight: 800;
+            color: #f1f5f9;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .ka-title em {
+            font-style: normal;
+            color: #e74c3c;
+        }
+        .ka-deck {
+            font-size: clamp(0.9rem, 1.4vw, 1.02rem);
+            color: #8b97a8;
+            line-height: 1.75;
+            margin-bottom: 1.75rem;
+        }
+        .ka-header-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+        .ka-hstat {
+            background: #161b22;
+            border-top: 3px solid #c0392b;
+            border-radius: 6px;
+            padding: 0.85rem 1rem;
+        }
+        .ka-hstat-val {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: #e74c3c;
+            line-height: 1;
+        }
+        .ka-hstat-lbl {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 0.25rem;
+            line-height: 1.4;
+        }
+
+        /* ---- IMAGE CAPTION BAR ---- */
+        .ka-img-caption {
+            background: #0a0e13;
+            border-left: 3px solid #2d3748;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.78rem;
+            color: #4b5563;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        .ka-img-caption a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        /* ---- INTRO TEXT SECTION ---- */
+        .ka-intro-block {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+            font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+            color: #cbd5e0;
+            line-height: 1.85;
+        }
+        .ka-intro-block p {
+            margin-bottom: 1.25rem;
+        }
+        .ka-intro-block a {
+            color: #63b3ed;
+            text-decoration: underline;
+            text-decoration-color: rgba(99,179,237,0.4);
+            text-underline-offset: 3px;
+        }
+        .ka-intro-block a:hover {
+            color: #90cdf4;
+        }
+        .ka-intro-block strong {
+            color: #f1f5f9;
+            font-weight: 600;
+        }
+
+        /* ---- LIVE COUNTER ---- */
+        .ka-counter-wrap {
+            background: #070a0f;
+            border-top: 1px solid #1a1f2e;
+            border-bottom: 1px solid #1a1f2e;
+            padding: 2.75rem 1.5rem;
+            text-align: center;
+        }
+        .ka-counter-eyebrow {
+            font-size: 0.72rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #4b5563;
+            margin-bottom: 0.4rem;
+        }
+        .ka-counter-sub {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+        .ka-main-count {
+            font-size: clamp(3.5rem, 9vw, 6.5rem);
+            font-weight: 900;
+            color: #e74c3c;
+            letter-spacing: -3px;
+            font-variant-numeric: tabular-nums;
+            line-height: 1;
+            font-feature-settings: "tnum";
+        }
+        .ka-count-note {
+            font-size: 0.77rem;
+            color: #374151;
+            margin-top: 0.75rem;
+        }
+        .ka-mini-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.9rem;
+            max-width: 820px;
+            margin: 2rem auto 0;
+        }
+        .ka-mini {
+            background: #0f141c;
+            border-radius: 8px;
+            padding: 1rem 0.9rem;
+            border-left: 3px solid transparent;
+        }
+        .ka-mini:nth-child(1) { border-color: #e74c3c; }
+        .ka-mini:nth-child(2) { border-color: #f39c12; }
+        .ka-mini:nth-child(3) { border-color: #9b59b6; }
+        .ka-mini:nth-child(4) { border-color: #27ae60; }
+        .ka-mini-num {
+            font-size: 1.45rem;
+            font-weight: 800;
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum";
+            line-height: 1;
+        }
+        .ka-mini:nth-child(1) .ka-mini-num { color: #e74c3c; }
+        .ka-mini:nth-child(2) .ka-mini-num { color: #f39c12; }
+        .ka-mini:nth-child(3) .ka-mini-num { color: #9b59b6; }
+        .ka-mini:nth-child(4) .ka-mini-num { color: #27ae60; }
+        .ka-mini-lbl {
+            font-size: 0.73rem;
+            color: #4b5563;
+            margin-top: 0.35rem;
+            line-height: 1.4;
+        }
+
+        /* ---- TABS EXPLORER ---- */
+        .ka-explorer {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        .ka-section-hd {
+            font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 0.4rem;
+        }
+        .ka-section-sub {
+            font-size: 0.88rem;
+            color: #4b5563;
+            margin-bottom: 1.75rem;
+        }
+        .ka-tabs-bar {
+            display: flex;
+            border-bottom: 1px solid #1a1f2e;
+            overflow-x: auto;
+            scrollbar-width: none;
+            gap: 0;
+            margin-bottom: 1.75rem;
+        }
+        .ka-tabs-bar::-webkit-scrollbar { display: none; }
+        .ka-tab-btn {
+            padding: 0.8rem 1.15rem;
+            font-size: 0.87rem;
+            font-weight: 600;
+            color: #4b5563;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        .ka-tab-btn:hover { color: #cbd5e0; }
+        .ka-tab-btn.ka-on {
+            color: #e74c3c;
+            border-bottom-color: #e74c3c;
+        }
+        .ka-tab-pane {
+            display: none;
+        }
+        .ka-tab-pane.ka-on {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            animation: kaFadeIn 0.3s ease;
+        }
+        @keyframes kaFadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .ka-card {
+            background: #161b22;
+            border: 1px solid #1e2530;
+            border-radius: 10px;
+            padding: 1.6rem;
+        }
+        .ka-card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.85rem;
+            display: block;
+        }
+        .ka-card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 0.5rem;
+        }
+        .ka-card-big {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #e74c3c;
+            line-height: 1;
+            margin-bottom: 0.2rem;
+        }
+        .ka-card-big-lbl {
+            font-size: 0.75rem;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+        .ka-card-body {
+            font-size: 0.875rem;
+            color: #8b97a8;
+            line-height: 1.75;
+        }
+        .ka-card-body strong {
+            color: #e2e8f0;
+        }
+        .ka-tag {
+            display: inline-block;
+            background: #1e2530;
+            color: #f6c90e;
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.25rem 0.65rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        .ka-who-note-box {
+            background: #0c1019;
+            border-left: 3px solid #2563eb;
+            padding: 0.85rem 1.1rem;
+            border-radius: 0 6px 6px 0;
+            margin-top: 1rem;
+            font-size: 0.83rem;
+            color: #7ea8d8;
+            line-height: 1.65;
+        }
+
+        /* ---- BODY TEXT SECTION ---- */
+        .ka-body-block {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 2.5rem;
+            font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+            color: #cbd5e0;
+            line-height: 1.85;
+            border-top: 1px solid #1a1f2e;
+        }
+        .ka-body-block p {
+            margin-bottom: 1.3rem;
+        }
+        .ka-body-block a {
+            color: #63b3ed;
+            text-decoration: underline;
+            text-decoration-color: rgba(99,179,237,0.4);
+            text-underline-offset: 3px;
+        }
+        .ka-body-block a:hover { color: #90cdf4; }
+        .ka-body-block strong { color: #f1f5f9; font-weight: 600; }
+        .ka-pullquote {
+            margin: 1.5rem 0;
+            padding: 1.25rem 1.5rem;
+            border-left: 4px solid #c0392b;
+            background: #0f141c;
+            font-size: 1.05rem;
+            color: #e2e8f0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+            line-height: 1.7;
+        }
+
+        /* ---- TIMELINE ---- */
+        .ka-timeline-section {
+            background: #070a0f;
+            border-top: 1px solid #1a1f2e;
+            padding: 3rem 1.5rem;
+        }
+        .ka-timeline-inner {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .ka-tl {
+            position: relative;
+            padding-left: 2.2rem;
+            margin-top: 2rem;
+        }
+        .ka-tl::before {
+            content: '';
+            position: absolute;
+            left: 0.55rem;
+            top: 0.4rem;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #e74c3c 0%, #f39c12 50%, #27ae60 100%);
+        }
+        .ka-tl-row {
+            position: relative;
+            padding-bottom: 2.2rem;
+            padding-left: 1.4rem;
+        }
+        .ka-tl-row:last-child { padding-bottom: 0; }
+        .ka-dot {
+            position: absolute;
+            left: -1.9rem;
+            top: 0.35rem;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            border: 2px solid #070a0f;
+        }
+        .ka-tl-row:nth-child(1) .ka-dot,
+        .ka-tl-row:nth-child(2) .ka-dot,
+        .ka-tl-row:nth-child(3) .ka-dot { background: #e74c3c; box-shadow: 0 0 0 3px rgba(231,76,60,0.25); }
+        .ka-tl-row:nth-child(4) .ka-dot { background: #f39c12; box-shadow: 0 0 0 3px rgba(243,156,18,0.25); }
+        .ka-tl-row:nth-child(5) .ka-dot,
+        .ka-tl-row:nth-child(6) .ka-dot { background: #27ae60; box-shadow: 0 0 0 3px rgba(39,174,96,0.25); }
+        .ka-tl-date {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 0.3rem;
+        }
+        .ka-tl-row:nth-child(1) .ka-tl-date,
+        .ka-tl-row:nth-child(2) .ka-tl-date,
+        .ka-tl-row:nth-child(3) .ka-tl-date { color: #e74c3c; }
+        .ka-tl-row:nth-child(4) .ka-tl-date { color: #f39c12; }
+        .ka-tl-row:nth-child(5) .ka-tl-date,
+        .ka-tl-row:nth-child(6) .ka-tl-date { color: #27ae60; }
+        .ka-tl-title {
+            font-size: 0.98rem;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 0.4rem;
+        }
+        .ka-tl-body {
+            font-size: 0.855rem;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+        .ka-tl-body a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        /* ---- WHAT'S BEING DONE ---- */
+        .ka-action-section {
+            background: linear-gradient(160deg, #0f0505 0%, #0d1117 60%, #050f0a 100%);
+            border-top: 1px solid #1a1f2e;
+            padding: 3rem 1.5rem;
+        }
+        .ka-action-inner {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .ka-action-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.1rem;
+            margin-top: 1.75rem;
+        }
+        .ka-action-card {
+            background: #0f141c;
+            border: 1px solid #1e2530;
+            border-radius: 10px;
+            padding: 1.4rem;
+        }
+        .ka-action-icon {
+            font-size: 1.6rem;
+            margin-bottom: 0.6rem;
+            display: block;
+        }
+        .ka-action-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin-bottom: 0.5rem;
+        }
+        .ka-action-body {
+            font-size: 0.845rem;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+        .ka-action-body strong { color: #9ca3af; }
+        .ka-action-pill {
+            display: inline-block;
+            margin-top: 0.75rem;
+            padding: 0.3rem 0.75rem;
+            background: #162014;
+            color: #34d399;
+            font-size: 0.77rem;
+            font-weight: 600;
+            border-radius: 100px;
+            border: 1px solid rgba(52,211,153,0.2);
+        }
+
+        /* ---- CONCLUSION TEXT ---- */
+        .ka-conclusion-block {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
+            font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+            color: #9ca3af;
+            line-height: 1.85;
+            border-top: 1px solid #1a1f2e;
+        }
+        .ka-conclusion-block p { margin-bottom: 1.2rem; }
+        .ka-conclusion-block a {
+            color: #63b3ed;
+            text-decoration: underline;
+            text-decoration-color: rgba(99,179,237,0.35);
+            text-underline-offset: 3px;
+        }
+        .ka-conclusion-block strong { color: #cbd5e0; font-weight: 600; }
+
+        /* ---- SOURCES ---- */
+        .ka-sources-bar {
+            background: #070a0f;
+            border-top: 1px solid #1a1f2e;
+            padding: 1.25rem 1.5rem;
+            font-size: 0.74rem;
+            color: #374151;
+            line-height: 1.8;
+        }
+        .ka-sources-bar a {
+            color: #2563eb;
+            text-decoration: none;
+            margin-right: 0.3rem;
+        }
+        .ka-sources-bar a:hover { text-decoration: underline; }
+
+        /* ---- MOBILE RESPONSIVENESS ---- */
+        @media (max-width: 900px) {
+            .ka-header {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                max-height: none;
+            }
+            .ka-header-img-wrap {
+                height: 52vw;
+                min-height: 200px;
+                max-height: 320px;
+            }
+            .ka-header-img-fade {
+                background: linear-gradient(to bottom, rgba(13,17,23,0) 35%, rgba(13,17,23,1) 100%);
+            }
+            .ka-header-content {
+                padding: 1.75rem 1.25rem 2rem;
+            }
+            .ka-mini-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .ka-tab-pane.ka-on {
+                grid-template-columns: 1fr;
+            }
+            .ka-action-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            .ka-header-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            .ka-mini-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .ka-explorer {
+                padding: 2rem 1rem;
+            }
+            .ka-main-count {
+                letter-spacing: -1px;
+            }
+        }
+        @media (max-width: 380px) {
+            .ka-header-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="ka-air">
+
+    <!-- ===== SPLIT-SCREEN HEADER ===== -->
+    <div class="ka-header">
+        <div class="ka-header-img-wrap">
+            <!-- Feature Image: Smog in Beijing CBD, Wikimedia Commons -->
+            <!-- Verify URL at: https://commons.wikimedia.org/wiki/File:Smog_in_Beijing_CBD.JPG -->
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Smog_in_Beijing_CBD.JPG/1280px-Smog_in_Beijing_CBD.JPG"
+                alt="City skyline obscured by thick smog and PM2.5 air pollution, illustrating the global air quality crisis affecting billions of people worldwide as WHO calls for an emergency health response in 2026"
+                title="Air Pollution Crisis — WHO Calls for Global Health Emergency 2026"
+                loading="eager"
+            >
+            <div class="ka-header-img-fade"></div>
+        </div>
+        <div class="ka-header-content">
+            <div class="ka-meta-line">📅 May 2026 &nbsp;·&nbsp; Global Health &amp; Environment</div>
+            <div class="ka-badge">⚠ Health Emergency</div>
+            <h1 class="ka-title">7.9 Million Deaths a Year — and Now Experts Are Calling It a <em>Global Emergency</em></h1>
+            <p class="ka-deck">WHO launched a landmark plan on May 18, 2026. European health leaders are pushing for a formal emergency declaration. The air we breathe has been a crisis for decades — but this week, the world's top health body is finally being asked to treat it like one.</p>
+            <div class="ka-header-stats">
+                <div class="ka-hstat">
+                    <div class="ka-hstat-val">7.9M</div>
+                    <div class="ka-hstat-lbl">Deaths from air pollution in 2023</div>
+                </div>
+                <div class="ka-hstat">
+                    <div class="ka-hstat-val">86%</div>
+                    <div class="ka-hstat-lbl">Killed by non-communicable diseases</div>
+                </div>
+                <div class="ka-hstat">
+                    <div class="ka-hstat-val">2.3B</div>
+                    <div class="ka-hstat-lbl">People cooking on polluting biomass fuels</div>
+                </div>
+                <div class="ka-hstat">
+                    <div class="ka-hstat-val">50%</div>
+                    <div class="ka-hstat-lbl">WHO target: halve air pollution deaths by 2040</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Caption -->
+    <div class="ka-img-caption">
+        Buildings dissolve into PM2.5 haze across a major urban skyline — in 2023, air pollution took 7.9 million lives, with 89% of those deaths in low- and middle-income countries where dense smog has long been part of the daily forecast. (<a href="https://commons.wikimedia.org/wiki/File:Smog_in_Beijing_CBD.JPG" target="_blank" rel="noopener">Wikimedia Commons</a> / CC BY-SA 3.0 / Lommes)
+    </div>
+
+    <!-- ===== INTRO TEXT ===== -->
+    <div class="ka-intro-block">
+        <p>
+            Every four seconds, someone somewhere dies from breathing polluted air. That is not a forecast — it is the current pace, based on <strong>7.9 million annual deaths</strong> recorded in 2023 by the <a href="https://www.stateofglobalair.org/resources/report/state-global-air-report-2025" target="_blank" rel="noopener">State of Global Air 2025 Report</a>, produced by the Health Effects Institute and the Institute for Health Metrics and Evaluation. On May 17–18, 2026, the World Health Organization launched a major advocacy framework and the Pan-European Commission on Climate and Health published a "Call to Action" — asking WHO to formally declare climate change a <strong>Public Health Emergency of International Concern</strong>, the same emergency classification used for COVID-19 and Mpox.
+        </p>
+        <p>
+            This is not a new problem. Air pollution has been the world's leading environmental risk factor for death for decades. What is new is the scale of coordinated pressure on WHO to stop treating it as a background condition and start treating it as the acute, escalating emergency it already is. The <a href="https://www.who.int/news/item/18-05-2026-who-launches-advocacy--communications-and-partnerships-plan-on-the-health-response-to-climate-change--air-pollution-and-energy-poverty" target="_blank" rel="noopener">WHO's new 2025–2028 plan</a> — titled "WHO at the heart of the health response to climate change, air pollution and energy poverty" — targets three interconnected crises at once, including the energy poverty that forces 2.3 billion people to cook over open fires every day, often killing women and children at home without making a single headline.
+        </p>
+    </div>
+
+    <!-- ===== LIVE COUNTER ===== -->
+    <div class="ka-counter-wrap">
+        <div class="ka-counter-eyebrow">Estimated deaths from air pollution</div>
+        <div class="ka-counter-sub">since you opened this page</div>
+        <div class="ka-main-count" id="ka-main-ct">0.00</div>
+        <div class="ka-count-note">Based on 7.9 million deaths per year (State of Global Air 2025) — approximately 1 death every 3.98 seconds</div>
+        <div class="ka-mini-grid">
+            <div class="ka-mini">
+                <div class="ka-mini-num" id="ka-ncd-ct">0.00</div>
+                <div class="ka-mini-lbl">From NCDs: heart disease, stroke, COPD, lung cancer</div>
+            </div>
+            <div class="ka-mini">
+                <div class="ka-mini-num" id="ka-indoor-ct">0.00</div>
+                <div class="ka-mini-lbl">From indoor cooking &amp; household pollution</div>
+            </div>
+            <div class="ka-mini">
+                <div class="ka-mini-num" id="ka-child-ct">0.00</div>
+                <div class="ka-mini-lbl">Children under 5 (based on annual rate of 237,000)</div>
+            </div>
+            <div class="ka-mini">
+                <div class="ka-mini-num" id="ka-prev-ct">0.00</div>
+                <div class="ka-mini-lbl">Could be prevented if WHO's 2040 target is met</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== POLLUTION TYPE EXPLORER ===== -->
+    <div class="ka-explorer">
+        <div class="ka-section-hd">Four Ways Air Is Killing People Right Now</div>
+        <div class="ka-section-sub">Select each type to explore the data, who's affected, and what science shows.</div>
+
+        <div class="ka-tabs-bar" role="tablist" aria-label="Pollution type explorer">
+            <button class="ka-tab-btn ka-on" onclick="kaTab('outdoor',this)" role="tab" aria-selected="true">🏙️ Outdoor Pollution</button>
+            <button class="ka-tab-btn" onclick="kaTab('indoor',this)" role="tab" aria-selected="false">🍳 Indoor &amp; Cooking</button>
+            <button class="ka-tab-btn" onclick="kaTab('wildfire',this)" role="tab" aria-selected="false">🔥 Wildfire Smoke</button>
+            <button class="ka-tab-btn" onclick="kaTab('heat',this)" role="tab" aria-selected="false">🌡️ Extreme Heat</button>
+        </div>
+
+        <!-- OUTDOOR -->
+        <div class="ka-tab-pane ka-on" id="ka-pane-outdoor">
+            <div class="ka-card">
+                <span class="ka-card-icon">🏙️</span>
+                <div class="ka-card-title">Ambient / Outdoor Air Pollution</div>
+                <div class="ka-card-big">4.2M+</div>
+                <div class="ka-card-big-lbl">deaths annually from PM2.5 and ground-level ozone</div>
+                <div class="ka-card-body">
+                    Outdoor air pollution — from vehicles, industry, agriculture, coal burning, and construction — kills over 4.2 million people each year. Fine particles (PM2.5) are small enough to pass through the lungs directly into the bloodstream, reaching the brain, heart, and kidneys.
+                    <br><br>
+                    According to the <a href="https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health" target="_blank" rel="noopener" style="color:#63b3ed;">WHO's air pollution fact sheet</a>, <strong>89% of all air pollution deaths occur in low- and middle-income countries</strong> — particularly in South-East Asia and the Western Pacific. India, Bangladesh, Pakistan, and China face the highest exposures. <a href="https://www.karmactive.com/delhi-faces-severe-pollution-emergency-with-aqi-over-1100-flights-affected-and-pm2-5-hazardous/" target="_blank" rel="noopener" style="color:#63b3ed;">Delhi recorded AQI levels over 1,100</a> — a level that qualifies as severe emergency.
+                </div>
+                <div class="ka-tag">Only 14% of cities globally meet WHO air quality standards (IQAir 2025)</div>
+                <div class="ka-who-note-box">WHO updated its Air Quality Guidelines in 2021 — the first revision in 15 years — tightening limits for PM2.5, PM10, ozone, nitrogen dioxide, sulfur dioxide, and carbon monoxide after new evidence linked lower levels to serious harm. Most countries remain far beyond these limits.</div>
+            </div>
+            <div class="ka-card">
+                <span class="ka-card-icon">🫁</span>
+                <div class="ka-card-title">How It Damages the Body Over Time</div>
+                <div class="ka-card-big">6.8M</div>
+                <div class="ka-card-big-lbl">deaths from non-communicable diseases linked to air pollution (2023)</div>
+                <div class="ka-card-body">
+                    Of the 7.9 million air pollution deaths in 2023, <strong>86% were from non-communicable diseases</strong>: strokes, ischemic heart disease, COPD, lung cancer, and — increasingly documented — dementia. These are not sudden deaths. They are the result of years of silent exposure.
+                    <br><br>
+                    Adults over 60 account for 95% of NCD deaths from air pollution. The State of Global Air 2025 Report found that NCDs caused by air pollution also resulted in <strong>161 million healthy life-years lost</strong> in 2023 — a figure that translates directly into lost income, overwhelmed health systems, and generational burden on families.
+                </div>
+                <div class="ka-tag">36% of the world's population exposed above WHO's most lenient PM2.5 guideline</div>
+            </div>
+        </div>
+
+        <!-- INDOOR -->
+        <div class="ka-tab-pane" id="ka-pane-indoor">
+            <div class="ka-card">
+                <span class="ka-card-icon">🍳</span>
+                <div class="ka-card-title">Household / Indoor Cooking Pollution</div>
+                <div class="ka-card-big">3.8M</div>
+                <div class="ka-card-big-lbl">deaths annually from indoor household pollution (WHO)</div>
+                <div class="ka-card-body">
+                    More than <strong>2.3 billion people</strong> still cook daily on open fires or inefficient stoves fuelled by wood, coal, animal dung, or kerosene. The <a href="https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health" target="_blank" rel="noopener" style="color:#63b3ed;">WHO estimates this indoor burning kills 3.8 million people per year</a> — and the pollution inside these homes often exceeds levels recorded on the worst outdoor smog days in the most polluted cities in the world.
+                    <br><br>
+                    Those breathing the worst of it are almost always <strong>women and children</strong>. More than <strong>237,000 children under five</strong> die each year from illnesses caused by household cooking pollution. Women, who in many households carry the responsibility of cooking and collecting fuel, suffer the largest health consequences.
+                </div>
+                <div class="ka-tag">At current rates, 1.8 billion people will still lack clean cooking access by 2030</div>
+                <div class="ka-who-note-box">Energy poverty — no access to clean fuels or technologies for cooking — is the third pillar of WHO's new 2025–2028 advocacy plan. It sits at the intersection of health inequality, gender inequality, and climate change. Clean cooking also reduces deforestation and carbon emissions.</div>
+            </div>
+            <div class="ka-card">
+                <span class="ka-card-icon">⚡</span>
+                <div class="ka-card-title">The Energy Poverty Connection</div>
+                <div class="ka-card-big">2.3B</div>
+                <div class="ka-card-big-lbl">people without access to clean cooking fuels and technologies</div>
+                <div class="ka-card-body">
+                    Energy poverty means not having reliable access to clean energy for basic daily needs. In Sub-Saharan Africa, South Asia, and parts of Southeast Asia, this means families breathing dangerous levels of carbon monoxide, particulate matter, and other combustion products every day — inside their own homes.
+                    <br><br>
+                    Conditions linked to this exposure include pneumonia, COPD, lung cancer, cataracts, higher rates of stillbirths, and burns from open fires. The WHO's new advocacy plan specifically links clean cooking solutions to climate action — <strong>switching from biomass reduces both health harm and greenhouse gas emissions simultaneously.</strong>
+                </div>
+                <div class="ka-tag">Half of all cooking pollution deaths are among women and children under 15</div>
+            </div>
+        </div>
+
+        <!-- WILDFIRE -->
+        <div class="ka-tab-pane" id="ka-pane-wildfire">
+            <div class="ka-card">
+                <span class="ka-card-icon">🔥</span>
+                <div class="ka-card-title">Wildfire Smoke — The Growing Threat</div>
+                <div class="ka-card-big">4.5M</div>
+                <div class="ka-card-big-lbl">yearly deaths linked to wildfire-related particle pollution globally</div>
+                <div class="ka-card-body">
+                    A 2025 UN/WMO report found that wildfires are creating a <a href="https://www.karmactive.com/un-wmo-wildfires-air-pollution-report-2025/" target="_blank" rel="noopener" style="color:#63b3ed;">toxic mix of pollutants threatening over 900 million people</a> in the Indo-Gangetic Plain alone. Wildfire ash contains carcinogenic metals including chromium and arsenic. Unlike industrial pollution, wildfire smoke travels thousands of kilometres — so people far from the fire are still breathing the particles.
+                    <br><br>
+                    Record wildfires across southern Europe's Iberian Peninsula in summer 2025 sent pollution across the continent for weeks. A 2026 study found that wildfire smoke exposure can <strong>increase the risk of dying from lung cancer</strong> for people already diagnosed. The wildfire season grows longer and more intense each year as temperatures rise.
+                </div>
+                <div class="ka-tag">Warmer temperatures accelerate ozone formation — making smog worse on hot days</div>
+                <div class="ka-who-note-box">Climate change is the primary driver of worsening wildfire seasons. The link between wildfires, air quality, and human health is one of the core reasons the Pan-European Commission is asking WHO to treat climate change as a formal health emergency.</div>
+            </div>
+            <div class="ka-card">
+                <span class="ka-card-icon">🧬</span>
+                <div class="ka-card-title">Cancer Risk That Builds Invisibly</div>
+                <div class="ka-card-big">PM2.5</div>
+                <div class="ka-card-big-lbl">particles fine enough to enter the bloodstream through the lungs</div>
+                <div class="ka-card-body">
+                    Particle pollution from wildfires is classified as a known carcinogen. A large California study published in 2025 confirmed that wildfire smoke shortens survival times for lung cancer patients. The particles — many smaller than 2.5 micrometres — bypass the body's natural filtration and reach the brain, liver, and heart.
+                    <br><br>
+                    <strong>The key difference from industrial pollution</strong>: wildfire smoke is not a local problem. Wind carries it across borders, oceans, and continents. Populations hundreds of kilometres away breathe hazardous air for weeks while the fire burns.
+                </div>
+                <div class="ka-tag">Wildfire-driven air pollution causes more asthma and lung hospitalisations every year</div>
+            </div>
+        </div>
+
+        <!-- HEAT -->
+        <div class="ka-tab-pane" id="ka-pane-heat">
+            <div class="ka-card">
+                <span class="ka-card-icon">🌡️</span>
+                <div class="ka-card-title">Extreme Heat — Europe's 2025 Warning</div>
+                <div class="ka-card-big">24,000</div>
+                <div class="ka-card-big-lbl">heat-related deaths in 854 European cities, summer 2025</div>
+                <div class="ka-card-body">
+                    The <a href="https://www.who.int/europe/news/item/17-05-2026-climate-change-is-a-health-crisis---and-fixing-it-is-a-health-opportunity" target="_blank" rel="noopener" style="color:#63b3ed;">Pan-European Commission on Climate and Health</a> found that nearly <strong>70%</strong> of the approximately 24,000 heat-related deaths across 854 European cities in summer 2025 were directly attributable to human-induced climate change. That means roughly 16,800 people died from heat that would not have been as severe without the carbon emissions already in the atmosphere.
+                    <br><br>
+                    Heat kills through cardiovascular failure, heat stroke, and by worsening existing conditions like diabetes and COPD. Older adults, outdoor workers, pregnant women, and people living in dense urban areas without green spaces or air conditioning are the most exposed.
+                </div>
+                <div class="ka-tag">Climate change expanding dengue/chikungunya risk zone by ~5 million people per year in Europe</div>
+                <div class="ka-who-note-box">The Commission — chaired by former Icelandic Prime Minister Katrín Jakobsdóttir and supported by Chief Scientific Advisor Sir Andrew Haines (LSHTM) — covers all 53 countries in the WHO European Region and brings together 13 former heads of government and international health leaders.</div>
+            </div>
+            <div class="ka-card">
+                <span class="ka-card-icon">🧠</span>
+                <div class="ka-card-title">Mental Health: The Angle Most Miss</div>
+                <div class="ka-card-big">0.9%</div>
+                <div class="ka-card-big-lbl">rise in mental health problems per 1°C of temperature increase (research)</div>
+                <div class="ka-card-body">
+                    The Pan-European Commission explicitly recommended <strong>greater emphasis on mental health in climate-health planning</strong> — an area almost entirely missing from mainstream coverage of this story. A review of 57 studies published in <em>Nature Mental Health</em> linked slow environmental shifts — drought, seasonal disruption, displacement — with rising rates of depression, anxiety, and PTSD.
+                    <br><br>
+                    Heat directly impairs neurological function and disrupts sleep. Prolonged stress from climate disruption affects hormones, inflammation, and neurological pathways tied to anxiety and depression. Children, elderly people, and low-income populations bear the highest mental health burden with the fewest resources to manage it.
+                </div>
+                <div class="ka-tag">Research links every 1°C temperature rise to measurable increases in psychiatric disorder rates</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== BODY TEXT WITH INTERNAL LINKS ===== -->
+    <div class="ka-body-block">
+        <p>
+            The two things published on May 17–18 are connected. The Pan-European Commission's "Call to Action" report — released on the sidelines of the 79th World Health Assembly in Geneva — came first. It includes 17 specific recommendations covering four domains: treating climate change as a health security threat; transforming health systems; scaling up local action; and reforming the economic and financial systems that are driving the crisis in the first place. Among those 17: a demand that WHO formally declare climate change a <strong>Public Health Emergency of International Concern</strong>. The Commission argues the absence of this formal designation has allowed governments to treat climate change as a slow-moving background condition rather than the acute, escalating threat the data shows it to be.
+        </p>
+
+        <div class="ka-pullquote">
+            "Climate change is not a future threat to be managed. It is an immediate and growing crisis affecting health, food, water, energy and national security simultaneously."
+            <br><small style="font-size:0.8rem; color:#6b7280; font-style:normal; display:block; margin-top:0.5rem;">— Pan-European Commission on Climate and Health, Call to Action, May 17, 2026</small>
+        </div>
+
+        <p>
+            The WHO's new plan arrived the following day. The 2025–2028 framework positions health explicitly at the centre of global climate, clean air, and energy debates — treating air pollution, climate, and energy poverty not as separate policy areas but as a single interconnected crisis. It also launched the <a href="https://www.who.int/westernpacific/news/item/18-05-2026-who-launches-the--climate-and-health-co-benefits-challenge--showcasing-climate-interventions-saving-lives" target="_blank" rel="noopener">Climate and Health Co-benefits Challenge</a> — an open call to governments, academic institutions, civil society, and the private sector to submit documented evidence of climate actions that have already delivered measurable health benefits. Examples include cities that shifted to renewable energy and saw air quality improve; urban greening programmes that kept neighbourhoods cooler during heat waves; and sustainable diet transitions that reduced rates of preventable disease. Submissions are open until <strong>31 August 2026</strong>, with selected case studies to be presented at Pre-COP31 in Fiji in October 2026.
+        </p>
+
+        <p>
+            The push is not new, but the convergence of pressure is. At the Second Global Conference on Air Pollution and Health in Cartagena, Colombia in March 2026, 17 countries made concrete national pledges — the UK, Brazil, Mexico, China, Vietnam, France, India, Spain, and others committed to updated national plans and standards aligned more closely with WHO guidelines. More broadly, <strong>over 50 countries and cities</strong> have now pledged to halve the health impacts of air pollution by 2040, a target endorsed at the 78th World Health Assembly in May 2025. If met, the <a href="https://www.sei.org/perspectives/seventeen-nations-pledge-to-halve-air-pollution/" target="_blank" rel="noopener">Stockholm Environment Institute calculates</a> this would prevent approximately <strong>4 million deaths per year</strong>, including close to 3 million from non-communicable diseases. On the corporate side, <a href="https://www.karmactive.com/sbti-trend-tracker-2025-corporate-climate-targets/" target="_blank" rel="noopener">corporate climate targets surged 40% in 2025</a>, with healthcare sector growth at 76% — signalling that health and climate are finally being treated in the same breath by industries that were previously silent on the connection.
+        </p>
+    </div>
+
+    <!-- ===== TIMELINE ===== -->
+    <div class="ka-timeline-section">
+        <div class="ka-timeline-inner">
+            <div class="ka-section-hd">How the World Got Here: A Timeline</div>
+            <div class="ka-section-sub">Key moments in the global response to air pollution and climate health — from first guidelines to emergency declaration calls.</div>
+
+            <div class="ka-tl">
+                <div class="ka-tl-row">
+                    <div class="ka-dot"></div>
+                    <div class="ka-tl-date">1987</div>
+                    <div class="ka-tl-title">WHO's First Air Quality Guidelines Published</div>
+                    <div class="ka-tl-body">WHO issued its first global air quality guidelines, laying the scientific foundation for national standards on particulate matter, ozone, nitrogen dioxide, and other pollutants. Most countries adopted diluted versions — or none at all.</div>
+                </div>
+                <div class="ka-tl-row">
+                    <div class="ka-dot"></div>
+                    <div class="ka-tl-date">September 2021</div>
+                    <div class="ka-tl-title">WHO Tightens Air Quality Guidelines — First Update in 15 Years</div>
+                    <div class="ka-tl-body">New evidence linking lower pollution levels to cardiovascular and neurological harm prompted WHO to significantly tighten limits for PM2.5, PM10, ozone, and nitrogen dioxide. The updated guidelines set the PM2.5 annual mean target at just 5 μg/m³ — a level most major cities in Asia and Africa exceed by 10–20 times.</div>
+                </div>
+                <div class="ka-tl-row">
+                    <div class="ka-dot"></div>
+                    <div class="ka-tl-date">May 2025</div>
+                    <div class="ka-tl-title">78th World Health Assembly Adopts Air Pollution Roadmap and 2040 Target</div>
+                    <div class="ka-tl-body">Member states approved a voluntary target to halve premature deaths from anthropogenic air pollution by 2040. The <a href="https://www.cleanairfund.org/news-item/wha-approves-roadmap/" target="_blank" rel="noopener" style="color:#3b82f6;">Clean Air Fund noted</a> that achieving this would prevent roughly 3 million deaths from non-communicable diseases every year. Over 50 countries and cities pledged to meet the target.</div>
+                </div>
+                <div class="ka-tl-row">
+                    <div class="ka-dot"></div>
+                    <div class="ka-tl-date">March 2026</div>
+                    <div class="ka-tl-title">Second Global Conference on Air Pollution and Health — Cartagena, Colombia</div>
+                    <div class="ka-tl-body">Hosted by WHO and the Government of Colombia, 17 countries made concrete national pledges including the UK, Brazil, Mexico, China, Vietnam, India, France, and Spain — committing to national action plans, public data access, and health impact assessments aligned with WHO guidelines.</div>
+                </div>
+                <div class="ka-tl-row">
+                    <div class="ka-dot"></div>
+                    <div class="ka-tl-date">17 May 2026</div>
+                    <div class="ka-tl-title">Pan-European Commission Issues "Call to Action" — Asks WHO to Declare Global Emergency</div>
+                    <div class="ka-tl-body">13 former heads of government and international health leaders, chaired by former Icelandic Prime Minister Katrín Jakobsdóttir, published <a href="https://www.who.int/europe/publications/m/item/pan-european-commission-on-climate-and-health--call-to-action" target="_blank" rel="noopener" style="color:#3b82f6;">17 recommendations</a> — including calling for WHO to declare climate change a Public Health Emergency of International Concern, mandatory climate-health training for all health professionals, and a new regional climate-health information hub.</div>
+                </div>
+                <div class="ka-tl-row">
+                    <div class="ka-dot"></div>
+                    <div class="ka-tl-date">18 May 2026</div>
+                    <div class="ka-tl-title">WHO Launches 2025–2028 Advocacy Plan and Climate and Health Co-benefits Challenge</div>
+                    <div class="ka-tl-body">WHO published its comprehensive 2025–2028 response framework and simultaneously opened the Climate and Health Co-benefits Challenge — collecting real-world evidence of climate actions that saved lives. Submissions from governments, researchers, civil society, and the private sector close <strong>31 August 2026</strong>. Selected cases will be highlighted at Pre-COP31 in Fiji, October 2026.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== WHAT'S BEING DONE ===== -->
+    <div class="ka-action-section">
+        <div class="ka-action-inner">
+            <div class="ka-section-hd">What the 2025–2028 Plan Actually Asks For</div>
+            <div class="ka-section-sub">The WHO plan and Pan-European Commission target three overlapping crises with specific, measurable commitments.</div>
+
+            <div class="ka-action-grid">
+                <div class="ka-action-card">
+                    <span class="ka-action-icon">🏛️</span>
+                    <div class="ka-action-title">Declare Climate Change a Formal Emergency</div>
+                    <div class="ka-action-body">
+                        The Commission calls for WHO to classify climate change as a <strong>Public Health Emergency of International Concern (PHEIC)</strong> — the highest level of health alert, previously used for COVID-19 and Mpox. The Commission argues that without formal emergency status, governments treat climate as a chronic background condition rather than an acute threat requiring immediate, coordinated action.
+                    </div>
+                    <span class="ka-action-pill">17 formal recommendations submitted</span>
+                </div>
+                <div class="ka-action-card">
+                    <span class="ka-action-icon">🏥</span>
+                    <div class="ka-action-title">Transform Health Systems — Including Their Own Footprint</div>
+                    <div class="ka-action-body">
+                        <strong>Health systems contribute approximately 5% of global greenhouse gas emissions.</strong> The WHO plan calls for health sectors to integrate climate indicators into national performance assessments and for mandatory training of health professionals in climate-health impacts. The Commission also calls for mandatory climate-health education in medical curricula.
+                    </div>
+                    <span class="ka-action-pill">Health sector = 5% of global emissions</span>
+                </div>
+                <div class="ka-action-card">
+                    <span class="ka-action-icon">🌿</span>
+                    <div class="ka-action-title">The Climate and Health Co-benefits Challenge</div>
+                    <div class="ka-action-body">
+                        An <strong>open global call</strong> for documented, real-world evidence of climate actions that delivered measurable health benefits — in energy, transport, agriculture, urban planning, or nature-based solutions. Open until <strong>31 August 2026</strong>. Selected case studies will be presented at Pre-COP31 in Fiji, October 2026, and used to inform climate and health investment decisions globally.
+                    </div>
+                    <span class="ka-action-pill">Submit by 31 August 2026</span>
+                </div>
+                <div class="ka-action-card">
+                    <span class="ka-action-icon">🎯</span>
+                    <div class="ka-action-title">Halve Air Pollution Deaths by 2040</div>
+                    <div class="ka-action-body">
+                        The WHO roadmap endorsed at the 78th World Health Assembly sets a <strong>voluntary target to halve premature deaths from anthropogenic air pollution by 2040</strong>. If met, this prevents approximately 4 million deaths per year, including 3 million from NCDs. Over 50 countries and cities have pledged. The question now is whether pledges translate into enacted policy before 2030.
+                    </div>
+                    <span class="ka-action-pill">50+ countries pledged the target</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CONCLUSION ===== -->
+    <div class="ka-conclusion-block">
+        <p>
+            The discussions described above — WHO's new advocacy framework, the Pan-European Commission's Call to Action, and the ongoing pressure for a formal PHEIC declaration — were all part of the 79th World Health Assembly in Geneva in May 2026. The Commission's 17 recommendations and WHO's 2025–2028 framework on climate change, air pollution, and energy poverty were presented together, drawing on data from the <a href="https://www.stateofglobalair.org/resources/report/state-global-air-report-2025" target="_blank" rel="noopener">State of Global Air 2025 Report</a>, WHO household air pollution data, and the broader body of climate-health research accumulated since the 1987 guidelines. The long-term sustainability of these targets depends on how quickly the 50+ countries that made pledges convert them into legally binding national policy, clean cooking investment, and enforceable air quality standards aligned with WHO's 2021 guidelines. For the 2.3 billion people who still cook on open fires every day, and for the cities where <a href="https://www.karmactive.com/dubai-ranked-4-most-polluted-aqi-190-smog-spike-2025/" target="_blank" rel="noopener">air quality regularly crosses into hazardous territory</a>, the gap between declarations and daily reality remains the central challenge in this story.
+        </p>
+        <p>
+            The historical arc of this issue has been one of slow acknowledgement: from WHO's first 1987 air quality guidelines, through the 2021 tightening, to the 2025 World Health Assembly roadmap, and now the 2026 call for formal emergency status. The <a href="https://www.karmactive.com/chinas-2025-plan-eliminating-severe-air-pollution-amid-coal-dependency/" target="_blank" rel="noopener">national air pollution plans being developed</a> by countries like China, and the <a href="https://www.karmactive.com/un-wmo-wildfires-air-pollution-report-2025/" target="_blank" rel="noopener">growing science connecting wildfires to air quality crises</a>, are part of the same global reckoning. What happens in the 50+ countries that pledged the 2040 target — and whether WHO formally declares a PHEIC — will determine whether 2026 becomes a turning point or another entry in a timeline of well-documented inaction.
+        </p>
+    </div>
+
+    <!-- ===== SOURCES ===== -->
+    <div class="ka-sources-bar">
+        <strong style="color:#374151;">First-hand sources:</strong>
+        <a href="https://www.who.int/news/item/18-05-2026-who-launches-advocacy--communications-and-partnerships-plan-on-the-health-response-to-climate-change--air-pollution-and-energy-poverty" target="_blank" rel="noopener">WHO Advocacy Plan (May 18, 2026)</a> ·
+        <a href="https://www.who.int/europe/news/item/17-05-2026-climate-change-is-a-health-crisis---and-fixing-it-is-a-health-opportunity" target="_blank" rel="noopener">WHO Europe — Pan-European Commission Report (May 17, 2026)</a> ·
+        <a href="https://www.who.int/europe/publications/m/item/pan-european-commission-on-climate-and-health--call-to-action" target="_blank" rel="noopener">Pan-European Commission Call to Action (WHO)</a> ·
+        <a href="https://www.who.int/westernpacific/news/item/18-05-2026-who-launches-the--climate-and-health-co-benefits-challenge--showcasing-climate-interventions-saving-lives" target="_blank" rel="noopener">WHO Co-benefits Challenge (May 18, 2026)</a> ·
+        <a href="https://www.stateofglobalair.org/resources/report/state-global-air-report-2025" target="_blank" rel="noopener">State of Global Air 2025 Report (Health Effects Institute)</a> ·
+        <a href="https://www.who.int/news-room/fact-sheets/detail/household-air-pollution-and-health" target="_blank" rel="noopener">WHO Household Air Pollution Fact Sheet</a> ·
+        <a href="https://www.sei.org/perspectives/seventeen-nations-pledge-to-halve-air-pollution/" target="_blank" rel="noopener">SEI — 17 Nations Pledge</a> ·
+        <a href="https://www.cleanairfund.org/news-item/wha-approves-roadmap/" target="_blank" rel="noopener">Clean Air Fund — WHA Roadmap</a> ·
+        <a href="https://www.healtheffects.org/announcements/new-state-global-air-2025-report-shows-nearly-nine-ten-global-air-pollution-deaths-are" target="_blank" rel="noopener">Health Effects Institute — State of Global Air 2025</a>
+    </div>
+
+</div><!-- end .ka-air -->
+
+<script>
+/* ============ LIVE COUNTER ============ */
+(function(){
+    var t0 = Date.now();
+    var perSec   = 7900000 / (365.25 * 24 * 3600);  // 0.2505/s
+    var rNCD     = 6800000 / 7900000;                 // 0.8608
+    var rIndoor  = 3800000 / 7900000;                 // 0.4810
+    var rChild   = 237000  / 7900000;                 // 0.0300
+    var rPrev    = 4000000 / 7900000;                 // 0.5063
+
+    function fmt(n){
+        if(n < 10) return n.toFixed(2);
+        return Math.floor(n).toLocaleString();
+    }
+    function tick(){
+        var s = (Date.now()-t0)/1000;
+        var tot = perSec * s;
+        var m = document.getElementById('ka-main-ct');
+        var n = document.getElementById('ka-ncd-ct');
+        var i = document.getElementById('ka-indoor-ct');
+        var c = document.getElementById('ka-child-ct');
+        var p = document.getElementById('ka-prev-ct');
+        if(m) m.textContent = fmt(tot);
+        if(n) n.textContent = fmt(tot*rNCD);
+        if(i) i.textContent = fmt(tot*rIndoor);
+        if(c) c.textContent = fmt(tot*rChild);
+        if(p) p.textContent = fmt(tot*rPrev);
+    }
+    setInterval(tick, 100);
+    tick();
+})();
+
+/* ============ TAB SWITCHER ============ */
+function kaTab(id, btn){
+    document.querySelectorAll('.ka-air .ka-tab-btn').forEach(function(b){ b.classList.remove('ka-on'); b.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('.ka-air .ka-tab-pane').forEach(function(p){ p.classList.remove('ka-on'); });
+    btn.classList.add('ka-on');
+    btn.setAttribute('aria-selected','true');
+    var el = document.getElementById('ka-pane-'+id);
+    if(el) el.classList.add('ka-on');
+}
+</script>
+
+</body>
+</html>
