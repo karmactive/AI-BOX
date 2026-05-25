@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ebola Outbreak 2026: DRC Congo, Uganda Cases, No Vaccine &amp; What You Need to Know</title>
+  <meta name="description" content="WHO declared the Bundibugyo Ebola outbreak in DRC and Uganda a global health emergency. With 968+ suspected cases, no approved vaccine, and a World Cup in the balance — here's everything you need to know.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous" />
+  <style>
+    /* ========================================================
+       SCOPED STYLES — all prefixed with .ebola2026-wrapper
+       to prevent any bleed into the WordPress theme
+    ======================================================== */
+    .ebola2026-wrapper * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    .ebola2026-wrapper {
+      font-family: 'Georgia', serif;
+      color: #1a1a2e;
+      background: #fff;
+      line-height: 1.7;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .ebola2026-wrapper a {
+      color: #b71c1c;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .ebola2026-wrapper a:hover {
+      color: #7f0000;
+    }
+
+    /* ── BREAKING TICKER ──────────────────────────────────── */
+    .ebola2026-ticker {
+      background: #b71c1c;
+      color: #fff;
+      padding: 0.55rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .ebola2026-ticker-inner {
+      display: inline-block;
+      animation: ebola-ticker-scroll 28s linear infinite;
+      font-size: 0.85rem;
+      font-family: 'Arial', sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .ebola2026-ticker-inner span {
+      margin: 0 2.5rem;
+    }
+    .ebola2026-ticker-label {
+      display: inline-block;
+      background: #fff;
+      color: #b71c1c;
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 3px;
+      margin-right: 1rem;
+      letter-spacing: 0.08em;
+      vertical-align: middle;
+    }
+    @keyframes ebola-ticker-scroll {
+      0%   { transform: translateX(100vw); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* ── MAGAZINE HEADER ──────────────────────────────────── */
+    .ebola2026-header {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      min-height: 500px;
+      margin-bottom: 0;
+    }
+    .ebola2026-header-image {
+      position: relative;
+      overflow: hidden;
+      background: #1a1a2e;
+    }
+    .ebola2026-header-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.92;
+      display: block;
+    }
+    .ebola2026-img-overlay {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+      padding: 1.2rem;
+    }
+    .ebola2026-img-caption {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.82);
+      font-family: 'Arial', sans-serif;
+      font-style: italic;
+      line-height: 1.4;
+    }
+    .ebola2026-header-content {
+      background: #1a1a2e;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2.5rem 2rem;
+    }
+    .ebola2026-header-badge {
+      display: inline-block;
+      background: #b71c1c;
+      color: #fff;
+      font-size: 0.7rem;
+      font-family: 'Arial', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 3px;
+      margin-bottom: 1rem;
+      width: fit-content;
+    }
+    .ebola2026-header-title {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+    .ebola2026-header-sub {
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      color: rgba(255,255,255,0.75);
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .ebola2026-header-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 1.2rem;
+    }
+    .ebola2026-header-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      font-family: 'Arial', sans-serif;
+    }
+    .ebola2026-header-meta-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .ebola2026-risk-badges {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .ebola2026-risk-badge {
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-family: 'Arial', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .ebola2026-risk-vh  { background: #b71c1c; color: #fff; }
+    .ebola2026-risk-h   { background: #e65100; color: #fff; }
+    .ebola2026-risk-l   { background: #2e7d32; color: #fff; }
+
+    /* ── STATS DASHBOARD ──────────────────────────────────── */
+    .ebola2026-stats {
+      background: #1a1a2e;
+      padding: 2rem 1.5rem;
+      border-top: 3px solid #b71c1c;
+    }
+    .ebola2026-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .ebola2026-stat-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    .ebola2026-stat-card:hover {
+      background: rgba(183,28,28,0.2);
+    }
+    .ebola2026-stat-value {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: #ef9a9a;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+      font-family: 'Arial', sans-serif;
+    }
+    .ebola2026-stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.65);
+      font-family: 'Arial', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .ebola2026-stat-sub {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.4);
+      font-family: 'Arial', sans-serif;
+      margin-top: 0.3rem;
+    }
+    .ebola2026-stats-note {
+      text-align: center;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.72rem;
+      font-family: 'Arial', sans-serif;
+      margin-top: 1.2rem;
+    }
+
+    /* ── INTRO SECTION ──────────────────────────────────────  */
+    .ebola2026-intro {
+      padding: 3rem 2rem;
+      background: #fff8f8;
+      border-left: 5px solid #b71c1c;
+    }
+    .ebola2026-intro-text {
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #2c2c2c;
+    }
+    .ebola2026-intro-text p + p {
+      margin-top: 1.2rem;
+    }
+    .ebola2026-pullquote {
+      border-left: 4px solid #b71c1c;
+      margin: 2rem 0;
+      padding: 1rem 1.5rem;
+      background: #fff;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 2px 12px rgba(183,28,28,0.07);
+    }
+    .ebola2026-pullquote-text {
+      font-size: 1.15rem;
+      font-style: italic;
+      color: #b71c1c;
+      line-height: 1.6;
+    }
+    .ebola2026-pullquote-source {
+      font-size: 0.82rem;
+      color: #666;
+      margin-top: 0.5rem;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* ── TIMELINE ─────────────────────────────────────────── */
+    .ebola2026-timeline-section {
+      background: #fff;
+      padding: 3rem 1.5rem;
+    }
+    .ebola2026-section-heading {
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 0.4rem;
+    }
+    .ebola2026-section-subheading {
+      font-size: 0.9rem;
+      color: #888;
+      font-family: 'Arial', sans-serif;
+      margin-bottom: 2rem;
+    }
+    .ebola2026-timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .ebola2026-timeline::before {
+      content: '';
+      position: absolute;
+      left: 110px;
+      top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, #b71c1c, #e53935, #ff7043);
+    }
+    .ebola2026-tl-item {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      align-items: flex-start;
+      cursor: pointer;
+    }
+    .ebola2026-tl-date {
+      min-width: 95px;
+      text-align: right;
+      font-size: 0.78rem;
+      font-family: 'Arial', sans-serif;
+      font-weight: 700;
+      color: #b71c1c;
+      padding-top: 0.15rem;
+      line-height: 1.4;
+    }
+    .ebola2026-tl-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #b71c1c;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 3px #b71c1c;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+      z-index: 1;
+      position: relative;
+      transition: transform 0.2s;
+    }
+    .ebola2026-tl-item:hover .ebola2026-tl-dot {
+      transform: scale(1.4);
+    }
+    .ebola2026-tl-content {
+      background: #fff8f8;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      border: 1px solid #ffd7d7;
+      flex: 1;
+      transition: box-shadow 0.2s;
+    }
+    .ebola2026-tl-item:hover .ebola2026-tl-content {
+      box-shadow: 0 4px 16px rgba(183,28,28,0.12);
+    }
+    .ebola2026-tl-title {
+      font-weight: 700;
+      color: #1a1a2e;
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+    .ebola2026-tl-desc {
+      font-size: 0.85rem;
+      color: #555;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.55;
+    }
+    .ebola2026-tl-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-family: 'Arial', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.6rem;
+      border-radius: 3px;
+      margin-bottom: 0.4rem;
+    }
+    .ebola2026-tag-red    { background: #ffcdd2; color: #b71c1c; }
+    .ebola2026-tag-orange { background: #ffe0b2; color: #e65100; }
+    .ebola2026-tag-blue   { background: #e3f2fd; color: #1565c0; }
+    .ebola2026-tag-green  { background: #e8f5e9; color: #2e7d32; }
+    .ebola2026-tag-purple { background: #ede7f6; color: #4527a0; }
+
+    /* ── MAP SECTION ──────────────────────────────────────── */
+    .ebola2026-map-section {
+      background: #f5f5f5;
+      padding: 3rem 1.5rem;
+    }
+    .ebola2026-map-container {
+      width: 100%;
+      height: 450px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      margin: 1.5rem 0;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .ebola2026-map-legend {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .ebola2026-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      font-family: 'Arial', sans-serif;
+      color: #444;
+    }
+    .ebola2026-legend-dot {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      border: 2px solid rgba(0,0,0,0.2);
+      flex-shrink: 0;
+    }
+
+    /* ── OUTBREAK HISTORY COMPARISON ─────────────────────── */
+    .ebola2026-history {
+      background: #fff;
+      padding: 3rem 1.5rem;
+    }
+    .ebola2026-outbreaks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 1.5rem auto 0;
+    }
+    .ebola2026-outbreak-card {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .ebola2026-outbreak-header {
+      padding: 1rem;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+    }
+    .ebola2026-outbreak-header-1 { background: #4a4a6a; }
+    .ebola2026-outbreak-header-2 { background: #7b2d2d; }
+    .ebola2026-outbreak-header-3 { background: #b71c1c; }
+    .ebola2026-outbreak-year {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 0.2rem;
+    }
+    .ebola2026-outbreak-location {
+      font-size: 0.8rem;
+      opacity: 0.85;
+      line-height: 1.3;
+    }
+    .ebola2026-outbreak-body {
+      padding: 1rem;
+      background: #fff8f8;
+    }
+    .ebola2026-outbreak-stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f0dede;
+      font-family: 'Arial', sans-serif;
+    }
+    .ebola2026-outbreak-stat:last-child {
+      border-bottom: none;
+    }
+    .ebola2026-outbreak-stat-label {
+      font-size: 0.78rem;
+      color: #666;
+    }
+    .ebola2026-outbreak-stat-value {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #b71c1c;
+    }
+    .ebola2026-bar-row {
+      margin-top: 0.8rem;
+    }
+    .ebola2026-bar-label {
+      font-size: 0.72rem;
+      color: #999;
+      font-family: 'Arial', sans-serif;
+      margin-bottom: 0.3rem;
+    }
+    .ebola2026-bar-track {
+      height: 8px;
+      background: #ffd7d7;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .ebola2026-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      background: #b71c1c;
+      transition: width 1.5s ease;
+    }
+
+    /* ── BODY TEXT SECTION ────────────────────────────────── */
+    .ebola2026-body {
+      padding: 3rem 1.5rem;
+      background: #fff;
+    }
+    .ebola2026-body-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .ebola2026-body-inner h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #b71c1c;
+      margin: 2rem 0 0.8rem;
+      padding-left: 0.8rem;
+      border-left: 4px solid #b71c1c;
+    }
+    .ebola2026-body-inner p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #2c2c2c;
+      margin-bottom: 1.2rem;
+    }
+    .ebola2026-callout {
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4e 100%);
+      color: #fff;
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+    }
+    .ebola2026-callout-title {
+      font-size: 0.75rem;
+      font-family: 'Arial', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #ef9a9a;
+      margin-bottom: 0.7rem;
+    }
+    .ebola2026-callout-text {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.88);
+    }
+    .ebola2026-callout-text strong {
+      color: #ef9a9a;
+    }
+    .ebola2026-worldcup-box {
+      border: 2px solid #1a237e;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      background: #f8f9ff;
+    }
+    .ebola2026-worldcup-title {
+      font-size: 0.75rem;
+      font-family: 'Arial', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #1a237e;
+      margin-bottom: 0.7rem;
+    }
+    .ebola2026-worldcup-text {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #2c2c2c;
+    }
+
+    /* ── VACCINE RACE ─────────────────────────────────────── */
+    .ebola2026-vaccine {
+      background: #fafafa;
+      padding: 3rem 1.5rem;
+    }
+    .ebola2026-vaccine-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .ebola2026-vaccine-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      border-left: 5px solid;
+    }
+    .ebola2026-vc1 { border-left-color: #1565c0; }
+    .ebola2026-vc2 { border-left-color: #6a1b9a; }
+    .ebola2026-vaccine-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 0.3rem;
+    }
+    .ebola2026-vaccine-platform {
+      font-size: 0.78rem;
+      color: #888;
+      font-family: 'Arial', sans-serif;
+      margin-bottom: 1rem;
+    }
+    .ebola2026-progress-label {
+      font-size: 0.72rem;
+      color: #666;
+      font-family: 'Arial', sans-serif;
+      margin-bottom: 0.3rem;
+    }
+    .ebola2026-progress-track {
+      height: 10px;
+      background: #e8eaf6;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 0.8rem;
+    }
+    .ebola2026-progress-fill {
+      height: 100%;
+      border-radius: 5px;
+      transition: width 1.8s ease;
+    }
+    .ebola2026-progress-blue { background: linear-gradient(to right, #1565c0, #42a5f5); }
+    .ebola2026-progress-purple { background: linear-gradient(to right, #6a1b9a, #ab47bc); }
+    .ebola2026-stages {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.65rem;
+      color: #bbb;
+      font-family: 'Arial', sans-serif;
+      margin-top: 0.2rem;
+    }
+    .ebola2026-vaccine-note {
+      font-size: 0.82rem;
+      color: #555;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.5;
+      background: #f5f5f5;
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+    }
+
+    /* ── ACCORDION (PROTECTION GUIDE) ─────────────────────── */
+    .ebola2026-accordion-section {
+      background: #fff;
+      padding: 3rem 1.5rem;
+    }
+    .ebola2026-accordion-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .ebola2026-accordion-item {
+      border: 1px solid #e8e8e8;
+      border-radius: 8px;
+      margin-bottom: 0.8rem;
+      overflow: hidden;
+    }
+    .ebola2026-accordion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 1.3rem;
+      cursor: pointer;
+      background: #fff;
+      transition: background 0.2s;
+      border: none;
+      width: 100%;
+      text-align: left;
+    }
+    .ebola2026-accordion-header:hover { background: #fff8f8; }
+    .ebola2026-accordion-header.active { background: #fff8f8; border-bottom: 1px solid #ffd7d7; }
+    .ebola2026-accordion-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .ebola2026-accordion-icon {
+      font-size: 1.4rem;
+      transition: transform 0.3s;
+      color: #b71c1c;
+    }
+    .ebola2026-accordion-header.active .ebola2026-accordion-icon { transform: rotate(45deg); }
+    .ebola2026-accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .ebola2026-accordion-body-inner {
+      padding: 1.2rem 1.3rem;
+      font-size: 0.92rem;
+      color: #444;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.7;
+    }
+    .ebola2026-accordion-body-inner ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .ebola2026-accordion-body-inner li {
+      margin-bottom: 0.4rem;
+    }
+    .ebola2026-accordion-body-inner strong {
+      color: #b71c1c;
+    }
+
+    /* ── DEFORESTATION INSIGHT ───────────────────────────── */
+    .ebola2026-insight {
+      background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+      padding: 2.5rem 1.5rem;
+      color: #fff;
+    }
+    .ebola2026-insight-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .ebola2026-insight-text h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      color: #a5d6a7;
+    }
+    .ebola2026-insight-text p {
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.88);
+    }
+    .ebola2026-insight-stat {
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 1.5rem 1rem;
+    }
+    .ebola2026-insight-stat-value {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #a5d6a7;
+      line-height: 1;
+    }
+    .ebola2026-insight-stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 0.4rem;
+    }
+
+    /* ── CONCLUSION ───────────────────────────────────────── */
+    .ebola2026-conclusion {
+      background: #fff8f8;
+      padding: 3rem 1.5rem;
+      border-top: 3px solid #b71c1c;
+    }
+    .ebola2026-conclusion-inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .ebola2026-conclusion-inner p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #2c2c2c;
+      margin-bottom: 1.2rem;
+    }
+    .ebola2026-links-bar {
+      background: #1a1a2e;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    .ebola2026-links-bar-title {
+      font-size: 0.7rem;
+      font-family: 'Arial', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #ef9a9a;
+      margin-bottom: 0.8rem;
+    }
+    .ebola2026-links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.5rem;
+    }
+    .ebola2026-links-grid a {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.83rem;
+      font-family: 'Arial', sans-serif;
+      text-decoration: none;
+      padding: 0.4rem 0;
+      display: block;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: color 0.2s;
+    }
+    .ebola2026-links-grid a:hover { color: #ef9a9a; }
+
+    /* ── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .ebola2026-header {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .ebola2026-header-image {
+        height: 300px;
+      }
+      .ebola2026-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .ebola2026-outbreaks-grid {
+        grid-template-columns: 1fr;
+      }
+      .ebola2026-insight-inner {
+        grid-template-columns: 1fr;
+      }
+      .ebola2026-timeline::before {
+        left: 80px;
+      }
+      .ebola2026-tl-date {
+        min-width: 65px;
+        font-size: 0.72rem;
+      }
+    }
+    @media (max-width: 580px) {
+      .ebola2026-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .ebola2026-timeline::before {
+        left: 0;
+        display: none;
+      }
+      .ebola2026-timeline {
+        padding-left: 0;
+      }
+      .ebola2026-tl-item {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      .ebola2026-tl-date {
+        text-align: left;
+        min-width: auto;
+      }
+      .ebola2026-tl-dot { display: none; }
+      .ebola2026-header-content {
+        padding: 1.5rem 1.2rem;
+      }
+      .ebola2026-intro, .ebola2026-body,
+      .ebola2026-vaccine, .ebola2026-accordion-section,
+      .ebola2026-conclusion {
+        padding: 2rem 1rem;
+      }
+    }
+    @media (max-width: 400px) {
+      .ebola2026-stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .ebola2026-stat-value {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="ebola2026-wrapper">
+
+  <!-- ═══════════════════════════════════════════════════════
+       BREAKING TICKER
+  ══════════════════════════════════════════════════════════ -->
+  <div class="ebola2026-ticker" role="marquee" aria-label="Breaking news ticker">
+    <div class="ebola2026-ticker-inner">
+      <span><span class="ebola2026-ticker-label">BREAKING</span>WHO DECLARES EBOLA GLOBAL HEALTH EMERGENCY — MAY 16, 2026</span>
+      <span>968 suspected cases · 216 suspected deaths · DRC + Uganda affected</span>
+      <span>Bundibugyo virus — NO approved vaccine or treatment available</span>
+      <span>CDC: Level 3 travel alert for DRC · Level 4 advisory issued May 22</span>
+      <span>Oxford vaccine ChAdOx1 BDBV could enter trials in 2–3 months</span>
+      <span>DRC World Cup team required to isolate 21 days before entering US</span>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       MAGAZINE HEADER — Feature Image + Title
+  ══════════════════════════════════════════════════════════ -->
+  <header class="ebola2026-header">
+    <div class="ebola2026-header-image">
+      <!--
+        FEATURE IMAGE INSTRUCTIONS:
+        Replace the src below with your chosen image.
+        Recommended source: WHO Media Library — search "Ebola DRC 2026"
+        Or Wikimedia Commons: https://commons.wikimedia.org/wiki/Category:2026_Ebola_outbreak
+
+        CAPTION: Healthcare workers in protective equipment conduct patient screening at an
+        Ebola treatment center in Ituri Province, northeastern DRC, during the 2026 outbreak.
+        With 968 suspected cases across three provinces and no approved vaccine, every decision
+        made inside these centers carries a cost that numbers alone cannot fully account for.
+        [© WHO 2026]
+
+        ALT TEXT: Healthcare workers in full PPE conducting Ebola screening at a
+        treatment center in Ituri Province, DRC, 2026 Bundibugyo outbreak response
+
+        TITLE: Ebola Treatment Center in Ituri Province, DRC — WHO Response, May 2026
+      -->
+      <img
+        src="https://www.who.int/images/default-source/wpro---images/health-topics/ebola/ebola-drc-2026.jpg"
+        alt="Healthcare workers in full PPE conducting Ebola screening at a treatment center in Ituri Province, DRC, 2026 Bundibugyo outbreak response"
+        title="Ebola Treatment Center in Ituri Province, DRC — WHO Response, May 2026"
+        onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#2d1010,#4a1515)';"
+      />
+      <div class="ebola2026-img-overlay">
+        <p class="ebola2026-img-caption">
+          Healthcare workers in protective equipment conduct patient screening at an Ebola treatment center in Ituri Province, northeastern DRC, 2026. With 968 suspected cases across three provinces and no approved vaccine, every decision made inside these centers carries a cost that numbers alone cannot fully account for. [© WHO 2026]
+        </p>
+      </div>
+    </div>
+    <div class="ebola2026-header-content">
+      <span class="ebola2026-header-badge">🔴 Global Health Emergency</span>
+      <h1 class="ebola2026-header-title">No Vaccine, 968 Suspected Cases: Inside the Ebola Crisis the World Can't Afford to Ignore</h1>
+      <p class="ebola2026-header-sub">The WHO declared a public health emergency. The virus has no approved treatment. And the World Cup is in the balance. Here's what's happening — and what you need to know.</p>
+      <div class="ebola2026-risk-badges">
+        <span class="ebola2026-risk-badge ebola2026-risk-vh">DRC Risk: VERY HIGH</span>
+        <span class="ebola2026-risk-badge ebola2026-risk-h">Regional: HIGH</span>
+        <span class="ebola2026-risk-badge ebola2026-risk-l">Global: LOW</span>
+      </div>
+      <div class="ebola2026-header-meta">
+        <div class="ebola2026-header-meta-item">
+          <span class="ebola2026-header-meta-dot" style="background:#ef9a9a"></span>
+          May 25, 2026 — Updated daily
+        </div>
+        <div class="ebola2026-header-meta-item">
+          <span class="ebola2026-header-meta-dot" style="background:#90caf9"></span>
+          Bundibugyo ebolavirus — 3rd recorded outbreak in history
+        </div>
+        <div class="ebola2026-header-meta-item">
+          <span class="ebola2026-header-meta-dot" style="background:#a5d6a7"></span>
+          Sources: WHO, CDC, IRC, Oxford University, MSF
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════
+       STATS DASHBOARD
+  ══════════════════════════════════════════════════════════ -->
+  <section class="ebola2026-stats" aria-label="Key outbreak statistics">
+    <div class="ebola2026-stats-grid">
+      <div class="ebola2026-stat-card">
+        <div class="ebola2026-stat-value" data-target="968" id="stat-cases">0</div>
+        <div class="ebola2026-stat-label">Suspected Cases</div>
+        <div class="ebola2026-stat-sub">DRC + Uganda · as of May 23</div>
+      </div>
+      <div class="ebola2026-stat-card">
+        <div class="ebola2026-stat-value" data-target="216" id="stat-deaths">0</div>
+        <div class="ebola2026-stat-label">Suspected Deaths</div>
+        <div class="ebola2026-stat-sub">101 confirmed cases · 10 confirmed deaths</div>
+      </div>
+      <div class="ebola2026-stat-card">
+        <div class="ebola2026-stat-value" id="stat-countries">4</div>
+        <div class="ebola2026-stat-label">Provinces + Countries</div>
+        <div class="ebola2026-stat-sub">Ituri · N. Kivu · S. Kivu · Uganda</div>
+      </div>
+      <div class="ebola2026-stat-card">
+        <div class="ebola2026-stat-value" id="stat-days">10</div>
+        <div class="ebola2026-stat-label">Days Since PHEIC</div>
+        <div class="ebola2026-stat-sub">Declared: May 16, 2026</div>
+      </div>
+    </div>
+    <p class="ebola2026-stats-note">Data: <a href="https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.45);">WHO Ebola Situation Report</a> · <a href="https://www.cdc.gov/ebola/situation-summary/index.html" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.45);">CDC Current Situation</a></p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       INTRO TEXT
+  ══════════════════════════════════════════════════════════ -->
+  <section class="ebola2026-intro">
+    <div class="ebola2026-intro-text">
+      <p>A hospital in Bunia, northeastern Democratic Republic of Congo, raised the first alarm. Healthcare workers were falling ill with unexplained symptoms in early May 2026. Initial lab tests came back negative. Then, on May 15, the Congolese Ministry of Health confirmed the cause: Ebola disease, caused by the <a href="https://www.cdc.gov/ebola/faq/index.html" target="_blank" rel="noopener">Bundibugyo virus</a> — a strain of Ebola for which no approved vaccine or treatment exists anywhere in the world.</p>
+
+      <p>Within 96 hours of the official declaration, suspected cases jumped from 246 to 500. By May 23, <a href="https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026" target="_blank" rel="noopener">968 suspected cases and at least 216 suspected deaths</a> had been reported across three DRC provinces and Uganda. The World Health Organization acted before its own Emergency Committee even met — declaring it a Public Health Emergency of International Concern on May 16. It was the first time in WHO history that a Director-General used that authority without waiting for the committee.</p>
+
+      <p>This is the third recorded outbreak of Bundibugyo Ebola in human history. The previous two — Uganda in 2007 and DRC in 2012 — combined to affect fewer than 200 people. This one has already crossed 968 suspected cases and is still climbing. <a href="https://www.karmactive.com/cat-deaths-prompt-raw-pet-food-recall-amid-bird-flu-concerns/" target="_blank" rel="noopener">Infectious disease watchers at Karmactive</a> have been tracking the simultaneous global health pressures of 2026 — and the Ebola outbreak in DRC now stands as the most urgent.</p>
+
+      <div class="ebola2026-pullquote">
+        <p class="ebola2026-pullquote-text">"This epidemic is caused by Bundibugyo virus, a species of Ebola virus for which there are no vaccines or therapeutics. In light of all these risks, we decided it was urgent to act immediately to prevent more deaths and mobilise an effective and international response."</p>
+        <p class="ebola2026-pullquote-source">— Dr. Tedros Adhanom Ghebreyesus, WHO Director-General, May 16, 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       INTERACTIVE TIMELINE
+  ══════════════════════════════════════════════════════════ -->
+  <section class="ebola2026-timeline-section">
+    <div style="max-width:900px;margin:0 auto;">
+      <h2 class="ebola2026-section-heading">How the Outbreak Unfolded</h2>
+      <p class="ebola2026-section-subheading">A timeline of key events — from first alarm to global emergency</p>
+
+      <div class="ebola2026-timeline" id="ebola-timeline">
+
+        <div class="ebola2026-tl-item">
+          <div class="ebola2026-tl-date">Early May<br>2026</div>
+          <div class="ebola2026-tl-dot"></div>
+          <div class="ebola2026-tl-content">
+            <span class="ebola2026-tl-tag ebola2026-tag-orange">First Signs</span>
+            <div class="ebola2026-tl-title">Healthcare workers fall ill in Bunia, Ituri Province</div>
+            <div class="ebola2026-tl-desc">A hospital in Bunia, northeastern DRC, identifies a cluster of severe illnesses among healthcare workers. Initial tests return negative for known pathogens. The outbreak was already spreading undetected — surveillance systems weakened by funding cuts could not catch it.</div>
+          </div>
+        </div>
+
+        <div class="ebola2026-tl-item">
+          <div class="ebola2026-tl-date">May 15<br>2026</div>
+          <div class="ebola2026-tl-dot"></div>
+          <div class="ebola2026-tl-content">
+            <span class="ebola2026-tl-tag ebola2026-tag-red">Official Outbreak</span>
+            <div class="ebola2026-tl-title">DRC Ministry of Health declares Ebola outbreak in Ituri Province</div>
+            <div class="ebola2026-tl-desc">Laboratory analysis at the Institut National de Recherche Biomédicale in Kinshasa identifies the Bundibugyo virus (BDBV). 8 of 13 samples test positive. 246 suspected cases and 80 deaths already reported. CDC issues Level 3 travel notice for DRC, Level 1 for Uganda.</div>
+          </div>
+        </div>
+
+        <div class="ebola2026-tl-item">
+          <div class="ebola2026-tl-date">May 16<br>2026</div>
+          <div class="ebola2026-tl-dot"></div>
+          <div class="ebola2026-tl-content">
+            <span class="ebola2026-tl-tag ebola2026-tag-red">PHEIC Declared</span>
+            <div class="ebola2026-tl-title">WHO declares global health emergency — unprecedented action</div>
+            <div class="ebola2026-tl-desc">WHO Director-General Dr. Tedros Adhanom Ghebreyesus declares the outbreak a Public Health Emergency of International Concern before convening an Emergency Committee — the first time any WHO Director-General has exercised this authority independently. Suspected cases: 246+.</div>
+          </div>
+        </div>
+
+        <div class="ebola2026-tl-item">
+          <div class="ebola2026-tl-date">May 18–19<br>2026</div>
+          <div class="ebola2026-tl-dot"></div>
+          <div class="ebola2026-tl-content">
+            <span class="ebola2026-tl-tag ebola2026-tag-blue">US Response</span>
+            <div class="ebola2026-tl-title">CDC mobilises · US enhances travel screening · 246 → 500 cases in 96 hrs</div>
+            <div class="ebola2026-tl-desc">CDC and DHS announce enhanced screening at US entry points. Suspected cases jump from 246 to 500 in just 96 hours — a pace experts say reflects weeks of undetected transmission finally surfacing in surveillance data. Confirmed cases also reported in Uganda.</div>
+          </div>
+        </div>
+
+        <div class="ebola2026-tl-item">
+          <div class="ebola2026-tl-date">May 19–22<br>2026</div>
+          <div class="ebola2026-tl-dot"></div>
+          <div class="ebola2026-tl-content">
+            <span class="ebola2026-tl-tag ebola2026-tag-purple">Emergency Committee</span>
+            <div class="ebola2026-tl-title">IHR Emergency Committee meets · Temporary recommendations issued</div>
+            <div class="ebola2026-tl-desc">On May 19, WHO convenes its first IHR Emergency Committee. Temporary recommendations are issued to all State Parties on May 22. WHO upgrades DRC national risk to "very high." Two vaccine candidates (ChAdOx1 BDBV and rVSV platform) identified but neither is trial-ready.</div>
+          </div>
+        </div>
+
+        <div class="ebola2026-tl-item">
+          <div class="ebola2026-tl-date">May 22<br>2026</div>
+          <div class="ebola2026-tl-dot"></div>
+          <div class="ebola2026-tl-content">
+            <span class="ebola2026-tl-tag ebola2026-tag-blue">Oxford · World Cup</span>
+            <div class="ebola2026-tl-title">Oxford vaccine statement · DRC World Cup team isolation required</div>
+            <div class="ebola2026-tl-desc">Oxford University releases a statement on accelerating its ChAdOx1 BDBV candidate vaccine — potentially entering trials in 2–3 months. The White House Task Force tells DRC's FIFA World Cup squad they must maintain a 21-day isolation bubble in Belgium before entering the US.</div>
+          </div>
+        </div>
+
+        <div class="ebola2026-tl-item">
+          <div class="ebola2026-tl-date">May 23–25<br>2026</div>
+          <div class="ebola2026-tl-dot"></div>
+          <div class="ebola2026-tl-content">
+            <span class="ebola2026-tl-tag ebola2026-tag-red">Latest Update</span>
+            <div class="ebola2026-tl-title">968 suspected cases · 3 DRC provinces + Uganda · Level 4 advisories</div>
+            <div class="ebola2026-tl-desc">As of May 23, 968 suspected cases and 216 suspected deaths reported. Outbreak confirmed across Ituri, North Kivu, and South Kivu provinces. Five confirmed cases in Kampala, Uganda. US issues Level 4 advisories for DRC, Uganda, and South Sudan. Response flights re-routed through Dulles and Atlanta.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       MAP SECTION
+  ══════════════════════════════════════════════════════════ -->
+  <section class="ebola2026-map-section">
+    <div style="max-width:900px;margin:0 auto;">
+      <h2 class="ebola2026-section-heading">Where the Outbreak Is Spreading</h2>
+      <p class="ebola2026-section-subheading">Interactive map — click markers for outbreak details</p>
+      <div id="ebola2026-map" class="ebola2026-map-container"></div>
+      <div class="ebola2026-map-legend">
+        <div class="ebola2026-legend-item">
+          <div class="ebola2026-legend-dot" style="background:#b71c1c"></div>
+          Very High Risk Zone (DRC epicentre)
+        </div>
+        <div class="ebola2026-legend-item">
+          <div class="ebola2026-legend-dot" style="background:#e65100"></div>
+          Confirmed Cases (Secondary Spread)
+        </div>
+        <div class="ebola2026-legend-item">
+          <div class="ebola2026-legend-dot" style="background:#f57f17"></div>
+          Imported Cases (Uganda)
+        </div>
+        <div class="ebola2026-legend-item">
+          <div class="ebola2026-legend-dot" style="background:#1565c0"></div>
+          WHO Regional Office / Response Hub
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       THREE OUTBREAKS COMPARISON
+  ══════════════════════════════════════════════════════════ -->
+  <section class="ebola2026-history">
+    <div style="max-width:900px;margin:0 auto;">
+      <h2 class="ebola2026-section-heading">Bundibugyo in History: Three Outbreaks, One Virus</h2>
+      <p class="ebola2026-section-subheading">Before 2026, this virus had struck twice in recorded history — and both times, it was contained relatively quickly. Not this time.</p>
+      <div class="ebola2026-outbreaks-grid" id="outbreaks-grid">
+        <!-- Outbreak 1: 2007 Uganda -->
+        <div class="ebola2026-outbreak-card">
+          <div class="ebola2026-outbreak-header ebola2026-outbreak-header-1">
+            <div class="ebola2026-outbreak-year">2007–08</div>
+            <div class="ebola2026-outbreak-location">Bundibugyo District<br>Western Uganda</div>
+          </div>
+          <div class="ebola2026-outbreak-body">
+            <div class="ebola2026-outbreak-stat">
+              <span class="ebola2026-outbreak-stat-label">Reported Cases</span>
+              <span class="ebola2026-outbreak-stat-value">131</span>
+            </div>
+            <div class="ebola2026-outbreak-stat">
+              <span class="ebola2026-outbreak-stat-label">Deaths</span>
+              <span class="ebola2026-outbreak-stat-value">42</span>
+            </div>
+            <div class="ebola2026-outbreak-stat">
+              <span class="ebola2026-outbreak-stat-label">CFR (approx.)</span>
+              <span class="ebola2026-outbreak-stat-value">~32%</span>
+            </div>
+            <div class="ebola2026-bar-row">
+              <div class="ebola2026-bar-label">Scale relative to 2026 (cases)</div>
+              <div class="ebola2026-bar-track">
+                <div class="ebola2026-bar-fill" style="width:0%" data-width="14%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Outbreak 2: 2012 DRC -->
+        <div class="ebola2026-outbreak-card">
+          <div class="ebola2026-outbreak-header ebola2026-outbreak-header-2">
+            <div class="ebola2026-outbreak-year">2012</div>
+            <div class="ebola2026-outbreak-location">Isiro, Orientale Province<br>DRC</div>
+          </div>
+          <div class="ebola2026-outbreak-body">
+            <div class="ebola2026-outbreak-stat">
+              <span class="ebola2026-outbreak-stat-label">Reported Cases</span>
+              <span class="ebola2026-outbreak-stat-value">57</span>
+            </div>
+            <div class="ebola2026-outbreak-stat">
+              <span class="ebola2026-outbreak-stat-label">Deaths</span>
+              <span class="ebola2026-outbreak-stat-value">29</span>
+            </div>
+            <div class="ebola2026-outbreak-stat">
+              <span class="ebola2026-outbreak-stat-label">CFR (approx.)</span>
+              <span class="ebola2026-outbreak-stat-value">~51%</span>
+            </div>
+            <div class="ebola2026-bar-row">
+              <div class="ebola2026-bar-label">Scale relative to 2026 (cases)</div>
+              <div class="ebola2026-bar-track">
+                <div class="ebola2026-bar-fill" style="width:0%" data-width="6%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Outbreak 3: 2026 DRC+Uganda -->
+        <div class="ebola2026-outbreak-card">
+          <div class="ebola2026-outbreak-header ebola2026-outbreak-header-3">
+            <div class="ebola2026-outbreak-year">2026 ▲</div>
+            <div class="ebola2026-outbreak-location">Ituri, N. Kivu, S. Kivu<br>DRC + Uganda (Kampala)</div>
+          </div>
+          <div class="ebola2026-outbreak-body">
+            <div class="ebola2026-outbreak-stat">
+              <span class="ebola2026-outbreak-stat-label">Suspected Cases</span>
+              <span class="ebola2026-outbreak-stat-value">968+</span>
+            </div>
+            <div class="ebola2026-outbreak-stat">
+              <span class="ebola2026-outbreak-stat-label">Suspected Deaths</span>
+              <span class="ebola2026-outbreak-stat-value">216+</span>
+            </div>
+            <div class="ebola2026-outbreak-stat">
+              <span class="ebola2026-outbreak-stat-label">Status</span>
+              <span class="ebola2026-outbreak-stat-value">Active · PHEIC</span>
+            </div>
+            <div class="ebola2026-bar-row">
+              <div class="ebola2026-bar-label">Scale relative to previous outbreaks</div>
+              <div class="ebola2026-bar-track">
+                <div class="ebola2026-bar-fill" style="width:0%" data-width="100%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       MAIN BODY TEXT
+  ══════════════════════════════════════════════════════════ -->
+  <section class="ebola2026-body">
+    <div class="ebola2026-body-inner">
+
+      <h3>Why Bundibugyo Is Different</h3>
+      <p>Of the six known species of Ebola virus, most global vaccine development has focused on the Zaire strain — the one behind the devastating 2014–2016 West Africa outbreak that killed over 11,000 people. Vaccines for Zaire Ebola now exist. For Bundibugyo, they don't.</p>
+
+      <p>Bundibugyo typically has a lower case fatality rate than Zaire Ebola — ranging from 25% to 51% across its two prior outbreaks, compared to 60–90% for Zaire. But lower lethality does not mean less dangerous at scale. When there is no vaccine and no approved antiviral treatment, containment depends entirely on contact tracing, isolation, safe burials, infection prevention, and — most critically — community cooperation. All of those variables are under severe stress in northeastern DRC right now.</p>
+
+      <p>The <a href="https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON603" target="_blank" rel="noopener">WHO Disease Outbreak News</a> confirmed: the Bundibugyo virus is classified as a species of Orthoebolavirus, and unlike the frequently researched Zaire strain, it receives far less investment in drug and vaccine development. That gap, which seemed acceptable during quiet years, has become consequential in 2026.</p>
+
+      <h3>Three Provinces, One Capital, and a World Cup</h3>
+      <p>The outbreak began in Ituri Province, where over 4 million people already require urgent humanitarian assistance amid active armed conflict. It spread to North Kivu and South Kivu provinces — both hotspots of armed group activity that restrict movement of surveillance teams, impede rapid response units, and hinder safe transport of lab samples. As of May 23, five confirmed cases were reported in Kampala, Uganda's capital — indicating the virus has left the conflict zone and reached a dense urban environment.</p>
+
+      <div class="ebola2026-worldcup-box">
+        <div class="ebola2026-worldcup-title">⚽ FIFA World Cup 2026 — The Unexpected Intersection</div>
+        <p class="ebola2026-worldcup-text">DRC qualified for FIFA World Cup 2026, with its first group match set against Portugal in Houston on June 17. On May 22, Andrew Giuliani, Executive Director of the White House Task Force for the World Cup, told DRC, FIFA, and the Congolese government that the national team must maintain an unbroken 21-day isolation bubble in Belgium — where it is currently training — before entering the United States. DRC confirmed it will not change its preparations. The US banned entry of all foreign nationals who had been in DRC, Uganda, or South Sudan within the previous 21 days, with affected air passengers re-routed through Washington-Dulles and Atlanta for health screening. DRC's schedule: Portugal (June 17, Houston) · Colombia (June 23, Guadalajara) · Uzbekistan (June 27, Atlanta).</p>
+      </div>
+
+      <h3>The Funding Gap That Delayed Detection</h3>
+      <p>This outbreak went undetected for weeks before the official declaration. Aid workers and former officials have documented that US humanitarian aid to DRC dropped from approximately $1.2 billion in fiscal year 2024 to near zero in 2025, following changes at USAID. The IRC — which had previously monitored five health zones in Ituri — was forced to scale back to just two, covering less of the very province where the outbreak began.</p>
+
+      <div class="ebola2026-pullquote">
+        <p class="ebola2026-pullquote-text">"The sharp rise in reported cases over the last few days reflects the reality that surveillance systems are now catching up with transmission that has likely been occurring for some time."</p>
+        <p class="ebola2026-pullquote-source">— Heather Reoch Kerr, IRC DRC Country Director, from <a href="https://www.rescue.org/press-release/funding-cuts-led-delayed-detection-ebola-outbreak-drc" target="_blank" rel="noopener">IRC Press Release</a></p>
+      </div>
+
+      <p>WHO's 2026–27 programme budget was cut by 9% to $6.2 billion. Separately, the US Department of Health and Human Services cancelled approximately $500 million in mRNA vaccine research contracts covering 22 programmes on emerging pathogens — a decision that directly affects the pipeline for Bundibugyo-specific treatments. The connections between these funding decisions and the speed at which this outbreak grew are now being documented by health organisations on the ground.</p>
+
+      <div class="ebola2026-callout">
+        <div class="ebola2026-callout-title">📊 The Numbers Behind the Gap</div>
+        <p class="ebola2026-callout-text">
+          <strong>US aid to DRC:</strong> ~$1.2 billion (FY2024) → near zero (FY2025)<br>
+          <strong>HHS cancelled:</strong> ~$500M in mRNA vaccine contracts (22 research initiatives)<br>
+          <strong>WHO budget cut:</strong> 9% reduction → $6.2B for 2026–27<br>
+          <strong>IRC Ituri coverage:</strong> 5 health zones → 2 (cutback before outbreak)<br>
+          <strong>Lag in detection:</strong> Cases jumped 246 → 500 in 96 hours as surveillance caught up
+        </p>
+      </div>
+
+      <h3>Community Trust Decides Everything</h3>
+      <p>Technology, medicine, and logistics can only go so far. In northeastern DRC, where memories of violent conflict, displacement, and mistrust of authority run deep, the human variable is decisive. Ebola spreads fastest when families fear stigma and hide sick relatives, when traditional burial practices involving close physical contact with the deceased continue unmodified, and when communities distrust foreign health workers entering their neighborhoods.</p>
+
+      <p><a href="https://www.who.int/news-room/speeches/item/who-director-general-s-opening-remarks-at-the-media-briefing-on-ebola-outbreak-in-drc-and-uganda-20-may-2026" target="_blank" rel="noopener">WHO Director-General Dr. Tedros stated on May 20</a>: "Building trust in the affected communities is critical to a successful response, and is one of our highest priorities." Every successful containment of Ebola in DRC's history has involved local health workers, community leaders, religious figures, and traditional healers as genuine partners — not just audiences for public health messaging.</p>
+
+      <h3>The Environmental Connection</h3>
+      <p>Ebola does not emerge from nowhere. Fruit bats are the primary suspected reservoir for Ebola viruses, including Bundibugyo. Research published in <a href="https://www.nature.com/articles/srep41613" target="_blank" rel="noopener">Scientific Reports</a> shows that the highest estimated odds of Ebola spillover occur in areas following patterns of forest fragmentation. When forests are cleared — shrinking the buffer between bat habitat and human settlements — stressed bat populations shed virus at higher rates and forage closer to people and livestock.</p>
+
+      <p>Eastern DRC sits at a convergence: dense forest under pressure from displacement and artisanal mining, active conflict driving population movement, and weakened health infrastructure. The <a href="https://www.karmactive.com/emperor-penguin-antarctic-fur-seal-endangered-iucn-red-list-2026/" target="_blank" rel="noopener">accelerating pressure on wildlife habitats</a> globally is not an abstract environmental concern — outbreaks like this are one of its direct consequences for human populations.</p>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       DEFORESTATION INSIGHT BOX
+  ══════════════════════════════════════════════════════════ -->
+  <section class="ebola2026-insight">
+    <div class="ebola2026-insight-inner">
+      <div class="ebola2026-insight-text">
+        <h3>The Forest Link: Why Habitat Loss Matters for Disease Risk</h3>
+        <p>Research published in <em>Scientific Reports</em> (Nature Publishing Group) found that the odds of Ebola spillover closely follow patterns of forest fragmentation. When woodland patches shrink, bat populations become more stressed — and stressed bats shed virus more intensively. They also forage closer to human communities, livestock, and the bushmeat supply chain. Eastern DRC has experienced significant ongoing deforestation driven by displacement, artisanal mining, and agricultural expansion. Each year the forest recedes, the ecological buffer between wildlife reservoirs and human populations thins further.</p>
+      </div>
+      <div class="ebola2026-insight-stat">
+        <div class="ebola2026-insight-stat-value">17th</div>
+        <div class="ebola2026-insight-stat-label">Recorded Ebola<br>outbreak in DRC<br>since 1976</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       VACCINE RACE SECTION
+  ══════════════════════════════════════════════════════════ -->
+  <section class="ebola2026-vaccine">
+    <div class="ebola2026-vaccine-inner">
+      <h2 class="ebola2026-section-heading">The Vaccine Race: Where Things Stand</h2>
+      <p class="ebola2026-section-subheading">Two candidates are in development. Neither is ready for human trials yet.</p>
+
+      <div class="ebola2026-vaccine-card ebola2026-vc1">
+        <div class="ebola2026-vaccine-name">ChAdOx1 BDBV — Oxford University Vaccine Group</div>
+        <div class="ebola2026-vaccine-platform">Platform: Chimpanzee Adenovirus Vector (same technology as Oxford-AstraZeneca COVID-19 vaccine) · Partner: Serum Institute of India</div>
+        <div class="ebola2026-progress-label">Development Stage: Preclinical → Dose Production → Phase 1 Trials</div>
+        <div class="ebola2026-progress-track">
+          <div class="ebola2026-progress-fill ebola2026-progress-blue" id="vax1-bar" style="width:0%" data-width="35%"></div>
+        </div>
+        <div class="ebola2026-stages">
+          <span>Discovery</span><span>Preclinical</span><span>Dose Prod.</span><span>Phase 1</span><span>Phase 2/3</span><span>Licensed</span>
+        </div>
+        <p class="ebola2026-vaccine-note" style="margin-top:0.8rem">
+          On May 22, 2026, <a href="https://www.ox.ac.uk/news/2026-05-22-statement-on-vaccine-efforts-relating-to-the-bundibugyo-ebolavirus-outbreak-in-the" target="_blank" rel="noopener">Oxford University released a statement</a> confirming it is working with its Clinical BioManufacturing Facility and the Serum Institute of India to rapidly produce doses of ChAdOx1 BDBV. Human trials could begin in <strong>2–3 months</strong> pending animal study results. A $26.7M CEPI-EU collaboration (announced January 2026) is supporting the broader multi-strain Ebola vaccine programme including Bundibugyo, Sudan, and Marburg viruses.
+        </p>
+      </div>
+
+      <div class="ebola2026-vaccine-card ebola2026-vc2">
+        <div class="ebola2026-vaccine-name">rVSV-Platform Candidate</div>
+        <div class="ebola2026-vaccine-platform">Platform: Recombinant Vesicular Stomatitis Virus (rVSV) — same technology used in licensed Zaire Ebola vaccine</div>
+        <div class="ebola2026-progress-label">Development Stage: Preclinical (no trial-ready doses available)</div>
+        <div class="ebola2026-progress-track">
+          <div class="ebola2026-progress-fill ebola2026-progress-purple" id="vax2-bar" style="width:0%" data-width="25%"></div>
+        </div>
+        <div class="ebola2026-stages">
+          <span>Discovery</span><span>Preclinical</span><span>Dose Prod.</span><span>Phase 1</span><span>Phase 2/3</span><span>Licensed</span>
+        </div>
+        <p class="ebola2026-vaccine-note" style="margin-top:0.8rem">
+          According to <a href="https://www.gavi.org/news/media-room/gavi-statement-ebola-disease-outbreak-democratic-republic-congo-and-uganda" target="_blank" rel="noopener">GAVI and CEPI</a>, this candidate would require <strong>6–9 months</strong> to produce trial-ready doses. No human or animal study data yet available for Bundibugyo specifically. CEPI is actively assessing both candidates and how R&amp;D can be accelerated.
+        </p>
+      </div>
+
+      <p style="font-size:0.85rem;color:#888;font-family:'Arial',sans-serif;text-align:center;margin-top:0.5rem">
+        No approved treatments exist. Supportive care (IV fluids, blood pressure management, treating secondary infections) is the current standard. Early care improves survival odds significantly.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       ACCORDION: HOW TO PROTECT YOURSELF
+  ══════════════════════════════════════════════════════════ -->
+  <section class="ebola2026-accordion-section">
+    <div class="ebola2026-accordion-inner">
+      <h2 class="ebola2026-section-heading">What You Need to Know</h2>
+      <p class="ebola2026-section-subheading">Facts from WHO and CDC — click to expand each section</p>
+
+      <div class="ebola2026-accordion-item">
+        <button class="ebola2026-accordion-header" onclick="ebola2026Toggle(this)" aria-expanded="false">
+          <span class="ebola2026-accordion-title">🤒 Symptoms — What to Watch For</span>
+          <span class="ebola2026-accordion-icon">+</span>
+        </button>
+        <div class="ebola2026-accordion-body">
+          <div class="ebola2026-accordion-body-inner">
+            <p>Bundibugyo virus symptoms are largely non-specific in early stages and similar to other Ebola strains. Monitor for:</p>
+            <ul>
+              <li><strong>Fever</strong> (often sudden onset)</li>
+              <li>Severe headache, muscle pain, and weakness</li>
+              <li>Fatigue, diarrhea, vomiting, stomach pain</li>
+              <li>Sore throat and chest pain</li>
+              <li><strong>Unexplained bleeding or bruising</strong> — a late-stage sign that indicates severe disease</li>
+            </ul>
+            <p style="margin-top:0.7rem">The incubation period is 2 to 21 days. A person is <strong>not contagious</strong> until symptoms appear. If you have traveled to DRC, Uganda, or South Sudan within 21 days and develop any of these symptoms, seek medical care immediately and tell your doctor about your travel history.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ebola2026-accordion-item">
+        <button class="ebola2026-accordion-header" onclick="ebola2026Toggle(this)" aria-expanded="false">
+          <span class="ebola2026-accordion-title">🦠 How It Spreads — and How It Does NOT</span>
+          <span class="ebola2026-accordion-icon">+</span>
+        </button>
+        <div class="ebola2026-accordion-body">
+          <div class="ebola2026-accordion-body-inner">
+            <p><strong>It spreads through:</strong></p>
+            <ul>
+              <li>Direct contact with blood or bodily fluids of an infected person (living or deceased)</li>
+              <li>Contact with contaminated objects — needles, bedding, clothing, medical equipment</li>
+              <li>Contact with infected animals (bats, nonhuman primates, forest antelopes) or their meat/fluids</li>
+              <li>Traditional burial practices involving close contact with a deceased person</li>
+            </ul>
+            <p style="margin-top:0.7rem"><strong>It does NOT spread through:</strong></p>
+            <ul>
+              <li>Air — Ebola is not airborne</li>
+              <li>Casual contact — passing someone in a public space does not transmit the virus</li>
+              <li>Water or food (unless directly contaminated with infected bodily fluids)</li>
+            </ul>
+            <p style="margin-top:0.7rem">Healthcare workers and family caregivers without proper protective equipment face the highest risk.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ebola2026-accordion-item">
+        <button class="ebola2026-accordion-header" onclick="ebola2026Toggle(this)" aria-expanded="false">
+          <span class="ebola2026-accordion-title">🛡️ How to Protect Yourself — CDC Guidance</span>
+          <span class="ebola2026-accordion-icon">+</span>
+        </button>
+        <div class="ebola2026-accordion-body">
+          <div class="ebola2026-accordion-body-inner">
+            <p>From the <a href="https://www.cdc.gov/ebola/faq/index.html" target="_blank" rel="noopener">CDC Ebola FAQ</a> and <a href="https://wwwnc.cdc.gov/travel/notices/level3/ebola-democratic-republic-of-the-congo" target="_blank" rel="noopener">CDC Travel Notice for DRC</a>:</p>
+            <ul>
+              <li>Avoid contact with sick people or anyone who has recently died from unknown illness</li>
+              <li>Avoid contact with bats, nonhuman primates, forest antelopes, or their blood, fluids, or raw meat</li>
+              <li>Do not enter caves, mines, or areas known to be inhabited by bats</li>
+              <li>Avoid visiting healthcare facilities in outbreak areas for non-urgent care</li>
+              <li>Do not touch the body of someone who died from suspected Bundibugyo virus disease</li>
+              <li>Monitor yourself for symptoms for <strong>21 days</strong> after returning from affected areas</li>
+              <li>If symptoms develop, call ahead before visiting a clinic — notify healthcare providers of your travel history</li>
+            </ul>
+            <p style="margin-top:0.7rem">There is <strong>no approved vaccine or specific treatment</strong> for Bundibugyo virus. Early supportive care significantly improves the chance of survival.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ebola2026-accordion-item">
+        <button class="ebola2026-accordion-header" onclick="ebola2026Toggle(this)" aria-expanded="false">
+          <span class="ebola2026-accordion-title">✈️ Travelers — What the Advisories Mean</span>
+          <span class="ebola2026-accordion-icon">+</span>
+        </button>
+        <div class="ebola2026-accordion-body">
+          <div class="ebola2026-accordion-body-inner">
+            <p>Current travel advisory levels as of May 22, 2026:</p>
+            <ul>
+              <li><strong>DRC — Level 3 (CDC): Reconsider nonessential travel.</strong> Avoid all travel to Ituri, North Kivu, and South Kivu provinces. Flights from DRC re-routed to Washington-Dulles and Atlanta for health screening.</li>
+              <li><strong>Uganda — Level 1 (CDC): Watch.</strong> Monitor your health. Avoid contact with sick individuals and healthcare facilities in non-critical settings.</li>
+              <li><strong>DRC, Uganda, South Sudan — Level 4 (US State Dept): Do Not Travel.</strong> The US has banned entry of foreign nationals who have been in these countries within the previous 21 days.</li>
+            </ul>
+            <p style="margin-top:0.7rem">Healthcare workers traveling to DRC or Uganda for clinical work face elevated risk. Full <a href="https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026" target="_blank" rel="noopener">WHO infection prevention and control protocols</a> must be followed.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONCLUSION
+  ══════════════════════════════════════════════════════════ -->
+  <section class="ebola2026-conclusion">
+    <div class="ebola2026-conclusion-inner">
+      <h2 class="ebola2026-section-heading" style="margin-bottom:1.2rem">What Has Been Covered</h2>
+
+      <p>The 2026 Bundibugyo Ebola outbreak in the Democratic Republic of Congo and Uganda was declared a Public Health Emergency of International Concern by WHO on May 16. Outbreak data through May 23 recorded 968 suspected cases and 216 suspected deaths across Ituri, North Kivu, and South Kivu provinces in DRC, with five confirmed cases in Kampala, Uganda. The Bundibugyo virus, which causes this outbreak, has no approved vaccine or specific treatment. The CDC issued Level 3 and Level 4 travel advisories for DRC, Uganda, and South Sudan.</p>
+
+      <p>The IRC documented how funding cuts reduced surveillance capacity in Ituri Province, contributing to delayed detection. Oxford University and the Serum Institute of India began accelerating the ChAdOx1 BDBV vaccine candidate, which could reach trials in two to three months. The US government required DRC's World Cup team to maintain a 21-day isolation bubble before entering the country for FIFA World Cup 2026. Research linking forest fragmentation to Ebola spillover risk was reviewed. Community trust was identified by WHO as the most critical variable in outbreak containment. All of these matters were covered in this report.</p>
+
+      <p>For ongoing updates on the global health situation, see also <a href="https://www.karmactive.com/tb-outbreak-amazon-coventry-gmb-union-closure-demand/" target="_blank" rel="noopener">coverage of the Amazon Coventry TB outbreak</a> and <a href="https://www.karmactive.com/scabies-outbreak-uk-2026-44-percent-rise-treatment-crisis-symptoms-guide/" target="_blank" rel="noopener">the UK scabies surge</a> for context on infectious disease patterns in 2026. The <a href="https://www.karmactive.com/emperor-penguin-antarctic-fur-seal-endangered-iucn-red-list-2026/" target="_blank" rel="noopener">accelerating pressure on wildlife habitats</a> is part of the broader picture.</p>
+
+      <!-- Official source links -->
+      <div class="ebola2026-links-bar">
+        <div class="ebola2026-links-bar-title">First-Hand Sources Used in This Report</div>
+        <div class="ebola2026-links-grid">
+          <a href="https://www.who.int/emergencies/situations/ebola-outbreak---drc-2026" target="_blank" rel="noopener">WHO — Ebola Outbreak DRC 2026</a>
+          <a href="https://www.who.int/news/item/17-05-2026-epidemic-of-ebola-disease-in-the-democratic-republic-of-the-congo-and-uganda-determined-a-public-health-emergency-of-international-concern" target="_blank" rel="noopener">WHO — PHEIC Declaration, May 17</a>
+          <a href="https://www.who.int/news/item/22-05-2026-first-meeting-of-the-ihr-emergency-committee-regarding-the-epidemic-of-ebola-bundibugyo-virus-disease-in-the-democratic-republic-of-the-congo-and-uganda-2026-temporary-recommendations" target="_blank" rel="noopener">WHO — IHR Temporary Recommendations</a>
+          <a href="https://www.who.int/news-room/speeches/item/who-director-general-s-opening-remarks-at-the-media-briefing-on-ebola-outbreak-in-drc-and-uganda-20-may-2026" target="_blank" rel="noopener">WHO DG Remarks — May 20 Briefing</a>
+          <a href="https://www.cdc.gov/ebola/situation-summary/index.html" target="_blank" rel="noopener">CDC — Ebola Current Situation</a>
+          <a href="https://www.cdc.gov/han/php/notices/han00530.html" target="_blank" rel="noopener">CDC — Health Alert Network HAN 530</a>
+          <a href="https://wwwnc.cdc.gov/travel/notices/level3/ebola-democratic-republic-of-the-congo" target="_blank" rel="noopener">CDC — Level 3 Travel Notice: DRC</a>
+          <a href="https://www.cdc.gov/ebola/faq/index.html" target="_blank" rel="noopener">CDC — Ebola & Bundibugyo FAQ</a>
+          <a href="https://www.rescue.org/press-release/funding-cuts-led-delayed-detection-ebola-outbreak-drc" target="_blank" rel="noopener">IRC — Funding Cuts & Detection Delay</a>
+          <a href="https://www.rescue.org/press-release/irc-launches-emergency-response-rare-ebola-strain-no-vaccine-spreads-across-eastern" target="_blank" rel="noopener">IRC — Emergency Response Launch</a>
+          <a href="https://www.ox.ac.uk/news/2026-05-22-statement-on-vaccine-efforts-relating-to-the-bundibugyo-ebolavirus-outbreak-in-the" target="_blank" rel="noopener">Oxford University — Vaccine Statement</a>
+          <a href="https://www.gavi.org/news/media-room/gavi-statement-ebola-disease-outbreak-democratic-republic-congo-and-uganda" target="_blank" rel="noopener">GAVI — Statement on Outbreak</a>
+          <a href="https://www.msf.org/msf-preparing-large-scale-response-ebola-outbreak-ituri-province" target="_blank" rel="noopener">MSF — Response in Ituri Province</a>
+          <a href="https://www.state.gov/releases/office-of-the-spokesperson/2026/05/ebola-response-update-may-19-2026" target="_blank" rel="noopener">US State Dept — Ebola Response Update</a>
+          <a href="https://www.ecdc.europa.eu/en/ebola-virus-disease-outbreak-democratic-republic-congo-and-uganda" target="_blank" rel="noopener">ECDC — Threat Assessment</a>
+          <a href="https://www.nature.com/articles/srep41613" target="_blank" rel="noopener">Scientific Reports — Forest Fragmentation & Ebola</a>
+          <a href="https://www.afro.who.int/countries/democratic-republic-of-congo/news/democratic-republic-congo-confirms-new-ebola-outbreak-who-scales-upsupport" target="_blank" rel="noopener">WHO AFRO — DRC Outbreak Confirmation</a>
+          <a href="https://www.ifrc.org/press-release/ebola-ifrc-scales-response-eastern-drc-regional-risks-grow" target="_blank" rel="noopener">IFRC — Scales Response in DRC</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- .ebola2026-wrapper -->
+
+<!-- ═══════════════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════════════════ -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN2GGnk=" crossorigin="anonymous"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* ── ANIMATED STATS COUNTER ─────────────────────────── */
+  function animateCount(el, target, duration) {
+    var start = 0;
+    var step = Math.ceil(target / (duration / 16));
+    var timer = setInterval(function () {
+      start += step;
+      if (start >= target) { start = target; clearInterval(timer); }
+      el.textContent = start.toLocaleString();
+    }, 16);
+  }
+
+  var statsObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var casesEl  = document.getElementById('stat-cases');
+        var deathsEl = document.getElementById('stat-deaths');
+        if (casesEl)  animateCount(casesEl, 968, 1800);
+        if (deathsEl) animateCount(deathsEl, 216, 1600);
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  var statsEl = document.querySelector('.ebola2026-stats');
+  if (statsEl) statsObserver.observe(statsEl);
+
+  /* ── PROGRESS BARS (Vaccine + Outbreak Comparison) ─── */
+  function animateBars() {
+    document.querySelectorAll('[data-width]').forEach(function (el) {
+      el.style.width = el.getAttribute('data-width');
+    });
+  }
+
+  var barsObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { animateBars(); barsObserver.disconnect(); }
+    });
+  }, { threshold: 0.2 });
+
+  var vaccineEl = document.querySelector('.ebola2026-vaccine');
+  if (vaccineEl) barsObserver.observe(vaccineEl);
+
+  var outbreakEl = document.querySelector('.ebola2026-outbreaks-grid');
+  if (outbreakEl) {
+    var outbreakObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.ebola2026-bar-fill').forEach(function (b) {
+            b.style.width = b.getAttribute('data-width');
+          });
+          outbreakObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    outbreakObserver.observe(outbreakEl);
+  }
+
+  /* ── ACCORDION ──────────────────────────────────────── */
+  window.ebola2026Toggle = function (btn) {
+    var body = btn.nextElementSibling;
+    var isActive = btn.classList.contains('active');
+
+    // Close all
+    document.querySelectorAll('.ebola2026-accordion-header').forEach(function (h) {
+      h.classList.remove('active');
+      h.setAttribute('aria-expanded', 'false');
+      h.nextElementSibling.style.maxHeight = null;
+    });
+
+    // Open if wasn't active
+    if (!isActive) {
+      btn.classList.add('active');
+      btn.setAttribute('aria-expanded', 'true');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  };
+
+  /* ── LEAFLET MAP ────────────────────────────────────── */
+  var mapEl = document.getElementById('ebola2026-map');
+  if (mapEl) {
+    var map = L.map('ebola2026-map', { scrollWheelZoom: false }).setView([1.5, 28.0], 5);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 12,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    function makeIcon(color, size) {
+      size = size || 22;
+      return L.divIcon({
+        html: '<div style="background:' + color + ';width:' + size + 'px;height:' + size + 'px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.4);"></div>',
+        iconSize: [size, size],
+        iconAnchor: [size / 2, size / 2],
+        className: ''
+      });
+    }
+
+    var locations = [
+      {
+        lat: 1.55, lng: 30.20, color: '#b71c1c', size: 32,
+        title: 'Ituri Province — Epicentre',
+        info: '<b>Ituri Province</b><br>Outbreak origin · Very High Risk<br>Bunia, Rwampara, Mongbwalu, Drodro, Angumu, Adi, Fataki<br>MSF &amp; WHO response teams active'
+      },
+      {
+        lat: -1.20, lng: 29.25, color: '#e53935', size: 26,
+        title: 'North Kivu Province',
+        info: '<b>North Kivu Province</b><br>Confirmed secondary spread<br>Active conflict zone · Restricted surveillance access'
+      },
+      {
+        lat: -3.38, lng: 28.68, color: '#e53935', size: 22,
+        title: 'South Kivu Province',
+        info: '<b>South Kivu Province</b><br>Confirmed cases — secondary spread<br>Case confirmed in Kisangani-linked travel'
+      },
+      {
+        lat: -4.32, lng: 15.32, color: '#e65100', size: 16,
+        title: 'Kinshasa (DRC Capital)',
+        info: '<b>Kinshasa</b><br>One suspected case (travel from Ituri)<br>Confirmatory test returned <i>negative</i> — not confirmed'
+      },
+      {
+        lat: 0.316, lng: 32.58, color: '#f57f17', size: 22,
+        title: 'Kampala, Uganda',
+        info: '<b>Kampala, Uganda</b><br>5 confirmed cases (as of May 23)<br>All linked to travel from DRC<br>CDC Level 1 Travel Notice for Uganda'
+      },
+      {
+        lat: -1.94, lng: 30.06, color: '#1565c0', size: 14,
+        title: 'WHO AFRO Regional Office — Brazzaville',
+        info: '<b>WHO African Region (AFRO)</b><br>Regional coordination hub<br>Scaling up response & surveillance across region'
+      }
+    ];
+
+    locations.forEach(function (loc) {
+      L.marker([loc.lat, loc.lng], { icon: makeIcon(loc.color, loc.size) })
+        .addTo(map)
+        .bindPopup(loc.info, { maxWidth: 220 });
+    });
+
+    // Re-enable scroll zoom on click
+    map.once('click', function () { map.scrollWheelZoom.enable(); });
+  }
+
+  /* ── DAYS SINCE PHEIC COUNTER ───────────────────────── */
+  var daysEl = document.getElementById('stat-days');
+  if (daysEl) {
+    var pheicDate = new Date('2026-05-16');
+    var today = new Date('2026-05-25');
+    var diff = Math.floor((today - pheicDate) / (1000 * 60 * 60 * 24));
+    daysEl.textContent = diff;
+  }
+
+})();
+</script>
+</body>
+</html>
