@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>50,000 Forced Out: Inside the Garden Grove Chemical Emergency | Karmactive</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+<style>
+/* ============================================================
+   GLOBAL RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.ka-article { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1e293b; line-height: 1.7; }
+.ka-article a { color: #1d4ed8; text-decoration: underline; }
+.ka-article a:hover { color: #1e40af; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ============================================================
+   SECTION 1 — SPLIT-SCREEN HEADER
+   ============================================================ */
+.ka-header {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  min-height: 75vh;
+  max-height: 700px;
+}
+.ka-header__img-side { position: relative; overflow: hidden; }
+.ka-header__img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 8s ease;
+}
+.ka-header__img-side:hover .ka-header__img { transform: scale(1.04); }
+.ka-header__badge {
+  position: absolute; top: 1.5rem; left: 1.5rem;
+  background: #dc2626; color: #fff;
+  font-size: .75rem; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; padding: .4rem 1rem;
+  border-radius: 3px;
+}
+.ka-header__content-side {
+  background: #0f172a;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 3rem 2.5rem;
+}
+.ka-header__label {
+  font-size: .8rem; font-weight: 700; letter-spacing: 2px;
+  color: #f97316; text-transform: uppercase; margin-bottom: 1rem;
+}
+.ka-header__title {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 900; color: #f8fafc;
+  line-height: 1.2; margin-bottom: 1.2rem;
+}
+.ka-header__title span { color: #f97316; }
+.ka-header__sub {
+  font-size: 1rem; color: #94a3b8;
+  line-height: 1.6; margin-bottom: 2rem;
+}
+.ka-header__meta { display: flex; flex-direction: column; gap: .6rem; }
+.ka-header__meta-item { display: flex; align-items: center; gap: .6rem; font-size: .875rem; color: #64748b; }
+.ka-header__meta-item strong { color: #cbd5e1; }
+.ka-header__divider { width: 50px; height: 3px; background: #f97316; margin-bottom: 1.5rem; }
+
+/* ============================================================
+   SECTION 2 — KEY STATS BAND
+   ============================================================ */
+.ka-stats-band {
+  background: #1e293b;
+  padding: 2rem 1rem;
+}
+.ka-stats-band__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem; max-width: 1100px; margin: 0 auto;
+}
+.ka-stat-card {
+  background: #0f172a;
+  border-radius: 10px;
+  padding: 1.4rem 1rem;
+  text-align: center;
+  border-top: 3px solid #dc2626;
+  transition: transform .25s;
+}
+.ka-stat-card.green { border-top-color: #22c55e; }
+.ka-stat-card.orange { border-top-color: #f97316; }
+.ka-stat-card.blue { border-top-color: #38bdf8; }
+.ka-stat-card:hover { transform: translateY(-4px); }
+.ka-stat-card__value { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 900; color: #f8fafc; line-height: 1; }
+.ka-stat-card__value.red { color: #f87171; }
+.ka-stat-card__value.orange { color: #fb923c; }
+.ka-stat-card__value.green { color: #4ade80; }
+.ka-stat-card__value.blue { color: #38bdf8; }
+.ka-stat-card__label { font-size: .8rem; font-weight: 600; color: #64748b; margin-top: .5rem; text-transform: uppercase; letter-spacing: .5px; }
+
+/* ============================================================
+   SECTION 3 — INTRO TEXT BLOCK
+   ============================================================ */
+.ka-text-block {
+  max-width: 860px; margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+.ka-text-block p {
+  font-size: 1.05rem; color: #334155; line-height: 1.8;
+  margin-bottom: 1.4rem;
+}
+.ka-text-block p:first-child::first-letter {
+  font-size: 3.5rem; font-weight: 900; float: left;
+  line-height: .8; margin: .05em .12em 0 0; color: #dc2626;
+}
+.ka-text-block p a { color: #1d4ed8; }
+.ka-pullquote {
+  border-left: 5px solid #f97316;
+  background: #fefce8;
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+.ka-pullquote p {
+  font-size: 1.1rem; font-style: italic;
+  color: #92400e; margin-bottom: .4rem;
+}
+.ka-pullquote cite { font-size: .875rem; font-style: normal; color: #78350f; font-weight: 700; }
+
+/* ============================================================
+   SECTION 4 — INTERACTIVE TIMELINE
+   ============================================================ */
+.ka-timeline-section {
+  background: #f1f5f9;
+  padding: 4rem 1.5rem;
+}
+.ka-section-head {
+  text-align: center; max-width: 700px; margin: 0 auto 3rem;
+}
+.ka-section-head__label {
+  font-size: .75rem; font-weight: 700; letter-spacing: 2px;
+  color: #f97316; text-transform: uppercase; margin-bottom: .75rem;
+}
+.ka-section-head__title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; color: #0f172a; }
+.ka-section-head__desc { font-size: 1rem; color: #64748b; margin-top: .75rem; }
+
+.ka-timeline { position: relative; max-width: 900px; margin: 0 auto; }
+.ka-timeline::before {
+  content: '';
+  position: absolute; left: 50%; top: 0; bottom: 0;
+  width: 3px; background: linear-gradient(to bottom, #dc2626, #f97316, #eab308, #22c55e);
+  transform: translateX(-50%);
+}
+.ka-tl-item {
+  position: relative; width: calc(50% - 2.5rem);
+  background: #fff; border-radius: 12px;
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+  transition: box-shadow .25s, transform .25s;
+}
+.ka-tl-item:hover { box-shadow: 0 6px 24px rgba(0,0,0,.13); transform: translateY(-2px); }
+.ka-tl-item:nth-child(odd) { margin-left: auto; }
+.ka-tl-item:nth-child(even) { text-align: right; }
+.ka-tl-dot {
+  position: absolute; width: 18px; height: 18px;
+  background: #dc2626; border: 4px solid #fff;
+  border-radius: 50%; top: 1.2rem;
+  box-shadow: 0 0 0 3px rgba(220,38,38,.25);
+}
+.ka-tl-item:nth-child(odd) .ka-tl-dot { left: -3rem; }
+.ka-tl-item:nth-child(even) .ka-tl-dot { right: -3rem; }
+.ka-tl-item.resolved .ka-tl-dot { background: #22c55e; box-shadow: 0 0 0 3px rgba(34,197,94,.25); }
+.ka-tl-item.warning .ka-tl-dot { background: #f97316; box-shadow: 0 0 0 3px rgba(249,115,22,.25); }
+.ka-tl-date { font-size: .8rem; font-weight: 700; color: #dc2626; text-transform: uppercase; letter-spacing: 1px; margin-bottom: .4rem; }
+.ka-tl-item.resolved .ka-tl-date { color: #16a34a; }
+.ka-tl-item.warning .ka-tl-date { color: #ea580c; }
+.ka-tl-title { font-size: 1rem; font-weight: 800; color: #0f172a; margin-bottom: .5rem; }
+.ka-tl-body { font-size: .9rem; color: #475569; line-height: 1.6; display: none; }
+.ka-tl-item.open .ka-tl-body { display: block; margin-top: .6rem; }
+.ka-tl-toggle { font-size: .78rem; color: #64748b; margin-top: .6rem; font-weight: 600; }
+.ka-tl-toggle::before { content: '▼ '; font-size: .65rem; }
+.ka-tl-item.open .ka-tl-toggle::before { content: '▲ '; }
+
+/* ============================================================
+   SECTION 5 — MAP SECTION
+   ============================================================ */
+.ka-map-section { padding: 4rem 1.5rem; background: #fff; }
+.ka-map-wrap { max-width: 980px; margin: 0 auto; }
+#ka-map { width: 100%; height: 440px; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,.12); }
+.ka-map-legend {
+  display: flex; flex-wrap: wrap; gap: 1.2rem;
+  margin-top: 1.2rem; padding: 1rem 1.2rem;
+  background: #f8fafc; border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+.ka-legend-item { display: flex; align-items: center; gap: .5rem; font-size: .875rem; color: #475569; font-weight: 600; }
+.ka-legend-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+
+/* ============================================================
+   SECTION 6 — MMA CHEMICAL GUIDE (ACCORDION)
+   ============================================================ */
+.ka-chem-section { background: #0f172a; padding: 4rem 1.5rem; }
+.ka-chem-section .ka-section-head__title { color: #f8fafc; }
+.ka-chem-section .ka-section-head__desc { color: #94a3b8; }
+.ka-chem-section .ka-section-head__label { color: #38bdf8; }
+.ka-accord { max-width: 860px; margin: 0 auto; }
+.ka-accord-item {
+  border-radius: 10px; overflow: hidden;
+  margin-bottom: 1rem;
+  border: 1px solid #1e3a5f;
+}
+.ka-accord-head {
+  width: 100%; background: #1e293b;
+  border: none; cursor: pointer;
+  padding: 1.2rem 1.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  text-align: left;
+  transition: background .2s;
+}
+.ka-accord-head:hover { background: #263350; }
+.ka-accord-head-text { font-size: 1rem; font-weight: 700; color: #e2e8f0; display: flex; align-items: center; gap: .75rem; }
+.ka-accord-icon { font-size: 1.4rem; }
+.ka-accord-arrow { color: #38bdf8; font-size: 1rem; transition: transform .3s; }
+.ka-accord-item.open .ka-accord-arrow { transform: rotate(180deg); }
+.ka-accord-body { background: #1e293b; padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s; }
+.ka-accord-item.open .ka-accord-body { max-height: 600px; padding: 1.2rem 1.5rem 1.5rem; }
+.ka-accord-body p, .ka-accord-body li { font-size: .95rem; color: #94a3b8; line-height: 1.7; margin-bottom: .7rem; }
+.ka-accord-body ul { padding-left: 1.2rem; }
+.ka-accord-body ul li { margin-bottom: .4rem; }
+.ka-accord-body strong { color: #e2e8f0; }
+.ka-accord-body a { color: #38bdf8; }
+.ka-chem-note {
+  max-width: 860px; margin: 2rem auto 0;
+  background: rgba(239,68,68,.1); border: 1px solid rgba(239,68,68,.3);
+  border-radius: 8px; padding: 1rem 1.5rem;
+  font-size: .875rem; color: #fca5a5;
+  display: flex; gap: .75rem;
+}
+
+/* ============================================================
+   SECTION 7 — BODY TEXT BLOCKS
+   ============================================================ */
+.ka-text-block--dark {
+  background: #f8fafc;
+  padding: 3rem 1.5rem;
+}
+.ka-text-block--dark .ka-text-inner { max-width: 860px; margin: 0 auto; }
+.ka-text-block--dark p { font-size: 1.05rem; color: #334155; line-height: 1.8; margin-bottom: 1.4rem; }
+.ka-text-block--dark a { color: #1d4ed8; }
+.ka-text-block--dark h2 {
+  font-size: 1.5rem; font-weight: 800; color: #0f172a;
+  margin: 2rem 0 1rem;
+}
+.ka-text-block--dark h3 {
+  font-size: 1.2rem; font-weight: 700; color: #1e293b;
+  margin: 1.5rem 0 .75rem;
+}
+.ka-inline-stat {
+  display: inline-block;
+  background: #fef2f2; border: 1px solid #fecaca;
+  color: #991b1b; font-weight: 700; font-size: .9rem;
+  padding: .2rem .6rem; border-radius: 4px; margin: 0 .2rem;
+}
+.ka-highlight-box {
+  background: #fff7ed; border-left: 4px solid #f97316;
+  border-radius: 0 8px 8px 0; padding: 1.2rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.ka-highlight-box p { font-size: .95rem; color: #7c2d12; margin: 0 !important; }
+.ka-highlight-box strong { color: #9a3412; }
+
+/* ============================================================
+   SECTION 8 — WHAT TO DO (CARD GRID)
+   ============================================================ */
+.ka-action-section { background: #fff; padding: 3.5rem 1.5rem; }
+.ka-action-section .ka-section-head { margin-bottom: 2rem; }
+.ka-action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem; max-width: 1000px; margin: 0 auto;
+}
+.ka-action-card {
+  background: #f8fafc; border-radius: 12px;
+  padding: 1.5rem; border-top: 4px solid #1d4ed8;
+  transition: box-shadow .25s;
+}
+.ka-action-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.1); }
+.ka-action-card__icon { font-size: 2rem; margin-bottom: .75rem; }
+.ka-action-card__title { font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: .6rem; }
+.ka-action-card__text { font-size: .9rem; color: #475569; line-height: 1.6; }
+
+/* ============================================================
+   SECTION 9 — PRIOR VIOLATIONS HIGHLIGHT
+   ============================================================ */
+.ka-prior-box {
+  max-width: 860px; margin: 2rem auto;
+  background: #fef2f2; border: 2px solid #fca5a5;
+  border-radius: 12px; padding: 1.5rem 2rem;
+  display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;
+}
+.ka-prior-box__icon { font-size: 2.5rem; }
+.ka-prior-box__text h3 { font-size: 1.1rem; font-weight: 800; color: #991b1b; margin-bottom: .5rem; }
+.ka-prior-box__text p { font-size: .95rem; color: #7f1d1d; line-height: 1.6; }
+.ka-prior-box__text a { color: #991b1b; }
+
+/* ============================================================
+   SECTION 10 — CONCLUSION
+   ============================================================ */
+.ka-conclusion {
+  background: #0f172a; padding: 3.5rem 1.5rem;
+}
+.ka-conclusion__inner { max-width: 860px; margin: 0 auto; }
+.ka-conclusion__inner p { font-size: 1rem; color: #94a3b8; line-height: 1.8; margin-bottom: 1.2rem; }
+.ka-conclusion__inner a { color: #38bdf8; }
+.ka-conclusion__inner p:last-child { margin-bottom: 0; }
+.ka-conclusion__label { font-size: .75rem; letter-spacing: 2px; text-transform: uppercase; color: #38bdf8; font-weight: 700; margin-bottom: 1rem; }
+
+/* ============================================================
+   SECTION 11 — SOURCES FOOTER
+   ============================================================ */
+.ka-sources { background: #1e293b; padding: 2rem 1.5rem; }
+.ka-sources__inner { max-width: 860px; margin: 0 auto; }
+.ka-sources__title { font-size: .8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #64748b; margin-bottom: 1rem; }
+.ka-sources__list { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+.ka-sources__list li a { font-size: .85rem; color: #475569; text-decoration: none; }
+.ka-sources__list li a:hover { color: #38bdf8; text-decoration: underline; }
+.ka-sources__list li::before { content: '→ '; color: #38bdf8; }
+
+/* ============================================================
+   MOBILE RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .ka-header { grid-template-columns: 1fr; min-height: auto; max-height: none; }
+  .ka-header__img-side { height: 55vw; min-height: 260px; }
+  .ka-header__content-side { padding: 2rem 1.5rem; }
+  .ka-timeline::before { left: 1.2rem; }
+  .ka-tl-item, .ka-tl-item:nth-child(odd), .ka-tl-item:nth-child(even) {
+    width: 100%; margin-left: 0;
+    text-align: left; padding-left: 3rem;
+  }
+  .ka-tl-dot, .ka-tl-item:nth-child(even) .ka-tl-dot, .ka-tl-item:nth-child(odd) .ka-tl-dot { left: .35rem; right: auto; }
+  #ka-map { height: 320px; }
+  .ka-prior-box { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .ka-header__title { font-size: 1.4rem; }
+  .ka-text-block p, .ka-text-block--dark p { font-size: .97rem; }
+  .ka-action-grid { grid-template-columns: 1fr; }
+  .ka-stats-band__inner { grid-template-columns: 1fr 1fr; }
+  .ka-stat-card__value { font-size: 1.6rem; }
+  .ka-map-legend { flex-direction: column; gap: .75rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="ka-article">
+
+<!-- ============================================================
+     SECTION 1 — SPLIT-SCREEN HEADER
+     ============================================================ -->
+<header class="ka-header">
+  <div class="ka-header__img-side">
+    <span class="ka-header__badge">&#9888; Emergency | May 2026</span>
+    <img
+      src="https://commons.wikimedia.org/wiki/Special:FilePath/GKN_Aerospace_Transparency_Systems_Inc_Headquarters_Garden_Grove_California_2021.JPG"
+      alt="GKN Aerospace Transparency Systems Inc. facility in Garden Grove, California — site of the May 2026 methyl methacrylate chemical emergency"
+      title="GKN Aerospace Garden Grove facility — ground zero of the Orange County chemical emergency, May 2026"
+      class="ka-header__img"
+    >
+  </div>
+  <div class="ka-header__content-side">
+    <div class="ka-header__label">Chemical Emergency · Orange County, CA</div>
+    <div class="ka-header__divider"></div>
+    <h1 class="ka-header__title">
+      50,000 Families Left Overnight:<br>
+      Inside the <span>Garden Grove</span> Chemical Emergency
+    </h1>
+    <p class="ka-header__sub">
+      A single overheating tank at an aerospace plant brought a city to a standstill — and raised questions about industrial safety in residential neighborhoods that remain unanswered.
+    </p>
+    <div class="ka-header__meta">
+      <div class="ka-header__meta-item">&#128197; <strong>May 21&ndash;26, 2026</strong></div>
+      <div class="ka-header__meta-item">&#128205; <strong>Garden Grove, Orange County, California</strong></div>
+      <div class="ka-header__meta-item">&#9888; <strong>Methyl Methacrylate (MMA) Incident</strong></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     SECTION 2 — STATS BAND
+     ============================================================ -->
+<div class="ka-stats-band">
+  <div class="ka-stats-band__inner">
+    <div class="ka-stat-card">
+      <div class="ka-stat-card__value red">50,000</div>
+      <div class="ka-stat-card__label">Residents Evacuated</div>
+    </div>
+    <div class="ka-stat-card orange">
+      <div class="ka-stat-card__value orange">7,000</div>
+      <div class="ka-stat-card__label">Gallons of MMA in Tank</div>
+    </div>
+    <div class="ka-stat-card">
+      <div class="ka-stat-card__value red">5</div>
+      <div class="ka-stat-card__label">Days Crisis Active</div>
+    </div>
+    <div class="ka-stat-card orange">
+      <div class="ka-stat-card__value orange">$900K</div>
+      <div class="ka-stat-card__label">GKN Air Quality Fine (2025)</div>
+    </div>
+    <div class="ka-stat-card blue">
+      <div class="ka-stat-card__value blue">16,000</div>
+      <div class="ka-stat-card__label">Still Displaced (May 26)</div>
+    </div>
+    <div class="ka-stat-card green">
+      <div class="ka-stat-card__value green">0</div>
+      <div class="ka-stat-card__label">Deaths Reported</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SECTION 3 — INTRO TEXT BLOCK (WordPress-style)
+     ============================================================ -->
+<div class="ka-text-block">
+
+  <p>
+    On May 21, 2026, a routine evening in Garden Grove, California, turned into something tens of thousands of people will not soon forget. A <strong>chemical storage tank at the GKN Aerospace facility on Western Avenue</strong> began overheating. Within hours, unmanned water hoses were running through the night, streets were sealed off, and families were packing what they could carry. By the next morning, 50,000 residents across six cities had been ordered to leave their homes. The cause: approximately 7,000 gallons of <a href="https://www.epa.gov/sites/default/files/2016-09/documents/methyl-methacrylate.pdf" target="_blank" rel="noopener">methyl methacrylate (MMA)</a>, a volatile, highly flammable liquid used in manufacturing aircraft canopies — including the F-35 fighter jet.
+  </p>
+
+  <p>
+    The tank could not be drained. A faulty valve made that impossible. It could not be chemically neutralized on-site. For four days, fire officials described a <strong>BLEVE — a Boiling Liquid Expanding Vapor Explosion</strong> — as a live threat. For a nine-square-mile stretch of Orange County that includes homes, schools, and parks, the message was both urgent and deeply sobering: <a href="https://www.karmactive.com/indiana-recycling-plant-blaze-toxic-smoke-threatens-35000-lives-and-leaves-firefighters-injured/" target="_blank" rel="noopener">industrial chemical emergencies</a> do not always happen in remote industrial corridors — sometimes they happen next door.
+  </p>
+
+  <div class="ka-pullquote">
+    <p>"Garden Grove families did not sign up for this."</p>
+    <cite>— Attorney, X-Law Group P.C., lead counsel in the class-action lawsuit against GKN Aerospace</cite>
+  </div>
+
+  <p>
+    As of May 26, 2026, the worst-case explosion risk has been eliminated. A reduced evacuation zone covering 16,000 residents remains in place. A state investigation is open. A federal emergency has been declared. A class-action lawsuit has been filed. And a company with an <strong>already-documented $900,000 air quality violation from 2025</strong> now faces a criminal probe. What follows is a full account of what happened, what the chemical involved actually does, and what questions remain after the cameras leave.
+  </p>
+
+</div>
+
+<!-- ============================================================
+     SECTION 4 — INTERACTIVE TIMELINE
+     ============================================================ -->
+<section class="ka-timeline-section">
+  <div class="ka-section-head">
+    <div class="ka-section-head__label">Five Days · Five Turning Points</div>
+    <h2 class="ka-section-head__title">How the Crisis Unfolded</h2>
+    <p class="ka-section-head__desc">Tap any event to see what happened. The colors track the crisis: from danger to resolution.</p>
+  </div>
+
+  <div class="ka-timeline">
+
+    <div class="ka-tl-item" onclick="toggleTL(this)">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-date">Thursday, May 21, 2026 &bull; Day 1</div>
+      <div class="ka-tl-title">Tank Overheating Detected at GKN Aerospace</div>
+      <div class="ka-tl-toggle">Read more</div>
+      <div class="ka-tl-body">At approximately 3:40&nbsp;PM, hazmat crews responded to GKN Aerospace Transparency Systems Inc. at 12122&nbsp;Western Avenue, Garden Grove. A 34,000-gallon storage tank containing roughly 7,000&nbsp;gallons of methyl methacrylate (MMA) had begun overheating and venting vapors. A faulty valve prevented draining or neutralizing the contents. Firefighters began cooling the tank with unmanned water hoses. Initial evacuation orders were issued.</div>
+    </div>
+
+    <div class="ka-tl-item warning" onclick="toggleTL(this)">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-date">Friday–Saturday, May 22–23, 2026 &bull; Days 2–3</div>
+      <div class="ka-tl-title">Evacuation Expanded to 50,000 — BLEVE Risk Declared</div>
+      <div class="ka-tl-toggle">Read more</div>
+      <div class="ka-tl-body">Evacuation orders expanded to a one-mile radius across six cities: Garden Grove, Cypress, Stanton, Anaheim, Buena Park, and Westminster — affecting 50,000&nbsp;people in a nine-square-mile area. Multiple Garden Grove Unified school campuses were closed. Orange County Fire Authority declared the risk of a BLEVE (Boiling Liquid Expanding Vapor Explosion). A class-action lawsuit was filed on May&nbsp;23 by X-Law Group P.C. and Presidio Law Firm on behalf of residents. Containment barriers were placed around the facility to prevent MMA from entering storm drains and waterways.</div>
+    </div>
+
+    <div class="ka-tl-item warning" onclick="toggleTL(this)">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-date">Saturday, May 23, 2026 &bull; Day 3</div>
+      <div class="ka-tl-title">Governor Newsom Declares State of Emergency</div>
+      <div class="ka-tl-toggle">Read more</div>
+      <div class="ka-tl-body">California Governor Gavin Newsom proclaimed a state of emergency for Orange County, directing Cal&nbsp;OES and all state agencies to support the response. Additional shelter sites were made available, including state-owned properties and fairgrounds. Newsom stated: <em>"The safety of Orange County residents is the top priority. We are mobilizing every state resource available to support local responders."</em> Orange County DA Todd Spitzer simultaneously announced a criminal investigation, saying: <em>"We are not getting satisfactory answers."</em> An anonymous tip hotline was opened: 714-347-8714.</div>
+    </div>
+
+    <div class="ka-tl-item warning" onclick="toggleTL(this)">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-date">Sunday–Monday, May 24–25, 2026 &bull; Days 4–5</div>
+      <div class="ka-tl-title">Crack Found — BLEVE Risk Eliminated</div>
+      <div class="ka-tl-toggle">Read more</div>
+      <div class="ka-tl-body">A crack formed in the tank, allowing pressure to release safely rather than building to a catastrophic rupture. Much of the MMA had begun to cure — gelling and hardening as it polymerizes. Temperatures inside the tank started declining. On May&nbsp;25, OCFA Interim Chief TJ&nbsp;McGovern confirmed: <em>"The most catastrophic and worst-case scenario was mitigated and resolved."</em> Governor Newsom secured a Presidential Emergency Declaration from President Donald Trump, unlocking federal disaster response resources. The evacuation zone was reduced from 50,000 to 16,000 residents.</div>
+    </div>
+
+    <div class="ka-tl-item resolved" onclick="toggleTL(this)">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-date">Tuesday, May 26, 2026 &bull; Day 6 (Ongoing)</div>
+      <div class="ka-tl-title">Crisis Contained — Investigations Continue</div>
+      <div class="ka-tl-toggle">Read more</div>
+      <div class="ka-tl-body">The BLEVE threat is off the table. A reduced evacuation zone covering 16,000 residents remains in place while crews continue monitoring tank temperature. The Orange County DA investigation is active. The class-action lawsuit is proceeding. Long-term air quality monitoring and groundwater assessment plans have not yet been formally announced by city or county officials. GKN Aerospace continues to work with local, state, and federal agencies on final containment and safe disposal of the remaining material.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5 — BODY TEXT: THE INCIDENT & GKN
+     ============================================================ -->
+<div class="ka-text-block--dark">
+  <div class="ka-text-inner">
+    <h2>The Facility, the Chemical, and Why This Was Different</h2>
+
+    <p>
+      GKN Aerospace Transparency Systems Inc. is not a generic manufacturer. Its Garden Grove site is the <strong>world's leading producer of military transparency systems</strong> — aircraft canopies, cockpit windows, and cabin glazing for both military and commercial aircraft. Products from this facility are on the F-35 stealth fighter, the Boeing 787 Dreamliner, the Boeing 737, the Airbus A350, the HondaJet, and the Bombardier C-Series. The production process for high-strength acrylic transparencies requires methyl methacrylate as a primary raw material.
+    </p>
+
+    <p>
+      MMA is a colorless, volatile liquid that smells strongly and irritates at low concentrations. At room temperature it is a flammable liquid — its flash point is just 10°C (50°F), making it easy to ignite. When stored in large tanks without precise temperature control, MMA can undergo <strong>runaway polymerization</strong>: an uncontrolled chain reaction in which the liquid converts to solid acrylic plastic while releasing large amounts of heat. As this internal heat builds with no outlet, pressure inside a sealed container rises rapidly — creating conditions for a BLEVE. Firefighters described the worst-case radius of destruction in this scenario as extending well beyond the facility perimeter.
+    </p>
+
+    <div class="ka-highlight-box">
+      <p><strong>What is a BLEVE?</strong> A Boiling Liquid Expanding Vapor Explosion occurs when a pressurized container ruptures and its superheated contents rapidly vaporize and ignite. In industrial incidents, BLEVEs can project debris, generate fireballs, and produce pressure waves with destructive reach across significant distances. The threat here was classified as active for four full days.</p>
+    </div>
+
+    <p>
+      Fire crews at the scene had no option to chemically neutralize or drain the tank because the faulty valve that would allow drainage had failed. Their only option was continuous external cooling with water — an operation requiring unmanned hoses running around the clock for days to keep surface temperatures below the threshold for rupture. As one official noted, the situation was described as <em>"unprecedented"</em> by firefighters in terms of its technical complexity. GKN Aerospace issued a statement acknowledging the situation: <em>"We continue to monitor the condition of the affected material and are working round the clock to mitigate the risk of a leak. Our priority remains the safe resolution of this incident, so that residents can return to their homes as quickly as possible."</em>
+    </p>
+  </div>
+</div>
+
+<!-- ============================================================
+     SECTION 6 — MAP (LEAFLET)
+     ============================================================ -->
+<section class="ka-map-section">
+  <div class="ka-map-wrap">
+    <div class="ka-section-head" style="text-align:left; max-width:100%; margin-bottom:1.5rem;">
+      <div class="ka-section-head__label">Geographic Impact</div>
+      <h2 class="ka-section-head__title" style="font-size:1.5rem;">The Evacuation Zone</h2>
+      <p class="ka-section-head__desc" style="text-align:left;">The mandatory evacuation covered nine square miles across six cities. Scroll and click markers for details.</p>
+    </div>
+    <div id="ka-map"></div>
+    <div class="ka-map-legend">
+      <div class="ka-legend-item"><div class="ka-legend-dot" style="background:#ef4444;"></div> GKN Aerospace Facility (Incident Site)</div>
+      <div class="ka-legend-item"><div class="ka-legend-dot" style="background:#f97316;"></div> Evacuation Zone (1-mile radius)</div>
+      <div class="ka-legend-item"><div class="ka-legend-dot" style="background:#3b82f6;"></div> Evacuation Shelter Sites</div>
+      <div class="ka-legend-item"><div class="ka-legend-dot" style="background:#22c55e;"></div> OC Animal Care (Pet Shelter)</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 7 — PRIOR VIOLATION + LEGAL
+     ============================================================ -->
+<div class="ka-text-block--dark" style="background:#fff;">
+  <div class="ka-text-inner">
+    <h2>A Company with Prior Flags</h2>
+
+    <div class="ka-prior-box">
+      <div class="ka-prior-box__icon">&#9888;</div>
+      <div class="ka-prior-box__text">
+        <h3>GKN Aerospace Settled $900,000 Air Quality Violation in 2025</h3>
+        <p>
+          Just one year before the May 2026 emergency, GKN Aerospace settled an air quality safety violation at its Garden Grove facility and agreed to pay a <strong>$900,000 fine</strong>. Orange County DA Todd Spitzer's ongoing criminal investigation is examining whether the circumstances of that earlier violation were connected to the maintenance and monitoring of chemical storage systems at the same facility. As Spitzer stated publicly: <em>"We are not getting satisfactory answers."</em> Employees and contractors with information are being invited to contact the anonymous tip line at <strong>714-347-8714</strong> or submit information through the Orange County District Attorney's official website.
+        </p>
+      </div>
+    </div>
+
+    <p>
+      The class-action lawsuit filed on May 23, 2026, names GKN Aerospace Transparency Systems Inc. and associated parties. Allegations include negligence, private and public nuisance, and liability for ultrahazardous activity. Damages sought are described as potentially in the hundreds of millions to billions of dollars — covering evacuation costs, property disruption, health monitoring, loss of use of homes, and diminished property values. The two lead plaintiffs are Garden Grove residents who were displaced by the mandatory evacuation orders.
+    </p>
+
+    <p>
+      Under California and federal law, facilities storing hazardous chemicals above certain threshold quantities are required to maintain emergency response plans, conduct regular safety inspections, and file Tier II reports with the EPA under the <a href="https://www.epa.gov/sites/default/files/2016-09/documents/methyl-methacrylate.pdf" target="_blank" rel="noopener">Emergency Planning and Community Right-to-Know Act</a>. Whether the storage tank's faulty valve and overheating were disclosed in prior filings, and whether corrective actions were taken after the 2025 violation, are central questions in both the criminal investigation and the civil lawsuit. These are also questions that many of the 50,000 displaced residents are asking.
+    </p>
+  </div>
+</div>
+
+<!-- ============================================================
+     SECTION 8 — MMA CHEMICAL GUIDE (ACCORDION)
+     ============================================================ -->
+<section class="ka-chem-section">
+  <div class="ka-section-head">
+    <div class="ka-section-head__label">Chemical Guide</div>
+    <h2 class="ka-section-head__title">What Is Methyl Methacrylate — and What Does It Do?</h2>
+    <p class="ka-section-head__desc">Tap each section to learn more. Factual information from <a href="https://www.epa.gov/sites/default/files/2016-09/documents/methyl-methacrylate.pdf" target="_blank" rel="noopener" style="color:#38bdf8;">EPA</a>, <a href="https://www.osha.gov/chemicaldata/712" target="_blank" rel="noopener" style="color:#38bdf8;">OSHA</a>, and <a href="https://www.cdph.ca.gov/Programs/CCDPHP/DEODC/OHB/CDPH%20Document%20Library/Health-Advisory-Information-on-Methyl-Methacrylate.pdf" target="_blank" rel="noopener" style="color:#38bdf8;">CDPH</a>.</p>
+  </div>
+
+  <div class="ka-accord">
+
+    <div class="ka-accord-item">
+      <button class="ka-accord-head" onclick="toggleAccord(this)">
+        <span class="ka-accord-head-text"><span class="ka-accord-icon">&#128300;</span> What is Methyl Methacrylate?</span>
+        <span class="ka-accord-arrow">&#9660;</span>
+      </button>
+      <div class="ka-accord-body">
+        <p>Methyl methacrylate (MMA, CAS&nbsp;80-62-6) is a colorless, volatile, highly flammable liquid with a strong, acrid odor. It is classified as a <strong>UN Class 3 Flammable Liquid</strong> (UN No.&nbsp;1247). At room temperature, MMA rapidly evaporates and its vapors are heavier than air — meaning they settle at ground level and in low-lying areas.</p>
+        <p>MMA is the monomer form of polymethyl methacrylate (PMMA), commonly known as acrylic glass or Plexiglas. It is used in the production of aircraft canopies and cockpit windows, dental products, bone cements, contact lenses, and automotive coatings. GKN Aerospace uses it at Garden Grove to manufacture F-35 canopies and commercial aircraft transparencies.</p>
+        <p><strong>Flash point:</strong> 10°C (50°F) — extremely flammable even at cool temperatures. <strong>Autoignition temperature:</strong> approximately 435°C (815°F).</p>
+      </div>
+    </div>
+
+    <div class="ka-accord-item">
+      <button class="ka-accord-head" onclick="toggleAccord(this)">
+        <span class="ka-accord-head-text"><span class="ka-accord-icon">&#129658;</span> Health Effects — Short and Long Term</span>
+        <span class="ka-accord-arrow">&#9660;</span>
+      </button>
+      <div class="ka-accord-body">
+        <p><strong>Short-term exposure</strong> (inhalation, skin or eye contact) can cause:</p>
+        <ul>
+          <li>Irritation of the eyes, nose, throat, and lungs</li>
+          <li>Headaches and dizziness</li>
+          <li>Nausea and vomiting</li>
+          <li>Shortness of breath and coughing</li>
+          <li>Skin sensitization on repeated contact</li>
+        </ul>
+        <p><strong>OSHA Permissible Exposure Limit (PEL):</strong> 100 ppm (parts per million) over an 8-hour workday. <strong>NIOSH Immediately Dangerous to Life or Health (IDLH):</strong> 1,000 ppm.</p>
+        <p><strong>Long-term exposure:</strong> Research is limited, but chronic exposure may impact the liver, kidneys, and central nervous system. MMA is not currently classified as a human carcinogen by the EPA or IARC. The California Department of Public Health (CDPH) has issued a <a href="https://www.cdph.ca.gov/Programs/CCDPHP/DEODC/OHB/CDPH%20Document%20Library/Health-Advisory-Information-on-Methyl-Methacrylate.pdf" target="_blank" rel="noopener">health advisory specific to this incident</a> with guidance for residents.</p>
+        <p><strong>Animals</strong> — including dogs, cats, and birds — are susceptible to the same respiratory effects. Because MMA vapors are heavier than air, pets kept low to the ground or in poorly ventilated spaces face elevated exposure risk.</p>
+      </div>
+    </div>
+
+    <div class="ka-accord-item">
+      <button class="ka-accord-head" onclick="toggleAccord(this)">
+        <span class="ka-accord-head-text"><span class="ka-accord-icon">&#127968;</span> If You Were in the Evacuation Zone</span>
+        <span class="ka-accord-arrow">&#9660;</span>
+      </button>
+      <div class="ka-accord-body">
+        <p>For residents returning home after evacuation orders are lifted:</p>
+        <ul>
+          <li>Open windows and doors to ventilate before occupying your home</li>
+          <li>If you smell a strong, acrid chemical odor, leave immediately and call 911</li>
+          <li>Wash clothing worn during the evacuation period before re-use</li>
+          <li>If you or family members experience respiratory irritation, headaches, or dizziness after returning, seek medical attention</li>
+          <li>Keep pets inside or ventilated; watch for signs of respiratory distress (coughing, labored breathing)</li>
+          <li>For ongoing public health information, contact the <strong>Orange County Public Information Hotline: (714) 628-7085</strong></li>
+          <li>For injury or illness related to MMA exposure, document your symptoms with a healthcare provider promptly</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ka-accord-item">
+      <button class="ka-accord-head" onclick="toggleAccord(this)">
+        <span class="ka-accord-head-text"><span class="ka-accord-icon">&#127807;</span> Environmental and Water Impact</span>
+        <span class="ka-accord-arrow">&#9660;</span>
+      </button>
+      <div class="ka-accord-body">
+        <p>Fire crews set up containment barriers around the GKN Aerospace facility to prevent the chemical from entering storm drains, river channels, and the ocean. MMA is acutely toxic to fish and aquatic invertebrates at elevated concentrations and can inhibit algae growth.</p>
+        <p>According to <a href="https://www.epa.gov/sites/default/files/2016-09/documents/methyl-methacrylate.pdf" target="_blank" rel="noopener">EPA guidance on MMA</a>, the chemical degrades in water over several hours to days under aerobic conditions. However, in low-oxygen soils common near urban drainage infrastructure, degradation slows significantly. The compound can potentially contaminate groundwater if it seeps into soil.</p>
+        <p><strong>A significant gap in the public record:</strong> as of May 26, 2026, no formal long-term groundwater or soil monitoring program has been announced for the areas surrounding 12122 Western Avenue. The Los Angeles River — into which many area storm drains feed — flows through this broader region. Environmental advocates and public health researchers have flagged the absence of post-emergency ecological monitoring as a recurring failure pattern in urban industrial incidents.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ka-chem-note">
+    <span style="font-size:1.2rem;">&#9888;</span>
+    <span>Information in this guide is drawn from official sources including the U.S. EPA, OSHA, CDPH, and NIOSH. If you suspect exposure, contact a medical professional. Do not rely solely on this guide for medical decisions.</span>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 9 — ACTION CARDS
+     ============================================================ -->
+<section class="ka-action-section">
+  <div class="ka-section-head">
+    <div class="ka-section-head__label">What Can You Do</div>
+    <h2 class="ka-section-head__title" style="color:#0f172a;">Resources for Residents and the Public</h2>
+  </div>
+  <div class="ka-action-grid">
+    <div class="ka-action-card">
+      <div class="ka-action-card__icon">&#128222;</div>
+      <div class="ka-action-card__title">OC Public Info Hotline</div>
+      <div class="ka-action-card__text">For evacuation status, air quality updates, and return guidance: <strong>(714) 628-7085</strong></div>
+    </div>
+    <div class="ka-action-card" style="border-top-color:#dc2626;">
+      <div class="ka-action-card__icon">&#128222;</div>
+      <div class="ka-action-card__title">DA Whistleblower Tip Line</div>
+      <div class="ka-action-card__text">If you have information about the cause of the tank failure at GKN Aerospace, contact: <strong>(714) 347-8714</strong> (anonymous).</div>
+    </div>
+    <div class="ka-action-card" style="border-top-color:#16a34a;">
+      <div class="ka-action-card__icon">&#128062;</div>
+      <div class="ka-action-card__title">Pet Shelter — OC Animal Care</div>
+      <div class="ka-action-card__text">1630 Victory Road, Tustin. Accepts dogs, cats, and small pets from evacuees.</div>
+    </div>
+    <div class="ka-action-card" style="border-top-color:#7c3aed;">
+      <div class="ka-action-card__icon">&#9878;</div>
+      <div class="ka-action-card__title">City of Garden Grove Emergency</div>
+      <div class="ka-action-card__text">Official status updates and emergency instructions at <a href="https://ggcity.org/emergency" target="_blank" rel="noopener">ggcity.org/emergency</a></div>
+    </div>
+    <div class="ka-action-card" style="border-top-color:#f97316;">
+      <div class="ka-action-card__icon">&#128196;</div>
+      <div class="ka-action-card__title">CA Governor's Declaration</div>
+      <div class="ka-action-card__text">Official emergency proclamation and resource list: <a href="https://www.gov.ca.gov/2026/05/23/governor-newsom-proclaims-state-of-emergency-in-orange-county-in-response-to-ongoing-chemical-incident-in-garden-grove-makes-additional-shelter-sites-available/" target="_blank" rel="noopener">gov.ca.gov</a></div>
+    </div>
+    <div class="ka-action-card" style="border-top-color:#0891b2;">
+      <div class="ka-action-card__icon">&#127973;</div>
+      <div class="ka-action-card__title">CDPH Health Advisory</div>
+      <div class="ka-action-card__text">Official health guidance on MMA exposure: <a href="https://www.cdph.ca.gov/Programs/CCDPHP/DEODC/OHB/CDPH%20Document%20Library/Health-Advisory-Information-on-Methyl-Methacrylate.pdf" target="_blank" rel="noopener">CA Dept. of Public Health</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 10 — BODY: ENVIRONMENTAL & HISTORY CONTEXT
+     ============================================================ -->
+<div class="ka-text-block--dark">
+  <div class="ka-text-inner">
+    <h2>What Others Are Not Asking: The Environmental Gap</h2>
+
+    <p>
+      The immediate focus in the Garden Grove emergency was, rightly, on human safety. But beyond the evacuation and the BLEVE risk, a set of quieter environmental questions have received far less public attention.
+    </p>
+
+    <p>
+      Fire crews set containment barriers to prevent MMA from reaching storm drains, the Santa Ana River watershed, and eventually the Pacific Ocean — a critical step. But <strong>no formal long-term environmental monitoring program has been publicly announced</strong> for the soil, groundwater, or waterways adjacent to 12122 Western Avenue. MMA in soil degrades quickly under normal aerobic conditions, but urban drainage infrastructure — with its compacted soils, paved surfaces, and low-oxygen underground channels — creates conditions where that degradation slows considerably. Groundwater contamination, though not immediate, is a potential risk that should be formally assessed rather than assumed away.
+    </p>
+
+    <p>
+      The nine-square-mile evacuation zone covers densely built residential neighborhoods where stormwater channels and drainage pipes run beneath streets and backyards. The broader Santa Ana River Watershed, which connects to Orange County's coastal areas, has received no public statement from either city or county officials regarding monitoring in the aftermath of this event. For those who have followed <a href="https://www.karmactive.com/massive-sewage-spill-closes-seven-miles-of-california-beaches-from-sewer-to-shoreline/" target="_blank" rel="noopener">California's history of industrial contamination incidents</a>, the pattern of strong immediate response followed by long-term monitoring gaps is a familiar one.
+    </p>
+
+    <p>
+      Southern California's dense mix of aerospace, defense, and advanced manufacturing facilities — many of them in and around residential communities in Orange County and Los Angeles — means that millions of people live near facilities storing hazardous chemicals. California's Hazardous Materials Business Plan and the federal <a href="https://www.epa.gov/sites/default/files/2016-09/documents/methyl-methacrylate.pdf" target="_blank" rel="noopener">EPCRA Tier II reporting requirements</a> exist precisely to ensure communities are informed and prepared. Whether GKN's 2025 air quality settlement pointed to deeper systemic issues at the Garden Grove site — and whether those were adequately addressed before May 2026 — is now a question for both investigators and regulators.
+    </p>
+
+    <p>
+      Residents living in lower-income areas adjacent to industrial zones bear a disproportionate share of exposure risk when such incidents occur. The communities in the evacuation zone — Garden Grove, Stanton, Westminster, and adjacent areas — include a significant number of working-class families and multi-generational immigrant households for whom a week-long displacement, lost wages, hotel expenses, and potential property devaluation represent a severe financial blow on top of the health and safety stress. No financial assistance program has been specifically announced for displaced residents beyond standard emergency shelter access, as of the date of this report.
+    </p>
+  </div>
+</div>
+
+<!-- ============================================================
+     SECTION 11 — CONCLUSION
+     ============================================================ -->
+<div class="ka-conclusion">
+  <div class="ka-conclusion__inner">
+    <div class="ka-conclusion__label">In Summary</div>
+    <p>
+      The Garden Grove chemical emergency began on May 21, 2026, when a storage tank containing approximately 7,000 gallons of methyl methacrylate at the GKN Aerospace Transparency Systems facility started overheating. The resulting BLEVE risk forced the mandatory evacuation of 50,000 residents across six cities in Orange County. California Governor Gavin Newsom declared a state of emergency on May 23, and President Trump approved a federal emergency declaration on May 25. By May 25–26, the threat of a catastrophic explosion was confirmed eliminated by OCFA Interim Chief TJ McGovern. The evacuation zone was reduced to 16,000 residents.
+    </p>
+    <p>
+      An Orange County DA criminal investigation is underway. A class-action lawsuit seeking damages in the hundreds of millions to billions has been filed. GKN Aerospace, which paid a $900,000 air quality fine in 2025, has apologized and committed to working with authorities. Health guidance from the <a href="https://www.cdph.ca.gov/Programs/CCDPHP/DEODC/OHB/CDPH%20Document%20Library/Health-Advisory-Information-on-Methyl-Methacrylate.pdf" target="_blank" rel="noopener">California Department of Public Health</a>, <a href="https://www.epa.gov/sites/default/files/2016-09/documents/methyl-methacrylate.pdf" target="_blank" rel="noopener">EPA</a>, and <a href="https://www.osha.gov/chemicaldata/712" target="_blank" rel="noopener">OSHA</a> on methyl methacrylate exposure remains available for affected residents. Formal long-term soil, groundwater, and air quality monitoring has not been publicly committed to by any agency as of May 26, 2026. The Orange County Public Information Hotline remains active at (714) 628-7085.
+    </p>
+    <p>
+      Coverage of this incident in past days has largely tracked the BLEVE risk, the evacuation numbers, and the legal response. What has been less covered — and remains open — is the longer ecological record of this event and what it tells us about how industrial chemical facilities are regulated when they sit inside residential neighborhoods. Those questions, raised here for the first time alongside the established factual record, belong in the public conversation as this story continues.
+    </p>
+  </div>
+</div>
+
+<!-- ============================================================
+     SECTION 12 — SOURCES FOOTER
+     ============================================================ -->
+<div class="ka-sources">
+  <div class="ka-sources__inner">
+    <div class="ka-sources__title">First-Hand Sources</div>
+    <ul class="ka-sources__list">
+      <li><a href="https://www.gov.ca.gov/2026/05/23/governor-newsom-proclaims-state-of-emergency-in-orange-county-in-response-to-ongoing-chemical-incident-in-garden-grove-makes-additional-shelter-sites-available/" target="_blank" rel="noopener">California Governor's Office — State of Emergency Proclamation, May 23, 2026</a></li>
+      <li><a href="https://www.gov.ca.gov/2026/05/25/governor-newsom-secures-presidential-emergency-declaration-approval-for-orange-county-hazmat-response/" target="_blank" rel="noopener">California Governor's Office — Presidential Emergency Declaration Approval, May 25, 2026</a></li>
+      <li><a href="https://newsroom.ocde.us/several-garden-grove-unified-campuses-closed-following-chemical-leak-response/" target="_blank" rel="noopener">Orange County Department of Education Newsroom — School Closures, May 2026</a></li>
+      <li><a href="https://ggcity.org/emergency" target="_blank" rel="noopener">City of Garden Grove — Emergency Information Portal</a></li>
+      <li><a href="https://www.epa.gov/sites/default/files/2016-09/documents/methyl-methacrylate.pdf" target="_blank" rel="noopener">U.S. EPA — Methyl Methacrylate Hazard Summary (CAS 80-62-6)</a></li>
+      <li><a href="https://www.osha.gov/chemicaldata/712" target="_blank" rel="noopener">OSHA — Methyl Methacrylate Chemical Data</a></li>
+      <li><a href="https://www.cdph.ca.gov/Programs/CCDPHP/DEODC/OHB/CDPH%20Document%20Library/Health-Advisory-Information-on-Methyl-Methacrylate.pdf" target="_blank" rel="noopener">California Department of Public Health — Health Advisory: Methyl Methacrylate</a></li>
+      <li><a href="https://nj.gov/health/eoh/rtkweb/documents/fs/1277.pdf" target="_blank" rel="noopener">NJ Department of Health — Methyl Methacrylate Fact Sheet (Right to Know Program)</a></li>
+      <li><a href="https://www.gknaerospace.com/locations/americas/usa/" target="_blank" rel="noopener">GKN Aerospace — USA Locations (Garden Grove facility reference)</a></li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- end .ka-article -->
+
+<!-- ============================================================
+     LEAFLET MAP SCRIPT
+     ============================================================ -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+// Initialize map centered on Garden Grove
+var kaMap = L.map('ka-map', { zoomControl: true, scrollWheelZoom: false }).setView([33.7739, -117.9620], 13);
+
+// OpenStreetMap tiles
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(kaMap);
+
+// Custom icon maker
+function makeIcon(color, size) {
+  size = size || 22;
+  return L.divIcon({
+    html: '<div style="background:' + color + '; width:' + size + 'px; height:' + size + 'px; border-radius:50%; border:3px solid #fff; box-shadow:0 2px 6px rgba(0,0,0,.4);"></div>',
+    iconSize: [size, size],
+    iconAnchor: [size/2, size/2],
+    className: ''
+  });
+}
+
+// GKN Aerospace — incident site
+L.marker([33.7758, -117.9627], { icon: makeIcon('#ef4444', 26) })
+  .addTo(kaMap)
+  .bindPopup('<strong>GKN Aerospace Transparency Systems Inc.</strong><br>12122 Western Avenue, Garden Grove<br><em>Incident Site — MMA Tank Overheating May 21, 2026</em>');
+
+// Approximate 1-mile evacuation zone circle
+L.circle([33.7758, -117.9627], {
+  color: '#f97316', fillColor: '#f97316',
+  fillOpacity: 0.08, weight: 2,
+  radius: 1609 // 1 mile in metres
+}).addTo(kaMap).bindPopup('Approximate 1-mile mandatory evacuation zone affecting 50,000 residents');
+
+// City markers in affected zone
+var cities = [
+  { name: 'Garden Grove City Center', lat: 33.7739, lng: -117.9628, info: 'Primary evacuation city' },
+  { name: 'Stanton', lat: 33.8022, lng: -117.9931, info: 'Included in evacuation zone' },
+  { name: 'Cypress', lat: 33.8171, lng: -118.0376, info: 'Included in evacuation zone' },
+  { name: 'Anaheim (southern)', lat: 33.8353, lng: -117.9145, info: 'Portions included in evacuation zone' },
+  { name: 'Westminster', lat: 33.7514, lng: -118.0047, info: 'Included in evacuation zone' },
+  { name: 'Buena Park', lat: 33.8675, lng: -118.0000, info: 'Included in evacuation zone' }
+];
+cities.forEach(function(c) {
+  L.marker([c.lat, c.lng], { icon: makeIcon('#f97316', 16) })
+    .addTo(kaMap)
+    .bindPopup('<strong>' + c.name + '</strong><br>' + c.info);
+});
+
+// Evacuation shelter sites
+var shelters = [
+  { name: 'OC Animal Care (Pet Shelter)', lat: 33.7440, lng: -117.8259, info: '1630 Victory Road, Tustin — accepts pets', color: '#22c55e' },
+  { name: 'Freedom Hall Shelter', lat: 33.7751, lng: -117.9668, info: 'Evacuation shelter — pets allowed', color: '#3b82f6' },
+  { name: 'John F. Kennedy High School Shelter', lat: 33.7740, lng: -117.9805, info: 'Evacuation shelter — pets allowed', color: '#3b82f6' },
+  { name: "Elks Lodge (Garden Grove)", lat: 33.7756, lng: -117.9488, info: 'Open to evacuees with animals', color: '#3b82f6' }
+];
+shelters.forEach(function(s) {
+  L.marker([s.lat, s.lng], { icon: makeIcon(s.color, 18) })
+    .addTo(kaMap)
+    .bindPopup('<strong>' + s.name + '</strong><br>' + s.info);
+});
+</script>
+
+<!-- ============================================================
+     TIMELINE & ACCORDION SCRIPTS
+     ============================================================ -->
+<script>
+function toggleTL(item) {
+  item.classList.toggle('open');
+}
+
+function toggleAccord(btn) {
+  var item = btn.closest('.ka-accord-item');
+  var wasOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.ka-accord-item').forEach(function(el) {
+    el.classList.remove('open');
+  });
+  if (!wasOpen) item.classList.add('open');
+}
+
+// Auto-open first timeline item
+document.addEventListener('DOMContentLoaded', function() {
+  var first = document.querySelector('.ka-tl-item');
+  if (first) first.classList.add('open');
+});
+</script>
+
+</body>
+</html>
