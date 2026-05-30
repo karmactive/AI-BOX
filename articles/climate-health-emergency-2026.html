@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WHO experts call for climate change to be declared a Public Health Emergency of International Concern — the same alert level used for COVID-19. Here is what the data shows.">
+  <title>WHO Experts Call for Climate Health Emergency — PECCH 2026 | Karmactive</title>
+  <style>
+    /* ─── Reset & Scope ─── */
+    .ka-wrap * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    .ka-wrap {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #2c2c2c;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem;
+      line-height: 1.6;
+    }
+
+    /* ─── HEADER — Asymmetric Split ─── */
+    .ka-header {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr;
+      min-height: 440px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 50px rgba(0,0,0,0.2);
+      margin-bottom: 2.5rem;
+    }
+    .ka-img-side {
+      position: relative;
+      overflow: hidden;
+    }
+    .ka-img-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .ka-badge {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      background: #c0392b;
+      color: #fff;
+      padding: 0.45rem 1rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .ka-title-side {
+      background: #111827;
+      color: #fff;
+      padding: 2.2rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .ka-tag {
+      font-size: 0.72rem;
+      color: #f59e0b;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      margin-bottom: 0.8rem;
+    }
+    .ka-h1 {
+      font-size: clamp(1.35rem, 2.6vw, 2rem);
+      font-weight: 800;
+      line-height: 1.3;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+    .ka-key-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .ka-kstat {
+      background: rgba(255,255,255,0.07);
+      padding: 0.65rem 1rem;
+      border-radius: 8px;
+      border-left: 3px solid #f59e0b;
+    }
+    .ka-kstat-val {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #f59e0b;
+      line-height: 1.1;
+    }
+    .ka-kstat-lbl {
+      font-size: 0.73rem;
+      color: rgba(255,255,255,0.7);
+      margin-top: 0.15rem;
+      line-height: 1.4;
+    }
+    .ka-date-line {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 1.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* ─── INTRO TEXT ─── */
+    .ka-intro {
+      background: #fff5f5;
+      border-left: 5px solid #c0392b;
+      padding: 1.4rem 1.8rem;
+      border-radius: 0 10px 10px 0;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #2c2c2c;
+      margin-bottom: 2rem;
+    }
+    .ka-intro a { color: #c0392b; text-decoration: underline; }
+
+    /* ─── QUOTE ─── */
+    .ka-quote {
+      background: #111827;
+      color: #fff;
+      padding: 2rem 2.2rem 1.8rem;
+      border-radius: 14px;
+      margin: 2rem 0;
+      position: relative;
+    }
+    .ka-quote::before {
+      content: '\201C';
+      position: absolute;
+      top: -0.4rem;
+      left: 1.4rem;
+      font-size: 5rem;
+      color: #f59e0b;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .ka-quote-text {
+      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+      font-style: italic;
+      line-height: 1.75;
+      padding-top: 1.2rem;
+    }
+    .ka-quote-attr {
+      margin-top: 0.9rem;
+      font-size: 0.85rem;
+      color: #f59e0b;
+      font-weight: 700;
+    }
+
+    /* ─── SECTION HEADING ─── */
+    .ka-sh {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 2.2rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .ka-sh::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(to right, #c0392b, transparent);
+      border-radius: 2px;
+    }
+
+    /* ─── STATS GRID ─── */
+    .ka-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0 2rem;
+    }
+    .ka-scard {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.3rem 1.1rem;
+      text-align: center;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+      border-top: 4px solid #c0392b;
+      transition: transform 0.2s;
+    }
+    .ka-scard:hover { transform: translateY(-5px); }
+    .ka-scard:nth-child(2) { border-top-color: #e67e22; }
+    .ka-scard:nth-child(3) { border-top-color: #8b5cf6; }
+    .ka-scard:nth-child(4) { border-top-color: #059669; }
+    .ka-scard:nth-child(5) { border-top-color: #2563eb; }
+    .ka-snum {
+      font-size: 2.1rem;
+      font-weight: 900;
+      color: #c0392b;
+      line-height: 1;
+    }
+    .ka-scard:nth-child(2) .ka-snum { color: #e67e22; }
+    .ka-scard:nth-child(3) .ka-snum { color: #8b5cf6; }
+    .ka-scard:nth-child(4) .ka-snum { color: #059669; }
+    .ka-scard:nth-child(5) .ka-snum { color: #2563eb; }
+    .ka-slbl { font-size: 0.82rem; color: #555; margin-top: 0.45rem; line-height: 1.5; }
+    .ka-ssrc { font-size: 0.68rem; color: #aaa; margin-top: 0.4rem; font-style: italic; }
+
+    /* ─── BODY TEXT ─── */
+    .ka-body {
+      font-size: 0.98rem;
+      line-height: 1.85;
+      color: #2c2c2c;
+      margin: 1.4rem 0;
+    }
+    .ka-body p + p { margin-top: 1rem; }
+    .ka-body a { color: #c0392b; text-decoration: none; border-bottom: 1px solid rgba(192,57,43,0.3); }
+    .ka-body a:hover { border-bottom-color: #c0392b; }
+
+    /* ─── 4 DOMAINS INTERACTIVE ─── */
+    .ka-domains { margin: 1.5rem 0 2rem; }
+    .ka-domains-lede {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+    .ka-domain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 0.9rem;
+    }
+    .ka-dcard {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.09);
+      cursor: pointer;
+      user-select: none;
+    }
+    .ka-dtop {
+      padding: 1.2rem 1.1rem;
+      color: #fff;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+    }
+    .ka-dcard:nth-child(1) .ka-dtop { background: #c0392b; }
+    .ka-dcard:nth-child(2) .ka-dtop { background: #d97706; }
+    .ka-dcard:nth-child(3) .ka-dtop { background: #7c3aed; }
+    .ka-dcard:nth-child(4) .ka-dtop { background: #059669; }
+    .ka-dicon { font-size: 1.6rem; flex-shrink: 0; }
+    .ka-dname { font-size: 0.9rem; font-weight: 700; line-height: 1.35; }
+    .ka-dbody {
+      background: #fff;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.38s ease;
+    }
+    .ka-dbody.open { max-height: 320px; }
+    .ka-dbody ul {
+      list-style: none;
+      padding: 1.1rem 1.2rem;
+    }
+    .ka-dbody ul li {
+      padding: 0.45rem 0 0.45rem 1.1rem;
+      font-size: 0.87rem;
+      color: #333;
+      border-bottom: 1px solid #f3f4f6;
+      position: relative;
+      line-height: 1.55;
+    }
+    .ka-dbody ul li:last-child { border-bottom: none; }
+    .ka-dbody ul li::before { content: '→'; position: absolute; left: 0; color: #d97706; }
+    .ka-hint {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #bbb;
+      margin-top: 0.7rem;
+    }
+
+    /* ─── DISEASE TRACKER ─── */
+    .ka-tracker {
+      background: #f9fafb;
+      border-radius: 16px;
+      padding: 1.8rem;
+      margin: 2rem 0;
+    }
+    .ka-tracker h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 0.35rem;
+    }
+    .ka-tracker-sub {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 1.2rem;
+    }
+    .ka-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1.3rem;
+    }
+    .ka-tab {
+      padding: 0.42rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: #fff;
+      color: #555;
+      border: 2px solid #e5e7eb;
+      transition: all 0.18s;
+      white-space: nowrap;
+    }
+    .ka-tab.active { background: #c0392b; color: #fff; border-color: #c0392b; }
+    .ka-tab:hover:not(.active) { border-color: #c0392b; color: #c0392b; }
+    .ka-panel {
+      display: none;
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.4rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .ka-panel.active { display: block; }
+    .ka-pgrid {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 1.3rem;
+      align-items: start;
+    }
+    .ka-picon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+    .ka-ptitle { font-size: 1rem; font-weight: 700; color: #111827; margin-bottom: 0.5rem; }
+    .ka-ppills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.55rem 0;
+    }
+    .ka-pill {
+      background: #fef3c7;
+      color: #92400e;
+      padding: 0.25rem 0.7rem;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+    .ka-pdesc {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ─── TIMELINE ─── */
+    .ka-timeline { position: relative; padding-left: 2rem; margin: 1.5rem 0 2rem; }
+    .ka-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.6rem;
+      top: 0.3rem;
+      bottom: 0.3rem;
+      width: 3px;
+      background: linear-gradient(to bottom, #c0392b, #d97706, #059669);
+      border-radius: 3px;
+    }
+    .ka-titem { position: relative; padding-left: 1.4rem; margin-bottom: 1.6rem; }
+    .ka-tdot {
+      position: absolute;
+      left: -1.52rem;
+      top: 0.3rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #c0392b;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 3px rgba(192,57,43,0.3);
+    }
+    .ka-titem:nth-child(2) .ka-tdot { background: #d97706; box-shadow: 0 0 0 3px rgba(217,119,6,0.3); }
+    .ka-titem:nth-child(3) .ka-tdot { background: #7c3aed; box-shadow: 0 0 0 3px rgba(124,58,237,0.3); }
+    .ka-titem:nth-child(4) .ka-tdot { background: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.3); }
+    .ka-titem:nth-child(5) .ka-tdot { background: #059669; box-shadow: 0 0 0 3px rgba(5,150,105,0.3); }
+    .ka-titem:nth-child(6) .ka-tdot { background: #c0392b; box-shadow: 0 0 0 3px rgba(192,57,43,0.3); }
+    .ka-tdate { font-size: 0.72rem; font-weight: 700; color: #c0392b; text-transform: uppercase; letter-spacing: 0.5px; }
+    .ka-ttitle { font-size: 0.95rem; font-weight: 700; color: #111827; margin: 0.18rem 0; }
+    .ka-tdesc { font-size: 0.85rem; color: #666; line-height: 1.65; }
+
+    /* ─── PRACTICAL BOX ─── */
+    .ka-practical {
+      background: linear-gradient(135deg, #111827 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .ka-practical h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #f59e0b;
+      margin-bottom: 1.2rem;
+    }
+    .ka-pgrid2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.9rem;
+    }
+    .ka-pitem {
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 1.1rem;
+      border-left: 3px solid #f59e0b;
+    }
+    .ka-pitem h4 { font-size: 0.88rem; font-weight: 700; color: #f1f5f9; margin-bottom: 0.45rem; }
+    .ka-pitem p { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+    /* ─── CONCLUSION ─── */
+    .ka-conclusion {
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 1.5rem 1.8rem;
+      font-size: 0.94rem;
+      line-height: 1.85;
+      color: #444;
+      border-bottom: 3px solid #f59e0b;
+      margin: 2rem 0 1.5rem;
+    }
+    .ka-conclusion a { color: #c0392b; }
+
+    /* ─── SOURCES ─── */
+    .ka-sources {
+      font-size: 0.74rem;
+      color: #aaa;
+      padding-top: 1rem;
+      border-top: 1px solid #e5e7eb;
+      line-height: 1.7;
+    }
+    .ka-sources a { color: #999; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 760px) {
+      .ka-header {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .ka-img-side { height: 220px; }
+      .ka-title-side { padding: 1.4rem; }
+      .ka-domain-grid { grid-template-columns: 1fr; }
+      .ka-pgrid { grid-template-columns: 1fr; }
+      .ka-picon { display: none; }
+      .ka-pgrid2 { grid-template-columns: 1fr; }
+      .ka-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 440px) {
+      .ka-intro { padding: 1.1rem; }
+      .ka-quote { padding: 1.4rem 1.2rem 1.3rem; }
+      .ka-quote::before { font-size: 3.5rem; }
+      .ka-tracker { padding: 1.2rem; }
+      .ka-stats { grid-template-columns: 1fr; }
+      .ka-h1 { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="ka-wrap">
+
+  <!-- ═══════════════════════════════════════════
+       ASYMMETRIC HEADER
+  ═══════════════════════════════════════════ -->
+  <div class="ka-header">
+    <div class="ka-img-side">
+      <!--
+        FEATURE IMAGE INSTRUCTIONS FOR WORDPRESS:
+        Replace the src below with your uploaded image URL.
+        Recommended: A high-resolution image of extreme heat on a European city street,
+        a public health worker in a heat emergency, or WHO-related climate health imagery.
+        Source: Wikimedia Commons (search "heatwave Europe" or "WHO climate") — CC BY-SA 4.0
+      -->
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Canicule_paris_aout_2003.jpg/1200px-Canicule_paris_aout_2003.jpg"
+        alt="Extreme heat wave in European city as WHO experts call for climate change to be declared a global public health emergency in 2026"
+        title="WHO Climate Health Emergency 2026 — PECCH Call to Action"
+        loading="eager"
+      >
+      <span class="ka-badge">🚨 Health Alert</span>
+    </div>
+    <div class="ka-title-side">
+      <div>
+        <div class="ka-tag">Climate · Global Health · May 2026</div>
+        <h1 class="ka-h1">Climate Change Is Now a Medical Emergency. WHO Experts Are Calling for the World's Highest Health Alert.</h1>
+      </div>
+      <div class="ka-key-stats">
+        <div class="ka-kstat">
+          <div class="ka-kstat-val">~24,000</div>
+          <div class="ka-kstat-lbl">Heat deaths in European cities last summer — 70% directly linked to climate change</div>
+        </div>
+        <div class="ka-kstat">
+          <div class="ka-kstat-val">+297%</div>
+          <div class="ka-kstat-lbl">Increase in dengue fever risk across Europe since the 1980s</div>
+        </div>
+        <div class="ka-date-line">Published May 30, 2026 · Karmactive</div>
+      </div>
+    </div>
+  </div>
+
+  <!--
+  ═══════════════════════════════════════════
+  WORDPRESS TEXT BLOCK 1 — INTRO
+  Paste into a WordPress Paragraph block before this HTML block.
+  ═══════════════════════════════════════════
+
+  An independent expert commission convened by the World Health Organization's European
+  regional office formally called on the WHO to declare climate change a "Public Health
+  Emergency of International Concern" — the same designation the world applied to COVID-19.
+
+  The Pan-European Commission on Climate and Health (PECCH), chaired by former Icelandic
+  Prime Minister Katrín Jakobsdóttir, published its 54-page Call to Action on May 17, 2026.
+  It asks governments, health authorities, and the WHO itself to stop treating climate change
+  as a background condition and respond to it as the acute, escalating health crisis it
+  already is — one that is pushing heat deaths, spreading infectious diseases, and driving
+  food insecurity numbers into territory that is difficult to dismiss.
+
+  Dr Hans Henri P. Kluge, WHO Regional Director for Europe, stated: "Climate change is a
+  security threat, a health emergency and an economic time bomb, all rolled into one."
+  -->
+
+  <!-- ═══════════════════════════════════════════
+       INTRO CARD (embedded in HTML block)
+  ═══════════════════════════════════════════ -->
+  <div class="ka-intro">
+    An independent expert commission convened by the <a href="https://www.who.int/europe/groups/pan-european-commission-on-climate-and-health" rel="noopener" target="_blank">World Health Organization's European regional office</a> has formally called on the WHO to declare climate change a "Public Health Emergency of International Concern" — the same designation the world applied to COVID-19. The Pan-European Commission on Climate and Health (PECCH), chaired by former Icelandic Prime Minister Katrín Jakobsdóttir, published its <a href="https://www.who.int/europe/news/item/17-05-2026-climate-change-is-a-health-crisis---and-fixing-it-is-a-health-opportunity" rel="noopener" target="_blank">54-page Call to Action on May 17, 2026</a>. The commission argues that climate change — with its rising toll on heat deaths, expanding infectious disease ranges, food insecurity, and mental health — has long since crossed from environmental concern into a direct, measurable medical crisis.
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       QUOTE BLOCK
+  ═══════════════════════════════════════════ -->
+  <div class="ka-quote">
+    <div class="ka-quote-text">Climate change is a security threat, a health emergency and an economic time bomb, all rolled into one.</div>
+    <div class="ka-quote-attr">— Dr Hans Henri P. Kluge, WHO Regional Director for Europe</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       STATS DASHBOARD
+  ═══════════════════════════════════════════ -->
+  <div class="ka-sh">📊 The Numbers Already in Clinics and Mortality Data</div>
+
+  <div class="ka-stats">
+    <div class="ka-scard">
+      <div class="ka-snum">99.6%</div>
+      <div class="ka-slbl">of European regions recording more heat deaths than the 1990s</div>
+      <div class="ka-ssrc">Lancet Countdown Europe 2026</div>
+    </div>
+    <div class="ka-scard">
+      <div class="ka-snum">+318%</div>
+      <div class="ka-slbl">Rise in daily extreme heat warnings vs. the 1991–2000 baseline</div>
+      <div class="ka-ssrc">Lancet Countdown Europe 2026</div>
+    </div>
+    <div class="ka-scard">
+      <div class="ka-snum">600K</div>
+      <div class="ka-slbl">Premature deaths per year in Europe from fossil fuel air pollution</div>
+      <div class="ka-ssrc">WHO European Region / Robb Butler</div>
+    </div>
+    <div class="ka-scard">
+      <div class="ka-snum">4.6M</div>
+      <div class="ka-slbl">Additional dengue cases globally per year linked to climate change</div>
+      <div class="ka-ssrc">Lancet Countdown 2026</div>
+    </div>
+    <div class="ka-scard">
+      <div class="ka-snum">1M+</div>
+      <div class="ka-slbl">More Europeans pushed into food insecurity in 2023 from heat and drought</div>
+      <div class="ka-ssrc">Lancet Countdown Europe 2026</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       BODY TEXT 1
+  ═══════════════════════════════════════════ -->
+  <div class="ka-body">
+    <p>The PHEIC designation — the <a href="https://www.who.int/teams/environment-climate-change-and-health/climate-change-and-health" rel="noopener" target="_blank">WHO's highest-tier health alert</a> — has previously been applied to COVID-19, Ebola outbreaks in West Africa, and poliovirus. When declared, it activates mandatory international reporting, emergency funding mechanisms, and coordinated response across WHO member states. The PECCH's central argument is that the current International Health Regulations — designed for time-limited epidemic events — are not equipped for a threat that grows every year without a foreseeable endpoint.</p>
+
+    <p>The <a href="https://lancetcountdown.org/europe/2026-report/" rel="noopener" target="_blank">2026 Europe Report of the Lancet Countdown on Health and Climate Change</a>, compiled by 65 researchers from 46 institutions tracking 43 health-climate indicators, provides the underlying evidence. It documented that 99.6% of European regions now record more heat-related deaths than they did in the 1990s — a mean annual increase of 52 deaths per million people. Extreme heat warnings have risen 318% from the 1991–2000 baseline. Over one million more Europeans were pushed into food insecurity in 2023 from climate-driven droughts and heatwaves alone.</p>
+
+    <p>You can read more about the escalating climate death toll in Karmactive's previous coverage: <a href="https://www.karmactive.com/climate-changes-rising-death-toll-in-billions-western-universitys-startling-revelations/" rel="noopener" target="_blank">climate change's rising death toll</a> and how <a href="https://www.karmactive.com/2023-rewrites-climate-history-with-highest-average-temperatures-in-over-100000-years/" rel="noopener" target="_blank">2023 rewrote climate history</a>.</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       4 DOMAINS — INTERACTIVE ACCORDION
+  ═══════════════════════════════════════════ -->
+  <div class="ka-sh">🗂️ The PECCH's 17 Recommendations Across 4 Domains</div>
+
+  <div class="ka-domains">
+    <p class="ka-domains-lede">The commission's Call to Action asks governments, health systems, cities, and financial institutions to act. Tap each domain to see what's being asked.</p>
+    <div class="ka-domain-grid">
+
+      <div class="ka-dcard" onclick="kaDomain(this)">
+        <div class="ka-dtop">
+          <div class="ka-dicon">🛡️</div>
+          <div class="ka-dname">1. Climate as a Health Security Threat</div>
+        </div>
+        <div class="ka-dbody">
+          <ul>
+            <li>Formally declare climate change a Public Health Emergency of International Concern (PHEIC)</li>
+            <li>Create a climate-health regional information hub providing countries with trusted, evidence-based resources</li>
+            <li>Treat climate-driven disease spread as an active health security risk requiring emergency surveillance</li>
+            <li>Fund early warning systems for climate-linked health threats before they escalate</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ka-dcard" onclick="kaDomain(this)">
+        <div class="ka-dtop">
+          <div class="ka-dicon">🏥</div>
+          <div class="ka-dname">2. Climate-Resilient Health Systems</div>
+        </div>
+        <div class="ka-dbody">
+          <ul>
+            <li>Adapt hospitals and clinics to absorb surges from heat, flooding, and climate disasters</li>
+            <li>Integrate climate projections into national health planning and budgeting</li>
+            <li>Mandate climate-health impact assessments in government health reporting</li>
+            <li>Train health professionals on emerging climate-linked disease patterns and risks</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ka-dcard" onclick="kaDomain(this)">
+        <div class="ka-dtop">
+          <div class="ka-dicon">🏙️</div>
+          <div class="ka-dname">3. Local Action in Cities</div>
+        </div>
+        <div class="ka-dbody">
+          <ul>
+            <li>Formalise climate-health mandates for urban and regional networks across Europe</li>
+            <li>Scale up community-level heat action plans and access to cooling</li>
+            <li>WHO to monitor and evaluate climate-health progress at city and country level</li>
+            <li>Build local climate-health capacity in municipalities, especially in high-vulnerability areas</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ka-dcard" onclick="kaDomain(this)">
+        <div class="ka-dtop">
+          <div class="ka-dicon">💰</div>
+          <div class="ka-dname">4. Financial System Reform</div>
+        </div>
+        <div class="ka-dbody">
+          <ul>
+            <li>Eliminate fossil fuel subsidies that continue to fund and drive the climate crisis</li>
+            <li>Redirect fossil fuel subsidy savings toward health system adaptation and climate resilience</li>
+            <li>Reform economic frameworks to properly account for climate health costs</li>
+            <li>Increase international climate health finance flows to the most vulnerable regions and communities</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <div class="ka-hint">Tap any card to expand its recommendations ↑</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       BODY TEXT 2
+  ═══════════════════════════════════════════ -->
+  <div class="ka-body">
+    <p>The commission's Chief Scientific Advisor, Professor Sir Andrew Haines of the <a href="https://www.lshtm.ac.uk/newsevents/news/2026/expert-comment-what-leaders-must-do-tackle-climate-and-health-crisis-europe" rel="noopener" target="_blank">London School of Hygiene and Tropical Medicine</a>, is one of the world's leading researchers on the intersection of climate and health. The commission's position is that framing climate change as a chronic background problem rather than an acute emergency has systematically resulted in governments underfunding the health system adaptations already needed now — not in 2050.</p>
+
+    <p>Research by the commission and the <a href="https://www.lse.ac.uk/granthaminstitute/publication/the-2026-europe-report-of-the-lancetcountdown-on-health-and-climate-change-narrowing-window-for-decisive-health-action/" rel="noopener" target="_blank">LSE Grantham Research Institute</a> also flagged mental health as a growing but underrepresented dimension of climate's health toll. Climate anxiety, displacement trauma, and the psychological aftermath of repeated disasters are increasingly showing up in clinical settings — yet they rarely feature in government climate planning or WHO health frameworks. Karmactive has previously explored this connection: <a href="https://www.karmactive.com/climate-change-hotter-weather-can-impact-mental-health/" rel="noopener" target="_blank">how hotter weather directly affects mental health</a>.</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       DISEASE EXPANSION TRACKER
+  ═══════════════════════════════════════════ -->
+  <div class="ka-tracker">
+    <h3>How Climate Change Is Moving Disease</h3>
+    <p class="ka-tracker-sub">The health effects go well beyond heat. These are the tracked threats expanding right now, backed by current data.</p>
+
+    <div class="ka-tabs">
+      <div class="ka-tab active" onclick="kaTab(this,'heat')">🌡️ Heat Deaths</div>
+      <div class="ka-tab" onclick="kaTab(this,'dengue')">🦟 Dengue</div>
+      <div class="ka-tab" onclick="kaTab(this,'chik')">🦟 Chikungunya</div>
+      <div class="ka-tab" onclick="kaTab(this,'wnv')">🦅 West Nile</div>
+      <div class="ka-tab" onclick="kaTab(this,'mental')">🧠 Mental Health</div>
+      <div class="ka-tab" onclick="kaTab(this,'food')">🌾 Food Security</div>
+    </div>
+
+    <div class="ka-panel active" id="kap-heat">
+      <div class="ka-pgrid">
+        <div class="ka-picon" style="background:#fef2f2;">🌡️</div>
+        <div>
+          <div class="ka-ptitle">Heat-Related Deaths in Europe</div>
+          <div class="ka-ppills">
+            <span class="ka-pill">~24,000 deaths · Summer 2025</span>
+            <span class="ka-pill">70% attributed to climate change</span>
+            <span class="ka-pill">+52 deaths / million / year (mean increase)</span>
+            <span class="ka-pill">60,000–65,000 heat deaths annually across European region</span>
+          </div>
+          <div class="ka-pdesc">Across 854 monitored European cities, 99.6% saw heat deaths increase compared to the 1990s. The Lancet Countdown documents a 318% rise in extreme heat warnings. The most exposed populations: infants, older adults, low-income households, and outdoor workers.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ka-panel" id="kap-dengue">
+      <div class="ka-pgrid">
+        <div class="ka-picon" style="background:#fff7ed;">🦟</div>
+        <div>
+          <div class="ka-ptitle">Dengue — No Longer a Tropical Disease</div>
+          <div class="ka-ppills">
+            <span class="ka-pill">+297% risk increase in Europe since 1980s</span>
+            <span class="ka-pill">4.6M additional global cases per year from climate change</span>
+            <span class="ka-pill">5M more people entering risk range in Europe each year</span>
+          </div>
+          <div class="ka-pdesc">The Aedes albopictus mosquito — which carries dengue — is advancing northward at a rate of approximately 5 million people of new exposure per year as European temperatures warm. Dengue was once considered climatically impossible in Europe. That is no longer accurate, and health systems in southern and central Europe are beginning to adapt.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ka-panel" id="kap-chik">
+      <div class="ka-pgrid">
+        <div class="ka-picon" style="background:#fdf4ff;">🦟</div>
+        <div>
+          <div class="ka-ptitle">Chikungunya Spreading Across 40 Countries</div>
+          <div class="ka-ppills">
+            <span class="ka-pill">400,000+ cases · 2024–2025</span>
+            <span class="ka-pill">155 deaths across 40 countries</span>
+          </div>
+          <div class="ka-pdesc">Chikungunya — a painful and debilitating mosquito-borne viral illness — spread across 40 countries in 2024–2025, driven in part by climate-driven habitat expansion. Europe's increasingly warm and humid summers are creating conditions for outbreaks previously rare outside tropical regions, with Italy, France, and Spain recording cases.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ka-panel" id="kap-wnv">
+      <div class="ka-pgrid">
+        <div class="ka-picon" style="background:#f0fdf4;">🦅</div>
+        <div>
+          <div class="ka-ptitle">West Nile Virus — Italy's 2025 Season</div>
+          <div class="ka-ppills">
+            <span class="ka-pill">718 human cases in Italy (2025)</span>
+            <span class="ka-pill">49 deaths in Italy alone (2025)</span>
+          </div>
+          <div class="ka-pdesc">West Nile virus, carried by Culex mosquitoes, thrives in warm, humid conditions. Italy's 2025 season recorded 718 cases and 49 deaths — driven by an unusually warm European summer. The virus is expanding into areas with no historical exposure, and health systems in these regions have had limited preparation time.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ka-panel" id="kap-mental">
+      <div class="ka-pgrid">
+        <div class="ka-picon" style="background:#eff6ff;">🧠</div>
+        <div>
+          <div class="ka-ptitle">Mental Health — The Underreported Toll</div>
+          <div class="ka-ppills">
+            <span class="ka-pill">Flagged by PECCH as a growing crisis</span>
+            <span class="ka-pill">Rarely addressed in climate policy</span>
+          </div>
+          <div class="ka-pdesc">Climate anxiety, psychological trauma from repeated disasters, and the stress of displacement are now measurable in clinical settings across Europe. The PECCH identifies mental health as a dimension of climate health impact that current WHO frameworks and most government climate plans largely fail to address. Research also links higher ambient temperatures to increased rates of anxiety, depression, and related presentations.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ka-panel" id="kap-food">
+      <div class="ka-pgrid">
+        <div class="ka-picon" style="background:#fefce8;">🌾</div>
+        <div>
+          <div class="ka-ptitle">Food Security — Climate's Quieter Health Burden</div>
+          <div class="ka-ppills">
+            <span class="ka-pill">1M+ additional Europeans in food insecurity (2023)</span>
+            <span class="ka-pill">Driven by heatwaves and drought</span>
+          </div>
+          <div class="ka-pdesc">The Lancet Countdown found that over one million more Europeans were in moderate or severe food insecurity in 2023 compared to the 1981–2010 baseline, directly due to climate-driven heatwaves and droughts affecting crop yields. Food insecurity carries its own cascade of health consequences: malnutrition, immune suppression, and increased vulnerability to other diseases.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       TIMELINE
+  ═══════════════════════════════════════════ -->
+  <div class="ka-sh">📅 How the Crisis Escalated to This Point</div>
+
+  <div class="ka-timeline">
+    <div class="ka-titem">
+      <div class="ka-tdot"></div>
+      <div class="ka-tdate">2016</div>
+      <div class="ka-ttitle">Lancet Countdown Begins Tracking Climate Health</div>
+      <div class="ka-tdesc">The Lancet Countdown — now tracking 43 health-climate indicators across 65 researchers and 46 institutions — begins its annual monitoring of how climate change affects human health across Europe and globally.</div>
+    </div>
+    <div class="ka-titem">
+      <div class="ka-tdot"></div>
+      <div class="ka-tdate">2023</div>
+      <div class="ka-ttitle">Warmest Year in 100,000 Years of Recorded History</div>
+      <div class="ka-tdesc">2023 sets the record for the warmest year in measured history. Heat-related mortality climbs across Europe. Over one million additional Europeans enter food insecurity from heatwaves and droughts. <a href="https://www.karmactive.com/2023-rewrites-climate-history-with-highest-average-temperatures-in-over-100000-years/" rel="noopener" target="_blank">Karmactive covered this record-setting year</a>.</div>
+    </div>
+    <div class="ka-titem">
+      <div class="ka-tdot"></div>
+      <div class="ka-tdate">June 2025</div>
+      <div class="ka-ttitle">PECCH Established by WHO Europe</div>
+      <div class="ka-tdesc">The Pan-European Commission on Climate and Health is formally established by WHO's European regional office, convening 11 commissioners from across the 53-country region, chaired by former Icelandic Prime Minister Katrín Jakobsdóttir, with Professor Sir Andrew Haines as Chief Scientific Advisor.</div>
+    </div>
+    <div class="ka-titem">
+      <div class="ka-tdot"></div>
+      <div class="ka-tdate">Summer 2025</div>
+      <div class="ka-ttitle">~24,000 Heat Deaths Across 854 European Cities</div>
+      <div class="ka-tdesc">Nearly 70% of the approximately 24,000 heat-related summer deaths across monitored European cities are directly attributed to climate change. Italy records 718 West Nile virus cases and 49 deaths in that same season. Chikungunya spreads across 40 countries.</div>
+    </div>
+    <div class="ka-titem">
+      <div class="ka-tdot"></div>
+      <div class="ka-tdate">April 2026</div>
+      <div class="ka-ttitle">Lancet Countdown Europe 2026 Report Published</div>
+      <div class="ka-tdesc">65 researchers from 46 institutions publish the <a href="https://www.thelancet.com/journals/lanpub/article/PIIS2468-2667(26)00025-3/fulltext" rel="noopener" target="_blank">2026 Lancet Countdown Europe Report</a>, finding extreme heat warnings up 318% from the 1991–2000 baseline, dengue risk in Europe up 297% from the 1980s, and food insecurity climbing.</div>
+    </div>
+    <div class="ka-titem">
+      <div class="ka-tdot"></div>
+      <div class="ka-tdate">May 17–18, 2026</div>
+      <div class="ka-ttitle">PECCH Calls for PHEIC — WHO Launches Advocacy Plan</div>
+      <div class="ka-tdesc">The PECCH releases its <a href="https://www.who.int/europe/news/item/17-05-2026-climate-change-is-a-health-crisis---and-fixing-it-is-a-health-opportunity" rel="noopener" target="_blank">54-page Call to Action</a> formally asking the WHO to designate climate change a PHEIC. The following day, the WHO launches its own <a href="https://www.who.int/news/item/18-05-2026-who-launches-advocacy--communications-and-partnerships-plan-on-the-health-response-to-climate-change--air-pollution-and-energy-poverty" rel="noopener" target="_blank">advocacy and communications plan on climate, air pollution, and energy poverty</a>.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       BODY TEXT 3
+  ═══════════════════════════════════════════ -->
+  <div class="ka-body">
+    <p>Robb Butler, the WHO's special representative for climate and health in the European region, put the scope in concrete terms: approximately 600,000 premature deaths occur annually in the European region from air pollution linked to fossil fuel combustion, and between 60,000 and 65,000 die from heat each year. These are not projections. They are current figures already appearing in clinical and mortality records.</p>
+
+    <p>Karmactive has previously covered how <a href="https://www.karmactive.com/shocking-revelation-how-air-pollution-is-silently-stealing-lives/" rel="noopener" target="_blank">air pollution is silently claiming lives</a> and the <a href="https://www.karmactive.com/the-insidious-impact-of-air-pollution-from-cradle-to-grave-no-safe-limit/" rel="noopener" target="_blank">lifelong health consequences from cradle to grave</a>. The PECCH's call for a PHEIC sits within that broader context — one where the <a href="https://www.karmactive.com/wmo-sounds-alarm-global-co2-levels-hit-record-50-above-pre-industrial-era/" rel="noopener" target="_blank">WMO has already sounded the alarm on CO₂ levels</a> and the world is <a href="https://www.karmactive.com/heading-for-climate-hell-world-on-course-for-2-7c-warming-can-humanity-survive/" rel="noopener" target="_blank">on course for 2.7°C of warming</a>.</p>
+
+    <p>The <a href="https://unric.org/en/belgian-experts-climate-health-warning/" rel="noopener" target="_blank">UNRIC also noted the Belgian and broader European expert community</a>'s alignment with the commission's position, and the <a href="https://www.eurekalert.org/news-releases/1123642" rel="noopener" target="_blank">academic community's response to the Lancet Countdown launch</a> underscored the data's weight. The formal PHEIC designation decision rests with the WHO's highest governing bodies. The commission's call, backed by the Lancet Countdown data, is part of an escalating effort to ensure climate's health effects receive the same institutional response as the infectious disease emergencies that triggered the PHEIC framework before.</p>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       PRACTICAL GUIDANCE
+  ═══════════════════════════════════════════ -->
+  <div class="ka-practical">
+    <h3>What This Means in Practice — Right Now</h3>
+    <div class="ka-pgrid2">
+      <div class="ka-pitem">
+        <h4>🌡️ Heat Warnings Are Not Routine</h4>
+        <p>Extreme heat health alerts have risen 318% since the early 1990s. They reflect a 30-year mortality trend. When local health authorities issue heat warnings, follow them — especially for children, older adults, and anyone with existing health conditions.</p>
+      </div>
+      <div class="ka-pitem">
+        <h4>🦟 Mosquito-Borne Disease Is Expanding North</h4>
+        <p>Dengue, chikungunya, and West Nile virus are no longer confined to tropical or Mediterranean regions. Mosquito control around standing water, protective clothing at dawn and dusk, and awareness of symptoms are now relevant across more of Europe than they were a decade ago.</p>
+      </div>
+      <div class="ka-pitem">
+        <h4>🫁 Air Quality Affects You Today</h4>
+        <p>Around 600,000 premature deaths per year in the European region are linked to fossil fuel air pollution. On high-pollution days, reducing outdoor physical exertion — especially for children and older adults — is a measurable, immediate health protection step.</p>
+      </div>
+      <div class="ka-pitem">
+        <h4>🧠 Mental Health Is Part of This</h4>
+        <p>Climate anxiety and psychological stress from repeated weather disasters are recognised clinical presentations. Health professionals increasingly treat these as legitimate concerns. Acknowledging the psychological weight of a changing environment is the first step to addressing it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       CONCLUSION
+  ═══════════════════════════════════════════ -->
+  <div class="ka-conclusion">
+    The Pan-European Commission on Climate and Health published its Call to Action on May 17, 2026, calling on the World Health Organization to formally designate climate change a Public Health Emergency of International Concern. The commission — convened by WHO Europe and chaired by former Icelandic Prime Minister Katrín Jakobsdóttir — presented 17 recommendations covering health security, health system resilience, local urban action, and financial reform. The supporting 2026 Lancet Countdown Europe Report, produced by 65 researchers tracking 43 health-climate indicators, documented increased heat mortality, expanding vector-borne disease ranges, growing food insecurity, and mental health pressure across the European region. The WHO's own advocacy and communications plan on climate and health was launched the following day, May 18, 2026. The formal designation decision remains with the WHO's governing bodies.
+    <br><br>
+    <em>Related Karmactive coverage: <a href="https://www.karmactive.com/climate-changes-rising-death-toll-in-billions-western-universitys-startling-revelations/" rel="noopener" target="_blank">Climate change's rising death toll</a> · <a href="https://www.karmactive.com/whos-revised-guidelines-puts-97-3-of-the-world-in-the-unsafe-zone/" rel="noopener" target="_blank">WHO's air quality guidelines and global risk</a> · <a href="https://www.karmactive.com/may-2024-hits-record-hottest-month-ever-as-un-chief-warns-of-russian-roulette-with-climate/" rel="noopener" target="_blank">Record heat and UN warnings</a> · <a href="https://www.karmactive.com/gates-of-hell-opened-u-n-chiefs-dire-warning-on-climate-crisis/" rel="noopener" target="_blank">UN chief's dire warning on the climate crisis</a></em>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SOURCES
+  ═══════════════════════════════════════════ -->
+  <div class="ka-sources">
+    <strong>First-hand sources:</strong>
+    <a href="https://www.who.int/europe/groups/pan-european-commission-on-climate-and-health" rel="noopener" target="_blank">WHO PECCH</a> ·
+    <a href="https://www.who.int/europe/news/item/17-05-2026-climate-change-is-a-health-crisis---and-fixing-it-is-a-health-opportunity" rel="noopener" target="_blank">WHO Europe, May 17 2026</a> ·
+    <a href="https://www.who.int/news/item/18-05-2026-who-launches-advocacy--communications-and-partnerships-plan-on-the-health-response-to-climate-change--air-pollution-and-energy-poverty" rel="noopener" target="_blank">WHO advocacy plan, May 18 2026</a> ·
+    <a href="https://lancetcountdown.org/europe/2026-report/" rel="noopener" target="_blank">Lancet Countdown Europe 2026</a> ·
+    <a href="https://www.thelancet.com/journals/lanpub/article/PIIS2468-2667(26)00025-3/fulltext" rel="noopener" target="_blank">Lancet Public Health journal</a> ·
+    <a href="https://www.lse.ac.uk/granthaminstitute/publication/the-2026-europe-report-of-the-lancetcountdown-on-health-and-climate-change-narrowing-window-for-decisive-health-action/" rel="noopener" target="_blank">LSE Grantham Institute</a> ·
+    <a href="https://www.lshtm.ac.uk/newsevents/news/2026/expert-comment-what-leaders-must-do-tackle-climate-and-health-crisis-europe" rel="noopener" target="_blank">LSHTM Expert Comment</a> ·
+    <a href="https://www.eurekalert.org/news-releases/1123642" rel="noopener" target="_blank">EurekAlert academic release</a> ·
+    <a href="https://unric.org/en/belgian-experts-climate-health-warning/" rel="noopener" target="_blank">UNRIC</a>
+  </div>
+
+</div>
+
+<script>
+  /* ─── Domain Accordion ─── */
+  function kaDomain(card) {
+    var body = card.querySelector('.ka-dbody');
+    var isOpen = body.classList.contains('open');
+    document.querySelectorAll('.ka-dbody').forEach(function(b){ b.classList.remove('open'); });
+    if (!isOpen) { body.classList.add('open'); }
+  }
+
+  /* ─── Disease Tracker Tabs ─── */
+  function kaTab(tab, id) {
+    document.querySelectorAll('.ka-tab').forEach(function(t){ t.classList.remove('active'); });
+    document.querySelectorAll('.ka-panel').forEach(function(p){ p.classList.remove('active'); });
+    tab.classList.add('active');
+    document.getElementById('kap-' + id).classList.add('active');
+  }
+</script>
+</body>
+</html>
