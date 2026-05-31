@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<!--
+  KARMACTIVE.COM — Article for May 31, 2026
+  Story: Zero-Waste Solar Desalination + Lithium Recovery (University of Rochester)
+
+  HOW TO USE IN WORDPRESS:
+  - Paste the content inside the <div id="ka-solar-desal"> … </div> block
+    (including the <style> and <script> tags) into a WordPress HTML block.
+  - The <html><head><body> wrapper is for preview/testing only; remove before pasting.
+  - Upload feature image from: https://www.eurekalert.org/multimedia/1132844
+    (Photo: J. Adam Fenster / University of Rochester, free for media use)
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunlight, Salt, and No Waste | Karmactive</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- ============================================================
+     WORDPRESS HTML BLOCK — PASTE EVERYTHING BELOW THIS LINE
+     ============================================================ -->
+
+<style>
+/* ── SCOPE: all rules scoped to #ka-solar-desal to avoid WP conflicts ── */
+#ka-solar-desal *{box-sizing:border-box;margin:0;padding:0}
+#ka-solar-desal{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1e293b;line-height:1.7;font-size:16px}
+#ka-solar-desal a{color:#0077b6;text-decoration:underline}
+#ka-solar-desal a:hover{color:#023e7d}
+
+/* ── HEADER (Split-screen) ── */
+.ka-hdr{display:grid;grid-template-columns:1.35fr 1fr;min-height:70vh;overflow:hidden;border-radius:0 0 16px 16px;box-shadow:0 8px 30px rgba(0,0,0,.15)}
+.ka-hdr-img{position:relative;overflow:hidden}
+.ka-hdr-img img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.88)}
+.ka-img-badge{position:absolute;top:1.2rem;left:1.2rem;background:#f59e0b;color:#1e293b;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;padding:.35rem .9rem;border-radius:20px}
+.ka-img-caption{position:absolute;bottom:0;left:0;right:0;background:rgba(2,62,125,.82);color:rgba(255,255,255,.85);font-size:.72rem;padding:.55rem 1rem;font-style:italic;line-height:1.4}
+.ka-hdr-content{background:linear-gradient(160deg,#023e7d 0%,#0077b6 100%);display:flex;flex-direction:column;justify-content:center;padding:2.8rem 2.2rem}
+.ka-cat-tag{display:inline-block;background:#f59e0b;color:#1e293b;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;padding:.35rem .9rem;border-radius:20px;margin-bottom:1.2rem;width:fit-content}
+.ka-hdr-title{font-size:clamp(1.55rem,2.6vw,2.5rem);font-weight:900;color:#fff;line-height:1.2;margin-bottom:1rem}
+.ka-hdr-sub{font-size:clamp(.9rem,1.3vw,1.08rem);color:#bfdbfe;line-height:1.6;margin-bottom:1.8rem}
+.ka-hdr-meta{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.8rem;color:rgba(255,255,255,.58);border-top:1px solid rgba(255,255,255,.18);padding-top:1.2rem}
+
+/* ── STATS BAR ── */
+.ka-stats{display:grid;grid-template-columns:repeat(5,1fr);background:#023e7d}
+.ka-stat{padding:1.3rem .8rem;text-align:center;border-right:1px solid rgba(255,255,255,.1);position:relative;overflow:hidden}
+.ka-stat:last-child{border-right:none}
+.ka-stat::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,#f59e0b,#10b981)}
+.ka-stat-val{font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:900;color:#e0f2fe;line-height:1;margin-bottom:.35rem}
+.ka-stat-lbl{font-size:.7rem;color:rgba(255,255,255,.68);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.ka-stat-note{font-size:.65rem;color:rgba(255,255,255,.38);margin-top:.25rem}
+
+/* ── COMMON SECTION STYLES ── */
+.ka-section{padding:3rem 1.5rem}
+.ka-sec-label{font-size:.72rem;text-transform:uppercase;letter-spacing:1.5px;color:#0077b6;font-weight:700;margin-bottom:.4rem}
+.ka-sec-title{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:800;color:#023e7d;line-height:1.25;margin-bottom:.7rem}
+.ka-sec-desc{color:#475569;font-size:1rem;line-height:1.7}
+
+/* ── INTRO ── */
+.ka-intro{max-width:860px;margin:0 auto;padding:3rem 1.5rem}
+.ka-intro p{font-size:1.05rem;color:#1e293b;margin-bottom:1.4rem;line-height:1.8}
+.ka-pullquote{border-left:5px solid #0077b6;background:#f0f9ff;padding:1.3rem 1.8rem;margin:2rem 0;border-radius:0 10px 10px 0}
+.ka-pullquote p{font-size:1.15rem;font-style:italic;color:#023e7d;margin:0;line-height:1.6}
+.ka-pullquote cite{display:block;font-size:.85rem;color:#64748b;font-style:normal;margin-top:.65rem;font-weight:600}
+
+/* ── HOW IT WORKS ── */
+.ka-how{background:#f8faff}
+.ka-how-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:980px;margin:2rem auto 0}
+.ka-step{background:#fff;border-radius:14px;padding:1.8rem;box-shadow:0 4px 16px rgba(0,119,182,.09);cursor:pointer;transition:transform .25s,box-shadow .25s;border-top:4px solid #e0f2fe;position:relative;overflow:hidden}
+.ka-step.active{border-top-color:#0077b6;box-shadow:0 8px 28px rgba(0,119,182,.18)}
+.ka-step:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,119,182,.15)}
+.ka-step-num{display:inline-flex;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;background:#0077b6;color:#fff;font-weight:800;font-size:.9rem;border-radius:50%;margin-bottom:.9rem}
+.ka-step-title{font-size:1.05rem;font-weight:800;color:#023e7d;margin-bottom:.5rem}
+.ka-step-short{font-size:.9rem;color:#64748b;line-height:1.6}
+.ka-step-detail{font-size:.88rem;color:#334155;line-height:1.7;margin-top:1rem;padding-top:1rem;border-top:1px solid #e2e8f0;display:none}
+.ka-step.active .ka-step-detail{display:block}
+.ka-step-icon{position:absolute;top:1.2rem;right:1.2rem;font-size:1.6rem;opacity:.35}
+.ka-how-note{text-align:center;font-size:.82rem;color:#94a3b8;margin-top:1.5rem;font-style:italic}
+
+/* ── BRINE PROBLEM ── */
+.ka-brine{background:linear-gradient(135deg,#1e293b 0%,#0c1a2e 100%);color:#fff}
+.ka-brine .ka-sec-label{color:#fbbf24}
+.ka-brine .ka-sec-title{color:#fff}
+.ka-brine .ka-sec-desc{color:#94a3b8}
+.ka-compare{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;max-width:900px;margin:2.5rem auto 0;align-items:center}
+.ka-compare-col{border-radius:14px;padding:2rem;text-align:center}
+.ka-compare-old{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3)}
+.ka-compare-new{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3)}
+.ka-compare-vs{font-size:1.6rem;font-weight:900;color:#f59e0b;text-align:center;padding:.5rem}
+.ka-compare-icon{font-size:2.5rem;margin-bottom:.7rem}
+.ka-compare-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:.8rem}
+.ka-compare-old .ka-compare-label{color:#f87171}
+.ka-compare-new .ka-compare-label{color:#34d399}
+.ka-compare-head{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:.8rem;line-height:1.3}
+.ka-compare-list{list-style:none;font-size:.88rem;color:#cbd5e1;line-height:1.8;text-align:left}
+.ka-compare-list li::before{margin-right:.5rem}
+.ka-compare-old .ka-compare-list li::before{content:'✗';color:#f87171}
+.ka-compare-new .ka-compare-list li::before{content:'✓';color:#34d399}
+.ka-brine-stat{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-top:2.5rem;padding:2rem;background:rgba(245,158,11,.08);border-radius:14px;border:1px solid rgba(245,158,11,.2);max-width:700px;margin-left:auto;margin-right:auto}
+.ka-brine-fig{text-align:center}
+.ka-brine-fig-val{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:900;color:#fbbf24;line-height:1}
+.ka-brine-fig-lbl{font-size:.78rem;color:#94a3b8;margin-top:.3rem;text-transform:uppercase;letter-spacing:.5px}
+
+/* ── LITHIUM SECTION ── */
+.ka-li{background:#fff}
+.ka-li-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:2.5rem;max-width:980px;margin:2rem auto 0;align-items:start}
+.ka-li-text p{font-size:1rem;color:#334155;margin-bottom:1.2rem;line-height:1.8}
+.ka-li-text h3{font-size:1.3rem;font-weight:800;color:#023e7d;margin-bottom:.8rem}
+.ka-li-visual{background:linear-gradient(135deg,#023e7d 0%,#0077b6 100%);border-radius:16px;padding:2rem;color:#fff}
+.ka-li-vis-title{font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#bfdbfe;margin-bottom:1.5rem}
+.ka-li-bar-wrap{margin-bottom:1.2rem}
+.ka-li-bar-lbl{display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:.4rem;color:rgba(255,255,255,.75)}
+.ka-li-bar{height:10px;background:rgba(255,255,255,.15);border-radius:5px;overflow:hidden}
+.ka-li-bar-fill{height:100%;border-radius:5px;animation:kaBarGrow 1.2s ease forwards;transform-origin:left}
+@keyframes kaBarGrow{from{width:0}to{width:var(--w)}}
+.ka-li-before{background:#64748b}
+.ka-li-after{background:linear-gradient(90deg,#34d399,#10b981)}
+.ka-li-note{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:1.5rem;font-style:italic}
+
+/* ── BODY TEXT ── */
+.ka-body{max-width:860px;margin:0 auto;padding:3rem 1.5rem}
+.ka-body p{font-size:1.05rem;color:#1e293b;margin-bottom:1.4rem;line-height:1.8}
+.ka-body h2{font-size:1.45rem;font-weight:800;color:#023e7d;margin:2.2rem 0 .9rem;line-height:1.3}
+.ka-highlight{background:#fff7ed;border-left:4px solid #f59e0b;padding:1.2rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+.ka-highlight p{margin:0;font-size:.95rem;color:#78350f}
+
+/* ── WHERE IT MATTERS ── */
+.ka-where{background:#f8faff}
+.ka-where-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem;max-width:1100px;margin:2rem auto 0}
+.ka-where-card{background:#fff;border-radius:14px;padding:1.5rem;box-shadow:0 3px 12px rgba(0,119,182,.08);border-bottom:4px solid #e0f2fe;transition:transform .25s,box-shadow .25s}
+.ka-where-card:hover{transform:translateY(-5px);box-shadow:0 8px 22px rgba(0,119,182,.14)}
+.ka-where-card.w-critical{border-bottom-color:#ef4444}
+.ka-where-card.w-high{border-bottom-color:#f59e0b}
+.ka-where-card.w-significant{border-bottom-color:#0077b6}
+.ka-where-emoji{font-size:2rem;margin-bottom:.7rem}
+.ka-where-region{font-size:1rem;font-weight:800;color:#023e7d;margin-bottom:.4rem}
+.ka-where-level{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:.25rem .7rem;border-radius:20px;display:inline-block;margin-bottom:.6rem}
+.w-critical .ka-where-level{background:#fee2e2;color:#dc2626}
+.w-high .ka-where-level{background:#fff3cd;color:#92400e}
+.w-significant .ka-where-level{background:#dbeafe;color:#1d4ed8}
+.ka-where-detail{font-size:.88rem;color:#64748b;line-height:1.6}
+
+/* ── FAQ ── */
+.ka-faq{background:#fff}
+.ka-faq-list{max-width:800px;margin:0 auto}
+.ka-faq-item{border-radius:10px;margin-bottom:1rem;overflow:hidden;box-shadow:0 2px 10px rgba(0,119,182,.07)}
+.ka-faq-q{padding:1.15rem 1.5rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;color:#023e7d;font-size:.97rem;background:#fff;transition:background .2s}
+.ka-faq-q:hover{background:#f0f9ff}
+.ka-faq-icon{font-size:1.2rem;transition:transform .3s;color:#0077b6;flex-shrink:0;margin-left:1rem}
+.ka-faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.ka-faq-a-inner{padding:0 1.5rem 1.3rem;color:#475569;line-height:1.7;font-size:.93rem;border-top:1px solid #f1f5f9}
+.ka-faq-item.open .ka-faq-icon{transform:rotate(180deg)}
+
+/* ── CONCLUSION ── */
+.ka-conclusion{background:linear-gradient(135deg,#023e7d 0%,#0077b6 100%);padding:3rem 1.5rem;color:#fff}
+.ka-conc-inner{max-width:780px;margin:0 auto}
+.ka-conc-inner p{font-size:1.02rem;color:rgba(255,255,255,.85);margin-bottom:1.2rem;line-height:1.8}
+.ka-conc-inner a{color:#bfdbfe;text-decoration:underline}
+.ka-conc-inner a:hover{color:#fff}
+.ka-conc-label{font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;color:#bfdbfe;font-weight:700;margin-bottom:.5rem}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .ka-hdr{grid-template-columns:1fr;min-height:auto}
+  .ka-hdr-img{height:58vw;min-height:240px}
+  .ka-hdr-content{padding:2rem 1.4rem}
+  .ka-stats{grid-template-columns:repeat(3,1fr)}
+  .ka-stat:nth-child(3){border-right:none}
+  .ka-stat:nth-child(4){border-top:1px solid rgba(255,255,255,.1)}
+  .ka-stat:nth-child(5){border-top:1px solid rgba(255,255,255,.1)}
+  .ka-how-grid{grid-template-columns:1fr}
+  .ka-compare{grid-template-columns:1fr;text-align:left}
+  .ka-compare-vs{text-align:center;padding:.2rem}
+  .ka-li-grid{grid-template-columns:1fr}
+  .ka-hdr-meta{flex-direction:column;gap:.6rem}
+}
+@media(max-width:600px){
+  .ka-stats{grid-template-columns:1fr 1fr}
+  .ka-stat{border-right:1px solid rgba(255,255,255,.1)!important;border-bottom:1px solid rgba(255,255,255,.08)}
+  .ka-stat:nth-child(2n){border-right:none!important}
+  .ka-stat:nth-child(3){border-right:1px solid rgba(255,255,255,.1)!important}
+  .ka-stat:nth-child(5){grid-column:1/-1;border-bottom:none}
+  .ka-brine-stat{gap:1.2rem}
+  .ka-section{padding:2.5rem 1rem}
+  .ka-intro,.ka-body{padding:2rem 1rem}
+}
+</style>
+
+<div id="ka-solar-desal">
+
+  <!-- ══════════════════════════════════
+       1. HEADER — SPLIT SCREEN
+       ══════════════════════════════════ -->
+  <header class="ka-hdr">
+    <div class="ka-hdr-img">
+      <!--
+        FEATURE IMAGE — Replace src with the uploaded WordPress image URL.
+        Source: J. Adam Fenster / University of Rochester (April 8, 2026)
+        Download from: https://www.eurekalert.org/multimedia/1132844
+        License: Free for media use with credit to University of Rochester
+      -->
+      <img
+        src="https://www.rochester.edu/newscenter/wp-content/uploads/2026/05/guo-solar-desal-vials-2026.jpg"
+        alt="Lab vials showing seawater, Great Salt Lake brine, nickel and phosphorus waste, and the clean desalinated water produced by University of Rochester's zero-waste solar panels"
+        title="University of Rochester Solar Desalination — Seawater to Drinking Water Without Waste"
+        loading="eager"
+        onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sea-water-desalination_plant.jpg/1280px-Sea-water-desalination_plant.jpg';"
+      >
+      <div class="ka-img-badge">Clean Tech · May 2026</div>
+      <div class="ka-img-caption">
+        Vials of seawater, Great Salt Lake water, and the recovered clean water and crystallised salt produced by the laser-etched solar panels — the first system to leave no brine behind. Does the cost of the water we make belong entirely to the ocean that paid it? Photo: J. Adam Fenster / University of Rochester [Press release image; University of Rochester, 2026]
+      </div>
+    </div>
+    <div class="ka-hdr-content">
+      <span class="ka-cat-tag">Water &amp; Clean Tech</span>
+      <h1 class="ka-hdr-title">Sunlight, Salt, and No Waste: The Solar Desalination Breakthrough That Could Change How 2 Billion People Get Water</h1>
+      <p class="ka-hdr-sub">University of Rochester scientists have built solar panels that draw fresh drinking water from the ocean using only sunlight — producing zero brine, zero chemical waste — and the same panels can mine lithium for EV batteries.</p>
+      <div class="ka-hdr-meta">
+        <span>📅 May 31, 2026</span>
+        <span>🔬 Published in Light: Science &amp; Applications</span>
+        <span>⏱ 6 min read</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════
+       2. STATS BAR
+       ══════════════════════════════════ -->
+  <div class="ka-stats">
+    <div class="ka-stat">
+      <div class="ka-stat-val">2B+</div>
+      <div class="ka-stat-lbl">People Lack Safe Water</div>
+      <div class="ka-stat-note">Globally today</div>
+    </div>
+    <div class="ka-stat">
+      <div class="ka-stat-val">142M</div>
+      <div class="ka-stat-lbl">m³ Brine Daily</div>
+      <div class="ka-stat-note">Discharged by current plants</div>
+    </div>
+    <div class="ka-stat">
+      <div class="ka-stat-val">16,000</div>
+      <div class="ka-stat-lbl">Desal Plants Globally</div>
+      <div class="ka-stat-note">Serving ~300 million people</div>
+    </div>
+    <div class="ka-stat">
+      <div class="ka-stat-val">0</div>
+      <div class="ka-stat-lbl">Chemical Additives</div>
+      <div class="ka-stat-note">Rochester process needs none</div>
+    </div>
+    <div class="ka-stat">
+      <div class="ka-stat-val">70%</div>
+      <div class="ka-stat-lbl">Lithium Concentration</div>
+      <div class="ka-stat-note">Recovered from brine byproduct</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       3. INTRO TEXT
+       ══════════════════════════════════ -->
+  <section class="ka-intro">
+    <p>
+      Desalination has long carried a hidden cost. Strip the salt from seawater, deliver fresh water to 300 million people — and send the toxic, concentrated brine back into the ocean every single day. The world's <a href="https://www.nature.com/articles/s41377-026-02315-4" target="_blank" rel="noopener">16,000 desalination plants collectively discharge 142 million cubic metres of brine daily</a> — enough to submerge the entire state of Florida under a foot of hypersaline, chemically laced water every single year. Marine ecosystems near the discharge zones bear the cost that the statistics never quite capture.
+    </p>
+    <p>
+      Researchers at the University of Rochester may have found a way to break that trade-off entirely. A team led by Professor Chunlei Guo at the Institute of Optics has developed a solar desalination system that produces fresh drinking water using nothing but sunlight — no brine discharged, no chemical additives, no grid electricity required. The research, titled <em>"Additive-free and brine-discharge-free solar-thermal desalination with simultaneous complete mineral mining from ocean water,"</em> was published on May 27, 2026 in <em>Light: Science &amp; Applications</em>, a peer-reviewed journal in the <a href="https://www.nature.com/articles/s41377-026-02315-4" target="_blank" rel="noopener">Nature portfolio</a>.
+    </p>
+    <p>
+      And the panels do something else, too. The same technology can extract lithium from seawater brine — the same lithium that powers electric vehicle batteries, and 80–92% of whose processing currently flows through Chinese supply chains.
+    </p>
+    <div class="ka-pullquote">
+      <p>"If you drop coffee on a surface, eventually the water evaporates and there's a ring left at the outer edge that is the concentrated coffee particles. We use that same principle to advance the salts to the passive region."</p>
+      <cite>— Prof. Chunlei Guo, Professor of Optics and Physics, University of Rochester Laboratory for Laser Energetics</cite>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       4. HOW IT WORKS — Interactive Steps
+       ══════════════════════════════════ -->
+  <section class="ka-section ka-how">
+    <div style="max-width:980px;margin:0 auto">
+      <p class="ka-sec-label">The Science</p>
+      <h2 class="ka-sec-title">How Do You Make Drinking Water From the Ocean Using Just Sunlight?</h2>
+      <p class="ka-sec-desc">Tap any step below to understand the full process.</p>
+      <div class="ka-how-grid" id="kaHowGrid">
+        <div class="ka-step" onclick="kaToggleStep(this)">
+          <span class="ka-step-icon">⚡</span>
+          <div class="ka-step-num">1</div>
+          <div class="ka-step-title">Femtosecond Laser Etching</div>
+          <div class="ka-step-short">Ordinary metal is transformed by laser pulses lasting quadrillionths of a second.</div>
+          <div class="ka-step-detail">Femtosecond (10⁻¹⁵ second) laser pulses etch microscopic grooves into metal surfaces — nickel, copper, or aluminium. This process creates two distinct zones on the panel: an <strong>active region</strong> at the centre, which becomes simultaneously near-perfect at absorbing solar radiation and extremely water-attracting (superwicking), and a <strong>passive region</strong> at the edges, which remains dry. The treatment costs no additional energy during operation — only during manufacture.</div>
+        </div>
+        <div class="ka-step" onclick="kaToggleStep(this)">
+          <span class="ka-step-icon">🌊</span>
+          <div class="ka-step-num">2</div>
+          <div class="ka-step-title">Seawater Is Drawn Across the Active Zone</div>
+          <div class="ka-step-short">Capillary-like forces pull a thin layer of seawater across the panel with no pump needed.</div>
+          <div class="ka-step-detail">The laser-etched grooves create capillary-like channels that pull a continuous, thin film of seawater across the active region. No pump is required. The water film is extremely thin — ideal for rapid evaporation. This has been tested successfully on water from the <strong>Pacific Ocean, Atlantic Ocean, Indian Ocean,</strong> and the <strong>Great Salt Lake</strong> in Utah — each with very different salinity and mineral compositions.</div>
+        </div>
+        <div class="ka-step" onclick="kaToggleStep(this)">
+          <span class="ka-step-icon">☀️</span>
+          <div class="ka-step-num">3</div>
+          <div class="ka-step-title">Solar Heat Evaporates the Water</div>
+          <div class="ka-step-short">The black metal surface absorbs nearly all solar radiation, rapidly distilling the water film.</div>
+          <div class="ka-step-detail">Because the active region absorbs close to 100% of solar radiation, it heats up rapidly. The thin water film evaporates quickly, and the water vapour is collected, cooled, and condensed into clean, distilled drinking water. No electricity. No reverse osmosis membranes. No chemical pre-treatment needed at any stage. Minerals and salts are too heavy to evaporate — they remain on the panel.</div>
+        </div>
+        <div class="ka-step" onclick="kaToggleStep(this)">
+          <span class="ka-step-icon">🧂</span>
+          <div class="ka-step-num">4</div>
+          <div class="ka-step-title">Salts Self-Direct to the Passive Zone</div>
+          <div class="ka-step-short">Like the ring in a coffee stain, dissolved salts migrate outward and crystallise as dry solids.</div>
+          <div class="ka-step-detail">As the water evaporates from the active region, the dissolved salts and minerals are concentrated and pushed by capillary flow toward the dry passive zone at the panel's edges. There, they crystallise out as dry solids — not as brine, not as liquid waste. The result is nearly <strong>100% mineral recovery</strong> as solid material. These recovered minerals include table salt, but also valuable trace minerals — and, with a modification using hydrogen titanate nanoparticles embedded in the grooves, commercially viable quantities of lithium.</div>
+        </div>
+      </div>
+      <p class="ka-how-note">Tap each step to expand · Works in sequence</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       5. THE BRINE PROBLEM — Comparison
+       ══════════════════════════════════ -->
+  <section class="ka-section ka-brine">
+    <div style="max-width:980px;margin:0 auto">
+      <p class="ka-sec-label">The Problem Being Solved</p>
+      <h2 class="ka-sec-title" style="color:#fff">What Conventional Desalination Has Always Cost the Ocean</h2>
+      <p class="ka-sec-desc">Every litre of fresh water produced by a conventional plant sends roughly 1.5 litres of concentrated brine back into the sea.</p>
+
+      <div class="ka-compare">
+        <div class="ka-compare-col ka-compare-old">
+          <div class="ka-compare-icon">🏭</div>
+          <div class="ka-compare-label">Conventional Desalination</div>
+          <div class="ka-compare-head">Effective — but with a cost</div>
+          <ul class="ka-compare-list">
+            <li>Produces 142M m³ of brine <em>daily</em></li>
+            <li>Requires chemical anti-scalants &amp; biocides</li>
+            <li>Uses 7–10 kWh per m³ of water</li>
+            <li>Damages marine life near discharge zones</li>
+            <li>Raises salinity in Red Sea, Persian Gulf</li>
+            <li>Depends on grid electricity or diesel</li>
+          </ul>
+        </div>
+        <div class="ka-compare-vs">VS</div>
+        <div class="ka-compare-col ka-compare-new">
+          <div class="ka-compare-icon">☀️</div>
+          <div class="ka-compare-label">Rochester Solar System</div>
+          <div class="ka-compare-head">Same result. No waste.</div>
+          <ul class="ka-compare-list">
+            <li>Zero brine discharged</li>
+            <li>Zero chemical additives needed</li>
+            <li>Powered entirely by sunlight</li>
+            <li>Minerals recovered as dry solids</li>
+            <li>Tested on three different oceans</li>
+            <li>No pump, no membranes, no grid</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ka-brine-stat">
+        <div class="ka-brine-fig">
+          <div class="ka-brine-fig-val">55%</div>
+          <div class="ka-brine-fig-lbl">Global brine from 4 countries<br>(Saudi Arabia, UAE, Kuwait, Qatar)</div>
+        </div>
+        <div class="ka-brine-fig">
+          <div class="ka-brine-fig-val">50%</div>
+          <div class="ka-brine-fig-lbl">More brine than<br>earlier estimates showed</div>
+        </div>
+        <div class="ka-brine-fig">
+          <div class="ka-brine-fig-val">300M</div>
+          <div class="ka-brine-fig-lbl">People currently<br>using desalinated water</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       6. THE LITHIUM ANGLE
+       ══════════════════════════════════ -->
+  <section class="ka-section ka-li">
+    <div style="max-width:980px;margin:0 auto">
+      <p class="ka-sec-label">What No One Else Is Reporting</p>
+      <h2 class="ka-sec-title">The Same Panels That Make Water Can Mine Lithium — From the Ocean</h2>
+      <div class="ka-li-grid">
+        <div class="ka-li-text">
+          <h3>The EV Battery Supply Chain Connection</h3>
+          <p>
+            A second study from Prof. Guo's lab extends the same laser-etched panels with hydrogen titanate nanoparticles embedded in the grooves. When brine byproduct from the desalination process is passed through, roughly <strong>50% of the lithium</strong> present is extracted — and its concentration jumps from 0.09% of total mineral mass in raw Great Salt Lake water to <strong>70% of the extracted mineral product</strong>.
+          </p>
+          <p>
+            This matters because lithium is the critical mineral in every lithium-ion battery powering electric vehicles and grid energy storage. An earlier University of Chicago effort explored <a href="https://www.karmactive.com/university-of-chicago-develops-groundbreaking-lithium-extraction-from-seawater-amid-surging-global-demand/" target="_blank" rel="noopener">lithium extraction from seawater</a> — but the Rochester approach uniquely combines freshwater production with mineral recovery in a single solar-powered unit, without any chemical reagents.
+          </p>
+          <p>
+            Great Salt Lake was specifically tested — the same lake that has lost 73% of its historic volume to drought and water diversion. The technology would both harvest its minerals and, by relieving freshwater pressure on other sources, potentially slow the extraction demand that is drying it out.
+          </p>
+        </div>
+        <div class="ka-li-visual">
+          <div class="ka-li-vis-title">Lithium Concentration: Before vs After</div>
+          <div class="ka-li-bar-wrap">
+            <div class="ka-li-bar-lbl"><span>Raw brine (Great Salt Lake)</span><span>0.09%</span></div>
+            <div class="ka-li-bar"><div class="ka-li-bar-fill ka-li-before" style="--w:0.13%"></div></div>
+          </div>
+          <div class="ka-li-bar-wrap">
+            <div class="ka-li-bar-lbl"><span>Recovered mineral product</span><span>70%</span></div>
+            <div class="ka-li-bar"><div class="ka-li-bar-fill ka-li-after" style="--w:70%"></div></div>
+          </div>
+          <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.15)">
+            <div style="font-size:.8rem;color:#bfdbfe;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.5rem">Extraction Efficiency</div>
+            <div style="font-size:2.8rem;font-weight:900;color:#34d399;line-height:1">50%</div>
+            <div style="font-size:.82rem;color:rgba(255,255,255,.6);margin-top:.3rem">of lithium in brine is recovered</div>
+          </div>
+          <div class="ka-li-note">~778× concentration improvement from raw water to recovered product</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       7. BODY TEXT — Key Analysis
+       ══════════════════════════════════ -->
+  <section class="ka-body">
+
+    <h2>The Off-Grid Angle That Most Coverage Is Missing</h2>
+    <p>
+      Most desalination reporting focuses on large-scale infrastructure — billion-dollar reverse-osmosis plants serving cities and industrial zones. But the Rochester technology needs none of that. No grid electricity. No reverse osmosis membranes to replace. No chemical supply chain. No specialist maintenance teams. Just sunlight and seawater.
+    </p>
+    <p>
+      This makes it uniquely relevant for the communities most water-stressed on earth: off-grid coastal villages in sub-Saharan Africa, small island nations across the Pacific, and rural coastal communities in South and Southeast Asia. A small, modular array of these panels could produce fresh water <em>and</em> recover salt and minerals — changing the economics of water access where no conventional plant could economically operate.
+    </p>
+    <p>
+      The <a href="https://www.karmactive.com/2050-water-crisis-alert-nitrogen-pollution-threatens-global-river-basins/" target="_blank" rel="noopener">global water crisis is already unfolding at speed</a>. Scientists have been warning for years that freshwater scarcity will be among the defining challenges of the coming decades. Previous innovations — like MIT's approach to <a href="https://www.karmactive.com/mit-innovation-produces-1-3-liters-of-water-daily-from-just-air-transforming-water-scarcity-in-arid-regions/" target="_blank" rel="noopener">pulling 1.3 litres of water daily from air</a> — addressed the problem from a different angle. This work addresses the ocean directly.
+    </p>
+
+    <div class="ka-highlight">
+      <p><strong>Historical context:</strong> The world's first large-scale desalination plant opened in Kuwait in the 1950s. By 2008, the UN had identified brine discharge as an emerging ecological crisis. By 2019, a landmark study in <em>Science of the Total Environment</em> put daily global brine production at 142 million m³ — 50% higher than earlier estimates. Since then, demand for desalination has only grown. The Rochester breakthrough is the first proof-of-concept to demonstrate complete mineral recovery with zero brine discharge on real multi-ocean water samples.</p>
+    </div>
+
+    <h2>The Ocean's Hidden Cost — And Why It Connects to Everything Else</h2>
+    <p>
+      The brine discharged by conventional desalination does not simply dilute and disappear. Concentrated salt water is denser than the surrounding ocean — it sinks, creating low-oxygen layers near the seafloor that stress marine life. Chemical additives used in water pre-treatment add another layer of toxicity. In semi-enclosed waters like the Persian Gulf and the Red Sea, which already have higher salinity than open oceans, the cumulative effect on ecosystems is severe.
+    </p>
+    <p>
+      <a href="https://www.karmactive.com/coral-reefs-in-crisis-60-affected-by-bleaching-in-record-heat-is-the-4th-global-event-the-worst-yet/" target="_blank" rel="noopener">Coral reefs — already under pressure from warming oceans</a> — are particularly vulnerable to salinity changes. The same coastal zones that produce the world's desalinated water are frequently the zones with the most biodiverse marine ecosystems. A technology that eliminates brine entirely would remove one of the most direct human-caused stressors on these systems. Separately, efforts to address <a href="https://www.karmactive.com/marine-fungus-solution-to-plastic-pollution-breaking-down-polyethylene-at-0-05-daily-what-this-means-for-our-oceans/" target="_blank" rel="noopener">plastic pollution in the ocean</a> are ongoing — but brine damage from desalination has received far less public attention than it deserves.
+    </p>
+
+    <h2>What Remains to Be Solved</h2>
+    <p>
+      Prof. Guo describes the technology as "inherently scalable" — but the path from a university lab proof-of-concept to panels deployed on rooftops or at sea involves real engineering challenges. Femtosecond lasers are precision instruments, still expensive to operate at industrial scale. Long-term panel durability in salt-spray marine environments has not yet been published. And water throughput per square metre of panel — a number that would determine how many panels a village or city would actually need — has not yet been publicly reported.
+    </p>
+    <p>
+      These are engineering questions, not scientific ones. The physics has been demonstrated. The chemistry has been validated on three ocean basins and the Great Salt Lake. What comes next belongs to the scale-up process — and to the investors, governments, and development agencies who decide whether <a href="https://www.karmactive.com/eu-tackles-methane-new-rules-to-slash-emissions-by-30x-more-than-co2/" target="_blank" rel="noopener">clean-tech breakthroughs</a> get the resources they need to move beyond the lab.
+    </p>
+    <p>
+      Battery innovation has followed a similar arc. <a href="https://www.karmactive.com/tea-leaf-residues-could-extend-electric-battery-life-sevenfold-and-boost-efficiency-by-70/" target="_blank" rel="noopener">Lab discoveries in battery chemistry</a> routinely take 10–15 years to reach commercial vehicles. Solar desalination may follow a faster timeline — because the materials are simpler, the process requires no grid connection, and the demand it addresses is not discretionary.
+    </p>
+
+  </section>
+
+  <!-- ══════════════════════════════════
+       8. WHERE IT MATTERS MOST
+       ══════════════════════════════════ -->
+  <section class="ka-section ka-where">
+    <div style="max-width:1100px;margin:0 auto">
+      <p class="ka-sec-label">Regional Impact</p>
+      <h2 class="ka-sec-title">Where Zero-Waste Solar Desalination Could Make the Biggest Difference</h2>
+      <div class="ka-where-grid">
+        <div class="ka-where-card w-critical">
+          <div class="ka-where-emoji">🌏</div>
+          <div class="ka-where-region">Middle East &amp; North Africa</div>
+          <div class="ka-where-level">Critical Brine Impact Zone</div>
+          <div class="ka-where-detail">Saudi Arabia, UAE, Kuwait, and Qatar account for 55% of global brine production. The Persian Gulf and Red Sea receive the heaviest discharge. Zero-brine solar technology directly addresses the region's largest environmental liability from water production.</div>
+        </div>
+        <div class="ka-where-card w-critical">
+          <div class="ka-where-emoji">🏝️</div>
+          <div class="ka-where-region">Pacific Island Nations</div>
+          <div class="ka-where-level">Existential Water Stress</div>
+          <div class="ka-where-detail">Nations like Tuvalu, Kiribati, and Fiji face acute freshwater shortages on land surrounded entirely by ocean. No grid infrastructure. No chemical supply chains. The Rochester panels need neither — making them among the most viable water solutions these communities could realistically deploy.</div>
+        </div>
+        <div class="ka-where-card w-high">
+          <div class="ka-where-emoji">🌍</div>
+          <div class="ka-where-region">Sub-Saharan Africa</div>
+          <div class="ka-where-level">High Off-Grid Potential</div>
+          <div class="ka-where-detail">Hundreds of millions of people lack reliable clean water. Coastal communities from Senegal to Mozambique sit next to the ocean but often lack desalination infrastructure. A solar-only, maintenance-light system could be transformative in areas where shipping replacement membranes and chemicals is not feasible.</div>
+        </div>
+        <div class="ka-where-card w-high">
+          <div class="ka-where-emoji">🇮🇳</div>
+          <div class="ka-where-region">South Asia (India, Bangladesh)</div>
+          <div class="ka-where-level">High Demand, Coastal Cities</div>
+          <div class="ka-where-detail">Mumbai, Chennai, Kolkata, and Dhaka face escalating freshwater stress combined with coastal flooding risk. India is expanding desalination capacity rapidly — the zero-brine approach could protect the same coastlines that population growth and sea level rise are already straining.</div>
+        </div>
+        <div class="ka-where-card w-significant">
+          <div class="ka-where-emoji">🇺🇸</div>
+          <div class="ka-where-region">American West (Great Salt Lake)</div>
+          <div class="ka-where-level">Ecological &amp; Mineral Recovery</div>
+          <div class="ka-where-detail">The Great Salt Lake has lost 73% of its historic volume. The Rochester study tested specifically on its water — and demonstrated lithium extraction at 70% concentration. The technology could harvest minerals from the lake's concentrated brine while relieving the freshwater extraction pressure that is shrinking it.</div>
+        </div>
+        <div class="ka-where-card w-significant">
+          <div class="ka-where-emoji">🌐</div>
+          <div class="ka-where-region">Global EV Battery Supply</div>
+          <div class="ka-where-level">Strategic Mineral Shift</div>
+          <div class="ka-where-detail">80–92% of lithium battery cathode processing runs through Chinese supply chains. Solar-driven lithium recovery from coastal seawater or salt lakes, co-producing fresh water at the same time, could offer coastal nations a new path to domestic critical mineral supply — powered by the sun.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       9. FAQ ACCORDION
+       ══════════════════════════════════ -->
+  <section class="ka-section ka-faq">
+    <div class="ka-faq-list">
+      <div style="max-width:800px;margin:0 auto 2rem;text-align:center">
+        <p class="ka-sec-label">Questions People Are Asking</p>
+        <h2 class="ka-sec-title">What You Need to Know</h2>
+      </div>
+      <div class="ka-faq-item" id="kf1">
+        <div class="ka-faq-q" onclick="kaFaq('kf1')">
+          Is the water produced actually safe to drink?
+          <span class="ka-faq-icon">▼</span>
+        </div>
+        <div class="ka-faq-a">
+          <div class="ka-faq-a-inner">
+            The process produces distilled water — water vapour that has been collected and condensed, leaving behind all dissolved minerals and salts. Distilled water is the same outcome as the Earth's natural water cycle (evaporation, condensation, rain). The proof-of-concept tests confirmed clean water production from Pacific, Atlantic, and Indian Ocean water and Great Salt Lake brine. For potable use, trace mineral remineralisation (standard in all drinking-water systems) would be required — but no more than any other purified water source requires.
+          </div>
+        </div>
+      </div>
+      <div class="ka-faq-item" id="kf2">
+        <div class="ka-faq-q" onclick="kaFaq('kf2')">
+          Why haven't we solved desalination waste before?
+          <span class="ka-faq-icon">▼</span>
+        </div>
+        <div class="ka-faq-a">
+          <div class="ka-faq-a-inner">
+            Conventional reverse-osmosis desalination forces water through high-pressure membranes, which inherently concentrates the remaining salt into a liquid brine waste stream. There is no simple way to eliminate this in the RO process — it is a physical consequence of how the technology works. Thermal distillation can separate water from salt, but most thermal systems also produce brine because they only partially evaporate the water. The Rochester innovation evaporates essentially all the water from a thin film, depositing the minerals as dry solids rather than liquid brine — a fundamentally different approach.
+          </div>
+        </div>
+      </div>
+      <div class="ka-faq-item" id="kf3">
+        <div class="ka-faq-q" onclick="kaFaq('kf3')">
+          Can this be used anywhere in the world?
+          <span class="ka-faq-icon">▼</span>
+        </div>
+        <div class="ka-faq-a">
+          <div class="ka-faq-a-inner">
+            The technology requires two inputs: sunlight and saltwater. Any location with both can theoretically use it. It has been tested on water from three ocean basins with very different salinity and mineral compositions — all successfully producing fresh water. Off-grid coastal regions are the most natural early deployment target, since those communities often lack the infrastructure that conventional desalination requires (grid power, chemical supply chains, specialist maintenance teams). High-solar regions in water-stressed areas — sub-Saharan Africa, the Middle East, South Asia, and Pacific Island nations — represent the strongest alignment of need and solar resource.
+          </div>
+        </div>
+      </div>
+      <div class="ka-faq-item" id="kf4">
+        <div class="ka-faq-q" onclick="kaFaq('kf4')">
+          How does recovering lithium from seawater actually work?
+          <span class="ka-faq-icon">▼</span>
+        </div>
+        <div class="ka-faq-a">
+          <div class="ka-faq-a-inner">
+            The same laser-etched panels, when modified with hydrogen titanate nanoparticles embedded in the grooves, selectively bind lithium ions as seawater or brine passes through the active zone. When the water evaporates and salts crystallise in the passive zone, the lithium-enriched minerals are harvested separately. In testing on Great Salt Lake brine, the team recovered 50% of the lithium present — and the recovered mineral product was 70% lithium by mass, compared to just 0.09% in the raw water. This represents a roughly 778-fold concentration improvement, making the recovered material commercially valuable for battery production without any chemical extraction processes.
+          </div>
+        </div>
+      </div>
+      <div class="ka-faq-item" id="kf5">
+        <div class="ka-faq-q" onclick="kaFaq('kf5')">
+          When could this reach the market?
+          <span class="ka-faq-icon">▼</span>
+        </div>
+        <div class="ka-faq-a">
+          <div class="ka-faq-a-inner">
+            The research is at proof-of-concept stage. Prof. Guo describes the technology as "inherently scalable" — the materials (nickel, copper, aluminium) are widely available, and the process adds only the one-time step of femtosecond laser treatment during manufacturing. Key unknowns include: the manufacturing cost of large-scale laser-etching, long-term durability in salt-spray marine environments, and water throughput per square metre of panel area. These are engineering challenges rather than scientific ones. A realistic timeline for early commercial pilots would be 5–10 years, though government and development-agency investment could accelerate this significantly for off-grid humanitarian applications.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       10. CONCLUSION
+       ══════════════════════════════════ -->
+  <section class="ka-conclusion">
+    <div class="ka-conc-inner">
+      <div class="ka-conc-label">In Summary</div>
+      <p>
+        For as long as desalination has existed, the world has accepted its trade-off: fresh water at the cost of brine damage to the ocean. The research from the University of Rochester's Institute of Optics, published in <em>Light: Science &amp; Applications</em> on May 27, 2026, has demonstrated — on real ocean water from three basins — that this trade-off is not an engineering inevitability. It is a consequence of the specific methods that were chosen when desalination was being built, decades ago, before solar materials science existed in its current form.
+      </p>
+      <p>
+        The study covered the desalination process itself, the zero-brine outcome achieved through femtosecond laser-etched superwicking panels, the successful testing on Pacific, Atlantic, Indian Ocean, and Great Salt Lake water, and the secondary lithium recovery result — from 0.09% to 70% concentration — demonstrated with hydrogen titanate nanoparticle-modified panels.
+      </p>
+      <p>
+        The challenges ahead are real: manufacturing scale, panel durability, water throughput measurement, and the investment required to move from a university laboratory to a deployable product. Those questions remain open. What the research has addressed — on the scientific level — is whether the physics allows for it. It does.
+      </p>
+      <p style="font-size:.9rem;color:rgba(255,255,255,.5);margin-top:2rem">
+        Read more on Karmactive:
+        <a href="https://www.karmactive.com/2050-water-crisis-alert-nitrogen-pollution-threatens-global-river-basins/" target="_blank" rel="noopener">Water Crisis 2050</a> ·
+        <a href="https://www.karmactive.com/university-of-chicago-develops-groundbreaking-lithium-extraction-from-seawater-amid-surging-global-demand/" target="_blank" rel="noopener">Lithium from Seawater</a> ·
+        <a href="https://www.karmactive.com/coral-reefs-in-crisis-60-affected-by-bleaching-in-record-heat-is-the-4th-global-event-the-worst-yet/" target="_blank" rel="noopener">Coral Reefs Crisis</a> ·
+        <a href="https://www.karmactive.com/mit-innovation-produces-1-3-liters-of-water-daily-from-just-air-transforming-water-scarcity-in-arid-regions/" target="_blank" rel="noopener">MIT Water from Air</a>
+      </p>
+    </div>
+  </section>
+
+</div><!-- /#ka-solar-desal -->
+
+<script>
+(function(){
+  // ── How It Works: toggle steps
+  function kaToggleStep(el){
+    var all = document.querySelectorAll('#kaHowGrid .ka-step');
+    all.forEach(function(s){ if(s !== el) s.classList.remove('active'); });
+    el.classList.toggle('active');
+  }
+  window.kaToggleStep = kaToggleStep;
+  // Open first step by default
+  var first = document.querySelector('#kaHowGrid .ka-step');
+  if(first) first.classList.add('active');
+
+  // ── FAQ accordion
+  function kaFaq(id){
+    var item = document.getElementById(id);
+    if(!item) return;
+    var isOpen = item.classList.contains('open');
+    // close all
+    document.querySelectorAll('.ka-faq-item').forEach(function(f){
+      f.classList.remove('open');
+      var a = f.querySelector('.ka-faq-a');
+      if(a) a.style.maxHeight = null;
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      var body = item.querySelector('.ka-faq-a');
+      if(body) body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  }
+  window.kaFaq = kaFaq;
+
+  // ── Animate lithium bars on scroll
+  var barsDone = false;
+  function animateBars(){
+    if(barsDone) return;
+    var bars = document.querySelectorAll('#ka-solar-desal .ka-li-bar-fill');
+    if(!bars.length) return;
+    bars.forEach(function(b){
+      var w = b.style.getPropertyValue('--w');
+      b.style.width = '0';
+      setTimeout(function(){
+        b.style.transition = 'width 1.4s ease';
+        b.style.width = w;
+      }, 100);
+    });
+    barsDone = true;
+  }
+  // IntersectionObserver for bars
+  if('IntersectionObserver' in window){
+    var liSec = document.querySelector('#ka-solar-desal .ka-li-visual');
+    if(liSec){
+      var obs = new IntersectionObserver(function(entries){
+        if(entries[0].isIntersecting){ animateBars(); obs.disconnect(); }
+      },{threshold:0.3});
+      obs.observe(liSec);
+    }
+  } else {
+    animateBars();
+  }
+
+})();
+</script>
+
+<!-- ============================================================
+     END OF WORDPRESS HTML BLOCK
+     ============================================================ -->
+
+</body>
+</html>
