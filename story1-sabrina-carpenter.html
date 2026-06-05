@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabrina Carpenter Stalker Case – Interactive Timeline</title>
+<style>
+/* Scoped reset – does not bleed into WordPress theme */
+.sc-wrap,
+.sc-wrap *,
+.sc-wrap *::before,
+.sc-wrap *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.sc-wrap {
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  background: #120a1c;
+  color: #f0e0ff;
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── INTRO TEXT BLOCK ── */
+.sc-intro {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 2rem;
+  font-size: clamp(0.93rem, 1.5vw, 1.05rem);
+  line-height: 1.85;
+  color: #d8b8f0;
+}
+.sc-intro a {
+  color: #f72585;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(247,37,133,0.4);
+  transition: border-color 0.2s;
+}
+.sc-intro a:hover { border-color: #f72585; }
+.sc-intro p { margin-bottom: 1rem; }
+
+/* ── STATS HEADER ── */
+.sc-stats-header {
+  background: linear-gradient(135deg, #1a0e2a 0%, #2d1535 60%, #1a0e2a 100%);
+  padding: 2.5rem 1.25rem 2rem;
+  text-align: center;
+  border-top: 3px solid #e91680;
+  border-bottom: 3px solid #e91680;
+}
+.sc-sh-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #e91680;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.sc-sh-title {
+  font-size: clamp(1.25rem, 3vw, 1.9rem);
+  font-weight: 800;
+  color: #f8e4ff;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+.sc-sh-sub {
+  font-size: clamp(0.82rem, 1.4vw, 0.95rem);
+  color: #c8a0d8;
+  margin-bottom: 2rem;
+}
+.sc-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.85rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.sc-stat-card {
+  background: rgba(233,22,128,0.10);
+  border: 1px solid rgba(233,22,128,0.35);
+  border-radius: 12px;
+  padding: 1.1rem 0.7rem;
+  text-align: center;
+  transition: transform 0.25s, border-color 0.25s;
+}
+.sc-stat-card:hover { transform: translateY(-5px); border-color: #e91680; }
+.sc-stat-num {
+  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  font-weight: 900;
+  color: #f72585;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.sc-stat-unit { font-size: 1rem; font-weight: 700; }
+.sc-stat-label {
+  font-size: 0.7rem;
+  color: #c8a0d8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── TIMELINE SECTION ── */
+.sc-timeline-section {
+  padding: 3rem 1.25rem;
+  background: #120a1c;
+}
+.sc-sec-head {
+  font-size: clamp(1.1rem, 2.5vw, 1.55rem);
+  font-weight: 800;
+  color: #e91680;
+  text-align: center;
+  margin-bottom: 0.35rem;
+}
+.sc-sec-sub {
+  text-align: center;
+  color: #c8a0d8;
+  font-size: 0.85rem;
+  margin-bottom: 2.5rem;
+}
+.sc-timeline {
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 0;
+}
+.sc-timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(to bottom, #e91680, #9b2335 80%, transparent);
+}
+.sc-tl-item {
+  position: relative;
+  padding-left: 58px;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+.sc-tl-dot {
+  position: absolute;
+  left: 11px;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  background: #e91680;
+  border: 3px solid #120a1c;
+  border-radius: 50%;
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 1;
+}
+.sc-tl-item:hover .sc-tl-dot,
+.sc-tl-item.open .sc-tl-dot {
+  transform: scale(1.45);
+  box-shadow: 0 0 14px rgba(233,22,128,0.75);
+}
+.sc-tl-card {
+  background: #1e1028;
+  border: 1px solid #2d1a3d;
+  border-radius: 10px;
+  padding: 1.1rem 1.15rem;
+  transition: border-color 0.25s;
+}
+.sc-tl-item:hover .sc-tl-card,
+.sc-tl-item.open .sc-tl-card { border-color: rgba(233,22,128,0.7); }
+.sc-tl-date {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #e91680;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+.sc-tl-title {
+  font-size: clamp(0.9rem, 1.6vw, 1rem);
+  font-weight: 700;
+  color: #f8e4ff;
+  margin-bottom: 0.5rem;
+}
+.sc-tl-body {
+  font-size: 0.86rem;
+  color: #c8a0d8;
+  line-height: 1.75;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.sc-tl-item.open .sc-tl-body { max-height: 320px; }
+.sc-tl-hint {
+  font-size: 0.7rem;
+  color: #e91680;
+  margin-top: 0.25rem;
+  opacity: 0.85;
+}
+.sc-tl-item.open .sc-tl-hint { display: none; }
+
+/* ── QUOTE BLOCKS ── */
+.sc-quotes-wrap {
+  background: #1a0e2a;
+  padding: 2.5rem 1.25rem;
+}
+.sc-quote {
+  max-width: 780px;
+  margin: 0 auto 1.4rem;
+  padding: 1.3rem 1.4rem 1.3rem 2.8rem;
+  border-left: 4px solid #e91680;
+  background: #1e1028;
+  border-radius: 0 10px 10px 0;
+  font-style: italic;
+  color: #f0e0ff;
+  font-size: clamp(0.88rem, 1.5vw, 1rem);
+  line-height: 1.75;
+  position: relative;
+}
+.sc-quote::before {
+  content: '\201C';
+  position: absolute;
+  left: 0.6rem;
+  top: 0.2rem;
+  font-size: 2.8rem;
+  color: rgba(233,22,128,0.45);
+  font-style: normal;
+  line-height: 1;
+}
+.sc-quote-attr {
+  font-size: 0.78rem;
+  color: #e91680;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 0.65rem;
+}
+
+/* ── IMAGE BLOCK ── */
+.sc-img-block {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  text-align: center;
+}
+.sc-img-block img {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 10px;
+  border: 2px solid #2d1535;
+}
+.sc-img-caption {
+  font-size: 0.78rem;
+  color: #a080b8;
+  margin-top: 0.65rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* ── LEGAL ACCORDION ── */
+.sc-legal-section {
+  padding: 3rem 1.25rem;
+  background: #120a1c;
+}
+.sc-acc-item {
+  border: 1px solid #2d1a3d;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.sc-acc-head {
+  background: #1e1028;
+  padding: 0.95rem 1.15rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: clamp(0.85rem, 1.5vw, 0.96rem);
+  color: #f0e0ff;
+  user-select: none;
+  transition: background 0.2s;
+  gap: 0.5rem;
+}
+.sc-acc-head:hover { background: #251333; }
+.sc-acc-arrow {
+  color: #e91680;
+  font-size: 1rem;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.sc-acc-item.open .sc-acc-arrow { transform: rotate(180deg); }
+.sc-acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: #150a20;
+}
+.sc-acc-item.open .sc-acc-body { max-height: 400px; }
+.sc-acc-content {
+  padding: 1.1rem 1.15rem;
+  font-size: 0.86rem;
+  color: #c8a0d8;
+  line-height: 1.8;
+}
+.sc-acc-content a {
+  color: #f72585;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(247,37,133,0.35);
+}
+
+/* ── CONTEXT CARDS ── */
+.sc-context-section {
+  padding: 3rem 1.25rem;
+  background: #1a0e2a;
+}
+.sc-ctx-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.1rem;
+  max-width: 860px;
+  margin: 1.8rem auto 0;
+}
+.sc-ctx-card {
+  background: linear-gradient(135deg, #1e1028, #2a1540);
+  border-radius: 12px;
+  padding: 1.3rem;
+  border-left: 4px solid #e91680;
+}
+.sc-ctx-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.sc-ctx-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #e91680;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.45rem;
+}
+.sc-ctx-text {
+  font-size: 0.82rem;
+  color: #c8a0d8;
+  line-height: 1.65;
+}
+
+/* ── CONCLUSION TEXT ── */
+.sc-conclusion {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+  font-size: clamp(0.93rem, 1.5vw, 1.05rem);
+  line-height: 1.85;
+  color: #d8b8f0;
+  border-top: 1px solid #2d1535;
+}
+.sc-conclusion a {
+  color: #f72585;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(247,37,133,0.4);
+}
+.sc-conclusion p { margin-bottom: 1rem; }
+.sc-subhead {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 700;
+  color: #f8e4ff;
+  margin-bottom: 0.8rem;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  .sc-stats-row { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+  .sc-tl-item { padding-left: 46px; }
+  .sc-timeline::before { left: 14px; }
+  .sc-tl-dot { left: 5px; }
+  .sc-ctx-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 380px) {
+  .sc-stat-num { font-size: 1.7rem; }
+}
+</style>
+</head>
+<body>
+
+<section class="sc-wrap" aria-label="Sabrina Carpenter Stalker Case Interactive Article">
+
+  <!-- ══ INTRO TEXT BLOCK (WordPress-style) ══ -->
+  <div class="sc-intro">
+    <p>Sabrina Carpenter is 27 years old, a two-time Grammy winner, and the artist who turned a 90-minute Coachella set in April 2026 into a headlining moment the music world will not forget quickly. Her 2024 album <em>Short n' Sweet</em> debuted at No. 1 on the <a href="https://www.billboard.com/artist/sabrina-carpenter/" target="_blank" rel="noopener">US Billboard 200</a> and produced the first Billboard Hot 100 No. 1 of her career. And while she was building that, a man named William Applegate, 31, was parked outside her Hollywood Hills home — getting progressively closer to her front door — across a span of six weeks.</p>
+    <p>On May 23, 2026, Applegate trespassed onto a neighbor's property to bypass her security fencing, reached her front door, physically pushed on the lever, knocked, and refused to leave until police arrived and arrested him. He struck one of her guards. Then he came back. Los Angeles County Superior Court records, an LAPD detective's declaration, and Ring doorbell footage all formed the basis of a temporary restraining order granted on May 29. Two hearings are scheduled in June. This is every documented incident, in order — drawn from court filings and official law enforcement statements.</p>
+  </div>
+
+  <!-- ══ STATS HEADER ══ -->
+  <div class="sc-stats-header">
+    <div class="sc-sh-eyebrow">Court-Documented Case</div>
+    <div class="sc-sh-title">The Numbers Behind the Case</div>
+    <div class="sc-sh-sub">From the first recorded vehicle sighting to the restraining order — by the figures</div>
+    <div class="sc-stats-row">
+      <div class="sc-stat-card">
+        <div class="sc-stat-num" data-count="43">0</div>
+        <div class="sc-stat-label">Days of Documented Surveillance</div>
+      </div>
+      <div class="sc-stat-card">
+        <div class="sc-stat-num" data-count="4">0</div>
+        <div class="sc-stat-label">Incidents After First Arrest</div>
+      </div>
+      <div class="sc-stat-card">
+        <div class="sc-stat-num">100<span class="sc-stat-unit">yds</span></div>
+        <div class="sc-stat-label">Court-Ordered Stay-Away Distance</div>
+      </div>
+      <div class="sc-stat-card">
+        <div class="sc-stat-num" data-count="2">0</div>
+        <div class="sc-stat-label">Upcoming Court Hearings (June)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TIMELINE ══ -->
+  <div class="sc-timeline-section">
+    <div class="sc-sec-head">Timeline of Incidents</div>
+    <div class="sc-sec-sub">Tap each event to expand the full documented detail</div>
+
+    <div class="sc-timeline">
+
+      <div class="sc-tl-item" role="button" tabindex="0" aria-expanded="false">
+        <div class="sc-tl-dot"></div>
+        <div class="sc-tl-card">
+          <div class="sc-tl-date">From April 20, 2026</div>
+          <div class="sc-tl-title">First Vehicle Sightings Outside Her Home</div>
+          <div class="sc-tl-body">Security camera footage outside Carpenter's Hollywood Hills residence began capturing Applegate's vehicle parked in the area from around April 20. Over the following weeks the car appeared in progressively closer proximity to her home — a pattern that court filings describe as escalating surveillance. Carpenter was not immediately aware of him during this initial phase.</div>
+          <div class="sc-tl-hint">▼ Tap to expand</div>
+        </div>
+      </div>
+
+      <div class="sc-tl-item" role="button" tabindex="0" aria-expanded="false">
+        <div class="sc-tl-dot"></div>
+        <div class="sc-tl-card">
+          <div class="sc-tl-date">May 23, 2026 — First Physical Confrontation</div>
+          <div class="sc-tl-title">Fence Breach, Door Attempt, Guard Assault</div>
+          <div class="sc-tl-body">Applegate trespassed onto a neighbor's property to bypass Carpenter's security fencing, advanced directly to her front door, and physically pushed down on the door lever before knocking and refusing to leave. When her security guard confronted him, Applegate struck the guard. Los Angeles police arrived and arrested him under California Penal Code § 602(m) — misdemeanor criminal trespass. Ring doorbell camera footage captured the full sequence and was later submitted to court.</div>
+          <div class="sc-tl-hint">▼ Tap to expand</div>
+        </div>
+      </div>
+
+      <div class="sc-tl-item" role="button" tabindex="0" aria-expanded="false">
+        <div class="sc-tl-dot"></div>
+        <div class="sc-tl-card">
+          <div class="sc-tl-date">May 24, 2026 — Less Than 24 Hours After Arrest</div>
+          <div class="sc-tl-title">Back the Next Morning</div>
+          <div class="sc-tl-body">Released following his May 23 arrest, Applegate returned to the vicinity of Carpenter's home within 24 hours. This return was documented by her private security team and formed a central part of her legal declaration, demonstrating the arrest alone had not changed his behavior. His vehicle was again recorded in the area.</div>
+          <div class="sc-tl-hint">▼ Tap to expand</div>
+        </div>
+      </div>
+
+      <div class="sc-tl-item" role="button" tabindex="0" aria-expanded="false">
+        <div class="sc-tl-dot"></div>
+        <div class="sc-tl-card">
+          <div class="sc-tl-date">May 25, 2026</div>
+          <div class="sc-tl-title">Parked 10 Feet From Her Gate — Seat Reclined to Conceal</div>
+          <div class="sc-tl-body">Two days after his arrest, a security guard observed Applegate's vehicle parked approximately 10 feet from Carpenter's pedestrian entrance. The guard noted that Applegate's seatbelt was unfastened and his driver's seat was fully reclined flat — what the guard described in a court declaration as an apparent deliberate attempt to avoid being seen. This observation was submitted to the Los Angeles Superior Court as supporting evidence in the restraining order application.</div>
+          <div class="sc-tl-hint">▼ Tap to expand</div>
+        </div>
+      </div>
+
+      <div class="sc-tl-item" role="button" tabindex="0" aria-expanded="false">
+        <div class="sc-tl-dot"></div>
+        <div class="sc-tl-card">
+          <div class="sc-tl-date">May 29, 2026</div>
+          <div class="sc-tl-title">Restraining Order Granted by Los Angeles Judge</div>
+          <div class="sc-tl-body">Carpenter filed for a civil harassment restraining order on May 29 and a Los Angeles judge granted it the same day. The order directs Applegate to stay a minimum of 100 yards from Carpenter, her home, her car, her workplace, and all household residents. It also bans any form of contact. LAPD Detective Peter Doomanis filed a professional declaration calling Applegate "a fixated, obsessional individual" and stating his behavior poses "a serious and escalating risk to victim safety."</div>
+          <div class="sc-tl-hint">▼ Tap to expand</div>
+        </div>
+      </div>
+
+      <div class="sc-tl-item" role="button" tabindex="0" aria-expanded="false">
+        <div class="sc-tl-dot"></div>
+        <div class="sc-tl-card">
+          <div class="sc-tl-date">June 17 &amp; 18, 2026 — Upcoming</div>
+          <div class="sc-tl-title">Two Court Hearings Ahead</div>
+          <div class="sc-tl-body">On June 17, a Los Angeles court will hear arguments on whether the temporary restraining order should be extended into a longer-term protection order — which in California can run for up to five years. On June 18, Applegate is due in criminal court for his misdemeanor criminal trespass charge. The outcomes of these hearings will determine the scope and duration of Carpenter's court-ordered protections.</div>
+          <div class="sc-tl-hint">▼ Tap to expand</div>
+        </div>
+      </div>
+
+    </div><!-- /.sc-timeline -->
+  </div>
+
+  <!-- ══ QUOTES ══ -->
+  <div class="sc-quotes-wrap">
+    <div class="sc-quote">
+      I am in fear of what he might do. The pattern of his conduct may have begun as early as approximately April 20, 2026. His conduct is deeply alarming and escalating in severity.
+      <div class="sc-quote-attr">— Sabrina Carpenter, Declaration Filed in Los Angeles Superior Court, May 29, 2026</div>
+    </div>
+    <div class="sc-quote">
+      In my professional opinion, [Applegate] has developed a disturbing and irrational fixation on [Carpenter]. This trajectory is consistent with well-documented patterns of stalking behaviour that pose a serious and escalating risk to victim safety.
+      <div class="sc-quote-attr">— LAPD Detective Peter Doomanis, Professional Declaration, Los Angeles Superior Court</div>
+    </div>
+  </div>
+
+  <!-- ══ FEATURE IMAGE (Between Sections) ══ -->
+  <div class="sc-img-block" style="background:#120a1c;">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Sabrina_Carpenter_by_Raph_PH_%283%29.jpg/1200px-Sabrina_Carpenter_by_Raph_PH_%283%29.jpg"
+      alt="Sabrina Carpenter performing on stage at a live concert, wearing a stage costume under bright lights"
+      title="Sabrina Carpenter Live Performance – Ring Camera Evidence Used in Stalker Case"
+      loading="lazy"
+    />
+    <div class="sc-img-caption">
+      At a career peak that includes a Grammy win, a Coachella headlining slot, and a Billboard Hot 100 No. 1, a six-week surveillance pattern was quietly being logged outside her front door — and the same technology that fans use to check their deliveries became the evidence that documented it. (Photo: Raph PH / Wikimedia Commons / CC BY 2.0)
+    </div>
+  </div>
+
+  <!-- ══ LEGAL ACCORDION ══ -->
+  <div class="sc-legal-section">
+    <div class="sc-sec-head">Know the Law</div>
+    <div class="sc-sec-sub">Key legal context behind this case — and California's stalking protections</div>
+
+    <div class="sc-acc-item" role="button" tabindex="0">
+      <div class="sc-acc-head">
+        <span>What Is California Penal Code § 602(m)?</span>
+        <span class="sc-acc-arrow">▼</span>
+      </div>
+      <div class="sc-acc-body">
+        <div class="sc-acc-content">
+          Under <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=602" target="_blank" rel="noopener">California Penal Code § 602(m)</a>, it is a misdemeanor to enter and occupy real property or structures of another person without the consent of the owner, their agent, or the person in lawful possession. Applegate was charged under this statute following his May 23 arrest. A misdemeanor conviction in California can carry jail time up to one year in county jail, fines, and probation.
+        </div>
+      </div>
+    </div>
+
+    <div class="sc-acc-item" role="button" tabindex="0">
+      <div class="sc-acc-head">
+        <span>What Does the Restraining Order Actually Cover?</span>
+        <span class="sc-acc-arrow">▼</span>
+      </div>
+      <div class="sc-acc-body">
+        <div class="sc-acc-content">
+          The temporary restraining order issued on May 29 prohibits Applegate from coming within 100 yards of Carpenter, her home, her vehicle, her workplace, and her household residents. It also bans all contact — in person, by phone, by message, and online. The June 17 hearing will determine if this becomes a permanent civil harassment restraining order. Under California law, a civil harassment restraining order can be extended for up to five years and can be renewed.
+        </div>
+      </div>
+    </div>
+
+    <div class="sc-acc-item" role="button" tabindex="0">
+      <div class="sc-acc-head">
+        <span>California's Anti-Stalking Law: The History Behind It</span>
+        <span class="sc-acc-arrow">▼</span>
+      </div>
+      <div class="sc-acc-body">
+        <div class="sc-acc-content">
+          California enacted the first anti-stalking law in the United States in 1990, the year after actress Rebecca Schaeffer was shot and killed at her Los Angeles home by a stalker who had spent three years pursuing her. The law has been amended multiple times since, each time expanding definitions and penalties. Cyberstalking was specifically added as a criminal category in later revisions, recognizing that dangerous obsessive behavior does not require physical proximity to escalate.
+        </div>
+      </div>
+    </div>
+
+    <div class="sc-acc-item" role="button" tabindex="0">
+      <div class="sc-acc-head">
+        <span>What Is a "Fixated, Obsessional Individual" in Law Enforcement Terms?</span>
+        <span class="sc-acc-arrow">▼</span>
+      </div>
+      <div class="sc-acc-body">
+        <div class="sc-acc-content">
+          LAPD Detective Peter Doomanis applied this classification to Applegate in his court declaration. In law enforcement methodology, a fixated individual is one who develops a single-minded, persistent focus on a specific target — often a public figure — disconnected from any real relationship with that person. Research published via <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9977013/" target="_blank" rel="noopener">PubMed Central (PMC)</a> on celebrity stalking patterns identifies this profile as one associated with escalating physical risk, particularly when the individual makes repeated approaches despite legal intervention.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.sc-legal-section -->
+
+  <!-- ══ CONTEXT CARDS ══ -->
+  <div class="sc-context-section">
+    <div class="sc-sec-head">Not an Isolated Pattern</div>
+    <div class="sc-sec-sub">Sabrina Carpenter's case sits within a wider, documented trend affecting female artists at the top of their careers</div>
+    <div class="sc-ctx-grid">
+      <div class="sc-ctx-card">
+        <div class="sc-ctx-icon">🎵</div>
+        <div class="sc-ctx-title">Taylor Swift</div>
+        <div class="sc-ctx-text">Has faced multiple documented stalking cases across several years at properties in Tennessee, Rhode Island, and New York. One stalker was convicted in 2018 after breaking into her New York home. Swift has been granted restraining orders in multiple cases across different states.</div>
+      </div>
+      <div class="sc-ctx-card">
+        <div class="sc-ctx-icon">🎤</div>
+        <div class="sc-ctx-title">Ariana Grande</div>
+        <div class="sc-ctx-text">In 2021, Grande was granted a civil harassment restraining order against a man who appeared at her Los Angeles home and told her security staff he was "in love" with the singer — a resolution that mirrors the legal path Carpenter is currently navigating.</div>
+      </div>
+      <div class="sc-ctx-card">
+        <div class="sc-ctx-icon">📊</div>
+        <div class="sc-ctx-title">By the Numbers</div>
+        <div class="sc-ctx-text">An estimated 1.7 million people are stalked each year in the United States, according to <a href="https://bjs.ojp.gov/library/publications/stalking-victimization-united-states" target="_blank" rel="noopener" style="color:#f72585; border-bottom:1px solid rgba(247,37,133,0.4);">the Bureau of Justice Statistics</a>. Women account for the majority of stalking victims in reported cases, across public and private life.</div>
+      </div>
+      <div class="sc-ctx-card">
+        <div class="sc-ctx-icon">📷</div>
+        <div class="sc-ctx-title">Ring Camera as Court Evidence</div>
+        <div class="sc-ctx-text">Ring doorbell footage directly captured the May 23 incident — Applegate approaching Carpenter's door and attempting to open it — and was submitted to the Los Angeles Superior Court. Residential smart cameras have become an increasingly accepted form of evidence in civil harassment and criminal stalking proceedings in California courts.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CONCLUSION TEXT ══ -->
+  <div class="sc-conclusion">
+    <div class="sc-subhead">What the Court Documents Covered</div>
+    <p>Between April 20 and May 25, 2026, security records, LAPD documentation, and Ring camera footage captured a total of six incidents connected to William Applegate near Sabrina Carpenter's Hollywood Hills home. A Los Angeles Superior Court judge reviewed those materials and granted a temporary restraining order on May 29. Applegate faces a misdemeanor criminal trespass charge under <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PEN&sectionNum=602" target="_blank" rel="noopener">California Penal Code § 602(m)</a>. Two hearings — on June 17 and June 18 — are scheduled ahead. Carpenter described herself as being "in significant and ongoing fear" in her court declaration. LAPD Detective Peter Doomanis classified Applegate's behavior as consistent with a fixated individual posing an escalating risk. Carpenter's seventh studio album <em>Man's Best Friend</em> was released in August 2025. Her <a href="https://cruxbuzz.com/tag/usa/" rel="noopener" target="_blank">Coachella 2026 headlining performance</a> drew widespread attention in April. The court proceedings around the restraining order and the criminal charge both continue through June 2026.</p>
+  </div>
+
+</section>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Animated counters ── */
+  var counters = document.querySelectorAll('[data-count]');
+  var observed = typeof IntersectionObserver !== 'undefined';
+
+  function runCounter(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    if (!target) return;
+    var step = Math.ceil(target / 25);
+    var current = 0;
+    var id = setInterval(function () {
+      current = Math.min(current + step, target);
+      el.textContent = current;
+      if (current >= target) clearInterval(id);
+    }, 50);
+  }
+
+  if (observed) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { runCounter(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (c) { io.observe(c); });
+  } else {
+    counters.forEach(runCounter);
+  }
+
+  /* ── Timeline toggle ── */
+  document.querySelectorAll('.sc-tl-item').forEach(function (item) {
+    function toggle() {
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.sc-tl-item').forEach(function (i) {
+        i.classList.remove('open');
+        i.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        item.setAttribute('aria-expanded', 'true');
+      }
+    }
+    item.addEventListener('click', toggle);
+    item.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+
+  /* ── Accordion toggle ── */
+  document.querySelectorAll('.sc-acc-item').forEach(function (item) {
+    function toggle() {
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.sc-acc-item').forEach(function (i) { i.classList.remove('open'); });
+      if (!isOpen) item.classList.add('open');
+    }
+    item.addEventListener('click', toggle);
+    item.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>

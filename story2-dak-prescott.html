@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dak Prescott &amp; Sarah Jane Ramos – Interactive Story Dashboard</title>
+<style>
+/* Scoped reset – no bleed into WordPress theme */
+.dp-wrap,
+.dp-wrap *,
+.dp-wrap *::before,
+.dp-wrap *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.dp-wrap {
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  background: #030f22;
+  color: #e4ecf5;
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ── INTRO TEXT ── */
+.dp-intro {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 2rem;
+  font-size: clamp(0.93rem, 1.5vw, 1.05rem);
+  line-height: 1.85;
+  color: #c8d8e8;
+}
+.dp-intro a {
+  color: #c6a95a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(198,169,90,0.4);
+  transition: border-color 0.2s;
+}
+.dp-intro a:hover { border-color: #c6a95a; }
+.dp-intro p { margin-bottom: 1rem; }
+
+/* ── STATS HEADER ── */
+.dp-stats-header {
+  background: linear-gradient(135deg, #041e42 0%, #0a2d5f 60%, #041e42 100%);
+  padding: 2.5rem 1.25rem 2rem;
+  text-align: center;
+  border-top: 3px solid #c6a95a;
+  border-bottom: 3px solid #c6a95a;
+}
+.dp-sh-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #c6a95a;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.dp-sh-title {
+  font-size: clamp(1.2rem, 3vw, 1.85rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+.dp-sh-sub {
+  font-size: clamp(0.82rem, 1.4vw, 0.95rem);
+  color: #a5acaf;
+  margin-bottom: 2rem;
+}
+.dp-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.85rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.dp-stat-card {
+  background: rgba(198,169,90,0.10);
+  border: 1px solid rgba(198,169,90,0.35);
+  border-radius: 12px;
+  padding: 1.1rem 0.7rem;
+  text-align: center;
+  transition: transform 0.25s, border-color 0.25s;
+}
+.dp-stat-card:hover { transform: translateY(-5px); border-color: #c6a95a; }
+.dp-stat-num {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  font-weight: 900;
+  color: #c6a95a;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.dp-stat-unit { font-size: 0.9rem; font-weight: 700; }
+.dp-stat-label {
+  font-size: 0.68rem;
+  color: #a5acaf;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── SECTION HEADINGS ── */
+.dp-sec-head {
+  font-size: clamp(1.1rem, 2.5vw, 1.55rem);
+  font-weight: 800;
+  color: #c6a95a;
+  text-align: center;
+  margin-bottom: 0.35rem;
+}
+.dp-sec-sub {
+  text-align: center;
+  color: #a5acaf;
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+/* ── RELATIONSHIP TIMELINE ── */
+.dp-timeline-section {
+  padding: 3rem 1.25rem;
+  background: #030f22;
+}
+.dp-timeline {
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+}
+.dp-timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(to bottom, #c6a95a, #041e42 90%, transparent);
+}
+.dp-tl-item {
+  position: relative;
+  padding-left: 58px;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+.dp-tl-dot {
+  position: absolute;
+  left: 11px;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  background: #c6a95a;
+  border: 3px solid #030f22;
+  border-radius: 50%;
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 1;
+}
+.dp-tl-item:hover .dp-tl-dot,
+.dp-tl-item.open .dp-tl-dot {
+  transform: scale(1.45);
+  box-shadow: 0 0 14px rgba(198,169,90,0.75);
+}
+.dp-tl-card {
+  background: #0a1e3a;
+  border: 1px solid #0e2a50;
+  border-radius: 10px;
+  padding: 1.1rem 1.15rem;
+  transition: border-color 0.25s;
+}
+.dp-tl-item:hover .dp-tl-card,
+.dp-tl-item.open .dp-tl-card { border-color: rgba(198,169,90,0.7); }
+.dp-tl-date {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #c6a95a;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+.dp-tl-title {
+  font-size: clamp(0.9rem, 1.6vw, 1rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+.dp-tl-body {
+  font-size: 0.86rem;
+  color: #a5acaf;
+  line-height: 1.75;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.dp-tl-item.open .dp-tl-body { max-height: 320px; }
+.dp-tl-hint {
+  font-size: 0.7rem;
+  color: #c6a95a;
+  margin-top: 0.25rem;
+  opacity: 0.85;
+}
+.dp-tl-item.open .dp-tl-hint { display: none; }
+
+/* ── QUOTE ── */
+.dp-quotes-wrap {
+  background: #041e42;
+  padding: 2.5rem 1.25rem;
+}
+.dp-quote {
+  max-width: 780px;
+  margin: 0 auto 1.4rem;
+  padding: 1.3rem 1.4rem 1.3rem 2.8rem;
+  border-left: 4px solid #c6a95a;
+  background: #0a2d5f;
+  border-radius: 0 10px 10px 0;
+  font-style: italic;
+  color: #e4ecf5;
+  font-size: clamp(0.88rem, 1.5vw, 1rem);
+  line-height: 1.75;
+  position: relative;
+}
+.dp-quote::before {
+  content: '\201C';
+  position: absolute;
+  left: 0.6rem;
+  top: 0.2rem;
+  font-size: 2.8rem;
+  color: rgba(198,169,90,0.4);
+  font-style: normal;
+  line-height: 1;
+}
+.dp-quote-attr {
+  font-size: 0.78rem;
+  color: #c6a95a;
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 0.65rem;
+}
+
+/* ── IMAGE BLOCK ── */
+.dp-img-block {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  text-align: center;
+}
+.dp-img-block img {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 10px;
+  border: 2px solid #0e2a50;
+}
+.dp-img-caption {
+  font-size: 0.78rem;
+  color: #6a8098;
+  margin-top: 0.65rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* ── KEY FACTS ACCORDION ── */
+.dp-facts-section {
+  padding: 3rem 1.25rem;
+  background: #030f22;
+}
+.dp-acc-item {
+  border: 1px solid #0e2a50;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dp-acc-head {
+  background: #0a1e3a;
+  padding: 0.95rem 1.15rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: clamp(0.85rem, 1.5vw, 0.96rem);
+  color: #e4ecf5;
+  user-select: none;
+  transition: background 0.2s;
+  gap: 0.5rem;
+}
+.dp-acc-head:hover { background: #0f2847; }
+.dp-acc-arrow {
+  color: #c6a95a;
+  font-size: 1rem;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+.dp-acc-item.open .dp-acc-arrow { transform: rotate(180deg); }
+.dp-acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: #05172e;
+}
+.dp-acc-item.open .dp-acc-body { max-height: 400px; }
+.dp-acc-content {
+  padding: 1.1rem 1.15rem;
+  font-size: 0.86rem;
+  color: #a5acaf;
+  line-height: 1.8;
+}
+.dp-acc-content a {
+  color: #c6a95a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(198,169,90,0.35);
+}
+
+/* ── CHILDREN INFO CARDS ── */
+.dp-children-section {
+  padding: 3rem 1.25rem;
+  background: #041e42;
+}
+.dp-ch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.1rem;
+  max-width: 780px;
+  margin: 1.8rem auto 0;
+}
+.dp-ch-card {
+  background: linear-gradient(135deg, #0a1e3a, #0d2545);
+  border-radius: 12px;
+  padding: 1.4rem 1.25rem;
+  border-left: 4px solid #c6a95a;
+  text-align: left;
+}
+.dp-ch-icon { font-size: 1.6rem; margin-bottom: 0.5rem; }
+.dp-ch-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #c6a95a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.4rem;
+}
+.dp-ch-name {
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.3rem;
+}
+.dp-ch-text {
+  font-size: 0.82rem;
+  color: #a5acaf;
+  line-height: 1.65;
+}
+
+/* ── CONTRACT DATA SECTION ── */
+.dp-contract-section {
+  padding: 3rem 1.25rem;
+  background: #030f22;
+}
+.dp-contract-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+  max-width: 860px;
+  margin: 1.8rem auto 0;
+}
+.dp-contract-card {
+  background: #041e42;
+  border: 1px solid #0e2a50;
+  border-radius: 12px;
+  padding: 1.3rem;
+  text-align: center;
+  transition: transform 0.25s, border-color 0.25s;
+}
+.dp-contract-card:hover { transform: translateY(-4px); border-color: #c6a95a; }
+.dp-contract-val {
+  font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+  font-weight: 900;
+  color: #c6a95a;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+.dp-contract-label {
+  font-size: 0.72rem;
+  color: #a5acaf;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+/* ── CONCLUSION TEXT ── */
+.dp-conclusion {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+  font-size: clamp(0.93rem, 1.5vw, 1.05rem);
+  line-height: 1.85;
+  color: #c8d8e8;
+  border-top: 1px solid #0e2a50;
+}
+.dp-conclusion a {
+  color: #c6a95a;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(198,169,90,0.4);
+}
+.dp-conclusion p { margin-bottom: 1rem; }
+.dp-subhead {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  .dp-stats-row { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+  .dp-tl-item { padding-left: 46px; }
+  .dp-timeline::before { left: 14px; }
+  .dp-tl-dot { left: 5px; }
+  .dp-ch-grid { grid-template-columns: 1fr; }
+  .dp-contract-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 380px) {
+  .dp-stat-num { font-size: 1.5rem; }
+  .dp-contract-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<section class="dp-wrap" aria-label="Dak Prescott and Sarah Jane Ramos Interactive Story Dashboard">
+
+  <!-- ══ INTRO TEXT BLOCK ══ -->
+  <div class="dp-intro">
+    <p>Dak Prescott signed a four-year, $240 million contract extension with the Dallas Cowboys — one of the most valuable deals in <a href="https://www.nfl.com/players/dak-prescott/" target="_blank" rel="noopener">NFL history at the time</a>. He proposed to Sarah Jane Ramos on a golf course in October 2024. They had two daughters together. They had 250 wedding guests. The venue was Lake Como, Italy. The date was April 10, 2026. None of it happened.</p>
+    <p>In March 2026, before the ceremony, the wedding was called off. Sarah Jane Ramos, who had been with Prescott since the fall of 2023, confirmed the split herself on Instagram — and directly denied that a prenup was involved. What she did describe, through representatives and her own posts, was a matter of trust. Prescott had reportedly been using private, hidden social media profiles to contact other women throughout their relationship. A custody filing followed. Then came an unexpected custody agreement reached outside court on April 15. Two daughters — Margaret Jane Rose (MJ), born February 2024, and Aurora Rayne, born May 2025 — are at the center of an ongoing co-parenting arrangement. This is what the documented record shows.</p>
+  </div>
+
+  <!-- ══ STATS HEADER ══ -->
+  <div class="dp-stats-header">
+    <div class="dp-sh-eyebrow">The Story by the Numbers</div>
+    <div class="dp-sh-title">Dak Prescott &amp; Sarah Jane Ramos</div>
+    <div class="dp-sh-sub">Three years together. Two daughters. One cancelled wedding. The facts, in figures.</div>
+    <div class="dp-stats-row">
+      <div class="dp-stat-card">
+        <div class="dp-stat-num">3</div>
+        <div class="dp-stat-label">Years Together (2023–2026)</div>
+      </div>
+      <div class="dp-stat-card">
+        <div class="dp-stat-num">250</div>
+        <div class="dp-stat-label">Wedding Guests Who Got the Cancellation Email</div>
+      </div>
+      <div class="dp-stat-card">
+        <div class="dp-stat-num">2</div>
+        <div class="dp-stat-label">Daughters Sharing Joint Custody</div>
+      </div>
+      <div class="dp-stat-card">
+        <div class="dp-stat-num">$240<span class="dp-stat-unit">M</span></div>
+        <div class="dp-stat-label">Prescott's Contract Extension</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ RELATIONSHIP TIMELINE ══ -->
+  <div class="dp-timeline-section">
+    <div class="dp-sec-head">How It Unfolded</div>
+    <div class="dp-sec-sub">The documented milestones — from first public sighting to custody settlement</div>
+
+    <div class="dp-timeline">
+
+      <div class="dp-tl-item" role="button" tabindex="0" aria-expanded="false">
+        <div class="dp-tl-dot"></div>
+        <div class="dp-tl-card">
+          <div class="dp-tl-date">September 2023</div>
+          <div class="dp-tl-title">Relationship Goes Public at a Cowboys Game</div>
+          <div class="dp-tl-body">Ramos was first spotted at a Dallas Cowboys vs. New York Giants game in September 2023, appearing in the stands and sparking romance speculation. She quickly confirmed the relationship publicly with a photo of herself wearing a Cowboys jacket alongside Prescott. The relationship had begun in the fall of 2023.</div>
+          <div class="dp-tl-hint">▼ Tap to expand</div>
+        </div>
+      </div>
+
+      <div class="dp-tl-item" role="button" tabindex="0" aria-expanded="false">
+        <div class="dp-tl-dot"></div>
+        <div class="dp-tl-card">
+          <div class="dp-tl-date">November 2023</div>
+          <div class="dp-tl-title">Pregnancy Announcement</div>
+          <div class="dp-tl-body">One month after going public as a couple, Ramos announced she and Prescott were expecting their first child. The announcement came in November 2023, with the couple sharing the news publicly. Their first daughter, Margaret Jane Rose — called MJ — was born in February 2024.</div>
+          <div class="dp-tl-hint">▼ Tap to expand</div>
+        </div>
+      </div>
+
+      <div class="dp-tl-item" role="button" tabindex="0" aria-expanded="false">
+        <div class="dp-tl-dot"></div>
+        <div class="dp-tl-card">
+          <div class="dp-tl-date">October 2024</div>
+          <div class="dp-tl-title">Prescott Proposes on a Golf Course</div>
+          <div class="dp-tl-body">Prescott proposed to Ramos in October 2024, with the couple sharing the engagement announcement on social media. The proposal took place on a golf course. In December 2024, they announced they were expecting their second child together.</div>
+          <div class="dp-tl-hint">▼ Tap to expand</div>
+        </div>
+      </div>
+
+      <div class="dp-tl-item" role="button" tabindex="0" aria-expanded="false">
+        <div class="dp-tl-dot"></div>
+        <div class="dp-tl-card">
+          <div class="dp-tl-date">January 2026</div>
+          <div class="dp-tl-title">Ramos Gives Prescott a Monogamy Ultimatum</div>
+          <div class="dp-tl-body">According to reports, Ramos gave Prescott what was described as a monogamy ultimatum in January 2026. Prescott had reportedly been using private, incognito social media profiles to send messages to other women and ex-flings — conduct Ramos had reportedly been aware of during the relationship but had stayed through, hoping the situation would change for the sake of their family.</div>
+          <div class="dp-tl-hint">▼ Tap to expand</div>
+        </div>
+      </div>
+
+      <div class="dp-tl-item" role="button" tabindex="0" aria-expanded="false">
+        <div class="dp-tl-dot"></div>
+        <div class="dp-tl-card">
+          <div class="dp-tl-date">March 7–9, 2026</div>
+          <div class="dp-tl-title">Wedding Called Off — 250 Guests Emailed</div>
+          <div class="dp-tl-body">Reports of the cancellation began circulating on March 7. On March 9, a joint email was sent to approximately 250 invited guests confirming the decision to cancel the Lake Como, Italy wedding that had been set for April 10. A representative for Ramos told outlets the decision was mutual, noting there was no big argument or specific triggering event — but Ramos had reached a decision. She subsequently posted on Instagram directly denying that a prenup was the cause, writing: "This had nothing to do with a prenup."</div>
+          <div class="dp-tl-hint">▼ Tap to expand</div>
+        </div>
+      </div>
+
+      <div class="dp-tl-item" role="button" tabindex="0" aria-expanded="false">
+        <div class="dp-tl-dot"></div>
+        <div class="dp-tl-card">
+          <div class="dp-tl-date">April 15, 2026</div>
+          <div class="dp-tl-title">Custody Agreement Reached Outside Court</div>
+          <div class="dp-tl-body">Prescott and Ramos reached a temporary custody settlement for their two daughters on April 15, 2026, avoiding a full court battle. The agreement covers joint decision-making for both children and includes travel restrictions. A formal court proceeding remains on the calendar, but both parties reached this private interim arrangement ahead of the court date.</div>
+          <div class="dp-tl-hint">▼ Tap to expand</div>
+        </div>
+      </div>
+
+      <div class="dp-tl-item" role="button" tabindex="0" aria-expanded="false">
+        <div class="dp-tl-dot"></div>
+        <div class="dp-tl-card">
+          <div class="dp-tl-date">May 2026</div>
+          <div class="dp-tl-title">Mother's Day Post — and Aurora's First Birthday</div>
+          <div class="dp-tl-body">On Mother's Day 2026, Ramos posted publicly on Instagram: "Celebrating every mom, of all kinds, all week long. Grateful for the one that raised me, the amazing moms that surround me and pour into my family, and, most importantly, getting to be my sweet, fearless, beautiful babies' mama." Prescott and Ramos also reportedly came together to celebrate Aurora Rayne's first birthday on May 22, 2026 — their younger daughter, born May 22, 2025.</div>
+          <div class="dp-tl-hint">▼ Tap to expand</div>
+        </div>
+      </div>
+
+    </div><!-- /.dp-timeline -->
+  </div>
+
+  <!-- ══ QUOTES ══ -->
+  <div class="dp-quotes-wrap">
+    <div class="dp-quote">
+      Celebrating every mom, of all kinds, all week long. Grateful for the one that raised me, the amazing moms that surround me and pour into my family, and, most importantly, getting to be my sweet, fearless, beautiful babies' mama.
+      <div class="dp-quote-attr">— Sarah Jane Ramos, Instagram Post, May 2026</div>
+    </div>
+    <div class="dp-quote">
+      This had nothing to do with a prenup.
+      <div class="dp-quote-attr">— Sarah Jane Ramos, Instagram, clarifying the reason for the split</div>
+    </div>
+    <div class="dp-quote">
+      There wasn't any rockiness in the lead up, and there was no big argument or blow up. It was a mutual decision.
+      <div class="dp-quote-attr">— Representative for Sarah Jane Ramos, statement to People magazine</div>
+    </div>
+  </div>
+
+  <!-- ══ IMAGE BLOCK ══ -->
+  <div class="dp-img-block" style="background:#030f22;">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Dak_Prescott_%2821%29_at_the_2024_NFL_Draft.jpg/1200px-Dak_Prescott_%2821%29_at_the_2024_NFL_Draft.jpg"
+      alt="Dak Prescott, Dallas Cowboys quarterback, pictured at the 2024 NFL Draft in a suit"
+      title="Dak Prescott Dallas Cowboys QB – Wedding Cancelled, Custody Settled 2026"
+      loading="lazy"
+      onerror="this.style.display='none'"
+    />
+    <div class="dp-img-caption">
+      At 32, Prescott carries one of the largest quarterback contracts in NFL history and leads a franchise that calls itself America's Team — while co-parenting two daughters under a court-supervised custody framework, in what became one of the most-followed personal stories in the sport in 2026. (Photo: Wikimedia Commons / Public Domain)
+    </div>
+  </div>
+
+  <!-- ══ CHILDREN INFO CARDS ══ -->
+  <div class="dp-children-section">
+    <div class="dp-sec-head">Their Two Daughters</div>
+    <div class="dp-sec-sub">The co-parenting arrangement centers on these two children, both born during the relationship</div>
+    <div class="dp-ch-grid">
+      <div class="dp-ch-card">
+        <div class="dp-ch-icon">👶</div>
+        <div class="dp-ch-title">First Daughter</div>
+        <div class="dp-ch-name">Margaret Jane Rose (MJ)</div>
+        <div class="dp-ch-text">Born February 2024. Prescott and Ramos announced her arrival publicly. MJ is the elder of the two daughters and has appeared in family posts shared by Ramos on social media throughout 2024–2026.</div>
+      </div>
+      <div class="dp-ch-card">
+        <div class="dp-ch-icon">🍼</div>
+        <div class="dp-ch-title">Second Daughter</div>
+        <div class="dp-ch-name">Aurora Rayne</div>
+        <div class="dp-ch-text">Born May 22, 2025. Aurora's first birthday fell on May 22, 2026 — after the split but before the custody agreement was formalized. Prescott and Ramos reportedly came together for the birthday celebration despite the ongoing legal process.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ KEY FACTS ACCORDION ══ -->
+  <div class="dp-facts-section">
+    <div class="dp-sec-head">What the Record Shows</div>
+    <div class="dp-sec-sub">Key factual details from court filings, official statements, and verified reports</div>
+
+    <div class="dp-acc-item" role="button" tabindex="0">
+      <div class="dp-acc-head">
+        <span>What Exactly Were the "Incognito Social Media Profiles"?</span>
+        <span class="dp-acc-arrow">▼</span>
+      </div>
+      <div class="dp-acc-body">
+        <div class="dp-acc-content">
+          Reports indicate Prescott had created and used private social media profiles — separate from his public accounts — to communicate with other women, including ex-girlfriends, during the relationship. Ramos had reportedly become aware of this conduct during the relationship and remained in it before ultimately making the decision to end the engagement. A representative confirmed this was the underlying issue in the split.
+        </div>
+      </div>
+    </div>
+
+    <div class="dp-acc-item" role="button" tabindex="0">
+      <div class="dp-acc-head">
+        <span>What Is the Custody Arrangement?</span>
+        <span class="dp-acc-arrow">▼</span>
+      </div>
+      <div class="dp-acc-body">
+        <div class="dp-acc-content">
+          The temporary custody settlement reached on April 15, 2026 established joint decision-making for both daughters and includes travel restrictions. It was agreed outside of the formal court process as a private interim arrangement. A formal court hearing remains on the calendar. Both Prescott and Ramos have stated publicly that their priority is raising their daughters together in a positive environment.
+        </div>
+      </div>
+    </div>
+
+    <div class="dp-acc-item" role="button" tabindex="0">
+      <div class="dp-acc-head">
+        <span>Did a Prenup Play a Role?</span>
+        <span class="dp-acc-arrow">▼</span>
+      </div>
+      <div class="dp-acc-body">
+        <div class="dp-acc-content">
+          Sarah Jane Ramos directly and publicly denied the prenup narrative on Instagram, writing: "This had nothing to do with a prenup." Her post was a response to widespread speculation online that a prenuptial agreement had triggered the split. The statement was clear and unambiguous — the issue, according to Ramos and her representatives, was the conduct described as "ongoing infidelity."
+        </div>
+      </div>
+    </div>
+
+    <div class="dp-acc-item" role="button" tabindex="0">
+      <div class="dp-acc-head">
+        <span>What About the Dallas Cowboys Mansion?</span>
+        <span class="dp-acc-arrow">▼</span>
+      </div>
+      <div class="dp-acc-body">
+        <div class="dp-acc-content">
+          Following the split, reports emerged that Prescott made a decision regarding the Dallas-area property the couple had been associated with. Details of the property arrangement were addressed in later reporting, though neither Prescott nor Ramos issued formal statements on the specific real estate situation. As of May 2026, both parties have kept property details out of public statements.
+        </div>
+      </div>
+    </div>
+
+    <div class="dp-acc-item" role="button" tabindex="0">
+      <div class="dp-acc-head">
+        <span>What Is Dak Prescott's Contract Situation with the Cowboys?</span>
+        <span class="dp-acc-arrow">▼</span>
+      </div>
+      <div class="dp-acc-body">
+        <div class="dp-acc-content">
+          Prescott signed a four-year, $240 million extension with the <a href="https://www.dallascowboys.com/team/players-roster/dak-prescott/" target="_blank" rel="noopener">Dallas Cowboys</a> that includes $231 million in guarantees and an $80 million signing bonus, making it one of the most financially significant quarterback deals in NFL history at the time of signing. His 2026 cap hit is estimated above $74 million, according to contract tracking at <a href="https://overthecap.com/player/dak-prescott/4848" target="_blank" rel="noopener">Over The Cap</a>. In the 2025 NFL season, Prescott completed 67 percent of his passes for 4,552 yards with a 30:10 touchdown-to-interception ratio.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /.dp-facts-section -->
+
+  <!-- ══ CONTRACT DATA CARDS ══ -->
+  <div class="dp-contract-section">
+    <div class="dp-sec-head">Prescott's Contract by the Numbers</div>
+    <div class="dp-sec-sub">From the official <a href="https://www.nfl.com/players/dak-prescott/" target="_blank" rel="noopener" style="color:#c6a95a;">NFL.com player profile</a> and <a href="https://overthecap.com/player/dak-prescott/4848" target="_blank" rel="noopener" style="color:#c6a95a;">Over The Cap</a></div>
+    <div class="dp-contract-grid">
+      <div class="dp-contract-card">
+        <div class="dp-contract-val">$240M</div>
+        <div class="dp-contract-label">Contract Extension Value</div>
+      </div>
+      <div class="dp-contract-card">
+        <div class="dp-contract-val">$231M</div>
+        <div class="dp-contract-label">Total Guaranteed</div>
+      </div>
+      <div class="dp-contract-card">
+        <div class="dp-contract-val">$80M</div>
+        <div class="dp-contract-label">Signing Bonus</div>
+      </div>
+      <div class="dp-contract-card">
+        <div class="dp-contract-val">&gt;$74M</div>
+        <div class="dp-contract-label">2026 Cap Hit</div>
+      </div>
+      <div class="dp-contract-card">
+        <div class="dp-contract-val">67%</div>
+        <div class="dp-contract-label">2025 Completion Rate</div>
+      </div>
+      <div class="dp-contract-card">
+        <div class="dp-contract-val">4,552</div>
+        <div class="dp-contract-label">2025 Passing Yards</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CONCLUSION TEXT ══ -->
+  <div class="dp-conclusion">
+    <div class="dp-subhead">What Was Filed, Said, and Settled</div>
+    <p>Dak Prescott and Sarah Jane Ramos dated for roughly three years, announced two pregnancies, shared a public engagement, and sent cancellation emails to 250 guests before the April 10, 2026 Lake Como wedding was ever held. Ramos confirmed the split publicly, denied the prenup narrative directly on Instagram, and described the issue as a matter of trust and conduct during the relationship. A temporary custody arrangement for daughters MJ and Aurora Rayne was agreed outside court on April 15. Prescott carries a 2026 <a href="https://overthecap.com/player/dak-prescott/4848" target="_blank" rel="noopener">salary cap figure above $74 million</a> into his next season with the <a href="https://www.dallascowboys.com/team/players-roster/dak-prescott/" target="_blank" rel="noopener">Dallas Cowboys</a>. His 2025 season produced 4,552 passing yards and a 30:10 TD-to-interception ratio. Ramos' Mother's Day post in May 2026 was her most recent public statement on the situation, focused entirely on her daughters. Court proceedings on the permanent custody arrangement remain ongoing.</p>
+  </div>
+
+</section>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Timeline toggle ── */
+  document.querySelectorAll('.dp-tl-item').forEach(function (item) {
+    function toggle() {
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.dp-tl-item').forEach(function (i) {
+        i.classList.remove('open');
+        i.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        item.setAttribute('aria-expanded', 'true');
+      }
+    }
+    item.addEventListener('click', toggle);
+    item.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+
+  /* ── Accordion toggle ── */
+  document.querySelectorAll('.dp-acc-item').forEach(function (item) {
+    function toggle() {
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.dp-acc-item').forEach(function (i) { i.classList.remove('open'); });
+      if (!isOpen) item.classList.add('open');
+    }
+    item.addEventListener('click', toggle);
+    item.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
