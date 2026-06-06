@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="World Environment Day 2026 recap — Climate Limbo campaign, WMO's 91% probability of 1.5°C breach, 50@50 cities heat program, and what happened in Baku on June 5.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    /* ── SCOPE EVERYTHING to avoid polluting the WordPress theme ── */
+    .wed26 *,
+    .wed26 *::before,
+    .wed26 *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .wed26 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #1a1a2e;
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    .wed26 a { color: inherit; }
+
+    /* ════════════════════════════════════
+       SECTION 1 — SPLIT HEADER
+    ════════════════════════════════════ */
+    .wed26-header {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.22);
+      margin-bottom: 2.5rem;
+      min-height: 500px;
+    }
+    .wed26-himg {
+      position: relative;
+      overflow: hidden;
+    }
+    .wed26-himg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .wed26-img-foot {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.75), transparent);
+      padding: 1.25rem 1.5rem;
+    }
+    .wed26-category {
+      display: inline-block;
+      background: #2e7d32;
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      padding: .35rem .85rem;
+      border-radius: 20px;
+      margin-bottom: .6rem;
+    }
+    .wed26-img-caption {
+      color: rgba(255,255,255,.88);
+      font-size: .8rem;
+      font-style: italic;
+      line-height: 1.45;
+    }
+    .wed26-hcontent {
+      background: #0d1b2a;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .wed26-date-tag {
+      font-size: .75rem;
+      color: #81c784;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: .9rem;
+    }
+    .wed26-htitle {
+      font-size: clamp(1.55rem, 2.8vw, 2.2rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: .9rem;
+    }
+    .wed26-hsubtitle {
+      font-size: .95rem;
+      color: #b0bec5;
+      line-height: 1.65;
+      margin-bottom: 1.75rem;
+    }
+    .wed26-kpi-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .85rem;
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 1.5rem;
+    }
+    .wed26-kpi {
+      background: rgba(255,255,255,.07);
+      border-radius: 10px;
+      padding: .9rem .6rem;
+      text-align: center;
+    }
+    .wed26-kpi-val {
+      display: block;
+      font-size: 1.75rem;
+      font-weight: 900;
+      color: #81c784;
+      line-height: 1;
+    }
+    .wed26-kpi-lbl {
+      display: block;
+      font-size: .7rem;
+      color: #78909c;
+      margin-top: .3rem;
+      line-height: 1.3;
+    }
+
+    /* ════════════════════════════════════
+       SECTION 2 — STATS GRID
+    ════════════════════════════════════ */
+    .wed26-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.1rem;
+      margin-bottom: 2.5rem;
+    }
+    .wed26-scard {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.6rem 1.2rem;
+      text-align: center;
+      border-top: 4px solid #2e7d32;
+      box-shadow: 0 4px 20px rgba(0,0,0,.07);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .wed26-scard:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,.12); }
+    .wed26-scard:nth-child(2) { border-top-color: #d84315; }
+    .wed26-scard:nth-child(3) { border-top-color: #1565c0; }
+    .wed26-scard:nth-child(4) { border-top-color: #6a1b9a; }
+    .wed26-scard:nth-child(5) { border-top-color: #f57c00; }
+    .wed26-scard:nth-child(6) { border-top-color: #00838f; }
+    .wed26-sicon { font-size: 1.8rem; margin-bottom: .6rem; }
+    .wed26-snum {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #1b5e20;
+      line-height: 1;
+      margin-bottom: .35rem;
+    }
+    .wed26-scard:nth-child(2) .wed26-snum { color: #bf360c; }
+    .wed26-scard:nth-child(3) .wed26-snum { color: #0d47a1; }
+    .wed26-scard:nth-child(4) .wed26-snum { color: #4a148c; }
+    .wed26-scard:nth-child(5) .wed26-snum { color: #e65100; }
+    .wed26-scard:nth-child(6) .wed26-snum { color: #006064; }
+    .wed26-sdesc {
+      font-size: .8rem;
+      color: #546e7a;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* ════════════════════════════════════
+       SECTION 3 — CLIMATE LIMBO EXPLORER
+    ════════════════════════════════════ */
+    .wed26-limbo {
+      background: linear-gradient(135deg, #0d1b2a 0%, #1a3040 100%);
+      border-radius: 18px;
+      padding: 3rem 2rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .wed26-limbo::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(46,125,50,.18), transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .wed26-section-tag {
+      text-align: center;
+      font-size: .72rem;
+      color: #81c784;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: .5rem;
+    }
+    .wed26-section-h {
+      text-align: center;
+      font-size: clamp(1.3rem, 2.8vw, 2rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: .6rem;
+    }
+    .wed26-limbo .wed26-section-h { color: #fff; }
+    .wed26-section-sub {
+      text-align: center;
+      color: #b0bec5;
+      font-size: .9rem;
+      max-width: 580px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    /* Tab buttons */
+    .limbo-tabs {
+      display: flex;
+      gap: .5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .limbo-btn {
+      padding: .55rem 1.1rem;
+      border-radius: 25px;
+      border: 2px solid rgba(255,255,255,.18);
+      background: transparent;
+      color: #cfd8dc;
+      font-size: .85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .25s;
+      font-family: inherit;
+    }
+    .limbo-btn:hover { border-color: #81c784; color: #81c784; }
+    .limbo-btn[data-t="now"] { border-color: #64b5f6; color: #64b5f6; }
+    .limbo-btn[data-t="now"].active { background: #1565c0; border-color: #1565c0; color: #fff; }
+    .limbo-btn[data-t="1.5"] { border-color: #ffd54f; color: #ffd54f; }
+    .limbo-btn[data-t="1.5"].active { background: #f57f17; border-color: #f57f17; color: #fff; }
+    .limbo-btn[data-t="2"] { border-color: #ff7043; color: #ff7043; }
+    .limbo-btn[data-t="2"].active { background: #d84315; border-color: #d84315; color: #fff; }
+    .limbo-btn[data-t="3"] { border-color: #ef5350; color: #ef5350; }
+    .limbo-btn[data-t="3"].active { background: #b71c1c; border-color: #b71c1c; color: #fff; }
+
+    /* Display panel */
+    .limbo-panel {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 14px;
+      padding: 1.75rem;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .limbo-panel-head {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    .limbo-orb {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #fff;
+      flex-shrink: 0;
+      transition: background .5s;
+    }
+    .limbo-panel-info h3 { color: #fff; font-size: 1.15rem; font-weight: 700; margin-bottom: .25rem; }
+    .limbo-panel-info p { color: #90a4ae; font-size: .88rem; }
+    .limbo-impacts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+    }
+    .limbo-impact {
+      background: rgba(255,255,255,.06);
+      border-left: 3px solid #81c784;
+      border-radius: 8px;
+      padding: 1rem;
+      transition: border-color .4s;
+    }
+    .limbo-impact-ico { font-size: 1.4rem; margin-bottom: .4rem; }
+    .limbo-impact-ttl { color: #cfd8dc; font-weight: 700; font-size: .82rem; margin-bottom: .3rem; }
+    .limbo-impact-txt { color: #78909c; font-size: .8rem; line-height: 1.5; }
+
+    /* ════════════════════════════════════
+       SECTION 4 — WED HISTORY TIMELINE
+    ════════════════════════════════════ */
+    .wed26-timeline {
+      background: #f4f6f8;
+      border-radius: 18px;
+      padding: 3rem 2rem;
+      margin-bottom: 2.5rem;
+      overflow: hidden;
+    }
+    .wed26-timeline .wed26-section-h { color: #0d1b2a; }
+    .wed26-timeline .wed26-section-sub { color: #546e7a; }
+    .tl-scroll { overflow-x: auto; padding-bottom: .5rem; -webkit-overflow-scrolling: touch; }
+    .tl-track {
+      display: flex;
+      gap: 0;
+      min-width: max-content;
+      padding: 1.2rem 1rem 0.5rem;
+      position: relative;
+    }
+    .tl-track::before {
+      content: '';
+      position: absolute;
+      top: 42px;
+      left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, #2e7d32, #81c784, #a5d6a7);
+    }
+    .tl-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 160px;
+      cursor: pointer;
+    }
+    .tl-badge {
+      background: #2e7d32;
+      color: #fff;
+      font-weight: 800;
+      font-size: .78rem;
+      padding: .3rem .75rem;
+      border-radius: 18px;
+      margin-bottom: 8px;
+      transition: background .2s, transform .2s;
+      position: relative;
+      z-index: 1;
+    }
+    .tl-node:hover .tl-badge,
+    .tl-node.tl-active .tl-badge { background: #1b5e20; transform: scale(1.1); }
+    .tl-dot {
+      width: 16px; height: 16px;
+      border: 3px solid #2e7d32;
+      border-radius: 50%;
+      background: #fff;
+      position: relative;
+      z-index: 1;
+      transition: transform .2s, background .2s;
+      margin-bottom: 8px;
+    }
+    .tl-node:hover .tl-dot,
+    .tl-node.tl-active .tl-dot { background: #2e7d32; transform: scale(1.4); }
+    .tl-txt {
+      text-align: center;
+      font-size: .74rem;
+      color: #607d8b;
+      line-height: 1.4;
+      padding: 0 4px;
+      padding-top: 4px;
+    }
+    .tl-node.tl-active .tl-txt { color: #1b5e20; font-weight: 700; }
+    .tl-detail {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.4rem 1.6rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,.09);
+      border-left: 4px solid #2e7d32;
+      margin-top: 1.5rem;
+      min-height: 72px;
+      transition: opacity .3s;
+    }
+    .tl-detail-yr { font-weight: 800; color: #2e7d32; font-size: .95rem; margin-bottom: .35rem; }
+    .tl-detail-body { color: #37474f; font-size: .9rem; line-height: 1.65; }
+
+    /* ════════════════════════════════════
+       SECTION 5 — 50@50 CITIES MAP
+    ════════════════════════════════════ */
+    .wed26-map {
+      background: #fff;
+      border-radius: 18px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,.06);
+    }
+    .wed26-map .wed26-section-h { color: #0d1b2a; }
+    .wed26-map .wed26-section-sub { color: #546e7a; }
+    #wed26map {
+      width: 100%;
+      height: 360px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.11);
+      margin: 1.5rem 0 1rem;
+    }
+    .map-legend {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .map-legend-item {
+      display: flex;
+      align-items: center;
+      gap: .45rem;
+      font-size: .82rem;
+      color: #546e7a;
+    }
+    .map-dot {
+      width: 13px; height: 13px;
+      border-radius: 50%;
+    }
+
+    /* ════════════════════════════════════
+       SECTION 6 — GOOD NEWS PROGRESS
+    ════════════════════════════════════ */
+    .wed26-progress {
+      background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+      border-radius: 18px;
+      padding: 3rem 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .wed26-progress .wed26-section-h { color: #1b5e20; }
+    .wed26-progress .wed26-section-sub { color: #388e3c; }
+    .prog-grid {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .prog-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,.06);
+    }
+    .prog-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: .6rem;
+    }
+    .prog-label {
+      font-size: .88rem;
+      font-weight: 700;
+      color: #1b5e20;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .prog-pct { font-size: 1.05rem; font-weight: 800; color: #2e7d32; }
+    .prog-bg {
+      height: 9px;
+      background: #e8f5e9;
+      border-radius: 9px;
+      overflow: hidden;
+    }
+    .prog-fill {
+      height: 100%;
+      background: linear-gradient(to right, #2e7d32, #81c784);
+      border-radius: 9px;
+      width: 0;
+      transition: width 1.4s ease;
+    }
+    .prog-note { font-size: .75rem; color: #81c784; margin-top: .35rem; font-style: italic; }
+
+    /* ════════════════════════════════════
+       SECTION 7 — DEFENDERS CALLOUT
+    ════════════════════════════════════ */
+    .wed26-callout {
+      background: #1a237e;
+      border-radius: 14px;
+      padding: 2rem 2rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .callout-icon { font-size: 2.5rem; flex-shrink: 0; }
+    .callout-body h3 { color: #fff; font-size: 1.1rem; font-weight: 800; margin-bottom: .5rem; }
+    .callout-body p { color: #c5cae9; font-size: .88rem; line-height: 1.65; }
+    .callout-body a { color: #90caf9; }
+
+    /* ════════════════════════════════════
+       SECTION 8 — WHAT YOU CAN DO
+    ════════════════════════════════════ */
+    .wed26-actions {
+      background: #0d1b2a;
+      border-radius: 18px;
+      padding: 3rem 2rem;
+      margin-bottom: 2rem;
+    }
+    .act-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.1rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .act-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 12px;
+      padding: 1.4rem;
+      transition: background .25s, transform .25s;
+    }
+    .act-card:hover { background: rgba(46,125,50,.22); border-color: #81c784; transform: translateY(-3px); }
+    .act-ico { font-size: 1.9rem; margin-bottom: .65rem; }
+    .act-ttl { color: #81c784; font-weight: 700; font-size: .9rem; margin-bottom: .4rem; }
+    .act-txt { color: #78909c; font-size: .82rem; line-height: 1.6; }
+
+    /* ════════════════════════════════════
+       SOURCES FOOTER
+    ════════════════════════════════════ */
+    .wed26-sources {
+      background: #f4f6f8;
+      border-radius: 12px;
+      padding: 1.4rem 1.75rem;
+    }
+    .wed26-src-ttl {
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #546e7a;
+      margin-bottom: .8rem;
+    }
+    .wed26-src-links { display: flex; flex-wrap: wrap; gap: .45rem; }
+    .wed26-src-link {
+      font-size: .75rem;
+      color: #2e7d32;
+      text-decoration: none;
+      background: #fff;
+      border: 1px solid #c8e6c9;
+      padding: .28rem .65rem;
+      border-radius: 6px;
+      transition: all .2s;
+    }
+    .wed26-src-link:hover { background: #2e7d32; color: #fff; }
+
+    /* ════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════ */
+    @media (max-width: 780px) {
+      .wed26-header { grid-template-columns: 1fr; min-height: auto; }
+      .wed26-himg { height: 260px; }
+      .wed26-hcontent { padding: 1.75rem 1.4rem; }
+      .wed26-stats { grid-template-columns: 1fr 1fr 1fr; }
+      .wed26-limbo, .wed26-timeline, .wed26-map,
+      .wed26-progress, .wed26-actions { padding: 2rem 1.2rem; }
+      .limbo-impacts { grid-template-columns: 1fr 1fr; }
+      #wed26map { height: 280px; }
+      .wed26-callout { flex-direction: column; gap: .75rem; }
+      .act-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .wed26-stats { grid-template-columns: 1fr 1fr; }
+      .limbo-impacts { grid-template-columns: 1fr; }
+      .limbo-panel { padding: 1.25rem; }
+      .wed26-kpi-row { grid-template-columns: 1fr 1fr; }
+      .act-grid { grid-template-columns: 1fr; }
+      .wed26-limbo, .wed26-timeline, .wed26-map,
+      .wed26-progress, .wed26-actions, .wed26-sources { padding: 1.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     ★  WORDPRESS INTRO TEXT BLOCK (paste before this HTML block)
+
+World Environment Day 2026 took place on June 5 with the theme "Inspired by Nature. For Climate. For Our Future." — and the numbers around it were hard to ignore. The <a href="https://wmo.int/news/media-centre/new-report-suggests-more-global-temperature-records-ahead" rel="noopener" target="_blank">World Meteorological Organization</a> reported a 91% probability that at least one year between 2026 and 2030 will temporarily exceed the 1.5°C warming threshold above pre-industrial levels. The past eleven years have been the hottest eleven on record, a streak with no equivalent in the 176-year history of modern climate data.
+
+The official ceremony was held at the Heydar Aliyev Centre in Baku, Azerbaijan — the same city that hosted COP29 in 2024. UN Secretary-General António Guterres addressed the ceremony by video: "Every fraction of a degree brings greater harm — especially to the most vulnerable." Over 2,490 registered events took place on June 5 across every continent. The <a href="https://www.karmactive.com/gates-of-hell-opened-u-n-chiefs-dire-warning-on-climate-crisis/">UN's warnings have grown sharper year on year</a>, and this edition was no exception.
+
+The campaign hashtag was simple: #NowForClimate. What that looks like in practice — from a global dance challenge to 50 cities stress-testing their infrastructure against extreme heat — is explored in detail below.
+
+     ══════════════════════════════════════════════ -->
+
+
+<!-- ══════════════════════════════════════════════
+     ★  HTML BLOCK STARTS HERE
+     ══════════════════════════════════════════════ -->
+
+<div class="wed26">
+
+  <!-- ── SECTION 1: HEADER ── -->
+  <section class="wed26-header" aria-label="Article header">
+    <div class="wed26-himg">
+      <!--
+        FEATURE IMAGE
+        Recommended source: UNEP / worldenvironmentday.global
+        URL: https://www.worldenvironmentday.global/sites/default/files/2026-05/WED26_KeyVisual.jpg
+        Replace src below with the actual uploaded image URL from your WordPress media library.
+      -->
+      <img
+        src="https://www.worldenvironmentday.global/sites/default/files/2026-05/WED26_KeyVisual.jpg"
+        alt="World Environment Day 2026 official campaign visual — Inspired by Nature. For Climate. For Our Future. #NowForClimate"
+        title="World Environment Day 2026 — #NowForClimate, Hosted by Azerbaijan"
+        loading="eager"
+        onerror="this.style.background='#1b5e20';this.removeAttribute('src');"
+      >
+      <div class="wed26-img-foot">
+        <span class="wed26-category">World Environment Day 2026</span>
+        <p class="wed26-img-caption">
+          Eleven consecutive years of record heat, one campaign, one question: as the global temperature bar keeps dropping, can we go under it without the world breaking? — UNEP / worldenvironmentday.global
+        </p>
+      </div>
+    </div>
+    <div class="wed26-hcontent">
+      <span class="wed26-date-tag">📅 June 5, 2026 · Baku, Azerbaijan</span>
+      <h1 class="wed26-htitle">How Low Can We Go? The 1.5°C Warning, the Climate Limbo, and What Happened on June 5</h1>
+      <p class="wed26-hsubtitle">World Environment Day 2026 arrived with a 91% probability already on the clock — and 2,490 events across every continent asking the same question.</p>
+      <div class="wed26-kpi-row">
+        <div class="wed26-kpi">
+          <span class="wed26-kpi-val">91%</span>
+          <span class="wed26-kpi-lbl">Chance 1.5°C breached by 2030 (WMO)</span>
+        </div>
+        <div class="wed26-kpi">
+          <span class="wed26-kpi-val">11</span>
+          <span class="wed26-kpi-lbl">Consecutive hottest years on record</span>
+        </div>
+        <div class="wed26-kpi">
+          <span class="wed26-kpi-val">50+</span>
+          <span class="wed26-kpi-lbl">Cities joining UN heat adaptation</span>
+        </div>
+        <div class="wed26-kpi">
+          <span class="wed26-kpi-val">2,490</span>
+          <span class="wed26-kpi-lbl">Registered events worldwide</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 2: STATS GRID ── -->
+  <section class="wed26-stats" aria-label="Key climate statistics">
+    <div class="wed26-scard">
+      <div class="wed26-sicon">🌡️</div>
+      <div class="wed26-snum">1.44°C</div>
+      <div class="wed26-sdesc">Above pre-industrial levels in 2025 (WMO)</div>
+    </div>
+    <div class="wed26-scard">
+      <div class="wed26-sicon">☀️</div>
+      <div class="wed26-snum">489K</div>
+      <div class="wed26-sdesc">Heat-related deaths per year globally (WHO, 2000–2019)</div>
+    </div>
+    <div class="wed26-scard">
+      <div class="wed26-sicon">🏙️</div>
+      <div class="wed26-snum">185</div>
+      <div class="wed26-sdesc">Cities in UNEP's Beat the Heat initiative</div>
+    </div>
+    <div class="wed26-scard">
+      <div class="wed26-sicon">⚡</div>
+      <div class="wed26-snum">75%+</div>
+      <div class="wed26-sdesc">New global power capacity from renewables since 2020 (UNEP)</div>
+    </div>
+    <div class="wed26-scard">
+      <div class="wed26-sicon">🚗</div>
+      <div class="wed26-snum">25%</div>
+      <div class="wed26-sdesc">New global car sales that were electric in 2025 (UNEP)</div>
+    </div>
+    <div class="wed26-scard">
+      <div class="wed26-sicon">🌍</div>
+      <div class="wed26-snum">72</div>
+      <div class="wed26-sdesc">Nations endorsing the Global Cooling Pledge</div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 3: CLIMATE LIMBO EXPLORER ── -->
+  <section class="wed26-limbo" aria-label="Climate Limbo Temperature Explorer">
+    <div class="wed26-section-tag">Interactive Explorer</div>
+    <h2 class="wed26-section-h">How Low Can We Go? The Climate Limbo</h2>
+    <p class="wed26-section-sub">
+      UNEP's 2026 campaign uses the limbo dance as a metaphor: the planet's temperature "bar" keeps falling dangerously lower. Select a warming level to see what the science says at each threshold.
+    </p>
+
+    <div style="max-width:820px; margin:0 auto;">
+      <div class="limbo-tabs" role="tablist">
+        <button class="limbo-btn active" data-t="now" role="tab" aria-selected="true" onclick="showLimbo('now',this)">Now (~1.44°C)</button>
+        <button class="limbo-btn" data-t="1.5" role="tab" aria-selected="false" onclick="showLimbo('1.5',this)">1.5°C Target</button>
+        <button class="limbo-btn" data-t="2" role="tab" aria-selected="false" onclick="showLimbo('2',this)">2°C</button>
+        <button class="limbo-btn" data-t="3" role="tab" aria-selected="false" onclick="showLimbo('3',this)">3°C+</button>
+      </div>
+
+      <div class="limbo-panel" role="tabpanel">
+        <div class="limbo-panel-head">
+          <div class="limbo-orb" id="limboOrb" style="background:#1565c0;">Now</div>
+          <div class="limbo-panel-info">
+            <h3 id="limboPanelTitle">Where We Are: ~1.44°C (2025 recorded)</h3>
+            <p id="limboPanelSub">The WMO confirmed 2025 as the third warmest year on record. 2024 was the first calendar year above 1.5°C.</p>
+          </div>
+        </div>
+        <div class="limbo-impacts" id="limboImpacts">
+          <div class="limbo-impact">
+            <div class="limbo-impact-ico">🔥</div>
+            <div class="limbo-impact-ttl">Extreme Heat</div>
+            <div class="limbo-impact-txt">Europe's May 2026 heatwave — the earliest on record — killed people in France and the UK. Kew Gardens hit 34.8°C in May.</div>
+          </div>
+          <div class="limbo-impact">
+            <div class="limbo-impact-ico">🧊</div>
+            <div class="limbo-impact-ttl">Ice &amp; Glaciers</div>
+            <div class="limbo-impact-txt">Arctic sea ice hits record lows. The Southwest U.S. heatwave of early 2026 was called "one of the six most astonishing weather events of the century" by scientists.</div>
+          </div>
+          <div class="limbo-impact">
+            <div class="limbo-impact-ico">🐧</div>
+            <div class="limbo-impact-ttl">Species Loss</div>
+            <div class="limbo-impact-txt">IUCN classified emperor penguins and Antarctic fur seals as Endangered in 2026, directly linked to low sea-ice levels caused by warming.</div>
+          </div>
+          <div class="limbo-impact">
+            <div class="limbo-impact-ico">🌊</div>
+            <div class="limbo-impact-ttl">Coral Reefs</div>
+            <div class="limbo-impact-txt">70–90% of the world's coral reefs are projected to be gone at 1.5°C sustained warming. We are already inside that corridor.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 4: WED HISTORY TIMELINE ── -->
+  <section class="wed26-timeline" aria-label="World Environment Day history timeline">
+    <div class="wed26-section-tag">Since 1972</div>
+    <h2 class="wed26-section-h" style="color:#0d1b2a;">Five Decades of June 5</h2>
+    <p class="wed26-section-sub" style="color:#546e7a;">World Environment Day has been observed every year since 1973. Scroll through its key moments.</p>
+
+    <div class="tl-scroll">
+      <div class="tl-track" id="tlTrack">
+        <div class="tl-node tl-active" data-year="1972" data-detail="The UN Conference on the Human Environment in Stockholm established June 5 as World Environment Day and created UNEP. The founding theme: 'Only One Earth.'">
+          <div class="tl-badge">1972</div>
+          <div class="tl-dot"></div>
+          <div class="tl-txt">Stockholm Conference &amp; UNEP founded</div>
+        </div>
+        <div class="tl-node" data-year="1973" data-detail="First World Environment Day observed globally. Theme: 'Only One Earth.' The new UNEP secretariat in Nairobi, Kenya begins coordinating the annual event.">
+          <div class="tl-badge">1973</div>
+          <div class="tl-dot"></div>
+          <div class="tl-txt">First WED celebrated</div>
+        </div>
+        <div class="tl-node" data-year="1987" data-detail="The Montreal Protocol is signed — one of the most successful environmental treaties ever. World Environment Day campaigns on ozone depletion throughout the 1980s helped build the public pressure that made it possible.">
+          <div class="tl-badge">1987</div>
+          <div class="tl-dot"></div>
+          <div class="tl-txt">Montreal Protocol signed</div>
+        </div>
+        <div class="tl-node" data-year="1992" data-detail="The Rio Earth Summit builds on 20 years of WED advocacy. The Convention on Biological Diversity (CBD) and the UNFCCC are opened for signatures. These frameworks govern climate and biodiversity policy to this day.">
+          <div class="tl-badge">1992</div>
+          <div class="tl-dot"></div>
+          <div class="tl-txt">Rio Earth Summit</div>
+        </div>
+        <div class="tl-node" data-year="2015" data-detail="The Paris Agreement is adopted at COP21. It sets the 1.5°C and 2°C targets that now define all WED messaging. 196 parties eventually sign. World Environment Day campaigns become directly tied to these targets.">
+          <div class="tl-badge">2015</div>
+          <div class="tl-dot"></div>
+          <div class="tl-txt">Paris Agreement adopted</div>
+        </div>
+        <div class="tl-node" data-year="2022" data-detail="WED's 50th anniversary. Theme: 'Only One Earth' — reprised from 1972. Hosted by Sweden. Generated 48,540+ news articles in 166 countries in 54 languages. #WorldEnvironmentDay became the #1 trending term on Twitter globally.">
+          <div class="tl-badge">2022</div>
+          <div class="tl-dot"></div>
+          <div class="tl-txt">50th anniversary · Global #1 trend</div>
+        </div>
+        <div class="tl-node" data-year="2024" data-detail="2024 becomes the first calendar year on record to exceed 1.5°C above pre-industrial levels. WMO confirms it as the hottest single year in 176 years of records. WED 2024 was hosted by Saudi Arabia, focused on land restoration.">
+          <div class="tl-badge">2024</div>
+          <div class="tl-dot"></div>
+          <div class="tl-txt">First year above 1.5°C recorded</div>
+        </div>
+        <div class="tl-node" data-year="2025" data-detail="COP30 is held in Belém, Brazil. The Beat the Heat / Mutirão initiative launches, bringing 185 cities and 72 nations together on extreme heat adaptation. WED 2025 hosted by South Korea, theme: Ending Plastic Pollution.">
+          <div class="tl-badge">2025</div>
+          <div class="tl-dot"></div>
+          <div class="tl-txt">COP30 Belém · Beat the Heat launched</div>
+        </div>
+        <div class="tl-node" data-year="2026" data-detail="World Environment Day 2026 — hosted by Azerbaijan in Baku. Theme: 'Inspired by Nature. For Climate. For Our Future.' WMO announces 91% probability of 1.5°C annual breach before 2030. Climate Limbo dance challenge launched by UNEP and DJ Alok.">
+          <div class="tl-badge" style="background:#1b5e20;">2026</div>
+          <div class="tl-dot" style="border-color:#1b5e20;"></div>
+          <div class="tl-txt" style="color:#1b5e20;font-weight:700;">WED 2026 · Baku · Climate Limbo</div>
+        </div>
+        <div class="tl-node" data-year="2027" data-detail="Serbia confirmed as the host of World Environment Day 2027, to be held in Belgrade on June 5 — coinciding with Expo 2027 (theme: Play for Humanity). Serbian Minister Sara Pavkov accepted the role at the Baku ceremony.">
+          <div class="tl-badge" style="background:#607d8b;">2027</div>
+          <div class="tl-dot" style="border-color:#607d8b;"></div>
+          <div class="tl-txt">Serbia / Belgrade announced as host</div>
+        </div>
+      </div>
+    </div>
+    <div class="tl-detail" id="tlDetail">
+      <div class="tl-detail-yr" id="tlDetailYr">1972</div>
+      <div class="tl-detail-body" id="tlDetailBody">The UN Conference on the Human Environment in Stockholm established June 5 as World Environment Day and created UNEP. The founding theme: "Only One Earth."</div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 5: 50@50 CITIES MAP ── -->
+  <section class="wed26-map" aria-label="50@50 cities heat adaptation map">
+    <div class="wed26-section-tag">Heat Action</div>
+    <h2 class="wed26-section-h">50 Cities, One Mission: Beat 50°C Heat</h2>
+    <p class="wed26-section-sub" style="color:#546e7a;">
+      UNEP's 50@50 initiative, launched on Heat Action Day ahead of WED 2026, brings cities together to stress-test infrastructure against extreme heat — part of a broader Beat the Heat movement with 185 cities and 72 nations.
+    </p>
+    <div id="wed26map"></div>
+    <div class="map-legend">
+      <div class="map-legend-item"><div class="map-dot" style="background:#d84315;"></div>Named 50@50 city</div>
+      <div class="map-legend-item"><div class="map-dot" style="background:#1565c0;"></div>WED 2026 host city (Baku)</div>
+      <div class="map-legend-item"><div class="map-dot" style="background:#607d8b;"></div>WED 2027 host (Belgrade)</div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 6: GOOD NEWS PROGRESS BARS ── -->
+  <section class="wed26-progress" aria-label="Climate progress indicators">
+    <div class="wed26-section-tag">Signals of Progress</div>
+    <h2 class="wed26-section-h">Five Numbers That Cut Through the Noise</h2>
+    <p class="wed26-section-sub" style="color:#388e3c;">From UNEP's June 2026 brief "Cheaper. Cleaner. Unstoppable." — progress that often gets buried under alarm.</p>
+    <div class="prog-grid" id="progGrid">
+      <div class="prog-item">
+        <div class="prog-row">
+          <div class="prog-label">⚡ New power capacity from renewables (since 2020)</div>
+          <div class="prog-pct">75%+</div>
+        </div>
+        <div class="prog-bg"><div class="prog-fill" data-w="75"></div></div>
+        <div class="prog-note">Source: UNEP, June 2026</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-row">
+          <div class="prog-label">🚗 Share of new car sales that were EVs in 2025</div>
+          <div class="prog-pct">25%</div>
+        </div>
+        <div class="prog-bg"><div class="prog-fill" data-w="25"></div></div>
+        <div class="prog-note">Up from under 3% in 2019 — Source: UNEP</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-row">
+          <div class="prog-label">🌿 Nature-based solutions share of climate mitigation needed by 2050</div>
+          <div class="prog-pct">Up to 30%</div>
+        </div>
+        <div class="prog-bg"><div class="prog-fill" data-w="30"></div></div>
+        <div class="prog-note">Source: IPCC Special Report 1.5°C</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-row">
+          <div class="prog-label">🏙️ Nations endorsing Global Cooling Pledge</div>
+          <div class="prog-pct">72 nations</div>
+        </div>
+        <div class="prog-bg"><div class="prog-fill" data-w="37"></div></div>
+        <div class="prog-note">Committing to 68% reduction in cooling emissions by 2050</div>
+      </div>
+      <div class="prog-item">
+        <div class="prog-row">
+          <div class="prog-label">🌍 Cities in UNEP Beat the Heat initiative</div>
+          <div class="prog-pct">185 cities</div>
+        </div>
+        <div class="prog-bg"><div class="prog-fill" data-w="60"></div></div>
+        <div class="prog-note">Launched at COP30 Belém, Brazil</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 7: DEFENDERS CALLOUT ── -->
+  <div class="wed26-callout" role="complementary">
+    <div class="callout-icon">🛡️</div>
+    <div class="callout-body">
+      <h3>The Cost Paid by Environmental Defenders</h3>
+      <p>On June 4 — the day before World Environment Day — the UN's human rights office (<a href="https://news.un.org/en/story/2026/06/1167647" rel="noopener" target="_blank">OHCHR</a>) reported that <strong>nearly 600 environmental and land defenders had been killed or disappeared worldwide over the past three years</strong>, in at least 55 countries. In at least 55 countries, activists have been detained for their environmental work. Those numbers arrived the day before the world gathered to celebrate the planet.</p>
+    </div>
+  </div>
+
+  <!-- ── SECTION 8: WHAT YOU CAN DO ── -->
+  <section class="wed26-actions" aria-label="Climate action steps">
+    <div class="wed26-section-tag" style="color:#81c784;">#NowForClimate</div>
+    <h2 class="wed26-section-h">From Watching to Doing</h2>
+    <p class="wed26-section-sub">The Climate Limbo is a dance challenge — but beyond the trend, UNEP's #NowForClimate campaign names specific actions for individuals, cities, and governments.</p>
+    <div class="act-grid">
+      <div class="act-card">
+        <div class="act-ico">💃</div>
+        <div class="act-ttl">Join the Climate Dance Challenge</div>
+        <div class="act-txt">Film yourself doing the Climate Limbo to DJ Alok's "Deep Down," post with #NowForClimate, and tag @UNEP on TikTok, Instagram, or YouTube.</div>
+      </div>
+      <div class="act-card">
+        <div class="act-ico">🌱</div>
+        <div class="act-ttl">Cut Food Waste</div>
+        <div class="act-txt">Food systems account for ~30% of global greenhouse gas emissions (UNEP 2026). Roughly one-third of all food produced is wasted. Reducing waste at home is one of the highest-impact actions available to households.</div>
+      </div>
+      <div class="act-card">
+        <div class="act-ico">🏙️</div>
+        <div class="act-ttl">Demand Urban Heat Action</div>
+        <div class="act-txt">Ask your local government if they have a heat action plan. WHO's new Heat-Health Action Plans guidance launches June 11, 2026 — with an 8-element framework cities can follow.</div>
+      </div>
+      <div class="act-card">
+        <div class="act-ico">🌳</div>
+        <div class="act-ttl">Support Nature-Based Solutions</div>
+        <div class="act-txt">Mangroves store carbon at up to 18× the rate of typical forests. Peatlands hold over 30% of all soil-stored carbon on just 3% of land. Protecting these ecosystems can deliver up to 30% of the mitigation needed by 2050 (IPCC).</div>
+      </div>
+      <div class="act-card">
+        <div class="act-ico">⚡</div>
+        <div class="act-ttl">Switch Where You Can</div>
+        <div class="act-txt">Clean energy is now cheaper in most of the world than new fossil fuel capacity. In 2025, 1 in 4 new cars sold globally was electric. The economics of the energy transition have fundamentally shifted.</div>
+      </div>
+      <div class="act-card">
+        <div class="act-ico">📢</div>
+        <div class="act-ttl">Defend the Defenders</div>
+        <div class="act-txt">Nearly 600 environmental defenders have been killed or disappeared in 3 years. Supporting legal aid organizations and freedom-of-expression campaigns protects the people on the frontlines of climate protection.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SOURCES ── -->
+  <div class="wed26-sources">
+    <div class="wed26-src-ttl">Primary Sources</div>
+    <div class="wed26-src-links">
+      <a class="wed26-src-link" href="https://www.unep.org/news-and-stories/press-release/planet-swelters-world-environment-day-2026-focuses-urgent-climate" rel="noopener" target="_blank">UNEP — WED 2026 Press Release</a>
+      <a class="wed26-src-link" href="https://www.worldenvironmentday.global/2026/about/theme-and-host" rel="noopener" target="_blank">worldenvironmentday.global — Theme & Host</a>
+      <a class="wed26-src-link" href="https://wmo.int/news/media-centre/new-report-suggests-more-global-temperature-records-ahead" rel="noopener" target="_blank">WMO — 2026–2035 Decadal Forecast</a>
+      <a class="wed26-src-link" href="https://news.un.org/en/story/2026/01/1166758" rel="noopener" target="_blank">UN News — 11-year hottest streak</a>
+      <a class="wed26-src-link" href="https://news.un.org/en/story/2026/06/1167647" rel="noopener" target="_blank">OHCHR — Environmental Defenders Report</a>
+      <a class="wed26-src-link" href="https://www.unep.org/news-and-stories/press-release/50-cities-climate-action-avoiding-and-adapting-50degc-world" rel="noopener" target="_blank">UNEP — 50@50 Cities Press Release</a>
+      <a class="wed26-src-link" href="https://www.who.int/news-room/fact-sheets/detail/climate-change-heat-and-health" rel="noopener" target="_blank">WHO — Heat and Health Fact Sheet</a>
+      <a class="wed26-src-link" href="https://iucn.org/dg-statement/202606/iucn-director-generals-statement-world-environment-day-2026" rel="noopener" target="_blank">IUCN — Director General's WED Statement</a>
+      <a class="wed26-src-link" href="https://www.unep.org/news-and-stories/story/new-report-highlights-five-reasons-hope-climate-fight" rel="noopener" target="_blank">UNEP — "Cheaper. Cleaner. Unstoppable."</a>
+      <a class="wed26-src-link" href="https://cop30.br/en/news-about-cop30/cop30-presidency-and-unep-launch-implementation-phase-of-the-global-mutirao-against-extreme-heat" rel="noopener" target="_blank">COP30 — Beat the Heat Launch</a>
+      <a class="wed26-src-link" href="https://www.ipcc.ch/sr15/" rel="noopener" target="_blank">IPCC — Special Report 1.5°C</a>
+      <a class="wed26-src-link" href="https://www.who.int/europe/news/item/02-06-2026-strengthening-heat-health-action-plans-to-protect-public-health--with-who-guidance" rel="noopener" target="_blank">WHO Europe — Heat-Health Action Plans</a>
+      <a class="wed26-src-link" href="https://www.unep.org/news-and-stories/press-release/republic-serbia-host-world-environment-day-2027" rel="noopener" target="_blank">UNEP — Serbia WED 2027 Host</a>
+    </div>
+  </div>
+
+</div><!-- /.wed26 -->
+
+
+<!-- ══════════════════════════════════════════════
+     ★  WORDPRESS MIDDLE TEXT BLOCK (paste between this HTML block and any following content)
+
+The centerpiece of this year's campaign was the Climate Limbo — a global dance challenge set to Grammy-nominated Brazilian DJ Alok's global hit "Deep Down." Alok was recently designated a UNEP Goodwill Ambassador. The metaphor is direct: in the limbo dance, participants go under a bar that keeps getting lower. The planet's bar is 1.5°C, and the question the campaign asks is whether humanity can stay under it before it snaps.
+
+Celebrities including Jason Momoa, Indian actor and <a href="https://www.karmactive.com/climate-activism-is-good-for-health-dr-david-suzuki/">longtime environmental advocate</a> Dia Mirza, and Chinese singer Karry Wang joined under #NowForClimate. Mark Lee, formerly of K-pop group NCT, delivered his first solo performance since leaving the group — an acoustic, self-written song titled "Ready or Not," composed after visiting Kenya's Maasai Mara National Reserve — at the ceremony in Baku.
+
+Beyond the campaign, UNEP launched its 50@50 initiative: cities from Antalya to Lagos to Melbourne are stress-testing urban infrastructure against extreme heat, building on the <a href="https://www.karmactive.com/heatwaves-in-europe-confirm-climate-crisis/">Beat the Heat initiative launched at COP30</a> in Belém, which now counts 185 cities and 72 nations endorsing the Global Cooling Pledge — committing to reducing cooling-related emissions by 68% by 2050.
+
+WHO records 489,000 heat-related deaths per year globally between 2000 and 2019. The <a href="https://www.karmactive.com/climate-change-adds-30-days-of-extreme-heat-for-4-billion-people-doubling-heat-days-in-195-countries/">exposure to extreme heat is growing</a>. Europe's 2022 heatwave killed 61,672 people. In May 2026 — just days before WED — France confirmed heat-related deaths from Europe's earliest-recorded major heatwave of the modern era.
+
+     ══════════════════════════════════════════════ -->
+
+
+<!-- ══════════════════════════════════════════════
+     ★  WORDPRESS CONCLUSION TEXT BLOCK (paste as final text block)
+
+The WMO's forecast does not mean the Paris Agreement is already broken. The 1.5°C limit in that agreement refers to long-term warming averaged over roughly 20 years — not a single year's reading. The WMO has stated this clearly. What the 91% probability represents is a different signal: the planet is inside the danger corridor, and single-year temperatures will likely cross the line before 2030.
+
+The UNEP policy brief released June 3 — titled "Cheaper. Cleaner. Unstoppable." — documented that more than 75% of new power capacity added globally since 2020 has come from renewables, and that electric vehicles crossed 25% of new car sales in 2025, up from under 3% six years ago. <a href="https://www.karmactive.com/unep-report-2-6-3-1c-temperature-rise-looms-top-emitters-urged-to-act/">The gap between current trajectory and what's needed</a> remains wide — but the direction of the energy transition is no longer in doubt.
+
+Serbia will host World Environment Day 2027 in Belgrade, coinciding with Expo 2027. The June 5 observance has been held every year since 1973. What has changed, in the words of UNEP Executive Director Inger Andersen at Baku, is the urgency in the pen: "The story is not yet written, and the pen is in our hands."
+
+     ══════════════════════════════════════════════ -->
+
+
+<script>
+/* ── CLIMATE LIMBO EXPLORER ── */
+const limboData = {
+  now: {
+    color: "#1565c0",
+    label: "Now",
+    title: "Where We Are: ~1.44°C (2025 recorded)",
+    sub: "The WMO confirmed 2025 as the third warmest year on record. 2024 was the first calendar year above 1.5°C.",
+    borderColor: "#64b5f6",
+    impacts: [
+      { ico: "🔥", ttl: "Record Heatwaves", txt: "Europe's May 2026 heatwave was the earliest major one on record. Kew Gardens, UK hit 34.8°C — a new all-time May record. France confirmed heat-related deaths." },
+      { ico: "🧊", ttl: "Ice Loss Accelerating", txt: "Arctic sea ice hits record lows. The 2026 Southwest U.S. heatwave was described by scientists as 'one of the six most astonishing weather events of the century.'" },
+      { ico: "🐧", ttl: "Species at Risk", txt: "Emperor penguins and Antarctic fur seals classified Endangered in 2026 by IUCN, directly linked to low sea-ice caused by warming temperatures." },
+      { ico: "🌊", ttl: "Coral Under Stress", txt: "The world is inside the corridor where 70–90% of coral reefs are projected to be lost. Entire reef systems are already bleaching at record rates." }
+    ]
+  },
+  "1.5": {
+    color: "#f57f17",
+    label: "1.5°C",
+    title: "The Paris Target: 1.5°C",
+    sub: "The Paris Agreement's most ambitious target. A 91% probability exists that at least one year between 2026–2030 will temporarily cross this line (WMO, 2026).",
+    borderColor: "#ffd54f",
+    impacts: [
+      { ico: "🌿", ttl: "Coral Reefs", txt: "At 1.5°C sustained warming: 70–90% of coral reefs destroyed. These reefs support 25% of all marine life and protect coastlines for hundreds of millions of people." },
+      { ico: "🌊", ttl: "Sea Level Rise", txt: "Sea level rise of ~0.26–0.77m by 2100, enough to threaten major coastal cities and island nations. Storm surges become significantly more damaging." },
+      { ico: "🌡️", ttl: "Extreme Heat", txt: "An additional 14% of the world's population will be exposed to severe heat waves at least once every 5 years. Heat-related mortality rises sharply for those over 65." },
+      { ico: "🌾", ttl: "Food Systems", txt: "Yields of maize, rice, wheat, and other crops will decline in many regions. In West Africa, wheat yields could fall by up to 25% compared to pre-industrial conditions." }
+    ]
+  },
+  "2": {
+    color: "#d84315",
+    label: "2°C",
+    title: "The 2°C Scenario",
+    sub: "The upper limit under the Paris Agreement. Current national pledges, if fully implemented, point toward roughly 2.5–2.9°C.",
+    borderColor: "#ff7043",
+    impacts: [
+      { ico: "🪸", ttl: "Coral Reefs Lost", txt: "At 2°C: nearly 100% of coral reefs destroyed globally. The ecosystems that protect island coasts and feed fishing communities across the tropical world would be functionally gone." },
+      { ico: "☀️", ttl: "Heat Exposure", txt: "An additional 37% of the global population exposed to severe heatwaves at least once every 5 years. Cities in the tropics and subtropics become dangerous for outdoor work in summer." },
+      { ico: "🌊", ttl: "Sea Level", txt: "Sea level rise doubles compared to 1.5°C scenario. Arctic summer sea ice disappears roughly once per decade instead of once per century." },
+      { ico: "🐾", ttl: "Biodiversity Loss", txt: "Climate change overtakes land use as the leading threat to biodiversity by 2050. Insects — essential for pollination — lose over 18% of their habitat range." }
+    ]
+  },
+  "3": {
+    color: "#b71c1c",
+    label: "3°C+",
+    title: "3°C and Beyond: The Uncharted Zone",
+    sub: "Current global policies, without stronger action, are projected to lead to roughly 2.7°C or more. At 3°C, some impacts become self-reinforcing.",
+    borderColor: "#ef5350",
+    impacts: [
+      { ico: "🔄", ttl: "Tipping Points", txt: "Scientists warn that 3°C risks triggering cascading tipping points: collapse of the Amazon, melting of the Greenland ice sheet, and disruption of the Atlantic Ocean circulation (AMOC)." },
+      { ico: "💧", ttl: "Water Scarcity", txt: "75–250 million people in Africa face severe water scarcity. Freshwater systems across Central Asia and South America are severely disrupted. Food security deteriorates across the Global South." },
+      { ico: "🌪️", ttl: "Extreme Events", txt: "Category 5 hurricanes become more frequent. Megadroughts in the Mediterranean and western U.S. become the norm. Rainfall extremes intensify globally." },
+      { ico: "🏙️", ttl: "Human Systems", txt: "Coastal megacities including Mumbai, Shanghai, Miami, and Jakarta face existential flooding risk. Mass migration becomes a defining geopolitical force of the century." }
+    ]
+  }
+};
+
+function showLimbo(key, btn) {
+  const d = limboData[key];
+  // Update buttons
+  document.querySelectorAll('.limbo-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  // Update orb
+  const orb = document.getElementById('limboOrb');
+  orb.style.background = d.color;
+  orb.textContent = d.label;
+  // Update text
+  document.getElementById('limboPanelTitle').textContent = d.title;
+  document.getElementById('limboPanelSub').textContent = d.sub;
+  // Update impacts
+  const container = document.getElementById('limboImpacts');
+  container.innerHTML = d.impacts.map(i => `
+    <div class="limbo-impact" style="border-left-color:${d.color}">
+      <div class="limbo-impact-ico">${i.ico}</div>
+      <div class="limbo-impact-ttl">${i.ttl}</div>
+      <div class="limbo-impact-txt">${i.txt}</div>
+    </div>
+  `).join('');
+}
+
+/* ── TIMELINE ── */
+document.querySelectorAll('.tl-node').forEach(node => {
+  node.addEventListener('click', function() {
+    document.querySelectorAll('.tl-node').forEach(n => n.classList.remove('tl-active'));
+    this.classList.add('tl-active');
+    document.getElementById('tlDetailYr').textContent = this.dataset.year;
+    document.getElementById('tlDetailBody').textContent = this.dataset.detail;
+  });
+});
+
+/* ── PROGRESS BARS (IntersectionObserver) ── */
+function animateProgressBars() {
+  document.querySelectorAll('.prog-fill').forEach(bar => {
+    bar.style.width = bar.dataset.w + '%';
+  });
+}
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { animateProgressBars(); io.disconnect(); }
+    });
+  }, { threshold: 0.3 });
+  const pg = document.getElementById('progGrid');
+  if (pg) io.observe(pg);
+} else {
+  animateProgressBars();
+}
+
+/* ── LEAFLET MAP ── */
+window.addEventListener('load', function() {
+  if (typeof L === 'undefined') return;
+
+  var map = L.map('wed26map', { scrollWheelZoom: false }).setView([20, 15], 2);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 10,
+    attribution: '© <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  function makeIcon(color) {
+    return L.divIcon({
+      html: '<div style="background:' + color + ';width:14px;height:14px;border-radius:50%;border:2.5px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);"></div>',
+      iconSize: [14, 14], iconAnchor: [7, 7], className: ''
+    });
+  }
+
+  // Baku (WED 2026 host)
+  L.marker([40.4093, 49.8671], { icon: makeIcon('#1565c0') })
+    .addTo(map).bindPopup('<strong>Baku, Azerbaijan</strong><br>WED 2026 Official Host<br>Heydar Aliyev Centre');
+
+  // Belgrade (WED 2027 host)
+  L.marker([44.8176, 20.4569], { icon: makeIcon('#607d8b') })
+    .addTo(map).bindPopup('<strong>Belgrade, Serbia</strong><br>WED 2027 Host (announced)');
+
+  // Named 50@50 cities
+  var cities = [
+    [36.8969, 30.7133, "Antalya, Turkey", "50@50 City — UNEP Heat Adaptation"],
+    [6.5244, 3.3792, "Lagos, Nigeria", "50@50 City — UNEP Heat Adaptation"],
+    [-37.8136, 144.9631, "Melbourne, Australia", "50@50 City — UNEP Heat Adaptation"],
+    [-32.8908, -68.8272, "Mendoza, Argentina", "50@50 City — UNEP Heat Adaptation"],
+    [48.8566, 2.3522, "Paris, France", "50@50 City — UNEP & C40 Co-lead"],
+    [32.3940, 119.4130, "Yangzhou, China", "50@50 City — UNEP Heat Adaptation"]
+  ];
+
+  cities.forEach(function(c) {
+    L.marker([c[0], c[1]], { icon: makeIcon('#d84315') })
+      .addTo(map).bindPopup('<strong>' + c[2] + '</strong><br>' + c[3]);
+  });
+});
+</script>
+
+</body>
+</html>
