@@ -1,0 +1,1103 @@
+<!--
+  KARMACTIVE.COM — WordPress HTML Block
+  Article: FIFA World Cup 2026 — Sport's Most Polluting Event
+  Date: June 8, 2026
+  PASTE THIS ENTIRE BLOCK INTO A WORDPRESS CUSTOM HTML BLOCK
+  Replace YOUR_FEATURE_IMAGE_URL with the actual image URL
+-->
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<style>
+/* ============================================
+   WC26 SCOPED STYLES — All prefixed wc26-
+   ============================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+.wc26-wrap {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1a1a1a;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ── HEADER: Split-screen ── */
+.wc26-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  margin-bottom: 2.5rem;
+}
+
+.wc26-header-img {
+  position: relative;
+  overflow: hidden;
+  background: #0a3d20;
+}
+
+.wc26-header-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.85;
+}
+
+.wc26-img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.78rem;
+  padding: 2rem 1rem 0.85rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.wc26-header-content {
+  background: linear-gradient(160deg, #0a3d20 0%, #0d1b2a 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem 2rem;
+}
+
+.wc26-badge {
+  display: inline-block;
+  background: #f5a623;
+  color: #0d1b2a;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  margin-bottom: 1.2rem;
+  width: fit-content;
+}
+
+.wc26-main-title {
+  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.2;
+  margin: 0 0 1.2rem 0;
+}
+
+.wc26-header-stat {
+  background: rgba(245,166,35,0.15);
+  border-left: 4px solid #f5a623;
+  padding: 0.85rem 1rem;
+  border-radius: 0 8px 8px 0;
+  margin-top: 1rem;
+}
+
+.wc26-stat-big {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #f5a623;
+  line-height: 1;
+  display: block;
+}
+
+.wc26-stat-label {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.75);
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* ── SCOREBOARD ── */
+.wc26-scoreboard-wrap {
+  background: #0d1b2a;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+.wc26-sb-heading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.wc26-sb-heading h2 {
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 0.3rem 0;
+}
+
+.wc26-sb-heading p {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+}
+
+.wc26-scoreline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 1.2rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.wc26-team {
+  text-align: center;
+  flex: 1;
+}
+
+.wc26-team-name {
+  font-size: clamp(0.75rem, 1.8vw, 1rem);
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.wc26-team-score {
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1;
+  display: block;
+}
+
+.wc26-team-score.red { color: #dc2626; }
+.wc26-team-score.green { color: #22c55e; }
+
+.wc26-vs {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.3);
+  flex-shrink: 0;
+}
+
+/* Tabs */
+.wc26-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+  justify-content: center;
+}
+
+.wc26-tab-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.65);
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: all 0.25s ease;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.wc26-tab-btn:hover,
+.wc26-tab-btn.active {
+  background: #f5a623;
+  color: #0d1b2a;
+  border-color: #f5a623;
+}
+
+.wc26-tab-content {
+  display: none;
+  animation: wc26FadeIn 0.3s ease;
+}
+
+.wc26-tab-content.active { display: block; }
+
+@keyframes wc26FadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.wc26-tab-inner {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.wc26-tab-inner h3 {
+  color: #f5a623;
+  font-size: 1rem;
+  font-weight: 800;
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.wc26-stat-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.wc26-stat-box {
+  background: rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  flex: 1;
+  min-width: 130px;
+  border-top: 3px solid #f5a623;
+}
+
+.wc26-stat-box.red-top { border-top-color: #dc2626; }
+.wc26-stat-box.green-top { border-top-color: #22c55e; }
+.wc26-stat-box.blue-top { border-top-color: #3b82f6; }
+
+.wc26-stat-box .wc26-num {
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 900;
+  color: #fff;
+  display: block;
+  line-height: 1;
+}
+
+.wc26-stat-box .wc26-desc {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.55);
+  margin-top: 0.35rem;
+  line-height: 1.4;
+  display: block;
+}
+
+.wc26-progress-bar {
+  margin-top: 1rem;
+}
+
+.wc26-progress-bar p {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.55);
+  margin: 0 0 0.35rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wc26-prog-track {
+  background: rgba(255,255,255,0.1);
+  border-radius: 100px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.wc26-prog-fill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 1.2s ease;
+}
+
+/* ── CHARTS SECTION ── */
+.wc26-charts-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.wc26-chart-card {
+  background: #f8faf8;
+  border: 1px solid #e8f0e8;
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.wc26-chart-card h3 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #0a3d20;
+  margin: 0 0 0.35rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.wc26-chart-card p {
+  font-size: 0.78rem;
+  color: #5a7a5a;
+  margin: 0 0 1rem 0;
+}
+
+.wc26-chart-container {
+  position: relative;
+  height: 220px;
+}
+
+/* ── HOST CITIES ── */
+.wc26-cities-section {
+  background: linear-gradient(135deg, #0a3d20 0%, #0d1b2a 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.wc26-cities-section h2 {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: 0 0 1.2rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.wc26-cities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.85rem;
+}
+
+.wc26-city-card {
+  background: rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid #22c55e;
+  transition: background 0.2s;
+}
+
+.wc26-city-card.heat-risk { border-left-color: #dc2626; }
+.wc26-city-card.highest { border-left-color: #f5a623; }
+
+.wc26-city-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #fff;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.wc26-city-tag {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.55);
+  display: block;
+}
+
+.wc26-city-card.heat-risk .wc26-city-tag { color: #f87171; }
+.wc26-city-card.highest .wc26-city-tag { color: #f5a623; }
+
+/* ── FAN ACTION CARDS ── */
+.wc26-action-section {
+  margin-bottom: 2rem;
+}
+
+.wc26-action-section h2 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0a3d20;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 0.4rem 0;
+}
+
+.wc26-action-section > p {
+  font-size: 0.85rem;
+  color: #4a7a5a;
+  margin: 0 0 1.2rem 0;
+}
+
+.wc26-action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.wc26-action-card {
+  perspective: 1000px;
+  min-height: 160px;
+  cursor: pointer;
+}
+
+.wc26-action-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.wc26-action-card.flipped .wc26-action-inner {
+  transform: rotateY(180deg);
+}
+
+.wc26-action-front,
+.wc26-action-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wc26-action-front {
+  background: #0a3d20;
+  color: #fff;
+}
+
+.wc26-action-back {
+  background: #f5a623;
+  color: #0d1b2a;
+  transform: rotateY(180deg);
+}
+
+.wc26-action-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.wc26-action-front h4 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 0.35rem 0;
+}
+
+.wc26-action-front p {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.wc26-action-back h4 {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0d1b2a;
+  margin: 0 0 0.5rem 0;
+}
+
+.wc26-action-back p {
+  font-size: 0.8rem;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.wc26-tap-hint {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.4);
+  text-align: right;
+  display: block;
+}
+
+/* ── ARAMCO BANNER ── */
+.wc26-aramco-banner {
+  background: #1a0a0a;
+  border: 1px solid rgba(220,38,38,0.4);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.wc26-aramco-number {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.wc26-aramco-number .wc26-big {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  color: #dc2626;
+  display: block;
+  line-height: 1;
+}
+
+.wc26-aramco-number span:not(.wc26-big) {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.wc26-aramco-text h3 {
+  color: #f87171;
+  font-size: 1rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+}
+
+.wc26-aramco-text p {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.83rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .wc26-header {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    border-radius: 12px;
+  }
+  .wc26-header-img {
+    height: 220px;
+  }
+  .wc26-header-content {
+    padding: 1.5rem;
+  }
+  .wc26-charts-section {
+    grid-template-columns: 1fr;
+  }
+  .wc26-scoreline {
+    gap: 0.5rem;
+  }
+  .wc26-tabs {
+    gap: 0.4rem;
+  }
+  .wc26-tab-btn {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.72rem;
+    min-height: 40px;
+  }
+  .wc26-aramco-banner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .wc26-aramco-number {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .wc26-scoreboard-wrap { padding: 1.2rem; }
+  .wc26-stat-row { flex-direction: column; }
+  .wc26-action-grid { grid-template-columns: 1fr 1fr; }
+  .wc26-cities-grid { grid-template-columns: 1fr 1fr; }
+  .wc26-tab-inner { padding: 1rem; }
+}
+
+@media (max-width: 360px) {
+  .wc26-action-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="wc26-wrap">
+
+  <!-- ══ HEADER ══ -->
+  <header class="wc26-header">
+    <div class="wc26-header-img">
+      <img src="YOUR_FEATURE_IMAGE_URL"
+           alt="FIFA World Cup 2026 stadium crowd aerial view — each journey adds to the tournament's record carbon footprint"
+           loading="lazy">
+      <div class="wc26-img-caption">
+        With 104 matches across 16 cities and three countries, the scale of fan travel for the 2026 tournament has no precedent in football history — how many flights does passion justify?
+      </div>
+    </div>
+    <div class="wc26-header-content">
+      <span class="wc26-badge">Climate &amp; Sport · June 2026</span>
+      <h1 class="wc26-main-title">Sport's Biggest Party Has a Carbon Bill That's Hard to Ignore</h1>
+      <div class="wc26-header-stat">
+        <span class="wc26-stat-big">9M</span>
+        <span class="wc26-stat-label">tonnes of CO₂ equivalent projected — nearly double the historical average for any previous World Cup</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══ THE REAL SCOREBOARD ══ -->
+  <div class="wc26-scoreboard-wrap">
+    <div class="wc26-sb-heading">
+      <h2>⚽ The Real Scoreboard</h2>
+      <p>The match the cameras won't show you</p>
+    </div>
+
+    <div class="wc26-scoreline">
+      <div class="wc26-team">
+        <span class="wc26-team-name">FIFA 2026</span>
+        <span class="wc26-team-score red">9M</span>
+        <span style="font-size:0.68rem;color:rgba(255,255,255,0.4);display:block;margin-top:4px">Tonnes CO₂e</span>
+      </div>
+      <div class="wc26-vs">VS</div>
+      <div class="wc26-team">
+        <span class="wc26-team-name">Our Climate</span>
+        <span class="wc26-team-score green">1.5°C</span>
+        <span style="font-size:0.68rem;color:rgba(255,255,255,0.4);display:block;margin-top:4px">Target we cannot miss</span>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="wc26-tabs">
+      <button class="wc26-tab-btn active" onclick="wc26Tab('emissions', this)">📊 Emissions</button>
+      <button class="wc26-tab-btn" onclick="wc26Tab('travel', this)">✈️ Travel</button>
+      <button class="wc26-tab-btn" onclick="wc26Tab('aramco', this)">🛢️ Sponsorship</button>
+      <button class="wc26-tab-btn" onclick="wc26Tab('cities', this)">🏟️ Host Cities</button>
+    </div>
+
+    <!-- Tab: Emissions -->
+    <div id="wc26-tab-emissions" class="wc26-tab-content active">
+      <div class="wc26-tab-inner">
+        <h3>Projected Emissions — 2026 vs History</h3>
+        <div class="wc26-stat-row">
+          <div class="wc26-stat-box red-top">
+            <span class="wc26-num">9M</span>
+            <span class="wc26-desc">Tonnes CO₂e projected for 2026 (baseline estimate)</span>
+          </div>
+          <div class="wc26-stat-box">
+            <span class="wc26-num">15M</span>
+            <span class="wc26-desc">Tonnes in high-end scenario — dependent on final attendance</span>
+          </div>
+          <div class="wc26-stat-box green-top">
+            <span class="wc26-num">4.7M</span>
+            <span class="wc26-desc">Historical average across 2010–2022 tournaments</span>
+          </div>
+        </div>
+        <div class="wc26-progress-bar" style="margin-top:1.2rem">
+          <p><span>2026 vs. Historical Average</span><span>~92% above average</span></p>
+          <div class="wc26-prog-track">
+            <div class="wc26-prog-fill" style="width:92%;background:#dc2626"></div>
+          </div>
+          <p style="margin-top:0.5rem"><span>Tournament size increase (matches)</span><span>+63%</span></p>
+          <div class="wc26-prog-track">
+            <div class="wc26-prog-fill" style="width:63%;background:#f5a623"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Travel -->
+    <div id="wc26-tab-travel" class="wc26-tab-content">
+      <div class="wc26-tab-inner">
+        <h3>Where the Footprint Lives — Spectator Travel</h3>
+        <div class="wc26-stat-row">
+          <div class="wc26-stat-box red-top">
+            <span class="wc26-num">87%</span>
+            <span class="wc26-desc">Of total emissions from spectator travel alone</span>
+          </div>
+          <div class="wc26-stat-box red-top">
+            <span class="wc26-num">7.7M</span>
+            <span class="wc26-desc">Tonnes of CO₂ from air travel alone — could rise 160–325%</span>
+          </div>
+          <div class="wc26-stat-box green-top">
+            <span class="wc26-num">3.1%</span>
+            <span class="wc26-desc">From infrastructure — vs. Qatar 2022's 24.6%</span>
+          </div>
+        </div>
+        <div class="wc26-progress-bar" style="margin-top:1.2rem">
+          <p><span>Spectator Travel Share</span><span>87%</span></p>
+          <div class="wc26-prog-track">
+            <div class="wc26-prog-fill" style="width:87%;background:#dc2626"></div>
+          </div>
+          <p style="margin-top:0.5rem"><span>International fans share of travel emissions</span><span>74%</span></p>
+          <div class="wc26-prog-track">
+            <div class="wc26-prog-fill" style="width:74%;background:#f5a623"></div>
+          </div>
+          <p style="margin-top:0.5rem"><span>Infrastructure share of 2026 footprint</span><span>3.1%</span></p>
+          <div class="wc26-prog-track">
+            <div class="wc26-prog-fill" style="width:3.1%;background:#22c55e"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Aramco -->
+    <div id="wc26-tab-aramco" class="wc26-tab-content">
+      <div class="wc26-tab-inner">
+        <h3>The Sponsorship Nobody Is Counting</h3>
+        <div class="wc26-stat-row">
+          <div class="wc26-stat-box red-top">
+            <span class="wc26-num">30M</span>
+            <span class="wc26-desc">Additional tonnes CO₂e estimated from Aramco brand promotion effects — 3× the direct tournament footprint</span>
+          </div>
+          <div class="wc26-stat-box">
+            <span class="wc26-num">4%+</span>
+            <span class="wc26-desc">Of all historic global emissions attributed to Aramco, the world's largest corporate polluter</span>
+          </div>
+          <div class="wc26-stat-box blue-top">
+            <span class="wc26-num">130+</span>
+            <span class="wc26-desc">Professional female footballers who publicly opposed the Aramco deal</span>
+          </div>
+        </div>
+        <p style="margin-top:1rem;font-size:0.8rem;color:rgba(255,255,255,0.55);line-height:1.5">
+          A coalition of 21 doctors and scientists sent an open letter to FIFA calling fossil fuel sponsorship "a conflict of interest with the protection of player welfare." The deal is reportedly worth ~$100M per year and covers multiple FIFA tournaments.
+        </p>
+      </div>
+    </div>
+
+    <!-- Tab: Cities -->
+    <div id="wc26-tab-cities" class="wc26-tab-content">
+      <div class="wc26-tab-inner">
+        <h3>16 Cities. 3 Countries. Very Different Risks.</h3>
+        <div class="wc26-stat-row">
+          <div class="wc26-stat-box red-top">
+            <span class="wc26-num">6</span>
+            <span class="wc26-desc">Stadiums facing extreme heat stress — wet bulb temperatures above safe thresholds</span>
+          </div>
+          <div class="wc26-stat-box" style="border-top-color:#f5a623">
+            <span class="wc26-num">#1</span>
+            <span class="wc26-desc">Houston ranked highest environmental burden of all host cities in an Action Network study</span>
+          </div>
+          <div class="wc26-stat-box green-top">
+            <span class="wc26-num">2.6M lbs</span>
+            <span class="wc26-desc">Event-related waste projected to enter Houston's waste management system during the tournament</span>
+          </div>
+        </div>
+        <p style="margin-top:1rem;font-size:0.8rem;color:rgba(255,255,255,0.55);line-height:1.5">
+          Cities flagged for heat risk: Miami, Houston, Dallas, Atlanta — all hosting matches in June and July. Each sold-out match generates waste equivalent to filling approximately 16 refuse trucks.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CHARTS ══ -->
+  <div class="wc26-charts-section">
+    <div class="wc26-chart-card">
+      <h3>World Cup Carbon: 2010 → 2026</h3>
+      <p>Projected CO₂ equivalent in millions of tonnes</p>
+      <div class="wc26-chart-container">
+        <canvas id="wc26BarChart"></canvas>
+      </div>
+    </div>
+    <div class="wc26-chart-card">
+      <h3>2026 Emissions by Source</h3>
+      <p>Where the 9 million tonnes comes from</p>
+      <div class="wc26-chart-container">
+        <canvas id="wc26DonutChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ ARAMCO BANNER ══ -->
+  <div class="wc26-aramco-banner">
+    <div class="wc26-aramco-number">
+      <span class="wc26-big">30M</span>
+      <span>additional<br>tonnes CO₂e</span>
+    </div>
+    <div class="wc26-aramco-text">
+      <h3>The Number FIFA Isn't Counting</h3>
+      <p>Beyond the 9 million tonnes generated by the tournament itself, FIFA's commercial arrangement with Aramco — the world's largest corporate fossil fuel producer — is estimated by researchers to normalise demand for oil that could induce an additional 30 million tonnes of CO₂ equivalent. That is more than three times the direct tournament footprint, and it does not appear in any FIFA sustainability document. The Swiss advertising regulator rejected FIFA's "carbon neutral" claim for Qatar 2022. The pattern continues.</p>
+    </div>
+  </div>
+
+  <!-- ══ HOST CITIES QUICK VISUAL ══ -->
+  <div class="wc26-cities-section">
+    <h2>🏟️ 16 Cities — Not Equal Risk</h2>
+    <div class="wc26-cities-grid">
+      <div class="wc26-city-card highest">
+        <span class="wc26-city-name">Houston</span>
+        <span class="wc26-city-tag">⚠️ #1 Environmental Burden</span>
+      </div>
+      <div class="wc26-city-card heat-risk">
+        <span class="wc26-city-name">Miami</span>
+        <span class="wc26-city-tag">🌡️ Extreme Heat Risk</span>
+      </div>
+      <div class="wc26-city-card heat-risk">
+        <span class="wc26-city-name">Dallas</span>
+        <span class="wc26-city-tag">🌡️ Extreme Heat Risk</span>
+      </div>
+      <div class="wc26-city-card heat-risk">
+        <span class="wc26-city-name">Atlanta</span>
+        <span class="wc26-city-tag">🌡️ Extreme Heat Risk</span>
+      </div>
+      <div class="wc26-city-card">
+        <span class="wc26-city-name">New York</span>
+        <span class="wc26-city-tag">🏆 2026 Final Venue</span>
+      </div>
+      <div class="wc26-city-card">
+        <span class="wc26-city-name">Los Angeles</span>
+        <span class="wc26-city-tag">☀️ 100% Renewable target</span>
+      </div>
+      <div class="wc26-city-card">
+        <span class="wc26-city-name">Vancouver</span>
+        <span class="wc26-city-tag">🍁 Canada host city</span>
+      </div>
+      <div class="wc26-city-card">
+        <span class="wc26-city-name">Mexico City</span>
+        <span class="wc26-city-tag">🇲🇽 Azteca opens tournament</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FAN ACTION CARDS ══ -->
+  <div class="wc26-action-section">
+    <h2>What 87% Means for You</h2>
+    <p>Spectator travel drives the footprint. That means fans have real leverage. Tap each card for specifics.</p>
+    <div class="wc26-action-grid">
+
+      <div class="wc26-action-card" onclick="wc26Flip(this)" role="button" tabindex="0" aria-label="Train over plane tip">
+        <div class="wc26-action-inner">
+          <div class="wc26-action-front">
+            <div>
+              <span class="wc26-action-icon">🚂</span>
+              <h4>Train Over Plane</h4>
+              <p>Within North America, rail can replace domestic flights for many routes.</p>
+            </div>
+            <span class="wc26-tap-hint">Tap for details →</span>
+          </div>
+          <div class="wc26-action-back">
+            <h4>The Northeast Corridor</h4>
+            <p>Amtrak's Northeast Corridor connects Boston, New York, Philadelphia, and Washington D.C. — all 2026 host cities or nearby. Rail emits roughly 80% less CO₂ per passenger than a domestic flight on the same route.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wc26-action-card" onclick="wc26Flip(this)" role="button" tabindex="0" aria-label="Cluster your matches tip">
+        <div class="wc26-action-inner">
+          <div class="wc26-action-front">
+            <div>
+              <span class="wc26-action-icon">📍</span>
+              <h4>Cluster Your Matches</h4>
+              <p>Selecting games in geographically close cities cuts the travel distance dramatically.</p>
+            </div>
+            <span class="wc26-tap-hint">Tap for details →</span>
+          </div>
+          <div class="wc26-action-back">
+            <h4>Geographic Pairing</h4>
+            <p>Vancouver + Seattle area, New York + Boston, or Mexico City + Guadalajara are geographically compact combinations. Avoiding transcontinental multi-city itineraries is the single biggest lever for fans.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wc26-action-card" onclick="wc26Flip(this)" role="button" tabindex="0" aria-label="Carbon removal tip">
+        <div class="wc26-action-inner">
+          <div class="wc26-action-front">
+            <div>
+              <span class="wc26-action-icon">🌱</span>
+              <h4>Verified Removal</h4>
+              <p>Not all carbon programmes are equal. Removal differs from offsetting.</p>
+            </div>
+            <span class="wc26-tap-hint">Tap for details →</span>
+          </div>
+          <div class="wc26-action-back">
+            <h4>Removal, Not Offsets</h4>
+            <p>Carbon offset credits — particularly forestry-based ones — have faced widespread criticism for overestimated impact. Verified carbon dioxide removal (direct air capture, biochar, enhanced weathering) actually removes CO₂ already emitted. Look for providers certified under independent frameworks.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="wc26-action-card" onclick="wc26Flip(this)" role="button" tabindex="0" aria-label="Group travel tip">
+        <div class="wc26-action-inner">
+          <div class="wc26-action-front">
+            <div>
+              <span class="wc26-action-icon">👥</span>
+              <h4>Group Travel</h4>
+              <p>Sharing transport and accommodation divides your personal share of emissions.</p>
+            </div>
+            <span class="wc26-tap-hint">Tap for details →</span>
+          </div>
+          <div class="wc26-action-back">
+            <h4>Share the Load</h4>
+            <p>A hire car shared among four people produces roughly one-quarter of the per-person emissions versus solo driving. Shared accommodation concentrates the accommodation footprint. Organised supporters' coaches or rail group bookings are the most efficient ground options for large fan groups.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- end wc26-wrap -->
+
+<script>
+(function() {
+  // ── Tab switching ──
+  window.wc26Tab = function(id, btn) {
+    document.querySelectorAll('.wc26-tab-content').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    document.querySelectorAll('.wc26-tab-btn').forEach(function(b) {
+      b.classList.remove('active');
+    });
+    var target = document.getElementById('wc26-tab-' + id);
+    if (target) target.classList.add('active');
+    if (btn) btn.classList.add('active');
+  };
+
+  // ── Card flip ──
+  window.wc26Flip = function(card) {
+    card.classList.toggle('flipped');
+  };
+
+  // Keyboard support for flip cards
+  document.querySelectorAll('.wc26-action-card').forEach(function(card) {
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.classList.toggle('flipped');
+      }
+    });
+  });
+
+  // ── Charts (run after Chart.js loads) ──
+  function initCharts() {
+    if (typeof Chart === 'undefined') {
+      setTimeout(initCharts, 100);
+      return;
+    }
+
+    // Bar Chart — World Cup emissions comparison
+    var barCtx = document.getElementById('wc26BarChart');
+    if (barCtx) {
+      new Chart(barCtx.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: ['SA 2010', 'Brazil 2014', 'Russia 2018', 'Qatar 2022\n(reported)', 'USA/Can/Mex\n2026'],
+          datasets: [{
+            label: 'Millions of Tonnes CO₂e',
+            data: [2.7, 2.7, 2.8, 3.6, 9.0],
+            backgroundColor: [
+              'rgba(34,197,94,0.7)',
+              'rgba(34,197,94,0.7)',
+              'rgba(34,197,94,0.7)',
+              'rgba(245,166,35,0.8)',
+              'rgba(220,38,38,0.85)'
+            ],
+            borderColor: [
+              '#22c55e',
+              '#22c55e',
+              '#22c55e',
+              '#f5a623',
+              '#dc2626'
+            ],
+            borderWidth: 2,
+            borderRadius: 6
+          }, {
+            label: 'Historical Average (4.7M)',
+            data: [4.7, 4.7, 4.7, 4.7, 4.7],
+            type: 'line',
+            borderColor: 'rgba(255,255,255,0.4)',
+            borderDash: [6, 4],
+            borderWidth: 1.5,
+            pointRadius: 0,
+            fill: false,
+            tension: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              labels: { color: '#5a7a5a', font: { size: 11 }, boxWidth: 14 }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(ctx) {
+                  if (ctx.dataset.type === 'line') return 'Avg: 4.7M tonnes';
+                  return ctx.parsed.y + 'M tonnes CO₂e';
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              ticks: { color: '#5a7a5a', font: { size: 10 } },
+              grid: { display: false }
+            },
+            y: {
+              ticks: {
+                color: '#5a7a5a',
+                font: { size: 10 },
+                callback: function(v) { return v + 'M'; }
+              },
+              grid: { color: 'rgba(0,0,0,0.06)' },
+              beginAtZero: true,
+              max: 12
+            }
+          }
+        }
+      });
+    }
+
+    // Donut Chart — 2026 emissions breakdown
+    var donutCtx = document.getElementById('wc26DonutChart');
+    if (donutCtx) {
+      var donutChart = new Chart(donutCtx.getContext('2d'), {
+        type: 'doughnut',
+        data: {
+          labels: ['Spectator Travel', 'Accommodation', 'Infrastructure', 'Operations & Other'],
+          datasets: [{
+            data: [87, 7.9, 3.1, 2],
+            backgroundColor: [
+              '#dc2626',
+              '#f5a623',
+              '#22c55e',
+              '#3b82f6'
+            ],
+            borderWidth: 0,
+            hoverOffset: 8
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          cutout: '65%',
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: {
+                color: '#5a7a5a',
+                font: { size: 10 },
+                boxWidth: 12,
+                padding: 10
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: function(ctx) {
+                  return ctx.label + ': ' + ctx.parsed + '%';
+                }
+              }
+            }
+          }
+        },
+        plugins: [{
+          id: 'wc26CenterText',
+          afterDraw: function(chart) {
+            var ctx2 = chart.ctx;
+            var cx = chart.chartArea.left + (chart.chartArea.right - chart.chartArea.left) / 2;
+            var cy = chart.chartArea.top + (chart.chartArea.bottom - chart.chartArea.top) / 2;
+            ctx2.save();
+            ctx2.textAlign = 'center';
+            ctx2.textBaseline = 'middle';
+            ctx2.font = 'bold 22px sans-serif';
+            ctx2.fillStyle = '#0a3d20';
+            ctx2.fillText('9M', cx, cy - 10);
+            ctx2.font = '11px sans-serif';
+            ctx2.fillStyle = '#5a7a5a';
+            ctx2.fillText('tonnes', cx, cy + 10);
+            ctx2.restore();
+          }
+        }]
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCharts);
+  } else {
+    initCharts();
+  }
+})();
+</script>
