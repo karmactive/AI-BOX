@@ -1,0 +1,407 @@
+<!-- ============================================================
+     KARMACTIVE.COM — Interactive Article Block
+     Story: US Inflation Tops 4.2% — Gasoline Prices Up 40%
+     Published: June 10, 2026
+     Branch: claude/beautiful-brown-k7eb2j
+     NOTE: All CSS classes prefixed kgi26- to avoid theme conflicts
+     ============================================================ -->
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<style>
+.kgi26-wrapper *{box-sizing:border-box;margin:0;padding:0}
+.kgi26-wrapper{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#2c3e50;line-height:1.6;max-width:1100px;margin:0 auto;padding:0 1rem}
+
+/* HEADER */
+.kgi26-header{display:grid;grid-template-columns:1.5fr 1fr;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.18);margin-bottom:2.5rem}
+.kgi26-header-img-wrap{position:relative;overflow:hidden}
+.kgi26-feature-img{width:100%;height:100%;object-fit:cover;min-height:420px;display:block}
+.kgi26-img-cap{position:absolute;bottom:0;left:0;right:0;padding:.9rem 1.2rem;background:linear-gradient(to top,rgba(0,0,0,.75),transparent);color:rgba(255,255,255,.88);font-size:.78rem;font-style:italic;line-height:1.4}
+.kgi26-header-panel{background:linear-gradient(155deg,#1a1a2e 0%,#16213e 100%);padding:2rem 1.8rem;display:flex;flex-direction:column;justify-content:center;color:#fff}
+.kgi26-badge{display:inline-block;background:#d35400;color:#fff;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:.3rem .9rem;border-radius:20px;margin-bottom:1.1rem}
+.kgi26-h-title{font-size:clamp(1.2rem,2.3vw,1.75rem);font-weight:800;color:#ecf0f1;line-height:1.3;margin-bottom:1.4rem}
+.kgi26-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:1.3rem}
+.kgi26-stat{background:rgba(255,255,255,.08);border-radius:10px;padding:.9rem;border-left:3px solid #d35400;text-align:center}
+.kgi26-stat.g{border-left-color:#27ae60}
+.kgi26-stat-n{font-size:clamp(1.4rem,2.8vw,2rem);font-weight:900;color:#e74c3c;display:block;line-height:1}
+.kgi26-stat.g .kgi26-stat-n{color:#2ecc71}
+.kgi26-stat-l{font-size:.72rem;color:#bdc3c7;margin-top:.25rem;display:block}
+.kgi26-date-l{font-size:.78rem;color:#7f8c8d;text-align:center}
+
+/* SECTION SHARED */
+.kgi26-sec{margin:2rem 0;border-radius:16px;overflow:hidden}
+.kgi26-sh{font-size:clamp(1.1rem,2.2vw,1.5rem);font-weight:800;color:#2c3e50;margin-bottom:.3rem}
+.kgi26-ss{font-size:.88rem;color:#7f8c8d;margin-bottom:1.6rem}
+
+/* TIMELINE */
+.kgi26-tl-wrap{background:#fff8f3;padding:2rem 1.5rem;border-radius:16px;border:1px solid #fde8d8}
+.kgi26-tl-wrap .kgi26-sh{color:#2c3e50}
+.kgi26-tl{position:relative;padding:.5rem 0}
+.kgi26-tl::before{content:'';position:absolute;left:21px;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,#d35400,#c0392b);border-radius:3px}
+.kgi26-tli{display:flex;gap:1.1rem;margin-bottom:1.5rem;opacity:0;transform:translateX(-18px);transition:all .5s ease}
+.kgi26-tli.vis{opacity:1;transform:translateX(0)}
+.kgi26-dot{width:42px;height:42px;border-radius:50%;background:#d35400;border:3px solid #fff;box-shadow:0 0 0 3px #d35400;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;z-index:1}
+.kgi26-tc{background:#fff;border-radius:10px;padding:.9rem 1.1rem;box-shadow:0 2px 10px rgba(0,0,0,.08);flex:1;border-left:3px solid #d35400}
+.kgi26-td{font-size:.75rem;font-weight:700;color:#d35400;text-transform:uppercase;letter-spacing:.4px}
+.kgi26-tt{font-size:.95rem;font-weight:700;color:#2c3e50;margin:.2rem 0}
+.kgi26-tx{font-size:.85rem;color:#555;line-height:1.5}
+
+/* CHART */
+.kgi26-chart-wrap{background:linear-gradient(155deg,#1a1a2e 0%,#2c3e50 100%);padding:2rem 1.5rem;border-radius:16px;color:#fff}
+.kgi26-chart-wrap .kgi26-sh{color:#fff}
+.kgi26-chart-wrap .kgi26-ss{color:#95a5a6}
+.kgi26-bar-c{margin-bottom:.9rem}
+.kgi26-bar-lr{display:flex;justify-content:space-between;align-items:center;margin-bottom:.3rem}
+.kgi26-bn{font-size:.85rem;font-weight:600;color:#ecf0f1}
+.kgi26-bv{font-size:.85rem;font-weight:800;color:#e74c3c}
+.kgi26-bv.ok{color:#2ecc71}
+.kgi26-bt{background:rgba(255,255,255,.1);border-radius:4px;height:14px;overflow:hidden}
+.kgi26-bf{height:100%;border-radius:4px;width:0;transition:width 1.3s ease}
+.kgi26-bf.gas{background:linear-gradient(90deg,#e74c3c,#d35400)}
+.kgi26-bf.energy{background:linear-gradient(90deg,#e74c3c,#c0392b)}
+.kgi26-bf.food{background:linear-gradient(90deg,#e67e22,#f39c12)}
+.kgi26-bf.shelter{background:linear-gradient(90deg,#f1c40f,#e67e22)}
+.kgi26-bf.core{background:linear-gradient(90deg,#27ae60,#2ecc71)}
+.kgi26-cn{font-size:.78rem;color:#7f8c8d;margin-top:.9rem;border-top:1px solid rgba(255,255,255,.1);padding-top:.7rem}
+.kgi26-cn a{color:#7f8c8d}
+
+/* MAP */
+.kgi26-map-wrap{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.kgi26-map-head{background:linear-gradient(135deg,#1a1a2e,#2c3e50);color:#fff;padding:1.4rem 1.5rem}
+.kgi26-map-head h3{font-size:clamp(1rem,2vw,1.3rem);font-weight:800;margin-bottom:.3rem}
+.kgi26-map-head p{font-size:.82rem;color:#95a5a6;line-height:1.4}
+#kgi26map{width:100%;height:370px}
+.kgi26-map-leg{padding:.9rem 1.4rem;background:#f8f9fa;display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.83rem;color:#555;border-top:1px solid #e2e8f0}
+.kgi26-li{display:flex;align-items:center;gap:.45rem}
+.kgi26-ld{width:13px;height:13px;border-radius:50%}
+
+/* CALCULATOR */
+.kgi26-calc-wrap{background:#fff;border:2px solid #fde8d8;padding:2rem 1.5rem;border-radius:16px}
+.kgi26-calc-inputs{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin:1.4rem 0}
+.kgi26-ig label{display:block;font-size:.87rem;font-weight:700;color:#2c3e50;margin-bottom:.45rem}
+.kgi26-sv{color:#d35400;font-size:.95rem}
+.kgi26-range{width:100%;height:6px;border-radius:3px;background:#fde8d8;outline:none;-webkit-appearance:none;cursor:pointer}
+.kgi26-range::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:#d35400;cursor:pointer;box-shadow:0 2px 6px rgba(211,84,0,.4)}
+.kgi26-result{background:linear-gradient(135deg,#d35400,#c0392b);color:#fff;border-radius:12px;padding:1.5rem;text-align:center}
+.kgi26-ra{font-size:clamp(2.4rem,5vw,3.2rem);font-weight:900;line-height:1;margin-bottom:.25rem}
+.kgi26-rl{font-size:.88rem;opacity:.9;margin-bottom:.9rem}
+.kgi26-rb{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;font-size:.78rem;opacity:.82;border-top:1px solid rgba(255,255,255,.3);padding-top:.7rem}
+.kgi26-calc-note{font-size:.78rem;color:#95a5a6;margin-top:.9rem;text-align:center}
+
+/* EV COMPARISON */
+.kgi26-ev-wrap{background:#f0faf4;border:2px solid #a9dfbf;padding:2rem 1.5rem;border-radius:16px}
+.kgi26-ev-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:center;margin-top:1.4rem}
+.kgi26-fc{background:#fff;border-radius:12px;padding:1.4rem;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.09);border-top:4px solid #e74c3c}
+.kgi26-fc.ev{border-top-color:#27ae60}
+.kgi26-fi{font-size:2.2rem;margin-bottom:.4rem}
+.kgi26-ft{font-size:.78rem;font-weight:700;color:#7f8c8d;text-transform:uppercase;letter-spacing:.4px}
+.kgi26-fp{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:#e74c3c;line-height:1.1;margin:.25rem 0}
+.kgi26-fc.ev .kgi26-fp{color:#27ae60}
+.kgi26-fn{font-size:.78rem;color:#95a5a6}
+.kgi26-vs{background:#2c3e50;color:#fff;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;flex-shrink:0}
+.kgi26-sbar{background:#d5f5e3;border-radius:8px;padding:.9rem 1rem;text-align:center;margin-top:1rem;border:1px solid #a9dfbf;font-size:.88rem;line-height:1.5}
+.kgi26-sbar strong{color:#1e8449}
+.kgi26-sbar a{color:#1e8449;font-weight:600}
+
+/* OUTLOOK CARDS */
+.kgi26-out-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1rem;margin-top:1.4rem}
+.kgi26-oc{background:#fff;border-radius:12px;padding:1.1rem;box-shadow:0 4px 15px rgba(0,0,0,.07);border-top:4px solid #d35400;transition:transform .2s ease}
+.kgi26-oc:hover{transform:translateY(-4px)}
+.kgi26-oc:nth-child(2){border-top-color:#27ae60}
+.kgi26-oc:nth-child(3){border-top-color:#2980b9}
+.kgi26-oc:nth-child(4){border-top-color:#8e44ad}
+.kgi26-oi{font-size:1.6rem;margin-bottom:.4rem}
+.kgi26-ot{font-size:.87rem;font-weight:700;color:#2c3e50;margin-bottom:.35rem}
+.kgi26-ox{font-size:.8rem;color:#7f8c8d;line-height:1.5}
+
+/* MOBILE */
+@media(max-width:768px){
+  .kgi26-header{grid-template-columns:1fr}
+  .kgi26-feature-img{min-height:240px;height:240px}
+  .kgi26-calc-inputs{grid-template-columns:1fr}
+  .kgi26-ev-grid{grid-template-columns:1fr}
+  .kgi26-vs{display:none}
+  .kgi26-tl::before{left:18px}
+  .kgi26-dot{width:36px;height:36px;font-size:.85rem}
+  #kgi26map{height:270px}
+  .kgi26-out-grid{grid-template-columns:1fr}
+  .kgi26-map-leg{gap:.6rem}
+}
+@media(max-width:480px){
+  .kgi26-wrapper{padding:0 .5rem}
+  .kgi26-stats-grid{gap:.5rem}
+  .kgi26-stat{padding:.7rem}
+}
+</style>
+
+<div class="kgi26-wrapper">
+
+  <!-- ── HEADER ── -->
+  <div class="kgi26-header kgi26-sec">
+    <div class="kgi26-header-img-wrap">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Gas_prices_in_Goleta%2C_California.jpg/1280px-Gas_prices_in_Goleta%2C_California.jpg"
+        alt="Gas station price sign in the United States showing high fuel prices in 2026, driven by Strait of Hormuz closure from the Iran war"
+        title="High Gasoline Prices at US Gas Station 2026 — America's Inflation Hits 3-Year High"
+        class="kgi26-feature-img"
+        loading="lazy"
+      >
+      <div class="kgi26-img-cap">
+        Price boards like this one became routine sights across the U.S. in May 2026 — a 40% climb in gasoline costs over 12 months. The meter wasn't running on its own; a 33-kilometre chokepoint 8,000 miles away was turning the dial.
+      </div>
+    </div>
+    <div class="kgi26-header-panel">
+      <span class="kgi26-badge">Economy &amp; Energy</span>
+      <h2 class="kgi26-h-title">Gas Prices Are Up 40% — What America's May 2026 Inflation Report Means for Your Wallet</h2>
+      <div class="kgi26-stats-grid">
+        <div class="kgi26-stat">
+          <span class="kgi26-stat-n">4.2%</span>
+          <span class="kgi26-stat-l">CPI Year-over-Year<br>May 2026</span>
+        </div>
+        <div class="kgi26-stat">
+          <span class="kgi26-stat-n">+40.5%</span>
+          <span class="kgi26-stat-l">Gasoline Price<br>Year-over-Year</span>
+        </div>
+        <div class="kgi26-stat">
+          <span class="kgi26-stat-n">$4.48</span>
+          <span class="kgi26-stat-l">Avg. US Regular<br>Unleaded (May '26)</span>
+        </div>
+        <div class="kgi26-stat g">
+          <span class="kgi26-stat-n">2.9%</span>
+          <span class="kgi26-stat-l">Core CPI<br>(Ex-Food &amp; Energy)</span>
+        </div>
+      </div>
+      <div class="kgi26-date-l">📅 June 10, 2026 · U.S. Bureau of Labor Statistics</div>
+    </div>
+  </div>
+
+  <!-- ── TIMELINE ── -->
+  <div class="kgi26-tl-wrap kgi26-sec">
+    <h3 class="kgi26-sh">How a War Thousands of Miles Away Changed Your Gas Bill</h3>
+    <p class="kgi26-ss">Four events. One price spike. Follow the chain reaction.</p>
+    <div class="kgi26-tl" id="kgi26tl">
+      <div class="kgi26-tli">
+        <div class="kgi26-dot">⚔️</div>
+        <div class="kgi26-tc">
+          <div class="kgi26-td">Late February 2026</div>
+          <div class="kgi26-tt">Iran War Begins</div>
+          <div class="kgi26-tx">The U.S. and Israel launched military strikes against Iran. Global oil markets responded immediately — Brent crude surged 10–13% within days of the conflict starting.</div>
+        </div>
+      </div>
+      <div class="kgi26-tli">
+        <div class="kgi26-dot">🚢</div>
+        <div class="kgi26-tc">
+          <div class="kgi26-td">March 4, 2026</div>
+          <div class="kgi26-tt">Strait of Hormuz Closes</div>
+          <div class="kgi26-tx">The Strait of Hormuz — a 33-km-wide channel carrying 20% of all global oil trade — closed to tanker traffic. The International Energy Agency called the resulting shortfall "the largest supply disruption in the history of the global oil market." Production shortfalls reached 11.3 million barrels per day in May.</div>
+        </div>
+      </div>
+      <div class="kgi26-tli">
+        <div class="kgi26-dot">🛢️</div>
+        <div class="kgi26-tc">
+          <div class="kgi26-td">March – May 2026</div>
+          <div class="kgi26-tt">Oil Climbs Past $120/Barrel</div>
+          <div class="kgi26-tx">Brent crude surged past $120/barrel following the closure, before easing to around $105/barrel by June. U.S. average gas prices rose more than $1.50/gallon above pre-war levels, reaching $4.48–$4.60 per gallon nationally.</div>
+        </div>
+      </div>
+      <div class="kgi26-tli">
+        <div class="kgi26-dot">📊</div>
+        <div class="kgi26-tc">
+          <div class="kgi26-td">June 10, 2026</div>
+          <div class="kgi26-tt">BLS Confirms 4.2% Inflation</div>
+          <div class="kgi26-tx">The Bureau of Labor Statistics released the May 2026 Consumer Price Index: 4.2% year-over-year — the highest reading since May 2023. Energy accounted for more than 60% of the month's price increase. Gasoline alone was up 40.5% over the prior year.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── INFLATION CATEGORY CHART ── -->
+  <div class="kgi26-chart-wrap kgi26-sec">
+    <h3 class="kgi26-sh">Where Prices Are Rising — And Where They're Not</h3>
+    <p class="kgi26-ss">Year-over-year change, May 2026 CPI categories · Source: U.S. Bureau of Labor Statistics</p>
+    <div id="kgi26bars">
+      <div class="kgi26-bar-c">
+        <div class="kgi26-bar-lr"><span class="kgi26-bn">⛽ Gasoline</span><span class="kgi26-bv">+40.5%</span></div>
+        <div class="kgi26-bt"><div class="kgi26-bf gas" data-w="100"></div></div>
+      </div>
+      <div class="kgi26-bar-c">
+        <div class="kgi26-bar-lr"><span class="kgi26-bn">🔥 Energy Index (All)</span><span class="kgi26-bv">+23.5%</span></div>
+        <div class="kgi26-bt"><div class="kgi26-bf energy" data-w="58"></div></div>
+      </div>
+      <div class="kgi26-bar-c">
+        <div class="kgi26-bar-lr"><span class="kgi26-bn">🏠 Shelter</span><span class="kgi26-bv">+3.4%</span></div>
+        <div class="kgi26-bt"><div class="kgi26-bf shelter" data-w="8.4"></div></div>
+      </div>
+      <div class="kgi26-bar-c">
+        <div class="kgi26-bar-lr"><span class="kgi26-bn">🥦 Food</span><span class="kgi26-bv">+3.1%</span></div>
+        <div class="kgi26-bt"><div class="kgi26-bf food" data-w="7.7"></div></div>
+      </div>
+      <div class="kgi26-bar-c">
+        <div class="kgi26-bar-lr"><span class="kgi26-bn">📦 Core CPI (Excl. Food &amp; Energy)</span><span class="kgi26-bv ok">+2.9%</span></div>
+        <div class="kgi26-bt"><div class="kgi26-bf core" data-w="7.2"></div></div>
+      </div>
+    </div>
+    <div class="kgi26-cn">
+      <a href="https://www.bls.gov/cpi/" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics — Consumer Price Index</a> · Core CPI at 2.9% shows underlying price pressures remain relatively contained. The spike is concentrated in energy — which is also why it could ease faster if the Hormuz situation resolves.
+    </div>
+  </div>
+
+  <!-- ── MAP ── -->
+  <div class="kgi26-map-wrap kgi26-sec">
+    <div class="kgi26-map-head">
+      <h3>The Bottleneck That Started It All: The Strait of Hormuz</h3>
+      <p>A 33-km-wide channel between Iran and Oman carries 20% of the world's oil trade. Its effective closure in March 2026 set off the supply disruption now reflected in every gas receipt.</p>
+    </div>
+    <div id="kgi26map"></div>
+    <div class="kgi26-map-leg">
+      <div class="kgi26-li"><div class="kgi26-ld" style="background:#e74c3c"></div><span>Strait of Hormuz (Closure Point)</span></div>
+      <div class="kgi26-li"><div class="kgi26-ld" style="background:#f39c12"></div><span>Major Oil-Producing Region</span></div>
+      <div class="kgi26-li"><div class="kgi26-ld" style="background:#3498db"></div><span>Key Shipping Lane</span></div>
+    </div>
+  </div>
+
+  <!-- ── CALCULATOR ── -->
+  <div class="kgi26-calc-wrap kgi26-sec">
+    <h3 class="kgi26-sh">🧮 How Much More Are You Paying This Year?</h3>
+    <p class="kgi26-ss">Adjust the sliders below to estimate your extra fuel cost: May 2025 prices (~$3.19/gal) vs. May 2026 (~$4.48/gal)</p>
+    <div class="kgi26-calc-inputs">
+      <div class="kgi26-ig">
+        <label>Weekly Miles Driven: <span class="kgi26-sv" id="kgi26mv">250</span> miles</label>
+        <input type="range" min="50" max="800" value="250" class="kgi26-range" id="kgi26ms">
+      </div>
+      <div class="kgi26-ig">
+        <label>Vehicle Fuel Economy: <span class="kgi26-sv" id="kgi26gv">28</span> mpg</label>
+        <input type="range" min="10" max="60" value="28" class="kgi26-range" id="kgi26gs">
+      </div>
+    </div>
+    <div class="kgi26-result">
+      <div class="kgi26-ra" id="kgi26ra">$669</div>
+      <div class="kgi26-rl">extra spent on gas this year compared to last year (annualised)</div>
+      <div class="kgi26-rb">
+        <span>May '25 avg: ~$3.19/gal</span><span>|</span>
+        <span>May '26 avg: ~$4.48/gal</span><span>|</span>
+        <span id="kgi26gt">9 gal/week</span>
+      </div>
+    </div>
+    <p class="kgi26-calc-note">Based on BLS CPI data (gasoline +40.5% YoY). Estimates use national averages; actual costs vary by region and vehicle.</p>
+  </div>
+
+  <!-- ── EV COMPARISON ── -->
+  <div class="kgi26-ev-wrap kgi26-sec">
+    <h3 class="kgi26-sh">The Cost Gap That's Widening With Every Oil Shock</h3>
+    <p class="kgi26-ss">Electric vehicle drivers are largely insulated from this inflation spike. The per-mile fuel cost advantage of driving electric becomes most visible exactly when oil prices climb.</p>
+    <div class="kgi26-ev-grid">
+      <div class="kgi26-fc">
+        <div class="kgi26-fi">⛽</div>
+        <div class="kgi26-ft">Gasoline Vehicle</div>
+        <div class="kgi26-fp">$4.48</div>
+        <div class="kgi26-fn">per gallon · national avg, May 2026</div>
+      </div>
+      <div class="kgi26-vs">VS</div>
+      <div class="kgi26-fc ev">
+        <div class="kgi26-fi">⚡</div>
+        <div class="kgi26-ft">Electric Vehicle</div>
+        <div class="kgi26-fp">$1.67</div>
+        <div class="kgi26-fn">per gallon-equivalent · avg residential electricity</div>
+      </div>
+    </div>
+    <div class="kgi26-sbar">
+      <strong>EV drivers pay 63% less per mile for fuel.</strong> That gap widens every time oil prices climb — and narrows again only if gasoline prices fall back below ~$2.
+      <br><a href="https://www.karmactive.com/evs-vs-gas-guzzlers-epa-report-exposes-stark-auto-industry-reality/" target="_blank" rel="noopener">Read: EVs vs. Gas Guzzlers — The EPA's Full Cost Comparison →</a>
+    </div>
+  </div>
+
+  <!-- ── WHAT'S NEXT ── -->
+  <div class="kgi26-sec" style="padding:0">
+    <h3 class="kgi26-sh" style="padding:0 0 .3rem 0">What Comes Next</h3>
+    <p class="kgi26-ss">Key markers to watch in the weeks ahead</p>
+    <div class="kgi26-out-grid">
+      <div class="kgi26-oc">
+        <div class="kgi26-oi">⛽</div>
+        <div class="kgi26-ot">Federal Gas Tax Holiday</div>
+        <div class="kgi26-ox">A federal gas tax cut (–18.4¢/gal) runs June 1 through October 1, 2026, providing partial relief during peak summer driving season.</div>
+      </div>
+      <div class="kgi26-oc">
+        <div class="kgi26-oi">🏦</div>
+        <div class="kgi26-ot">FOMC Meeting: June 16–17</div>
+        <div class="kgi26-ox">New Federal Reserve Chair Kevin Warsh's first FOMC meeting. Updated economic projections will signal how the Fed intends to navigate energy-driven inflation. Current rate: 3.5%–3.75%.</div>
+      </div>
+      <div class="kgi26-oc">
+        <div class="kgi26-oi">🚢</div>
+        <div class="kgi26-ot">Hormuz: Gradual Reopening</div>
+        <div class="kgi26-ox">The EIA projects Strait of Hormuz flows beginning to resume gradually in Q3 2026. Full normalisation of trade patterns is not expected until early 2027.</div>
+      </div>
+      <div class="kgi26-oc">
+        <div class="kgi26-oi">📉</div>
+        <div class="kgi26-ot">May Likely the Peak</div>
+        <div class="kgi26-ox">Gas prices have already declined slightly in early June. Economists note May could represent the 2026 inflation peak for headline CPI, with a gradual easing expected as supply disruptions ease.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /kgi26-wrapper -->
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+  /* timeline animation */
+  var items=document.querySelectorAll('.kgi26-tli');
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e,i){
+      if(e.isIntersecting){setTimeout(function(){e.target.classList.add('vis')},i*160);io.unobserve(e.target)}
+    });
+  },{threshold:0.2});
+  items.forEach(function(el){io.observe(el)});
+
+  /* bar chart animation */
+  var bars=document.querySelectorAll('.kgi26-bf');
+  var bo=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        bars.forEach(function(b){b.style.width=b.getAttribute('data-w')+'%'});
+        bo.disconnect();
+      }
+    });
+  },{threshold:0.3});
+  var bc=document.getElementById('kgi26bars');
+  if(bc)bo.observe(bc);
+
+  /* calculator */
+  var ms=document.getElementById('kgi26ms');
+  var gs=document.getElementById('kgi26gs');
+  var mv=document.getElementById('kgi26mv');
+  var gv=document.getElementById('kgi26gv');
+  var ra=document.getElementById('kgi26ra');
+  var gt=document.getElementById('kgi26gt');
+  var NOW=4.48,PREV=3.19,DIFF=NOW-PREV;
+  function calc(){
+    var miles=parseInt(ms.value),mpg=parseInt(gs.value);
+    var gpw=miles/mpg,extra=gpw*DIFF*52;
+    mv.textContent=miles;gv.textContent=mpg;
+    ra.textContent='$'+Math.round(extra).toLocaleString();
+    gt.textContent=Math.round(gpw)+' gal/week';
+  }
+  if(ms&&gs){ms.addEventListener('input',calc);gs.addEventListener('input',calc);calc()}
+
+  /* Leaflet map */
+  function initMap(){
+    if(typeof L==='undefined'){setTimeout(initMap,400);return}
+    var el=document.getElementById('kgi26map');
+    if(!el)return;
+    var map=L.map('kgi26map',{center:[25.5,56.5],zoom:5,scrollWheelZoom:false});
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      maxZoom:10,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    function mkIcon(c,s){s=s||18;return L.divIcon({html:'<div style="background:'+c+';width:'+s+'px;height:'+s+'px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.4)"></div>',iconSize:[s,s],iconAnchor:[s/2,s/2]})}
+    L.marker([26.3,56.5],{icon:mkIcon('#e74c3c',22)}).addTo(map).bindPopup('<strong>Strait of Hormuz</strong><br>Closed March 4, 2026<br>20% of global oil trade passes here');
+    L.polyline([[26.5,55.8],[26.3,56.5],[25.9,57.2]],{color:'#e74c3c',weight:4,opacity:.8,dashArray:'10,5'}).addTo(map).bindPopup('<strong>Hormuz Shipping Channel</strong><br>Effectively closed since March 2026');
+    L.marker([24.7,46.7],{icon:mkIcon('#f39c12',16)}).addTo(map).bindPopup('<strong>Saudi Arabia</strong><br>World\'s largest oil exporter<br>Exports severely disrupted');
+    L.marker([23.4,53.8],{icon:mkIcon('#f39c12',16)}).addTo(map).bindPopup('<strong>United Arab Emirates</strong><br>Major oil producer<br>Hormuz-dependent exports');
+    L.marker([29.3,47.5],{icon:mkIcon('#f39c12',16)}).addTo(map).bindPopup('<strong>Kuwait</strong><br>Major Gulf oil producer');
+    L.marker([32.4,53.7],{icon:mkIcon('#f39c12',16)}).addTo(map).bindPopup('<strong>Iran</strong><br>Controls southern shore of Hormuz<br>Site of 2026 conflict');
+    L.marker([21.5,59.5],{icon:mkIcon('#3498db',14)}).addTo(map).bindPopup('<strong>Arabian Sea</strong><br>Oil tanker exit route<br>Towards Asia, Europe &amp; Americas');
+    L.marker([12.0,43.5],{icon:mkIcon('#3498db',14)}).addTo(map).bindPopup('<strong>Gulf of Aden</strong><br>Secondary route for diverted tankers');
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',initMap)}else{initMap()}
+})();
+</script>
