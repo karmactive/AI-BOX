@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A June 2026 UN University report puts hard numbers to AI's hidden environmental cost — water equal to 1.3 billion people's needs, 14,500 km² of land, and a broken trail of big-tech climate promises.">
+
+<style>
+/* =============================================
+   KARMACTIVE — AI ENVIRONMENTAL COST ARTICLE
+   All classes namespaced with "kac-" to prevent
+   conflicts with WordPress theme styles
+   ============================================= */
+*,*::before,*::after{box-sizing:border-box;}
+
+.kac-wrap{
+  font-family:'Georgia','Times New Roman',serif;
+  color:#1e293b;
+  line-height:1.7;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+/* ── HEADER: SPLIT MAGAZINE LAYOUT ────────── */
+.kac-header{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:72vh;
+}
+
+.kac-hero-img-side{
+  position:relative;
+  overflow:hidden;
+  min-height:300px;
+}
+
+.kac-hero-img-side img{
+  width:100%;height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.kac-hero-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(15,23,42,.25) 0%,rgba(22,101,52,.15) 100%);
+}
+
+.kac-hero-text-side{
+  background:#0f172a;
+  display:flex;align-items:center;
+  padding:3rem 2.5rem;
+}
+
+.kac-hero-inner{max-width:520px;}
+
+.kac-cat-pill{
+  display:inline-block;
+  padding:.35rem .9rem;
+  background:#22c55e;color:#0f172a;
+  font-family:sans-serif;font-size:.72rem;
+  font-weight:700;text-transform:uppercase;letter-spacing:1.5px;
+  border-radius:3px;margin-bottom:1.4rem;
+}
+
+.kac-h1{
+  font-size:clamp(1.75rem,3.2vw,2.75rem);
+  font-weight:900;color:#fff;
+  line-height:1.15;margin-bottom:1.1rem;
+}
+
+.kac-h1 em{
+  color:#22c55e;font-style:normal;
+}
+
+.kac-deck{
+  font-size:1rem;color:#94a3b8;
+  line-height:1.75;margin-bottom:1.8rem;
+}
+
+.kac-meta{
+  display:flex;flex-wrap:wrap;gap:1.2rem;
+  font-family:sans-serif;font-size:.82rem;color:#475569;
+  padding-top:1.2rem;border-top:1px solid #1e3a5f;
+}
+
+/* ── CAPTION BAR ────────────────────────── */
+.kac-caption{
+  background:#1e293b;
+  padding:.65rem 1.2rem;
+  font-family:sans-serif;font-size:.78rem;
+  color:#64748b;line-height:1.5;
+  border-left:3px solid #22c55e;
+}
+
+/* ── BODY TEXT AREA ─────────────────────── */
+.kac-body{
+  max-width:860px;margin:0 auto;
+  padding:2.8rem 1.5rem;
+}
+
+.kac-body p{
+  font-size:1.04rem;line-height:1.88;
+  color:#334155;margin-bottom:1.4rem;
+}
+
+.kac-body p:last-child{margin-bottom:0;}
+
+.kac-body a{
+  color:#16a34a;
+  text-decoration:underline;text-underline-offset:3px;
+  text-decoration-thickness:1px;
+}
+.kac-body a:hover{color:#15803d;}
+
+/* ── PULL QUOTE ─────────────────────────── */
+.kac-pullquote{
+  border-left:4px solid #22c55e;
+  background:#f0fdf4;
+  padding:1.4rem 1.8rem;
+  margin:2.2rem 0;
+  border-radius:0 8px 8px 0;
+}
+.kac-pullquote p{
+  font-size:1.15rem!important;
+  font-style:italic;color:#166534!important;
+  margin:0!important;line-height:1.65!important;
+}
+.kac-pullquote cite{
+  display:block;margin-top:.7rem;
+  font-size:.82rem;font-style:normal;
+  color:#4ade80;font-family:sans-serif;
+}
+
+/* ── DARK STATS BAND ────────────────────── */
+.kac-stats-band{
+  background:linear-gradient(135deg,#0f172a 0%,#0d2137 100%);
+  padding:2.5rem 1.5rem;
+}
+
+.kac-stats-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+  gap:1.2rem;max-width:860px;margin:0 auto;
+}
+
+.kac-stat-box{
+  text-align:center;padding:1.1rem .8rem;
+  border:1px solid rgba(34,197,94,.18);
+  border-radius:8px;
+  background:rgba(255,255,255,.04);
+}
+
+.kac-stat-num{
+  font-size:clamp(1.6rem,3.5vw,2.2rem);
+  font-weight:900;color:#22c55e;
+  line-height:1;margin-bottom:.35rem;
+  font-family:sans-serif;
+}
+
+.kac-stat-lbl{
+  font-family:sans-serif;font-size:.72rem;
+  color:#94a3b8;text-transform:uppercase;
+  letter-spacing:.5px;line-height:1.35;
+}
+
+/* ── INTERACTIVE CALCULATOR ─────────────── */
+.kac-calc{
+  background:#f8fafc;
+  border:1px solid #e2e8f0;
+  border-radius:12px;
+  padding:2.2rem 1.8rem;
+  margin:2.4rem 0;
+}
+
+.kac-calc-h{
+  font-family:sans-serif;font-size:1.3rem;
+  font-weight:700;color:#0f172a;
+  margin-bottom:.4rem;
+}
+
+.kac-calc-sub{
+  font-family:sans-serif;font-size:.9rem;
+  color:#64748b;margin-bottom:1.8rem;
+}
+
+.kac-sl-group{margin-bottom:1.6rem;}
+
+.kac-sl-lbl{
+  font-family:sans-serif;font-size:.88rem;
+  font-weight:600;color:#334155;
+  margin-bottom:.65rem;
+  display:flex;justify-content:space-between;align-items:center;
+}
+
+.kac-sl-count{
+  color:#22c55e;font-size:1.15rem;
+  font-weight:800;
+}
+
+input[type=range].kac-slider{
+  width:100%;height:6px;
+  -webkit-appearance:none;appearance:none;
+  background:#e2e8f0;border-radius:3px;outline:none;cursor:pointer;
+}
+input[type=range].kac-slider::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  width:22px;height:22px;border-radius:50%;
+  background:#22c55e;cursor:pointer;
+  box-shadow:0 2px 8px rgba(34,197,94,.4);
+}
+input[type=range].kac-slider::-moz-range-thumb{
+  width:22px;height:22px;border-radius:50%;
+  background:#22c55e;cursor:pointer;
+  border:none;box-shadow:0 2px 8px rgba(34,197,94,.4);
+}
+
+.kac-results{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:.85rem;margin-top:1.4rem;
+}
+
+.kac-res-card{
+  background:#fff;border-radius:10px;
+  padding:1rem .8rem;text-align:center;
+  border:2px solid #e2e8f0;
+  transition:border-color .25s,transform .2s;
+}
+.kac-res-card:hover{
+  border-color:#22c55e;
+  transform:translateY(-2px);
+}
+.kac-res-ico{font-size:1.6rem;margin-bottom:.4rem;}
+.kac-res-num{
+  font-family:sans-serif;font-size:1.2rem;
+  font-weight:800;color:#0f172a;
+  line-height:1;margin-bottom:.25rem;
+}
+.kac-res-unit{
+  font-family:sans-serif;font-size:.68rem;
+  color:#64748b;text-transform:uppercase;letter-spacing:.4px;
+}
+
+.kac-cmp-note{
+  margin-top:1.3rem;padding:.9rem 1rem;
+  background:#fff7ed;border-radius:8px;
+  border-left:4px solid #f97316;
+  font-family:sans-serif;font-size:.87rem;
+  color:#9a3412;line-height:1.5;
+}
+.kac-cmp-note strong{color:#7c2d12;}
+
+.kac-calc-src{
+  font-family:sans-serif;font-size:.72rem;
+  color:#94a3b8;margin-top:.9rem;margin-bottom:0;
+  line-height:1.45;
+}
+
+/* ── BIG TECH EMISSIONS BARS ─────────────── */
+.kac-bars-section{margin:2rem 0;}
+
+.kac-bars-h{
+  font-family:sans-serif;font-size:1.2rem;
+  font-weight:700;color:#0f172a;
+  margin-bottom:1.3rem;
+}
+
+.kac-bar-row{
+  display:flex;align-items:center;
+  gap:.9rem;margin-bottom:.8rem;
+}
+
+.kac-bar-name{
+  font-family:sans-serif;font-size:.82rem;
+  color:#334155;min-width:90px;flex-shrink:0;
+}
+
+.kac-bar-track{
+  flex:1;background:#f1f5f9;
+  border-radius:4px;height:26px;overflow:hidden;
+}
+
+.kac-bar-fill{
+  height:100%;border-radius:4px;
+  display:flex;align-items:center;
+  padding-left:.65rem;
+  font-family:sans-serif;font-size:.78rem;
+  font-weight:700;color:#fff;
+}
+
+.kac-bars-note{
+  font-family:sans-serif;font-size:.72rem;
+  color:#94a3b8;margin-top:.6rem;
+}
+
+/* ── TIMELINE ────────────────────────────── */
+.kac-timeline{margin:2rem 0;}
+
+.kac-tl-h{
+  font-family:sans-serif;font-size:1.2rem;
+  font-weight:700;color:#0f172a;margin-bottom:1.8rem;
+}
+
+.kac-tl-line{
+  position:relative;padding-left:60px;
+}
+
+.kac-tl-line::before{
+  content:'';position:absolute;
+  left:18px;top:0;bottom:0;
+  width:3px;
+  background:linear-gradient(to bottom,#22c55e,#0f172a);
+  border-radius:2px;
+}
+
+.kac-tl-item{
+  position:relative;margin-bottom:1.8rem;
+}
+
+.kac-tl-dot{
+  position:absolute;left:-46px;top:0;
+  width:34px;height:34px;border-radius:50%;
+  background:#0f172a;border:2.5px solid #22c55e;
+  display:flex;align-items:center;justify-content:center;
+  font-family:sans-serif;font-size:.63rem;
+  font-weight:700;color:#22c55e;text-align:center;
+  line-height:1.1;
+}
+
+.kac-tl-yr{
+  font-family:sans-serif;font-size:.75rem;
+  font-weight:700;color:#22c55e;
+  text-transform:uppercase;letter-spacing:1px;
+  margin-bottom:.25rem;
+}
+
+.kac-tl-txt{
+  font-family:sans-serif;font-size:.92rem;
+  color:#334155;line-height:1.55;
+}
+.kac-tl-txt strong{color:#0f172a;}
+.kac-tl-txt a{color:#16a34a;}
+
+/* ── SOLUTIONS BOX ───────────────────────── */
+.kac-solutions{
+  background:linear-gradient(135deg,#0f172a,#0d2a1a);
+  border-radius:12px;padding:2rem 1.8rem;
+  margin:2rem 0;
+}
+
+.kac-sol-h{
+  font-family:sans-serif;font-size:1.1rem;
+  font-weight:700;color:#22c55e;
+  margin-bottom:1.1rem;
+}
+
+.kac-sol-row{
+  display:flex;gap:.7rem;
+  margin-bottom:.9rem;align-items:flex-start;
+}
+
+.kac-sol-ico{font-size:1.1rem;flex-shrink:0;padding-top:.1rem;}
+
+.kac-sol-txt{
+  font-family:sans-serif;font-size:.875rem;
+  color:#cbd5e1;line-height:1.5;
+}
+.kac-sol-txt strong{color:#f0fdf4;}
+.kac-sol-txt a{color:#4ade80;}
+
+/* ── DIVIDER ─────────────────────────────── */
+.kac-divider{
+  height:1px;
+  background:linear-gradient(to right,transparent,#22c55e 40%,#22c55e 60%,transparent);
+  margin:2.4rem 0;
+}
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media(max-width:820px){
+  .kac-header{
+    grid-template-columns:1fr;min-height:auto;
+  }
+  .kac-hero-img-side{height:56vw;min-height:220px;}
+  .kac-hero-text-side{padding:2rem 1.5rem;}
+  .kac-results{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:560px){
+  .kac-body{padding:2rem 1rem;}
+  .kac-results{grid-template-columns:repeat(2,1fr);gap:.6rem;}
+  .kac-res-num{font-size:1rem;}
+  .kac-bar-name{min-width:70px;font-size:.75rem;}
+  .kac-stat-num{font-size:1.5rem;}
+  .kac-calc{padding:1.6rem 1.1rem;}
+  .kac-stats-band{padding:2rem 1rem;}
+  .kac-hero-text-side{padding:1.6rem 1.2rem;}
+  .kac-h1{font-size:1.6rem;}
+}
+</style>
+</head>
+<body>
+<div class="kac-wrap">
+
+<!-- ══════════════════════════════════════════
+     HEADER — SPLIT MAGAZINE LAYOUT
+     IMAGE: Wikimedia Commons CC BY 2.0
+     File: Datacenter_Server_Racks_(22370909788).jpg
+     Photographer: clender (Flickr) / CC BY 2.0
+     ══════════════════════════════════════════ -->
+<header class="kac-header">
+
+  <div class="kac-hero-img-side">
+    <!--
+      FEATURE IMAGE — Please upload to WordPress Media Library and replace the src below.
+      Source: https://commons.wikimedia.org/wiki/File:Datacenter_Server_Racks_(22370909788).jpg
+      License: CC BY 2.0 | Credit: clender / Flickr / Wikimedia Commons
+    -->
+    <img
+      src="https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/Datacenter_Server_Racks_(22370909788).jpg&width=1200"
+      alt="Rows of server racks inside an AI data center with cooling infrastructure, showing the electricity and water-intensive systems powering artificial intelligence globally"
+      title="AI Data Center Server Racks — The Hidden Environmental Cost of AI Infrastructure"
+      loading="eager"
+    >
+    <div class="kac-hero-img-overlay"></div>
+  </div>
+
+  <div class="kac-hero-text-side">
+    <div class="kac-hero-inner">
+      <span class="kac-cat-pill">Technology &amp; Environment</span>
+      <h1 class="kac-h1">Every AI Prompt Has a <em>Hidden Price.</em> The UN Just Added It Up.</h1>
+      <p class="kac-deck">A June 2026 United Nations University report puts hard numbers to what AI is quietly drawing from the planet — water, land, electricity, and a trail of broken climate pledges.</p>
+      <div class="kac-meta">
+        <span>🗓&nbsp;June 11, 2026</span>
+        <span>🌍&nbsp;Technology &amp; Climate</span>
+        <span>⏱&nbsp;5 min read</span>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+<!-- CAPTION -->
+<div class="kac-caption">
+  Server racks fill a modern AI data center — each drawing over 100 kW of power, with water-intensive cooling systems running around the clock. As AI workloads multiply, so does the draw on grids that still run partly on coal. What percentage of that bill does your daily AI habit carry?&nbsp;(Photo: clender / Flickr / Wikimedia Commons / CC&nbsp;BY&nbsp;2.0)
+</div>
+
+<!-- ── INTRO BODY TEXT ───────────────────── -->
+<div class="kac-body">
+  <p>You have probably used AI today — a search, a summary, a drafted email. What you did not see was the water drawn from a cooling tower somewhere, the electricity pulled from a grid still partially powered by fossil fuels, and the land now occupied by the infrastructure that produced your answer. In June 2026, timed to World Environment Day, the <a href="https://unu.edu/inweh/news/environmental-cost-of-AIs-Enrgy-use-carbon-water-and-land-footprints" target="_blank" rel="noopener">United Nations University Institute for Water, Environment and Health (UNU-INWEH)</a> published a report that converted this invisible cost into measurable figures — covering carbon, water, land, and waste together for the first time at scale.</p>
+
+  <p>Global data centers consumed 485 terawatt-hours of electricity in 2025, a <a href="https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions" target="_blank" rel="noopener">17% increase in a single year, according to the International Energy Agency</a>. By 2030, that figure is projected to reach 945–950 TWh annually — nearly triple the combined electricity use of Pakistan, Bangladesh, and Nigeria, three countries home to more than 650 million people. <a href="https://www.karmactive.com/wmo-sounds-alarm-global-co2-levels-hit-record-50-above-pre-industrial-era/" target="_blank">Carbon dioxide in the atmosphere is already at record levels</a>; AI infrastructure is now a significant and growing contributor to the demand that makes that harder to reverse.</p>
+</div>
+
+<!-- ── STATS BAND ────────────────────────── -->
+<div class="kac-stats-band">
+  <div class="kac-stats-grid">
+    <div class="kac-stat-box">
+      <div class="kac-stat-num">945 TWh</div>
+      <div class="kac-stat-lbl">AI data center electricity by 2030</div>
+    </div>
+    <div class="kac-stat-box">
+      <div class="kac-stat-num">9.3T L</div>
+      <div class="kac-stat-lbl">Projected water use by 2030</div>
+    </div>
+    <div class="kac-stat-box">
+      <div class="kac-stat-num">14,500 km²</div>
+      <div class="kac-stat-lbl">Land footprint by 2030</div>
+    </div>
+    <div class="kac-stat-box">
+      <div class="kac-stat-num">2.5M t</div>
+      <div class="kac-stat-lbl">E-waste generated annually by 2030</div>
+    </div>
+    <div class="kac-stat-box">
+      <div class="kac-stat-num">189M t</div>
+      <div class="kac-stat-lbl">CO₂ equivalent from data centers (annual)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MID BODY TEXT: WATER ANGLE ──────────── -->
+<div class="kac-body" style="padding-top:2.2rem;">
+  <p>Water is where the UNU report draws the sharpest lines. By 2030, AI-related water consumption is projected to equal the <strong>basic annual domestic water needs of all 1.3 billion people in Sub-Saharan Africa</strong> — 9.3 trillion liters. This includes water used directly in cooling towers, where heat is removed by evaporation, and the water used indirectly in the power plants that generate the electricity those cooling systems require. The two figures are often reported separately, and that gap in accounting is where most public misunderstandings take root.</p>
+
+  <p>At India's AI Impact Summit in February 2026, OpenAI CEO Sam Altman called water concerns around AI "fake," describing claims about per-query water use as "completely untrue, totally insane." <a href="https://www.karmactive.com/the-ai-paradox-empowering-and-threatening-the-workforce-simultaneously-sam-altman/" target="_blank">What Altman has consistently emphasized</a> is direct operational water use — a figure his team puts at around 0.3 milliliters per query. UC Riverside researchers calculated that generating a 100-word ChatGPT response consumes approximately 519 milliliters of water once electricity-generation water use is factored in. Both figures are technically accurate; they measure different parts of the same chain. The UNU report specifically argues that accounting for the full chain is what policy decisions require.</p>
+
+  <p>India faces this question with particular urgency. The country holds <a href="https://www.karmactive.com/water-scarcity-in-india/" target="_blank">18% of the world's population but only 4% of its freshwater</a>. A study prepared for NITI Aayog, the Indian government's policy research body, found that AI data centers in the country could consume up to 37.5 billion liters of water annually. India's Union Minister for Electronics and IT, Ashwini Vaishnaw, acknowledged at the same summit that "requirement of power and water is a major concern" for the country's AI infrastructure. Separately, research published by the <a href="https://asiasociety.org/policy-institute/new-paper-ai-ambitions-thirsty-region-water-data-centers-and-south-asias-digital-future" target="_blank" rel="noopener">Asia Society Policy Institute</a> warned of a pattern forming across South Asia: data center capacity being built in already water-stressed areas.</p>
+</div>
+
+<!-- ── INTERACTIVE CALCULATOR ─────────────── -->
+<div class="kac-body" style="padding-top:0;padding-bottom:0;">
+  <div class="kac-calc">
+    <h2 class="kac-calc-h">Your AI Day: What Does It Actually Cost?</h2>
+    <p class="kac-calc-sub">Adjust the slider to match your daily AI use and see the estimated water, energy, and yearly footprint — based on published research figures.</p>
+
+    <div class="kac-sl-group">
+      <div class="kac-sl-lbl">
+        <span>Daily AI text queries</span>
+        <span class="kac-sl-count" id="kac-qcount">10</span>
+      </div>
+      <input type="range" class="kac-slider" id="kac-slider" min="1" max="120" value="10" oninput="kacCalc()">
+    </div>
+
+    <div class="kac-results">
+      <div class="kac-res-card">
+        <div class="kac-res-ico">💧</div>
+        <div class="kac-res-num" id="kac-dwat">5.2 L</div>
+        <div class="kac-res-unit">Water today</div>
+      </div>
+      <div class="kac-res-card">
+        <div class="kac-res-ico">⚡</div>
+        <div class="kac-res-num" id="kac-deng">4.2 Wh</div>
+        <div class="kac-res-unit">Energy today</div>
+      </div>
+      <div class="kac-res-card">
+        <div class="kac-res-ico">📅</div>
+        <div class="kac-res-num" id="kac-ywat">1,898 L</div>
+        <div class="kac-res-unit">Water per year</div>
+      </div>
+      <div class="kac-res-card">
+        <div class="kac-res-ico">🔋</div>
+        <div class="kac-res-num" id="kac-yeng">1.53 kWh</div>
+        <div class="kac-res-unit">Energy per year</div>
+      </div>
+    </div>
+
+    <div class="kac-cmp-note" id="kac-cmp">
+      At <strong id="kac-c1">10 queries/day</strong>, your yearly AI water footprint equals
+      <strong id="kac-c2">roughly 7,592 drinking glasses</strong> — about
+      <strong id="kac-c3">2.6 days</strong> of average adult daily water consumption.
+    </div>
+
+    <p class="kac-calc-src">Estimates based on: 0.42 Wh/query (GPT-4o benchmark, peer-reviewed research); 519 ml water per 100-word response including electricity-generation water (UC Riverside). Actual figures vary by model, query length, and regional energy mix.</p>
+  </div>
+</div>
+
+<!-- ── BODY: CARBON, REBOUND, BIG TECH ─────── -->
+<div class="kac-body" style="padding-top:2.2rem;padding-bottom:0;">
+
+  <div class="kac-pullquote">
+    <p>"More efficient and affordable AI and energy mean more consumption of AI, making the overall footprint far bigger than what we save through efficiency gains."</p>
+    <cite>— Professor Kaveh Madani, co-author of the UNU-INWEH report; 2026 Stockholm Water Prize Laureate</cite>
+  </div>
+
+  <p>This is the rebound effect, and it dismantles one of the most common defences offered for AI's growing resource use. As models become cheaper, faster, and more accessible, usage increases — often faster than efficiency gains. The net demand on water, energy, and land grows even when each individual query becomes slightly leaner. <a href="https://www.karmactive.com/earths-ecosystems-on-the-brink-a-race-against-tipping-points/" target="_blank">As global ecosystems approach tipping points</a>, this pattern has consequences that extend well beyond any single technology.</p>
+
+  <p>The emissions data from the world's largest tech companies makes the trend concrete. Google's total greenhouse gas emissions have jumped nearly 50% since it made its clean energy pledge, according to Fortune's March 2026 analysis of company sustainability reports. Amazon's rose 33%, Microsoft's more than 23%, and Meta's more than 60%. Google now describes its 2030 zero-emissions target as a "moonshot." Microsoft calls the effort "a marathon, not a sprint." The <a href="https://www.karmactive.com/google-intersect-power-and-tpgs-20b-plan-to-meet-160-data-center-energy-demand-surge-by-2030/" target="_blank">scale of data center energy demand by 2030</a> has made even well-funded commitments difficult to maintain on the original timelines.</p>
+
+</div>
+
+<!-- ── BIG TECH EMISSIONS BAR CHART ──────── -->
+<div class="kac-body" style="padding-top:1rem;padding-bottom:0;">
+  <div class="kac-bars-section">
+    <h2 class="kac-bars-h">Big Tech Emissions Since Climate Pledges Were Made</h2>
+    <div class="kac-bar-row">
+      <span class="kac-bar-name">Meta</span>
+      <div class="kac-bar-track"><div class="kac-bar-fill" style="width:60%;background:#dc2626;">+60%</div></div>
+    </div>
+    <div class="kac-bar-row">
+      <span class="kac-bar-name">Google</span>
+      <div class="kac-bar-track"><div class="kac-bar-fill" style="width:50%;background:#ea580c;">+50%</div></div>
+    </div>
+    <div class="kac-bar-row">
+      <span class="kac-bar-name">Amazon</span>
+      <div class="kac-bar-track"><div class="kac-bar-fill" style="width:33%;background:#ca8a04;">+33%</div></div>
+    </div>
+    <div class="kac-bar-row">
+      <span class="kac-bar-name">Microsoft</span>
+      <div class="kac-bar-track"><div class="kac-bar-fill" style="width:23%;background:#3b82f6;">+23%</div></div>
+    </div>
+    <div class="kac-bar-row">
+      <span class="kac-bar-name">Target&nbsp;(all)</span>
+      <div class="kac-bar-track"><div class="kac-bar-fill" style="width:100%;background:#0f172a;">Net Zero (stated goal)</div></div>
+    </div>
+    <p class="kac-bars-note">Source: Fortune, March 2026 / Company sustainability disclosures</p>
+  </div>
+</div>
+
+<!-- ── BODY: BIOENERGY PARADOX + E-WASTE ──── -->
+<div class="kac-body" style="padding-top:1.8rem;padding-bottom:0;">
+  <p>One of the least-discussed dimensions of the UNU report is what it calls the bioenergy paradox — a trade-off that exposes the limits of treating carbon as the only measure of environmental cost. Switching a data center's electricity supply from coal to bioenergy cuts the carbon footprint by 70%. But it increases the water footprint more than 30-fold and the land footprint by a factor of 100. "Low-carbon" does not automatically mean "low-water" or "low-land." The report argues that governments and companies need to account for all three when evaluating infrastructure decisions — a standard that current voluntary reporting frameworks rarely require. <a href="https://www.karmactive.com/driving-green-with-evs-a-deep-dive-into-carbon-emissions/" target="_blank">Carbon accounting, even when done well</a>, captures only part of the environmental picture.</p>
+
+  <p>AI infrastructure also generates a physical residue that scales with deployment. Server chips, circuit boards, cooling hardware, and battery backup systems have limited lifespans and are rarely recycled at the rates required to offset what's being produced. The UNU report projects AI-related electronic waste at up to 2.5 million tonnes annually by 2030. Indonesia, which recorded 170 operational data centers as of April 2026 and is on a rapid expansion path, is among the countries watching this problem accumulate fastest. Two-thirds of the 809 planned US AI data center projects are located in areas already classified as experiencing water stress, according to analysis cited in Tom's Hardware — meaning the resource draw and the scarcity are converging in the same geographies.</p>
+</div>
+
+<!-- ── TIMELINE ───────────────────────────── -->
+<div class="kac-body" style="padding-top:1.8rem;padding-bottom:0;">
+  <div class="kac-timeline">
+    <h2 class="kac-tl-h">AI's Growing Environmental Footprint: Key Moments</h2>
+    <div class="kac-tl-line">
+
+      <div class="kac-tl-item">
+        <div class="kac-tl-dot">2020<br>–22</div>
+        <div>
+          <div class="kac-tl-yr">2020 – 2022</div>
+          <div class="kac-tl-txt"><strong>Climate pledges made.</strong> Google, Microsoft, Amazon, and Meta each set net-zero or clean energy targets. Global data center electricity consumption: approximately 200 TWh.</div>
+        </div>
+      </div>
+
+      <div class="kac-tl-item">
+        <div class="kac-tl-dot">2022<br>–23</div>
+        <div>
+          <div class="kac-tl-yr">Late 2022 – 2023</div>
+          <div class="kac-tl-txt"><strong>ChatGPT enters mainstream.</strong> AI demand begins accelerating. <a href="https://www.karmactive.com/regretting-his-lifes-work-ai-pioneer-geoffrey-hinton-warns-of-global-ai-race/" target="_blank">Geoffrey Hinton, a key architect of modern AI, leaves Google and publicly warns about the risks of the global AI race</a>. Data centers account for around 1–2% of global electricity.</div>
+        </div>
+      </div>
+
+      <div class="kac-tl-item">
+        <div class="kac-tl-dot">2024</div>
+        <div>
+          <div class="kac-tl-yr">2024</div>
+          <div class="kac-tl-txt"><strong>Tech emissions rise despite pledges.</strong> Data centers account for 4.6% of US electricity. UC Riverside publishes water-per-query research. Google's emissions are up nearly 50% from its pledge baseline. Two-thirds of planned US AI data center projects are in drought-prone zones.</div>
+        </div>
+      </div>
+
+      <div class="kac-tl-item">
+        <div class="kac-tl-dot">2025</div>
+        <div>
+          <div class="kac-tl-yr">2025</div>
+          <div class="kac-tl-txt"><strong>IEA records 17% surge in a single year.</strong> Global data center electricity reaches 485 TWh. AI-specific workloads grow three times faster than overall data center demand. Indonesia's data center count reaches 170 and continues rising.</div>
+        </div>
+      </div>
+
+      <div class="kac-tl-item">
+        <div class="kac-tl-dot">Feb<br>2026</div>
+        <div>
+          <div class="kac-tl-yr">February 2026</div>
+          <div class="kac-tl-txt"><strong>India AI Impact Summit.</strong> Sam Altman calls water concerns "fake." India's IT Minister Ashwini Vaishnaw acknowledges power and water as "a major concern." NITI Aayog research puts India's annual data center water demand at up to 37.5 billion liters.</div>
+        </div>
+      </div>
+
+      <div class="kac-tl-item">
+        <div class="kac-tl-dot">Jun<br>2026</div>
+        <div>
+          <div class="kac-tl-yr">June 2026 — World Environment Day</div>
+          <div class="kac-tl-txt"><strong>UNU-INWEH publishes full environmental cost analysis.</strong> Water footprint equivalent to 1.3 billion people's annual needs by 2030. Land footprint: 14,500 km². E-waste: 2.5 million tonnes/year. Report calls for a transparent, equitable "responsible AI ecosystem" framework.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── SOLUTIONS ──────────────────────────── -->
+<div class="kac-body" style="padding-top:1.8rem;padding-bottom:0;">
+  <div class="kac-solutions">
+    <div class="kac-sol-h">What Responsible AI Infrastructure Looks Like</div>
+
+    <div class="kac-sol-row">
+      <span class="kac-sol-ico">🌊</span>
+      <div class="kac-sol-txt"><strong>Immersion cooling</strong> — servers submerged in non-conductive dielectric fluid rather than cooled by evaporating water. Reduces water consumption by up to 70%. Being deployed in select hyperscale facilities.</div>
+    </div>
+
+    <div class="kac-sol-row">
+      <span class="kac-sol-ico">♻️</span>
+      <div class="kac-sol-txt"><strong>Data-water symbiosis</strong> — pairing data centers with municipal wastewater treatment plants for cooling. Modelled annual savings: 84 million tonnes of CO₂ and 1,300 million cubic meters of freshwater, with net cost savings of approximately US$95 billion.</div>
+    </div>
+
+    <div class="kac-sol-row">
+      <span class="kac-sol-ico">🌡️</span>
+      <div class="kac-sol-txt"><strong>Waste heat recovery</strong> — a <a href="https://environment.ec.europa.eu/news/ai-data-centre-waste-heat-could-be-used-water-purification-and-carbon-capture-2026-03-30_en" target="_blank" rel="noopener">March 2026 European Commission analysis</a> found data center waste heat can power water purification and carbon capture systems. <a href="https://www.karmactive.com/googles-data-center-heat-recovery-to-warm-80-of-finnish-homes-by-2025/" target="_blank">Google already channels data center heat to warm homes in Finland.</a></div>
+    </div>
+
+    <div class="kac-sol-row">
+      <span class="kac-sol-ico">☀️</span>
+      <div class="kac-sol-txt"><strong>Solar and wind-powered operations</strong> — carry zero operational water footprint. The <a href="https://www.energy.gov/oe/clean-energy-resources-meet-data-center-electricity-demand" target="_blank" rel="noopener" style="color:#4ade80;">US Department of Energy</a> has outlined pathways for meeting data center demand entirely through clean sources.</div>
+    </div>
+
+    <div class="kac-sol-row">
+      <span class="kac-sol-ico">📋</span>
+      <div class="kac-sol-txt"><strong>Mandatory disclosure</strong> — the UNU report recommends governments require AI companies to report water, land, and carbon footprints as a condition of operating. Most companies currently report carbon voluntarily and water rarely.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONCLUSION TEXT ───────────────────── -->
+<div class="kac-body">
+  <div class="kac-divider"></div>
+
+  <p>For most of the past decade, the environmental conversation about technology centered on devices — the carbon in a phone's manufacture, the energy to run a laptop. What the UNU-INWEH June 2026 report added to that picture is the infrastructure layer: the data centers, the cooling systems, the land they occupy, and the water they draw, often from the same regions where that water is already scarce. The report covered AI's carbon, water, land, and waste footprints together, attached projections to each, and proposed a governance framework — transparency, efficiency by design, equity, lifecycle responsibility, global cooperation, and sustainable use — specific enough to be written into regulation. <a href="https://www.karmactive.com/ai-in-the-workplace-boosting-efficiency-or-eroding-mental-health/" target="_blank">The capabilities of AI continue to grow alongside its footprint</a>. The numbers in the report put a figure to the cost that was, until recently, largely invisible to the people generating it one query at a time.</p>
+</div>
+
+</div><!-- /.kac-wrap -->
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT — CALCULATOR LOGIC
+     ══════════════════════════════════════════ -->
+<script>
+(function(){
+  // Research-based per-query estimates
+  var WATER_ML = 519;   // ml — UC Riverside (100-word response, full chain)
+  var ENERGY_WH = 0.42; // Wh — GPT-4o benchmark, published research
+
+  function fmt(num, decimals) {
+    return num.toLocaleString(undefined, {
+      minimumFractionDigits: decimals || 0,
+      maximumFractionDigits: decimals || 0
+    });
+  }
+
+  window.kacCalc = function() {
+    var q = parseInt(document.getElementById('kac-slider').value, 10);
+    document.getElementById('kac-qcount').textContent = q;
+
+    var dWatL  = (q * WATER_ML / 1000);
+    var dEngWh = (q * ENERGY_WH);
+    var yWatL  = Math.round(dWatL  * 365);
+    var yEngWh = Math.round(dEngWh * 365);
+
+    // Daily
+    document.getElementById('kac-dwat').textContent =
+      dWatL >= 1 ? fmt(dWatL, 1) + ' L' : fmt(q * WATER_ML, 0) + ' ml';
+    document.getElementById('kac-deng').textContent =
+      dEngWh >= 1000 ? fmt(dEngWh/1000, 2) + ' kWh' : fmt(dEngWh, 1) + ' Wh';
+
+    // Yearly
+    document.getElementById('kac-ywat').textContent =
+      yWatL >= 1000 ? fmt(yWatL/1000, 1) + ' kL' : fmt(yWatL, 0) + ' L';
+    document.getElementById('kac-yeng').textContent =
+      yEngWh >= 1000 ? fmt(yEngWh/1000, 2) + ' kWh' : fmt(yEngWh, 0) + ' Wh';
+
+    // Comparison
+    var glasses = Math.round(yWatL / 0.25);           // 250 ml per glass
+    var days    = (yWatL / 2).toFixed(1);             // ~2L adult/day
+
+    document.getElementById('kac-c1').textContent = q + ' quer' + (q===1?'y':'ies') + '/day';
+    document.getElementById('kac-c2').textContent = 'roughly ' + fmt(glasses) + ' drinking glasses';
+    document.getElementById('kac-c3').textContent = days + ' days';
+
+    document.getElementById('kac-cmp').innerHTML =
+      'At <strong>' + q + ' quer' + (q===1?'y':'ies') + '/day</strong>, your yearly AI water footprint equals ' +
+      '<strong>roughly ' + fmt(glasses) + ' drinking glasses</strong> — about ' +
+      '<strong>' + days + ' days</strong> of average adult daily water consumption.';
+  };
+
+  // Run on page load
+  window.kacCalc();
+})();
+</script>
+
+</body>
+</html>
