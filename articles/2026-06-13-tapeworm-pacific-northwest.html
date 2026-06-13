@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A deadly tapeworm linked to cancer-like liver disease has been detected in Puget Sound coyotes for the first time, marking the first confirmed presence on the US West Coast. Here's what dog owners need to know.">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        .tapeworm-article {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Georgia, serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* ===== MAGAZINE HEADER: SPLIT-SCREEN ===== */
+        .tw-header {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            min-height: 85vh;
+        }
+
+        .tw-img-side {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tw-img-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .tw-warning-chip {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            background: #dc2626;
+            color: #fff;
+            padding: 0.45rem 0.9rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-radius: 3px;
+            z-index: 2;
+        }
+
+        .tw-content-side {
+            background: #0b2518;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 3.5rem 2.5rem;
+        }
+
+        .tw-eyebrow-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: #f59e0b;
+            margin-bottom: 1.1rem;
+        }
+
+        .tw-h1 {
+            font-size: clamp(1.65rem, 3vw, 2.7rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.18;
+            margin-bottom: 1.5rem;
+        }
+
+        .tw-h1 .accent {
+            color: #f59e0b;
+        }
+
+        .tw-gold-line {
+            width: 44px;
+            height: 3px;
+            background: #f59e0b;
+            margin-bottom: 1.5rem;
+        }
+
+        .tw-deck {
+            font-size: clamp(0.92rem, 1.4vw, 1.1rem);
+            color: rgba(255,255,255,0.72);
+            line-height: 1.75;
+            margin-bottom: 2rem;
+        }
+
+        .tw-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.42);
+        }
+
+        /* ===== IMAGE CAPTION BAR ===== */
+        .tw-caption-bar {
+            background: #0b2518;
+            color: rgba(255,255,255,0.5);
+            padding: 0.7rem 1.8rem;
+            font-size: 0.78rem;
+            font-style: italic;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .tw-caption-bar a { color: #f59e0b; text-decoration: none; }
+
+        /* ===== STATS ROW ===== */
+        .tw-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: #1a4731;
+        }
+
+        .tw-stat {
+            padding: 2rem 1rem;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.09);
+        }
+        .tw-stat:last-child { border-right: none; }
+
+        .tw-stat-num {
+            display: block;
+            font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+            font-weight: 800;
+            color: #f59e0b;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .tw-stat-lbl {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.65);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            line-height: 1.35;
+        }
+
+        /* ===== SECTION COMMON ===== */
+        .tw-sec-label {
+            text-align: center;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+        .tw-sec-label.red  { color: #dc2626; }
+        .tw-sec-label.gold { color: #f59e0b; }
+
+        .tw-sec-h2 {
+            text-align: center;
+            font-size: clamp(1.3rem, 2.5vw, 2rem);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 0.6rem;
+        }
+        .tw-sec-h2.dark  { color: #0b2518; }
+        .tw-sec-h2.light { color: #fff; }
+
+        .tw-sec-sub {
+            text-align: center;
+            max-width: 560px;
+            margin: 0 auto 2.5rem auto;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .tw-sec-sub.dark  { color: #555; }
+        .tw-sec-sub.light { color: rgba(255,255,255,0.6); }
+
+        /* ===== LIFECYCLE SECTION ===== */
+        .tw-lifecycle-section {
+            padding: 4rem 1.5rem 3rem;
+            background: #f6f4f0;
+        }
+
+        .tw-flow {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: nowrap;
+            gap: 0;
+            max-width: 1050px;
+            margin: 0 auto;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+        }
+
+        .tw-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            width: 140px;
+            padding: 0.5rem 0.25rem;
+            transition: transform 0.2s ease;
+        }
+
+        .tw-node:hover { transform: translateY(-4px); }
+
+        .tw-node-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.85rem;
+            margin-bottom: 0.65rem;
+            border: 3px solid currentColor;
+            transition: all 0.25s;
+            background: #fff;
+        }
+
+        .tw-node-icon.c1 { color: #f59e0b; border-color: #f59e0b; }
+        .tw-node-icon.c2 { color: #dc2626; border-color: #dc2626; }
+        .tw-node-icon.c3 { color: #16a34a; border-color: #16a34a; }
+        .tw-node-icon.c4 { color: #3b82f6; border-color: #3b82f6; }
+        .tw-node-icon.c5 { color: #9333ea; border-color: #9333ea; }
+
+        .tw-node-icon.active-node {
+            transform: scale(1.18);
+            box-shadow: 0 0 0 7px rgba(220,38,38,0.18);
+        }
+
+        .tw-node-name {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #0b2518;
+            text-align: center;
+            margin-bottom: 0.15rem;
+        }
+
+        .tw-node-sub {
+            font-size: 0.72rem;
+            color: #777;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .tw-arrow {
+            font-size: 1.3rem;
+            color: #dc2626;
+            flex-shrink: 0;
+            padding: 0 0.35rem;
+            margin-top: 22px;
+            align-self: flex-start;
+        }
+
+        /* Detail card */
+        .tw-detail-card {
+            display: none;
+            max-width: 700px;
+            margin: 2rem auto 0;
+            background: #fff;
+            border-radius: 10px;
+            padding: 1.4rem 1.8rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.09);
+            border-left: 5px solid #dc2626;
+            animation: fadeUp 0.28s ease;
+        }
+        .tw-detail-card.open { display: block; }
+
+        .tw-detail-card h3 {
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: #0b2518;
+            margin-bottom: 0.5rem;
+        }
+        .tw-detail-card p {
+            font-size: 0.92rem;
+            color: #444;
+            line-height: 1.75;
+        }
+
+        .tw-tap-hint {
+            text-align: center;
+            margin-top: 1.3rem;
+            font-size: 0.78rem;
+            color: #999;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== MAP SECTION ===== */
+        .tw-map-section {
+            padding: 4rem 1.5rem;
+            background: #fff;
+        }
+
+        .tw-map-wrap {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .tw-leaflet-map {
+            width: 100%;
+            height: 420px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 28px rgba(0,0,0,0.11);
+        }
+
+        .tw-map-legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin-top: 1rem;
+            padding: 1rem 1.4rem;
+            background: #f6f4f0;
+            border-radius: 8px;
+            font-size: 0.82rem;
+        }
+
+        .tw-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #444;
+        }
+
+        .tw-dot {
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ===== PREVENTION SECTION ===== */
+        .tw-prevention {
+            padding: 4rem 1.5rem;
+            background: #0b2518;
+        }
+
+        .tw-progress-wrap {
+            max-width: 860px;
+            margin: 0 auto 2.2rem;
+        }
+
+        .tw-progress-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 0.45rem;
+        }
+
+        .tw-progress-track {
+            height: 7px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .tw-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #f59e0b, #dc2626);
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .tw-checklist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .tw-checklist-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(245,158,11,0.22);
+            border-radius: 10px;
+            padding: 1.4rem 1.5rem;
+        }
+
+        .tw-checklist-card h3 {
+            color: #f59e0b;
+            font-size: 0.92rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tw-checks {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .tw-check-item {
+            display: flex;
+            gap: 0.7rem;
+            align-items: flex-start;
+            cursor: pointer;
+        }
+
+        .tw-box {
+            width: 19px;
+            height: 19px;
+            border: 2px solid rgba(245,158,11,0.4);
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.18s;
+        }
+
+        .tw-box.ticked {
+            background: #f59e0b;
+            border-color: #f59e0b;
+        }
+        .tw-box.ticked::after {
+            content: '✓';
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .tw-check-text {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.78);
+            line-height: 1.5;
+            transition: color 0.18s;
+        }
+
+        .tw-check-item.done .tw-check-text {
+            color: rgba(255,255,255,0.3);
+            text-decoration: line-through;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .tw-header {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .tw-img-side {
+                height: 52vw;
+                min-height: 260px;
+            }
+            .tw-content-side {
+                padding: 2.2rem 1.5rem;
+            }
+            .tw-stats {
+                grid-template-columns: repeat(2,1fr);
+            }
+            .tw-stat:nth-child(2) { border-right: none; }
+            .tw-stat:nth-child(1),
+            .tw-stat:nth-child(2) {
+                border-bottom: 1px solid rgba(255,255,255,0.09);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .tw-flow {
+                overflow-x: auto;
+                padding: 0 0.5rem 1rem;
+                justify-content: flex-start;
+            }
+            .tw-node { width: 105px; }
+            .tw-node-icon { width: 56px; height: 56px; font-size: 1.4rem; }
+            .tw-leaflet-map { height: 290px; }
+            .tw-checklist-grid { grid-template-columns: 1fr; }
+            .tw-meta { gap: 0.6rem; }
+        }
+
+        @media (max-width: 400px) {
+            .tw-h1 { font-size: 1.5rem; }
+            .tw-stats { grid-template-columns: repeat(2,1fr); }
+        }
+    </style>
+</head>
+<body>
+<div class="tapeworm-article">
+
+    <!-- ===== SPLIT-SCREEN HEADER ===== -->
+    <header class="tw-header">
+        <div class="tw-img-side">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/6/64/Canis_latrans_DSC_0458_%2852534261746%29.jpg"
+                alt="Coyote in the Pacific Northwest where Echinococcus multilocularis tapeworm was detected in 37% of Puget Sound coyotes — first confirmed US West Coast case"
+                title="Pacific Northwest coyote confirmed as carrier of deadly Echinococcus multilocularis tapeworm — first detected on US West Coast 2026"
+                loading="eager"
+            >
+            <div class="tw-warning-chip">⚠ Health Alert</div>
+        </div>
+
+        <div class="tw-content-side">
+            <div class="tw-eyebrow-label">Wildlife &amp; Public Health · June 2026</div>
+            <h1 class="tw-h1">
+                The <span class="accent">Silent Tapeworm</span> in Seattle's Backyard — and What Every Dog Owner Needs to Know Now
+            </h1>
+            <div class="tw-gold-line"></div>
+            <p class="tw-deck">
+                A parasite producing cancer-like liver cysts has arrived on the US West Coast for the first time. It was found in 37% of coyotes sampled around Puget Sound. It can reach your dog. It can reach you. And it may stay hidden for up to 15 years.
+            </p>
+            <div class="tw-meta">
+                <span>📅 June 13, 2026</span>
+                <span>🔬 PLOS Neglected Tropical Diseases</span>
+                <span>⏱ 5 min read</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CAPTION -->
+    <div class="tw-caption-bar">
+        A coyote moving through the Pacific Northwest — urban coyotes now shed <em>Echinococcus multilocularis</em> eggs through parks, yards, and green corridors at a 37% infection rate. Did one pass through your garden this week without you noticing? &nbsp;|&nbsp; Photo: <a href="https://commons.wikimedia.org/wiki/File:Canis_latrans_DSC_0458_(52534261746).jpg" target="_blank" rel="noopener">Wikimedia Commons</a> / CC BY 2.0
+    </div>
+
+    <!-- ===== STATS ROW ===== -->
+    <div class="tw-stats">
+        <div class="tw-stat">
+            <span class="tw-stat-num">37%</span>
+            <div class="tw-stat-lbl">of Puget Sound coyotes<br>tested were infected</div>
+        </div>
+        <div class="tw-stat">
+            <span class="tw-stat-num">5–15</span>
+            <div class="tw-stat-lbl">years the disease can<br>incubate with no symptoms</div>
+        </div>
+        <div class="tw-stat">
+            <span class="tw-stat-num">18,000+</span>
+            <div class="tw-stat-lbl">people infected<br>globally per year</div>
+        </div>
+        <div class="tw-stat">
+            <span class="tw-stat-num">$3B</span>
+            <div class="tw-stat-lbl">annual global cost of<br>controlling this disease</div>
+        </div>
+    </div>
+
+    <!-- ===== LIFECYCLE SECTION ===== -->
+    <section class="tw-lifecycle-section">
+        <div class="tw-sec-label red">How It Spreads</div>
+        <h2 class="tw-sec-h2 dark">From Coyote to You — Tap Each Stage</h2>
+        <p class="tw-sec-sub dark">
+            <em>Echinococcus multilocularis</em> travels a specific route through the ecosystem. Each step brings the parasite closer to your home. Tap any stage below to understand what happens there.
+        </p>
+
+        <div class="tw-flow">
+            <div class="tw-node" onclick="openDetail(0, this)">
+                <div class="tw-node-icon c1" id="ni0">🐺</div>
+                <div class="tw-node-name">Coyote / Fox</div>
+                <div class="tw-node-sub">Definitive host</div>
+            </div>
+            <div class="tw-arrow">→</div>
+            <div class="tw-node" onclick="openDetail(1, this)">
+                <div class="tw-node-icon c2" id="ni1">🦠</div>
+                <div class="tw-node-name">Eggs in Feces</div>
+                <div class="tw-node-sub">Soil, water, produce</div>
+            </div>
+            <div class="tw-arrow">→</div>
+            <div class="tw-node" onclick="openDetail(2, this)">
+                <div class="tw-node-icon c3" id="ni2">🐭</div>
+                <div class="tw-node-name">Rodent</div>
+                <div class="tw-node-sub">Intermediate host</div>
+            </div>
+            <div class="tw-arrow">→</div>
+            <div class="tw-node" onclick="openDetail(3, this)">
+                <div class="tw-node-icon c4" id="ni3">🐕</div>
+                <div class="tw-node-name">Your Dog</div>
+                <div class="tw-node-sub">Hunts rodents</div>
+            </div>
+            <div class="tw-arrow">→</div>
+            <div class="tw-node" onclick="openDetail(4, this)">
+                <div class="tw-node-icon c5" id="ni4">🧑‍🦱</div>
+                <div class="tw-node-name">You</div>
+                <div class="tw-node-sub">Accidental contact</div>
+            </div>
+        </div>
+
+        <!-- Detail panels -->
+        <div class="tw-detail-card" id="detail-0">
+            <h3>🐺 The Definitive Host: Coyotes &amp; Foxes</h3>
+            <p>Adult <em>E. multilocularis</em> tapeworms live in the intestines of coyotes and foxes, causing those animals no noticeable harm. The University of Washington's 2026 study found this parasite in 37 of 100 coyotes sampled around Puget Sound — a rate that surprised researchers, since this was the first confirmed detection of the parasite in wild animals on the contiguous US West Coast. Coyotes now routinely move through Seattle parks, backyards, and urban green corridors, shedding eggs continuously.</p>
+        </div>
+        <div class="tw-detail-card" id="detail-1">
+            <h3>🦠 The Hidden Hazard: Eggs in the Environment</h3>
+            <p>Coyotes shed microscopic tapeworm eggs in their feces. These eggs are exceptionally resilient — they survive in soil for months and resist freezing temperatures. They can contaminate garden produce, park grass, puddles, and wild berry bushes. Eggs are invisible to the naked eye, which means outdoor surfaces that look clean may not be. This is why unwashed foraged produce, gardening without gloves, and walking dogs in coyote habitat are all potential exposure routes.</p>
+        </div>
+        <div class="tw-detail-card" id="detail-2">
+            <h3>🐭 The Bridge: Rodents as Intermediate Hosts</h3>
+            <p>Small mammals — mice, voles, shrews — ingest eggs while foraging in contaminated soil. Inside the rodent, larvae hatch, travel to the liver, and form cysts. The rodent is now a living reservoir of infectious material. When a coyote eats that rodent, it becomes reinfected — completing the wildlife cycle. When a dog hunts or scavenges an infected rodent, the cycle is extended toward your household. The Pacific Northwest's abundant rodent population and active urban coyote presence create consistent opportunities for this chain to continue.</p>
+        </div>
+        <div class="tw-detail-card" id="detail-3">
+            <h3>🐕 Your Dog: An Unintended Bridge</h3>
+            <p>Dogs can become infected two ways: by eating an infected rodent, or by direct contact with coyote feces containing eggs. Since 2023, seven confirmed canine cases have been documented in the Pacific Northwest region. Dogs in wooded areas, off-leash parks, or yards where coyotes pass through carry elevated risk. An infected dog can then shed eggs in their own feces — potentially in your own yard. Neither the US nor Canada currently requires incoming dogs to be dewormed, unlike EU nations where dogs entering Finland, Ireland, Norway, Malta, or the UK must receive treatment against this specific parasite 24–120 hours before crossing the border.</p>
+        </div>
+        <div class="tw-detail-card" id="detail-4">
+            <h3>🧑‍🦱 You: Long Incubation, Severe Outcome</h3>
+            <p>Humans are an accidental, dead-end host — infection does not spread from person to person — but the consequences for the individual are serious. Exposure most commonly happens through handling an infected dog without washing hands, eating unwashed produce from contaminated soil, or touching outdoor surfaces. Once ingested, larvae migrate to the liver and form slow-growing, invasive cysts. These can take 5 to 15 years to produce symptoms. By then, the disease can resemble liver cancer and may have spread to the lungs or brain. The World Health Organization classifies this as the most lethal human helminthic infection known. There are currently no confirmed human cases on the US West Coast.</p>
+        </div>
+
+        <div class="tw-tap-hint">↑ Tap each stage above to read the detail</div>
+    </section>
+
+    <!-- ===== MAP SECTION ===== -->
+    <section class="tw-map-section">
+        <div class="tw-map-wrap">
+            <div class="tw-sec-label red">Geographic Spread</div>
+            <h2 class="tw-sec-h2 dark">Where This Parasite Has Spread in North America</h2>
+            <p class="tw-sec-sub dark">
+                Historically confined to Alaska, the Arctic, and the north-central US, the 2026 University of Washington study now places <em>E. multilocularis</em> on the West Coast for the first time. The European strain detected suggests dogs in transit played a role.
+            </p>
+
+            <div id="tw-map" class="tw-leaflet-map"></div>
+
+            <div class="tw-map-legend">
+                <div class="tw-legend-item">
+                    <div class="tw-dot" style="background:#dc2626;"></div>
+                    <span><strong>New 2026 detection:</strong> Puget Sound, Washington State — first US West Coast case</span>
+                </div>
+                <div class="tw-legend-item">
+                    <div class="tw-dot" style="background:#f59e0b;"></div>
+                    <span><strong>Historical North American range:</strong> North-central US &amp; Canada</span>
+                </div>
+                <div class="tw-legend-item">
+                    <div class="tw-dot" style="background:#16a34a;"></div>
+                    <span><strong>Long-established:</strong> Alaska &amp; Arctic regions</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PREVENTION CHECKLIST ===== -->
+    <section class="tw-prevention">
+        <div class="tw-sec-label gold">Take Action</div>
+        <h2 class="tw-sec-h2 light">Your Prevention Checklist</h2>
+        <p class="tw-sec-sub light">
+            Tick off each step below. These measures are especially relevant for households in the Pacific Northwest with dogs, gardens, or access to areas where coyotes are active.
+        </p>
+
+        <div class="tw-progress-wrap">
+            <div class="tw-progress-meta">
+                <span>Steps completed</span>
+                <span id="prog-label">0 / 8</span>
+            </div>
+            <div class="tw-progress-track">
+                <div class="tw-progress-bar" id="prog-bar"></div>
+            </div>
+        </div>
+
+        <div class="tw-checklist-grid">
+            <div class="tw-checklist-card">
+                <h3>🐕 For Dog Owners</h3>
+                <ul class="tw-checks">
+                    <li class="tw-check-item" onclick="tickItem(this)">
+                        <div class="tw-box"></div>
+                        <span class="tw-check-text">Ask your vet about monthly deworming (praziquantel or equivalent) if your dog has outdoor access</span>
+                    </li>
+                    <li class="tw-check-item" onclick="tickItem(this)">
+                        <div class="tw-box"></div>
+                        <span class="tw-check-text">Prevent your dog from hunting, killing, or scavenging rodents and their carcasses</span>
+                    </li>
+                    <li class="tw-check-item" onclick="tickItem(this)">
+                        <div class="tw-box"></div>
+                        <span class="tw-check-text">Use a leash in parks or green spaces where coyotes are known to be active</span>
+                    </li>
+                    <li class="tw-check-item" onclick="tickItem(this)">
+                        <div class="tw-box"></div>
+                        <span class="tw-check-text">Wash hands thoroughly after handling your dog, especially after outdoor walks</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="tw-checklist-card">
+                <h3>🏡 For Your Household</h3>
+                <ul class="tw-checks">
+                    <li class="tw-check-item" onclick="tickItem(this)">
+                        <div class="tw-box"></div>
+                        <span class="tw-check-text">Wash all fresh produce thoroughly — especially foraged berries and garden vegetables</span>
+                    </li>
+                    <li class="tw-check-item" onclick="tickItem(this)">
+                        <div class="tw-box"></div>
+                        <span class="tw-check-text">Wash hands after gardening, hiking, or any outdoor soil contact</span>
+                    </li>
+                    <li class="tw-check-item" onclick="tickItem(this)">
+                        <div class="tw-box"></div>
+                        <span class="tw-check-text">Remove outdoor pet food bowls — they can attract coyotes into your yard</span>
+                    </li>
+                    <li class="tw-check-item" onclick="tickItem(this)">
+                        <div class="tw-box"></div>
+                        <span class="tw-check-text">If you see consistent coyote activity near your home, limit children's contact with that soil area</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</div><!-- end .tapeworm-article -->
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+    'use strict';
+
+    /* ---- LIFECYCLE ---- */
+    var currentOpen = -1;
+
+    window.openDetail = function (idx, node) {
+        // Close previously open panel
+        if (currentOpen >= 0) {
+            var prev = document.getElementById('detail-' + currentOpen);
+            if (prev) prev.classList.remove('open');
+            var prevIcon = document.getElementById('ni' + currentOpen);
+            if (prevIcon) prevIcon.classList.remove('active-node');
+        }
+
+        if (currentOpen === idx) {
+            // Toggle off
+            currentOpen = -1;
+            return;
+        }
+
+        // Open new panel
+        var panel = document.getElementById('detail-' + idx);
+        var icon  = document.getElementById('ni' + idx);
+        if (panel) panel.classList.add('open');
+        if (icon)  icon.classList.add('active-node');
+        currentOpen = idx;
+
+        // Smooth scroll to panel on mobile
+        if (panel && window.innerWidth < 640) {
+            setTimeout(function () {
+                panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 50);
+        }
+    };
+
+    /* ---- CHECKLIST ---- */
+    var checked   = 0;
+    var totalItems = 8;
+
+    window.tickItem = function (el) {
+        var box  = el.querySelector('.tw-box');
+        var done = el.classList.contains('done');
+        if (done) {
+            el.classList.remove('done');
+            box.classList.remove('ticked');
+            checked = Math.max(0, checked - 1);
+        } else {
+            el.classList.add('done');
+            box.classList.add('ticked');
+            checked++;
+        }
+        var pct = (checked / totalItems) * 100;
+        document.getElementById('prog-bar').style.width   = pct + '%';
+        document.getElementById('prog-label').textContent = checked + ' / ' + totalItems;
+    };
+
+    /* ---- LEAFLET MAP ---- */
+    var map = L.map('tw-map', {
+        scrollWheelZoom: false,
+        zoomControl: true
+    }).setView([51, -100], 3);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 12,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    function mkIcon(color) {
+        return L.divIcon({
+            html: '<div style="background:' + color + ';width:18px;height:18px;border-radius:50%;border:3px solid rgba(255,255,255,0.9);box-shadow:0 2px 8px rgba(0,0,0,0.35);"></div>',
+            iconSize:   [18, 18],
+            iconAnchor: [9, 9],
+            popupAnchor:[0, -12]
+        });
+    }
+
+    // New 2026 West Coast detection — RED
+    var newDetections = [
+        { lat: 47.614, lng: -122.329, name: 'Seattle / Puget Sound', note: 'First US West Coast detection in wild animals. 37 of 100 coyotes tested positive (University of Washington, 2026).' },
+        { lat: 47.253, lng: -122.444, name: 'Tacoma, WA', note: 'Within Puget Sound study area. Researchers urge dog owners to consult vets about deworming.' }
+    ];
+
+    newDetections.forEach(function (loc) {
+        L.marker([loc.lat, loc.lng], { icon: mkIcon('#dc2626') })
+            .addTo(map)
+            .bindPopup('<strong style="color:#dc2626">⚠ NEW — 2026</strong><br>' + loc.name + '<br><small>' + loc.note + '</small>');
+    });
+
+    // Historical north-central range — AMBER
+    var historical = [
+        { lat: 46.88, lng: -110.36, name: 'Montana, USA', note: 'Within historical north-central US endemic range.' },
+        { lat: 47.55, lng: -101.00, name: 'North Dakota, USA', note: 'Established endemic zone, north-central US.' },
+        { lat: 44.37, lng: -100.35, name: 'South Dakota, USA', note: 'North-central US endemic range.' },
+        { lat: 46.37, lng: -94.64,  name: 'Minnesota, USA', note: 'North-central US range.' },
+        { lat: 53.93, lng: -116.58, name: 'Alberta, Canada', note: 'Established Canadian range.' },
+        { lat: 52.94, lng: -106.45, name: 'Saskatchewan, Canada', note: 'Canadian prairie range.' },
+        { lat: 49.90, lng: -97.14,  name: 'Manitoba, Canada', note: 'Canadian range, tapeworm long present in canids.' },
+        { lat: 45.42, lng: -75.69,  name: 'Ontario/Quebec, Canada', note: 'Eastern Canada — parasite detected in foxes and coyotes.' }
+    ];
+
+    historical.forEach(function (loc) {
+        L.marker([loc.lat, loc.lng], { icon: mkIcon('#f59e0b') })
+            .addTo(map)
+            .bindPopup('<strong>' + loc.name + '</strong><br><small>' + loc.note + '</small>');
+    });
+
+    // Alaska — GREEN
+    var alaska = [
+        { lat: 64.20, lng: -153.49, name: 'Interior Alaska', note: 'Long-established endemic zone. Arctic fox and wolf populations primary hosts.' },
+        { lat: 61.22, lng: -149.90, name: 'Anchorage area, Alaska', note: 'Known presence in Arctic canid populations.' }
+    ];
+
+    alaska.forEach(function (loc) {
+        L.marker([loc.lat, loc.lng], { icon: mkIcon('#16a34a') })
+            .addTo(map)
+            .bindPopup('<strong>' + loc.name + '</strong><br><small>' + loc.note + '</small>');
+    });
+
+    // Open Seattle popup after short delay
+    setTimeout(function () {
+        map.setView([50, -108], 3);
+    }, 400);
+
+})();
+</script>
+</body>
+</html>
