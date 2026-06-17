@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Cup 2026: Football's Biggest Carbon Match | Karmactive</title>
+  <meta name="description" content="The 2026 FIFA World Cup is the most carbon-intensive sporting event ever recorded. Here's what the numbers say, what experts warn, and what it means for the planet." />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <style>
+    /* ─── Base Reset ─────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+    /* ─── BLOCK 1: Split-Screen Header ───────────── */
+    .ka-header {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      min-height: 520px;
+      max-width: 1400px;
+      margin: 0 auto 2rem auto;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+    }
+    .ka-header-img {
+      position: relative;
+      overflow: hidden;
+    }
+    .ka-header-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .ka-img-badge {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      background: #e53e3e;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+    }
+    .ka-header-content {
+      background: #0f1923;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2.5rem 2rem;
+    }
+    .ka-category {
+      color: #e53e3e;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 0.8rem;
+    }
+    .ka-headline {
+      font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.18;
+      margin-bottom: 1rem;
+    }
+    .ka-deck {
+      font-size: clamp(0.92rem, 1.6vw, 1.05rem);
+      color: #a0aec0;
+      line-height: 1.65;
+      margin-bottom: 1.6rem;
+    }
+    .ka-stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+    }
+    .ka-stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .ka-stat-num {
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 800;
+      color: #fc8181;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .ka-stat-label {
+      font-size: 0.76rem;
+      color: #a0aec0;
+      font-weight: 500;
+    }
+    .ka-date {
+      color: #718096;
+      font-size: 0.82rem;
+      margin-top: 1.2rem;
+    }
+
+    /* ─── Image Caption ─────────────────────────── */
+    .ka-img-caption {
+      max-width: 1400px;
+      margin: 0 auto 2.5rem auto;
+      padding: 0 0.5rem;
+      font-size: 0.84rem;
+      color: #718096;
+      font-style: italic;
+      border-left: 3px solid #e53e3e;
+      padding-left: 0.8rem;
+    }
+
+    /* ─── BLOCK 2: Emissions Timeline Chart ─────── */
+    .ka-chart-section {
+      background: #0f1923;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto 2.5rem auto;
+    }
+    .ka-section-title {
+      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+    .ka-section-sub {
+      font-size: 0.9rem;
+      color: #718096;
+      margin-bottom: 1.8rem;
+    }
+    .ka-chart-wrap {
+      position: relative;
+      height: 320px;
+    }
+    .ka-chart-note {
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: #718096;
+    }
+
+    /* ─── BLOCK 3: Breakdown Donut + Facts ──────── */
+    .ka-breakdown {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 1.5rem;
+      max-width: 1400px;
+      margin: 0 auto 2.5rem auto;
+      align-items: center;
+    }
+    .ka-donut-wrap {
+      background: #0f1923;
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .ka-donut-canvas {
+      max-width: 260px;
+      margin: 0 auto;
+    }
+    .ka-donut-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 1.2rem;
+      text-align: left;
+    }
+    .ka-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: #a0aec0;
+    }
+    .ka-legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+    .ka-fact-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .ka-fact-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 1.2rem 1rem;
+      border-left: 4px solid #e53e3e;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease;
+    }
+    .ka-fact-card:hover { transform: translateY(-4px); }
+    .ka-fact-icon { font-size: 1.6rem; margin-bottom: 0.4rem; }
+    .ka-fact-heading {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #2d3748;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 0.3rem;
+    }
+    .ka-fact-body {
+      font-size: 0.88rem;
+      color: #4a5568;
+      line-height: 1.5;
+    }
+    .ka-fact-body strong { color: #e53e3e; }
+
+    /* ─── BLOCK 4: Stadium Heat Grid ────────────── */
+    .ka-heat-section {
+      background: #fff8f0;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto 2.5rem auto;
+      border: 1px solid #fed7aa;
+    }
+    .ka-heat-title {
+      font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+      font-weight: 800;
+      color: #1a202c;
+      margin-bottom: 0.4rem;
+    }
+    .ka-heat-sub {
+      font-size: 0.88rem;
+      color: #744210;
+      margin-bottom: 1.5rem;
+    }
+    .ka-heat-legend {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+    .ka-heat-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: #4a5568;
+    }
+    .ka-heat-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+    .ka-stadium-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.8rem;
+    }
+    .ka-stadium-card {
+      border-radius: 10px;
+      padding: 0.85rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #fff;
+      position: relative;
+      cursor: default;
+      transition: transform 0.2s;
+    }
+    .ka-stadium-card:hover { transform: scale(1.03); }
+    .ka-stadium-card.heat-extreme { background: #c53030; }
+    .ka-stadium-card.heat-high    { background: #dd6b20; }
+    .ka-stadium-card.heat-moderate{ background: #d69e2e; }
+    .ka-stadium-card.heat-lower   { background: #2f855a; }
+    .ka-stadium-name { display: block; font-weight: 700; margin-bottom: 0.25rem; }
+    .ka-stadium-country { font-size: 0.7rem; opacity: 0.85; display: block; }
+    .ka-stadium-heat { font-size: 0.7rem; margin-top: 0.3rem; display: block; opacity: 0.9; }
+    .ka-heat-warning {
+      margin-top: 1rem;
+      padding: 0.8rem 1rem;
+      background: #fed7aa;
+      border-radius: 8px;
+      font-size: 0.83rem;
+      color: #744210;
+    }
+
+    /* ─── BLOCK 5: Fan Carbon Calculator ────────── */
+    .ka-calc-section {
+      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto 2.5rem auto;
+    }
+    .ka-calc-title {
+      font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.3rem;
+    }
+    .ka-calc-sub {
+      font-size: 0.88rem;
+      color: #a0aec0;
+      margin-bottom: 1.8rem;
+    }
+    .ka-calc-body {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .ka-calc-controls { display: flex; flex-direction: column; gap: 1.2rem; }
+    .ka-select-label {
+      font-size: 0.82rem;
+      color: #a0aec0;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+    .ka-select {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 0.9rem;
+      appearance: none;
+      cursor: pointer;
+    }
+    .ka-select option { background: #2d3748; color: #fff; }
+    .ka-distance-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .ka-range {
+      width: 100%;
+      accent-color: #fc8181;
+      cursor: pointer;
+    }
+    .ka-range-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #718096;
+    }
+    .ka-calc-result {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 1.8rem;
+    }
+    .ka-result-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #718096;
+      margin-bottom: 0.3rem;
+    }
+    .ka-result-co2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: #fc8181;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+    .ka-result-unit { font-size: 0.85rem; color: #a0aec0; margin-bottom: 1rem; }
+    .ka-result-equiv {
+      font-size: 0.84rem;
+      color: #e2e8f0;
+      line-height: 1.55;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .ka-result-tip {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      background: rgba(72,187,120,0.15);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: #9ae6b4;
+    }
+
+    /* ─── BLOCK 6: Aramco Timeline Strip ─────────── */
+    .ka-timeline {
+      max-width: 1400px;
+      margin: 0 auto 2.5rem auto;
+    }
+    .ka-timeline-title {
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 800;
+      color: #1a202c;
+      margin-bottom: 1.2rem;
+      padding-left: 0.2rem;
+    }
+    .ka-tl-track {
+      display: flex;
+      overflow-x: auto;
+      gap: 0;
+      padding-bottom: 0.5rem;
+      scrollbar-width: thin;
+    }
+    .ka-tl-item {
+      flex: 0 0 auto;
+      width: 200px;
+      position: relative;
+      padding: 0 1rem 0 0;
+    }
+    .ka-tl-item::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 16px;
+      right: 0;
+      height: 3px;
+      background: #e2e8f0;
+    }
+    .ka-tl-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #e53e3e;
+      margin-bottom: 0.7rem;
+      position: relative;
+      z-index: 1;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 3px #e53e3e33;
+    }
+    .ka-tl-year {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #e53e3e;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+    .ka-tl-text {
+      font-size: 0.78rem;
+      color: #4a5568;
+      line-height: 1.45;
+    }
+
+    /* ─── Responsive ─────────────────────────────── */
+    @media (max-width: 900px) {
+      .ka-header { grid-template-columns: 1fr; min-height: auto; }
+      .ka-header-img { height: 260px; }
+      .ka-breakdown { grid-template-columns: 1fr; }
+      .ka-calc-body { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .ka-header-content { padding: 1.5rem; }
+      .ka-chart-section,
+      .ka-heat-section,
+      .ka-calc-section { padding: 1.5rem 1rem; }
+      .ka-stats-row { grid-template-columns: 1fr 1fr; }
+      .ka-fact-cards { grid-template-columns: 1fr; }
+      .ka-stadium-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 400px) {
+      .ka-stadium-grid { grid-template-columns: 1fr; }
+      .ka-heat-legend { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     WORDPRESS INTRO TEXT BLOCK — paste into WP paragraph block
+     ═══════════════════════════════════════════════════
+
+<p>Football has always moved the world. But the 2026 FIFA World Cup — spread across the United States, Canada, and Mexico — is moving something else into the atmosphere: somewhere between 7.8 and 9 million tonnes of carbon dioxide equivalent. That makes it, by a significant margin, the most carbon-intensive sporting event ever recorded.</p>
+
+<p>The tournament began on June 11, 2026. Forty-eight nations are competing across 104 matches in 16 cities. While billions of fans watch on screens and millions fill stadiums, researchers at the <a href="https://www.sgr.org.uk/publications/fifa-s-climate-blind-spot-men-s-world-cup-warming-world" target="_blank" rel="noopener">Scientists for Global Responsibility</a> and the carbon accounting platform Greenly are tracking a different kind of score. According to <a href="https://www.karmactive.com/would-you-pay-more-for-green-travel-80-of-travelers-say-yes/" target="_blank">research on sustainable travel choices</a>, the decisions fans make — on how to get there, where to stay, what to eat — carry real environmental weight.</p>
+
+<p>This piece covers what the numbers mean, what independent researchers found, what FIFA has promised, and what the world's most-watched sporting event looks like when you measure it in carbon rather than goals.</p>
+
+═══════════════════════════════════════════════════ -->
+
+<!-- ─────────────────────────────────────────────────
+     HTML BLOCK 1: SPLIT-SCREEN HEADER
+     ───────────────────────────────────────────────── -->
+<div class="ka-header">
+  <div class="ka-header-img">
+    <!--
+      FEATURE IMAGE SUGGESTION:
+      Title: SoFi Stadium, Inglewood, California — one of the 16 FIFA World Cup 2026 venues
+      Source: Wikimedia Commons — Category:SoFi Stadium
+      License: Creative Commons Attribution-Share Alike 4.0 International
+      URL to use: https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/SoFi_Stadium_2021.jpg/1280px-SoFi_Stadium_2021.jpg
+      (Verify exact filename on commons.wikimedia.org/wiki/Category:SoFi_Stadium before publishing)
+    -->
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/SoFi_Stadium_2021.jpg/1280px-SoFi_Stadium_2021.jpg"
+      alt="Aerial view of SoFi Stadium in Inglewood, California, a FIFA World Cup 2026 host venue"
+      loading="lazy"
+      onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/MetLife_Stadium_aerial_view.jpg/1280px-MetLife_Stadium_aerial_view.jpg'"
+    />
+    <span class="ka-img-badge">⚽ Live Now</span>
+  </div>
+  <div class="ka-header-content">
+    <div class="ka-category">Environment · Sport · Climate</div>
+    <h1 class="ka-headline">World Cup 2026: Football's Biggest Carbon Match</h1>
+    <p class="ka-deck">The tournament the world loves is now its most carbon-intensive sporting event. Here's what that means — in numbers, in science, and in choices.</p>
+    <div class="ka-stats-row">
+      <div class="ka-stat">
+        <div class="ka-stat-num">9M+</div>
+        <div class="ka-stat-label">Tonnes CO₂e projected</div>
+      </div>
+      <div class="ka-stat">
+        <div class="ka-stat-num">87%</div>
+        <div class="ka-stat-label">Emissions from fan travel</div>
+      </div>
+      <div class="ka-stat">
+        <div class="ka-stat-num">104</div>
+        <div class="ka-stat-label">Matches across 3 countries</div>
+      </div>
+      <div class="ka-stat">
+        <div class="ka-stat-num">6</div>
+        <div class="ka-stat-label">Stadiums at extreme heat risk</div>
+      </div>
+    </div>
+    <div class="ka-date">📅 June 17, 2026 · Karmactive</div>
+  </div>
+</div>
+
+<div class="ka-img-caption">
+  SoFi Stadium in Inglewood, California, seats up to 70,000 and is hosting 8 World Cup 2026 matches — including the U.S. opener on June 12. With 6 million tickets in circulation across 16 cities, fan travel to and from venues like this one accounts for nearly nine in every ten tonnes of the tournament's projected carbon output. Is the world's favourite sport outgrowing the planet's patience?
+  <br><em>(Photo: Wikimedia Commons / CC BY-SA 4.0)</em>
+</div>
+
+<!-- ─────────────────────────────────────────────────
+     HTML BLOCK 2: EMISSIONS TIMELINE CHART
+     ───────────────────────────────────────────────── -->
+<div class="ka-chart-section">
+  <div class="ka-section-title">World Cup Carbon Through the Years</div>
+  <div class="ka-section-sub">Estimated total greenhouse gas emissions per tournament (million tonnes CO₂e)</div>
+  <div class="ka-chart-wrap">
+    <canvas id="kaEmissionsChart"></canvas>
+  </div>
+  <p class="ka-chart-note">Sources: Scientists for Global Responsibility (SGR) report "FIFA's Climate Blind Spot"; Greenly carbon accounting analysis; published estimates for 2014–2022 tournaments. 2026 figure shows SGR estimate (9M). Greenly estimate is 7.8M. Some high-end models reach 13.7M.</p>
+</div>
+
+<!-- ─────────────────────────────────────────────────
+     HTML BLOCK 3: BREAKDOWN + FACT CARDS
+     ───────────────────────────────────────────────── -->
+<div class="ka-breakdown">
+  <div class="ka-donut-wrap">
+    <div class="ka-section-title" style="color:#fff; font-size:1.1rem; margin-bottom:1rem;">Where the Emissions Come From</div>
+    <div class="ka-donut-canvas">
+      <canvas id="kaDonutChart"></canvas>
+    </div>
+    <div class="ka-donut-legend">
+      <div class="ka-legend-item"><div class="ka-legend-dot" style="background:#e53e3e;"></div><span>Spectator travel — 87%</span></div>
+      <div class="ka-legend-item"><div class="ka-legend-dot" style="background:#ed8936;"></div><span>Accommodation — 5%</span></div>
+      <div class="ka-legend-item"><div class="ka-legend-dot" style="background:#ecc94b;"></div><span>Stadium operations — 4%</span></div>
+      <div class="ka-legend-item"><div class="ka-legend-dot" style="background:#48bb78;"></div><span>Infrastructure — 3.1%</span></div>
+      <div class="ka-legend-item"><div class="ka-legend-dot" style="background:#4299e1;"></div><span>Team travel + other — 0.9%</span></div>
+    </div>
+  </div>
+
+  <div class="ka-fact-cards">
+    <div class="ka-fact-card">
+      <div class="ka-fact-icon">✈️</div>
+      <div class="ka-fact-heading">6 Million Tickets</div>
+      <div class="ka-fact-body">Up from <strong>3.4M in Qatar</strong>. Nearly twice the spectators, now travelling across a continent three times larger.</div>
+    </div>
+    <div class="ka-fact-card">
+      <div class="ka-fact-icon">🛢️</div>
+      <div class="ka-fact-heading">Aramco Sponsorship</div>
+      <div class="ka-fact-body">A <strong>$400M FIFA deal</strong> with Saudi Aramco — responsible for over 4% of global CO₂ — is estimated to induce <strong>30M additional tonnes</strong> CO₂e.</div>
+    </div>
+    <div class="ka-fact-card">
+      <div class="ka-fact-icon">🏟️</div>
+      <div class="ka-fact-heading">Existing Venues</div>
+      <div class="ka-fact-body">Stadium construction is only <strong>3.1%</strong> of the footprint — down from <strong>24.6%</strong> for Qatar, where 7 new stadiums were built.</div>
+    </div>
+    <div class="ka-fact-card">
+      <div class="ka-fact-icon">⚖️</div>
+      <div class="ka-fact-heading">Qatar Ruling</div>
+      <div class="ka-fact-body">A <strong>Swiss advertising regulator</strong> in 2023 ruled FIFA's "carbon-neutral" claim for Qatar 2022 was <strong>"unsubstantiated."</strong></div>
+    </div>
+    <div class="ka-fact-card">
+      <div class="ka-fact-icon">🚗</div>
+      <div class="ka-fact-heading">6.5M Cars/Year</div>
+      <div class="ka-fact-body">The SGR report equates the tournament's footprint to <strong>6.5 million average British cars</strong> driven for an entire year.</div>
+    </div>
+    <div class="ka-fact-card">
+      <div class="ka-fact-icon">🌱</div>
+      <div class="ka-fact-heading">Vancouver Leads</div>
+      <div class="ka-fact-body">Vancouver topped sustainability rankings with an <strong>Eco Score of 6.7/10</strong>, and <strong>9/10 for greenhouse gas emissions</strong>.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     WORDPRESS BODY TEXT BLOCK — paste into WP paragraph block
+     ═══════════════════════════════════════════════════
+
+<h2>The Aramco Deal: A Sponsorship With a Carbon Shadow</h2>
+
+<p>What most coverage of the 2026 World Cup's carbon footprint doesn't discuss at length is the FIFA-Aramco partnership. In 2024, FIFA announced a four-year, $400 million deal making Saudi Aramco — the Saudi national oil company — a Major Worldwide Partner through the end of 2027, covering both the 2026 men's and 2027 women's tournaments.</p>
+
+<p>Aramco is responsible for over 4% of global CO₂ emissions annually. According to the <a href="https://www.sgr.org.uk/publications/fifa-s-climate-blind-spot-men-s-world-cup-warming-world" target="_blank" rel="noopener">SGR/EDF joint report</a>, the sponsorship is estimated to induce approximately 30 million additional tonnes of CO₂e — more than three times the tournament's own direct footprint — through increased fossil fuel sales stimulated by global brand promotion.</p>
+
+<p>When the deal was announced, 130 women players from 27 nations signed an open letter opposing it. The sports governance nonprofit FairSquare described it as <a href="https://fairsq.org/football-ignites-the-world-how-saudi-aramco-and-fifa-are-driving-the-climate-crisis/" target="_blank" rel="noopener">"the most dangerous example of fossil fuel advertising and sponsorship the world has ever seen."</a> The Sierra Club organised protests at World Cup stadiums across the US and Canada in June 2026.</p>
+
+<p>Dr. Madeleine Orr, a leading academic in sport and climate, stated publicly that the 2026 World Cup "sends a dangerous message about the intentions of FIFA and other events to just get bigger and bigger" and is "completely misaligned with the promises they have made publicly to reduce emissions."</p>
+
+<p>FIFA's stated targets — a 50% emissions reduction by 2030 and <a href="https://inside.fifa.com/media-releases/cop26-fifa-commits-to-net-zero-emission-by-2040" target="_blank" rel="noopener">net-zero by 2040</a>, commitments made at COP26 — contain no specific cap for the 2026 tournament and no strategy that directly addresses spectator travel, the dominant emissions source. Carbon Market Watch noted in June 2026 that "magical thinking will not solve the World Cup's giant climate problem."</p>
+
+<h2>Heat Stress: A Risk Beyond Carbon</h2>
+
+<p>The SGR/EDF report assessed climate risk at all 16 host stadiums and found that six face extreme heat stress — with Wet Bulb Globe Temperatures projected to exceed 80°F (26.7°C) during matches. That is the threshold above which physical exertion becomes medically dangerous. The affected venues include cities in the southern United States and Mexico. For players on the pitch and for thousands of fans in stands without full shade, this is not an abstract figure. As documented by <a href="https://www.karmactive.com/climate-change-hotter-weather-can-impact-mental-health/" target="_blank">studies on heat and human health</a>, the impacts of extreme temperatures extend beyond physical safety.</p>
+
+<p>The past eleven years were the eleven hottest years on record, according to UN Secretary-General António Guterres. Staging a global event that draws millions of people into high-heat outdoor environments — and requires billions of air miles — is no longer a planning nuance. It is a convergence of the world's biggest sports brand and the world's most urgent environmental challenge.</p>
+
+<h2>What Some Host Cities Are Doing</h2>
+
+<p>Not all the news runs in one direction. Because existing venues are being used rather than new ones built, stadium construction accounts for only 3.1% of the projected footprint — compared to 24.6% for Qatar 2022. Houston's host committee committed to supplying 100% renewable electricity at all official World Cup sites. Lumen Field in Seattle diverts between 90% and 95% of stadium waste from landfills. Guadalajara's Estadio Akron has installed LED lighting and set a goal to reduce stadium waste by 50%.</p>
+
+<p><a href="https://www.karmactive.com/the-rise-of-sustainable-aviation-fuel-a-new-era-of-decarbonization/" target="_blank">Sustainable Aviation Fuel (SAF)</a> has been suggested for team travel, though availability at scale remains limited. For now, the gap between venue-level sustainability measures and the overwhelming footprint of spectator travel remains the defining tension of this tournament.</p>
+
+<h2>What Fans Can Do — Practically</h2>
+
+<p>For fans attending in person: choosing rail or ground transport over short-to-medium domestic flights cuts emissions substantially. Using official public transit routes, carpooling, and selecting plant-based food options at stadiums all contribute. <a href="https://www.karmactive.com/would-you-pay-more-for-green-travel-80-of-travelers-say-yes/" target="_blank">Research shows that a growing share of travellers are willing to pay more for lower-impact options</a> — but only when those options are visible and accessible.</p>
+
+<p>For those watching at home: streaming devices and screens carry their own footprint. Turning off equipment when not in use, using energy-efficient screens, and choosing verified carbon offset programmes all make a measurable — if modest — difference. Merchandise and kits increasingly come in recycled-material versions from most major sports brands, which is a small but real choice.</p>
+
+═══════════════════════════════════════════════════ -->
+
+<!-- ─────────────────────────────────────────────────
+     HTML BLOCK 4: STADIUM HEAT STRESS GRID
+     ───────────────────────────────────────────────── -->
+<div class="ka-heat-section">
+  <div class="ka-heat-title">🌡️ Heat Stress at 2026 World Cup Stadiums</div>
+  <div class="ka-heat-sub">SGR/EDF report assessed Wet Bulb Globe Temperature (WBGT) risk at all 16 host venues. WBGT above 80°F marks the threshold where physical exertion becomes medically dangerous.</div>
+  <div class="ka-heat-legend">
+    <div class="ka-heat-legend-item"><div class="ka-heat-dot" style="background:#c53030;"></div> Extreme heat stress (WBGT &gt;80°F)</div>
+    <div class="ka-heat-legend-item"><div class="ka-heat-dot" style="background:#dd6b20;"></div> High heat risk</div>
+    <div class="ka-heat-legend-item"><div class="ka-heat-dot" style="background:#d69e2e;"></div> Moderate risk</div>
+    <div class="ka-heat-legend-item"><div class="ka-heat-dot" style="background:#2f855a;"></div> Lower heat risk</div>
+  </div>
+  <div class="ka-stadium-grid">
+    <div class="ka-stadium-card heat-extreme">
+      <span class="ka-stadium-name">AT&T Stadium</span>
+      <span class="ka-stadium-country">🇺🇸 Arlington, TX</span>
+      <span class="ka-stadium-heat">⚠️ Extreme Heat Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-extreme">
+      <span class="ka-stadium-name">NRG Stadium</span>
+      <span class="ka-stadium-country">🇺🇸 Houston, TX</span>
+      <span class="ka-stadium-heat">⚠️ Extreme Heat Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-extreme">
+      <span class="ka-stadium-name">SoFi Stadium</span>
+      <span class="ka-stadium-country">🇺🇸 Los Angeles, CA</span>
+      <span class="ka-stadium-heat">⚠️ Extreme Heat Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-extreme">
+      <span class="ka-stadium-name">Estadio Azteca</span>
+      <span class="ka-stadium-country">🇲🇽 Mexico City</span>
+      <span class="ka-stadium-heat">⚠️ Extreme Heat Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-extreme">
+      <span class="ka-stadium-name">Estadio Akron</span>
+      <span class="ka-stadium-country">🇲🇽 Guadalajara</span>
+      <span class="ka-stadium-heat">⚠️ Extreme Heat Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-extreme">
+      <span class="ka-stadium-name">Estadio BBVA</span>
+      <span class="ka-stadium-country">🇲🇽 Monterrey</span>
+      <span class="ka-stadium-heat">⚠️ Extreme Heat Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-high">
+      <span class="ka-stadium-name">MetLife Stadium</span>
+      <span class="ka-stadium-country">🇺🇸 New York/NJ</span>
+      <span class="ka-stadium-heat">🔶 High Heat Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-high">
+      <span class="ka-stadium-name">Hard Rock Stadium</span>
+      <span class="ka-stadium-country">🇺🇸 Miami, FL</span>
+      <span class="ka-stadium-heat">🔶 High Heat Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-moderate">
+      <span class="ka-stadium-name">Rose Bowl</span>
+      <span class="ka-stadium-country">🇺🇸 Pasadena, CA</span>
+      <span class="ka-stadium-heat">🟡 Moderate Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-moderate">
+      <span class="ka-stadium-name">Arrowhead Stadium</span>
+      <span class="ka-stadium-country">🇺🇸 Kansas City, MO</span>
+      <span class="ka-stadium-heat">🟡 Moderate Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-moderate">
+      <span class="ka-stadium-name">Gillette Stadium</span>
+      <span class="ka-stadium-country">🇺🇸 Boston, MA</span>
+      <span class="ka-stadium-heat">🟡 Moderate Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-moderate">
+      <span class="ka-stadium-name">Lincoln Financial</span>
+      <span class="ka-stadium-country">🇺🇸 Philadelphia, PA</span>
+      <span class="ka-stadium-heat">🟡 Moderate Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-lower">
+      <span class="ka-stadium-name">Lumen Field</span>
+      <span class="ka-stadium-country">🇺🇸 Seattle, WA</span>
+      <span class="ka-stadium-heat">✅ Lower Heat Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-lower">
+      <span class="ka-stadium-name">BC Place</span>
+      <span class="ka-stadium-country">🇨🇦 Vancouver, BC</span>
+      <span class="ka-stadium-heat">✅ Lower Heat Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-lower">
+      <span class="ka-stadium-name">BMO Field</span>
+      <span class="ka-stadium-country">🇨🇦 Toronto, ON</span>
+      <span class="ka-stadium-heat">✅ Lower Heat Risk</span>
+    </div>
+    <div class="ka-stadium-card heat-lower">
+      <span class="ka-stadium-name">Stade Olympique</span>
+      <span class="ka-stadium-country">🇨🇦 Montréal, QC</span>
+      <span class="ka-stadium-heat">✅ Lower Heat Risk</span>
+    </div>
+  </div>
+  <div class="ka-heat-warning">
+    ⚠️ <strong>6 of 16 stadiums</strong> face extreme heat stress conditions during scheduled match times. This risk affects both players performing at high intensity and fans in outdoor seating. Source: Scientists for Global Responsibility / Environmental Defense Fund joint report.
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────────
+     HTML BLOCK 5: FAN CARBON CALCULATOR
+     ───────────────────────────────────────────────── -->
+<div class="ka-calc-section">
+  <div class="ka-calc-title">⚽ Your Trip, Your Footprint</div>
+  <div class="ka-calc-sub">Select your travel choices and see your estimated carbon contribution — then see what switching to a lower-impact option saves.</div>
+  <div class="ka-calc-body">
+    <div class="ka-calc-controls">
+      <div>
+        <label class="ka-select-label" for="ka-travel-mode">How are you getting there?</label>
+        <select class="ka-select" id="ka-travel-mode" onchange="kaCalc()">
+          <option value="long-haul-flight">Long-haul international flight (8+ hrs)</option>
+          <option value="short-haul-flight">Short-haul domestic flight (under 3 hrs)</option>
+          <option value="train">Train or rail</option>
+          <option value="ev-car">Electric vehicle (EV)</option>
+          <option value="petrol-car">Petrol/gasoline car</option>
+          <option value="bus">Coach / intercity bus</option>
+        </select>
+      </div>
+      <div class="ka-distance-group">
+        <label class="ka-select-label">Distance (km one way): <span id="ka-dist-val" style="color:#fc8181;">500 km</span></label>
+        <input type="range" class="ka-range" id="ka-distance" min="50" max="10000" step="50" value="500" oninput="kaCalc()"/>
+        <div class="ka-range-labels"><span>50 km</span><span>10,000 km</span></div>
+      </div>
+      <div>
+        <label class="ka-select-label" for="ka-people">Number of people</label>
+        <select class="ka-select" id="ka-people" onchange="kaCalc()">
+          <option value="1">Just me</option>
+          <option value="2">2 people</option>
+          <option value="3">3 people</option>
+          <option value="4">4 people</option>
+        </select>
+      </div>
+      <div>
+        <label class="ka-select-label" for="ka-matches">Number of matches attending</label>
+        <select class="ka-select" id="ka-matches" onchange="kaCalc()">
+          <option value="1">1 match</option>
+          <option value="2">2 matches</option>
+          <option value="3">3 matches</option>
+          <option value="5">5 matches</option>
+        </select>
+      </div>
+    </div>
+    <div class="ka-calc-result">
+      <div class="ka-result-label">Your estimated trip footprint</div>
+      <div class="ka-result-co2" id="ka-co2-total">—</div>
+      <div class="ka-result-unit">kg CO₂e (round trip)</div>
+      <div class="ka-result-equiv" id="ka-equiv">Select your travel details to see an equivalent comparison.</div>
+      <div class="ka-result-tip" id="ka-tip">💡 Tip will appear here once you make your selections.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────────
+     HTML BLOCK 6: KEY TIMELINE
+     ───────────────────────────────────────────────── -->
+<div class="ka-timeline">
+  <div class="ka-timeline-title">Key Moments: From FIFA's Climate Promises to 2026</div>
+  <div class="ka-tl-track">
+    <div class="ka-tl-item">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-year">2014</div>
+      <div class="ka-tl-text">Brazil World Cup: ~2.72M tonnes CO₂e. Deforestation and social disruption tied to infrastructure.</div>
+    </div>
+    <div class="ka-tl-item">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-year">2018</div>
+      <div class="ka-tl-text">Russia World Cup: ~2.16M tonnes CO₂e. Smallest footprint in recent editions.</div>
+    </div>
+    <div class="ka-tl-item">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-year">2021 – COP26</div>
+      <div class="ka-tl-text">FIFA commits to net-zero by 2040 and 50% emissions cut by 2030 at COP26 climate summit.</div>
+    </div>
+    <div class="ka-tl-item">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-year">2022</div>
+      <div class="ka-tl-text">Qatar World Cup: ~3.63M tonnes CO₂e. FIFA calls it the first "carbon-neutral" tournament.</div>
+    </div>
+    <div class="ka-tl-item">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-year">2023</div>
+      <div class="ka-tl-text">Swiss advertising regulator rules Qatar 2022 "carbon-neutral" claim was unsubstantiated. First major ruling against FIFA greenwashing.</div>
+    </div>
+    <div class="ka-tl-item">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-year">2024</div>
+      <div class="ka-tl-text">FIFA signs $400M, 4-year sponsorship with Saudi Aramco. 130 women players from 27 nations sign open letter opposing the deal.</div>
+    </div>
+    <div class="ka-tl-item">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-year">June 2026</div>
+      <div class="ka-tl-text">Tournament begins. SGR and Greenly publish independent carbon analyses. Sierra Club organises protests at World Cup venues.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     WORDPRESS CONCLUSION TEXT BLOCK — paste into WP paragraph block
+     ═══════════════════════════════════════════════════
+
+<h2>What This Edition Covered</h2>
+
+<p>This piece covered the projected carbon footprint of the 2026 FIFA World Cup — estimated at 7.8 to 9 million tonnes of CO₂e — and the independent analyses published by Scientists for Global Responsibility, Greenly, and the Environmental Defense Fund. The FIFA-Aramco sponsorship and its separately estimated climate implications were discussed, alongside FIFA's net-zero commitments and the 2023 Swiss regulatory ruling on the Qatar 2022 carbon neutrality claim. The heat stress assessments for 16 host stadiums, the sustainability efforts of individual host cities, and practical options available to fans attending or watching from home were also covered.</p>
+
+<p>Long-term, the question of whether <a href="https://www.karmactive.com/cop28-in-dubai-a-pivotal-moment-for-climate-action-as-nations-debate-global-stocktake/" target="_blank">international climate commitments</a> can coexist with an expanding global sporting calendar that drives mass air travel is one that extends beyond football. The decisions made around the structure, scale, and sponsorship of events like this one will shape what large-scale human gatherings look like in a warming world. As <a href="https://www.karmactive.com/canada-launches-landmark-strategy-to-confront-climate-change-after-record-breaking-climate-disasters/" target="_blank">individual nations build climate strategies</a>, the role of global institutions — sporting or otherwise — in those strategies remains open.</p>
+
+<p>For fans of the game, the numbers in this piece are not an argument against football. They are an argument for what football — and FIFA — decides to do next.</p>
+
+═══════════════════════════════════════════════════ -->
+
+<!-- ─── CHART SCRIPTS ──────────────────────────────── -->
+<script>
+/* Emissions bar chart */
+(function() {
+  const ctx = document.getElementById('kaEmissionsChart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Brazil 2014', 'Russia 2018', 'Qatar 2022', 'USA/CAN/MEX 2026\n(Greenly est.)', 'USA/CAN/MEX 2026\n(SGR est.)'],
+      datasets: [{
+        label: 'Million tonnes CO₂e',
+        data: [2.72, 2.16, 3.63, 7.8, 9.02],
+        backgroundColor: ['#4299e1','#4299e1','#ed8936','#fc8181','#e53e3e'],
+        borderColor:     ['#2b6cb0','#2b6cb0','#c05621','#e53e3e','#c53030'],
+        borderWidth: 2,
+        borderRadius: 6,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function(c) {
+              return c.parsed.y + ' million tonnes CO₂e';
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: '#a0aec0', font: { size: 11 } },
+          grid:  { color: 'rgba(255,255,255,0.05)' }
+        },
+        y: {
+          beginAtZero: true,
+          max: 11,
+          ticks: {
+            color: '#a0aec0',
+            font: { size: 11 },
+            callback: v => v + 'M'
+          },
+          grid: { color: 'rgba(255,255,255,0.08)' }
+        }
+      }
+    }
+  });
+})();
+
+/* Donut chart */
+(function() {
+  const ctx = document.getElementById('kaDonutChart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Spectator Travel','Accommodation','Stadium Ops','Infrastructure','Team Travel + Other'],
+      datasets: [{
+        data: [87, 5, 4, 3.1, 0.9],
+        backgroundColor: ['#e53e3e','#ed8936','#ecc94b','#48bb78','#4299e1'],
+        borderWidth: 3,
+        borderColor: '#0f1923',
+        hoverOffset: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      cutout: '65%',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function(c) {
+              return c.label + ': ' + c.parsed + '%';
+            }
+          }
+        }
+      }
+    }
+  });
+})();
+
+/* Fan calculator */
+var kaRates = {
+  'long-haul-flight': 0.195,
+  'short-haul-flight': 0.255,
+  'train': 0.041,
+  'ev-car': 0.053,
+  'petrol-car': 0.192,
+  'bus': 0.089
+};
+var kaTips = {
+  'long-haul-flight': '✈️ Long-haul flights are the highest per-km mode. If you can shift to rail for shorter legs or attend a city hub event, the reduction is substantial.',
+  'short-haul-flight': '✈️ Replacing a short-haul flight with rail can cut your footprint by up to 85% on the same route.',
+  'train': '🚆 Rail is one of the lowest-carbon ways to travel. If everyone attending by rail kept that choice, spectator emissions would drop dramatically.',
+  'ev-car': '⚡ EVs running on renewable electricity are among the lowest-emission road options. Carpooling multiplies the savings.',
+  'petrol-car': '🚗 Sharing the car with 3+ others cuts the per-person footprint to comparable rail levels. Carpooling makes a real difference here.',
+  'bus': '🚌 Coach travel is one of the most carbon-efficient ways to move fans at scale — often 50–70% lower than a flight for the same route.'
+};
+function kaCalc() {
+  var mode    = document.getElementById('ka-travel-mode').value;
+  var dist    = parseInt(document.getElementById('ka-distance').value);
+  var people  = parseInt(document.getElementById('ka-people').value);
+  var matches = parseInt(document.getElementById('ka-matches').value);
+  document.getElementById('ka-dist-val').textContent = dist.toLocaleString() + ' km';
+  var rate = kaRates[mode] || 0.1;
+  var totalKg = Math.round(rate * dist * 2 * people * (matches > 1 ? 1 + (matches - 1) * 0.15 : 1));
+  document.getElementById('ka-co2-total').textContent = totalKg.toLocaleString();
+  var kmDriving = Math.round(totalKg / 0.192);
+  var trees = Math.round(totalKg / 21);
+  document.getElementById('ka-equiv').innerHTML =
+    '≈ ' + kmDriving.toLocaleString() + ' km driven in an average petrol car, or the annual CO₂ absorbed by <strong>' + trees + ' mature trees</strong>.';
+  document.getElementById('ka-tip').textContent = kaTips[mode] || '';
+}
+kaCalc();
+</script>
+</body>
+</html>
