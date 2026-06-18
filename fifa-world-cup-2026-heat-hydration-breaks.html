@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIFA World Cup 2026: Heat, Hydration Breaks &amp; the Climate Behind It All</title>
+  <meta name="description" content="For the first time in World Cup history, FIFA has mandated hydration breaks in all 104 matches. Explore the science, the controversy, and what it means for sport in a warming world.">
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --heat-extreme: #d62839;
+      --heat-high: #f77f00;
+      --heat-moderate: #fcbf49;
+      --heat-low: #3bbf8a;
+      --bg-dark: #0d1117;
+      --bg-card: #161b22;
+      --bg-card-hover: #1e2530;
+      --accent-cool: #38bdf8;
+      --accent-warm: #fb923c;
+      --text-primary: #f0f6fc;
+      --text-secondary: #8b949e;
+      --border: rgba(255,255,255,0.08);
+      --gradient-heat: linear-gradient(135deg, #d62839 0%, #f77f00 50%, #fcbf49 100%);
+      --gradient-cool: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ===== WRAPPER ===== */
+    .ka-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px 60px;
+    }
+
+    /* ===== HEADER / FEATURE ===== */
+    .ka-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 480px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .ka-header-image {
+      position: relative;
+      background: linear-gradient(160deg, #1a0a00 0%, #3d1200 40%, #6b2100 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+      overflow: hidden;
+    }
+
+    .ka-header-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0; left: 0;
+    }
+
+    .ka-header-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    }
+
+    .ka-thermometer-art {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .ka-temp-display {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1;
+      background: var(--gradient-heat);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .ka-temp-label {
+      font-size: clamp(0.75rem, 2vw, 0.95rem);
+      color: rgba(255,255,255,0.75);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .ka-pulse-ring {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 2px solid rgba(214, 40, 57, 0.3);
+      margin: 16px auto;
+      position: relative;
+      animation: ka-pulse 2s ease-in-out infinite;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ka-pulse-inner {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(214,40,57,0.2) 0%, rgba(247,127,0,0.1) 100%);
+      border: 2px solid rgba(247,127,0,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    @keyframes ka-pulse {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.06); opacity: 1; }
+    }
+
+    .ka-header-content {
+      background: var(--bg-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(20px, 4vw, 40px);
+    }
+
+    .ka-category-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(214, 40, 57, 0.15);
+      border: 1px solid rgba(214, 40, 57, 0.4);
+      color: #ff6b6b;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+    .ka-main-title {
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      font-weight: 800;
+      line-height: 1.25;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+
+    .ka-deck {
+      font-size: clamp(0.88rem, 1.8vw, 1rem);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .ka-quick-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .ka-qs {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .ka-qs-val {
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      font-weight: 800;
+      background: var(--gradient-heat);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+    }
+
+    .ka-qs-label {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-top: 4px;
+    }
+
+    /* ===== SECTION TITLES ===== */
+    .ka-section-head {
+      margin: 48px 0 24px;
+      text-align: center;
+    }
+
+    .ka-section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--accent-warm);
+      margin-bottom: 8px;
+    }
+
+    .ka-section-title {
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .ka-section-sub {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      margin-top: 8px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== HOW THE BREAK WORKS — STEP FLOW ===== */
+    .ka-break-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .ka-flow-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 16px;
+      text-align: center;
+      position: relative;
+    }
+
+    .ka-flow-step::after {
+      content: '→';
+      position: absolute;
+      right: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+      z-index: 2;
+    }
+
+    .ka-flow-step:last-child::after { display: none; }
+
+    .ka-flow-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .ka-flow-time {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--accent-warm);
+      margin-bottom: 4px;
+    }
+
+    .ka-flow-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ===== VENUE HEAT RISK EXPLORER ===== */
+    .ka-venue-filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+
+    .ka-filter-btn {
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.2s;
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      border-color: var(--border);
+    }
+
+    .ka-filter-btn:hover { color: var(--text-primary); }
+
+    .ka-filter-btn.active-extreme { background: rgba(214,40,57,0.15); border-color: var(--heat-extreme); color: var(--heat-extreme); }
+    .ka-filter-btn.active-high { background: rgba(247,127,0,0.15); border-color: var(--heat-high); color: var(--heat-high); }
+    .ka-filter-btn.active-moderate { background: rgba(252,191,73,0.15); border-color: var(--heat-moderate); color: var(--heat-moderate); }
+    .ka-filter-btn.active-low { background: rgba(59,191,138,0.15); border-color: var(--heat-low); color: var(--heat-low); }
+    .ka-filter-btn.active-all { background: rgba(56,189,248,0.15); border-color: var(--accent-cool); color: var(--accent-cool); }
+
+    .ka-venues-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 14px;
+    }
+
+    .ka-venue-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .ka-venue-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+
+    .ka-venue-card[data-risk="extreme"] { border-top: 3px solid var(--heat-extreme); }
+    .ka-venue-card[data-risk="high"] { border-top: 3px solid var(--heat-high); }
+    .ka-venue-card[data-risk="moderate"] { border-top: 3px solid var(--heat-moderate); }
+    .ka-venue-card[data-risk="low"] { border-top: 3px solid var(--heat-low); }
+
+    .ka-vc-header {
+      padding: 14px 16px 10px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .ka-vc-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .ka-vc-city {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-top: 3px;
+    }
+
+    .ka-risk-badge {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .ka-risk-badge.extreme { background: rgba(214,40,57,0.2); color: var(--heat-extreme); border: 1px solid rgba(214,40,57,0.3); }
+    .ka-risk-badge.high { background: rgba(247,127,0,0.2); color: var(--heat-high); border: 1px solid rgba(247,127,0,0.3); }
+    .ka-risk-badge.moderate { background: rgba(252,191,73,0.2); color: #c4940a; border: 1px solid rgba(252,191,73,0.3); }
+    .ka-risk-badge.low { background: rgba(59,191,138,0.2); color: var(--heat-low); border: 1px solid rgba(59,191,138,0.3); }
+
+    .ka-vc-details {
+      padding: 0 16px 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .ka-vc-stat {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .ka-vc-stat strong {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--text-primary);
+      margin-bottom: 1px;
+    }
+
+    .ka-vc-note {
+      padding: 0 16px 14px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      line-height: 1.5;
+      display: none;
+    }
+
+    .ka-venue-card.expanded .ka-vc-note { display: block; }
+    .ka-venue-card.expanded { border-color: rgba(255,255,255,0.2); }
+
+    /* ===== THRESHOLD COMPARISON ===== */
+    .ka-threshold-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: clamp(20px, 4vw, 36px);
+      margin-bottom: 40px;
+    }
+
+    .ka-threshold-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .ka-threshold-row {
+      margin-bottom: 20px;
+    }
+
+    .ka-threshold-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .ka-tl-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .ka-tl-value {
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .ka-threshold-bar-wrap {
+      height: 10px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .ka-threshold-bar {
+      height: 100%;
+      border-radius: 10px;
+      transition: width 1.5s ease;
+    }
+
+    .ka-threshold-legend {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 6px;
+      font-size: 0.68rem;
+      color: var(--text-secondary);
+    }
+
+    .ka-gap-callout {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(214,40,57,0.1);
+      border: 1px solid rgba(214,40,57,0.25);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 20px;
+    }
+
+    .ka-gap-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+    .ka-gap-text { font-size: 0.82rem; color: var(--text-primary); line-height: 1.5; }
+
+    .ka-gap-text strong { color: #ff6b6b; }
+
+    /* ===== BODY SCIENCE SECTION ===== */
+    .ka-science-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .ka-sci-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ka-sci-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+
+    .ka-sci-card.sweat::before { background: var(--gradient-heat); }
+    .ka-sci-card.perf::before { background: linear-gradient(90deg, #fcbf49, #f77f00); }
+    .ka-sci-card.death::before { background: linear-gradient(90deg, #d62839, #7b0a16); }
+    .ka-sci-card.cool::before { background: var(--gradient-cool); }
+
+    .ka-sci-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .ka-sci-stat {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .ka-sci-card.sweat .ka-sci-stat { color: var(--heat-extreme); }
+    .ka-sci-card.perf .ka-sci-stat { color: var(--heat-high); }
+    .ka-sci-card.death .ka-sci-stat { color: #ff4d4d; }
+    .ka-sci-card.cool .ka-sci-stat { color: var(--accent-cool); }
+
+    .ka-sci-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ===== HYDRATION SLIDER ===== */
+    .ka-hydration-tool {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: clamp(20px, 4vw, 36px);
+      margin-bottom: 40px;
+    }
+
+    .ka-ht-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .ka-ht-sub {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .ka-slider-row {
+      margin-bottom: 20px;
+    }
+
+    .ka-slider-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .ka-sl-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .ka-sl-val {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent-warm);
+      min-width: 50px;
+      text-align: right;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.1);
+      outline: none;
+      cursor: pointer;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-warm);
+      box-shadow: 0 0 8px rgba(251,146,60,0.5);
+      cursor: pointer;
+    }
+
+    .ka-ht-result {
+      margin-top: 20px;
+      background: rgba(251,146,60,0.08);
+      border: 1px solid rgba(251,146,60,0.2);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+
+    .ka-ht-result-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .ka-hr-item { text-align: center; }
+
+    .ka-hr-val {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--accent-warm);
+      display: block;
+    }
+
+    .ka-hr-label {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .ka-ht-alert {
+      margin-top: 12px;
+      font-size: 0.78rem;
+      padding: 10px 14px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .ka-ht-alert.show { display: block; }
+    .ka-ht-alert.danger { background: rgba(214,40,57,0.15); color: #ff8a8a; border-left: 3px solid var(--heat-extreme); }
+    .ka-ht-alert.warning { background: rgba(247,127,0,0.15); color: #ffa64d; border-left: 3px solid var(--heat-high); }
+    .ka-ht-alert.safe { background: rgba(59,191,138,0.15); color: var(--heat-low); border-left: 3px solid var(--heat-low); }
+
+    /* ===== TIMELINE ===== */
+    .ka-timeline {
+      position: relative;
+      padding-left: 32px;
+      margin-bottom: 40px;
+    }
+
+    .ka-timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--heat-extreme), var(--heat-high), var(--heat-moderate));
+    }
+
+    .ka-tl-item {
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .ka-tl-dot {
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 3px solid var(--bg-dark);
+    }
+
+    .ka-tl-item.past .ka-tl-dot { background: var(--heat-moderate); }
+    .ka-tl-item.recent .ka-tl-dot { background: var(--heat-high); }
+    .ka-tl-item.now .ka-tl-dot { background: var(--heat-extreme); box-shadow: 0 0 10px rgba(214,40,57,0.6); }
+
+    .ka-tl-year {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-warm);
+      margin-bottom: 4px;
+    }
+
+    .ka-tl-event {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .ka-tl-detail {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ===== QUOTES ===== */
+    .ka-quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .ka-quote-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      border-left: 3px solid var(--accent-warm);
+    }
+
+    .ka-quote-text {
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+
+    .ka-quote-text::before { content: '"'; font-size: 1.5rem; color: var(--accent-warm); line-height: 0; vertical-align: -0.4em; margin-right: 3px; }
+    .ka-quote-text::after { content: '"'; font-size: 1.5rem; color: var(--accent-warm); line-height: 0; vertical-align: -0.4em; margin-left: 3px; }
+
+    .ka-quote-source {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-warm);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .ka-quote-role {
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    /* ===== FAN SAFETY BOX ===== */
+    .ka-fan-safety {
+      background: linear-gradient(135deg, rgba(56,189,248,0.08) 0%, rgba(14,165,233,0.04) 100%);
+      border: 1px solid rgba(56,189,248,0.2);
+      border-radius: 16px;
+      padding: clamp(20px, 4vw, 32px);
+      margin-bottom: 40px;
+    }
+
+    .ka-fs-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent-cool);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ka-fs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .ka-fs-tip {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+
+    .ka-fs-tip-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .ka-fs-warning {
+      margin-top: 16px;
+      padding: 12px 16px;
+      background: rgba(214,40,57,0.1);
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: #ff8a8a;
+      border-left: 3px solid var(--heat-extreme);
+    }
+
+    /* ===== INTRO/CONCLUSION TEXT AREAS ===== */
+    .ka-text-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: clamp(20px, 4vw, 36px);
+      margin-bottom: 32px;
+      line-height: 1.8;
+      font-size: clamp(0.88rem, 1.8vw, 0.98rem);
+      color: var(--text-primary);
+    }
+
+    .ka-text-block p { margin-bottom: 14px; }
+    .ka-text-block p:last-child { margin-bottom: 0; }
+
+    .ka-text-block a {
+      color: var(--accent-cool);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(56,189,248,0.3);
+      transition: border-color 0.2s;
+    }
+
+    .ka-text-block a:hover { border-color: var(--accent-cool); }
+
+    .ka-text-block strong { color: var(--text-primary); font-weight: 700; }
+
+    /* ===== SUBHEADINGS ===== */
+    .ka-subheading {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      margin: 32px 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ===== IMAGE CAPTION ===== */
+    .ka-image-wrap {
+      margin: 32px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--bg-card);
+    }
+
+    .ka-image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .ka-caption {
+      padding: 12px 16px;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      border-top: 1px solid var(--border);
+      font-style: italic;
+    }
+
+    /* ===== LEGEND ===== */
+    .ka-legend {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .ka-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+    }
+
+    .ka-legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ===== HIDDEN ===== */
+    .ka-venue-hidden { display: none !important; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .ka-header {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .ka-header-image {
+        min-height: 240px;
+      }
+
+      .ka-quick-stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .ka-break-flow {
+        grid-template-columns: 1fr;
+      }
+
+      .ka-flow-step::after {
+        content: '↓';
+        right: 50%;
+        top: auto;
+        bottom: -18px;
+        transform: translateX(50%);
+      }
+
+      .ka-ht-result-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .ka-ht-result-grid .ka-hr-item:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .ka-venues-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .ka-threshold-row .ka-threshold-label { flex-wrap: wrap; gap: 4px; }
+    }
+
+    @media (max-width: 480px) {
+      .ka-header-content { padding: 18px; }
+      .ka-quick-stats { grid-template-columns: 1fr 1fr; }
+      .ka-break-flow { grid-template-columns: 1fr; }
+      .ka-science-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="ka-wrap">
+
+  <!-- ===== STEP 1: HEADER ===== -->
+  <header class="ka-header">
+    <div class="ka-header-image">
+      <!--
+        Feature Image: A photo of a soccer player during a hydration break at the World Cup 2026
+        Source: Inside FIFA / Official World Cup 2026 Media
+        URL: https://inside.fifa.com/organisation/news/hydration-breaks-world-cup-2026-player-welfare
+        Replace the div below with: <img src="YOUR_IMAGE_URL" alt="FIFA World Cup 2026 player during mandatory hydration break in summer heat" loading="lazy">
+      -->
+      <div class="ka-thermometer-art">
+        <div class="ka-pulse-ring">
+          <div class="ka-pulse-inner">🌡️</div>
+        </div>
+        <div class="ka-temp-display">49.5°C</div>
+        <div class="ka-temp-label">Peak Heat Index · Monterrey &amp; Houston</div>
+      </div>
+    </div>
+
+    <div class="ka-header-content">
+      <div class="ka-category-tag">
+        <span>🔥</span> Climate &amp; Sport
+      </div>
+      <h1 class="ka-main-title">The Three-Minute Pause That Changed World Cup Football</h1>
+      <p class="ka-deck">For the first time in 96 years of World Cup history, every single match stops for water. What that whistle really tells us about sport and a warming planet.</p>
+
+      <div class="ka-quick-stats">
+        <div class="ka-qs">
+          <div class="ka-qs-val">104</div>
+          <div class="ka-qs-label">Matches With Mandatory Breaks</div>
+        </div>
+        <div class="ka-qs">
+          <div class="ka-qs-val">54%</div>
+          <div class="ka-qs-label">Club World Cup Games in Danger Zone</div>
+        </div>
+        <div class="ka-qs">
+          <div class="ka-qs-val">22 min</div>
+          <div class="ka-qs-label">When Each Break Occurs Each Half</div>
+        </div>
+        <div class="ka-qs">
+          <div class="ka-qs-val">4°C</div>
+          <div class="ka-qs-label">Gap: FIFA vs FIFPRO Safety Threshold</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- IMAGE CAPTION -->
+  <div style="font-size:0.75rem; color:var(--text-secondary); margin-bottom:32px; padding:0 4px; font-style:italic;">
+    <strong style="color:var(--text-primary);">Feature Image:</strong> Replace the heat visualizer above with a licensed photo of a World Cup 2026 hydration break scene. Suggested source: <a href="https://inside.fifa.com/organisation/news/hydration-breaks-world-cup-2026-player-welfare" target="_blank" rel="noopener" style="color:var(--accent-cool);">FIFA official media portal</a>.<br>
+    <strong>Caption:</strong> A three-minute pause reshapes football's oldest rhythm — while temperatures at 14 of 16 World Cup venues regularly cross the level scientists consider dangerous, the break's duration remains shorter than what sports medicine experts recommend. Who sets the line between precaution and genuine protection?<br>
+    <strong>Alt text:</strong> Soccer players during a mandatory hydration break at the 2026 FIFA World Cup, receiving cold towels and drinks in extreme summer heat.<br>
+    <strong>Title:</strong> FIFA World Cup 2026 Mandatory Hydration Break — Extreme Heat Safety Rule
+  </div>
+
+  <!-- ===== INTRO TEXT BLOCK (WordPress paragraph) ===== -->
+  <div class="ka-text-block">
+    <p>Every 22 minutes of every FIFA World Cup 2026 match, the referee blows a whistle — not for a foul, not for a substitution, but for water. For the first time in World Cup history, <a href="https://inside.fifa.com/organisation/news/hydration-breaks-world-cup-2026-player-welfare" target="_blank" rel="noopener">FIFA has mandated three-minute hydration breaks in all 104 matches</a>, regardless of weather, venue, or temperature. Even games held inside air-conditioned domes pause at the same moment as those played in the open heat of Monterrey.</p>
+    <p>This decision was shaped directly by the 2025 FIFA Club World Cup, held across the United States, where 31 of 57 matches — <strong>54%</strong> — were played at a Wet Bulb Globe Temperature (WBGT) of 28°C or higher. According to scientists aligned with the American College of Sports Medicine, those matches should have been cancelled. <a href="https://www.karmactive.com/as-record-heat-threatens-millions-bidens-proposal-seeks-to-safeguard-workers-lives/" target="_blank" rel="noopener">As record heat has increasingly threatened millions of people</a> — workers, athletes, and fans alike — the question of who sets the safety line, and where, carries consequences that go well beyond the game.</p>
+    <p>Exertional heat stroke is among the leading causes of death in athletes. Losing just 2% of body weight to sweat impairs physical performance. In summer 2026, with venues like Houston and Monterrey regularly reaching heat indices above <strong>49.5°C (121°F)</strong>, football has arrived at a moment it can no longer defer: <a href="https://www.karmactive.com/heading-for-climate-hell-world-on-course-for-2-7c-warming-can-humanity-survive/" target="_blank" rel="noopener">the sport and the planet's trajectory are now on a collision course</a>.</p>
+  </div>
+
+  <!-- ===== HOW THE BREAK WORKS ===== -->
+  <div class="ka-section-head">
+    <div class="ka-section-eyebrow">The New Rule Explained</div>
+    <h2 class="ka-section-title">How a Mandatory Hydration Break Works</h2>
+    <p class="ka-section-sub">Every 22nd minute of each half, in every match, regardless of temperature or venue design</p>
+  </div>
+
+  <div class="ka-break-flow">
+    <div class="ka-flow-step">
+      <span class="ka-flow-icon">⏱️</span>
+      <div class="ka-flow-time">22nd Minute</div>
+      <div class="ka-flow-desc">Referee's whistle stops play. Applies in all 104 matches — including air-conditioned stadiums in Dallas and Atlanta.</div>
+    </div>
+    <div class="ka-flow-step">
+      <span class="ka-flow-icon">💧</span>
+      <div class="ka-flow-time">3 Minutes</div>
+      <div class="ka-flow-desc">Players move to the sideline, drink water and electrolyte fluids, apply cold wet towels to the neck, head, back, and arms.</div>
+    </div>
+    <div class="ka-flow-step">
+      <span class="ka-flow-icon">📺</span>
+      <div class="ka-flow-time">200+ New Slots</div>
+      <div class="ka-flow-desc">Broadcasters, with FIFA's approval from March 2026, air commercials during the breaks — creating predictable advertising windows across the tournament.</div>
+    </div>
+  </div>
+
+  <!-- ===== VENUE HEAT RISK EXPLORER ===== -->
+  <div class="ka-section-head">
+    <div class="ka-section-eyebrow">Interactive Explorer</div>
+    <h2 class="ka-section-title">World Cup 2026 Venue Heat Risk</h2>
+    <p class="ka-section-sub">Research found 14 of 16 venues will reach temperatures scientists consider dangerous. Click any venue to see details. Filter by risk level.</p>
+  </div>
+
+  <div class="ka-legend">
+    <div class="ka-legend-item"><div class="ka-legend-dot" style="background:var(--heat-extreme)"></div> Extreme (Heat Index 49°C+)</div>
+    <div class="ka-legend-item"><div class="ka-legend-dot" style="background:var(--heat-high)"></div> High (38–48°C)</div>
+    <div class="ka-legend-item"><div class="ka-legend-dot" style="background:var(--heat-moderate)"></div> Moderate (28–37°C)</div>
+    <div class="ka-legend-item"><div class="ka-legend-dot" style="background:var(--heat-low)"></div> Lower Risk (below 28°C)</div>
+  </div>
+
+  <div class="ka-venue-filters">
+    <button class="ka-filter-btn active-all" onclick="filterVenues('all', this)">All Venues</button>
+    <button class="ka-filter-btn" onclick="filterVenues('extreme', this)">🔴 Extreme</button>
+    <button class="ka-filter-btn" onclick="filterVenues('high', this)">🟠 High</button>
+    <button class="ka-filter-btn" onclick="filterVenues('moderate', this)">🟡 Moderate</button>
+    <button class="ka-filter-btn" onclick="filterVenues('low', this)">🟢 Lower Risk</button>
+  </div>
+
+  <div class="ka-venues-grid" id="venuesGrid">
+    <!-- Cards injected by JS -->
+  </div>
+
+  <!-- ===== THRESHOLD COMPARISON ===== -->
+  <div class="ka-section-head">
+    <div class="ka-section-eyebrow">The Policy Gap</div>
+    <h2 class="ka-section-title">FIFA vs FIFPRO: Where the Safety Lines Are Drawn</h2>
+    <p class="ka-section-sub">The four-degree gap between what the players' union recommends and what FIFA currently enforces is what scientists call "a matter of life and death"</p>
+  </div>
+
+  <div class="ka-threshold-box">
+    <p class="ka-threshold-title">WBGT Thresholds: Who Says What</p>
+
+    <div class="ka-threshold-row">
+      <div class="ka-threshold-label">
+        <span class="ka-tl-name">FIFPRO (Players' Union) — Cooling Break Trigger</span>
+        <span class="ka-tl-value" style="color:var(--heat-moderate)">26°C WBGT</span>
+      </div>
+      <div class="ka-threshold-bar-wrap">
+        <div class="ka-threshold-bar" style="width:57%; background: var(--heat-moderate);"></div>
+      </div>
+      <div class="ka-threshold-legend"><span>0°C</span><span>32°C+</span></div>
+    </div>
+
+    <div class="ka-threshold-row">
+      <div class="ka-threshold-label">
+        <span class="ka-tl-name">FIFPRO (Players' Union) — Postpone Match</span>
+        <span class="ka-tl-value" style="color:var(--heat-high)">28°C WBGT</span>
+      </div>
+      <div class="ka-threshold-bar-wrap">
+        <div class="ka-threshold-bar" style="width:67%; background: var(--heat-high);"></div>
+      </div>
+      <div class="ka-threshold-legend"><span>0°C</span><span>32°C+</span></div>
+    </div>
+
+    <div class="ka-threshold-row">
+      <div class="ka-threshold-label">
+        <span class="ka-tl-name">FIFA — Considers Postponement Threshold</span>
+        <span class="ka-tl-value" style="color:var(--heat-extreme)">32°C WBGT</span>
+      </div>
+      <div class="ka-threshold-bar-wrap">
+        <div class="ka-threshold-bar" style="width:90%; background: linear-gradient(90deg, var(--heat-high), var(--heat-extreme));"></div>
+      </div>
+      <div class="ka-threshold-legend"><span>0°C</span><span>32°C+</span></div>
+    </div>
+
+    <div class="ka-gap-callout">
+      <span class="ka-gap-icon">⚠️</span>
+      <p class="ka-gap-text">FIFA's postponement threshold is <strong>4°C above FIFPRO's recommended limit</strong>. Research found that at the 2025 Club World Cup, 31 of 57 matches were played above FIFPRO's 28°C threshold — conditions the American College of Sports Medicine says should have triggered cancellation. A new analysis by <strong>World Weather Attribution</strong> found roughly 1 in 4 of the 104 World Cup 2026 matches is likely to exceed FIFPRO's safety threshold.</p>
+    </div>
+  </div>
+
+  <!-- ===== BODY SCIENCE SECTION ===== -->
+  <div class="ka-section-head">
+    <div class="ka-section-eyebrow">Sports Medicine</div>
+    <h2 class="ka-section-title">What Heat Does to the Human Body at Full Pace</h2>
+    <p class="ka-section-sub">Players run an average of 10–12 km per match. These are the physiological realities of doing that in extreme heat.</p>
+  </div>
+
+  <div class="ka-science-grid">
+    <div class="ka-sci-card sweat">
+      <span class="ka-sci-icon">💦</span>
+      <div class="ka-sci-stat">1–2 L</div>
+      <div class="ka-sci-desc">Litres of sweat an athlete can lose per hour in heat — with most drinking far less than they expel during play.</div>
+    </div>
+    <div class="ka-sci-card perf">
+      <span class="ka-sci-icon">📉</span>
+      <div class="ka-sci-stat">2% BW</div>
+      <div class="ka-sci-desc">Losing just 2% of body weight to fluid loss measurably impairs physical performance — for an 80 kg player, that's 1.6 kg of sweat.</div>
+    </div>
+    <div class="ka-sci-card death">
+      <span class="ka-sci-icon">🏥</span>
+      <div class="ka-sci-stat">#1</div>
+      <div class="ka-sci-desc">Exertional heat stroke is among the leading causes of death in athletes during exercise — ahead of cardiac events in summer sport.</div>
+    </div>
+    <div class="ka-sci-card cool">
+      <span class="ka-sci-icon">🧊</span>
+      <div class="ka-sci-stat">6 min</div>
+      <div class="ka-sci-desc">Minimum cooling break duration recommended by scientists in a letter to FIFA in May 2026. The current break is 3 minutes — half the recommended length.</div>
+    </div>
+  </div>
+
+  <!-- ===== HYDRATION CALCULATOR ===== -->
+  <div class="ka-hydration-tool">
+    <h3 class="ka-ht-title">🧮 Hydration Demand Calculator</h3>
+    <p class="ka-ht-sub">Adjust the values to see how much fluid a player could lose and needs to replace — and what 3 minutes can actually deliver</p>
+
+    <div class="ka-slider-row">
+      <div class="ka-slider-label-row">
+        <span class="ka-sl-name">Player Weight (kg)</span>
+        <span class="ka-sl-val" id="weightVal">75 kg</span>
+      </div>
+      <input type="range" min="60" max="100" value="75" id="weightSlider" oninput="updateCalc()">
+    </div>
+
+    <div class="ka-slider-row">
+      <div class="ka-slider-label-row">
+        <span class="ka-sl-name">Temperature Intensity</span>
+        <span class="ka-sl-val" id="tempVal">Moderate Heat</span>
+      </div>
+      <input type="range" min="1" max="3" value="2" id="tempSlider" oninput="updateCalc()">
+    </div>
+
+    <div class="ka-ht-result">
+      <div class="ka-ht-result-grid">
+        <div class="ka-hr-item">
+          <span class="ka-hr-val" id="sweatLoss">0 mL</span>
+          <span class="ka-hr-label">Sweat / 45-min Half</span>
+        </div>
+        <div class="ka-hr-item">
+          <span class="ka-hr-val" id="drinkIn3">0 mL</span>
+          <span class="ka-hr-label">Max Drunk in 3 Min</span>
+        </div>
+        <div class="ka-hr-item">
+          <span class="ka-hr-val" id="deficitPct">0%</span>
+          <span class="ka-hr-label">Deficit vs Sweat Loss</span>
+        </div>
+      </div>
+      <div class="ka-ht-alert" id="htAlert"></div>
+    </div>
+  </div>
+
+  <!-- ===== BODY TEXT: COMMERCIAL CONTROVERSY ===== -->
+  <h2 class="ka-subheading">Three Minutes, Two Opinions: Safety or Revenue?</h2>
+
+  <div class="ka-text-block">
+    <p>When FIFA announced in March 2026 that broadcasters could air commercials during the mandatory pauses, it created something football has never had: <strong>predictable, guaranteed advertising windows</strong> built into the fabric of every match. Across 104 games with two stoppages per game, broadcasters gained more than 200 additional advertising slots.</p>
+    <p>Canada defender Alistair Johnston questioned the breaks openly: <em>"It's probably making some more money for FIFA."</em></p>
+    <p>Netherlands captain Virgil van Dijk was direct after his team's 2–2 draw with Japan at the air-conditioned AT&T Stadium in Arlington — a venue where temperatures were controlled, yet the break happened anyway. <em>"Hydration breaks are a bit interesting. Every time going to commercial is a bit... Not really that I like it. I think for the neutral watchers on TV it's also not great. If it's really hot, obviously it would be good to put them in. But I think you have to look at it in every game, separately, in my opinion."</em></p>
+    <p>FIFA's stated position is that applying the break uniformly removes uncertainty and ensures equal conditions for all teams in all matches. Critics point out this logic simultaneously creates a uniform commercial opportunity — one granted to broadcasters regardless of any medical threshold being crossed.</p>
+  </div>
+
+  <!-- ===== QUOTES ===== -->
+  <div class="ka-quotes-grid">
+    <div class="ka-quote-card">
+      <p class="ka-quote-text">Hydration breaks are a bit interesting... for the neutral watchers on TV it's also not great. If it's really hot, obviously it would be good to put them in. But I think you have to look at it in every game, separately.</p>
+      <div class="ka-quote-source">Virgil van Dijk</div>
+      <div class="ka-quote-role">Netherlands Captain, after Netherlands vs Japan — AT&T Stadium, Arlington</div>
+    </div>
+    <div class="ka-quote-card">
+      <p class="ka-quote-text">It's probably making some more money for FIFA.</p>
+      <div class="ka-quote-source">Alistair Johnston</div>
+      <div class="ka-quote-role">Canada Defender, on the commercial use of hydration breaks</div>
+    </div>
+    <div class="ka-quote-card">
+      <p class="ka-quote-text">The extremely hot conditions in which Club World Cup matches were played are unacceptable conditions that cannot be allowed to happen again under any circumstances at the World Cup. FIFA must put players at the heart of every decision.</p>
+      <div class="ka-quote-source">FIFPRO President</div>
+      <div class="ka-quote-role">International Federation of Professional Footballers, following the 2025 Club World Cup</div>
+    </div>
+    <div class="ka-quote-card">
+      <p class="ka-quote-text">My toes were sore, my nails were hurting — it's incredible.</p>
+      <div class="ka-quote-source">Marcos Llorente</div>
+      <div class="ka-quote-role">Spain midfielder, after playing in Pasadena, California during the 2025 FIFA Club World Cup</div>
+    </div>
+  </div>
+
+  <!-- ===== TIMELINE ===== -->
+  <div class="ka-section-head">
+    <div class="ka-section-eyebrow">How We Got Here</div>
+    <h2 class="ka-section-title">FIFA's Heat Policy — A Timeline</h2>
+  </div>
+
+  <div class="ka-timeline">
+    <div class="ka-tl-item past">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-year">2014 · Brazil</div>
+      <div class="ka-tl-event">First-ever in-game cooling breaks at a World Cup</div>
+      <div class="ka-tl-detail">FIFA introduced conditional cooling breaks — triggered only when WBGT exceeded predefined safety thresholds. Not mandatory. Teams had to request them. First real acknowledgement that football could not ignore heat.</div>
+    </div>
+
+    <div class="ka-tl-item past">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-year">2018–2022 · Russia &amp; Qatar</div>
+      <div class="ka-tl-event">Conditional breaks retained; Qatar managed via scheduling</div>
+      <div class="ka-tl-detail">The 2022 World Cup in Qatar was held in November–December to avoid summer heat. Cooling breaks were available but not consistently applied. The heat problem was effectively deferred, not solved.</div>
+    </div>
+
+    <div class="ka-tl-item recent">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-year">Summer 2025 · USA</div>
+      <div class="ka-tl-event">FIFA Club World Cup — the heat alarm that couldn't be ignored</div>
+      <div class="ka-tl-detail">31 of 57 matches (54%) played at WBGT ≥ 28°C — FIFPRO's postponement threshold. According to ACSM-aligned experts, those matches should have been cancelled. Player Marcos Llorente described toe pain and nail soreness from the heat. FIFPRO president called conditions "unacceptable" and demanded change.</div>
+    </div>
+
+    <div class="ka-tl-item now">
+      <div class="ka-tl-dot"></div>
+      <div class="ka-tl-year">June 2026 · USA / Canada / Mexico</div>
+      <div class="ka-tl-event">Mandatory hydration breaks — for every match, every half, always</div>
+      <div class="ka-tl-detail">FIFA mandates 3-minute breaks at the 22nd minute of each half across all 104 World Cup matches. No weather trigger required. FIFA also permits commercial broadcasting during pauses. Scientists and FIFPRO continue to call for 6-minute breaks and a revised postponement threshold of 28°C — not 32°C.</div>
+    </div>
+  </div>
+
+  <!-- ===== FAN SAFETY ===== -->
+  <div class="ka-fan-safety">
+    <h3 class="ka-fs-title">🧊 If You're Attending a Match: Heat Safety for Fans</h3>
+    <div class="ka-fs-grid">
+      <div class="ka-fs-tip">
+        <span class="ka-fs-tip-icon">💧</span>
+        <span>Drink at least 500 mL of water before entering the stadium. Carry a refillable bottle and hydrate every 20 minutes regardless of thirst.</span>
+      </div>
+      <div class="ka-fs-tip">
+        <span class="ka-fs-tip-icon">🧢</span>
+        <span>Wear light-coloured, breathable clothing. A wide-brimmed hat reduces radiant heat exposure by up to 30%.</span>
+      </div>
+      <div class="ka-fs-tip">
+        <span class="ka-fs-tip-icon">☀️</span>
+        <span>Apply broad-spectrum sunscreen SPF 30 or higher before arriving and reapply every 90 minutes in outdoor venues.</span>
+      </div>
+      <div class="ka-fs-tip">
+        <span class="ka-fs-tip-icon">🌬️</span>
+        <span>Identify shaded sections and cooling areas within the stadium before kickoff. Move to cooler zones during hydration breaks.</span>
+      </div>
+      <div class="ka-fs-tip">
+        <span class="ka-fs-tip-icon">🧂</span>
+        <span>Replace electrolytes, not just water. Sports drinks or electrolyte tablets prevent hyponatremia — a risk when only water is consumed in extreme heat.</span>
+      </div>
+      <div class="ka-fs-tip">
+        <span class="ka-fs-tip-icon">👥</span>
+        <span>Check on companions, especially children and older adults. Heat illness progresses quickly and early signs are easy to miss in the excitement of a match.</span>
+      </div>
+    </div>
+    <div class="ka-fs-warning">
+      ⚠️ <strong>Heat illness warning signs:</strong> Dizziness, heavy or stopped sweating, confusion, rapid heartbeat, or nausea. Seek medical assistance immediately — every stadium has a medical station. Do not wait for symptoms to worsen.
+    </div>
+  </div>
+
+  <!-- ===== BODY TEXT: CLIMATE CONTEXT ===== -->
+  <h2 class="ka-subheading">Beyond the Stadium: The Climate Behind the Break</h2>
+
+  <div class="ka-text-block">
+    <p>The hydration break debate at World Cup 2026 is not an isolated sporting issue. It is one data point in a longer pattern. <a href="https://www.karmactive.com/wmo-confirms-2023-as-earths-warmest-year-in-history-global-warming-intensifies/" target="_blank" rel="noopener">The WMO confirmed 2023 as the warmest year in recorded history</a>. <a href="https://www.karmactive.com/may-2024-hits-record-hottest-month-ever-as-un-chief-warns-of-russian-roulette-with-climate/" target="_blank" rel="noopener">May 2024 became the hottest such month ever recorded</a>, with the UN Secretary-General describing climate inaction as "playing Russian roulette with our planet." In that context, Houston and Monterrey are not outliers — they are previews.</p>
+    <p>The <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11947059/" target="_blank" rel="noopener">scientific paper published in BMC Sports Science, Medicine and Rehabilitation</a> on extreme heat risk at the 2026 FIFA World Cup found that without significant scheduling adjustments and stronger cooling protocols, player health outcomes will worsen as global average temperatures continue rising. Researchers specifically called for matches in Monterrey, Houston, and Miami to be scheduled in the early morning or late evening to reduce WBGT exposure.</p>
+    <p>For fans tracking the broader picture: <a href="https://www.karmactive.com/sea-surface-temperatures-hit-historic-highs-a-new-climate-reality-unfolds/" target="_blank" rel="noopener">sea surface temperatures have hit historic highs</a>, and <a href="https://www.karmactive.com/climate-change-hotter-weather-can-impact-mental-health/" target="_blank" rel="noopener">research consistently links prolonged heat exposure to measurable mental health effects</a> in addition to physical ones. The three-minute pause in play is, in a sense, sport's way of acknowledging what the broader world is still catching up to: that what was once seasonal inconvenience has become structural risk.</p>
+    <p>What the sport does next — whether it expands break durations, adopts FIFPRO's 28°C postponement threshold, or schedules future tournaments around heat rather than broadcast calendars — will define what governance in a warming world can look like, on one of the planet's most-watched stages.</p>
+  </div>
+
+  <!-- ===== CONCLUSION ===== -->
+  <h2 class="ka-subheading">In Summary</h2>
+
+  <div class="ka-text-block">
+    <p>The mandatory hydration breaks introduced at the 2026 FIFA World Cup have been the subject of discussion across sports science, broadcasting, and governance circles since the tournament began on 11 June 2026. The policy was shaped by heat data collected during the 2025 FIFA Club World Cup in the United States, the published recommendations of FIFPRO, and the scientific guidance of bodies including the American College of Sports Medicine.</p>
+    <p>The key points covered in this piece: FIFA mandates 3-minute breaks in every match at the 22-minute mark of each half; 31 of 57 Club World Cup 2025 matches were played at or above FIFPRO's postponement threshold; there is a 4°C gap between FIFA's and FIFPRO's safety thresholds; scientists recommend at least 6-minute breaks; venues in Houston, Monterrey, and Arlington carry the highest heat-index risk; broadcasters are permitted to air commercials during pauses; and players including Virgil van Dijk and Alistair Johnston have publicly questioned the universal application of the rule.</p>
+    <p>The broader climate context — including confirmed record temperatures from the WMO and research on rising heat risk — has been part of this conversation. These discussions were ongoing at the time this article was compiled. Information on fan heat safety has been included based on established sports medicine guidance.</p>
+  </div>
+
+  <!-- ===== SOURCES NOTE ===== -->
+  <div style="margin-top:32px; padding:20px; background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:12px; font-size:0.75rem; color:var(--text-secondary); line-height:1.8;">
+    <strong style="color:var(--text-primary); display:block; margin-bottom:8px;">First-Hand Sources Referenced</strong>
+    <a href="https://inside.fifa.com/organisation/news/hydration-breaks-world-cup-2026-player-welfare" target="_blank" rel="noopener" style="color:var(--accent-cool); display:block;">→ FIFA Official: Hydration Breaks at FIFA World Cup 2026™</a>
+    <a href="https://www.fifpro.org/en" target="_blank" rel="noopener" style="color:var(--accent-cool); display:block;">→ FIFPRO: International Federation of Professional Footballers</a>
+    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11947059/" target="_blank" rel="noopener" style="color:var(--accent-cool); display:block;">→ NIH/PubMed: Extreme heat risk and the potential implications for scheduling of football matches at the 2026 FIFA World Cup</a>
+    <a href="https://www.eurekalert.org/news-releases/1131275" target="_blank" rel="noopener" style="color:var(--accent-cool); display:block;">→ EurekAlert / Taylor &amp; Francis: Should FIFA be doing more to protect soccer players from World Cup heat?</a>
+    <a href="https://www.rte.ie/brainstorm/2026/0608/1576722-world-cup-2026-heat-players-health-performance/" target="_blank" rel="noopener" style="color:var(--accent-cool); display:block;">→ RTÉ Brainstorm (academic experts): Should more be done to protect players from World Cup heat?</a>
+    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9941479/" target="_blank" rel="noopener" style="color:var(--accent-cool); display:block;">→ NIH/PubMed: Wet Bulb Globe Temperature — Indicating Extreme Heat Risk on a Global Grid</a>
+  </div>
+
+</div><!-- end ka-wrap -->
+
+
+<script>
+// ===== VENUE DATA =====
+const venues = [
+  { name: "NRG Stadium", city: "Houston, USA", risk: "extreme", ac: true, retractable: true, heatIndex: "49.5°C+", wbgt: "30–32°C", note: "Most dangerous heat-humidity combination of any World Cup venue. Oppressively muggy dew points (low-to-mid 70s°F) combined with temperatures in the low-to-mid 90s°F. Even with a retractable roof, heat was a critical concern before arriving at the stadium." },
+  { name: "AT&T Stadium", city: "Arlington/Dallas, USA", risk: "extreme", ac: true, retractable: true, heatIndex: "49°C+", wbgt: "29–31°C", note: "Fully air-conditioned dome — yet mandatory hydration breaks still applied here. Netherlands vs Japan was played inside with AC, yet the 22-minute break was implemented, illustrating FIFA's universal policy." },
+  { name: "Estadio BBVA", city: "Monterrey, Mexico", risk: "extreme", ac: false, retractable: false, heatIndex: "49°C+", wbgt: "30–32°C", note: "Outdoor stadium with no cooling system. Monterrey's combination of extreme heat and summer humidity makes it the highest outdoor heat-risk venue of the tournament." },
+  { name: "Hard Rock Stadium", city: "Miami, USA", risk: "high", ac: false, retractable: false, heatIndex: "42–46°C", wbgt: "28–30°C", note: "Open-air stadium in Florida summer. Miami's coastal humidity dramatically amplifies the felt temperature. Research found this venue likely to exceed FIFPRO's recommended safety threshold in multiple matches." },
+  { name: "Mercedes-Benz Stadium", city: "Atlanta, USA", risk: "high", ac: true, retractable: true, heatIndex: "40–44°C", wbgt: "27–29°C", note: "Fully air-conditioned retractable-roof venue. Indoor conditions are managed, but summer Atlanta heat and humidity outside affect stadium access and fan safety during approach." },
+  { name: "Estadio Akron", city: "Guadalajara, Mexico", risk: "high", ac: false, retractable: false, heatIndex: "38–42°C", wbgt: "27–29°C", note: "Open-air venue at 1,566m altitude. Afternoon heat is significant, though altitude slightly moderates conditions compared to Monterrey's lower elevation." },
+  { name: "SoFi Stadium", city: "Los Angeles, USA", risk: "moderate", ac: false, retractable: false, heatIndex: "34–38°C", wbgt: "24–27°C", note: "Roofed but not air-conditioned. Los Angeles' drier summer climate reduces humidity risk, though afternoon temperatures can be high in Inglewood." },
+  { name: "Estadio Azteca", city: "Mexico City, Mexico", risk: "moderate", ac: false, retractable: false, heatIndex: "26–32°C", wbgt: "20–25°C", note: "High altitude (2,240m above sea level) significantly moderates temperature, making it one of the coolest Mexican venues despite being a summer event." },
+  { name: "Lincoln Financial Field", city: "Philadelphia, USA", risk: "moderate", ac: false, retractable: false, heatIndex: "32–36°C", wbgt: "23–26°C", note: "Open-air venue. Philadelphia summers are hot and moderately humid. Evening kickoffs significantly reduce risk at this venue." },
+  { name: "Arrowhead Stadium", city: "Kansas City, USA", risk: "moderate", ac: false, retractable: false, heatIndex: "32–36°C", wbgt: "23–26°C", note: "Open-air stadium. June-July Kansas City heat is real but more manageable than Gulf Coast venues. Night games significantly reduce exposure risk." },
+  { name: "Gillette Stadium", city: "Boston, USA", risk: "low", ac: false, retractable: false, heatIndex: "26–30°C", wbgt: "19–23°C", note: "New England summers are the mildest of any US World Cup venue. Coastal influence and more moderate temperatures make Boston the safest US location." },
+  { name: "MetLife Stadium", city: "East Rutherford (NY/NJ), USA", risk: "low", ac: false, retractable: false, heatIndex: "26–30°C", wbgt: "20–24°C", note: "Open-air venue north of New York City. Warm but generally manageable summer conditions. High-profile matches expected here including potential final-round games." },
+  { name: "Levi's Stadium", city: "San Francisco Bay Area, USA", risk: "low", ac: false, retractable: false, heatIndex: "22–26°C", wbgt: "17–21°C", note: "The Bay Area's marine climate keeps temperatures significantly lower than other California venues. One of the cooler US sites overall." },
+  { name: "Lumen Field", city: "Seattle, USA", risk: "low", ac: false, retractable: false, heatIndex: "22–26°C", wbgt: "17–21°C", note: "Pacific Northwest summers are relatively mild. Seattle is among the safest venues from a heat-stress perspective in the entire tournament." },
+  { name: "BMO Field", city: "Toronto, Canada", risk: "low", ac: false, retractable: false, heatIndex: "24–28°C", wbgt: "19–23°C", note: "Canadian climate keeps summer temperatures moderate. Toronto's lakeside location provides some natural cooling effect." },
+  { name: "BC Place", city: "Vancouver, Canada", risk: "low", ac: false, retractable: true, heatIndex: "20–24°C", wbgt: "15–19°C", note: "The coolest World Cup 2026 venue. Vancouver's temperate oceanic climate and retractable roof make it the lowest heat-risk site in the tournament." }
+];
+
+// ===== RENDER VENUE CARDS =====
+function renderVenues(filter) {
+  const grid = document.getElementById('venuesGrid');
+  grid.innerHTML = '';
+
+  venues.forEach((v, i) => {
+    if (filter !== 'all' && v.risk !== filter) return;
+
+    const card = document.createElement('div');
+    card.className = 'ka-venue-card';
+    card.dataset.risk = v.risk;
+    card.innerHTML = `
+      <div class="ka-vc-header">
+        <div>
+          <div class="ka-vc-name">${v.name}</div>
+          <div class="ka-vc-city">${v.city}</div>
+        </div>
+        <span class="ka-risk-badge ${v.risk}">${v.risk.toUpperCase()}</span>
+      </div>
+      <div class="ka-vc-details">
+        <div class="ka-vc-stat"><strong>${v.heatIndex}</strong>Heat Index</div>
+        <div class="ka-vc-stat"><strong>${v.wbgt}</strong>Est. WBGT</div>
+        <div class="ka-vc-stat"><strong>${v.ac ? '✅ Yes' : '❌ No'}</strong>Air Conditioning</div>
+        <div class="ka-vc-stat"><strong>${v.retractable ? '✅ Yes' : '❌ No'}</strong>Covered/Retractable</div>
+      </div>
+      <div class="ka-vc-note">${v.note}</div>
+    `;
+    card.addEventListener('click', () => {
+      const wasExpanded = card.classList.contains('expanded');
+      document.querySelectorAll('.ka-venue-card.expanded').forEach(c => c.classList.remove('expanded'));
+      if (!wasExpanded) card.classList.add('expanded');
+    });
+    grid.appendChild(card);
+  });
+}
+
+// ===== FILTER VENUES =====
+function filterVenues(risk, btn) {
+  document.querySelectorAll('.ka-filter-btn').forEach(b => {
+    b.className = 'ka-filter-btn';
+  });
+  if (risk === 'all') btn.classList.add('active-all');
+  else btn.classList.add('active-' + risk);
+  renderVenues(risk);
+}
+
+// ===== HYDRATION CALCULATOR =====
+function updateCalc() {
+  const weight = parseInt(document.getElementById('weightSlider').value);
+  const tempLevel = parseInt(document.getElementById('tempSlider').value);
+
+  const tempLabels = ['', 'Moderate Heat (~28°C)', 'High Heat (~35°C)', 'Extreme Heat (40°C+)'];
+  const sweatRates = [0, 0.8, 1.2, 1.8]; // litres per hour
+
+  document.getElementById('weightVal').textContent = weight + ' kg';
+  document.getElementById('tempVal').textContent = tempLabels[tempLevel];
+
+  const sweatPerHour = sweatRates[tempLevel]; // litres/hour
+  const sweatPer45Min = sweatPerHour * 0.75; // 45-minute half
+  const sweatMl = Math.round(sweatPer45Min * 1000);
+
+  // Max a person can comfortably drink in 3 minutes: ~400-600ml
+  const maxDrunk = 500;
+  const deficit = sweatMl - maxDrunk;
+  const deficitPct = Math.round((deficit / sweatMl) * 100);
+
+  document.getElementById('sweatLoss').textContent = sweatMl + ' mL';
+  document.getElementById('drinkIn3').textContent = '~' + maxDrunk + ' mL';
+  document.getElementById('deficitPct').textContent = Math.max(0, deficitPct) + '%';
+
+  const alert = document.getElementById('htAlert');
+  alert.className = 'ka-ht-alert show';
+
+  if (tempLevel === 3) {
+    alert.className += ' danger';
+    alert.textContent = `⚠️ At extreme heat, this player could lose ${sweatMl}mL in one half. A 3-minute break allows only ~${maxDrunk}mL — that's a ${Math.max(0,deficitPct)}% shortfall. Scientists recommend at least 6-minute breaks to meaningfully address this deficit.`;
+  } else if (tempLevel === 2) {
+    alert.className += ' warning';
+    alert.textContent = `⚡ In high heat, the estimated fluid deficit after a 3-minute break is ${Math.max(0, deficit)}mL. Full rehydration requires continued drinking at stoppages and half-time — and ideally longer breaks.`;
+  } else {
+    alert.className += ' safe';
+    alert.textContent = `✓ In moderate conditions, a 3-minute break provides meaningful, if partial, rehydration. Players can significantly close the gap with proper pre-match hydration and half-time intake.`;
+  }
+}
+
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', () => {
+  renderVenues('all');
+  updateCalc();
+
+  // Animate threshold bars on scroll
+  const bars = document.querySelectorAll('.ka-threshold-bar');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.width = entry.target.style.width;
+      }
+    });
+  }, { threshold: 0.3 });
+
+  bars.forEach(bar => observer.observe(bar));
+});
+</script>
+
+</body>
+</html>
