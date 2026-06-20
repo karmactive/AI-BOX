@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A UN report reveals AI data centers consumed 448 TWh of electricity in 2025. By 2030, their water footprint equals the annual drinking needs of 1.3 billion people. Here's what every AI interaction costs the planet.">
+  <title>AI's Hidden Environmental Cost: What Every Prompt, Image and Chat Takes From the Planet | Karmactive</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+
+    /* ==============================
+       GLOBAL RESET & BASE
+    ================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --deep:    #0d2233;
+      --mid:     #1a3d55;
+      --blue:    #0096c7;
+      --cyan:    #00b4d8;
+      --amber:   #f4a261;
+      --red:     #e63946;
+      --green:   #2d9e4f;
+      --bg:      #f0f6fb;
+      --card:    #ffffff;
+      --text:    #1c2b36;
+      --muted:   #5a7585;
+      --border:  #cfe0eb;
+      --radius:  12px;
+      --shadow:  0 4px 20px rgba(13,34,51,0.10);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fff;
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    .ka-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    /* ==============================
+       FEATURE IMAGE HEADER
+    ================================ */
+    .ka-header {
+      background: var(--deep);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+
+    .ka-feature-img {
+      width: 100%;
+      display: block;
+      max-height: 480px;
+      object-fit: cover;
+      opacity: 0.88;
+    }
+
+    .ka-header-content {
+      padding: 28px 28px 24px;
+    }
+
+    .ka-tag {
+      display: inline-block;
+      background: var(--amber);
+      color: var(--deep);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .ka-headline {
+      font-size: clamp(1.55rem, 4vw, 2.35rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .ka-deck {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.80);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .ka-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .ka-caption {
+      background: #0d1f2d;
+      padding: 10px 20px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      font-style: italic;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      line-height: 1.5;
+    }
+
+    /* ==============================
+       ARTICLE TEXT (INTRO BLOCK)
+    ================================ */
+    .ka-intro {
+      padding: 32px 0 24px;
+    }
+
+    .ka-intro p {
+      font-size: 1.06rem;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+
+    .ka-intro a, .ka-body a, .ka-conclusion a {
+      color: var(--blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .ka-intro a:hover, .ka-body a:hover, .ka-conclusion a:hover {
+      color: var(--cyan);
+    }
+
+    /* ==============================
+       STAT CARDS
+    ================================ */
+    .ka-stats {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      margin: 28px 0;
+    }
+
+    .ka-stats-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .ka-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+    }
+
+    .ka-stat-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      border-top: 4px solid var(--blue);
+      transition: transform 0.2s;
+    }
+
+    .ka-stat-card:nth-child(2) { border-top-color: var(--amber); }
+    .ka-stat-card:nth-child(3) { border-top-color: var(--red); }
+    .ka-stat-card:nth-child(4) { border-top-color: var(--green); }
+
+    .ka-stat-card:hover { transform: translateY(-4px); }
+
+    .ka-stat-num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--deep);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .ka-stat-unit {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+
+    .ka-stat-card:nth-child(2) .ka-stat-unit { color: var(--amber); }
+    .ka-stat-card:nth-child(3) .ka-stat-unit { color: var(--red); }
+    .ka-stat-card:nth-child(4) .ka-stat-unit { color: var(--green); }
+
+    .ka-stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* ==============================
+       INTERACTIVE CALCULATOR
+    ================================ */
+    .ka-calc {
+      background: var(--deep);
+      border-radius: var(--radius);
+      padding: 32px 24px;
+      margin: 32px 0;
+      color: #fff;
+    }
+
+    .ka-calc-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    .ka-calc-subtitle {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .ka-calc-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .ka-input-group {
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .ka-input-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 10px;
+    }
+
+    .ka-input-badge {
+      background: var(--amber);
+      color: var(--deep);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+
+    .ka-calc-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 3px;
+      outline: none;
+    }
+
+    .ka-calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--cyan);
+      cursor: pointer;
+      box-shadow: 0 0 0 4px rgba(0,180,216,0.25);
+    }
+
+    .ka-calc-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--cyan);
+      cursor: pointer;
+      border: none;
+    }
+
+    .ka-results {
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .ka-results-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .ka-results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .ka-result-item {
+      text-align: center;
+    }
+
+    .ka-result-num {
+      font-size: 1.55rem;
+      font-weight: 900;
+      color: var(--cyan);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .ka-result-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .ka-comparison {
+      background: rgba(244,162,97,0.12);
+      border: 1px solid rgba(244,162,97,0.3);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 0.84rem;
+      color: rgba(255,255,255,0.75);
+      text-align: center;
+      line-height: 1.5;
+      min-height: 48px;
+    }
+
+    .ka-calc-note {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.5;
+    }
+
+    /* ==============================
+       TIMELINE / CHART
+    ================================ */
+    .ka-chart-section {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      margin: 28px 0;
+    }
+
+    .ka-chart-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 4px;
+    }
+
+    .ka-chart-sub {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .ka-chart-container {
+      position: relative;
+      height: 280px;
+    }
+
+    .ka-chart-legend {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .ka-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .ka-legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ==============================
+       BODY TEXT SECTION
+    ================================ */
+    .ka-body {
+      padding: 8px 0 24px;
+    }
+
+    .ka-body p {
+      font-size: 1.04rem;
+      color: var(--text);
+      line-height: 1.78;
+      margin-bottom: 18px;
+    }
+
+    .ka-pullquote {
+      border-left: 4px solid var(--cyan);
+      margin: 24px 0;
+      padding: 14px 20px;
+      background: var(--bg);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .ka-pullquote p {
+      font-size: 1.08rem;
+      font-style: italic;
+      color: var(--mid);
+      margin: 0 0 8px;
+    }
+
+    .ka-pullquote cite {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* ==============================
+       SOLUTIONS CARDS
+    ================================ */
+    .ka-solutions {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      margin: 28px 0;
+    }
+
+    .ka-solutions-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 18px;
+    }
+
+    .ka-sol-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .ka-sol-card {
+      background: var(--card);
+      border-radius: 10px;
+      padding: 18px 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .ka-sol-icon {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+
+    .ka-sol-heading {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--deep);
+      margin-bottom: 6px;
+    }
+
+    .ka-sol-text {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ==============================
+       CONCLUSION
+    ================================ */
+    .ka-conclusion {
+      padding: 16px 0 36px;
+    }
+
+    .ka-conclusion p {
+      font-size: 1.03rem;
+      color: var(--text);
+      line-height: 1.78;
+      margin-bottom: 16px;
+    }
+
+    /* ==============================
+       RESPONSIVE
+    ================================ */
+    @media (max-width: 640px) {
+      .ka-calc-inputs { grid-template-columns: 1fr; }
+      .ka-results-grid { grid-template-columns: 1fr 1fr; }
+      .ka-stat-num { font-size: 1.6rem; }
+      .ka-stats-grid { grid-template-columns: 1fr 1fr; }
+      .ka-header-content { padding: 20px 16px 18px; }
+      .ka-calc { padding: 24px 16px; }
+      .ka-chart-container { height: 220px; }
+    }
+
+    @media (max-width: 400px) {
+      .ka-results-grid { grid-template-columns: 1fr; }
+      .ka-stats-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="ka-wrap">
+
+  <!-- ================================================================
+       FEATURE IMAGE + ARTICLE HEADER
+       Integrate this HTML block into WordPress at top of article
+  ================================================================== -->
+
+  <div class="ka-header">
+    <img
+      class="ka-feature-img"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/BalticServers_data_center.jpg/1280px-BalticServers_data_center.jpg"
+      alt="Data center server racks representing AI infrastructure and its growing environmental footprint"
+      title="AI Data Center Environmental Footprint — UN Report June 2026"
+      loading="eager"
+    >
+    <div class="ka-header-content">
+      <span class="ka-tag">AI &amp; Environment</span>
+      <h1 class="ka-headline">AI's Hidden Environmental Cost: What Every Prompt, Image and Chat Takes From the Planet</h1>
+      <p class="ka-deck">A UN report released in June 2026 has, for the first time, put exact numbers on what AI really costs in electricity, water, carbon, and land — and the projections to 2030 leave little room for comfortable assumptions.</p>
+      <div class="ka-meta">
+        <span>📅 June 20, 2026</span>
+        <span>🌍 Environment &amp; Technology</span>
+        <span>⏱ 5 min read</span>
+      </div>
+    </div>
+    <div class="ka-caption">
+      Rows of server racks inside a data center facility — as AI adoption spreads to billions of users, the physical infrastructure behind every query is drawing power, water, and land at a scale that the industry is only now being asked to publicly account for. (© BalticServers.com, CC BY-SA 3.0, via Wikimedia Commons)
+    </div>
+  </div>
+
+  <!-- ================================================================
+       INTRO TEXT
+       Copy into WordPress Paragraph/Text Block
+  ================================================================== -->
+
+  <div class="ka-intro">
+    <p>
+      Around 500 million people used some form of generative AI at least once in 2025. Behind every chat, generated image, and AI-written summary is a data center — a building full of servers running around the clock, drawing electricity from a grid and water from nearby sources to stay cool. A new report from the <a href="https://unu.edu/inweh/news/environmental-cost-of-AIs-Enrgy-use-carbon-water-and-land-footprints" target="_blank" rel="noopener">United Nations University Institute for Water, Environment and Health (UNU-INWEH)</a>, published in early June 2026, has put specific figures to what that really means for the planet. The numbers are large, and they are growing faster than the industry's efficiency gains can offset them.
+    </p>
+    <p>
+      As <a href="https://www.karmactive.com/europes-e200-billion-ai-investment-sparks-energy-consumption-concerns/">Europe's €200 billion AI investment plan</a> accelerates deployment and technology companies globally more than doubled capital expenditure on AI infrastructure in 2025, the environmental cost is also compounding — now measurable in terawatt-hours, trillions of liters of water, and hundreds of millions of tonnes of carbon dioxide.
+    </p>
+  </div>
+
+  <!-- ================================================================
+       KEY STATS DASHBOARD
+       WordPress HTML Block
+  ================================================================== -->
+
+  <div class="ka-stats">
+    <div class="ka-stats-title">What the UN Report Found — Global Data Center Footprint in 2025</div>
+    <div class="ka-stats-grid">
+      <div class="ka-stat-card">
+        <div class="ka-stat-num" id="cnt1">0</div>
+        <div class="ka-stat-unit">TWh</div>
+        <div class="ka-stat-label">Electricity consumed by data centers in 2025 — same as France's annual usage</div>
+      </div>
+      <div class="ka-stat-card">
+        <div class="ka-stat-num" id="cnt2">0</div>
+        <div class="ka-stat-unit">TWh by 2030</div>
+        <div class="ka-stat-label">Projected electricity demand — nearly triple the annual use of Pakistan, Bangladesh &amp; Nigeria combined</div>
+      </div>
+      <div class="ka-stat-card">
+        <div class="ka-stat-num" id="cnt3">0</div>
+        <div class="ka-stat-unit">million tonnes CO₂</div>
+        <div class="ka-stat-label">Current annual carbon footprint — equal to Argentina's total emissions</div>
+      </div>
+      <div class="ka-stat-card">
+        <div class="ka-stat-num" id="cnt4">9.3T</div>
+        <div class="ka-stat-unit">litres water by 2030</div>
+        <div class="ka-stat-label">Projected water footprint — equal to the annual basic water needs of all 1.3 billion Sub-Saharan Africans</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       INTERACTIVE AI FOOTPRINT CALCULATOR
+       WordPress HTML Block
+  ================================================================== -->
+
+  <div class="ka-calc">
+    <div class="ka-calc-title">Your Daily AI Footprint</div>
+    <div class="ka-calc-subtitle">Move the sliders to see the real-world cost of your daily AI interactions</div>
+
+    <div class="ka-calc-inputs">
+
+      <div class="ka-input-group">
+        <div class="ka-input-label">
+          <span>AI Chats / Prompts</span>
+          <span class="ka-input-badge" id="val-chats">10 / day</span>
+        </div>
+        <input class="ka-calc-slider" type="range" id="sl-chats" min="0" max="100" value="10" oninput="calcUpdate()">
+      </div>
+
+      <div class="ka-input-group">
+        <div class="ka-input-label">
+          <span>AI Images Generated</span>
+          <span class="ka-input-badge" id="val-imgs">5 / day</span>
+        </div>
+        <input class="ka-calc-slider" type="range" id="sl-imgs" min="0" max="100" value="5" oninput="calcUpdate()">
+      </div>
+
+      <div class="ka-input-group">
+        <div class="ka-input-label">
+          <span>AI Video Clips</span>
+          <span class="ka-input-badge" id="val-vids">2 / day</span>
+        </div>
+        <input class="ka-calc-slider" type="range" id="sl-vids" min="0" max="50" value="2" oninput="calcUpdate()">
+      </div>
+
+      <div class="ka-input-group">
+        <div class="ka-input-label">
+          <span>AI Email / Doc Drafts</span>
+          <span class="ka-input-badge" id="val-docs">3 / day</span>
+        </div>
+        <input class="ka-calc-slider" type="range" id="sl-docs" min="0" max="50" value="3" oninput="calcUpdate()">
+      </div>
+
+    </div>
+
+    <div class="ka-results">
+      <div class="ka-results-title">Your Estimated Daily AI Environmental Cost</div>
+      <div class="ka-results-grid">
+        <div class="ka-result-item">
+          <div class="ka-result-num" id="r-elec">–</div>
+          <div class="ka-result-label">Wh electricity</div>
+        </div>
+        <div class="ka-result-item">
+          <div class="ka-result-num" id="r-water">–</div>
+          <div class="ka-result-label">mL water</div>
+        </div>
+        <div class="ka-result-item">
+          <div class="ka-result-num" id="r-co2">–</div>
+          <div class="ka-result-label">g CO₂ equivalent</div>
+        </div>
+        <div class="ka-result-item">
+          <div class="ka-result-num" id="r-land">–</div>
+          <div class="ka-result-label">cm² land</div>
+        </div>
+      </div>
+      <div class="ka-comparison" id="r-compare">
+        Move the sliders above to see how your daily AI use compares to everyday activities.
+      </div>
+    </div>
+
+    <div class="ka-calc-note">
+      AI image figures are from the UNU-INWEH June 2026 report (2.9 Wh / 28.6 mL / 1.22 g CO₂ / 0.45 cm² per standard-resolution image).
+      Chat, video and document figures are estimates based on reported comparative intensity data from UNU-INWEH and IEA 2026.
+      Actual values vary by model size, server location, and energy mix.
+    </div>
+  </div>
+
+  <!-- ================================================================
+       ENERGY GROWTH TIMELINE CHART
+       WordPress HTML Block
+  ================================================================== -->
+
+  <div class="ka-chart-section">
+    <div class="ka-chart-title">Data Center Electricity Demand — Tracked &amp; Projected</div>
+    <div class="ka-chart-sub">Global data centre electricity consumption (TWh) — with AI's growing share</div>
+    <div class="ka-chart-container">
+      <canvas id="energyChart"></canvas>
+    </div>
+    <div class="ka-chart-legend">
+      <div class="ka-legend-item">
+        <div class="ka-legend-dot" style="background:#0096c7;"></div>
+        <span>Total data center electricity (TWh)</span>
+      </div>
+      <div class="ka-legend-item">
+        <div class="ka-legend-dot" style="background:#f4a261;"></div>
+        <span>AI's share of that total (TWh)</span>
+      </div>
+    </div>
+    <div style="font-size:0.72rem;color:var(--muted);margin-top:10px;">
+      Sources: International Energy Agency (IEA) 2026; UNU-INWEH June 2026 report. 2030 values are IEA base-case projections.
+    </div>
+  </div>
+
+  <!-- ================================================================
+       BODY TEXT — Main article content
+       Copy into WordPress Paragraph/Text Block
+  ================================================================== -->
+
+  <div class="ka-body">
+    <p>
+      The <a href="https://www.iea.org/reports/energy-and-ai/executive-summary" target="_blank" rel="noopener">International Energy Agency's Energy and AI report</a> confirmed that AI-focused data centers grew 50% in energy use in 2025 alone, while the broader data center sector grew 17%. The capital expenditure of five large technology companies crossed $400 billion in 2025 — and is forecast to rise by a further 75% in 2026. The buildout is accelerating, not plateauing.
+    </p>
+
+    <p>
+      What makes AI distinct from previous waves of digital technology is the density of computation per task. The UN report found that a typical conversational AI query is around 200 times more energy-intensive than basic text classification. Generating a single AI image requires approximately 1,450 times more energy. At the individual level, the report put the footprint of one standard-resolution AI-generated image at 2.9 watt-hours of electricity, 1.22 grams of CO₂ equivalent, 28.6 milliliters of water, and 0.45 square centimeters of land. For a short AI-generated video, these figures scale considerably higher.
+    </p>
+
+    <div class="ka-pullquote">
+      <p>"The reality of AI is profoundly physical."</p>
+      <cite>— Professor Kaveh Madani, Director, UNU-INWEH &amp; Lead Investigator, Environmental Cost of AI Report, June 2026</cite>
+    </div>
+
+    <p>
+      Training large AI models amplifies this further. Training GPT-3 in Microsoft's U.S. data centers directly evaporated an estimated 700,000 liters of clean freshwater — before a single user ever interacted with it. Since then, models have grown considerably larger and training runs have become more frequent.
+    </p>
+
+    <p>
+      The footprint is not distributed evenly. Data centers cluster near reliable power grids and water sources — rivers, aquifers, and reservoirs that surrounding communities depend on. In regions already under water stress, the demand from cooling towers competes directly with local supply. The UN report projected that by 2030, the water drawn by AI infrastructure globally will equal the basic annual domestic water needs of all 1.3 billion people in Sub-Saharan Africa. The land physically occupied by data centers will exceed 14,500 square kilometers — roughly twice the area of Jakarta's metropolitan region, a figure that receives almost no attention in mainstream coverage of AI's environmental impact.
+    </p>
+
+    <div class="ka-pullquote">
+      <p>"Every prompt, default setting, generated image, video, and query accumulates when multiplied by billions of users and thousands of operators worldwide. Behavior change across this entire decision chain is one of the most powerful and underused levers we have for keeping AI within planetary limits."</p>
+      <cite>— Dr. Mir Matin, Manager, Geospatial, Climate &amp; Infrastructure Analytics, UNU-INWEH, June 2026</cite>
+    </div>
+
+    <p>
+      There is a documented tension within AI development: the same technology is being deployed for climate modeling, wildfire early detection, methane leak identification, and energy grid optimization — as <a href="https://www.karmactive.com/googles-ai-targets-a-10-reduction-in-global-emissions-by-2030-discover-how-in-their-latest-environmental-report/">Google's own environmental roadmap</a> describes. But the UN report is explicit that this potential does not offset the need to account for AI's own resource footprint with equal transparency. Concerns about AI's broader trajectory have been raised for years by figures like <a href="https://www.karmactive.com/regretting-his-lifes-work-ai-pioneer-geoffrey-hinton-warns-of-global-ai-race/">Geoffrey Hinton</a>, and resource consumption has now joined that list of documented concerns.
+    </p>
+
+    <p>
+      The carbon footprint currently stands at 208 million tonnes of CO₂ annually — comparable to Argentina's total annual emissions. By 2030, the UN report projects this could reach 440 million tonnes. AI's share of that total is projected to grow from 20% today to 40% by the end of the decade, as energy-intensive applications such as AI agents, real-time video generation, and personalized model inference become routine.
+    </p>
+  </div>
+
+  <!-- ================================================================
+       SOLUTIONS SECTION
+       WordPress HTML Block
+  ================================================================== -->
+
+  <div class="ka-solutions">
+    <div class="ka-solutions-title">What Is Being Done — And What Remains Underused</div>
+    <div class="ka-sol-grid">
+
+      <div class="ka-sol-card">
+        <div class="ka-sol-icon">♻️</div>
+        <div class="ka-sol-heading">Heat Recovery</div>
+        <div class="ka-sol-text">
+          <a href="https://www.karmactive.com/googles-data-center-heat-recovery-to-warm-80-of-finnish-homes-by-2025/" style="color:var(--blue)">Google's Hamina, Finland data center</a> now redirects waste heat to local homes and schools via the district heating network, covering 80% of annual heat demand at 97% carbon-free. It remains an exception among thousands of facilities.
+        </div>
+      </div>
+
+      <div class="ka-sol-card">
+        <div class="ka-sol-icon">💧</div>
+        <div class="ka-sol-heading">Closed-Loop Cooling</div>
+        <div class="ka-sol-text">Microsoft has developed closed-loop cooling systems designed to slash annual water consumption at new AI data centers to near-restaurant-level use. The global liquid-cooling market reached $5.52 billion in 2025 and is projected at $15.75 billion by 2030.
+        </div>
+      </div>
+
+      <div class="ka-sol-card">
+        <div class="ka-sol-icon">⚡</div>
+        <div class="ka-sol-heading">Smaller Models</div>
+        <div class="ka-sol-text">Open-source and smaller language models achieving results comparable to frontier models at a fraction of the compute are gaining traction as a practical way to reduce per-query energy footprint without sacrificing utility.
+        </div>
+      </div>
+
+      <div class="ka-sol-card">
+        <div class="ka-sol-icon">🔄</div>
+        <div class="ka-sol-heading">Behavior Change</div>
+        <div class="ka-sol-text">The UN report identifies changing default settings, reducing unnecessary high-resolution AI outputs, and choosing text over image or video where sufficient as the "most powerful and underused lever" in keeping AI within planetary limits.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================================================================
+       CONCLUSION TEXT
+       Copy into WordPress Paragraph/Text Block
+  ================================================================== -->
+
+  <div class="ka-conclusion">
+    <p>
+      The UNU-INWEH report examined electricity, water, land, and carbon footprints across 2025 and projected trajectories through 2030. It documented per-task footprints for individual AI interactions, estimated aggregate global impacts, and identified behavior change, energy efficiency, and operational transparency as the central variables shaping how these figures evolve. A 2024 investigation found that real emissions from company-owned data centers of Apple, Google, Meta, and Microsoft were more than seven times higher than officially reported figures — a gap the UN report calls upon regulators to close through mandatory disclosure.
+    </p>
+    <p>
+      The full report is published by the <a href="https://unu.edu/inweh/collection/environmental-cost-of-AIs-Enrgy-Use-Carbon-water-and-land-footprints" target="_blank" rel="noopener">United Nations University Institute for Water, Environment and Health</a>. The IEA's parallel findings on data center electricity demand were published in the agency's <a href="https://www.iea.org/news/data-centre-electricity-use-surged-in-2025-even-with-tightening-bottlenecks-driving-a-scramble-for-solutions" target="_blank" rel="noopener">2026 data center electricity update</a>. As AI use spreads across more devices, languages, and industries, the <a href="https://www.karmactive.com/ai-in-the-workplace-boosting-efficiency-or-eroding-mental-health/">questions about AI's broader effects</a> — on workplaces, on health, and now on shared natural resources — have moved from theoretical concern to documented, measurable record.
+    </p>
+  </div>
+
+</div><!-- .ka-wrap -->
+
+
+<!-- ================================================================
+     JAVASCRIPT — Counter animations, Calculator, Chart
+================================================================== -->
+<script>
+
+/* ---- Animated stat counters ---- */
+function animateCounter(el, target, duration, decimals) {
+  var start = 0;
+  var step = target / (duration / 16);
+  var timer = setInterval(function() {
+    start += step;
+    if (start >= target) { start = target; clearInterval(timer); }
+    el.textContent = decimals ? start.toFixed(decimals) : Math.round(start);
+  }, 16);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        animateCounter(document.getElementById('cnt1'), 448, 1400, 0);
+        animateCounter(document.getElementById('cnt2'), 945, 1800, 0);
+        animateCounter(document.getElementById('cnt3'), 208, 1600, 0);
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  var statsEl = document.querySelector('.ka-stats');
+  if (statsEl) obs.observe(statsEl);
+});
+
+/* ---- Calculator ---- */
+// Per-interaction estimates (based on UNU-INWEH 2026 report data and IEA comparative intensity figures)
+var RATES = {
+  //              Wh     mL-water  g-CO2   cm2-land
+  chat:   [      3.0,      2.2,    1.2,    0.05 ],  // estimated from 200x text classification baseline
+  img:    [      2.9,     28.6,    1.22,   0.45 ],  // UNU-INWEH verified
+  vid:    [     28.0,    140.0,   11.0,    2.20 ],  // estimated: ~10× image
+  doc:    [      1.5,      1.2,    0.6,    0.03 ]   // estimated: ~50% of chat
+};
+
+function calcUpdate() {
+  var chats = +document.getElementById('sl-chats').value;
+  var imgs  = +document.getElementById('sl-imgs').value;
+  var vids  = +document.getElementById('sl-vids').value;
+  var docs  = +document.getElementById('sl-docs').value;
+
+  document.getElementById('val-chats').textContent = chats + ' / day';
+  document.getElementById('val-imgs').textContent  = imgs + ' / day';
+  document.getElementById('val-vids').textContent  = vids + ' / day';
+  document.getElementById('val-docs').textContent  = docs + ' / day';
+
+  var elec  = chats*RATES.chat[0] + imgs*RATES.img[0] + vids*RATES.vid[0] + docs*RATES.doc[0];
+  var water = chats*RATES.chat[1] + imgs*RATES.img[1] + vids*RATES.vid[1] + docs*RATES.doc[1];
+  var co2   = chats*RATES.chat[2] + imgs*RATES.img[2] + vids*RATES.vid[2] + docs*RATES.doc[2];
+  var land  = chats*RATES.chat[3] + imgs*RATES.img[3] + vids*RATES.vid[3] + docs*RATES.doc[3];
+
+  document.getElementById('r-elec').textContent  = elec.toFixed(1);
+  document.getElementById('r-water').textContent = water.toFixed(0);
+  document.getElementById('r-co2').textContent   = co2.toFixed(1);
+  document.getElementById('r-land').textContent  = land.toFixed(1);
+
+  // Build comparison text
+  var cmp = '';
+  if (elec < 1)  { cmp = 'That electricity could barely light an LED bulb for a minute.'; }
+  else if (elec < 10) { cmp = 'That electricity is roughly equivalent to charging a smartphone to ' + Math.round(elec * 10) + '%.'; }
+  else if (elec < 60) { cmp = 'That electricity would run a laptop for about ' + (elec / 30).toFixed(1) + ' hours.'; }
+  else { cmp = 'That electricity (' + elec.toFixed(0) + ' Wh) is equivalent to running a refrigerator for roughly ' + (elec / 150).toFixed(1) + ' hours.'; }
+
+  if (water > 500)  { cmp += ' The water used (' + water.toFixed(0) + ' mL) could fill over ' + Math.round(water/250) + ' drinking glasses.'; }
+  else if (water > 100) { cmp += ' The water used (' + water.toFixed(0) + ' mL) would fill about ' + (water/250).toFixed(1) + ' standard drinking glasses.'; }
+
+  document.getElementById('r-compare').textContent = cmp || 'Adjust the sliders above.';
+}
+
+// Init on load
+document.addEventListener('DOMContentLoaded', calcUpdate);
+
+
+/* ---- Energy Growth Chart ---- */
+document.addEventListener('DOMContentLoaded', function() {
+  var ctx = document.getElementById('energyChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026*', '2027*', '2028*', '2029*', '2030*'],
+      datasets: [
+        {
+          label: 'Total data center electricity (TWh)',
+          data: [200, 205, 220, 240, 265, 320, 448, 540, 650, 750, 840, 945],
+          backgroundColor: function(ctx) {
+            return ctx.dataIndex >= 7 ? 'rgba(0,150,199,0.35)' : 'rgba(0,150,199,0.75)';
+          },
+          borderColor: '#0096c7',
+          borderWidth: 1,
+          borderRadius: 4,
+          order: 2
+        },
+        {
+          label: "AI's share (TWh)",
+          data: [8, 10, 15, 25, 45, 75, 90, 130, 195, 255, 318, 378],
+          backgroundColor: function(ctx) {
+            return ctx.dataIndex >= 7 ? 'rgba(244,162,97,0.35)' : 'rgba(244,162,97,0.85)';
+          },
+          borderColor: '#f4a261',
+          borderWidth: 1,
+          borderRadius: 4,
+          order: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            footer: function(items) {
+              return items[0].dataIndex >= 7 ? '* Projected (IEA base case)' : '';
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { font: { size: 11 }, color: '#5a7585' }
+        },
+        y: {
+          grid: { color: 'rgba(0,0,0,0.06)' },
+          ticks: { font: { size: 11 }, color: '#5a7585',
+            callback: function(v) { return v + ' TWh'; }
+          },
+          beginAtZero: true
+        }
+      }
+    }
+  });
+});
+
+</script>
+</body>
+</html>
