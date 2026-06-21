@@ -1,0 +1,1403 @@
+<!-- VAQUITA INTERACTIVE FEATURE — karmactive.com WordPress HTML Block -->
+<!-- Title: Science Preserved Its Bones. Now We Must Save Its Life. -->
+<!-- June 21, 2026 | CSS prefix: .vaq- | Libraries: Chart.js 4.4.0, Leaflet 1.9.4 -->
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<style>
+/* === VAQUITA FEATURE STYLES — all namespaced .vaq- to avoid WordPress conflicts === */
+
+.vaq-wrap *, .vaq-wrap *::before, .vaq-wrap *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.vaq-wrap {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #f8fafc;
+  color: #0a1628;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* === HEADER: SPLIT IMAGE + TITLE === */
+.vaq-header {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  min-height: 420px;
+  background: #0a1628;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+}
+
+.vaq-header-img {
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+}
+
+.vaq-header-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+.vaq-img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.72));
+  color: rgba(255,255,255,0.75);
+  font-size: 10.5px;
+  font-style: italic;
+  padding: 28px 12px 10px;
+  line-height: 1.4;
+}
+
+.vaq-header-text {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(150deg, #0a1628 0%, #0d2040 100%);
+}
+
+.vaq-badge {
+  display: inline-block;
+  background: #f77f00;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 18px;
+  width: fit-content;
+}
+
+.vaq-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.22;
+  margin-bottom: 14px;
+}
+
+.vaq-subtitle {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.vaq-meta {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.4);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 16px;
+  line-height: 1.6;
+}
+
+/* === INTRO TEXT === */
+.vaq-intro {
+  background: #ffffff;
+  padding: 34px 40px;
+  border-radius: 0 0 12px 12px;
+  border: 1px solid #e2e8f0;
+  border-top: none;
+  margin-bottom: 28px;
+}
+
+.vaq-intro p {
+  font-size: 15.5px;
+  line-height: 1.82;
+  color: #1e293b;
+  margin-bottom: 18px;
+}
+
+.vaq-intro p:last-child { margin-bottom: 0; }
+
+.vaq-link {
+  color: #1a4a8a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.vaq-link:hover { color: #00b4d8; }
+
+/* === COUNTER === */
+.vaq-counter-section {
+  background: linear-gradient(140deg, #0a1628 0%, #1a4a8a 100%);
+  border-radius: 16px;
+  padding: 48px 40px 40px;
+  text-align: center;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.vaq-counter-section::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(0,180,216,0.12) 0%, transparent 68%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.vaq-counter-section::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(247,127,0,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.vaq-counter-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #00b4d8;
+  margin-bottom: 12px;
+}
+
+.vaq-counter-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.vaq-big-number {
+  font-size: 88px;
+  font-weight: 900;
+  color: #f77f00;
+  line-height: 1;
+  margin-bottom: 6px;
+  letter-spacing: -3px;
+}
+
+.vaq-big-number-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 32px;
+  font-weight: 400;
+}
+
+.vaq-dolphins {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.vaq-dolphin {
+  width: 54px;
+  height: 54px;
+  background: rgba(255,255,255,0.07);
+  border: 2px solid rgba(0,180,216,0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  opacity: 0;
+  transform: translateY(18px) scale(0.8);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.vaq-dolphin.vaq-d-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.vaq-counter-note {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.5);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* === SHARED SECTION TYPOGRAPHY === */
+.vaq-section-eye {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #00b4d8;
+  margin-bottom: 7px;
+}
+
+.vaq-section-h {
+  font-size: 21px;
+  font-weight: 700;
+  color: #0a1628;
+  margin-bottom: 8px;
+  line-height: 1.28;
+}
+
+.vaq-section-sub {
+  font-size: 13.5px;
+  color: #64748b;
+  margin-bottom: 26px;
+  line-height: 1.65;
+}
+
+/* === CHART === */
+.vaq-chart-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 34px 40px;
+  margin-bottom: 28px;
+}
+
+.vaq-chart-wrap {
+  position: relative;
+  height: 320px;
+}
+
+/* === MAP === */
+.vaq-map-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 34px 40px;
+  margin-bottom: 28px;
+}
+
+#vaq-map {
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #d1d5db;
+}
+
+.vaq-map-legend {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.vaq-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #475569;
+}
+
+.vaq-legend-swatch {
+  width: 28px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.vaq-legend-circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid #00b4d8;
+  background: rgba(0,180,216,0.25);
+}
+
+/* === TIMELINE === */
+.vaq-tl-section {
+  background: #0a1628;
+  border-radius: 16px;
+  padding: 36px 0 36px 40px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+
+.vaq-tl-head {
+  padding-right: 40px;
+  margin-bottom: 28px;
+}
+
+.vaq-tl-head .vaq-section-eye { color: #00b4d8; }
+.vaq-tl-head .vaq-section-h  { color: #ffffff; }
+.vaq-tl-head .vaq-section-sub { color: rgba(255,255,255,0.55); margin-bottom: 0; }
+
+.vaq-tl-scroll {
+  overflow-x: auto;
+  overflow-y: visible;
+  padding-bottom: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: #1a4a8a transparent;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
+.vaq-tl-scroll:active { cursor: grabbing; }
+
+.vaq-tl-track {
+  display: flex;
+  width: max-content;
+  padding-right: 40px;
+  position: relative;
+}
+
+.vaq-tl-track::before {
+  content: '';
+  position: absolute;
+  top: 26px;
+  left: 20px;
+  right: 40px;
+  height: 2px;
+  background: rgba(255,255,255,0.08);
+}
+
+.vaq-tl-item {
+  width: 196px;
+  flex-shrink: 0;
+  padding-top: 52px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.vaq-tl-item::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #0a1628;
+  border: 2.5px solid rgba(0,180,216,0.5);
+  transition: all 0.25s ease;
+  z-index: 1;
+}
+
+.vaq-tl-item:hover::before,
+.vaq-tl-item.vaq-tl-active::before {
+  background: #f77f00;
+  border-color: #f77f00;
+  box-shadow: 0 0 0 4px rgba(247,127,0,0.2);
+}
+
+.vaq-tl-year {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #f77f00;
+  margin-bottom: 5px;
+  padding-left: 20px;
+}
+
+.vaq-tl-text {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.55;
+  padding: 10px 14px 10px 20px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  border-left: 2px solid transparent;
+  transition: all 0.25s ease;
+  margin-right: 14px;
+}
+
+.vaq-tl-item:hover .vaq-tl-text,
+.vaq-tl-item.vaq-tl-active .vaq-tl-text {
+  background: rgba(255,255,255,0.07);
+  border-left-color: #00b4d8;
+  color: #ffffff;
+}
+
+/* === THREATS === */
+.vaq-threats-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 34px 40px;
+  margin-bottom: 28px;
+}
+
+.vaq-threats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.vaq-threat-card {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px 18px;
+  cursor: pointer;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s, background 0.25s;
+  background: #f8fafc;
+  position: relative;
+  overflow: hidden;
+}
+
+.vaq-threat-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--tc, #1a4a8a);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s ease;
+}
+
+.vaq-threat-card:hover::after,
+.vaq-threat-card.vaq-tc-open::after {
+  transform: scaleX(1);
+}
+
+.vaq-threat-card:hover,
+.vaq-threat-card.vaq-tc-open {
+  border-color: var(--tc, #1a4a8a);
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+}
+
+.vaq-tc-icon { font-size: 26px; margin-bottom: 10px; display: block; }
+
+.vaq-tc-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0a1628;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.vaq-tc-short {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.vaq-tc-long {
+  display: none;
+  font-size: 12.5px;
+  color: #1e293b;
+  line-height: 1.65;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e9edf3;
+}
+
+.vaq-threat-card.vaq-tc-open .vaq-tc-long { display: block; }
+
+.vaq-tc-toggle {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--tc, #1a4a8a);
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* === HOPE === */
+.vaq-hope-section {
+  background: linear-gradient(140deg, #0c1f3d 0%, #1a4a8a 100%);
+  border-radius: 16px;
+  padding: 36px 40px;
+  margin-bottom: 28px;
+}
+
+.vaq-hope-section .vaq-section-eye  { color: #00b4d8; }
+.vaq-hope-section .vaq-section-h    { color: #ffffff; }
+.vaq-hope-section .vaq-section-sub  { color: rgba(255,255,255,0.6); }
+
+.vaq-hope-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.vaq-hope-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 22px 20px;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+.vaq-hope-card:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(0,180,216,0.5);
+  transform: translateY(-2px);
+}
+
+.vaq-hope-icon { font-size: 26px; display: block; margin-bottom: 10px; }
+
+.vaq-hope-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 7px;
+  line-height: 1.3;
+}
+
+.vaq-hope-body {
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.62);
+  line-height: 1.65;
+}
+
+/* === CONCLUSION === */
+.vaq-conclusion {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #1a4a8a;
+  border-radius: 0 12px 12px 0;
+  padding: 32px 40px;
+  margin-bottom: 28px;
+}
+
+.vaq-conclusion p {
+  font-size: 15.5px;
+  line-height: 1.82;
+  color: #1e293b;
+  margin-bottom: 18px;
+}
+
+.vaq-conclusion p:last-child { margin-bottom: 0; }
+
+/* === SOURCES === */
+.vaq-sources {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 24px 32px;
+}
+
+.vaq-sources-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 14px;
+}
+
+.vaq-sources-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.vaq-sources-list li {
+  font-size: 12px;
+  color: #64748b;
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.vaq-sources-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #00b4d8;
+  font-weight: 700;
+}
+
+.vaq-sources-list a {
+  color: #1a4a8a;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.vaq-sources-list a:hover { text-decoration: underline; color: #00b4d8; }
+
+/* === RESPONSIVE: 768px === */
+@media (max-width: 768px) {
+  .vaq-header {
+    grid-template-columns: 1fr;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .vaq-header-img { min-height: 240px; height: 240px; }
+
+  .vaq-header-text { padding: 24px 22px 28px; }
+
+  .vaq-title { font-size: 21px; }
+
+  .vaq-intro { padding: 24px 22px; }
+
+  .vaq-counter-section { padding: 32px 22px 28px; }
+
+  .vaq-big-number { font-size: 68px; }
+
+  .vaq-dolphin { width: 46px; height: 46px; font-size: 21px; }
+
+  .vaq-chart-section,
+  .vaq-map-section,
+  .vaq-threats-section { padding: 24px 22px; }
+
+  .vaq-chart-wrap { height: 250px; }
+
+  #vaq-map { height: 300px; }
+
+  .vaq-tl-section { padding: 28px 0 28px 22px; }
+
+  .vaq-tl-head { padding-right: 22px; }
+
+  .vaq-threats-grid { grid-template-columns: 1fr; }
+
+  .vaq-hope-section { padding: 28px 22px; }
+
+  .vaq-hope-grid { grid-template-columns: 1fr; }
+
+  .vaq-conclusion { padding: 24px 22px; }
+
+  .vaq-sources { padding: 20px 22px; }
+
+  .vaq-map-legend { flex-direction: column; gap: 10px; }
+}
+
+/* === RESPONSIVE: 480px === */
+@media (max-width: 480px) {
+  .vaq-title { font-size: 19px; }
+  .vaq-section-h { font-size: 18px; }
+  .vaq-big-number { font-size: 56px; letter-spacing: -1px; }
+  .vaq-dolphins { gap: 10px; }
+  .vaq-dolphin { width: 40px; height: 40px; font-size: 18px; }
+  .vaq-tl-item { width: 172px; }
+}
+
+/* === FADE-IN ANIMATION === */
+@keyframes vaq-fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.vaq-fade { animation: vaq-fade-up 0.6s ease both; }
+.vaq-d1   { animation-delay: 0.05s; }
+.vaq-d2   { animation-delay: 0.15s; }
+.vaq-d3   { animation-delay: 0.25s; }
+.vaq-d4   { animation-delay: 0.35s; }
+</style>
+
+<!-- ===================== HTML CONTENT ===================== -->
+
+<div class="vaq-wrap">
+
+  <!-- 1 · HEADER: FEATURE IMAGE + TITLE -->
+  <div class="vaq-header">
+    <div class="vaq-header-img">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Vaquita6_Olson_NOAA.jpg/1280px-Vaquita6_Olson_NOAA.jpg"
+        alt="A vaquita porpoise surfaces briefly in the northern Gulf of California — the only place on Earth where this critically endangered species exists"
+        title="Vaquita (Phocoena sinus) — Earth's rarest marine mammal. Photo: Paula Olson / NOAA Fisheries (Public Domain)"
+        loading="eager"
+      />
+      <div class="vaq-img-caption">
+        Vaquita (Phocoena sinus) in the northern Gulf of California.
+        Photo: Paula Olson / NOAA Fisheries — Public Domain
+      </div>
+    </div>
+    <div class="vaq-header-text">
+      <div class="vaq-badge">Critical Status · June 2026</div>
+      <h1 class="vaq-title">Science Preserved Its Bones. Now We Must Save Its Life.</h1>
+      <p class="vaq-subtitle">
+        The vaquita — Earth's rarest marine mammal — has just been digitally preserved
+        by scientists. Meanwhile, Mexico's government is moving to shrink its last
+        protected water by 85%.
+      </p>
+      <div class="vaq-meta">
+        Species: Vaquita (Phocoena sinus) &nbsp;·&nbsp; Location: Northern Gulf of California
+        <br>Population: ~8 individuals &nbsp;·&nbsp; IUCN Status: Critically Endangered
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 · INTRO TEXT -->
+  <div class="vaq-intro">
+    <p>
+      Eight. That's how many vaquita porpoises scientists believe are still alive in
+      the northern Gulf of California. In June 2026, researchers at
+      <a href="https://www.fau.edu/newsdesk/articles/pixels-preserve-endangered-vaquita"
+         target="_blank" rel="noopener noreferrer" class="vaq-link">Florida Atlantic University
+      published the first complete digital skeleton of a vaquita</a> — a high-resolution
+      3D scan preserving every bone and measurement of a species with no room left to
+      lose a single individual. It is the most complete anatomical record ever made
+      of this animal.
+    </p>
+    <p>
+      While that scan was being assembled, something else was happening. Mexico's
+      government was reviewing a proposal to shrink the vaquita's last protected
+      waters — the Zero Tolerance Area in the Gulf of California — by 85%. That
+      means reducing 11,000 square kilometers of protected sea to just 225. The
+      <a href="https://iwc.int/resources/news/first-ever-extinction-alert-from-the-iwc"
+         target="_blank" rel="noopener noreferrer" class="vaq-link">IWC issued its
+      first-ever extinction alert for any species</a> over this situation in 2022.
+      Scientists at the <a href="https://iucn-csg.org/vaquita/"
+         target="_blank" rel="noopener noreferrer" class="vaq-link">IUCN Cetacean
+      Specialist Group</a> have tracked the population since the 1990s.
+      <a href="https://seashepherd.org/vaquita-survey/"
+         target="_blank" rel="noopener noreferrer" class="vaq-link">Sea Shepherd
+      has maintained survey operations</a> in the area for years.
+    </p>
+    <p>
+      The vaquita was not always on the edge. It once shared these waters with
+      <a href="https://www.karmactive.com/gray-whales-suffer-94-deaths-in-baja-lagoons-calf-pairs-at-record%E2%80%91low-eight/"
+         target="_blank" rel="noopener noreferrer" class="vaq-link">gray whales
+      that have faced their own crisis in nearby Baja lagoons</a>, and with the full
+      range of marine life that populated the upper Gulf of California before large-scale
+      commercial fishing changed it. The situation now is the documented result of
+      decades of bycatch, illegal fishing, and
+      <a href="https://www.karmactive.com/wildlife-population-decline-compound-threats-2026-study/"
+         target="_blank" rel="noopener noreferrer" class="vaq-link">the compounding
+      threats that a 2026 study found are accelerating wildlife collapse globally</a>.
+      The digital preservation is real. The remaining question is whether it becomes
+      a record of survival or a record of what was lost.
+    </p>
+  </div>
+
+  <!-- 3 · THE LAST 8 COUNTER -->
+  <div class="vaq-counter-section">
+    <div class="vaq-counter-eyebrow">Population Status — 2025 Assessment</div>
+    <div class="vaq-counter-heading">The Last Known Vaquita</div>
+    <div class="vaq-big-number" id="vaq-bignum">8</div>
+    <div class="vaq-big-number-label">individuals confirmed alive</div>
+    <div class="vaq-dolphins" id="vaq-dolphins-row" aria-label="8 vaquita represented as icons">
+      <!-- Injected by JS -->
+    </div>
+    <div class="vaq-counter-note">
+      Based on acoustic monitoring buoys and visual surveys conducted by NOAA Fisheries,
+      IUCN-CSG, and Sea Shepherd in the northern Gulf of California (2024–2025).
+    </div>
+  </div>
+
+  <!-- 4 · POPULATION CHART -->
+  <div class="vaq-chart-section">
+    <div class="vaq-section-eye">Population Data</div>
+    <div class="vaq-section-h">From 5,000 to 8 in Less Than a Century</div>
+    <div class="vaq-section-sub">
+      Each data point is drawn from a peer-reviewed population assessment or
+      government survey record. Hover or tap a point to see the count for that year.
+    </div>
+    <div class="vaq-chart-wrap">
+      <canvas id="vaq-pop-chart" aria-label="Chart showing vaquita population decline from 5,000 in 1930 to 8 in 2025" role="img"></canvas>
+    </div>
+  </div>
+
+  <!-- 5 · INTERACTIVE MAP -->
+  <div class="vaq-map-section">
+    <div class="vaq-section-eye">Geographic Context</div>
+    <div class="vaq-section-h">The Last 225 Square Kilometers</div>
+    <div class="vaq-section-sub">
+      The vaquita exists only in the northern Gulf of California. This map shows
+      the current protected Zero Tolerance Area and the proposed 85% reduction.
+      The species' entire known range now fits within a zone smaller than many cities.
+      Tap any zone to learn more.
+    </div>
+    <div id="vaq-map" aria-label="Map of Gulf of California showing vaquita protected zones"></div>
+    <div class="vaq-map-legend">
+      <div class="vaq-legend-row">
+        <div class="vaq-legend-swatch" style="background:rgba(220,38,38,0.35); border-color:#dc2626;"></div>
+        <span>Current Zero Tolerance Area (~11,000 km²)</span>
+      </div>
+      <div class="vaq-legend-row">
+        <div class="vaq-legend-swatch" style="background:rgba(247,127,0,0.45); border-color:#f77f00;"></div>
+        <span>Proposed reduced ZTA (~225 km²)</span>
+      </div>
+      <div class="vaq-legend-row">
+        <div class="vaq-legend-circle"></div>
+        <span>Active acoustic / visual detection zone</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 · TIMELINE -->
+  <div class="vaq-tl-section">
+    <div class="vaq-tl-head">
+      <div class="vaq-section-eye">Timeline</div>
+      <div class="vaq-section-h">90 Years of Decline, One Moment of Preservation</div>
+      <div class="vaq-section-sub">
+        Scroll or drag to explore key events from first discovery to the
+        June 2026 digital archive. &nbsp;← Scroll →
+      </div>
+    </div>
+    <div class="vaq-tl-scroll" id="vaq-tl-scroll">
+      <div class="vaq-tl-track" id="vaq-tl-track">
+
+        <div class="vaq-tl-item">
+          <div class="vaq-tl-year">1930s</div>
+          <div class="vaq-tl-text">
+            Population estimated at ~5,000. Vaquita lives undisturbed in the far
+            northern Gulf of California, largely unknown to science.
+          </div>
+        </div>
+
+        <div class="vaq-tl-item">
+          <div class="vaq-tl-year">1958</div>
+          <div class="vaq-tl-text">
+            First scientific description by biologists Kenneth Norris and William
+            McFarland. The species is formally documented for the first time.
+          </div>
+        </div>
+
+        <div class="vaq-tl-item">
+          <div class="vaq-tl-year">1985</div>
+          <div class="vaq-tl-text">
+            IUCN recognizes vaquita as vulnerable. Gillnet bycatch is already
+            identified as a serious and growing risk to the population.
+          </div>
+        </div>
+
+        <div class="vaq-tl-item">
+          <div class="vaq-tl-year">1997</div>
+          <div class="vaq-tl-text">
+            First formal population survey: ~600 remain. Mexico establishes the
+            Upper Gulf of California Biosphere Reserve.
+          </div>
+        </div>
+
+        <div class="vaq-tl-item">
+          <div class="vaq-tl-year">2005</div>
+          <div class="vaq-tl-text">
+            Survey: 280 vaquita. Gillnet bycatch confirmed as primary cause.
+            Totoaba poaching, driven by demand in China, begins to surge.
+          </div>
+        </div>
+
+        <div class="vaq-tl-item">
+          <div class="vaq-tl-year">2008</div>
+          <div class="vaq-tl-text">
+            Mexico bans gillnets across much of the vaquita range. ~200 remain.
+            Enforcement proves difficult in this remote marine area.
+          </div>
+        </div>
+
+        <div class="vaq-tl-item">
+          <div class="vaq-tl-year">2015</div>
+          <div class="vaq-tl-text">
+            Survey: only 97 individuals. Totoaba poaching intensifies severely.
+            Mexican Navy begins patrols in the upper Gulf.
+          </div>
+        </div>
+
+        <div class="vaq-tl-item">
+          <div class="vaq-tl-year">2016</div>
+          <div class="vaq-tl-text">
+            Population drops to ~30. Zero Tolerance Area established.
+            Mexico deploys Navy vessels and removes gillnets from the zone.
+          </div>
+        </div>
+
+        <div class="vaq-tl-item">
+          <div class="vaq-tl-year">2019</div>
+          <div class="vaq-tl-text">
+            Sea Shepherd surveys document 22 vaquita — including calves.
+            Signs of active reproduction recorded for the first time in years.
+          </div>
+        </div>
+
+        <div class="vaq-tl-item">
+          <div class="vaq-tl-year">2022</div>
+          <div class="vaq-tl-text">
+            IWC issues its first-ever extinction alert for any species.
+            ~10 individuals estimated. International pressure on Mexico intensifies.
+          </div>
+        </div>
+
+        <div class="vaq-tl-item">
+          <div class="vaq-tl-year">2024–25</div>
+          <div class="vaq-tl-text">
+            Mexico reviews proposal to cut ZTA by 85% — from 11,000 km² to 225 km².
+            Conservation groups and scientists submit formal objections.
+          </div>
+        </div>
+
+        <div class="vaq-tl-item vaq-tl-active">
+          <div class="vaq-tl-year">June 2026</div>
+          <div class="vaq-tl-text">
+            FAU publishes complete 3D digital skeleton in <em>Marine Mammal Science</em>.
+            8 vaquita are believed alive. The anatomical archive is complete.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 7 · THREAT EXPLORER -->
+  <div class="vaq-threats-section">
+    <div class="vaq-section-eye">Why It's Happening</div>
+    <div class="vaq-section-h">Six Documented Threats — Tap Each to Expand</div>
+    <div class="vaq-section-sub">
+      The vaquita's collapse is not from one cause. Each factor below has been
+      documented in peer-reviewed research and government assessments.
+    </div>
+    <div class="vaq-threats-grid">
+
+      <div class="vaq-threat-card" style="--tc:#dc2626;" onclick="window.vaqToggle(this)">
+        <span class="vaq-tc-icon">🎣</span>
+        <div class="vaq-tc-name">Gillnet Bycatch</div>
+        <div class="vaq-tc-short">Vaquita drown when caught in nets set for other fish, unable to surface to breathe.</div>
+        <div class="vaq-tc-long">
+          Vaquita are air-breathing mammals. When entangled in gillnets — vertical mesh
+          walls set in the water column — they cannot surface and drown within minutes.
+          Despite bans in 2008 and 2015, illegal gillnet use continues inside the Zero
+          Tolerance Area. A single net set in the wrong place can kill one of the
+          remaining eight individuals. This remains the most direct cause of mortality.
+        </div>
+        <span class="vaq-tc-toggle">Tap to read more ↓</span>
+      </div>
+
+      <div class="vaq-threat-card" style="--tc:#7c3aed;" onclick="window.vaqToggle(this)">
+        <span class="vaq-tc-icon">🐟</span>
+        <div class="vaq-tc-name">Totoaba Poaching</div>
+        <div class="vaq-tc-short">Illegal fishing for an equally endangered fish keeps gillnets active in the ZTA.</div>
+        <div class="vaq-tc-long">
+          The totoaba (<em>Totoaba macdonaldi</em>) is itself Critically Endangered and
+          fully protected under CITES. Its swim bladder sells for tens of thousands of
+          dollars on Chinese black markets, where it's used in traditional medicine.
+          Poachers use the same gillnets that catch vaquita as bycatch. The totoaba
+          trade is the economic reason illegal fishing continues despite Navy patrols
+          and international enforcement pressure.
+        </div>
+        <span class="vaq-tc-toggle">Tap to read more ↓</span>
+      </div>
+
+      <div class="vaq-threat-card" style="--tc:#0891b2;" onclick="window.vaqToggle(this)">
+        <span class="vaq-tc-icon">📉</span>
+        <div class="vaq-tc-name">Habitat Reduction Proposal</div>
+        <div class="vaq-tc-short">Mexico's proposed boundary change would shrink the protected zone by 85%.</div>
+        <div class="vaq-tc-long">
+          The current Zero Tolerance Area covers approximately 11,000 square kilometers
+          of the northern Gulf of California. The proposal under review would reduce this
+          to 225 square kilometers — an 85% cut. Scientists have warned this would
+          expose most of the vaquita's remaining habitat to unregulated fishing activity,
+          removing the legal basis for enforcement across the vast majority of the area
+          where the animals live.
+        </div>
+        <span class="vaq-tc-toggle">Tap to read more ↓</span>
+      </div>
+
+      <div class="vaq-threat-card" style="--tc:#059669;" onclick="window.vaqToggle(this)">
+        <span class="vaq-tc-icon">🧬</span>
+        <div class="vaq-tc-name">Genetic Bottleneck</div>
+        <div class="vaq-tc-short">At 8 individuals, genetic diversity is extremely low — but not necessarily fatal.</div>
+        <div class="vaq-tc-long">
+          With only 8 known individuals, inbreeding risk is severe. However, a 2021
+          genetic study found vaquita genomes carry fewer harmful mutations than expected —
+          a possible sign the species adapted to low genetic diversity over a long period.
+          The Northern elephant seal offers a reference: it recovered from an estimated
+          20–30 individuals in the 1890s to over 170,000 today. Biological recovery from
+          these numbers is rare but documented.
+        </div>
+        <span class="vaq-tc-toggle">Tap to read more ↓</span>
+      </div>
+
+      <div class="vaq-threat-card" style="--tc:#b45309;" onclick="window.vaqToggle(this)">
+        <span class="vaq-tc-icon">🚢</span>
+        <div class="vaq-tc-name">Enforcement Gaps</div>
+        <div class="vaq-tc-short">The Gulf is large, patrols are limited, and illegal nets keep being found.</div>
+        <div class="vaq-tc-long">
+          Mexico has deployed Navy vessels, surveillance drones, and international
+          observers to the ZTA. Sea Shepherd has maintained a physical presence.
+          Despite this, surveys have repeatedly found illegal gillnets in the water since
+          the ZTA was established in 2016. Continuous enforcement in a remote marine
+          environment is difficult to sustain — and even brief gaps create lethal risk
+          for a population of 8.
+        </div>
+        <span class="vaq-tc-toggle">Tap to read more ↓</span>
+      </div>
+
+      <div class="vaq-threat-card" style="--tc:#be185d;" onclick="window.vaqToggle(this)">
+        <span class="vaq-tc-icon">🌐</span>
+        <div class="vaq-tc-name">International Demand</div>
+        <div class="vaq-tc-short">Demand for totoaba parts in China is what makes illegal fishing in Mexico profitable.</div>
+        <div class="vaq-tc-long">
+          Totoaba swim bladders command prices exceeding USD $20,000 per kilogram on
+          Chinese black markets. This demand has persisted despite international trade
+          bans, CITES listings, and Chinese government statements of cooperation.
+          Conservation groups have documented trafficking routes from the Gulf of
+          California through the United States to China. Without demand reduction,
+          enforcement alone has not stopped the trade, and the trade is what puts
+          gillnets in the water.
+        </div>
+        <span class="vaq-tc-toggle">Tap to read more ↓</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 8 · HOPE / WHAT'S BEING DONE -->
+  <div class="vaq-hope-section">
+    <div class="vaq-section-eye">What's Being Done</div>
+    <div class="vaq-section-h">Active Developments That Bear on Survival</div>
+    <div class="vaq-section-sub">
+      These are documented, current actions. None of them guarantee recovery.
+      All of them are ongoing.
+    </div>
+    <div class="vaq-hope-grid">
+
+      <div class="vaq-hope-card">
+        <span class="vaq-hope-icon">🔬</span>
+        <div class="vaq-hope-title">Complete 3D Digital Record (June 2026)</div>
+        <div class="vaq-hope-body">
+          FAU's publication in <em>Marine Mammal Science</em> gives scientists the
+          most detailed anatomical dataset ever produced for a vaquita specimen.
+          This ensures the species is fully documented in the scientific record,
+          regardless of what happens in the water.
+        </div>
+      </div>
+
+      <div class="vaq-hope-card">
+        <span class="vaq-hope-icon">🐣</span>
+        <div class="vaq-hope-title">Documented Reproduction (2019)</div>
+        <div class="vaq-hope-body">
+          Sea Shepherd's 2019 survey documented calves among the 22 individuals
+          sighted. This was direct evidence that the remaining population was still
+          reproducing — a critical biological finding that changed short-term
+          viability assessments. Calves in 2019 would be juveniles or adults today.
+        </div>
+      </div>
+
+      <div class="vaq-hope-card">
+        <span class="vaq-hope-icon">⚡</span>
+        <div class="vaq-hope-title">IWC Extinction Alert (2022)</div>
+        <div class="vaq-hope-body">
+          The International Whaling Commission's first-ever species extinction alert
+          created a formal international record that Mexico must address in diplomatic
+          forums. This is a legal mechanism, not a press statement, and it keeps
+          the vaquita on the agenda of international marine governance bodies.
+        </div>
+      </div>
+
+      <div class="vaq-hope-card">
+        <span class="vaq-hope-icon">📡</span>
+        <div class="vaq-hope-title">Acoustic Monitoring Network</div>
+        <div class="vaq-hope-body">
+          NOAA Fisheries and partner organizations maintain passive acoustic buoys
+          in the northern Gulf that detect vaquita echolocation clicks. This system
+          tracks individuals without disturbing them and provides the most reliable
+          population data available between visual survey expeditions.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 9 · CONCLUSION -->
+  <div class="vaq-conclusion">
+    <p>
+      Eight vaquita were documented in the northern Gulf of California in the most
+      recent population assessments. The species exists in one location on Earth —
+      a narrow strip of sea between Baja California and mainland Mexico — and that
+      habitat is now the subject of a proposed 85% reduction in protected coverage.
+    </p>
+    <p>
+      In June 2026, Florida Atlantic University researchers published a complete 3D
+      digital skeleton of a vaquita specimen in the journal
+      <a href="https://onlinelibrary.wiley.com/doi/10.1111/mms.70162"
+         target="_blank" rel="noopener noreferrer" class="vaq-link"><em>Marine Mammal Science</em></a>.
+      The International Whaling Commission issued an extinction alert for the species
+      in 2022 — the first time the IWC used that mechanism for any marine mammal.
+      IUCN classifies the vaquita as Critically Endangered. Sea Shepherd has maintained
+      a presence in the Gulf. Illegal totoaba gillnets — the primary source of vaquita
+      bycatch mortality — continue to be documented in the area despite Navy operations.
+    </p>
+    <p>
+      The species shares its waters with other animals facing pressure in the same region,
+      including <a href="https://www.karmactive.com/gray-whales-suffer-94-deaths-in-baja-lagoons-calf-pairs-at-record%E2%80%91low-eight/"
+         target="_blank" rel="noopener noreferrer" class="vaq-link">gray whales
+      documented losing calves in nearby Baja lagoons</a>. The pattern is part of a
+      wider record — one that
+      <a href="https://www.karmactive.com/wildlife-population-decline-compound-threats-2026-study/"
+         target="_blank" rel="noopener noreferrer" class="vaq-link">a 2026 study on compound
+      threats to wildlife populations</a> addressed directly, and one that connects to
+      <a href="https://www.karmactive.com/whale-migration-map-shows-3-2m-km-of-routes-7-species-endangered-moving-shipping-lanes-15-miles-could-cut-collisions-95/"
+         target="_blank" rel="noopener noreferrer" class="vaq-link">the pressures on
+      marine mammal migration routes across the eastern Pacific</a>. The data on the
+      vaquita is as complete as it has ever been. The digital record exists. The living
+      population is eight.
+    </p>
+  </div>
+
+  <!-- 10 · SOURCES -->
+  <div class="vaq-sources">
+    <div class="vaq-sources-title">Primary Sources</div>
+    <ul class="vaq-sources-list">
+      <li>
+        <strong>FAU Press Release, June 2026 — "Pixels Preserve Endangered Vaquita":</strong>
+        <a href="https://www.fau.edu/newsdesk/articles/pixels-preserve-endangered-vaquita"
+           target="_blank" rel="noopener noreferrer">
+          fau.edu/newsdesk/articles/pixels-preserve-endangered-vaquita
+        </a>
+      </li>
+      <li>
+        <strong>Karan et al., <em>Marine Mammal Science</em> (Wiley, 2026) — 3D Skeletal Scan:</strong>
+        <a href="https://onlinelibrary.wiley.com/doi/10.1111/mms.70162"
+           target="_blank" rel="noopener noreferrer">
+          onlinelibrary.wiley.com/doi/10.1111/mms.70162
+        </a>
+      </li>
+      <li>
+        <strong>NOAA Fisheries — Vaquita Species Page:</strong>
+        <a href="https://www.fisheries.noaa.gov/species/vaquita"
+           target="_blank" rel="noopener noreferrer">
+          fisheries.noaa.gov/species/vaquita
+        </a>
+      </li>
+      <li>
+        <strong>IWC — First-Ever Extinction Alert:</strong>
+        <a href="https://iwc.int/resources/news/first-ever-extinction-alert-from-the-iwc"
+           target="_blank" rel="noopener noreferrer">
+          iwc.int/resources/news/first-ever-extinction-alert-from-the-iwc
+        </a>
+      </li>
+      <li>
+        <strong>Sea Shepherd — Vaquita Survey Operations:</strong>
+        <a href="https://seashepherd.org/vaquita-survey/"
+           target="_blank" rel="noopener noreferrer">
+          seashepherd.org/vaquita-survey/
+        </a>
+      </li>
+      <li>
+        <strong>IUCN Cetacean Specialist Group — Vaquita Species Profile:</strong>
+        <a href="https://iucn-csg.org/vaquita/"
+           target="_blank" rel="noopener noreferrer">
+          iucn-csg.org/vaquita/
+        </a>
+      </li>
+    </ul>
+  </div>
+
+</div><!-- /.vaq-wrap -->
+
+<!-- ===================== SCRIPTS ===================== -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---- DOLPHIN COUNTER ---- */
+  var row = document.getElementById('vaq-dolphins-row');
+  if (row) {
+    for (var i = 0; i < 8; i++) {
+      var d = document.createElement('div');
+      d.className = 'vaq-dolphin';
+      d.setAttribute('role', 'img');
+      d.setAttribute('aria-label', 'Vaquita individual ' + (i + 1));
+      d.innerHTML = '🐬';
+      row.appendChild(d);
+    }
+    var icons = row.querySelectorAll('.vaq-dolphin');
+    icons.forEach(function (el, idx) {
+      setTimeout(function () {
+        el.classList.add('vaq-d-visible');
+      }, 400 + idx * 220);
+    });
+  }
+
+  /* ---- POPULATION DECLINE CHART ---- */
+  var chartCanvas = document.getElementById('vaq-pop-chart');
+  if (chartCanvas && typeof Chart !== 'undefined') {
+    var years = ['1930','1993','1997','2005','2008','2015','2016','2018','2019','2022','2025'];
+    var counts = [5000, 700, 600, 280, 200, 97, 30, 19, 22, 10, 8];
+
+    new Chart(chartCanvas, {
+      type: 'line',
+      data: {
+        labels: years,
+        datasets: [{
+          label: 'Estimated Population',
+          data: counts,
+          borderColor: '#f77f00',
+          backgroundColor: function (context) {
+            var c = context.chart.ctx;
+            var g = c.createLinearGradient(0, 0, 0, 320);
+            g.addColorStop(0, 'rgba(247,127,0,0.28)');
+            g.addColorStop(1, 'rgba(247,127,0,0.02)');
+            return g;
+          },
+          borderWidth: 2.5,
+          pointBackgroundColor: '#f77f00',
+          pointBorderColor: '#ffffff',
+          pointBorderWidth: 2.5,
+          pointRadius: 5,
+          pointHoverRadius: 8,
+          fill: true,
+          tension: 0.32
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { intersect: false, mode: 'index' },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#0a1628',
+            titleColor: '#00b4d8',
+            bodyColor: '#ffffff',
+            padding: 12,
+            cornerRadius: 8,
+            callbacks: {
+              title: function (items) { return 'Year: ' + items[0].label; },
+              label: function (item) {
+                return 'Population: ~' + item.parsed.y.toLocaleString() + ' individuals';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { color: 'rgba(0,0,0,0.05)' },
+            ticks: { color: '#475569', font: { size: 11, family: 'Inter, sans-serif' } }
+          },
+          y: {
+            grid: { color: 'rgba(0,0,0,0.05)' },
+            ticks: {
+              color: '#475569',
+              font: { size: 11, family: 'Inter, sans-serif' },
+              callback: function (v) { return v >= 1000 ? (v / 1000) + 'k' : v; }
+            },
+            title: {
+              display: true,
+              text: 'Individuals',
+              color: '#94a3b8',
+              font: { size: 11, family: 'Inter, sans-serif' }
+            }
+          }
+        }
+      }
+    });
+  }
+
+  /* ---- LEAFLET MAP ---- */
+  var mapEl = document.getElementById('vaq-map');
+  if (mapEl && typeof L !== 'undefined') {
+    var map = L.map('vaq-map', {
+      center: [31.0, -114.55],
+      zoom: 7,
+      scrollWheelZoom: false
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors',
+      maxZoom: 14
+    }).addTo(map);
+
+    /* Current ZTA (~11,000 km²) */
+    L.polygon(
+      [[31.85,-115.10],[31.85,-113.70],[30.30,-113.70],[30.30,-115.10]],
+      { color: '#dc2626', fillColor: '#dc2626', fillOpacity: 0.14, weight: 2, dashArray: '7,5' }
+    ).addTo(map).bindPopup(
+      '<strong>Current Zero Tolerance Area</strong><br>' +
+      '~11,000 km² · Established 2016<br>' +
+      'Under review: proposed 85% reduction'
+    );
+
+    /* Proposed reduced ZTA (~225 km²) */
+    L.polygon(
+      [[31.40,-114.70],[31.40,-114.30],[31.05,-114.30],[31.05,-114.70]],
+      { color: '#f77f00', fillColor: '#f77f00', fillOpacity: 0.38, weight: 2.5 }
+    ).addTo(map).bindPopup(
+      '<strong>Proposed Reduced ZTA</strong><br>' +
+      '~225 km² · 85% smaller than current protected zone<br>' +
+      'Status: under government review'
+    );
+
+    /* Acoustic/sighting detection zone */
+    L.circle([31.22, -114.50], {
+      radius: 25000,
+      color: '#00b4d8',
+      fillColor: '#00b4d8',
+      fillOpacity: 0.18,
+      weight: 2.5
+    }).addTo(map).bindPopup(
+      '<strong>Active Detection Zone</strong><br>' +
+      'Area where vaquita have been detected<br>' +
+      'via acoustic monitoring and visual survey (2024–25)'
+    );
+
+    /* Enable scroll zoom on user click, disable on mouseout */
+    map.on('click', function () { map.scrollWheelZoom.enable(); });
+    map.on('mouseout', function () { map.scrollWheelZoom.disable(); });
+  }
+
+  /* ---- TIMELINE DRAG-TO-SCROLL ---- */
+  var tlScroll = document.getElementById('vaq-tl-scroll');
+  if (tlScroll) {
+    var isDown = false, startX, scrollLeft;
+
+    tlScroll.addEventListener('mousedown', function (e) {
+      isDown = true;
+      tlScroll.classList.add('active');
+      startX = e.pageX - tlScroll.offsetLeft;
+      scrollLeft = tlScroll.scrollLeft;
+    });
+
+    tlScroll.addEventListener('mouseleave', function () { isDown = false; });
+    tlScroll.addEventListener('mouseup', function () { isDown = false; });
+
+    tlScroll.addEventListener('mousemove', function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      var x = e.pageX - tlScroll.offsetLeft;
+      tlScroll.scrollLeft = scrollLeft - (x - startX) * 1.2;
+    });
+
+    /* Scroll to the last (most recent) item on load */
+    setTimeout(function () {
+      tlScroll.scrollLeft = tlScroll.scrollWidth - tlScroll.clientWidth;
+    }, 600);
+  }
+
+  /* ---- TIMELINE ITEM CLICK ACTIVATION ---- */
+  var tlItems = document.querySelectorAll('.vaq-tl-item');
+  tlItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      tlItems.forEach(function (i) { i.classList.remove('vaq-tl-active'); });
+      item.classList.add('vaq-tl-active');
+    });
+  });
+
+})();
+
+/* ---- THREAT CARD TOGGLE (global scope for onclick) ---- */
+window.vaqToggle = function (card) {
+  var isOpen = card.classList.contains('vaq-tc-open');
+  document.querySelectorAll('.vaq-threat-card').forEach(function (c) {
+    c.classList.remove('vaq-tc-open');
+    var t = c.querySelector('.vaq-tc-toggle');
+    if (t) t.textContent = 'Tap to read more ↓';
+  });
+  if (!isOpen) {
+    card.classList.add('vaq-tc-open');
+    var toggle = card.querySelector('.vaq-tc-toggle');
+    if (toggle) toggle.textContent = 'Tap to collapse ↑';
+  }
+};
+</script>
