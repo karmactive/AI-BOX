@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Microplastics have been confirmed in human hearts, brains, and breast milk. With the UN global plastics treaty informal talks opening in Nairobi on June 30, 2026, a binding international agreement hangs in the balance.">
+<title>Plastic Found in Human Hearts — and the Treaty That Could Stop It Reaches a Turning Point This Week in Nairobi</title>
+<style>
+:root {
+  --ocean: #0077B6;
+  --deep: #023E8A;
+  --danger: #E63946;
+  --gold: #F4A261;
+  --green: #2D9B5A;
+  --text: #1A1A2E;
+  --light: #F0F4F8;
+  --white: #FFFFFF;
+  --muted: #6B7280;
+  --border: #E2E8F0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--text);line-height:1.7;background:var(--white);}
+a{color:var(--ocean);text-decoration:underline;text-underline-offset:3px;}
+a:hover{color:var(--deep);}
+.container{max-width:860px;margin:0 auto;padding:0 20px;}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:460px;background:var(--deep);}
+.hero-img-wrap{position:relative;overflow:hidden;}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-img-caption{position:absolute;bottom:0;left:0;right:0;background:rgba(0,0,0,.65);color:rgba(255,255,255,.75);font-size:.63rem;padding:7px 10px;line-height:1.4;}
+.hero-content{padding:36px 32px;display:flex;flex-direction:column;justify-content:center;color:var(--white);}
+.hero-eyebrow{font-size:.7rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:14px;font-weight:700;}
+.hero-title{font-size:1.55rem;font-weight:800;line-height:1.3;margin-bottom:10px;color:var(--white);}
+.hero-title em{color:var(--gold);font-style:normal;}
+.hero-meta{font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:22px;}
+.countdown-wrap{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:16px 20px;}
+.countdown-label{font-size:.67rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:10px;font-weight:700;}
+.countdown-timer{display:flex;gap:10px;align-items:flex-start;}
+.countdown-unit{text-align:center;}
+.countdown-num{font-size:2rem;font-weight:900;color:var(--white);line-height:1;display:block;font-variant-numeric:tabular-nums;}
+.countdown-unit-label{font-size:.6rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-top:3px;}
+.countdown-sep{font-size:2rem;font-weight:900;color:var(--gold);line-height:1;}
+.live-badge{background:var(--danger);color:#fff;padding:6px 14px;border-radius:5px;font-size:.85rem;font-weight:700;letter-spacing:1px;display:inline-block;}
+
+/* STATS BAR */
+.stats-bar{background:var(--ocean);padding:28px 0;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+.stat-item{padding:0 18px;text-align:center;border-right:1px solid rgba(255,255,255,.2);}
+.stat-item:last-child{border-right:none;}
+.stat-number{font-size:1.75rem;font-weight:900;color:var(--white);line-height:1;display:block;}
+.stat-suffix{font-size:1.1rem;font-weight:700;}
+.stat-label{font-size:.68rem;color:rgba(255,255,255,.8);margin-top:5px;line-height:1.3;}
+
+/* INTRO */
+.intro-text{padding:44px 0 32px;}
+.intro-text p{font-size:1.06rem;line-height:1.85;margin-bottom:18px;color:var(--text);}
+.intro-text p:last-child{margin-bottom:0;}
+
+/* TIMELINE */
+.timeline-section{background:var(--light);padding:48px 0;}
+.section-heading{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--deep);margin-bottom:26px;}
+.timeline{position:relative;padding-left:28px;}
+.timeline::before{content:'';position:absolute;left:8px;top:14px;bottom:14px;width:2px;background:linear-gradient(to bottom,var(--ocean),var(--danger));}
+.tl-item{position:relative;margin-bottom:5px;cursor:pointer;}
+.tl-dot{position:absolute;left:-24px;top:18px;width:12px;height:12px;border-radius:50%;background:var(--ocean);border:2px solid var(--white);transition:transform .2s;}
+.tl-item.open .tl-dot{background:var(--danger);transform:scale(1.3);}
+.tl-header{padding:13px 16px;background:var(--white);border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;gap:12px;transition:border-color .2s;}
+.tl-item:hover .tl-header,.tl-item.open .tl-header{border-color:var(--ocean);}
+.tl-item.open .tl-header{border-color:var(--danger);background:#FFF5F5;border-bottom-left-radius:0;border-bottom-right-radius:0;}
+.tl-date{font-size:.7rem;font-weight:700;color:var(--muted);white-space:nowrap;min-width:82px;}
+.tl-item.open .tl-date{color:var(--danger);}
+.tl-event{font-size:.88rem;font-weight:600;color:var(--text);flex:1;}
+.tl-arrow{font-size:.72rem;color:var(--muted);transition:transform .2s;}
+.tl-item.open .tl-arrow{transform:rotate(180deg);}
+.tl-detail{display:none;padding:12px 16px 14px;font-size:.83rem;color:var(--muted);line-height:1.65;background:var(--white);border:1px solid var(--danger);border-top:none;border-radius:0 0 8px 8px;margin-top:-2px;}
+.tl-item.open .tl-detail{display:block;}
+
+/* THE DIVIDE */
+.divide-section{padding:48px 0;}
+.divide-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.divide-panel{padding:24px;border-radius:12px;}
+.divide-high{background:#EBF5FB;border:2px solid var(--ocean);}
+.divide-low{background:#FEF9F0;border:2px solid var(--gold);}
+.divide-label{font-size:.67rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-bottom:7px;}
+.divide-high .divide-label{color:var(--ocean);}
+.divide-low .divide-label{color:#B45309;}
+.divide-title{font-size:.93rem;font-weight:700;color:var(--text);margin-bottom:14px;line-height:1.4;}
+.divide-pts{list-style:none;}
+.divide-pts li{font-size:.84rem;line-height:1.5;margin-bottom:9px;padding-left:20px;position:relative;color:var(--text);}
+.divide-high .divide-pts li::before{content:'✓';position:absolute;left:0;color:var(--ocean);font-weight:700;}
+.divide-low .divide-pts li::before{content:'—';position:absolute;left:0;color:#B45309;font-weight:700;}
+
+/* MICROPLASTICS CARDS */
+.micro-section{background:var(--text);padding:48px 0;color:var(--white);}
+.micro-section .section-heading{color:var(--gold);}
+.micro-intro{font-size:.93rem;color:rgba(255,255,255,.75);margin-bottom:24px;line-height:1.7;}
+.micro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;}
+.micro-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:18px 15px;transition:background .2s;}
+.micro-card:hover{background:rgba(255,255,255,.1);}
+.micro-icon{font-size:1.5rem;margin-bottom:9px;display:block;}
+.micro-organ{font-size:.78rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px;}
+.micro-desc{font-size:.78rem;color:rgba(255,255,255,.7);line-height:1.5;}
+.micro-desc a{color:rgba(255,255,255,.75);}
+
+/* PULL STAT */
+.pull-stat{background:var(--ocean);padding:40px 0;text-align:center;}
+.pull-stat-number{font-size:3.2rem;font-weight:900;color:var(--white);line-height:1;}
+.pull-stat-text{font-size:.97rem;color:rgba(255,255,255,.85);margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.6;}
+.pull-stat-source{font-size:.68rem;color:rgba(255,255,255,.5);margin-top:10px;}
+
+/* BODY TEXT */
+.body-text{padding:48px 0;}
+.body-text p{font-size:1.02rem;line-height:1.85;margin-bottom:20px;color:var(--text);}
+.body-text p:last-child{margin-bottom:0;}
+
+/* ACTION CARDS */
+.actions-section{background:var(--light);padding:48px 0;}
+.actions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:6px;}
+.action-card{background:var(--white);border-radius:10px;padding:20px;border:1px solid var(--border);}
+.action-icon{font-size:1.35rem;margin-bottom:9px;display:block;}
+.action-title{font-size:.88rem;font-weight:700;color:var(--text);margin-bottom:5px;}
+.action-desc{font-size:.8rem;color:var(--muted);line-height:1.55;}
+
+/* CONCLUSION */
+.conclusion-section{padding:48px 0;border-top:3px solid var(--ocean);}
+.conclusion-section p{font-size:1.02rem;line-height:1.85;margin-bottom:18px;color:var(--text);}
+.conclusion-section p:last-child{margin-bottom:0;}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-img-wrap{height:230px;}
+  .hero-content{padding:26px 20px;}
+  .hero-title{font-size:1.25rem;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:0;}
+  .stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.2);padding:16px 12px;}
+  .stat-item:nth-child(odd){border-right:1px solid rgba(255,255,255,.2);}
+  .stat-item:nth-last-child(-n+2){border-bottom:none;}
+  .divide-grid{grid-template-columns:1fr;}
+  .micro-grid{grid-template-columns:repeat(2,1fr);}
+  .actions-grid{grid-template-columns:1fr;}
+  .pull-stat-number{font-size:2.4rem;}
+  .tl-date{min-width:72px;font-size:.65rem;}
+  .tl-event{font-size:.82rem;}
+}
+@media(max-width:460px){
+  .micro-grid{grid-template-columns:1fr;}
+  .countdown-num{font-size:1.55rem;}
+  .countdown-sep{font-size:1.55rem;}
+  .hero-title{font-size:1.15rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img-wrap">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Plastic_beach.jpg/1280px-Plastic_beach.jpg"
+      alt="Heaps of plastic waste covering a beach shoreline, illustrating the scale of marine plastic pollution ahead of the UN global plastics treaty negotiations in Nairobi, June 2026"
+      title="Global Plastics Treaty 2026 — Ocean Plastic Pollution Crisis Ahead of Nairobi INC Informal Talks"
+      loading="eager"
+      onerror="this.style.display='none';this.parentElement.style.background='#023E8A';"
+    >
+    <div class="hero-img-caption">
+      Plastic waste accumulated along a shoreline — a visible fraction of the 19–23 million tonnes entering aquatic ecosystems every year. (Photo: Bo Eide / CC BY-SA 2.0 via Wikimedia Commons)
+    </div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Global Plastics Treaty &middot; Nairobi &middot; June 30, 2026</div>
+    <h1 class="hero-title">Plastic Found in <em>Human Hearts</em> — and the Treaty That Could Stop It Reaches a Turning Point This Week in Nairobi</h1>
+    <div class="hero-meta">June 22, 2026 &nbsp;&middot;&nbsp; Environment &nbsp;&middot;&nbsp; Global Policy</div>
+    <div class="countdown-wrap">
+      <div class="countdown-label">&#9203; Nairobi Informal Session Opens In</div>
+      <div class="countdown-timer" id="countdown-timer">
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-days">08</span>
+          <div class="countdown-unit-label">Days</div>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-hours">00</span>
+          <div class="countdown-unit-label">Hours</div>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-mins">00</span>
+          <div class="countdown-unit-label">Mins</div>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-secs">00</span>
+          <div class="countdown-unit-label">Secs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number"><span class="counter" data-target="460">0</span><span class="stat-suffix">M</span></span>
+        <div class="stat-label">tonnes of plastic produced globally per year</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number"><span class="counter" data-target="23">0</span><span class="stat-suffix">M</span></span>
+        <div class="stat-label">tonnes entering rivers, lakes &amp; oceans annually</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">&lt;<span class="counter" data-target="10">0</span><span class="stat-suffix">%</span></span>
+        <div class="stat-label">of all plastic ever produced has been recycled</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number"><span class="counter" data-target="175">0</span></span>
+        <div class="stat-label">nations negotiating the global plastics treaty</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO TEXT -->
+<section class="intro-text">
+  <div class="container">
+    <p>Scientists have now confirmed microplastic particles in <a href="https://www.karmactive.com/microplastics-in-the-heart-scientists-make-a-disturbing-discovery/">human cardiac tissue</a>, in newborn blood, in surgical lung samples, and in breast milk. These are not findings from a single study — they have been replicated across multiple peer-reviewed publications over the past four years. The same materials found accumulating on coastlines have been traced inside the human body.</p>
+    <p>Eight days from now, delegations from 175 nations convene in Nairobi for an informal session of the <a href="https://www.unep.org/inc-plastic-pollution" target="_blank" rel="noopener">UN Intergovernmental Negotiating Committee on Plastic Pollution</a> — the body tasked with finalizing a binding global plastics treaty. The session runs June 30 to July 3. It is the last scheduled conversation before a final diplomatic conference later this year, and the window for a strong agreement is closing.</p>
+    <p>More than 460 million tonnes of plastic are produced globally each year — roughly double what was produced two decades ago, according to the <a href="https://www.oecd.org/environment/plastics/" target="_blank" rel="noopener">OECD Global Plastics Outlook</a>. Between 19 and 23 million tonnes enter freshwater systems and marine environments annually. Less than 10% of all plastic ever made has been recycled. The rest has been incinerated, landfilled, or released into the environment — where it does not break down. It breaks apart.</p>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="container">
+    <div class="section-heading">How We Got Here — The INC Negotiation Timeline</div>
+    <div class="timeline">
+
+      <div class="tl-item" onclick="toggleTL(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div class="tl-date">Nov 2022</div>
+          <div class="tl-event">INC-1 &middot; Punta del Este, Uruguay</div>
+          <div class="tl-arrow">&#9660;</div>
+        </div>
+        <div class="tl-detail">175 nations agreed under UN Environment Assembly Resolution 5/14 to develop a legally binding instrument on plastic pollution. The UN Environment Programme was designated secretariat. A mandate to address the full lifecycle of plastics — production, design, and waste — was formally adopted.</div>
+      </div>
+
+      <div class="tl-item" onclick="toggleTL(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div class="tl-date">May 2023</div>
+          <div class="tl-event">INC-2 &middot; Paris, France</div>
+          <div class="tl-arrow">&#9660;</div>
+        </div>
+        <div class="tl-detail">The first substantive session produced a compiled draft text. Over 50 countries indicated support for production reduction measures. A smaller group of petrochemical-producing nations began organizing opposition to production caps, arguing the treaty should cover waste management only.</div>
+      </div>
+
+      <div class="tl-item" onclick="toggleTL(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div class="tl-date">Nov 2023</div>
+          <div class="tl-event">INC-3 &middot; Nairobi, Kenya</div>
+          <div class="tl-arrow">&#9660;</div>
+        </div>
+        <div class="tl-detail">The production cap debate became the central fault line. The High Ambition Coalition — over 60 nations including EU states, Pacific Island countries, and Canada — formally called for binding reduction targets. A negotiating text was compiled but bracketed language multiplied.</div>
+      </div>
+
+      <div class="tl-item" onclick="toggleTL(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div class="tl-date">Apr 2024</div>
+          <div class="tl-event">INC-4 &middot; Ottawa, Canada</div>
+          <div class="tl-arrow">&#9660;</div>
+        </div>
+        <div class="tl-detail">Deep divisions persisted on scope and ambition. The revised draft carried hundreds of bracketed options. Financing for developing nations, chemical restrictions, and implementation plans remained unresolved. The session tested whether meaningful agreement was achievable.</div>
+      </div>
+
+      <div class="tl-item" onclick="toggleTL(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div class="tl-date">Nov 2024</div>
+          <div class="tl-event">INC-5 &middot; Busan, South Korea</div>
+          <div class="tl-arrow">&#9660;</div>
+        </div>
+        <div class="tl-detail">Talks concluded without agreement. Production cut provisions and chemicals coverage remained the primary sticking points. An additional session — INC-5.2 — was scheduled for early 2026, and the deadline for a completed treaty was extended.</div>
+      </div>
+
+      <div class="tl-item" onclick="toggleTL(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div class="tl-date">Feb 2026</div>
+          <div class="tl-event">INC-5.2 &middot; Geneva, Switzerland</div>
+          <div class="tl-arrow">&#9660;</div>
+        </div>
+        <div class="tl-detail">An informal technical session in Geneva failed to narrow the gap on core provisions. Progress on chemicals annexes and financing remained limited. An additional informal session — INC-5.3 — was announced for June 30–July 3, 2026, in Nairobi.</div>
+      </div>
+
+      <div class="tl-item open" onclick="toggleTL(this)">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <div class="tl-date">Jun 30, 2026</div>
+          <div class="tl-event">INC-5.3 &middot; Nairobi, Kenya — THIS WEEK</div>
+          <div class="tl-arrow">&#9660;</div>
+        </div>
+        <div class="tl-detail">Informal session, June 30 – July 3, 2026. Delegations will work through bracketed language, align on chemicals provisions, and address financing for developing nations. No formal adoption at this stage — but what comes out of Nairobi shapes the final adoption session. Independent reporting at the <a href="https://enb.iisd.org/plastic-pollution/inc5-3" target="_blank" rel="noopener">IISD Earth Negotiations Bulletin</a>.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- THE DIVIDE -->
+<section class="divide-section">
+  <div class="container">
+    <div class="section-heading">Where the Blocs Stand</div>
+    <div class="divide-grid">
+      <div class="divide-panel divide-high">
+        <div class="divide-label">High Ambition Coalition — 60+ Nations</div>
+        <div class="divide-title">EU &middot; Pacific Islands &middot; Canada &middot; Chile &middot; Rwanda &middot; and others</div>
+        <ul class="divide-pts">
+          <li>Full lifecycle treaty — address production, design, and end-of-life waste together</li>
+          <li>Binding production reduction targets with a phase-out timeline by 2040</li>
+          <li>Mandatory restrictions on the most hazardous plastic-associated chemicals</li>
+          <li>Common but differentiated responsibilities — financial support for lower-income nations</li>
+          <li>International monitoring and compliance mechanisms</li>
+        </ul>
+      </div>
+      <div class="divide-panel divide-low">
+        <div class="divide-label">Against Production Caps — Major Oil Producers</div>
+        <div class="divide-title">Saudi Arabia &middot; Russia &middot; Iran &middot; and others</div>
+        <ul class="divide-pts">
+          <li>Waste management focus only — collection, sorting, and recycling infrastructure</li>
+          <li>No binding cap on plastic production volume</li>
+          <li>Voluntary national action plans instead of internationally mandated targets</li>
+          <li>Opposition to mandatory chemical restrictions in the treaty text</li>
+          <li>Argue that production limits would constrain economic development</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MICROPLASTICS IN THE BODY -->
+<section class="micro-section">
+  <div class="container">
+    <div class="section-heading">Where Microplastics Have Been Found in the Human Body</div>
+    <p class="micro-intro">Over the past four years, peer-reviewed research has documented plastic particles in organs and tissues that were not previously considered exposure points. These findings come from independent research groups across multiple countries. The <a href="https://www.who.int/news-room/fact-sheets/detail/microplastics-in-drinking-water" target="_blank" rel="noopener" style="color:rgba(255,255,255,.8)">World Health Organization</a> has called for urgent further research into health effects. No safe intake threshold has been established.</p>
+    <div class="micro-grid">
+      <div class="micro-card">
+        <span class="micro-icon">&#10084;&#65039;</span>
+        <div class="micro-organ">Cardiac Tissue</div>
+        <div class="micro-desc">Microplastics found in <a href="https://www.karmactive.com/microplastics-in-the-heart-scientists-make-a-disturbing-discovery/">human heart muscle</a> in 2024. Patients with plastic particles in their cardiac tissue had measurably higher post-surgery complication rates in a peer-reviewed study.</div>
+      </div>
+      <div class="micro-card">
+        <span class="micro-icon">&#129504;</span>
+        <div class="micro-organ">Brain</div>
+        <div class="micro-desc">Nanoplastics detected in human brain tissue in 2024 studies. Concentrations were found to be higher in samples from individuals who had died with dementia diagnoses.</div>
+      </div>
+      <div class="micro-card">
+        <span class="micro-icon">&#129754;</span>
+        <div class="micro-organ">Lungs</div>
+        <div class="micro-desc">Found in all 11 surgical lung tissue samples in a 2022 study. <a href="https://www.karmactive.com/japanese-scientists-trace-airborne-microplastics-in-clouds-unveiling-climate-impact/">Airborne microplastics</a>, including fibers from synthetic textiles, are the primary inhalation pathway.</div>
+      </div>
+      <div class="micro-card">
+        <span class="micro-icon">&#129504;</span>
+        <div class="micro-organ">Blood</div>
+        <div class="micro-desc">Detected in over 80% of blood samples tested in a 2022 Dutch study. The most common plastic found was PET — the same material in most single-use water bottles.</div>
+      </div>
+      <div class="micro-card">
+        <span class="micro-icon">&#129868;</span>
+        <div class="micro-organ">Breast Milk</div>
+        <div class="micro-desc">Found in 75% of breast milk samples in a 2022 Italian study. <a href="https://www.karmactive.com/microwaving-in-plastic-the-invisible-nanoplastic-threat-you-didnt-know-about-especially-in-babayfood/">Heating food in plastic containers</a> accelerates the release of nanoplastic particles.</div>
+      </div>
+      <div class="micro-card">
+        <span class="micro-icon">&#128118;</span>
+        <div class="micro-organ">Placenta</div>
+        <div class="micro-desc">First confirmed in human placental tissue in a 2020 study — the first confirmation of plastic particles crossing a barrier previously thought to be protective. It focused scientific attention on prenatal exposure.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULL STAT -->
+<section class="pull-stat">
+  <div class="container">
+    <div class="pull-stat-number">1.2 Billion Tonnes</div>
+    <div class="pull-stat-text">Projected annual global plastic production by 2060 under current policy trajectories — nearly three times today's level. That is the trajectory the Nairobi negotiations are designed to interrupt.</div>
+    <div class="pull-stat-source">OECD Global Plastics Outlook, 2022</div>
+  </div>
+</section>
+
+<!-- BODY TEXT -->
+<section class="body-text">
+  <div class="container">
+    <p>The treaty under negotiation would be the first legally binding international agreement to address plastic pollution across its full lifecycle — from the petrochemicals used in production to post-consumer waste disposal. That scope is precisely where the talks have stalled.</p>
+    <p>A coalition of over 60 nations wants a treaty that includes production caps and binding phase-outs of the most hazardous plastic-associated chemicals. A separate group, largely made up of major oil and petrochemical-producing countries, wants the treaty limited to waste management: improved collection, sorting, and recycling infrastructure. That gap has not meaningfully narrowed after four years of formal negotiations.</p>
+    <p>The implications are practical. Currently, less than 10% of all plastic ever produced has been recycled. Even considerable improvements in recycling infrastructure cannot reverse the overall trend while production continues growing. The OECD projects that without policy intervention, global plastic production will nearly triple by 2060 — to 1.2 billion tonnes per year.</p>
+    <p>For communities living alongside <a href="https://www.karmactive.com/lake-genevas-hidden-crisis-plastic-levels-that-rival-the-oceans/">freshwater bodies where plastic concentrations now rival ocean levels</a>, the treaty's scope is not an abstraction. In floodplains across South Asia and Sub-Saharan Africa, <a href="https://www.karmactive.com/plastic-waste-and-extreme-flooding-threaten-218-million-lives-raging-waters-and-plastic-peril/">plastic waste and flooding compound each other</a> — blocking drainage, contaminating water sources, and creating physical hazard. A waste-management-only treaty does not address what is already embedded in rivers, lakes, and soils.</p>
+    <p>The science has been consistent for several years now. By 2022, <a href="https://www.karmactive.com/researchers-find-microplastic-in-antarctic-snow/">microplastics were documented in Antarctic snow</a> — reaching one of the most remote environments on Earth through atmospheric transport. By 2023, <a href="https://www.karmactive.com/japanese-scientists-trace-airborne-microplastics-in-clouds-unveiling-climate-impact/">Japanese scientists traced microplastics inside clouds</a>, confirming aerial dispersal as a pathway. By 2024, studies had confirmed plastic particles in human brain tissue and cardiac muscle.</p>
+    <p>The plastics industry uses an estimated 400 associated chemicals during manufacturing — many classified as hazardous under existing regulatory frameworks. <a href="https://www.karmactive.com/beyond-plastics-raises-alarm-on-the-toxicity-of-pvc-and-cpvc-pipes-calling-for-a-nationwide-ban/">PVC-based products, including pipes and building materials</a>, leach chemical compounds at a household level that waste management alone cannot touch. That is why the treaty's chemicals annex — listing which substances would be restricted — has become one of its most contested sections, alongside the <a href="https://www.karmactive.com/australia-anchors-high-seas-biodiversity-treaty-in-a-bid-to-safeguard-the-oceanic-frontier/">broader architecture of ocean and environmental governance</a> it would fit into.</p>
+    <p>The Nairobi session beginning June 30 is informal — no votes, no text adoption. Delegations will work through the bracketed language in the existing draft, attempt to build common ground on chemicals and financing, and prepare a document that a formal adoption session can act on. That final formal step, if it comes, would be one of the more consequential moments in international environmental law of this decade.</p>
+    <p>Researchers have been tracking <a href="https://www.karmactive.com/marine-fungus-solution-to-plastic-pollution-breaking-down-polyethylene-at-0-05-daily-what-this-means-for-our-oceans/">biological pathways for plastic breakdown</a> in parallel — marine fungi, enzyme engineering, and polymer reformulation offer long-term possibilities. But none of those pathways scales to the volume of plastic already in circulation, or to the production trajectory without binding policy intervention upstream.</p>
+  </div>
+</section>
+
+<!-- ACTION CARDS -->
+<section class="actions-section">
+  <div class="container">
+    <div class="section-heading">Things Worth Knowing and Doing</div>
+    <div class="actions-grid">
+      <div class="action-card">
+        <span class="action-icon">&#128269;</span>
+        <div class="action-title">Follow the negotiations directly</div>
+        <div class="action-desc">The <a href="https://enb.iisd.org/plastic-pollution/inc5-3" target="_blank" rel="noopener">IISD Earth Negotiations Bulletin</a> provides real-time independent coverage of what is being discussed inside the room — the most reliable non-governmental source for tracking the treaty text.</div>
+      </div>
+      <div class="action-card">
+        <span class="action-icon">&#9851;&#65039;</span>
+        <div class="action-title">Reduce single-use plastic at home</div>
+        <div class="action-desc">Reusable bottles, bags, and containers reduce the volume entering the waste stream. Avoid heating food in plastic containers — <a href="https://www.karmactive.com/microwaving-in-plastic-the-invisible-nanoplastic-threat-you-didnt-know-about-especially-in-babayfood/">nanoplastics are released</a> at a faster rate when plastic is microwaved.</div>
+      </div>
+      <div class="action-card">
+        <span class="action-icon">&#128230;</span>
+        <div class="action-title">Know your local recycling limits</div>
+        <div class="action-desc">Most recycling systems accept only a narrow range of plastic types. Soft plastics, multi-layer packaging, and black plastic are typically not recyclable. Knowing what actually gets processed locally avoids contaminating recycling streams with non-recyclables.</div>
+      </div>
+      <div class="action-card">
+        <span class="action-icon">&#128226;</span>
+        <div class="action-title">Let your government know where you stand</div>
+        <div class="action-desc">The positions governments take at UN talks are shaped by domestic political context. Contacting elected representatives and supporting the <a href="https://www.unep.org/inc-plastic-pollution" target="_blank" rel="noopener">UNEP INC process</a> — including its public engagement channels — feeds into that context.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCLUSION -->
+<section class="conclusion-section">
+  <div class="container">
+    <p>The evidence on plastic pollution has been confirmed across scientific disciplines — in cardiac tissue studies, in atmospheric sampling, in sediment cores from Antarctic snow, and in blood tests from newborns. What was once visible only on shorelines is now measurable in the human bloodstream. The treaty under discussion in Nairobi is where the international response to that body of evidence is being shaped.</p>
+    <p>The talks are informal, but the stakes around them are not. A treaty limited to waste management is considered insufficient by the scientists and the environmental bloc at the table. A treaty covering production is considered unacceptable by others. That gap — and what happens to it in Nairobi over the next few days — is the central question of this week in international environmental law.</p>
+    <p>The date is June 30. The delegations are heading to Kenya. The brackets in the treaty text remain open.</p>
+  </div>
+</section>
+
+<script>
+// COUNTDOWN TIMER
+function pad(n){return String(n).padStart(2,'0');}
+function updateCountdown(){
+  var target=new Date('2026-06-30T06:00:00Z'); // 09:00 EAT (UTC+3)
+  var now=new Date();
+  var diff=target-now;
+  var timer=document.getElementById('countdown-timer');
+  if(!timer)return;
+  if(diff<=0){
+    timer.innerHTML='<span class="live-badge">TALKS UNDERWAY</span>';
+    return;
+  }
+  var d=Math.floor(diff/86400000);
+  var h=Math.floor((diff%86400000)/3600000);
+  var m=Math.floor((diff%3600000)/60000);
+  var s=Math.floor((diff%60000)/1000);
+  var dEl=document.getElementById('cd-days');
+  var hEl=document.getElementById('cd-hours');
+  var mEl=document.getElementById('cd-mins');
+  var sEl=document.getElementById('cd-secs');
+  if(dEl)dEl.textContent=pad(d);
+  if(hEl)hEl.textContent=pad(h);
+  if(mEl)mEl.textContent=pad(m);
+  if(sEl)sEl.textContent=pad(s);
+}
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+// ANIMATED COUNTERS
+function animateCounter(el){
+  var target=parseInt(el.getAttribute('data-target'),10);
+  var startTime=null;
+  var duration=1800;
+  function step(ts){
+    if(!startTime)startTime=ts;
+    var progress=Math.min((ts-startTime)/duration,1);
+    var eased=1-Math.pow(1-progress,3);
+    el.textContent=Math.floor(eased*target);
+    if(progress<1)requestAnimationFrame(step);
+    else el.textContent=target;
+  }
+  requestAnimationFrame(step);
+}
+var counters=document.querySelectorAll('.counter');
+var seen=new Set();
+if('IntersectionObserver' in window){
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting&&!seen.has(e.target)){
+        seen.add(e.target);
+        animateCounter(e.target);
+      }
+    });
+  },{threshold:0.5});
+  counters.forEach(function(c){obs.observe(c);});
+}else{
+  counters.forEach(function(c){animateCounter(c);});
+}
+
+// TIMELINE TOGGLE
+function toggleTL(item){
+  var wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.tl-item').forEach(function(el){el.classList.remove('open');});
+  if(!wasOpen)item.classList.add('open');
+}
+</script>
+</body>
+</html>
