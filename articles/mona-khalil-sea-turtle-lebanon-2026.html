@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mona Khalil: The Sea Turtle Guardian Lebanon Lost to War | Karmactive</title>
+<meta name="description" content="Mona Khalil spent 25 years protecting endangered loggerhead and green sea turtles on Lebanon's Tyre coast. She died on June 19, 2026, after an Israeli airstrike destroyed her home — the Orange House — on al-Mansouri beach.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+/* =============================================
+   SCOPED STYLES — prefix: ka-
+   All styles confined to .ka-wrap
+   Will not affect WordPress theme
+   ============================================= */
+
+.ka-wrap {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    color: #2c3e50;
+    background: transparent;
+    line-height: 1.7;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 0 2rem 0;
+}
+
+.ka-wrap *, .ka-wrap *::before, .ka-wrap *::after {
+    box-sizing: border-box;
+}
+
+/* ── HEADER (Asymmetric: image left, content right) ── */
+.ka-header {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    min-height: 70vh;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(12,45,72,0.22);
+    margin-bottom: 0;
+}
+
+.ka-img-side {
+    position: relative;
+    overflow: hidden;
+}
+
+.ka-feat-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 6s ease;
+}
+
+.ka-feat-img:hover {
+    transform: scale(1.04);
+}
+
+.ka-content-side {
+    background: linear-gradient(160deg, #0b2a3e 0%, #183f5c 60%, #1a5a7a 100%);
+    padding: 2.4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ka-content-side::after {
+    content: '🐢';
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+    font-size: 9rem;
+    opacity: 0.05;
+    pointer-events: none;
+    line-height: 1;
+}
+
+.ka-badge {
+    display: inline-block;
+    background: #d4621a;
+    color: #fff;
+    padding: 0.35rem 0.9rem;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
+    width: fit-content;
+}
+
+.ka-h1 {
+    font-size: clamp(1.55rem, 3vw, 2.3rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.ka-deck {
+    font-size: clamp(0.9rem, 1.6vw, 1rem);
+    color: rgba(255,255,255,0.78);
+    line-height: 1.65;
+    margin-bottom: 1.4rem;
+}
+
+.ka-divider {
+    width: 42px;
+    height: 4px;
+    background: #d4621a;
+    border-radius: 2px;
+    margin-bottom: 1.4rem;
+}
+
+.ka-num-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+    margin-top: 0.5rem;
+}
+
+.ka-num {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 0.85rem 0.7rem;
+    text-align: center;
+}
+
+.ka-num-val {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #d4621a;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+
+.ka-num-lbl {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.68);
+    line-height: 1.35;
+}
+
+/* ── CAPTION BAR ── */
+.ka-caption {
+    background: #0b2a3e;
+    color: rgba(255,255,255,0.72);
+    padding: 0.75rem 1.4rem;
+    font-size: 0.82rem;
+    font-style: italic;
+    border-left: 4px solid #d4621a;
+    margin-bottom: 2.5rem;
+    border-radius: 0 0 8px 8px;
+    line-height: 1.5;
+}
+
+/* ── LINKS ── */
+.ka-ext {
+    color: #1a7a4a;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+.ka-ext:hover { color: #0d5230; }
+
+.ka-int {
+    color: #c0520d;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+.ka-int:hover { color: #8c3a09; }
+
+/* ── INTRO TEXT ── */
+.ka-intro {
+    padding: 0 0.5rem 0 0.5rem;
+    max-width: 860px;
+    margin: 0 auto 2.5rem auto;
+}
+
+.ka-intro p {
+    font-size: clamp(1rem, 1.7vw, 1.1rem);
+    line-height: 1.85;
+    color: #2c3e50;
+    margin-bottom: 1.1rem;
+}
+
+.ka-intro p:first-of-type::first-letter {
+    font-size: 3.6em;
+    font-weight: 900;
+    color: #d4621a;
+    float: left;
+    line-height: 0.75;
+    margin: 0.06em 0.1em 0 0;
+    font-family: Georgia, serif;
+}
+
+/* ── SECTION WRAPPERS ── */
+.ka-section {
+    margin-bottom: 2.5rem;
+}
+
+.ka-section-head {
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    font-weight: 900;
+    color: #0b2a3e;
+    text-align: center;
+    margin: 0 0 0.4rem 0;
+}
+
+.ka-section-sub {
+    font-size: 0.9rem;
+    color: #7a94a6;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* ── TIMELINE ── */
+.ka-tl-container {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+    box-shadow: 0 4px 24px rgba(12,45,72,0.08);
+}
+
+.ka-tl-wrap {
+    position: relative;
+    padding-left: 2.8rem;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.ka-tl-wrap::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 4px;
+    bottom: 4px;
+    width: 3px;
+    background: linear-gradient(to bottom, #d4621a 0%, #0b2a3e 100%);
+    border-radius: 3px;
+}
+
+.ka-tl-entry {
+    position: relative;
+    margin-bottom: 1.6rem;
+    padding: 1.15rem 1.3rem;
+    background: #fafcff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(12,45,72,0.08);
+    border-left: 3px solid #d4621a;
+    cursor: default;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.ka-tl-entry:hover {
+    box-shadow: 0 6px 18px rgba(12,45,72,0.14);
+    transform: translateX(4px);
+}
+
+.ka-tl-entry.ka-war { border-left-color: #c0392b; }
+.ka-tl-entry.ka-win { border-left-color: #1a7a4a; }
+.ka-tl-entry.ka-end { border-left-color: #c0392b; background: #fff5f5; }
+
+.ka-tl-entry::before {
+    content: '';
+    position: absolute;
+    left: -2.88rem;
+    top: 1.1rem;
+    width: 21px;
+    height: 21px;
+    background: #d4621a;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #d4621a;
+}
+
+.ka-tl-entry.ka-war::before { background: #c0392b; box-shadow: 0 0 0 2px #c0392b; }
+.ka-tl-entry.ka-win::before { background: #1a7a4a; box-shadow: 0 0 0 2px #1a7a4a; }
+.ka-tl-entry.ka-end::before { background: #c0392b; box-shadow: 0 0 0 2px #c0392b; }
+
+.ka-tl-yr {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #d4621a;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.2rem;
+}
+
+.ka-tl-entry.ka-war .ka-tl-yr, .ka-tl-entry.ka-end .ka-tl-yr { color: #c0392b; }
+.ka-tl-entry.ka-win .ka-tl-yr { color: #1a7a4a; }
+
+.ka-tl-ev {
+    font-size: 0.97rem;
+    font-weight: 700;
+    color: #0b2a3e;
+    margin-bottom: 0.35rem;
+}
+
+.ka-tl-desc {
+    font-size: 0.855rem;
+    color: #5d7a8a;
+    line-height: 1.55;
+}
+
+/* ── STATS CARDS ── */
+.ka-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 1.1rem;
+    padding: 0 0.2rem;
+}
+
+.ka-stat {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 3px 14px rgba(12,45,72,0.09);
+    border-bottom: 4px solid #d4621a;
+    transition: transform 0.25s ease;
+}
+
+.ka-stat:hover { transform: translateY(-5px); }
+.ka-stat:nth-child(2) { border-bottom-color: #1a7a4a; }
+.ka-stat:nth-child(3) { border-bottom-color: #0b2a3e; }
+.ka-stat:nth-child(4) { border-bottom-color: #3b8bbd; }
+.ka-stat:nth-child(5) { border-bottom-color: #d4621a; }
+
+.ka-stat-ico { font-size: 1.9rem; margin-bottom: 0.7rem; }
+
+.ka-stat-val {
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    font-weight: 900;
+    color: #0b2a3e;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+
+.ka-stat-txt {
+    font-size: 0.82rem;
+    color: #7a94a6;
+    line-height: 1.45;
+}
+
+/* ── MAP ── */
+.ka-map-box {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(12,45,72,0.14);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.ka-map-head {
+    background: linear-gradient(135deg, #0b2a3e 0%, #1a5276 100%);
+    padding: 1.3rem 1.8rem;
+    color: #fff;
+}
+
+.ka-map-h { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.3rem; }
+.ka-map-note { font-size: 0.82rem; opacity: 0.75; }
+
+#ka-map {
+    width: 100%;
+    height: 380px;
+}
+
+.ka-map-legend {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    padding: 0.9rem 1.8rem;
+    background: #f4f8fb;
+    font-size: 0.8rem;
+    color: #5d7a8a;
+}
+
+.ka-leg-item { display: flex; align-items: center; gap: 0.4rem; }
+.ka-leg-dot {
+    width: 13px; height: 13px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* ── ARTICLE BODY TEXT ── */
+.ka-body {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+}
+
+.ka-h2 {
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    font-weight: 800;
+    color: #0b2a3e;
+    padding-left: 1rem;
+    border-left: 4px solid #d4621a;
+    margin: 2rem 0 0.8rem 0;
+    line-height: 1.3;
+}
+
+.ka-p {
+    font-size: clamp(0.95rem, 1.55vw, 1.05rem);
+    line-height: 1.9;
+    color: #2c3e50;
+    margin-bottom: 1.1rem;
+}
+
+/* ── QUOTE ── */
+.ka-quote {
+    background: linear-gradient(135deg, #fdf0e6 0%, #fff9f4 100%);
+    border-left: 5px solid #d4621a;
+    padding: 1.4rem 1.7rem;
+    border-radius: 0 12px 12px 0;
+    margin: 1.8rem 0;
+    font-size: clamp(0.97rem, 1.7vw, 1.1rem);
+    color: #0b2a3e;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.ka-quote cite {
+    display: block;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: #d4621a;
+    margin-top: 0.6rem;
+}
+
+/* ── THREATS ── */
+.ka-threats-box {
+    background: linear-gradient(160deg, #0b2a3e 0%, #12394f 100%);
+    border-radius: 16px;
+    padding: 2.2rem 2rem;
+    max-width: 860px;
+    margin: 0 auto 2.5rem auto;
+}
+
+.ka-threats-h {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 0.3rem;
+}
+
+.ka-threats-sub {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 1.8rem;
+}
+
+.ka-th-item { margin-bottom: 1.2rem; }
+
+.ka-th-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+
+.ka-th-name {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.ka-th-tag {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #d4621a;
+    background: rgba(212,98,26,0.15);
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+}
+
+.ka-th-tag.ka-critical { color: #e74c3c; background: rgba(231,76,60,0.15); }
+
+.ka-bar-bg {
+    height: 9px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.ka-bar-fill {
+    height: 100%;
+    border-radius: 5px;
+    width: 0;
+    transition: width 1.4s cubic-bezier(0.4,0,0.2,1);
+    background: linear-gradient(to right, #d4621a, #3b8bbd);
+}
+
+.ka-bar-fill.ka-war-fill {
+    background: linear-gradient(to right, #c0392b, #e07b39);
+}
+
+/* ── LEGACY GRID ── */
+.ka-legacy-box {
+    background: #fff;
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(12,45,72,0.08);
+    max-width: 860px;
+    margin: 0 auto 2.5rem auto;
+}
+
+.ka-legacy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.ka-leg-card {
+    padding: 1.4rem 1rem;
+    background: #f7fbfd;
+    border-radius: 12px;
+    border-top: 4px solid #1a7a4a;
+    text-align: center;
+}
+
+.ka-leg-card:nth-child(2) { border-top-color: #d4621a; }
+.ka-leg-card:nth-child(3) { border-top-color: #0b2a3e; }
+.ka-leg-card:nth-child(4) { border-top-color: #3b8bbd; }
+
+.ka-leg-ico { font-size: 2rem; margin-bottom: 0.7rem; }
+
+.ka-leg-h {
+    font-weight: 800;
+    color: #0b2a3e;
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+}
+
+.ka-leg-t {
+    font-size: 0.82rem;
+    color: #7a94a6;
+    line-height: 1.5;
+}
+
+/* ── CONCLUSION ── */
+.ka-conclusion {
+    background: linear-gradient(135deg, #eef7f0 0%, #e8f4f9 100%);
+    border-radius: 14px;
+    padding: 2rem 1.8rem;
+    border: 1px solid rgba(26,122,74,0.18);
+    max-width: 860px;
+    margin: 0 auto 1rem auto;
+}
+
+.ka-conclusion h2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #0b2a3e;
+    margin: 0 0 1rem 0;
+}
+
+.ka-conclusion p {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    line-height: 1.85;
+    color: #2c3e50;
+    margin-bottom: 0.85rem;
+}
+
+.ka-conclusion p:last-child { margin-bottom: 0; }
+
+/* ── RESPONSIVE BREAKPOINTS ── */
+@media (max-width: 860px) {
+    .ka-header {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .ka-img-side {
+        height: 55vw;
+        min-height: 220px;
+        max-height: 420px;
+    }
+
+    .ka-content-side {
+        padding: 1.8rem 1.4rem;
+    }
+
+    .ka-num-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .ka-num-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .ka-num-val { font-size: 1.4rem; }
+    .ka-num-lbl { font-size: 0.65rem; }
+
+    .ka-stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ka-threats-box {
+        padding: 1.5rem 1rem;
+    }
+
+    #ka-map { height: 280px; }
+
+    .ka-legacy-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ka-map-legend {
+        gap: 0.8rem;
+        padding: 0.9rem;
+    }
+
+    .ka-tl-wrap {
+        padding-left: 2.2rem;
+    }
+
+    .ka-intro p:first-of-type::first-letter {
+        font-size: 2.6em;
+    }
+}
+
+@media (max-width: 380px) {
+    .ka-stats-grid { grid-template-columns: 1fr; }
+    .ka-legacy-grid { grid-template-columns: 1fr; }
+    .ka-num-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="ka-wrap">
+
+<!-- ════════════════════════════════════════
+     HEADER — Asymmetric Magazine Layout
+     ════════════════════════════════════════ -->
+<header class="ka-header">
+
+    <div class="ka-img-side">
+        <!-- FEATURE IMAGE: Replace src with actual image URL -->
+        <!-- Suggested: Public domain loggerhead sea turtle nesting image (NOAA Fisheries / USFWS) -->
+        <img
+            src="https://www.fisheries.noaa.gov/s3/styles/full_width/s3/2021-03/750x500-loggerhead-turtle.jpg"
+            alt="A loggerhead sea turtle (Caretta caretta) emerging from the Mediterranean Sea at night to nest on al-Mansouri beach — the same ritual Mona Khalil protected on Lebanon's Tyre coast for 25 years"
+            title="Lebanon's Endangered Sea Turtles: In Memory of Mona Khalil, Guardian of al-Mansouri Beach"
+            class="ka-feat-img"
+            loading="eager"
+        />
+    </div>
+
+    <div class="ka-content-side">
+        <span class="ka-badge">Conservation &amp; Wildlife</span>
+        <div class="ka-divider"></div>
+        <h1 class="ka-h1">The Woman Who Gave Her Life to Lebanon's Sea Turtles</h1>
+        <p class="ka-deck">Mona Khalil spent 25 years protecting the Mediterranean's most endangered turtles on Lebanon's Tyre coast. An Israeli airstrike on June 4, 2026, ended that watch. She died fifteen days later.</p>
+        <div style="font-size:0.8rem; color:rgba(255,255,255,0.5); margin-bottom:1.2rem;">📅 June 23, 2026 &nbsp;·&nbsp; 🌊 Marine Conservation</div>
+        <div class="ka-num-grid">
+            <div class="ka-num">
+                <span class="ka-num-val">25+</span>
+                <span class="ka-num-lbl">Years of sea turtle conservation on Lebanon's coast</span>
+            </div>
+            <div class="ka-num">
+                <span class="ka-num-val">61</span>
+                <span class="ka-num-lbl">Nests recorded at al-Mansouri in a single nesting season</span>
+            </div>
+            <div class="ka-num">
+                <span class="ka-num-val">100M</span>
+                <span class="ka-num-lbl">Years sea turtles have existed — surviving until now</span>
+            </div>
+            <div class="ka-num">
+                <span class="ka-num-val">20+</span>
+                <span class="ka-num-lbl">Years for a sea turtle to reach breeding maturity</span>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<!-- Image Caption -->
+<div class="ka-caption">
+    A loggerhead sea turtle surfaces after 100 million years of survival — yet on Lebanon's Tyre coast, its nesting beach has now lost its most dedicated human protector. How many more seasons can the colony sustain without a trained guardian on the sand? (Photo: NOAA Fisheries / Public Domain)
+</div>
+
+<!-- ════════════════════════════════════════
+     INTRO TEXT (with backlinks)
+     ════════════════════════════════════════ -->
+<div class="ka-intro">
+    <p>In a small orange house just steps from the sea, a 76-year-old woman had spent 25 years watching turtles come home. On June 4, 2026, an Israeli airstrike ended that watch. Mona Khalil — born in Lagos, rooted at last on a Lebanese beach — died on June 19, 2026, at the American University of Beirut Medical Center. She was the guardian of Lebanon's most important <a href="https://medasset.org/portfolio-item/marine-turtle-assessment-amp-conservation-in-lebanon/" rel="noopener" target="_blank" class="ka-ext">sea turtle nesting grounds</a>, and a rare case study in what one person, with patience and resolve, can protect against forces far larger than herself. The story of her death — and what she leaves behind — is bound up with the wider question of what happens to <a href="https://www.karmactive.com/1-million-species-at-risk-discover-the-alarming-chain-reaction-threatening-our-biodiversity/" target="_blank" class="ka-int">species at risk</a> when the people who protect them are lost.</p>
+    <p>Along a 20-kilometre stretch of Lebanon's Tyre coast, three nesting sites for the Mediterranean's most endangered turtles had been held together, for more than two decades, largely by her presence. The turtles are still returning to those beaches in the 2026 nesting season. Mona Khalil is not there to meet them.</p>
+</div>
+
+<!-- ════════════════════════════════════════
+     TIMELINE: Mona Khalil's Journey
+     ════════════════════════════════════════ -->
+<div class="ka-section">
+    <div class="ka-tl-container">
+        <h2 class="ka-section-head">A Life Devoted to the Shore</h2>
+        <p class="ka-section-sub">From Lagos to Lebanon — Mona Khalil's conservation journey, 1949–2026</p>
+
+        <div class="ka-tl-wrap">
+
+            <div class="ka-tl-entry">
+                <div class="ka-tl-yr">1949 — Lagos, Nigeria</div>
+                <div class="ka-tl-ev">🐢 Born August 2, 1949</div>
+                <div class="ka-tl-desc">Mona al-Khalil was born in Lagos. She later spent years in the Netherlands before returning to Lebanon, where a single night on a Mediterranean beach would redefine her life.</div>
+            </div>
+
+            <div class="ka-tl-entry">
+                <div class="ka-tl-yr">1999 — al-Mansouri Beach, Tyre</div>
+                <div class="ka-tl-ev">✨ The Encounter That Changed Everything</div>
+                <div class="ka-tl-desc">Walking al-Mansouri beach near Tyre, Khalil witnessed a loggerhead sea turtle emerge from the sea to lay eggs in the sand. That night — quiet, ancient, completely ordinary for the turtle — changed the direction of her life. She stayed in Lebanon.</div>
+            </div>
+
+            <div class="ka-tl-entry ka-win">
+                <div class="ka-tl-yr">2000 — al-Mansouri Village</div>
+                <div class="ka-tl-ev">🟠 The Orange House Is Founded</div>
+                <div class="ka-tl-desc">With her colleague Habiba Fayed, Khalil established the Orange House — a bed-and-breakfast eco-tourism project painted the colour of her Dutch home — to fund conservation through tourism. It sat just steps from the nesting beach.</div>
+            </div>
+
+            <div class="ka-tl-entry ka-win">
+                <div class="ka-tl-yr">2001–2003 — Athens / al-Mansouri</div>
+                <div class="ka-tl-ev">🔬 MEDASSET Training &amp; Formal Monitoring Begins</div>
+                <div class="ka-tl-desc">Scientists from MEDASSET (Mediterranean Association to Save the Sea Turtles, Athens) trained Khalil and Fayed to run a full monitoring programme — nesting data collection, nest protection, hatchling counts. Al-Mansouri became Lebanon's most important turtle nesting beach and has been monitored by MEDASSET since 2001.</div>
+            </div>
+
+            <div class="ka-tl-entry ka-war">
+                <div class="ka-tl-yr">2006 — South Lebanon War</div>
+                <div class="ka-tl-ev">⚠️ First War, First Documentation of Damage</div>
+                <div class="ka-tl-desc">Bombs scarred the nesting beach. Khalil documented the damage for the British Chelonia Group — recording how foxes, driven from the hills by the bombing, raided 17% of loggerhead nests in the 2007 nesting season.</div>
+            </div>
+
+            <div class="ka-tl-entry ka-win">
+                <div class="ka-tl-yr">2000–2023 — Two Decades of Work</div>
+                <div class="ka-tl-ev">🏆 Conservation Victories, Hard Won</div>
+                <div class="ka-tl-desc">Khalil fought beach privatisation, helped ban dynamite fishing along the coast, presented her nesting data at international scientific conferences, and mentored a generation of young Lebanese conservationists who call themselves "Mona's children." Al-Mansouri became an officially recognised community conservation area.</div>
+            </div>
+
+            <div class="ka-tl-entry ka-war">
+                <div class="ka-tl-yr">2024–Early 2026 — South Lebanon</div>
+                <div class="ka-tl-ev">💔 Second War — Conservation Suspended</div>
+                <div class="ka-tl-desc">Escalating Israeli airstrikes on southern Lebanon from late 2024 made beach monitoring impossible. Bomb craters appeared on nesting sand. After the ceasefire, Lebanese army units removed hundreds of bags of sand from the nesting area for a defensive wall, and destroyed dune vegetation to build a football pitch.</div>
+            </div>
+
+            <div class="ka-tl-entry ka-end">
+                <div class="ka-tl-yr">June 4 – June 19, 2026</div>
+                <div class="ka-tl-ev">🌊 An Airstrike on the Orange House</div>
+                <div class="ka-tl-desc">On June 4, an Israeli airstrike hit the Orange House. Khalil and her Ethiopian housekeeper were the only occupants — the housekeeper sustained less-severe injuries. Khalil was critically injured. The Israeli military stated it had "no indication" of striking the house and was reviewing its records. Mona Khalil died on June 19, 2026, at the American University of Beirut Medical Center. She was 76.</div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     STATS CARDS
+     ════════════════════════════════════════ -->
+<div class="ka-section">
+    <div class="ka-stats-grid">
+        <div class="ka-stat">
+            <div class="ka-stat-ico">🐢</div>
+            <div class="ka-stat-val">2</div>
+            <div class="ka-stat-txt">Sea turtle species nesting in the entire Mediterranean — loggerhead &amp; green turtle — both endangered in the eastern Mediterranean</div>
+        </div>
+        <div class="ka-stat">
+            <div class="ka-stat-ico">🥚</div>
+            <div class="ka-stat-val">61</div>
+            <div class="ka-stat-txt">Nests recorded at al-Mansouri beach in a single season: 56 loggerhead, 5 green turtle — Lebanon's highest-density nesting site</div>
+        </div>
+        <div class="ka-stat">
+            <div class="ka-stat-ico">⏳</div>
+            <div class="ka-stat-val">20+ yrs</div>
+            <div class="ka-stat-txt">Time needed for a sea turtle to reach breeding maturity. Each disrupted season carries consequences felt for decades</div>
+        </div>
+        <div class="ka-stat">
+            <div class="ka-stat-ico">🎂</div>
+            <div class="ka-stat-val">~100 yrs</div>
+            <div class="ka-stat-txt">Maximum lifespan of a sea turtle. A turtle nesting today may have first nested before the Second World War</div>
+        </div>
+        <div class="ka-stat">
+            <div class="ka-stat-ico">🗺️</div>
+            <div class="ka-stat-val">20 km</div>
+            <div class="ka-stat-txt">Length of Lebanon's Tyre coast with active sea turtle nesting sites — three sites, one fragile ecosystem</div>
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     MAP — Tyre Coast, Lebanon
+     ════════════════════════════════════════ -->
+<div class="ka-section">
+    <div class="ka-map-box">
+        <div class="ka-map-head">
+            <div class="ka-map-h">🗺️ Lebanon's Sea Turtle Coast — Tyre Province</div>
+            <div class="ka-map-note">Three nesting sites along a 20 km corridor — among the most important in the eastern Mediterranean</div>
+        </div>
+        <div id="ka-map"></div>
+        <div class="ka-map-legend">
+            <div class="ka-leg-item">
+                <div class="ka-leg-dot" style="background:#d4621a;"></div>
+                <span>Sea turtle nesting beach</span>
+            </div>
+            <div class="ka-leg-item">
+                <div class="ka-leg-dot" style="background:#0b2a3e;"></div>
+                <span>Orange House / al-Mansouri (conservation centre)</span>
+            </div>
+            <div class="ka-leg-item">
+                <div class="ka-leg-dot" style="background:#1a7a4a;"></div>
+                <span>Tyre Coast Nature Reserve (official protected area)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     ARTICLE BODY TEXT
+     ════════════════════════════════════════ -->
+<div class="ka-body">
+
+    <h2 class="ka-h2">A Turtle on the Beach Changed Everything</h2>
+    <p class="ka-p">In 1999, Mona Khalil walked a beach near Tyre and watched a loggerhead sea turtle drag herself out of the Mediterranean to lay eggs in the sand. The turtle was doing what sea turtles have done for 100 million years — returning to the same beach where she was born, navigating thousands of kilometres of open ocean by magnetic memory. That night was ordinary for the turtle. It was not ordinary for Khalil.</p>
+    <p class="ka-p">She had been living in the Netherlands for over a decade. She had already known grief — she had lost her only son, a loss she carried quietly and channelled into the work that followed. Something about watching that turtle — ancient, determined, utterly defenceless on dry land — pulled her into a commitment she held for the rest of her life.</p>
+    <p class="ka-p">By 2000, she and her colleague Habiba Fayed had set up the <strong>Orange House</strong> — a bed-and-breakfast they painted the colour of her Dutch home, built right on al-Mansouri beach near Tyre — to fund their conservation through eco-tourism. Within three years, scientists from <a href="https://medasset.org/sea-turtles/sea-turtles-in-the-mediterranean/" rel="noopener" target="_blank" class="ka-ext">MEDASSET</a> (the Mediterranean Association to Save the Sea Turtles, Athens) had trained Khalil and Fayed to run a formal monitoring programme. She made all her data freely available to the international scientific community. She presented her findings at MEDASSET's biennial conservation conferences. What had started as an encounter on a dark beach had become a body of scientific work.</p>
+
+    <h2 class="ka-h2">Why These Two Turtle Species Cannot Wait</h2>
+    <p class="ka-p">Only two sea turtle species nest in the entire Mediterranean — the <strong>loggerhead</strong> (<em>Caretta caretta</em>) and the <strong>green turtle</strong> (<em>Chelonia mydas</em>). The Mediterranean green turtle is classified as "Endangered" by the IUCN. Loggerheads are classified as "Vulnerable" globally, with their Mediterranean sub-population requiring sustained conservation even to maintain that rating, according to <a href="https://medasset.org/sea-turtles/sea-turtles-in-the-mediterranean/" rel="noopener" target="_blank" class="ka-ext">MEDASSET</a>. Across the entire Mediterranean, roughly 8,000 loggerhead egg clutches are laid each year, and roughly 2,200 green turtle clutches — with the eastern Mediterranean, where Lebanon sits, hosting the highest concentrations.</p>
+    <p class="ka-p">Al-Mansouri beach, just south of Tyre, has been monitored by MEDASSET since 2001 and is considered Lebanon's most important sea turtle nesting beach. In one documented season, 61 nests were recorded there — 56 loggerhead and 5 green turtle nests. According to <a href="https://www.fisheries.noaa.gov/species/loggerhead-turtle" rel="noopener" target="_blank" class="ka-ext">NOAA Fisheries</a>, sea turtles take more than 20 years to reach breeding maturity, and some live up to 100 years. That long biological clock means every unprotected nesting season translates into gaps felt across decades. A turtle born in an unmonitored nest in 2024 that doesn't survive to adulthood won't be missed from the population until 2044 or later.</p>
+    <p class="ka-p">The threats on the Tyre coast are multiple and simultaneous: coastal development that erases nesting habitat, plastic pollution that entangles and poisons marine life, fishing nets that trap and drown turtles, artificial light that disorients newly hatched turtles before they can reach the sea. These are the same pressures affecting <a href="https://www.karmactive.com/coral-reefs-in-crisis-60-affected-by-bleaching-in-record-heat-is-the-4th-global-event-the-worst-yet/" target="_blank" class="ka-int">marine ecosystems across the globe</a>. On Lebanon's Tyre coast, they now include armed conflict.</p>
+
+    <div class="ka-quote">
+        "Her work made her one of Lebanon's most respected voices for marine conservation and biodiversity protection."
+        <cite>— Green Southerners, Lebanese environmental group</cite>
+    </div>
+
+    <h2 class="ka-h2">What War Does to a Nesting Beach</h2>
+    <p class="ka-p">This is not the first time armed conflict reached these shores. Mona Khalil had already seen it once. After the 2006 Lebanon war, she documented the damage herself, in a report published by the British Chelonia Group: bombs had torn up the beach, and foxes driven from the nearby hills by the bombing subsequently raided 17% of loggerhead nests during the following 2007 nesting season. The data was specific. It was also a warning.</p>
+    <p class="ka-p">The 2024–2025 conflict was more severe. After Israeli airstrikes on southern Lebanon escalated in late September 2024, monitoring became entirely impossible. Volunteers could not reach the beach at night. Bomb craters appeared on the sand — some the size of a turtle body pit, others much larger. Debris and blue plastic bags from destroyed buildings scattered across the nesting zone — the same <a href="https://www.karmactive.com/court-orders-shell-to-halt-seismic-survey-in-whale-breeding-waters/" target="_blank" class="ka-int">plastic pollution</a> that conservationists had spent years clearing from the beach. A previous war had spilled approximately 15,000 tonnes of heavy fuel oil into the Mediterranean from bombed fuel tanks at the Jiyeh power station — a reminder that the coastline's environmental memory runs deep.</p>
+    <p class="ka-p">After the ceasefire, the damage continued. Lebanese army units deployed near the nesting area reportedly removed hundreds of bags of sand to build a defensive wall, and destroyed dune vegetation to create a football pitch. The nesting habitat that Khalil had spent years protecting continued to erode — not from war, but from the infrastructure of its aftermath.</p>
+
+    <div class="ka-quote">
+        "It is with deep sadness that we mourn the passing of Mona Khalil today."
+        <cite>— Live Love Tyre, Lebanese environmental organisation — June 19, 2026</cite>
+    </div>
+
+    <h2 class="ka-h2">The Orange House and the Generation It Built</h2>
+    <p class="ka-p">The Orange House was more than a home. Over 25 years, it became the operating base for something that Lebanon's official <a href="https://www.moe.gov.lb/ProtectedAreas/tyre.htm" rel="noopener" target="_blank" class="ka-ext">Tyre Coast Nature Reserve</a> — the country's official 380-hectare protected area — could not have provided alone: a permanently present human consciousness, responsive and adaptive, watching the beach night after night across decades of seasonal change.</p>
+    <p class="ka-p">Khalil campaigned successfully against the privatisation of beach frontage, pushed for the ban of dynamite fishing that had been destroying marine habitat, and turned al-Mansouri into an officially recognised community-based conservation area. Every season she and her volunteers monitored the nests, recorded hatching success rates, and guided hatchlings to the sea. The beach she managed is part of a 20 km corridor near Tyre that includes three distinct nesting sites: the Tyre Coast Nature Reserve, El Mansouri and El Koliala, and El Aabbassiye beach — together the most significant concentration of sea turtle nesting habitat in Lebanon.</p>
+    <p class="ka-p">She mentored a generation of young Lebanese environmentalists, many of whom now call themselves <strong>"Mona's children."</strong> Several have already pledged to continue monitoring the sites she protected. Her family has said: <em>"We hope to rebuild the Orange House one day and continue her legacy. The turtles will keep coming back; we need to support the people Mona trained to continue her work."</em></p>
+
+    <h2 class="ka-h2">Who Carries the Watch Now</h2>
+    <p class="ka-p">An Italian organisation, <strong>Blue Tyre</strong>, stepped in after the ceasefire with limited funding — covering fuel and basic monitoring equipment — to keep the 2026 nesting season patrols running. Volunteer <strong>Fadia Joumaa</strong> continues to guide newly hatched turtles toward the sea on al-Mansouri beach. "Mona's children" have pledged to maintain the nightly watch through the current season.</p>
+    <p class="ka-p">But the institutional gap is real. The kind of knowledge built over 25 years of nightly beach walks, of reading seasonal variation, of knowing precisely where turtles nest year after year — that knowledge does not transfer quickly. The turtles navigate thousands of miles of open ocean using the Earth's magnetic field to return to the exact beach where they were born. They need someone waiting for them when they arrive. For 25 years, that person was Mona Khalil. The broader pattern — of <a href="https://www.karmactive.com/wildlife-on-the-market-oxford-study-calls-for-urgent-protection-of-900-vulnerable-species-in-international-trade/" target="_blank" class="ka-int">vulnerable wildlife losing their human protectors</a> to violence, development, or neglect — is one of the less-told stories in global conservation.</p>
+    <p class="ka-p">The <a href="https://www.karmactive.com/the-north-atlantic-right-whale-population-sees-a-glimmer-of-hope-with-11-newborns/" target="_blank" class="ka-int">history of marine conservation</a> shows that population recoveries are possible when monitoring continues consistently. They also show how quickly those gains can be undone when the chain of care breaks. Lebanon's sea turtle nesting sites now depend on whether that chain can hold through another season — and the season after that.</p>
+
+</div>
+
+<!-- ════════════════════════════════════════
+     THREATS VISUALIZATION (animated bars)
+     ════════════════════════════════════════ -->
+<div class="ka-threats-box">
+    <div class="ka-threats-h">Threats to Mediterranean Sea Turtles</div>
+    <div class="ka-threats-sub">Multiple pressures acting simultaneously on loggerhead and green turtle populations — including Lebanon's Tyre coast</div>
+
+    <div class="ka-th-item">
+        <div class="ka-th-row">
+            <span class="ka-th-name">🏗️ Coastal Development &amp; Beach Loss</span>
+            <span class="ka-th-tag ka-critical">Critical</span>
+        </div>
+        <div class="ka-bar-bg"><div class="ka-bar-fill" data-w="90"></div></div>
+    </div>
+
+    <div class="ka-th-item">
+        <div class="ka-th-row">
+            <span class="ka-th-name">🪣 Plastic Pollution &amp; Marine Debris</span>
+            <span class="ka-th-tag ka-critical">Severe</span>
+        </div>
+        <div class="ka-bar-bg"><div class="ka-bar-fill" data-w="78"></div></div>
+    </div>
+
+    <div class="ka-th-item">
+        <div class="ka-th-row">
+            <span class="ka-th-name">🎣 Fishing Net Entanglement</span>
+            <span class="ka-th-tag">Severe</span>
+        </div>
+        <div class="ka-bar-bg"><div class="ka-bar-fill" data-w="72"></div></div>
+    </div>
+
+    <div class="ka-th-item">
+        <div class="ka-th-row">
+            <span class="ka-th-name">💡 Artificial Light Disorientation of Hatchlings</span>
+            <span class="ka-th-tag">High</span>
+        </div>
+        <div class="ka-bar-bg"><div class="ka-bar-fill" data-w="60"></div></div>
+    </div>
+
+    <div class="ka-th-item">
+        <div class="ka-th-row">
+            <span class="ka-th-name">🌡️ Rising Sea Temperatures (Climate Change)</span>
+            <span class="ka-th-tag">Growing</span>
+        </div>
+        <div class="ka-bar-bg"><div class="ka-bar-fill" data-w="65"></div></div>
+    </div>
+
+    <div class="ka-th-item">
+        <div class="ka-th-row">
+            <span class="ka-th-name">💣 Armed Conflict — Loss of Beach Access &amp; Habitat</span>
+            <span class="ka-th-tag ka-critical">Acute — Lebanon</span>
+        </div>
+        <div class="ka-bar-bg"><div class="ka-bar-fill ka-war-fill" data-w="88"></div></div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     LEGACY SECTION
+     ════════════════════════════════════════ -->
+<div class="ka-legacy-box">
+    <h2 class="ka-section-head" style="text-align:left; font-size:1.25rem; margin:0 0 0.3rem 0;">After Mona Khalil: What Continues</h2>
+    <p style="font-size:0.88rem; color:#7a94a6; margin:0 0 0.5rem 0;">The people, programmes, and resources carrying the work forward through the 2026 nesting season</p>
+    <div class="ka-legacy-grid">
+        <div class="ka-leg-card">
+            <div class="ka-leg-ico">🐢</div>
+            <div class="ka-leg-h">Beach Monitoring Continues</div>
+            <div class="ka-leg-t">Volunteer Fadia Joumaa and "Mona's children" are conducting nesting season patrols on al-Mansouri beach through the 2026 season.</div>
+        </div>
+        <div class="ka-leg-card">
+            <div class="ka-leg-ico">🇮🇹</div>
+            <div class="ka-leg-h">Blue Tyre Steps In</div>
+            <div class="ka-leg-t">Italian organisation Blue Tyre is funding basic conservation expenses — fuel and monitoring equipment — to bridge the immediate gap.</div>
+        </div>
+        <div class="ka-leg-card">
+            <div class="ka-leg-ico">🏠</div>
+            <div class="ka-leg-h">Orange House Future</div>
+            <div class="ka-leg-t">Khalil's family has expressed hope to rebuild the Orange House and restore its role as a conservation and eco-tourism base on al-Mansouri beach.</div>
+        </div>
+        <div class="ka-leg-card">
+            <div class="ka-leg-ico">📊</div>
+            <div class="ka-leg-h">25 Years of Data Preserved</div>
+            <div class="ka-leg-t">Khalil shared her monitoring data freely with MEDASSET and the wider scientific community. That 25-year dataset remains available to researchers.</div>
+        </div>
+    </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     CONCLUSION
+     ════════════════════════════════════════ -->
+<div class="ka-conclusion">
+    <h2>What the Record Shows</h2>
+    <p>Mona Khalil was a Lebanese conservationist who, over 25 years, ran a monitoring programme for endangered sea turtles along the Tyre coast of southern Lebanon. She died on June 19, 2026, after an Israeli airstrike struck her home — the Orange House — on June 4, 2026. The Israeli military stated it had no indication the house had been struck and was reviewing its records. The two turtle species she monitored — the loggerhead and the green sea turtle — are classified as "Vulnerable" and "Endangered" respectively in the Mediterranean, as documented by the <a href="https://iucn.org/news/mediterranean/202008/iucn-calls-greater-protection-mediterranean-sea-turtle-nesting-sites" rel="noopener" target="_blank" class="ka-ext">IUCN</a>. Her nesting data, gathered over 25 years with scientific support from MEDASSET, was made freely available. The Italian organisation Blue Tyre and a group of trained local volunteers, including Fadia Joumaa, have continued beach monitoring through the 2026 nesting season. Lebanon's sea turtle nesting sites — across three beaches on a 20 km stretch of the Tyre coast — have been the subject of statements by Lebanese environmental groups including Live Love Tyre and Green Southerners following Khalil's death.</p>
+    <p>Sea turtles have returned to the same beaches for 100 million years. The loggerhead and green turtles of Lebanon's coast will come back again this season. What changes — and what has already changed — is who, and how many, are on that beach to meet them.</p>
+</div>
+
+</div><!-- end .ka-wrap -->
+
+<!-- ════════════════════════════════════════
+     SCRIPTS (Leaflet + Interaction)
+     ════════════════════════════════════════ -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function() {
+    /* ── LEAFLET MAP ── */
+    try {
+        var kaMap = L.map('ka-map', { scrollWheelZoom: false }).setView([33.265, 35.193], 11);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 17
+        }).addTo(kaMap);
+
+        function mkIcon(color) {
+            return L.divIcon({
+                html: '<div style="width:20px;height:20px;border-radius:50%;background:' + color + ';border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.4);"></div>',
+                iconSize: [20, 20],
+                iconAnchor: [10, 10],
+                className: ''
+            });
+        }
+
+        var sites = [
+            {
+                lat: 33.320, lng: 35.189,
+                name: 'Tyre Coast Nature Reserve',
+                info: 'Official protected area. 380 hectares — Lebanon\'s largest sandy beach. Active loggerhead and green sea turtle nesting site.',
+                color: '#1a7a4a'
+            },
+            {
+                lat: 33.252, lng: 35.194,
+                name: 'Al-Mansouri Beach — The Orange House',
+                info: 'Lebanon\'s most important sea turtle nesting beach. Location of Mona Khalil\'s Orange House conservation centre. Monitored by MEDASSET since 2001. 61 nests recorded in a single season.',
+                color: '#0b2a3e'
+            },
+            {
+                lat: 33.270, lng: 35.185,
+                name: 'El Koliala Beach',
+                info: 'Part of the El Mansouri and El Koliala nesting complex on Lebanon\'s Tyre coast. One of three critical nesting sites along the 20 km turtle corridor.',
+                color: '#d4621a'
+            },
+            {
+                lat: 33.228, lng: 35.196,
+                name: 'El Aabbassiye Beach',
+                info: 'Third key nesting site along Lebanon\'s 20 km sea turtle corridor near Tyre. Loggerhead and green turtle nesting recorded.',
+                color: '#d4621a'
+            }
+        ];
+
+        sites.forEach(function(s) {
+            L.marker([s.lat, s.lng], { icon: mkIcon(s.color) })
+             .addTo(kaMap)
+             .bindPopup('<strong style="color:#0b2a3e;">' + s.name + '</strong><br><span style="font-size:0.85rem;">' + s.info + '</span>', { maxWidth: 260 });
+        });
+
+        // City label
+        L.marker([33.270, 35.203], {
+            icon: L.divIcon({
+                html: '<div style="background:rgba(11,42,62,0.88);color:#fff;padding:3px 8px;border-radius:4px;font-size:11px;font-weight:700;white-space:nowrap;">Tyre / Sour 🇱🇧</div>',
+                className: '',
+                iconAnchor: [35, 12]
+            })
+        }).addTo(kaMap);
+
+    } catch (e) {
+        console.warn('Ka-Map init error:', e);
+    }
+
+    /* ── ANIMATED THREAT BARS (IntersectionObserver) ── */
+    function animateBars() {
+        document.querySelectorAll('.ka-bar-fill').forEach(function(bar) {
+            var w = bar.getAttribute('data-w');
+            if (w) bar.style.width = w + '%';
+        });
+    }
+
+    if ('IntersectionObserver' in window) {
+        var threatBox = document.querySelector('.ka-threats-box');
+        if (threatBox) {
+            var obs = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting) {
+                    setTimeout(animateBars, 200);
+                    obs.disconnect();
+                }
+            }, { threshold: 0.25 });
+            obs.observe(threatBox);
+        }
+    } else {
+        animateBars();
+    }
+
+})();
+</script>
+
+</body>
+</html>
