@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="France recorded its hottest day ever on June 23, 2026 as Europe's deadly heat dome triggered red alerts in 16 Italian cities, 54 French departments, and caused 40+ deaths. Everything you need to know." />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    .ka-heatwave-wrap {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* =========================================================
+       SPLIT-SCREEN HEADER
+    ========================================================= */
+    .ka-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+    }
+
+    .ka-header-image {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ka-header-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .ka-header-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0) 60%, rgba(14,14,40,0.4) 100%);
+    }
+
+    .ka-header-content {
+      background: linear-gradient(135deg, #16213e 0%, #0f3460 60%, #e94560 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 2.5rem 2rem;
+    }
+
+    .ka-tag {
+      display: inline-block;
+      background: #e94560;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 3px;
+      margin-bottom: 1.2rem;
+      width: fit-content;
+    }
+
+    .ka-main-title {
+      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .ka-main-title span { color: #f5a623; }
+
+    .ka-deck {
+      font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .ka-header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .ka-header-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .ka-img-caption {
+      background: rgba(0,0,0,0.65);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.72rem;
+      padding: 0.45rem 0.8rem;
+      line-height: 1.5;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    @media (max-width: 768px) {
+      .ka-header { grid-template-columns: 1fr; min-height: auto; }
+      .ka-header-image { height: 240px; }
+      .ka-header-content { padding: 1.8rem 1.2rem; }
+      .ka-img-caption { font-size: 0.68rem; }
+    }
+
+    /* =========================================================
+       STATS TICKER
+    ========================================================= */
+    .ka-stats {
+      background: #0f3460;
+      padding: 2rem 1rem;
+    }
+
+    .ka-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ka-stat-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 1.2rem 1rem;
+      text-align: center;
+      transition: transform 0.25s;
+    }
+
+    .ka-stat-card:hover { transform: translateY(-4px); }
+
+    .ka-stat-number {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 900;
+      color: #f5a623;
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .ka-stat-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* =========================================================
+       SECTION HEADING
+    ========================================================= */
+    .ka-section {
+      padding: 2.5rem 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ka-section-title {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 800;
+      color: #0f3460;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .ka-section-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, #e94560, transparent);
+    }
+
+    /* =========================================================
+       LEAFLET MAP
+    ========================================================= */
+    .ka-map-wrap {
+      background: #f4f7fb;
+      padding: 2rem 1rem 1rem;
+    }
+
+    .ka-map-title {
+      text-align: center;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 800;
+      color: #0f3460;
+      margin-bottom: 0.5rem;
+    }
+
+    .ka-map-sub {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+    }
+
+    #ka-europe-map {
+      height: 420px;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ka-map-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 0.5rem;
+    }
+
+    .ka-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: #333;
+    }
+
+    .ka-legend-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.8);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) { #ka-europe-map { height: 300px; } }
+
+    /* =========================================================
+       COUNTRY ACCORDION
+    ========================================================= */
+    .ka-countries {
+      background: #fff;
+      padding: 2rem 1rem;
+    }
+
+    .ka-accordion-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .ka-country-card {
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      margin-bottom: 0.7rem;
+      overflow: hidden;
+    }
+
+    .ka-country-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.2rem;
+      cursor: pointer;
+      background: #fff;
+      transition: background 0.2s;
+      gap: 0.8rem;
+    }
+
+    .ka-country-header:hover { background: #f7faff; }
+
+    .ka-country-flag-name {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #0f3460;
+    }
+
+    .ka-country-flag {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .ka-temp-badge {
+      background: #fff0e6;
+      color: #c0392b;
+      font-weight: 800;
+      font-size: 0.88rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 20px;
+      border: 1px solid #f5a623;
+      white-space: nowrap;
+    }
+
+    .ka-country-icon {
+      font-size: 1rem;
+      color: #0f3460;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+
+    .ka-country-card.active .ka-country-icon { transform: rotate(180deg); }
+
+    .ka-country-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+
+    .ka-country-body-inner {
+      padding: 0 1.2rem 1.2rem;
+      border-top: 1px solid #f0f4f8;
+    }
+
+    .ka-impact-list {
+      list-style: none;
+      margin-top: 0.8rem;
+    }
+
+    .ka-impact-list li {
+      display: flex;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .ka-impact-list li::before {
+      content: '▸';
+      color: #e94560;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* =========================================================
+       HISTORICAL HEATWAVE TIMELINE
+    ========================================================= */
+    .ka-timeline-wrap {
+      background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+      padding: 2.5rem 1rem;
+    }
+
+    .ka-timeline-title {
+      text-align: center;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .ka-timeline-sub {
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 2rem;
+    }
+
+    .ka-timeline {
+      display: flex;
+      gap: 0;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .ka-timeline::before {
+      content: '';
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #f5a623, #e94560);
+      z-index: 0;
+    }
+
+    .ka-tl-item {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding: 0 0.3rem;
+      cursor: pointer;
+    }
+
+    .ka-tl-dot {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #f5a623;
+      border: 3px solid #fff;
+      margin: 0 auto 0.8rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, background 0.2s;
+      margin-top: 37px;
+    }
+
+    .ka-tl-item.active .ka-tl-dot,
+    .ka-tl-item:hover .ka-tl-dot {
+      transform: scale(1.35);
+      background: #e94560;
+    }
+
+    .ka-tl-year {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #f5a623;
+      margin-bottom: 0.3rem;
+    }
+
+    .ka-tl-deaths {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #fff;
+      display: block;
+    }
+
+    .ka-tl-label {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.4;
+    }
+
+    .ka-tl-detail {
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.6;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      display: none;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .ka-tl-detail.visible { display: block; }
+
+    @media (max-width: 600px) {
+      .ka-timeline { flex-direction: column; gap: 0.5rem; }
+      .ka-timeline::before { display: none; }
+      .ka-tl-item { display: flex; align-items: center; gap: 1rem; text-align: left; }
+      .ka-tl-dot { margin: 0; flex-shrink: 0; width: 20px; height: 20px; }
+      .ka-tl-deaths { font-size: 1.1rem; display: inline; }
+    }
+
+    /* =========================================================
+       HEAT SAFETY GUIDE
+    ========================================================= */
+    .ka-safety {
+      background: #fff8f0;
+      padding: 2.5rem 1rem;
+    }
+
+    .ka-safety-title {
+      text-align: center;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 800;
+      color: #c0392b;
+      margin-bottom: 0.4rem;
+    }
+
+    .ka-safety-sub {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 1.8rem;
+    }
+
+    .ka-safety-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .ka-tip-card {
+      background: #fff;
+      border: 1.5px solid #fde8d8;
+      border-radius: 12px;
+      padding: 1.2rem 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s;
+      position: relative;
+    }
+
+    .ka-tip-card:hover, .ka-tip-card.open {
+      border-color: #e94560;
+      box-shadow: 0 4px 16px rgba(233,69,96,0.12);
+      transform: translateY(-3px);
+    }
+
+    .ka-tip-icon { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+    .ka-tip-title { font-size: 0.88rem; font-weight: 700; color: #0f3460; margin-bottom: 0; }
+
+    .ka-tip-detail {
+      display: none;
+      margin-top: 0.7rem;
+      font-size: 0.8rem;
+      color: #555;
+      line-height: 1.5;
+      text-align: left;
+      border-top: 1px solid #fde8d8;
+      padding-top: 0.6rem;
+    }
+
+    .ka-tip-card.open .ka-tip-detail { display: block; }
+
+    /* =========================================================
+       NIGHT TEMP EXPLAINER
+    ========================================================= */
+    .ka-night-compare {
+      background: #16213e;
+      padding: 2rem 1rem;
+    }
+
+    .ka-nc-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .ka-nc-title {
+      text-align: center;
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      font-weight: 800;
+      color: #f5a623;
+      margin-bottom: 0.4rem;
+    }
+
+    .ka-nc-sub {
+      text-align: center;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 1.5rem;
+    }
+
+    .ka-nc-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .ka-nc-card {
+      border-radius: 12px;
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+    }
+
+    .ka-nc-safer {
+      background: rgba(46,204,113,0.12);
+      border: 1.5px solid rgba(46,204,113,0.35);
+    }
+
+    .ka-nc-risky {
+      background: rgba(233,69,96,0.12);
+      border: 1.5px solid rgba(233,69,96,0.4);
+    }
+
+    .ka-nc-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+    }
+
+    .ka-nc-safer .ka-nc-label { color: #2ecc71; }
+    .ka-nc-risky .ka-nc-label { color: #e94560; }
+
+    .ka-nc-temp-row {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 0.6rem;
+    }
+
+    .ka-nc-temp {
+      font-size: 1.8rem;
+      font-weight: 900;
+      display: block;
+      line-height: 1;
+    }
+
+    .ka-nc-safer .ka-nc-temp { color: #f0f0f0; }
+    .ka-nc-risky .ka-nc-temp { color: #f5a623; }
+
+    .ka-nc-temp-sub {
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.55);
+      display: block;
+      margin-top: 0.2rem;
+    }
+
+    .ka-nc-arrow {
+      color: rgba(255,255,255,0.3);
+      font-size: 1.2rem;
+      align-self: center;
+    }
+
+    .ka-nc-conclusion {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+      margin-top: 0.7rem;
+    }
+
+    @media (max-width: 500px) {
+      .ka-nc-cards { grid-template-columns: 1fr; }
+      .ka-nc-temp { font-size: 1.5rem; }
+    }
+
+    /* =========================================================
+       QUOTE BANNER
+    ========================================================= */
+    .ka-quote-banner {
+      background: linear-gradient(90deg, #e94560 0%, #0f3460 100%);
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+    }
+
+    .ka-quote-text {
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      font-style: italic;
+      color: #fff;
+      max-width: 800px;
+      margin: 0 auto 0.6rem;
+      line-height: 1.7;
+    }
+
+    .ka-quote-source {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.7);
+      font-weight: 600;
+    }
+
+    /* =========================================================
+       WORDPRESS TEXT BLOCKS (shown as styled divs inside HTML)
+    ========================================================= */
+    .ka-text-block {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .ka-text-block p {
+      font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 1.2rem;
+    }
+
+    .ka-text-block h2 {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-weight: 800;
+      color: #0f3460;
+      margin: 1.8rem 0 0.8rem;
+    }
+
+    .ka-text-block a {
+      color: #0f3460;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .ka-text-block a:hover { color: #e94560; }
+
+    .ka-info-box {
+      background: #fff8e1;
+      border-left: 4px solid #f5a623;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.2rem;
+      margin: 1.2rem 0;
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* Divider */
+    .ka-divider {
+      height: 4px;
+      background: linear-gradient(90deg, #e94560, #f5a623, #0f3460);
+      border: none;
+      margin: 0;
+    }
+
+    /* =========================================================
+       FOOTER SOURCE NOTE
+    ========================================================= */
+    .ka-sources-note {
+      background: #f7f9fc;
+      padding: 1rem 1.5rem;
+      font-size: 0.75rem;
+      color: #777;
+      text-align: center;
+      border-top: 1px solid #e2e8f0;
+    }
+
+  </style>
+</head>
+<body>
+<div class="ka-heatwave-wrap">
+
+  <!-- =========================================================
+       MAGAZINE HEADER: SPLIT SCREEN
+  ========================================================= -->
+  <header class="ka-header">
+    <div class="ka-header-image">
+      <img
+        src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2026/05/hot_surfaces_during_europe_s_heatwave_seen_by_sentinel-3/27048484-1-eng-GB/Hot_surfaces_during_Europe_s_heatwave_seen_by_Sentinel-3.jpg"
+        alt="Copernicus Sentinel-3 satellite image showing extreme daytime land surface temperatures across Europe during the 2026 heatwave, with red zones indicating temperatures exceeding 30°C across France, Spain, and Italy"
+        title="Europe 2026 Heatwave — Sentinel-3 Surface Temperature Map"
+        onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/2026_European_heatwaves_map.png/1200px-2026_European_heatwaves_map.png';"
+      />
+      <div class="ka-header-image-overlay"></div>
+      <div class="ka-img-caption">
+        Copernicus Sentinel-3 recorded daytime land surface temperatures across Europe on 26 May 2026 — and by late June, those red zones had spread even further. When a satellite has to map heat this way, it is no longer a weather story. (Image: Copernicus Sentinel data 2026, processed by ESA — ESA522397)
+      </div>
+    </div>
+
+    <div class="ka-header-content">
+      <span class="ka-tag">🔴 Climate Alert</span>
+      <h1 class="ka-main-title">
+        France's <span>Hottest Day</span> on Record.<br>
+        Europe's Deadliest Heatwave in Years.
+      </h1>
+      <p class="ka-deck">
+        On June 23, 2026, France recorded 44.3°C — its highest temperature ever. Forty people drowned fleeing the heat. Power went out for 106,000 homes. And this is the second heatwave in two months.
+      </p>
+      <div class="ka-header-meta">
+        <span>📅 June 24, 2026</span>
+        <span>🌍 Europe-Wide</span>
+        <span>⏱ 5 min read</span>
+      </div>
+    </div>
+  </header>
+
+  <hr class="ka-divider" />
+
+  <!-- =========================================================
+       INTRO TEXT BLOCK
+  ========================================================= -->
+  <div class="ka-text-block">
+    <p>
+      Western Europe just recorded its hottest day in history. On June 23, 2026, France's national temperature indicator reached 29.8°C — the highest since records began in 1947 — with the thermometer peaking at 44.3°C in Pissos, in the Landes region. Forty-one degrees were recorded in Paris. This follows Europe's first severe heatwave of 2026, which struck in May and already broke long-standing spring records across the continent.
+    </p>
+    <p>
+      At least 40 people drowned in France in a single week, most of them young people swimming in rivers and lakes to escape the heat. Eighteen others died from heat-related causes, among them two children left inside vehicles. Across the continent, red alerts are active in France (54 departments), Italy (16 major cities including Rome and Milan), the United Kingdom, Spain, and Switzerland. Power cut out for over 106,000 French homes as transformers failed. Schools closed. Trains slowed.
+    </p>
+    <p>
+      The pattern of these events — their frequency, their intensity, and who they are killing — has been documented for over two decades. The science, the warnings, and the numbers are not new. What is new is how fast they are arriving. As <a href="https://www.karmactive.com/heading-for-climate-hell-world-on-course-for-2-7c-warming-can-humanity-survive/" target="_blank" rel="noopener">the world tracks toward 2.7°C of warming</a>, Europe is on the front line.
+    </p>
+  </div>
+
+  <!-- =========================================================
+       KEY STATS CARDS
+  ========================================================= -->
+  <section class="ka-stats" aria-label="Key statistics from Europe's 2026 heatwave">
+    <div class="ka-stats-grid">
+      <div class="ka-stat-card">
+        <span class="ka-stat-number">44.3°C</span>
+        <div class="ka-stat-label">France's all-time<br>temperature record<br><small style="opacity:0.7">(Pissos, Landes — June 23)</small></div>
+      </div>
+      <div class="ka-stat-card">
+        <span class="ka-stat-number">40+</span>
+        <div class="ka-stat-label">Drowning deaths<br>in France in one week<br><small style="opacity:0.7">(seeking water to cool down)</small></div>
+      </div>
+      <div class="ka-stat-card">
+        <span class="ka-stat-number">16</span>
+        <div class="ka-stat-label">Italian cities<br>under red heat alert<br><small style="opacity:0.7">(incl. Rome, Milan, Turin)</small></div>
+      </div>
+      <div class="ka-stat-card">
+        <span class="ka-stat-number">106,000</span>
+        <div class="ka-stat-label">French homes<br>lost power<br><small style="opacity:0.7">(transformers overloaded)</small></div>
+      </div>
+      <div class="ka-stat-card">
+        <span class="ka-stat-number">54</span>
+        <div class="ka-stat-label">French departments<br>under red alert<br><small style="opacity:0.7">(of 96 total)</small></div>
+      </div>
+      <div class="ka-stat-card">
+        <span class="ka-stat-number">89.4%</span>
+        <div class="ka-stat-label">Heat-related deaths<br>in people aged 65+<br><small style="opacity:0.7">(European data)</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       INTERACTIVE MAP
+  ========================================================= -->
+  <section class="ka-map-wrap" aria-label="Interactive map of Europe heatwave 2026">
+    <h2 class="ka-map-title">🗺 Heat Watch: Europe, June 2026</h2>
+    <p class="ka-map-sub">Click any marker to see what happened in that city or region</p>
+    <div id="ka-europe-map"></div>
+    <div class="ka-map-legend">
+      <div class="ka-legend-item"><div class="ka-legend-dot" style="background:#e94560;"></div> Extreme (40°C+)</div>
+      <div class="ka-legend-item"><div class="ka-legend-dot" style="background:#f5a623;"></div> Severe (37–40°C)</div>
+      <div class="ka-legend-item"><div class="ka-legend-dot" style="background:#f5d623;"></div> High Alert (33–37°C)</div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       ANALYSIS TEXT BLOCK
+  ========================================================= -->
+  <div class="ka-text-block">
+    <h2>Why This Heatwave Is Killing People</h2>
+    <p>
+      The immediate cause of the 2026 heatwave is an "omega block" — a massive, stationary high-pressure system that locked a body of superheated Saharan air over Western and Central Europe. Instead of moving through, the system acted like a lid, compressing and heating the air beneath it for days. This is the same mechanism behind the deadly 2003 and 2022 heatwaves.
+    </p>
+    <p>
+      What makes a heatwave lethal is not always the afternoon peak. It is often the nights. Armel Castellan, Extreme Heat Services Technical Advisor of the <a href="https://wmo.int/media/news/wmo-and-partners-act-extreme-heat-grips-europe" target="_blank" rel="noopener">WMO-WHO Climate and Health Joint Office</a>, put it directly: <em>"A day that reaches 38°C but drops to 18°C overnight is very different from a day that reaches 36°C and stays above 25°C through the night. The second scenario carries a much higher health risk."</em> When the body cannot cool down at night, it stays under strain around the clock.
+    </p>
+    <p>
+      In cities, the problem is compounded. Buildings, roads, and hard surfaces absorb heat during the day and release it at night — keeping urban areas 4 to 6°C hotter than surrounding countryside, and up to 10°C higher during peak events. This <a href="https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/urban-heat-islands-managing-extreme-heat-keep-cities-cool-2024-07-22_en" target="_blank" rel="noopener">urban heat island effect</a> raises the mortality risk during heatwaves by 45%, according to the EU Joint Research Centre. Most buildings in France, the UK, and Germany were not designed for temperatures above 30°C.
+    </p>
+    <div class="ka-info-box">
+      People over 65 account for 89.4% of heat-related deaths in Europe. Also at elevated risk: children, pregnant women, outdoor workers, and anyone with cardiovascular, respiratory, or kidney conditions. During extreme heat, check on elderly relatives and neighbours at least twice a day.
+    </div>
+    <p>
+      The infrastructure strain is visible. France's national rail operator SNCF reduced train speeds across 1,200 km of track to prevent rail buckling. Italy's Trenitalia cancelled hundreds of regional routes. Power cables in Turin failed under thermal stress, causing blackouts across the city. Across France, 68,000 homes in the northwest department of Finistère lost power after a transformer failure. Meanwhile, sales of fans and air conditioners across Europe spiked sharply — even though the mass adoption of air conditioning dumps more heat outdoors and increases electricity demand, adding pressure to an already strained grid. Day-ahead power prices in the EU jumped 29% during the May 2026 wave; the June wave has pushed them further.
+    </p>
+    <p>
+      According to the <a href="https://www.who.int/europe/health-topics/heatwaves" target="_blank" rel="noopener">World Health Organization Europe</a>, heat is already the leading weather-related cause of death in Europe. The <a href="https://climate-adapt.eea.europa.eu/en/observatory/evidence/health-effects/heat-and-health" target="_blank" rel="noopener">European Environment Agency</a> projects that without adaptation, heat-related mortality in Europe will increase 30-fold by 2100 under current climate trajectories. Recent peer-reviewed research in <em>Nature Communications</em> found that compound day-night heatwaves combined with ageing populations are driving a structural increase in heat mortality — not a temporary statistical blip.
+    </p>
+    <p>
+      There is also an economic toll that extends well beyond the headlines. Fortune reported that Europe's largest economies face over $600 billion in heat-driven losses by 2030. Agricultural damage from the current heatwave alone is estimated at €1–2 billion, with the FAO reporting wheat and corn yields dropping 10 to 20% in the most affected regions. These are not abstract projections — they show up in food prices, insurance premiums, and public health budgets.
+    </p>
+    <p>
+      This is not the first time. After the 2003 heatwave — which killed over 70,000 people across Europe, more than 14,000 in France alone — governments drew up heat-health action plans and built early warning systems. France's National Heat Wave Plan introduced cooling rooms at care centres, mandatory insulation in new construction, and population monitoring tools. Those plans have helped. The 2022 heatwave, which killed more than 61,000 people in Europe despite all those preparations, showed how much further there is still to go. The June 2026 temperatures are already pushing past the margins those plans were designed for.
+    </p>
+    <p>
+      As the <a href="https://www.karmactive.com/climate-changes-rising-death-toll-in-billions-western-universitys-startling-revelations/" target="_blank" rel="noopener">rising death toll from climate events</a> becomes harder to ignore, the question facing governments, city planners, and ordinary people is the same one it has been for two decades — just with less time left to answer it. Europe heats at nearly four times the pace of the broader northern midlatitudes. The IPCC's Sixth Assessment Report confirms that human-caused warming has increased heatwave frequency and intensity since the 1950s, and that every fraction of a degree of additional warming makes these events more frequent, longer, and harder to survive.
+    </p>
+  </div>
+
+  <!-- =========================================================
+       NIGHT VS DAY TEMPERATURE EXPLAINER
+  ========================================================= -->
+  <section class="ka-night-compare" aria-label="Night temperature heatwave risk explainer">
+    <div class="ka-nc-wrap">
+      <h2 class="ka-nc-title">Why Warm Nights Are More Dangerous Than Hot Days</h2>
+      <p class="ka-nc-sub">The body recovers from daytime heat during cooler nights. When nights stay hot, that recovery doesn't happen.</p>
+      <div class="ka-nc-cards">
+        <div class="ka-nc-card ka-nc-safer">
+          <div class="ka-nc-label">Lower health risk</div>
+          <div class="ka-nc-temp-row">
+            <div>
+              <span class="ka-nc-temp">38°C</span>
+              <span class="ka-nc-temp-sub">Daytime peak</span>
+            </div>
+            <span class="ka-nc-arrow">→</span>
+            <div>
+              <span class="ka-nc-temp">18°C</span>
+              <span class="ka-nc-temp-sub">Overnight low</span>
+            </div>
+          </div>
+          <p class="ka-nc-conclusion">The 20°C overnight drop allows the body to recover. Core temperature returns to normal during sleep.</p>
+        </div>
+        <div class="ka-nc-card ka-nc-risky">
+          <div class="ka-nc-label">Higher health risk ⚠</div>
+          <div class="ka-nc-temp-row">
+            <div>
+              <span class="ka-nc-temp">36°C</span>
+              <span class="ka-nc-temp-sub">Daytime peak</span>
+            </div>
+            <span class="ka-nc-arrow">→</span>
+            <div>
+              <span class="ka-nc-temp">25°C</span>
+              <span class="ka-nc-temp-sub">Overnight low</span>
+            </div>
+          </div>
+          <p class="ka-nc-conclusion">The body stays under strain all night. Core temperature never fully recovers. This is the scenario playing out in Europe right now.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       QUOTE BANNER
+  ========================================================= -->
+  <div class="ka-quote-banner">
+    <p class="ka-quote-text">
+      "When assessing the health impact of a heatwave, minimum temperatures can be more telling than the peak afternoon high. The second scenario — where the night stays warm — carries a much higher health risk."
+    </p>
+    <p class="ka-quote-source">— Armel Castellan, Extreme Heat Services Technical Advisor, WMO-WHO Climate and Health Joint Office</p>
+  </div>
+
+  <!-- =========================================================
+       HISTORICAL HEATWAVE TIMELINE
+  ========================================================= -->
+  <section class="ka-timeline-wrap" aria-label="History of European heatwaves 2003 to 2026">
+    <h2 class="ka-timeline-title">Europe's Heatwave History: The Deaths Keep Rising</h2>
+    <p class="ka-timeline-sub">Click each year to see what happened — and notice the direction the numbers are going.</p>
+    <div class="ka-timeline" id="ka-timeline">
+      <div class="ka-tl-item" data-year="2003" onclick="showTimeline('2003', this)">
+        <div class="ka-tl-dot"></div>
+        <div class="ka-tl-year">2003</div>
+        <span class="ka-tl-deaths">70,000+</span>
+        <span class="ka-tl-label">deaths<br>across Europe</span>
+      </div>
+      <div class="ka-tl-item" data-year="2019" onclick="showTimeline('2019', this)">
+        <div class="ka-tl-dot"></div>
+        <div class="ka-tl-year">2019</div>
+        <span class="ka-tl-deaths">2,500+</span>
+        <span class="ka-tl-label">deaths<br>(France alone)</span>
+      </div>
+      <div class="ka-tl-item" data-year="2022" onclick="showTimeline('2022', this)">
+        <div class="ka-tl-dot"></div>
+        <div class="ka-tl-year">2022</div>
+        <span class="ka-tl-deaths">61,000+</span>
+        <span class="ka-tl-label">deaths<br>across Europe</span>
+      </div>
+      <div class="ka-tl-item" data-year="2026" onclick="showTimeline('2026', this)">
+        <div class="ka-tl-dot"></div>
+        <div class="ka-tl-year">2026</div>
+        <span class="ka-tl-deaths">40+</span>
+        <span class="ka-tl-label">drownings<br>in France (1 week)</span>
+      </div>
+    </div>
+    <div class="ka-tl-detail" id="ka-tl-detail"></div>
+  </section>
+
+  <!-- =========================================================
+       COUNTRY ACCORDION
+  ========================================================= -->
+  <section class="ka-countries" aria-label="Country-by-country heatwave impacts">
+    <div class="ka-accordion-wrap">
+      <h2 class="ka-section-title" style="max-width:1100px;margin:0 auto 1.2rem;">What's Happening Country by Country</h2>
+
+      <div class="ka-country-card" onclick="toggleCountry(this)">
+        <div class="ka-country-header">
+          <div class="ka-country-flag-name"><span class="ka-country-flag">🇫🇷</span> France</div>
+          <span class="ka-temp-badge">44.3°C record</span>
+          <span class="ka-country-icon">▼</span>
+        </div>
+        <div class="ka-country-body">
+          <div class="ka-country-body-inner">
+            <ul class="ka-impact-list">
+              <li>National temperature indicator hit 29.8°C on June 23 — hottest since 1947 records began</li>
+              <li>44.3°C in Pissos (Landes) — France's all-time national temperature record</li>
+              <li>41°C in Paris; Météo-France placed 49–54 departments under red alert</li>
+              <li>40+ people drowned seeking relief in rivers, lakes, and unsupervised swimming spots</li>
+              <li>18 deaths from direct heat causes; 2 children found dead in hot vehicles</li>
+              <li>106,000 homes without power; 68,000 in Finistère after transformer failure</li>
+              <li>SNCF reduced train speeds on 1,200 km of track to prevent rail buckling</li>
+              <li>845 schools closed; 1,800 modified schedules</li>
+              <li>Public drinking water access points opened across cities</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ka-country-card" onclick="toggleCountry(this)">
+        <div class="ka-country-header">
+          <div class="ka-country-flag-name"><span class="ka-country-flag">🇮🇹</span> Italy</div>
+          <span class="ka-temp-badge">16 cities red alert</span>
+          <span class="ka-country-icon">▼</span>
+        </div>
+        <div class="ka-country-body">
+          <div class="ka-country-body-inner">
+            <ul class="ka-impact-list">
+              <li>Italy's Ministry of Health declared maximum-level red heat alerts for Rome, Milan, Turin, Venice, Florence, Bologna, and 10 more cities</li>
+              <li>Underground cable failures in Turin caused repeated power blackouts</li>
+              <li>Trenitalia cancelled hundreds of regional rail routes as tracks buckled</li>
+              <li>Northern Italian plains recorded temperatures in the low 40°C Celsius range</li>
+              <li>Agricultural losses across the Po Valley; wheat and other crops stressed by sustained heat</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ka-country-card" onclick="toggleCountry(this)">
+        <div class="ka-country-header">
+          <div class="ka-country-flag-name"><span class="ka-country-flag">🇬🇧</span> United Kingdom</div>
+          <span class="ka-temp-badge">39°C forecast</span>
+          <span class="ka-country-icon">▼</span>
+        </div>
+        <div class="ka-country-body">
+          <div class="ka-country-body-inner">
+            <ul class="ka-impact-list">
+              <li>Red heat alert issued by the UK Met Office for parts of England — the highest warning level</li>
+              <li>Peak temperatures of 39°C forecast for London and southern England</li>
+              <li>Schools closed in affected areas; many train services cancelled</li>
+              <li>Passengers urged to avoid non-essential travel in red warning zones</li>
+              <li>UK already set a new May temperature record (35.1°C at Kew Gardens) during the May 2026 wave</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ka-country-card" onclick="toggleCountry(this)">
+        <div class="ka-country-header">
+          <div class="ka-country-flag-name"><span class="ka-country-flag">🇪🇸</span> Spain</div>
+          <span class="ka-temp-badge">40°C+ since weekend</span>
+          <span class="ka-country-icon">▼</span>
+        </div>
+        <div class="ka-country-body">
+          <div class="ka-country-body-inner">
+            <ul class="ka-impact-list">
+              <li>Temperatures above 40°C reported across multiple provinces since the weekend</li>
+              <li>Two elderly people died from heatstroke</li>
+              <li>Wildfire alert issued for dry vegetation across Iberian Peninsula</li>
+              <li>Emergency services and military units mobilised to fire-prone areas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="ka-country-card" onclick="toggleCountry(this)">
+        <div class="ka-country-header">
+          <div class="ka-country-flag-name"><span class="ka-country-flag">🇩🇪🇨🇭🇧🇪</span> Germany / Switzerland / Belgium</div>
+          <span class="ka-temp-badge">High alerts</span>
+          <span class="ka-country-icon">▼</span>
+        </div>
+        <div class="ka-country-body">
+          <div class="ka-country-body-inner">
+            <ul class="ka-impact-list">
+              <li>Germany, Switzerland, and Belgium all issued heat warnings during the June wave</li>
+              <li>Power prices across the EU rose sharply as cooling demand surged and wind power generation fell</li>
+              <li>The May 2026 wave alone caused day-ahead electricity prices to jump 29%</li>
+              <li>Reduced train services in Brussels and major German cities to limit breakdown risk</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       HEAT SAFETY GUIDE
+  ========================================================= -->
+  <section class="ka-safety" aria-label="Heat safety guide">
+    <h2 class="ka-safety-title">Your Heat Survival Guide</h2>
+    <p class="ka-safety-sub">Tap each card to expand — recommended by WHO Europe and national health authorities</p>
+    <div class="ka-safety-grid">
+
+      <div class="ka-tip-card" onclick="toggleTip(this)">
+        <span class="ka-tip-icon">💧</span>
+        <div class="ka-tip-title">Drink Water Constantly</div>
+        <div class="ka-tip-detail">Don't wait until you're thirsty. By the time you feel thirsty, mild dehydration has already begun. Drink at least 1.5–2 litres per day, and more if you are outdoors or elderly. Avoid alcohol and excess caffeine — they dehydrate faster.</div>
+      </div>
+
+      <div class="ka-tip-card" onclick="toggleTip(this)">
+        <span class="ka-tip-icon">🏠</span>
+        <div class="ka-tip-title">Stay Indoors 11am–4pm</div>
+        <div class="ka-tip-detail">This is when heat is most intense. Close blinds and curtains on sun-facing windows. If your home has no cooling, visit a public library, shopping centre, or designated cooling centre — WHO Europe lists these as critical resources during heat emergencies.</div>
+      </div>
+
+      <div class="ka-tip-card" onclick="toggleTip(this)">
+        <span class="ka-tip-icon">🚗</span>
+        <div class="ka-tip-title">Never Leave Anyone in a Car</div>
+        <div class="ka-tip-detail">Car interiors can reach 50°C+ within 10 minutes even in 30°C weather. In France's June 2026 heatwave, two children died in hot vehicles. This applies to pets as well. Never leave anyone unattended in a parked car during a heatwave.</div>
+      </div>
+
+      <div class="ka-tip-card" onclick="toggleTip(this)">
+        <span class="ka-tip-icon">👴</span>
+        <div class="ka-tip-title">Check on Older Neighbours</div>
+        <div class="ka-tip-detail">People over 65 account for nearly 90% of heat-related deaths in Europe. Many older people live alone and may not ask for help. Call or visit elderly family members and neighbours at least twice a day during a heatwave. Share this information with them directly.</div>
+      </div>
+
+      <div class="ka-tip-card" onclick="toggleTip(this)">
+        <span class="ka-tip-icon">🌬️</span>
+        <div class="ka-tip-title">Cool Your Body — Not Just the Room</div>
+        <div class="ka-tip-detail">Use cool (not cold) water on your wrists, neck, and the back of your knees to lower body temperature. Cold water can cause shock and is less effective than cool water. Wet towels and cool baths also work. Fans help when temperatures are below 35°C — above that, they circulate hot air.</div>
+      </div>
+
+      <div class="ka-tip-card" onclick="toggleTip(this)">
+        <span class="ka-tip-icon">⚠️</span>
+        <div class="ka-tip-title">Recognise Heat Stroke</div>
+        <div class="ka-tip-detail">Heat stroke is a medical emergency. Signs: body temperature above 40°C, confusion, slurred speech, dry skin (unlike heat exhaustion which involves sweating), and loss of consciousness. Call emergency services immediately. While waiting, move the person to shade, apply cool water, and fan them.</div>
+      </div>
+
+      <div class="ka-tip-card" onclick="toggleTip(this)">
+        <span class="ka-tip-icon">🌊</span>
+        <div class="ka-tip-title">Swim Only in Supervised Areas</div>
+        <div class="ka-tip-detail">Over 40 people drowned in France in a single week trying to cool off in rivers and unsupervised water. Cold water shock and strong currents are deadly when heat impairs judgement. Only swim in designated, supervised areas with lifeguards present.</div>
+      </div>
+
+      <div class="ka-tip-card" onclick="toggleTip(this)">
+        <span class="ka-tip-icon">🌙</span>
+        <div class="ka-tip-title">Cool Your Bedroom Before Sleeping</div>
+        <div class="ka-tip-detail">Night-time temperatures above 25°C prevent the body from recovering. Before sleeping: close windows during the hottest hours and open them in the evening when outside air cools below indoor temperature. Use a fan to draw cool night air in. Sleeping in the lowest floor of your home helps, as heat rises.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       CONCLUSION TEXT BLOCK
+  ========================================================= -->
+  <div class="ka-text-block">
+    <h2>The Longer Arc</h2>
+    <p>
+      The 2003 European heatwave killed over 70,000 people. The 2022 heatwave killed more than 61,000, despite two decades of adaptation efforts in between. France's National Heat Wave Plan, born from the 2003 catastrophe, has helped — the death tolls per degree of warming are lower now than they were then. Early warning systems, cooling rooms in care centres, and mandatory insulation in new buildings have made a measurable difference.
+    </p>
+    <p>
+      But the June 2026 heat is already pushing past the design limits of those plans. Europe is heating at a pace that is outrunning the pace of adaptation. The EU's <a href="https://www.eea.europa.eu/en/analysis/publications/the-impacts-of-heat-on-health" target="_blank" rel="noopener">European Environment Agency</a> has documented the gap between how fast temperatures are rising and how slowly heat-health infrastructure is changing. City planners and architects across European capitals are beginning to retrofit buildings with better insulation, expand urban green cover, and build "cool corridors" — shaded pathways linking cooling centres. Barcelona has transformed pilot schools into public cooling shelters during heatwaves. Antwerp has built "Cool Spots" — 200m² shaded zones with canopy cover, unpaved ground, and drinking water — across the city. These steps matter. They need to scale much faster.
+    </p>
+    <p>
+      Long-term, the <a href="https://www.karmactive.com/teetering-on-the-edge-the-imminent-threat-of-amocs-collapse-and-the-global-climate-catastrophe/" target="_blank" rel="noopener">broader climate dynamics</a> that are driving these heatwaves — weakening Atlantic circulation, rising baseline temperatures, more persistent omega blocking patterns — are not going to reverse on any timescale that current policy addresses. The annual economic losses from extreme heat and weather in Europe already stand at €43 billion. By 2030, under current trends, Europe's largest economies face over $600 billion in cumulative heat-driven losses.
+    </p>
+    <p>
+      The heatwave of June 2026 has been covered in this piece through its causes, its death toll, its geographic reach, its infrastructure failures, the populations it hits hardest, the economic damage it inflicts, and the practical steps available to individuals right now. What remains is a choice that is not made in a crisis — it is made before one. Every summer from now on will be, in some sense, a test of decisions already made or not made. This summer is showing clearly what the score is.
+    </p>
+  </div>
+
+  <!-- =========================================================
+       FOOTER NOTE
+  ========================================================= -->
+  <div class="ka-sources-note">
+    Data sourced from: WMO, WHO Europe, European Environment Agency, EU Joint Research Centre, Météo-France, IPCC Sixth Assessment Report, Nature Communications, ESA Copernicus Programme.
+  </div>
+
+</div><!-- end .ka-heatwave-wrap -->
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function() {
+  // ---- Leaflet Map ----
+  var map = L.map('ka-europe-map', { scrollWheelZoom: false }).setView([47.5, 5.5], 4);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 10,
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  function makeIcon(color, size) {
+    size = size || 22;
+    return L.divIcon({
+      html: '<div style="width:' + size + 'px;height:' + size + 'px;background:' + color + ';border-radius:50%;border:3px solid rgba(255,255,255,0.9);box-shadow:0 2px 8px rgba(0,0,0,0.4);"></div>',
+      iconSize: [size, size],
+      iconAnchor: [size/2, size/2],
+      className: ''
+    });
+  }
+
+  var hotspots = [
+    {
+      lat: 44.38, lng: -0.88, color: '#e94560', size: 28,
+      title: '🔴 Pissos, Landes (France)',
+      popup: '<strong>44.3°C</strong> — France\'s all-time national temperature record, set June 23, 2026. This single reading set the new absolute high for any location in France since records began in 1947.'
+    },
+    {
+      lat: 48.86, lng: 2.35, color: '#e94560', size: 24,
+      title: '🔴 Paris, France',
+      popup: '<strong>41°C</strong> in Paris on June 23. National temperature indicator reached 29.8°C — the highest since 1947. SNCF reduced speeds on 1,200km of track. 845 schools closed.'
+    },
+    {
+      lat: 48.15, lng: -1.55, color: '#e94560', size: 22,
+      title: '🔴 Finistère (Brittany), France',
+      popup: '<strong>68,000 homes</strong> lost power when a transformer failed in Finistère. Part of over 106,000 French homes affected by power outages caused by overloaded electrical infrastructure.'
+    },
+    {
+      lat: 41.90, lng: 12.50, color: '#e94560', size: 24,
+      title: '🔴 Rome, Italy',
+      popup: '<strong>Red heat alert</strong> issued by Italy\'s Ministry of Health. Rome was one of 16 major Italian cities placed on the highest-level heat warning, alongside Milan, Turin, Venice, Florence, and Bologna.'
+    },
+    {
+      lat: 45.07, lng: 7.69, color: '#e94560', size: 22,
+      title: '🔴 Turin, Italy',
+      popup: '<strong>Power blackouts</strong> in Turin as underground cables failed from thermal stress. Turin was among 16 Italian cities under maximum red alert. Trenitalia cancelled hundreds of regional train routes nationwide.'
+    },
+    {
+      lat: 45.47, lng: 9.19, color: '#e94560', size: 22,
+      title: '🔴 Milan, Italy',
+      popup: '<strong>Red heat alert</strong> declared. Milan was among the 16 Italian cities on maximum heat warning. Northern Italian plains reached temperatures in the low 40s Celsius.'
+    },
+    {
+      lat: 51.51, lng: -0.13, color: '#f5a623', size: 24,
+      title: '🟠 London, UK',
+      popup: '<strong>39°C</strong> forecast for London and southern England. Red alert issued by the UK Met Office. Schools and train services cancelled in affected areas. UK set new May record (35.1°C) just weeks earlier.'
+    },
+    {
+      lat: 40.42, lng: -3.70, color: '#e94560', size: 22,
+      title: '🔴 Madrid, Spain',
+      popup: '<strong>40°C+</strong> since the weekend. Two elderly people died from heatstroke. Emergency services placed on wildfire alert as vegetation dried out across the Iberian Peninsula.'
+    },
+    {
+      lat: 48.14, lng: 11.58, color: '#f5a623', size: 20,
+      title: '🟠 Munich, Germany',
+      popup: '<strong>High heat alert</strong> across Germany. Day-ahead power prices jumped 29% across the EU during the May wave as cooling demand surged and wind generation dropped. The June wave has pushed them further.'
+    },
+    {
+      lat: 46.95, lng: 7.45, color: '#f5a623', size: 20,
+      title: '🟠 Bern, Switzerland',
+      popup: '<strong>Heat warnings</strong> issued across Switzerland. Train services modified in major Swiss cities as part of coordinated European response to infrastructure risk during the heatwave.'
+    },
+    {
+      lat: 50.85, lng: 4.35, color: '#f5d623', size: 18,
+      title: '🟡 Brussels, Belgium',
+      popup: '<strong>Heat alert</strong> issued. Train services reduced in Brussels to cut breakdown risk. Belgium was part of the broader European band of countries affected by the omega block heat dome.'
+    }
+  ];
+
+  hotspots.forEach(function(h) {
+    L.marker([h.lat, h.lng], { icon: makeIcon(h.color, h.size) })
+      .addTo(map)
+      .bindPopup('<div style="font-size:0.85rem;line-height:1.5;min-width:200px;"><strong style="color:#0f3460;">' + h.title + '</strong><br><br>' + h.popup + '</div>', {
+        maxWidth: 260
+      });
+  });
+
+  // ---- Timeline ----
+  var tlData = {
+    '2003': {
+      deaths: '70,000+',
+      text: 'The 2003 European heatwave remains the deadliest in recorded history. Over 70,000 excess deaths occurred across Europe, with more than 14,000 in France alone in August 2003. Temperatures reached 45°C in parts of Portugal. The event directly led to France creating its National Heat Wave Plan and Europe-wide early warning systems.'
+    },
+    '2019': {
+      deaths: '2,500+',
+      text: 'France recorded its previous national temperature record in June 2019 — 45.9°C in Gallargues-le-Montueux. Over 2,500 heat-related deaths were recorded in France that summer. Crucially, the 2019 wave demonstrated that early warning systems introduced after 2003 were working — the death toll, while significant, was far lower than it would have been without those preparations.'
+    },
+    '2022': {
+      deaths: '61,000+',
+      text: 'The 2022 European heatwave killed over 61,000 people across the continent despite two decades of adaptation work since 2003. Research in Nature Medicine documented the scale of excess mortality. The UK broke its all-time temperature record with 40.3°C. The event was directly attributed to human-caused climate change, with scientists calculating the anthropogenic warming contribution at an average of 1.25°C for that specific event.'
+    },
+    '2026': {
+      deaths: '40+ drowned',
+      text: 'Europe\'s second severe heatwave in two months struck on June 22–24, 2026, breaking France\'s all-time temperature record (44.3°C in Pissos) and pushing Italy, the UK, Spain, Germany, Switzerland and Belgium into red alert territory. Forty people drowned in France in one week — a direct consequence of people jumping into unsupervised rivers and lakes to escape the heat. The complete final death toll from this event will take weeks to calculate.'
+    }
+  };
+
+  window.showTimeline = function(year, el) {
+    document.querySelectorAll('.ka-tl-item').forEach(function(i) { i.classList.remove('active'); });
+    el.classList.add('active');
+    var detail = document.getElementById('ka-tl-detail');
+    var d = tlData[year];
+    detail.innerHTML = '<strong style="color:#f5a623;font-size:1.1rem;">' + year + ' — ' + d.deaths + ' deaths</strong><br><br>' + d.text;
+    detail.classList.add('visible');
+    detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  };
+
+  // ---- Country Accordion ----
+  window.toggleCountry = function(card) {
+    var body = card.querySelector('.ka-country-body');
+    var isOpen = card.classList.contains('active');
+
+    document.querySelectorAll('.ka-country-card').forEach(function(c) {
+      c.classList.remove('active');
+      c.querySelector('.ka-country-body').style.maxHeight = null;
+    });
+
+    if (!isOpen) {
+      card.classList.add('active');
+      body.style.maxHeight = body.scrollHeight + 'px';
+    }
+  };
+
+  // ---- Safety Tips ----
+  window.toggleTip = function(card) {
+    var isOpen = card.classList.contains('open');
+    document.querySelectorAll('.ka-tip-card').forEach(function(c) { c.classList.remove('open'); });
+    if (!isOpen) card.classList.add('open');
+  };
+
+})();
+</script>
+</body>
+</html>
