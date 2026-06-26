@@ -1,0 +1,908 @@
+<!--
+  KARMACTIVE.COM — WORDPRESS HTML BLOCK
+  Article: Scientists Map 165,000 km² of Climate-Resilient Coral Reefs
+  Date: June 26, 2026
+  Sources: WCS / Macquarie University / Bloomberg Ocean Initiative / NOAA / OOC11 Mombasa
+  Branch: claude/beautiful-brown-59qrkn
+-->
+
+<!-- Leaflet CSS for interactive map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+<style>
+/* =============================================
+   REEF RESILIENCE DASHBOARD — karmactive.com
+   CSS Namespace: rrd- (no WP theme conflicts)
+   ============================================= */
+
+.rrd-wrap *, .rrd-wrap *::before, .rrd-wrap *::after {
+  box-sizing: border-box;
+}
+
+.rrd-wrap {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #0D1B2A;
+  line-height: 1.7;
+  background: #fff;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+  overflow-x: hidden;
+}
+
+/* -------- MAGAZINE SPLIT HEADER -------- */
+.rrd-header {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.18);
+  margin-bottom: 2.5rem;
+  min-height: 520px;
+}
+
+.rrd-img-side {
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+}
+
+.rrd-feature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s ease;
+}
+
+.rrd-img-side:hover .rrd-feature-img {
+  transform: scale(1.04);
+}
+
+.rrd-caption-bar {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(2,12,27,0.72);
+  backdrop-filter: blur(4px);
+  color: rgba(255,255,255,0.82);
+  font-size: 0.76rem;
+  line-height: 1.5;
+  padding: 0.8rem 1.1rem;
+  font-style: italic;
+}
+
+.rrd-content-side {
+  background: linear-gradient(155deg, #023E8A 0%, #0077B6 55%, #00B4D8 100%);
+  padding: 2.5rem 2.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.rrd-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #FF6B35;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  padding: 0.38rem 0.9rem;
+  border-radius: 20px;
+  margin-bottom: 1.4rem;
+  width: fit-content;
+}
+
+.rrd-h1 {
+  font-size: clamp(1.35rem, 2.8vw, 2.05rem);
+  font-weight: 900;
+  line-height: 1.22;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.rrd-deck {
+  font-size: clamp(0.9rem, 1.6vw, 1rem);
+  color: rgba(255,255,255,0.84);
+  line-height: 1.65;
+  margin-bottom: 1.8rem;
+}
+
+.rrd-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: 1.8rem;
+}
+
+.rrd-chip {
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 10px;
+  padding: 0.55rem 1rem;
+  color: #fff;
+  font-size: 0.8rem;
+  line-height: 1.25;
+}
+
+.rrd-chip strong {
+  display: block;
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  font-weight: 900;
+  color: #FFC857;
+  line-height: 1;
+  margin-bottom: 0.1rem;
+}
+
+.rrd-rule {
+  width: 44px;
+  height: 3px;
+  background: #FF6B35;
+  border-radius: 2px;
+  margin: 0 0 1.4rem;
+}
+
+.rrd-byline {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.62);
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.18);
+}
+
+/* -------- STAT CARDS ROW -------- */
+.rrd-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.rrd-sc {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.4rem 1.2rem;
+  text-align: center;
+  box-shadow: 0 4px 22px rgba(0,0,0,0.07);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.28s, box-shadow 0.28s;
+}
+
+.rrd-sc::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: 14px 14px 0 0;
+}
+
+.rrd-sc.blue::after  { background: linear-gradient(90deg,#023E8A,#0077B6); }
+.rrd-sc.teal::after  { background: linear-gradient(90deg,#0077B6,#00B4D8); }
+.rrd-sc.orange::after{ background: linear-gradient(90deg,#FF6B35,#FFB347); }
+.rrd-sc.red::after   { background: linear-gradient(90deg,#E63946,#FF6B35); }
+
+.rrd-sc:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(0,119,182,0.16);
+}
+
+.rrd-sc-icon { font-size: 1.7rem; margin-bottom: 0.45rem; }
+
+.rrd-sc-num {
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.rrd-sc.blue  .rrd-sc-num { color: #0077B6; }
+.rrd-sc.teal  .rrd-sc-num { color: #52B788; }
+.rrd-sc.orange .rrd-sc-num { color: #FF6B35; }
+.rrd-sc.red   .rrd-sc-num { color: #E63946; }
+
+.rrd-sc-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #4a5568;
+  line-height: 1.35;
+}
+
+/* -------- ARTICLE TEXT -------- */
+.rrd-body {
+  max-width: 840px;
+  margin: 0 auto 2.5rem;
+}
+
+.rrd-body p {
+  font-size: clamp(0.98rem, 1.8vw, 1.07rem);
+  color: #2d3748;
+  line-height: 1.85;
+  margin-bottom: 1.4rem;
+}
+
+.rrd-body a {
+  color: #0077B6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.rrd-body a:hover { color: #023E8A; }
+
+.rrd-body a.ext {
+  color: #2d6a4f;
+}
+
+.rrd-body a.ext:hover { color: #1b4332; }
+
+.rrd-h2 {
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-weight: 800;
+  color: #023E8A;
+  margin: 2.2rem 0 0.9rem;
+  padding-left: 1rem;
+  border-left: 4px solid #FF6B35;
+  line-height: 1.3;
+}
+
+.rrd-quote {
+  background: linear-gradient(135deg, #f0f8ff, #e8f4fd);
+  border-left: 5px solid #0077B6;
+  padding: 1.4rem 1.8rem;
+  margin: 1.8rem 0;
+  border-radius: 0 12px 12px 0;
+  font-size: clamp(0.98rem, 1.8vw, 1.08rem);
+  font-style: italic;
+  color: #023E8A;
+  line-height: 1.75;
+}
+
+.rrd-quote cite {
+  display: block;
+  margin-top: 0.7rem;
+  font-style: normal;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #0077B6;
+}
+
+/* -------- PROTECTION GAP -------- */
+.rrd-gap {
+  background: linear-gradient(155deg, #0D1B2A 0%, #023E8A 100%);
+  border-radius: 18px;
+  padding: 2.5rem;
+  margin: 2.5rem 0;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.rrd-gap-h {
+  font-size: clamp(1.15rem, 2.4vw, 1.6rem);
+  font-weight: 800;
+  color: #FFC857;
+  margin-bottom: 0.9rem;
+  line-height: 1.25;
+}
+
+.rrd-gap-p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.rrd-bars { display: flex; flex-direction: column; gap: 1.1rem; }
+
+.rrd-bar-row { display: flex; flex-direction: column; gap: 0.3rem; }
+
+.rrd-bar-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.88);
+}
+
+.rrd-bar-info strong { font-weight: 700; }
+
+.rrd-bar-bg {
+  background: rgba(255,255,255,0.12);
+  border-radius: 30px;
+  height: 16px;
+  overflow: hidden;
+}
+
+.rrd-bar-fill {
+  height: 100%;
+  border-radius: 30px;
+  transition: width 1.6s cubic-bezier(0.4,0,0.2,1);
+  width: 0;
+}
+
+/* -------- MAP SECTION -------- */
+.rrd-map-wrap {
+  margin: 2.5rem 0;
+}
+
+.rrd-sec-head {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.rrd-sec-h {
+  font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+  font-weight: 800;
+  color: #023E8A;
+  margin-bottom: 0.35rem;
+}
+
+.rrd-sec-sub {
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+#rrdMap {
+  width: 100%;
+  height: 460px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.11);
+  border: 2px solid #e2e8f0;
+}
+
+.rrd-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 10px;
+}
+
+.rrd-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: #4a5568;
+}
+
+.rrd-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.28);
+  flex-shrink: 0;
+}
+
+/* -------- TIMELINE -------- */
+.rrd-tl-wrap {
+  margin: 2.5rem 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+}
+
+.rrd-tl-scroll {
+  min-width: 820px;
+  display: flex;
+  position: relative;
+  padding: 3.5rem 1rem 1rem;
+}
+
+.rrd-tl-rail {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  right: 2rem;
+  height: 5px;
+  background: linear-gradient(90deg, #E63946, #FF6B35, #FFC857, #52B788, #0077B6, #023E8A, #023E8A);
+  transform: translateY(-50%);
+  border-radius: 10px;
+  z-index: 0;
+}
+
+.rrd-tl-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  min-width: 115px;
+}
+
+.rrd-tl-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.22);
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.rrd-tl-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.6rem 0.85rem;
+  text-align: center;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.09);
+  max-width: 112px;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.rrd-tl-item:nth-child(odd)  .rrd-tl-box { margin-bottom: 1rem; order: -1; }
+.rrd-tl-item:nth-child(even) .rrd-tl-box { margin-top: 1rem; }
+
+.rrd-tl-year {
+  display: block;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #023E8A;
+  margin-bottom: 0.25rem;
+}
+
+.rrd-tl-text { color: #4a5568; }
+
+.rrd-scroll-hint {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #a0aec0;
+  margin-top: 0.25rem;
+}
+
+/* -------- SOURCE NOTE -------- */
+.rrd-sources {
+  background: #f0f8ff;
+  border-left: 4px solid #00B4D8;
+  border-radius: 0 10px 10px 0;
+  padding: 1.1rem 1.5rem;
+  margin-top: 2rem;
+  font-size: 0.82rem;
+  color: #4a5568;
+  line-height: 1.7;
+}
+
+.rrd-sources a { color: #0077B6; font-weight: 600; }
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 860px) {
+  .rrd-header {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .rrd-img-side { min-height: 280px; max-height: 360px; }
+  .rrd-content-side { padding: 1.8rem 1.5rem; }
+  .rrd-stats { grid-template-columns: 1fr 1fr; }
+  .rrd-gap { grid-template-columns: 1fr; gap: 1.5rem; }
+}
+
+@media (max-width: 540px) {
+  .rrd-wrap { padding: 0 0.7rem 2rem; }
+  .rrd-stats { gap: 0.7rem; }
+  .rrd-sc { padding: 1.1rem 0.9rem; }
+  .rrd-sc-num { font-size: 1.6rem; }
+  #rrdMap { height: 300px; }
+  .rrd-gap { padding: 1.5rem; }
+  .rrd-chips { gap: 0.5rem; }
+  .rrd-body p { font-size: 0.96rem; }
+  .rrd-quote { padding: 1rem 1.2rem; }
+}
+
+@media (max-width: 360px) {
+  .rrd-stats { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="rrd-wrap">
+
+  <!-- ========== MAGAZINE SPLIT HEADER ========== -->
+  <header class="rrd-header">
+
+    <!-- Feature Image (left) -->
+    <div class="rrd-img-side">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Coral_Outcrop_Flynn_Reef.jpg"
+        alt="Vibrant coral outcrop at Flynn Reef, part of Australia's Great Barrier Reef — one of the highest-density zones of climate-resilient coral identified in the 50 Reefs+ study"
+        title="Climate-Resilient Coral at Flynn Reef, Great Barrier Reef, Australia"
+        class="rrd-feature-img"
+        loading="eager"
+      />
+      <div class="rrd-caption-bar">
+        At Flynn Reef — part of the Great Barrier Reef — coral colonies have endured repeated heat events that wiped out nearby formations. The 50 Reefs+ study found Australia holds the largest share of climate-resilient reef area globally, yet nearly three-quarters of all such reefs worldwide still fall outside any formal protection. Every degree of ocean warming narrows the window. (Photo: Toby Hudson / Wikimedia Commons, CC BY-SA 3.0)
+      </div>
+    </div>
+
+    <!-- Title Content (right) -->
+    <div class="rrd-content-side">
+      <span class="rrd-tag">🪸 Ocean Conservation · June 2026</span>
+      <h1 class="rrd-h1">Scientists Map 165,000 km² of Coral Reefs That Could Outlast Climate Change — Three Times More Than We Knew</h1>
+      <p class="rrd-deck">A landmark study presented at the Our Ocean Conference in Mombasa has redrawn what is possible for reef survival. The numbers are bigger — but so is the gap in protection.</p>
+      <div class="rrd-rule"></div>
+      <div class="rrd-chips">
+        <div class="rrd-chip"><strong>165,922 km²</strong>Resilient Reefs Mapped</div>
+        <div class="rrd-chip"><strong>3×</strong>Prior Estimates</div>
+        <div class="rrd-chip"><strong>71</strong>Countries</div>
+        <div class="rrd-chip"><strong>72%</strong>Still Unprotected</div>
+      </div>
+      <div class="rrd-byline">Study: WCS / Macquarie University / Bloomberg Ocean Initiative &nbsp;|&nbsp; June 16, 2026 · OOC11, Mombasa, Kenya</div>
+    </div>
+
+  </header>
+
+  <!-- ========== STAT CARDS ========== -->
+  <section class="rrd-stats" aria-label="Key statistics from the 50 Reefs+ study">
+
+    <div class="rrd-sc blue">
+      <div class="rrd-sc-icon">🗺️</div>
+      <div class="rrd-sc-num">165K<small style="font-size:1rem"> km²</small></div>
+      <div class="rrd-sc-label">Climate-Resilient Reef Area</div>
+    </div>
+
+    <div class="rrd-sc teal">
+      <div class="rrd-sc-icon">🌏</div>
+      <div class="rrd-sc-num">71</div>
+      <div class="rrd-sc-label">Countries With Resilient Reefs</div>
+    </div>
+
+    <div class="rrd-sc orange">
+      <div class="rrd-sc-icon">⚠️</div>
+      <div class="rrd-sc-num">72%</div>
+      <div class="rrd-sc-label">Reefs Without Formal Protection</div>
+    </div>
+
+    <div class="rrd-sc red">
+      <div class="rrd-sc-icon">👥</div>
+      <div class="rrd-sc-num">1B+</div>
+      <div class="rrd-sc-label">People Dependent on Reefs</div>
+    </div>
+
+  </section>
+
+  <!-- ========== INTRO TEXT ========== -->
+  <div class="rrd-body">
+
+    <p>The fourth global coral bleaching event — confirmed by <a href="https://www.noaa.gov/news-release/noaa-confirms-4th-global-coral-bleaching-event" target="_blank" rel="noopener" class="ext">NOAA in April 2024</a> and believed to have concluded by mid-2025 — scorched 84.4% of the world's reef area across at least 83 countries and territories. In some parts of the Pacific, coral mortality reached 93%. For the billion people whose food, income, and coastlines depend on reefs, <a href="https://www.karmactive.com/coral-reefs-in-crisis-60-affected-by-bleaching-in-record-heat-is-the-4th-global-event-the-worst-yet/">that fourth bleaching event landed as the worst in recorded history</a>.</p>
+
+    <p>Then, on June 16, 2026, at the <a href="https://www.ouroceanconference.org/conferences/mombasa-2026/" target="_blank" rel="noopener" class="ext">11th Our Ocean Conference (OOC11)</a> in Mombasa, Kenya, scientists presented numbers that shifted the conversation.</p>
+
+    <p>The <strong>50 Reefs+ study</strong> — led by the <a href="https://www.wcs.org/our-ocean-conference" target="_blank" rel="noopener" class="ext">Wildlife Conservation Society (WCS)</a> and Macquarie University, with support from the Bloomberg Ocean Initiative — has identified <strong>165,922 square kilometres of coral reefs</strong> across 71 countries and 100 territories with the strongest potential to survive the climate crisis. That is three times more than the original <a href="https://www.50reefs.org/" target="_blank" rel="noopener" class="ext">50 Reefs initiative</a> estimated in 2018.</p>
+
+    <p>The findings were drawn from over <strong>45,000 field records</strong> collected between 1960 and 2025, cross-referenced against <strong>42 environmental and human variables</strong> — including sea temperatures, heat stress events, cyclone activity, fishing intensity, and reef connectivity. The resulting map is 10,000 times more detailed than any previous reef resilience mapping exercise.</p>
+
+  </div>
+
+  <!-- ========== INTERACTIVE MAP ========== -->
+  <section class="rrd-map-wrap" aria-label="Interactive global reef resilience map">
+    <div class="rrd-sec-head">
+      <h2 class="rrd-sec-h">Where the Resilient Reefs Are</h2>
+      <p class="rrd-sec-sub">Click any marker to explore — data sourced from WCS &amp; Macquarie University, 50 Reefs+ Study, 2026</p>
+    </div>
+    <div id="rrdMap" role="img" aria-label="World map showing climate-resilient coral reef locations across 71 countries"></div>
+    <div class="rrd-legend">
+      <div class="rrd-legend-item">
+        <div class="rrd-dot" style="background:#0077B6;"></div>
+        <span>Top 5 Countries (61% of resilient reefs)</span>
+      </div>
+      <div class="rrd-legend-item">
+        <div class="rrd-dot" style="background:#52B788;"></div>
+        <span>Emerging Resilient Zones</span>
+      </div>
+      <div class="rrd-legend-item">
+        <div class="rrd-dot" style="background:#FF6B35;"></div>
+        <span>OOC11 — Mombasa, Kenya</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BODY TEXT ========== -->
+  <div class="rrd-body">
+
+    <h2 class="rrd-h2">Where the Reefs Are — and Why It Matters to You</h2>
+
+    <p>More than <strong>61% of identified climate-resilient reefs</strong> are concentrated in five countries: Australia, the Bahamas, Cuba, Indonesia, and the Philippines. The remaining 39% stretch across 66 additional countries and territories — including parts of the Red Sea, the Western Indian Ocean, and the broader Pacific.</p>
+
+    <p>In India — where reefs span Lakshadweep, the Andaman and Nicobar Islands, the Gulf of Mannar, and the Gulf of Kutch — researchers found pockets of resilience even within the fourth bleaching event. A study conducted during that period found a thriving coral reef in the northeast of Kalpeni Island, Lakshadweep Archipelago. India's reef systems support over five million people through fishing, tourism, and coastal protection, and the reefs of Andaman and Nicobar attract nearly two million tourists annually.</p>
+
+    <blockquote class="rrd-quote">
+      "Coral reefs are often framed as ecosystems beyond saving, but this research shows that there is a global set of reefs that have the potential to survive and recover from the climate crisis."
+      <cite>— Dr. Emily Darling, Director of Coral Conservation, Wildlife Conservation Society (WCS), co-author of the 50 Reefs+ study</cite>
+    </blockquote>
+
+    <h2 class="rrd-h2">What "Climate Resilient" Actually Means</h2>
+
+    <p>A climate-resilient reef, as defined in this study, is not one that cannot bleach. It is one that — over decades of observations — has either avoided, resisted, or recovered from marine heat stress. The research weighed thermal history, geographic positioning, reef connectivity, water flow patterns, and the degree to which existing human pressures had already weakened the coral community.</p>
+
+    <p>Reefs positioned in areas with cooler upwelling currents, or those that sit deeper in the water column (mesophotic reefs), scored higher. So did reefs in areas with lower fishing pressure, which tend to retain greater genetic diversity in their coral populations — a buffer that helps recovery after bleaching.</p>
+
+  </div>
+
+  <!-- ========== PROTECTION GAP ========== -->
+  <section class="rrd-gap" aria-label="Protection gap statistics for climate-resilient coral reefs">
+    <div>
+      <h2 class="rrd-gap-h">72% Are Left Exposed</h2>
+      <p class="rrd-gap-p">The most direct finding from this research: nearly three-quarters of identified climate-resilient reefs currently fall outside any Marine Protected or Conserved Area. These are reefs that can survive climate change — but only if local threats like overfishing, pollution, and poorly managed tourism are also addressed.</p>
+      <p class="rrd-gap-p">At OOC11, 20 countries signed the High-Level Climate-Resilient Coral Reef Commitment. Five signed in Mombasa: Comoros, the Dominican Republic, Kenya, Mexico, and the United Kingdom. The target is <strong>31 signatories by COP31 in Turkey (November 2026)</strong> — a coalition representing 80% of the world's coral cover.</p>
+      <p style="font-size:0.82rem; color:rgba(255,255,255,0.6); margin-top:0.5rem;">The conference closed with $6.4 billion pledged across all ocean conservation commitments.</p>
+    </div>
+    <div class="rrd-bars">
+      <div class="rrd-bar-row">
+        <div class="rrd-bar-info"><span>🔴 Unprotected resilient reefs</span><strong>72%</strong></div>
+        <div class="rrd-bar-bg"><div class="rrd-bar-fill" id="rrdBar1" style="background:linear-gradient(90deg,#E63946,#FF6B35);"></div></div>
+      </div>
+      <div class="rrd-bar-row">
+        <div class="rrd-bar-info"><span>🟢 Currently within protected areas</span><strong>28%</strong></div>
+        <div class="rrd-bar-bg"><div class="rrd-bar-fill" id="rrdBar2" style="background:linear-gradient(90deg,#52B788,#00B4D8);"></div></div>
+      </div>
+      <div class="rrd-bar-row">
+        <div class="rrd-bar-info"><span>📝 Countries committed (target: 31)</span><strong>20 / 31</strong></div>
+        <div class="rrd-bar-bg"><div class="rrd-bar-fill" id="rrdBar3" style="background:linear-gradient(90deg,#FFC857,#FFD166);"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BODY TEXT CONT. ========== -->
+  <div class="rrd-body">
+
+    <h2 class="rrd-h2">What Reefs Are Worth — and What Their Loss Costs</h2>
+
+    <p>Coral reefs cover less than 1% of the ocean floor but support an estimated 25% of all marine species. Their economic value spans fisheries, tourism, pharmaceutical research, and the physical protection of more than 150,000 kilometres of coastline. Globally, reef ecosystem services are valued at up to <a href="https://oceanservice.noaa.gov/facts/coral_economy.html" target="_blank" rel="noopener" class="ext">$9.9 trillion per year (NOAA Ocean Service)</a>. More than one billion people depend on these systems for food, livelihood, or protection from coastal flooding.</p>
+
+    <p>In the Asia-Pacific region alone — which holds three of the five countries with the highest concentration of climate-resilient reefs — reef fisheries yield $25 billion in annual benefits. <a href="https://www.karmactive.com/how-conserving-our-ecosystems-now-could-save-billions-the-crucial-intersection-of-economy-and-environment/">Research has established that losing key ecosystem services, including marine fisheries, could cut global GDP by $2 trillion a year</a>. These numbers explain why the "Our Reefs, Our Future" campaign — launched jointly by WCS, WWF, and The Nature Conservancy — frames reef protection not as an environmental choice but as an economic one.</p>
+
+    <p>Antha Williams, who leads the Environment Program at Bloomberg Philanthropies, stated that the 50 Reefs+ research "gives governments, scientists, Indigenous Peoples, and local communities a powerful new roadmap for protecting them."</p>
+
+    <h2 class="rrd-h2">Local Threats Can Undo What Climate Resilience Preserves</h2>
+
+    <p>Heat resistance alone does not make a reef safe. Overfishing, agricultural runoff, plastic pollution, coastal construction, and poorly managed tourism can degrade reefs faster than any natural recovery process allows. <a href="https://www.karmactive.com/iucn-report-at-cop29-reveals-44-of-coral-species-facing-extinction-as-climate-threats-push-reefs-to-the-brink/">The IUCN has found that 44% of reef-building coral species now face extinction</a> — a figure driven by the combination of climate stress and these local pressures acting together.</p>
+
+    <p>Ocean acidification adds a separate layer. Seawater pH off reefs has fallen from approximately 8.11 in 1985 to 8.05 in 2021 — a roughly 30% increase in acidity since pre-industrial times. Acidification weakens coral skeletons and reduces a reef's ability to physically rebuild, even when its coral populations have shown thermal resilience. <a href="https://www.karmactive.com/1-million-species-at-risk-discover-the-alarming-chain-reaction-threatening-our-biodiversity/">This interaction between warming and acidification feeds directly into wider biodiversity loss patterns</a>.</p>
+
+    <p>For reef-dependent communities — artisanal fishers in the Caribbean, dive tourism workers in the Philippines, coastal populations in Lakshadweep — resilience in the lab or in a model means little if the water running off their land is still choking the coral with sediment and fertiliser.</p>
+
+    <h2 class="rrd-h2">From 50 Reefs to 50 Reefs+: What Changed</h2>
+
+    <p>The original <a href="https://www.50reefs.org/" target="_blank" rel="noopener" class="ext">50 Reefs initiative in 2018</a> identified 50 specific reef systems most likely to survive climate change — the first systematic global effort to direct conservation resources toward reefs with the best chance. The 50 Reefs+ study builds on that foundation with 65 times more data points and a scope that now covers 71 countries rather than a curated set of 50 sites.</p>
+
+    <p>Both studies point to the same conclusion: reef fate is not predetermined. The difference between a reef that endures and one that does not is often a matter of where it sits geographically, how much fishing pressure it has absorbed, and whether governments act before conditions pass beyond the point of recovery. For the first time, there is a map precise enough to guide that action at a national level — across 165,922 square kilometres, in 71 countries, over 100 territories.</p>
+
+    <p><a href="https://www.karmactive.com/sea-surface-temperatures-hit-historic-highs-a-new-climate-reality-unfolds/">Sea surface temperatures have continued to register at or near historic highs</a> through 2025 and into 2026. The conditions that drove the fourth bleaching event have not reversed. What the 50 Reefs+ study adds — and what the commitments made in Mombasa are built on — is a precise, data-driven answer to the question of where to focus.</p>
+
+    <p>A reef that has survived four bleaching events, managed its local fishing pressure, and now sits inside a Marine Protected Area is a reef with a genuine future. There are 165,922 square kilometres of them. The question is what happens to the 72% that are still waiting to be protected.</p>
+
+  </div>
+
+  <!-- ========== TIMELINE ========== -->
+  <section class="rrd-map-wrap" aria-label="Timeline of coral reef crisis and conservation milestones">
+    <div class="rrd-sec-head">
+      <h2 class="rrd-sec-h">Reef Science: Key Moments</h2>
+      <p class="rrd-sec-sub">From the first mass bleaching event to the 2026 resilience map</p>
+    </div>
+    <div class="rrd-tl-wrap">
+      <div class="rrd-tl-scroll" role="list">
+        <div class="rrd-tl-rail"></div>
+
+        <div class="rrd-tl-item" role="listitem">
+          <div class="rrd-tl-dot" style="background:#E63946;"></div>
+          <div class="rrd-tl-box">
+            <span class="rrd-tl-year">1998</span>
+            <span class="rrd-tl-text">1st mass bleaching — 16% of world's reefs severely damaged (El Niño)</span>
+          </div>
+        </div>
+
+        <div class="rrd-tl-item" role="listitem">
+          <div class="rrd-tl-dot" style="background:#FF6B35;"></div>
+          <div class="rrd-tl-box">
+            <span class="rrd-tl-year">2016–17</span>
+            <span class="rrd-tl-text">3rd global event; GBR loses over 50% of shallow-water corals</span>
+          </div>
+        </div>
+
+        <div class="rrd-tl-item" role="listitem">
+          <div class="rrd-tl-dot" style="background:#FFC857;"></div>
+          <div class="rrd-tl-box">
+            <span class="rrd-tl-year">2018</span>
+            <span class="rrd-tl-text">Original 50 Reefs study — first data-driven global resilience map</span>
+          </div>
+        </div>
+
+        <div class="rrd-tl-item" role="listitem">
+          <div class="rrd-tl-dot" style="background:#E63946;"></div>
+          <div class="rrd-tl-box">
+            <span class="rrd-tl-year">Apr 2024</span>
+            <span class="rrd-tl-text">NOAA confirms 4th global event — 84.4% of reefs affected</span>
+          </div>
+        </div>
+
+        <div class="rrd-tl-item" role="listitem">
+          <div class="rrd-tl-dot" style="background:#52B788;"></div>
+          <div class="rrd-tl-box">
+            <span class="rrd-tl-year">Jun 16, 2026</span>
+            <span class="rrd-tl-text">50 Reefs+ presented at OOC11, Mombasa — 165,922 km² mapped</span>
+          </div>
+        </div>
+
+        <div class="rrd-tl-item" role="listitem">
+          <div class="rrd-tl-dot" style="background:#0077B6;"></div>
+          <div class="rrd-tl-box">
+            <span class="rrd-tl-year">Jun 18, 2026</span>
+            <span class="rrd-tl-text">OOC11 closes: $6.4B pledged; 20 countries sign reef commitment</span>
+          </div>
+        </div>
+
+        <div class="rrd-tl-item" role="listitem">
+          <div class="rrd-tl-dot" style="background:#023E8A;"></div>
+          <div class="rrd-tl-box">
+            <span class="rrd-tl-year">Nov 2026</span>
+            <span class="rrd-tl-text">COP31 (Turkey) — target: 31 signatories covering 80% of coral cover</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <p class="rrd-scroll-hint">← Scroll horizontally on mobile to view full timeline →</p>
+  </section>
+
+  <!-- ========== CONCLUSION ========== -->
+  <div class="rrd-body">
+    <h2 class="rrd-h2">What Was Covered</h2>
+    <p>The 50 Reefs+ study, conducted by the Wildlife Conservation Society and Macquarie University with support from the Bloomberg Ocean Initiative, identified 165,922 square kilometres of coral reefs across 71 countries and 100 territories with the strongest potential to survive the climate crisis — three times more than the original 2018 50 Reefs assessment. The findings were presented at the 11th Our Ocean Conference in Mombasa, Kenya, on June 16, 2026, alongside the launch of the "Our Reefs, Our Future" campaign, led by WCS, the World Wildlife Fund, and The Nature Conservancy. Twenty countries have signed the High-Level Climate-Resilient Coral Reef Commitment to date, with a target of 31 signatories by COP31 in Turkey in November 2026. The study drew on over 45,000 field records spanning 1960 to 2025 and 42 environmental and human variables. Seventy-two percent of the identified climate-resilient reefs remain outside any formal Marine Protected or Conserved Area. The Our Ocean Conference closed on June 18, 2026, with $6.4 billion pledged across ocean conservation commitments. <a href="https://www.karmactive.com/great-barrier-reef-under-siege-one-tree-island-reports-66-bleaching-44-mortality-amid-record-heat/">Previous reporting covered the Great Barrier Reef's bleaching-and-mortality data</a>, and <a href="https://www.karmactive.com/congress-greenlights-380-million-debt-for-nature-swaps-to-save-tropical-forests-and-coral-reefs-find-out-which-countries-benefit/">debt-for-nature financing mechanisms for reef countries</a> have been reported separately.</p>
+
+    <div class="rrd-sources">
+      <strong>Primary Sources:</strong>
+      <a href="https://www.noaa.gov/news-release/noaa-confirms-4th-global-coral-bleaching-event" target="_blank" rel="noopener">NOAA — 4th Global Bleaching Event (2024)</a> ·
+      <a href="https://www.ouroceanconference.org/conferences/mombasa-2026/" target="_blank" rel="noopener">Our Ocean Conference 2026, Mombasa</a> ·
+      <a href="https://www.wcs.org/our-ocean-conference" target="_blank" rel="noopener">WCS — Coral Strategy (2026)</a> ·
+      <a href="https://coralreefwatch.noaa.gov/satellite/research/coral_bleaching_report.php" target="_blank" rel="noopener">NOAA Coral Reef Watch</a> ·
+      <a href="https://www.50reefs.org/" target="_blank" rel="noopener">50 Reefs Initiative</a> ·
+      <a href="https://icriforum.org/climate-resilient-reef-commitment/" target="_blank" rel="noopener">ICRI — High-Level Coral Reef Commitment</a> ·
+      <a href="https://oceanservice.noaa.gov/facts/coral_economy.html" target="_blank" rel="noopener">NOAA — Reef Economic Value</a>
+    </div>
+  </div>
+
+</div><!-- .rrd-wrap -->
+
+<!-- Leaflet JS + Map Initialization -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WLcE=" crossorigin=""></script>
+<script>
+(function () {
+  'use strict';
+
+  /* --------- MAP INIT --------- */
+  var map = L.map('rrdMap', {
+    scrollWheelZoom: false,
+    tap: true,
+    zoomControl: true
+  }).setView([10, 95], 2);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 10,
+    attribution: '© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  /* --------- MARKER FACTORY --------- */
+  function mkIcon(color, sz) {
+    sz = sz || 18;
+    return L.divIcon({
+      html: '<div style="width:' + sz + 'px;height:' + sz + 'px;background:' + color +
+            ';border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.3);"></div>',
+      iconSize: [sz, sz],
+      iconAnchor: [sz / 2, sz / 2],
+      className: ''
+    });
+  }
+
+  /* --------- TOP 5 COUNTRIES — 61% OF RESILIENT REEFS --------- */
+  [
+    {
+      lat: -23.5, lng: 133.8,
+      name: 'Australia',
+      info: 'Holds the largest single concentration of climate-resilient reef area globally. Includes the Great Barrier Reef, Coral Sea reefs, and Northwestern Australian reef systems. Australia has signed the High-Level Coral Reef Commitment. Part of the 61% top-5 share.'
+    },
+    {
+      lat: -2.5, lng: 118.0,
+      name: 'Indonesia',
+      info: 'Part of the Coral Triangle — the global centre of marine biodiversity. Indonesia\'s reefs span over 51,000 km² and support the livelihoods of millions of coastal communities. Identified as a top-5 country in the 50 Reefs+ study. Part of the 61% top-5 share.'
+    },
+    {
+      lat: 11.8, lng: 122.0,
+      name: 'Philippines',
+      info: 'Tubbataha Reef and the Sulu-Sulawesi system are among the most biodiverse reefs identified. The Philippines sits within the Coral Triangle, supporting over 120 million people across all three Triangle nations. Part of the 61% top-5 share.'
+    },
+    {
+      lat: 21.5, lng: -78.5,
+      name: 'Cuba',
+      info: 'Cuba\'s reefs benefit from relatively restricted coastal development and above-average thermal resilience, attributed to cooler upwelling currents along its southern coast. One of only two Atlantic nations in the top five. Part of the 61% top-5 share.'
+    },
+    {
+      lat: 24.5, lng: -77.4,
+      name: 'The Bahamas',
+      info: 'Atlantic reef systems in the Bahamas show geographic advantages including lower historical fishing pressure and positioning away from the most intense warming zones. The Bahamas has signed the High-Level Commitment. Part of the 61% top-5 share.'
+    }
+  ].forEach(function (loc) {
+    L.marker([loc.lat, loc.lng], { icon: mkIcon('#0077B6', 22) })
+      .addTo(map)
+      .bindPopup('<strong>' + loc.name + '</strong><br><small>' + loc.info + '</small>', { maxWidth: 260 });
+  });
+
+  /* --------- EMERGING / SECONDARY ZONES --------- */
+  [
+    {
+      lat: 10.6, lng: 72.6,
+      name: 'India — Lakshadweep',
+      info: 'A thriving coral reef was discovered at northeast Kalpeni Island, Lakshadweep Archipelago, during the 4th bleaching event. India\'s reefs support 5M+ people. Andaman & Nicobar reefs attract ~2 million tourists/year.'
+    },
+    {
+      lat: 21.5, lng: 38.5,
+      name: 'Red Sea Reefs',
+      info: 'Red Sea corals have demonstrated exceptional heat tolerance, attributed to their evolutionary history in warmer, saltier conditions. Several Red Sea reef systems survived the 2024 bleaching with minimal mortality.'
+    },
+    {
+      lat: -12.5, lng: 44.0,
+      name: 'Western Indian Ocean',
+      info: 'Reefs around Comoros, Madagascar, and the Seychelles were among the newly identified climate-resilient zones in the expanded 50 Reefs+ analysis. Comoros signed the reef commitment at OOC11 in Mombasa.'
+    },
+    {
+      lat: 16.0, lng: -68.0,
+      name: 'Caribbean — Broader Reefs',
+      info: 'Dominican Republic and several Eastern Caribbean reefs scored for resilience in the 50 Reefs+ analysis. Over 120,000 full-time Caribbean fishers depend on reef ecosystems.'
+    },
+    {
+      lat: -18.0, lng: 178.0,
+      name: 'Fiji / Pacific Islands',
+      info: 'Pacific Island reefs, including those in Fiji, Palau, and the Federated States of Micronesia, are part of the expanded 39% identified outside the top 5 countries. Many Pacific communities have no alternative livelihood if reefs collapse.'
+    }
+  ].forEach(function (loc) {
+    L.marker([loc.lat, loc.lng], { icon: mkIcon('#52B788', 16) })
+      .addTo(map)
+      .bindPopup('<strong>' + loc.name + '</strong><br><small>' + loc.info + '</small>', { maxWidth: 260 });
+  });
+
+  /* --------- MOMBASA / OOC11 --------- */
+  L.marker([-4.05, 39.67], { icon: mkIcon('#FF6B35', 22) })
+    .addTo(map)
+    .bindPopup(
+      '<strong>Mombasa, Kenya — OOC11</strong><br><small>' +
+      '11th Our Ocean Conference, June 16–18, 2026. The 50 Reefs+ study was presented here. ' +
+      '$6.4 billion pledged across all ocean pledges. 20 countries signed the High-Level ' +
+      'Climate-Resilient Coral Reef Commitment. Kenya was one of 5 new signatories.</small>',
+      { maxWidth: 270 }
+    );
+
+  /* --------- ANIMATED BARS ON SCROLL --------- */
+  var barsAnimated = false;
+
+  function animateBars() {
+    var bar1 = document.getElementById('rrdBar1');
+    if (!bar1) return;
+    var rect = bar1.getBoundingClientRect();
+    if (!barsAnimated && rect.top < window.innerHeight && rect.bottom > 0) {
+      barsAnimated = true;
+      bar1.style.width = '72%';
+      document.getElementById('rrdBar2').style.width = '28%';
+      document.getElementById('rrdBar3').style.width = '64.5%'; /* 20/31 */
+    }
+  }
+
+  window.addEventListener('scroll', animateBars, { passive: true });
+  window.addEventListener('load', animateBars);
+  animateBars();
+
+  /* --------- ENSURE MAP RENDERS --------- */
+  setTimeout(function () { map.invalidateSize(); }, 400);
+
+})();
+</script>
