@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Europe's June 2026 heatwave killed 327 in Spain alone, sent cardiac arrests soaring in Paris, and broke temperature records across France, UK, Italy and beyond. What others aren't telling you: the nights are deadlier than the days.">
+<title>Europe Heatwave 2026: 327 Deaths, 150 Million Affected, and Why Nights Are More Dangerous Than Days</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.karmactive-hw2026 {
+  font-family: 'Georgia', serif;
+  color: #1C1917;
+  background: #FFFBF7;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  line-height: 1.7;
+}
+.karmactive-hw2026 * { box-sizing: border-box; }
+
+/* ===== HEADER: MAGAZINE LAYOUT ===== */
+.hw-header {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  min-height: 520px;
+  background: #1C1917;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+.hw-image-side {
+  position: relative;
+  overflow: hidden;
+  min-height: 340px;
+}
+.hw-feature-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.9);
+}
+.hw-img-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(220,38,38,0.9);
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.85rem;
+  border-radius: 4px;
+}
+.hw-img-temp-scale {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: rgba(28,25,23,0.8);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.78rem;
+  color: #fff;
+}
+.hw-scale-bar {
+  display: flex;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0.4rem 0 0.25rem;
+  background: linear-gradient(to right, #6366f1, #8b5cf6, #dc2626, #ea580c, #f97316, #fbbf24);
+}
+.hw-scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+.hw-content-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem 2rem;
+  background: #1C1917;
+  color: #fff;
+}
+.hw-category-tag {
+  display: inline-block;
+  background: #DC2626;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  margin-bottom: 1.2rem;
+}
+.hw-title {
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.hw-subtitle {
+  font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+  color: #D6C4B0;
+  line-height: 1.6;
+  margin-bottom: 1.6rem;
+  font-family: 'Arial', sans-serif;
+}
+.hw-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 1.2rem;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.82rem;
+  color: #A89F98;
+}
+.hw-meta-item { display: flex; align-items: center; gap: 0.4rem; }
+
+/* ===== IMAGE CAPTION ===== */
+.hw-img-caption-block {
+  background: #F5EDE3;
+  border-left: 4px solid #DC2626;
+  padding: 0.9rem 1.2rem;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.85rem;
+  color: #57534E;
+  font-style: italic;
+  margin-bottom: 2rem;
+  border-radius: 0 6px 6px 0;
+}
+.hw-img-caption-block strong { color: #1C1917; font-style: normal; }
+
+/* ===== BODY TEXT ===== */
+.hw-body-text {
+  padding: 0 0.25rem;
+  margin-bottom: 2rem;
+}
+.hw-body-text p {
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  line-height: 1.8;
+  color: #292524;
+  margin-bottom: 1.2rem;
+}
+.hw-body-text a {
+  color: #B91C1C;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.hw-body-text a:hover { color: #7F1D1D; }
+.hw-pullquote {
+  border-left: 5px solid #DC2626;
+  background: #FFF1EC;
+  padding: 1.2rem 1.6rem;
+  margin: 1.8rem 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.12rem;
+  font-style: italic;
+  color: #44403C;
+  line-height: 1.6;
+}
+.hw-pullquote cite {
+  display: block;
+  font-size: 0.85rem;
+  font-style: normal;
+  color: #78716C;
+  margin-top: 0.6rem;
+  font-family: 'Arial', sans-serif;
+}
+.hw-section-heading {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  color: #1C1917;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #DC2626;
+}
+
+/* ===== STATS CARDS ===== */
+.hw-stats-section {
+  margin: 2rem 0 2.5rem;
+}
+.hw-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.hw-stat-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.4rem 1.2rem;
+  border-top: 4px solid #DC2626;
+  box-shadow: 0 4px 16px rgba(220,38,38,0.08);
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+.hw-stat-card:hover { transform: translateY(-5px); }
+.hw-stat-card.orange { border-top-color: #EA580C; }
+.hw-stat-card.amber { border-top-color: #D97706; }
+.hw-stat-card.dark { border-top-color: #1C1917; }
+.hw-stat-num {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: #DC2626;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+  font-family: 'Arial', sans-serif;
+}
+.hw-stat-card.orange .hw-stat-num { color: #EA580C; }
+.hw-stat-card.amber .hw-stat-num { color: #D97706; }
+.hw-stat-card.dark .hw-stat-num { color: #292524; }
+.hw-stat-label {
+  font-size: 0.85rem;
+  color: #78716C;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ===== COUNTRY TEMPERATURE PANELS ===== */
+.hw-countries-section {
+  margin: 2rem 0 2.5rem;
+}
+.hw-countries-heading {
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  color: #1C1917;
+  margin-bottom: 1.2rem;
+  font-family: 'Arial', sans-serif;
+}
+.hw-countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  gap: 1rem;
+}
+.hw-country-card {
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+}
+.hw-country-card:hover, .hw-country-card.active {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(220,38,38,0.2);
+  border-color: #DC2626;
+}
+.hw-country-header {
+  padding: 0.9rem 1rem 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.hw-country-name {
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+}
+.hw-country-temp {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  line-height: 1;
+}
+.hw-country-detail {
+  background: #fff;
+  padding: 0.75rem 1rem;
+  font-size: 0.82rem;
+  color: #57534E;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+}
+.hw-country-detail strong { color: #1C1917; }
+/* Country colors */
+.cc-spain { background: #B91C1C; }
+.cc-france { background: #DC2626; }
+.cc-uk { background: #EA580C; }
+.cc-italy { background: #D97706; }
+.cc-swiss { background: #CA8A04; }
+.cc-nl { background: #92400E; }
+
+/* Country expanded detail panel */
+.hw-country-expanded {
+  display: none;
+  background: #FFF1EC;
+  border: 2px solid #DC2626;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  margin-top: 1rem;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.9rem;
+  color: #44403C;
+  line-height: 1.6;
+  grid-column: 1 / -1;
+}
+.hw-country-expanded.visible { display: block; }
+.hw-country-expanded-title {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #B91C1C;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== CHART SECTION ===== */
+.hw-chart-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.8rem 1.5rem;
+  margin: 2.5rem 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+}
+.hw-chart-heading {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 700;
+  color: #1C1917;
+  margin-bottom: 0.4rem;
+  font-family: 'Arial', sans-serif;
+}
+.hw-chart-subhead {
+  font-size: 0.85rem;
+  color: #78716C;
+  margin-bottom: 1.5rem;
+  font-family: 'Arial', sans-serif;
+}
+.hw-chart-canvas { position: relative; height: 280px; }
+
+/* ===== NIGHT vs DAY TOGGLE ===== */
+.hw-nightday-section {
+  background: linear-gradient(135deg, #1C1917 0%, #292524 100%);
+  border-radius: 16px;
+  padding: 2rem 1.8rem;
+  margin: 2.5rem 0;
+  color: #fff;
+}
+.hw-nd-heading {
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-family: 'Arial', sans-serif;
+}
+.hw-nd-subtext {
+  font-size: 0.88rem;
+  color: #A89F98;
+  margin-bottom: 1.5rem;
+  font-family: 'Arial', sans-serif;
+}
+.hw-nd-toggle-bar {
+  display: flex;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50px;
+  padding: 4px;
+  width: fit-content;
+  margin-bottom: 1.5rem;
+  gap: 2px;
+}
+.hw-nd-btn {
+  padding: 0.5rem 1.4rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  background: transparent;
+  color: #A89F98;
+}
+.hw-nd-btn.active-day {
+  background: linear-gradient(135deg, #EA580C, #DC2626);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(234,88,12,0.4);
+}
+.hw-nd-btn.active-night {
+  background: linear-gradient(135deg, #6366f1, #4338ca);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(99,102,241,0.4);
+}
+.hw-nd-panel { display: none; }
+.hw-nd-panel.visible { display: block; }
+.hw-nd-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.hw-nd-item {
+  background: rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 1.1rem 1.2rem;
+  border-left: 3px solid #EA580C;
+  font-family: 'Arial', sans-serif;
+}
+.hw-nd-item.night-item { border-left-color: #818CF8; }
+.hw-nd-item-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.hw-nd-item-title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: #fff;
+}
+.hw-nd-item-text {
+  font-size: 0.82rem;
+  color: #A89F98;
+  line-height: 1.5;
+}
+
+/* ===== TIMELINE ===== */
+.hw-timeline-section {
+  margin: 2.5rem 0;
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.8rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+}
+.hw-tl-heading {
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+  font-weight: 700;
+  color: #1C1917;
+  margin-bottom: 1.5rem;
+  font-family: 'Arial', sans-serif;
+}
+.hw-timeline {
+  position: relative;
+  padding-left: 2.5rem;
+}
+.hw-timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #DC2626, #D97706, #1C1917);
+}
+.hw-tl-item {
+  position: relative;
+  margin-bottom: 1.4rem;
+  font-family: 'Arial', sans-serif;
+}
+.hw-tl-dot {
+  position: absolute;
+  left: -2rem;
+  top: 0.2rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #DC2626;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #DC2626;
+  flex-shrink: 0;
+}
+.hw-tl-item:nth-child(2) .hw-tl-dot { background: #EA580C; box-shadow: 0 0 0 2px #EA580C; }
+.hw-tl-item:nth-child(3) .hw-tl-dot { background: #D97706; box-shadow: 0 0 0 2px #D97706; }
+.hw-tl-item:nth-child(4) .hw-tl-dot { background: #B45309; box-shadow: 0 0 0 2px #B45309; }
+.hw-tl-item:nth-child(5) .hw-tl-dot { background: #92400E; box-shadow: 0 0 0 2px #92400E; }
+.hw-tl-item:nth-child(6) .hw-tl-dot { background: #1C1917; box-shadow: 0 0 0 2px #1C1917; }
+.hw-tl-date {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #DC2626;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.2rem;
+}
+.hw-tl-event {
+  font-size: 0.88rem;
+  color: #292524;
+  line-height: 1.5;
+}
+.hw-tl-event strong { color: #1C1917; }
+
+/* ===== STAY SAFE ACCORDION ===== */
+.hw-staysafe-section {
+  margin: 2.5rem 0;
+}
+.hw-ss-heading {
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-weight: 700;
+  color: #1C1917;
+  margin-bottom: 1rem;
+  font-family: 'Arial', sans-serif;
+}
+.hw-ss-intro {
+  font-size: 0.9rem;
+  color: #57534E;
+  margin-bottom: 1.2rem;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+}
+.hw-accordion-item {
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+.hw-accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.3rem;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.92rem;
+  color: #1C1917;
+  transition: background 0.2s;
+  gap: 0.8rem;
+}
+.hw-accordion-header:hover { background: #FFF5F5; }
+.hw-acc-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.hw-acc-arrow {
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+  color: #78716C;
+  flex-shrink: 0;
+}
+.hw-accordion-item.open .hw-acc-arrow { transform: rotate(180deg); }
+.hw-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.hw-accordion-body-inner {
+  padding: 0 1.3rem 1.2rem;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.87rem;
+  color: #57534E;
+  line-height: 1.7;
+}
+.hw-accordion-body-inner ul {
+  padding-left: 1.2rem;
+}
+.hw-accordion-body-inner li {
+  margin-bottom: 0.4rem;
+}
+.hw-accordion-body-inner strong { color: #1C1917; }
+
+/* ===== CONCLUSION ===== */
+.hw-conclusion {
+  background: #F5EDE3;
+  border-radius: 16px;
+  padding: 2rem 1.8rem;
+  margin: 2.5rem 0 1.5rem;
+}
+.hw-conclusion-heading {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 700;
+  color: #7F1D1D;
+  margin-bottom: 1rem;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.hw-conclusion p {
+  font-size: clamp(0.9rem, 1.7vw, 1rem);
+  line-height: 1.8;
+  color: #44403C;
+  margin-bottom: 1rem;
+}
+.hw-conclusion p:last-child { margin-bottom: 0; }
+.hw-conclusion a {
+  color: #B91C1C;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ===== SOURCES BLOCK ===== */
+.hw-sources-row {
+  margin-top: 2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #E7D9CE;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.8rem;
+  color: #A89F98;
+}
+.hw-sources-row a {
+  color: #78716C;
+  text-decoration: underline;
+  margin-right: 0.5rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hw-header {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    border-radius: 12px;
+  }
+  .hw-image-side { min-height: 260px; }
+  .hw-content-side { padding: 1.5rem 1.2rem; }
+  .hw-title { font-size: 1.5rem; }
+  .hw-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .hw-countries-grid { grid-template-columns: repeat(2, 1fr); }
+  .hw-chart-canvas { height: 220px; }
+  .hw-nd-panel-grid { grid-template-columns: 1fr; }
+  .hw-timeline { padding-left: 2rem; }
+  .karmactive-hw2026 { padding: 0 0.5rem; }
+}
+@media (max-width: 480px) {
+  .hw-stats-grid { grid-template-columns: 1fr 1fr; }
+  .hw-countries-grid { grid-template-columns: 1fr 1fr; }
+  .hw-nd-toggle-bar { flex-wrap: wrap; }
+  .hw-stat-num { font-size: 1.6rem; }
+}
+</style>
+</head>
+<body>
+<article class="karmactive-hw2026">
+
+  <!-- ===== MAGAZINE HEADER ===== -->
+  <header class="hw-header">
+    <div class="hw-image-side">
+      <!--
+        FEATURE IMAGE:
+        Source: Copernicus Sentinel-3 / European Space Agency (ESA)
+        Image page: https://www.esa.int/ESA_Multimedia/Images/2026/06/Europe_feels_the_heat_beneath_our_feet
+        License: CC BY-SA 3.0 IGO — Contains modified Copernicus Sentinel data (2026), processed by ESA
+        Description: Land surface temperature composite over France, Spain, and southern Europe, June 23 2026
+        *** EDITOR: Upload this image from ESA and replace [FEATURE_IMAGE_URL] below ***
+      -->
+      <img
+        src="[FEATURE_IMAGE_URL]"
+        alt="Copernicus Sentinel-3 satellite thermal image showing land surface temperature extremes across France, Spain, and southern Europe during the June 2026 heatwave, with areas in deep red indicating temperatures above 50°C"
+        title="Europe June 2026 heatwave – Sentinel-3 land surface temperature satellite image"
+        class="hw-feature-img"
+        loading="lazy"
+      />
+      <div class="hw-img-badge">LIVE EVENT · JUNE 2026</div>
+      <div class="hw-img-temp-scale">
+        <span>Sentinel-3 Land Surface Temperature · 23 June 2026</span>
+        <div class="hw-scale-bar"></div>
+        <div class="hw-scale-labels"><span>Cooler</span><span>15°C → 55°C</span><span>Extreme</span></div>
+      </div>
+    </div>
+    <div class="hw-content-side">
+      <span class="hw-category-tag">Climate &amp; Health</span>
+      <h1 class="hw-title">327 Dead, 150 Million Sweltering: The Night Nobody Warned You About</h1>
+      <p class="hw-subtitle">Europe's most deadly June heatwave on record is still unfolding. The official death count is rising. And the most dangerous hours aren't when the sun is at its peak.</p>
+      <div class="hw-meta-row">
+        <div class="hw-meta-item">📅 <span>June 27, 2026</span></div>
+        <div class="hw-meta-item">🌡️ <span>Breaking Coverage</span></div>
+        <div class="hw-meta-item">⏱️ <span>6 min read</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- IMAGE CAPTION -->
+  <div class="hw-img-caption-block">
+    Land surface temperatures across France and Spain peaked at <strong>55°C</strong> on June 23, 2026, as recorded by the ESA's Copernicus Sentinel-3 satellite — and the 327 deaths counted in Spain by Friday may not reflect those who quietly lost the fight overnight, in homes without air conditioning. <em>[Contains modified Copernicus Sentinel data (2026), processed by ESA — CC BY-SA 3.0 IGO]</em>
+  </div>
+
+  <!-- ===== INTRO TEXT ===== -->
+  <div class="hw-body-text">
+    <p>
+      When Paris recorded <strong>44 cardiac arrests in a single 24-hour period</strong> — against its usual average of fewer than ten — the heatwave gripping Europe stopped being a weather story and became a public health emergency. Spain's <a href="https://www.isciii.es/QueHacemos/Servicios/VigilanciaSaludPublicaRENAVE/EnfermedadesTransmisibles/MoMo/Paginas/MoMo.aspx" target="_blank" rel="noopener">Carlos III Health Institute</a>, which tracks mortality in real time, counted <strong>327 heat-related deaths between June 21 and 26</strong>. France saw 40 people drown in rivers and lakes as they sought the only relief available to them: cold water. Temperatures in parts of France and Spain have not come close to these levels in recorded history.
+    </p>
+    <p>
+      This is not simply a story about record-breaking numbers. Europe has seen deadly heatwaves before. The 2003 event killed more than 70,000 across the continent. The <a href="https://www.karmactive.com/heading-for-climate-hell-world-on-course-for-2-7c-warming-can-humanity-survive/" target="_blank" rel="noopener">trajectory of warming</a> that climate scientists have been documenting for years is now visible in the bodies counted each summer. What separates 2026 from earlier events — and what most of the coverage is missing — is what happens after the sun goes down.
+    </p>
+  </div>
+
+  <!-- ===== KEY STATS CARDS ===== -->
+  <div class="hw-stats-section">
+    <div class="hw-stats-grid">
+      <div class="hw-stat-card">
+        <div class="hw-stat-num">327</div>
+        <div class="hw-stat-label">Heat-related deaths in Spain in 6 days (Carlos III Health Institute)</div>
+      </div>
+      <div class="hw-stat-card orange">
+        <div class="hw-stat-num">150M</div>
+        <div class="hw-stat-label">Europeans who experienced above 35°C during the peak</div>
+      </div>
+      <div class="hw-stat-card amber">
+        <div class="hw-stat-num">45.1°C</div>
+        <div class="hw-stat-label">Spain's peak air temperature (Andújar, AEMET) — June record</div>
+      </div>
+      <div class="hw-stat-card dark">
+        <div class="hw-stat-num">44.3°C</div>
+        <div class="hw-stat-label">France's peak (Pissos) — hottest nationally averaged day since 1947</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== COUNTRY-BY-COUNTRY INTERACTIVE ===== -->
+  <div class="hw-countries-section">
+    <div class="hw-countries-heading">How the Heat Hit Each Country — Click a country to see the details</div>
+    <div class="hw-countries-grid" id="hwCountryGrid">
+      <div class="hw-country-card" onclick="hwShowCountry('spain')">
+        <div class="hw-country-header cc-spain">
+          <span class="hw-country-name">🇪🇸 Spain</span>
+          <span class="hw-country-temp">45.1°C</span>
+        </div>
+        <div class="hw-country-detail"><strong>327 deaths</strong> since June 21 · Andújar highest June temp ever (AEMET)</div>
+      </div>
+      <div class="hw-country-card" onclick="hwShowCountry('france')">
+        <div class="hw-country-header cc-france">
+          <span class="hw-country-name">🇫🇷 France</span>
+          <span class="hw-country-temp">44.3°C</span>
+        </div>
+        <div class="hw-country-detail"><strong>~50 deaths</strong> · 58 depts under red alert · Hottest national avg since 1947</div>
+      </div>
+      <div class="hw-country-card" onclick="hwShowCountry('uk')">
+        <div class="hw-country-header cc-uk">
+          <span class="hw-country-name">🇬🇧 UK</span>
+          <span class="hw-country-temp">36.4°C</span>
+        </div>
+        <div class="hw-country-detail"><strong>Hottest June ever</strong> · Somerset record (Met Office red alert)</div>
+      </div>
+      <div class="hw-country-card" onclick="hwShowCountry('italy')">
+        <div class="hw-country-header cc-italy">
+          <span class="hw-country-name">🇮🇹 Italy</span>
+          <span class="hw-country-temp">44°C</span>
+        </div>
+        <div class="hw-country-detail"><strong>16 cities</strong> on highest heat alert · Rome, Florence, Milan, Bologna</div>
+      </div>
+      <div class="hw-country-card" onclick="hwShowCountry('swiss')">
+        <div class="hw-country-header cc-swiss">
+          <span class="hw-country-name">🇨🇭 Switzerland</span>
+          <span class="hw-country-temp">38°C</span>
+        </div>
+        <div class="hw-country-detail"><strong>New June record</strong> in Basel (Meteo-Suisse)</div>
+      </div>
+      <div class="hw-country-card" onclick="hwShowCountry('nl')">
+        <div class="hw-country-header cc-nl">
+          <span class="hw-country-name">🇳🇱 Netherlands</span>
+          <span class="hw-country-temp">Red Alert</span>
+        </div>
+        <div class="hw-country-detail"><strong>8 provinces</strong> under unprecedented KNMI Red Alert on June 26</div>
+      </div>
+    </div>
+    <!-- Expanded country panel -->
+    <div class="hw-country-expanded" id="hwCountryDetail"></div>
+  </div>
+
+  <!-- ===== BODY TEXT: THE OMEGA BLOCK + NIGHT ANGLE ===== -->
+  <div class="hw-body-text">
+    <h2 class="hw-section-heading">The "Omega Block" Trapping Europe in Heat</h2>
+    <p>
+      The mechanism behind this heatwave is called an <strong>Omega block</strong> — a high-pressure system shaped like the Greek letter Ω that parks itself over a region and prevents normal weather patterns from moving through. It funnelled hot air from the Sahara northward and held it in place, producing temperatures 14 to 18°C above normal for late June across Western Europe. A similar circulation pattern has occurred in prior heatwaves, but one key factor has changed: <a href="https://www.worldweatherattribution.org/fossil-fuel-emissions-have-rapidly-worsened-european-heatwaves-in-just-a-few-decades/" target="_blank" rel="noopener">the climate baseline is now significantly warmer</a>, meaning the same weather system now delivers temperatures that would have been impossible decades ago.
+    </p>
+    <p>
+      World Weather Attribution, which conducts rapid scientific analyses connecting specific extreme events to climate change, concluded that the June 2026 heatwave was <strong>virtually impossible without the warming driven by fossil fuel emissions</strong>. A comparable event fifty years ago would have produced temperatures roughly 3.5°C cooler.
+    </p>
+
+    <div class="hw-pullquote">
+      "In the 50 years since the historic heatwave in 1976, Europe as a whole has warmed by around two degrees. Heatwaves like this are what we expect to see in a changing climate."
+      <cite>— John Kennedy, Head of Climate Information, World Meteorological Organization</cite>
+    </div>
+
+    <h2 class="hw-section-heading">The Part Nobody's Talking About: The Night</h2>
+    <p>
+      Most heatwave reporting focuses on peak daytime temperatures. The harder-to-grasp danger arrives at night. Scientists call these <strong>"tropical nights"</strong> — when overnight temperatures stay so high that the human body cannot complete its thermal recovery. While we sleep, core body temperature drops, the cardiovascular system rests, and the cumulative stress from daytime heat begins to ease. When nights stay warm, none of that recovery happens.
+    </p>
+    <p>
+      Research on the 2026 event shows Europe's sweltering nighttime temperatures are now <strong>approximately 100 times more likely</strong> than they were in 2003, the year of the last catastrophic European heatwave. This is compounded by a structural gap that most of Western Europe has not addressed: <a href="https://www.karmactive.com/from-egyptian-pyramids-to-modern-skyscrapers-the-cooling-revolution-begins/" target="_blank" rel="noopener">air conditioning remains relatively rare</a> in homes across France, Germany, the Netherlands, and the UK, unlike in Spain, Portugal, or Italy where it is more common. As summers grow hotter, that gap is increasingly measured in lives.
+    </p>
+    <p>
+      The <a href="https://www.who.int/europe/health-topics/heatwaves" target="_blank" rel="noopener">World Health Organization</a> released a pointed figure in early June 2026, just two weeks before this event: <strong>Europe has lost 200,000 people to heat in four years — and almost all of them were preventable.</strong> On June 11, WHO Europe published new Heat–Health Action Plans Guidance, updating its framework for governments to reduce heat-related deaths through coordinated early-warning and response systems.
+    </p>
+  </div>
+
+  <!-- ===== NIGHT vs DAY INTERACTIVE TOGGLE ===== -->
+  <div class="hw-nightday-section">
+    <div class="hw-nd-heading">☀️ Day vs 🌙 Night: Two Different Threats</div>
+    <div class="hw-nd-subtext">Select a time period to understand how heat works differently across the day</div>
+    <div class="hw-nd-toggle-bar">
+      <button class="hw-nd-btn active-day" id="hwDayBtn" onclick="hwToggleND('day')">☀️ Daytime Risk</button>
+      <button class="hw-nd-btn" id="hwNightBtn" onclick="hwToggleND('night')">🌙 Night Risk (Often Missed)</button>
+    </div>
+    <div class="hw-nd-panel visible" id="hwDayPanel">
+      <div class="hw-nd-panel-grid">
+        <div class="hw-nd-item">
+          <div class="hw-nd-item-icon">🌡️</div>
+          <div class="hw-nd-item-title">Peak Temperatures</div>
+          <div class="hw-nd-item-text">Spain peaked at 45.1°C, France at 44.3°C, UK at 36.4°C. Heat exhaustion and heatstroke can develop within minutes of exposure at these levels.</div>
+        </div>
+        <div class="hw-nd-item">
+          <div class="hw-nd-item-icon">🏃</div>
+          <div class="hw-nd-item-title">Outdoor Danger Window</div>
+          <div class="hw-nd-item-text">WHO advises avoiding outdoor activity between 11am and 3pm. This period accounts for the highest rate of heat-related emergency admissions across Europe.</div>
+        </div>
+        <div class="hw-nd-item">
+          <div class="hw-nd-item-icon">🚗</div>
+          <div class="hw-nd-item-title">Vehicle Deaths</div>
+          <div class="hw-nd-item-text">Car interior temperatures can exceed 60°C within minutes. Children and pets left in parked vehicles face life-threatening conditions rapidly.</div>
+        </div>
+        <div class="hw-nd-item">
+          <div class="hw-nd-item-icon">🌊</div>
+          <div class="hw-nd-item-title">Drowning Risk Surge</div>
+          <div class="hw-nd-item-text">France saw 40+ drownings in days as people sought relief in rivers and lakes. Unsupervised swimming in unfamiliar water is a direct consequence of extreme heat with few alternatives.</div>
+        </div>
+      </div>
+    </div>
+    <div class="hw-nd-panel" id="hwNightPanel">
+      <div class="hw-nd-panel-grid">
+        <div class="hw-nd-item night-item">
+          <div class="hw-nd-item-icon">❤️</div>
+          <div class="hw-nd-item-title">No Cardiovascular Rest</div>
+          <div class="hw-nd-item-text">When nights stay warm, the heart cannot slow down properly during sleep. In Paris alone, cardiac arrests were 4× above normal during the peak of this heatwave.</div>
+        </div>
+        <div class="hw-nd-item night-item">
+          <div class="hw-nd-item-icon">😴</div>
+          <div class="hw-nd-item-title">Heat-Disrupted Sleep</div>
+          <div class="hw-nd-item-text">The body depends on dropping core temperature during sleep for cellular repair. Consecutive hot nights cause cumulative physiological strain that raises mortality risk — even without direct sun exposure.</div>
+        </div>
+        <div class="hw-nd-item night-item">
+          <div class="hw-nd-item-icon">🏠</div>
+          <div class="hw-nd-item-title">No AC Safety Net</div>
+          <div class="hw-nd-item-text">Western Europe has among the lowest air conditioning penetration rates of any affluent region. People sleeping in un-cooled homes have no recovery environment, compounding the health impact across days.</div>
+        </div>
+        <div class="hw-nd-item night-item">
+          <div class="hw-nd-item-icon">📈</div>
+          <div class="hw-nd-item-title">100× More Likely Now</div>
+          <div class="hw-nd-item-text">Europe's nighttime heatwave conditions in 2026 are approximately 100 times more likely to occur than they were in 2003. The frequency is accelerating with each degree of global warming.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HISTORICAL COMPARISON CHART ===== -->
+  <div class="hw-chart-section">
+    <div class="hw-chart-heading">European Heatwave Death Toll: A Deadly Trend</div>
+    <div class="hw-chart-subhead">Confirmed and estimated heat-related deaths across major European heatwave events</div>
+    <div class="hw-chart-canvas">
+      <canvas id="hwDeathChart"></canvas>
+    </div>
+  </div>
+
+  <!-- ===== BODY TEXT: AGRICULTURAL + WILDFIRE ===== -->
+  <div class="hw-body-text">
+    <h2 class="hw-section-heading">Beyond Human Health: Wildfires, Crops, and Infrastructure</h2>
+    <p>
+      The effects extend past hospitals and emergency rooms. Soil moisture in multiple departments of southwestern France has dropped to the lowest levels ever recorded, raising wildfire risk across France, Spain, and Greece. Emergency services and military units have been placed on standby as the heat dries out vegetation. Extreme heat events like this are directly linked to agricultural disruption — higher temperatures accelerate evaporation, stress crops, and shorten growing windows. <a href="https://www.karmactive.com/the-vicious-cycle-of-wildfires-and-climate-black-carbons-role-in-fueling-more-fires/" target="_blank" rel="noopener">The cycle between extreme heat and wildfire risk</a> feeds itself: more fire means more carbon in the atmosphere, and more carbon means hotter events ahead.
+    </p>
+    <p>
+      A Copernicus researcher put it plainly: <em>"Heatwaves are here to stay, until we turn the tap off to global emissions. They're more frequent, they're more intense and they're lasting longer."</em>
+    </p>
+    <p>
+      Europe is the fastest-warming continent, with temperatures rising at approximately <strong>0.56°C per decade</strong> since the mid-1990s — more than double the global average. Europe's daily high temperatures are rising <strong>three times faster</strong> than the global average. The continent is not simply experiencing more of what it already knew. It is entering weather it has no historical precedent for managing.
+    </p>
+    <p>
+      The <a href="https://www.karmactive.com/climate-change-hotter-weather-can-impact-mental-health/" target="_blank" rel="noopener">mental health toll</a> of extreme heat — anxiety, depression, cognitive impairment — adds a layer rarely included in official death counts. Extended heat disrupts sleep, reduces cognitive function, increases aggression, and raises suicide risk, effects that surface in the data weeks after the temperatures normalize. The <a href="https://www.karmactive.com/as-record-heat-threatens-millions-bidens-proposal-seeks-to-safeguard-workers-lives/" target="_blank" rel="noopener">economic impact on outdoor workers and agriculture</a>, meanwhile, compounds quickly with each consecutive day above 40°C.
+    </p>
+  </div>
+
+  <!-- ===== TIMELINE ===== -->
+  <div class="hw-timeline-section">
+    <div class="hw-tl-heading">📅 How the 2026 European Heatwave Unfolded</div>
+    <div class="hw-timeline">
+      <div class="hw-tl-item">
+        <div class="hw-tl-dot"></div>
+        <div class="hw-tl-date">Late May 2026</div>
+        <div class="hw-tl-event">First heatwave of the year hits Western Europe (May 21–30), mainly Iberian Peninsula and France. Temperatures well above seasonal norms. Copernicus and WMO flag it as "exceptional."</div>
+      </div>
+      <div class="hw-tl-item">
+        <div class="hw-tl-dot"></div>
+        <div class="hw-tl-date">June 11, 2026</div>
+        <div class="hw-tl-event">WHO Europe publishes updated <strong>Heat–Health Action Plans Guidance</strong> on Heat Action Day. States that Europe lost 200,000 people to heat in four years, "nearly all preventable."</div>
+      </div>
+      <div class="hw-tl-item">
+        <div class="hw-tl-dot"></div>
+        <div class="hw-tl-date">June 17, 2026</div>
+        <div class="hw-tl-event">Second, more severe heatwave begins. Temperatures 14–18°C above normal build over the continent ahead of the summer solstice. An Omega block pattern locks heat in place.</div>
+      </div>
+      <div class="hw-tl-item">
+        <div class="hw-tl-dot"></div>
+        <div class="hw-tl-date">June 21–24, 2026</div>
+        <div class="hw-tl-event"><strong>Spain's hottest June days on record.</strong> 45.1°C in Andújar. 327 deaths recorded in 6 days. <strong>France: 44.3°C in Pissos</strong>, nationally averaged temperature record broken since 1947. UK: 36.4°C in Somerset — hottest June temperature ever. 40+ drowning deaths in France as people seek relief in water. Paris: 44 cardiac arrests in one day (normal: under 10).</div>
+      </div>
+      <div class="hw-tl-item">
+        <div class="hw-tl-dot"></div>
+        <div class="hw-tl-date">June 25–26, 2026</div>
+        <div class="hw-tl-event">Italy places <strong>16 cities</strong> including Rome, Florence, Milan on red alert. Switzerland records 38°C in Basel. Netherlands issues unprecedented Red Alert for 8 provinces. World Weather Attribution publishes rapid analysis: event "virtually impossible" without fossil-fuel-driven climate change.</div>
+      </div>
+      <div class="hw-tl-item">
+        <div class="hw-tl-dot"></div>
+        <div class="hw-tl-date">June 26–27, 2026</div>
+        <div class="hw-tl-event">Omega block shifts east, bringing extreme heat toward Germany, Central Europe, and the Balkans. Croatia, Germany, and Poland issue red alerts. Death counts continue to rise. Wildfire risk declared critical across multiple French, Spanish, and Greek regions.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== STAY SAFE ACCORDION ===== -->
+  <div class="hw-staysafe-section">
+    <div class="hw-ss-heading">What to Do Right Now — WHO-Sourced Heat Protection</div>
+    <div class="hw-ss-intro">
+      The <a href="https://www.who.int/europe/news/item/11-06-2026-heat-action-day--new-who-guidance-helps-authorities-better-protect-people-from-the-effects-of-heat" target="_blank" rel="noopener">WHO's updated heat-health guidance</a> identifies the following as most critical. These apply whether you are in the affected zone or planning travel to Europe.
+    </div>
+    <div class="hw-accordion-item open" id="acc1">
+      <div class="hw-accordion-header" onclick="hwToggleAcc('acc1')">
+        <span class="hw-acc-icon">💧</span>
+        <span>Hydration — What Most People Get Wrong</span>
+        <span class="hw-acc-arrow">▼</span>
+      </div>
+      <div class="hw-accordion-body" style="max-height: 300px;">
+        <div class="hw-accordion-body-inner">
+          <ul>
+            <li>Drink water regularly throughout the day — <strong>before you feel thirsty</strong>. By the time thirst signals arrive, you are already dehydrated.</li>
+            <li>Reduce alcohol and caffeine — both accelerate fluid loss and impair the body's temperature regulation.</li>
+            <li>Eat light, water-rich foods (fruit, salads) rather than heavy meals, which increase internal heat production during digestion.</li>
+            <li>If you are elderly or care for an elderly person, set reminders — the sense of thirst becomes less reliable with age, precisely when vulnerability is highest.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="hw-accordion-item" id="acc2">
+      <div class="hw-accordion-header" onclick="hwToggleAcc('acc2')">
+        <span class="hw-acc-icon">🏠</span>
+        <span>Keeping Your Home Cooler Without Air Conditioning</span>
+        <span class="hw-acc-arrow">▼</span>
+      </div>
+      <div class="hw-accordion-body">
+        <div class="hw-accordion-body-inner">
+          <ul>
+            <li><strong>Close all blinds, curtains, and shutters during daylight hours</strong> — especially on south and west-facing windows. This can reduce indoor temperature by 3–5°C.</li>
+            <li>Open windows only after sunset, when outdoor air cools below indoor air temperature. Cross-ventilate if possible (opposite windows or doors).</li>
+            <li>Hang wet towels in front of open windows — evaporation creates a natural cooling effect.</li>
+            <li>Sleep on lower floors — hot air rises. Ground-floor rooms are consistently cooler during heatwaves.</li>
+            <li>Dampen a cloth with cool water and apply to pulse points: wrists, neck, inner elbows. This is the most energy-efficient personal cooling available.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="hw-accordion-item" id="acc3">
+      <div class="hw-accordion-header" onclick="hwToggleAcc('acc3')">
+        <span class="hw-acc-icon">👴</span>
+        <span>Protecting Those Most at Risk</span>
+        <span class="hw-acc-arrow">▼</span>
+      </div>
+      <div class="hw-accordion-body">
+        <div class="hw-accordion-body-inner">
+          <p><strong>At highest risk:</strong> adults over 65, infants and young children, pregnant women, people with cardiovascular or respiratory conditions, outdoor workers, and people with limited mobility or cognitive impairment.</p>
+          <ul>
+            <li>Check on elderly neighbours or relatives who live alone — at least twice daily during a heatwave. Isolation is a major mortality factor.</li>
+            <li>Never leave children, elderly adults, or pets in a parked vehicle, even briefly. Car interiors can hit lethal temperatures within 10 minutes.</li>
+            <li>People taking certain medications — including diuretics, antihistamines, antipsychotics, and blood pressure drugs — may be especially vulnerable. Speak with a pharmacist or doctor about heat-related risks specific to your medication.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="hw-accordion-item" id="acc4">
+      <div class="hw-accordion-header" onclick="hwToggleAcc('acc4')">
+        <span class="hw-acc-icon">🚨</span>
+        <span>Recognise Heat Exhaustion vs Heatstroke — One Is an Emergency</span>
+        <span class="hw-acc-arrow">▼</span>
+      </div>
+      <div class="hw-accordion-body">
+        <div class="hw-accordion-body-inner">
+          <p><strong>Heat exhaustion</strong> (treatable at home): Heavy sweating, weakness, cool or pale skin, nausea, headache, dizziness. Move the person to a cool place, loosen clothing, apply cool damp cloths, give water if conscious.</p>
+          <p style="margin-top:0.7rem;"><strong>Heatstroke (emergency — call 112 immediately)</strong>: Hot dry skin, body temperature above 40°C, confusion, rapid heartbeat, loss of consciousness or seizures. Do not wait. Begin cooling the person immediately while waiting for emergency services.</p>
+        </div>
+      </div>
+    </div>
+    <div class="hw-accordion-item" id="acc5">
+      <div class="hw-accordion-header" onclick="hwToggleAcc('acc5')">
+        <span class="hw-acc-icon">🌊</span>
+        <span>Water Safety — The Hidden Danger of Heatwaves</span>
+        <span class="hw-acc-arrow">▼</span>
+      </div>
+      <div class="hw-accordion-body">
+        <div class="hw-accordion-body-inner">
+          <ul>
+            <li>France's 40+ drowning deaths during this heatwave reflect a pattern: desperate heat drives people to swim in unsupervised rivers, lakes, and flooded areas.</li>
+            <li>Only swim in designated supervised areas with lifeguards. River currents can be deceptively strong even when water looks still.</li>
+            <li>Cold water shock — the body's involuntary gasp response when entering very cold water — can cause drowning even in strong swimmers. Enter water gradually, not by jumping.</li>
+            <li>Children must be in sight and within reach at all times near any water.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CONCLUSION ===== -->
+  <div class="hw-conclusion">
+    <div class="hw-conclusion-heading">What the Data Covered</div>
+    <p>
+      The 2026 European heatwave, which remains ongoing as of June 27, resulted in at least 327 confirmed heat-related deaths in Spain according to the Carlos III Health Institute, approximately 50 deaths in France (including 40 drownings), and multiple fatalities recorded in Italy, with 16 cities under the highest heat alert. The United Kingdom recorded its hottest June temperature in history at 36.4°C, Switzerland its hottest June day in Basel, and the Netherlands issued its first-ever Red Alert covering eight provinces simultaneously. At least 150 million Europeans were exposed to temperatures above 35°C during the event's peak.
+    </p>
+    <p>
+      The event was attributed to an Omega block atmospheric system, with World Weather Attribution linking its severity directly to fossil fuel-driven climate change, noting that temperatures would have been approximately 3.5°C cooler fifty years ago. The <a href="https://wmo.int/media/news/wmo-and-partners-act-extreme-heat-grips-europe" target="_blank" rel="noopener">World Meteorological Organization</a> documented Europe's warming at 0.56°C per decade since the mid-1990s — twice the global rate. The <a href="https://www.who.int/europe/news/item/11-06-2026-heat-action-day--new-who-guidance-helps-authorities-better-protect-people-from-the-effects-of-heat" target="_blank" rel="noopener">WHO's updated heat-health framework</a>, published on June 11, 2026, outlines the prevention infrastructure that, according to the organization's own data, could have averted the majority of the 200,000 heat deaths Europe recorded over four years. The <a href="https://www.karmactive.com/may-2024-hits-record-hottest-month-ever-as-un-chief-warns-of-russian-roulette-with-climate/" target="_blank" rel="noopener">global pattern of record heat months</a> and its connection to <a href="https://www.karmactive.com/coral-reefs-in-crisis-60-affected-by-bleaching-in-record-heat-is-the-4th-global-event-the-worst-yet/" target="_blank" rel="noopener">cascading ecosystem damage</a> form the broader context in which this event unfolded.
+    </p>
+    <p>
+      The <a href="https://www.karmactive.com/wmo-day-2024-highlights-the-frontline-battle-against-global-warming/" target="_blank" rel="noopener">frontline of global warming</a> is not abstract. As of this writing, it is the bedroom with no air conditioning in Paris, the river bank in Bordeaux, and the cardiac unit of a hospital running at four times its normal capacity, on a June night that refused to cool down.
+    </p>
+  </div>
+
+  <!-- SOURCES NOTE -->
+  <div class="hw-sources-row">
+    <strong>Primary Sources:</strong>
+    <a href="https://wmo.int/media/news/wmo-and-partners-act-extreme-heat-grips-europe" target="_blank" rel="noopener">WMO</a>
+    <a href="https://www.who.int/europe/health-topics/heatwaves" target="_blank" rel="noopener">WHO Europe</a>
+    <a href="https://www.who.int/europe/news/item/11-06-2026-heat-action-day--new-who-guidance-helps-authorities-better-protect-people-from-the-effects-of-heat" target="_blank" rel="noopener">WHO Heat Action Day Guidance</a>
+    <a href="https://www.worldweatherattribution.org/fossil-fuel-emissions-have-rapidly-worsened-european-heatwaves-in-just-a-few-decades/" target="_blank" rel="noopener">World Weather Attribution</a>
+    <a href="https://climate.copernicus.eu/what-do-we-know-about-europes-early-and-intense-heatwave-may-2026" target="_blank" rel="noopener">Copernicus C3S</a>
+    <a href="https://eu-space.europa.eu/components/earth-observation-copernicus/image-of-the-day/heatwave-affecting-western-europe-third-decade-june-2026" target="_blank" rel="noopener">EU Space/Copernicus Image</a>
+    <a href="https://www.esa.int/ESA_Multimedia/Images/2026/06/Europe_feels_the_heat_beneath_our_feet" target="_blank" rel="noopener">ESA Sentinel-3 Image</a>
+  </div>
+
+</article>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+// Country detail data
+var countryData = {
+  spain: {
+    title: '🇪🇸 Spain — 327 Deaths, 45.1°C Peak',
+    text: 'Spain registered 327 heat-related deaths between June 21 and June 26, according to the MoMo monitoring system of the Carlos III Health Institute, which cross-references daily mortality with weather data from AEMET, the national meteorological agency. The peak temperature of 45.1°C was recorded in Andújar in the south. AEMET confirmed June 23 and June 24 as the hottest June days ever recorded in Spain. The Ebro Valley, inland Galicia, and parts of the Tagus and Guadalquivir valleys experienced the most prolonged heat exposure.'
+  },
+  france: {
+    title: '🇫🇷 France — Hottest National Average Since 1947',
+    text: 'Météo-France confirmed France\'s hottest nationally averaged day on record since measurements began in 1947, with a mean national temperature of 29.8–30.0°C. Individual station records included 44.3°C in Pissos and 43.8°C in Palluau. At least 40 people drowned in rivers and lakes seeking relief from the heat, with French Prime Minister Sébastien Lecornu linking the deaths directly to temperatures. An additional 18 people, including two children and three elderly individuals, died from heat-related causes. Météo-France issued red alerts covering 58 departments — covering most of the country. Paris saw 44 cardiac arrest calls in a single 24-hour period against a baseline of under ten.'
+  },
+  uk: {
+    title: '🇬🇧 United Kingdom — Hottest June Day Ever',
+    text: 'The UK recorded 36.4°C in Somerset, smashing the previous June temperature record of 36.1°C set just hours earlier at another station. The Met Office issued a rare red warning for extreme heat across parts of England, its highest alert level. The UK heat record was set in the context of the country\'s historically mild summers — a baseline that has been shifting upward, making such extremes more frequent. The London School of Hygiene and Tropical Medicine noted that Europe\'s heating trajectory now brings record-breaking events that would have seemed extraordinary just a decade ago.'
+  },
+  italy: {
+    title: '🇮🇹 Italy — 16 Cities on Red Alert',
+    text: 'Italian authorities placed 16 cities under the highest heat alert level, including Rome, Florence, Bologna, Milan, and Verona. Palermo in Sicily suspended all non-essential court proceedings after air conditioning systems failed in court buildings. At least five deaths were reported in Sicily. Land surface temperatures captured by the ESA\'s Sentinel-3 satellite showed Rome\'s ground reaching 44°C. The Italian hospital system in affected cities reported significant spikes in emergency department visits, particularly among the elderly.'
+  },
+  swiss: {
+    title: '🇨🇭 Switzerland — Basel Breaks June Record',
+    text: 'Meteo-Suisse confirmed a new June temperature record for Switzerland of 38°C in Basel, the country\'s northern economic hub. The event followed Switzerland\'s broader trend of warming — the country has lost the majority of its glacial ice volume over recent decades. The combination of urban heat island effects in Basel and the wider continental heatwave pattern produced temperatures with no historical precedent for this time of year in the region.'
+  },
+  nl: {
+    title: '🇳🇱 Netherlands — First-Ever 8-Province Red Alert',
+    text: 'The Dutch meteorological service KNMI issued an unprecedented Red Alert for extreme heat covering eight provinces on June 26, the first time such a wide-area top-level alert had been used in the Netherlands for heat. Multiple new station temperature records were broken. The flat, low-lying geography of the Netherlands, combined with dense urban environments and limited green space in many city centres, intensifies the urban heat island effect during heatwave events. Health authorities issued urgent guidance targeting the elderly and those with respiratory or cardiovascular conditions.'
+  }
+};
+
+function hwShowCountry(id) {
+  var panel = document.getElementById('hwCountryDetail');
+  var cards = document.querySelectorAll('.hw-country-card');
+  var d = countryData[id];
+  cards.forEach(function(c) { c.classList.remove('active'); });
+  if (panel.classList.contains('visible') && panel.getAttribute('data-active') === id) {
+    panel.classList.remove('visible');
+    panel.innerHTML = '';
+    panel.removeAttribute('data-active');
+    return;
+  }
+  event.currentTarget.classList.add('active');
+  panel.innerHTML = '<div class="hw-country-expanded-title">' + d.title + '</div><p style="font-size:0.88rem;line-height:1.65;color:#44403C;font-family:Arial,sans-serif;">' + d.text + '</p>';
+  panel.classList.add('visible');
+  panel.setAttribute('data-active', id);
+  panel.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+}
+
+// Night/Day toggle
+function hwToggleND(mode) {
+  var dayBtn = document.getElementById('hwDayBtn');
+  var nightBtn = document.getElementById('hwNightBtn');
+  var dayPanel = document.getElementById('hwDayPanel');
+  var nightPanel = document.getElementById('hwNightPanel');
+  if (mode === 'day') {
+    dayBtn.className = 'hw-nd-btn active-day';
+    nightBtn.className = 'hw-nd-btn';
+    dayPanel.classList.add('visible');
+    nightPanel.classList.remove('visible');
+  } else {
+    nightBtn.className = 'hw-nd-btn active-night';
+    dayBtn.className = 'hw-nd-btn';
+    nightPanel.classList.add('visible');
+    dayPanel.classList.remove('visible');
+  }
+}
+
+// Accordion
+function hwToggleAcc(id) {
+  var item = document.getElementById(id);
+  var body = item.querySelector('.hw-accordion-body');
+  var isOpen = item.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.hw-accordion-item').forEach(function(el) {
+    el.classList.remove('open');
+    el.querySelector('.hw-accordion-body').style.maxHeight = null;
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+// Open first accordion by default
+(function() {
+  var first = document.getElementById('acc1');
+  if (first) {
+    var body = first.querySelector('.hw-accordion-body');
+    first.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+})();
+
+// Chart.js – heatwave deaths comparison
+(function() {
+  var ctx = document.getElementById('hwDeathChart');
+  if (!ctx) return;
+  new Chart(ctx.getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: ['2003', '2019 (estimate)', '2022', '2025 (partial)', '2026 (Spain only, 6 days)'],
+      datasets: [{
+        label: 'Estimated heat-related deaths',
+        data: [70000, 2500, 61672, 2300, 327],
+        backgroundColor: [
+          'rgba(220,38,38,0.7)',
+          'rgba(234,88,12,0.7)',
+          'rgba(185,28,28,0.85)',
+          'rgba(217,119,6,0.7)',
+          'rgba(220,38,38,0.9)'
+        ],
+        borderColor: [
+          '#DC2626','#EA580C','#B91C1C','#D97706','#DC2626'
+        ],
+        borderWidth: 2,
+        borderRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              return ' ' + ctx.parsed.y.toLocaleString() + ' deaths';
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            callback: function(v) { return v >= 1000 ? (v/1000) + 'k' : v; },
+            font: { family: 'Arial', size: 11 }
+          },
+          grid: { color: 'rgba(0,0,0,0.06)' }
+        },
+        x: {
+          ticks: { font: { family: 'Arial', size: 10 }, maxRotation: 20 },
+          grid: { display: false }
+        }
+      }
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
