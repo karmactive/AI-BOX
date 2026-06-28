@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     KARMACTIVE.COM — WORDPRESS HTML BLOCK
+     Story: Utah Cottonwood Fire | June 28, 2026
+     Branch: claude/beautiful-brown-wgsw0l
+
+     FOR WORDPRESS: Paste everything from <style> through the
+     final </script> into a WordPress HTML block. Remove the
+     <!DOCTYPE html>, <html>, <head>, and <body> wrapper tags.
+     Replace the feature image src with the actual InciWeb or
+     USFS photo URL before publishing.
+============================================================ -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utah's Cottonwood Fire Burns 93,000 Acres: Inside America's Largest Active Wildfire | Karmactive</title>
+<meta name="description" content="Utah's Cottonwood Fire has scorched over 93,000 acres across Piute and Beaver Counties since June 22, 2026 — making it America's largest active wildfire with 0% containment. Explore what's driving the unprecedented spread.">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PASTE FROM HERE INTO WORDPRESS HTML BLOCK
+═══════════════════════════════════════════════════════════ -->
+
+<style>
+/* ── Reset ── */
+.kc-wrap *, .kc-wrap *::before, .kc-wrap *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --kc-orange:  #e85d04;
+  --kc-red:     #d62828;
+  --kc-amber:   #f48c06;
+  --kc-gold:    #ffb703;
+  --kc-cream:   #fff4e6;
+  --kc-dark:    #1d2535;
+  --kc-charcoal:#2c2c2c;
+  --kc-mid:     #4a4a4a;
+  --kc-smoke:   #8a9ab0;
+  --kc-border:  #e8d5c0;
+  --kc-white:   #ffffff;
+  --kc-bg:      #fff8f0;
+}
+
+/* ── Wrapper ── */
+.kc-wrap {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--kc-charcoal);
+  background: var(--kc-white);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 64px;
+}
+
+/* ── Typography ── */
+.kc-wrap h1, .kc-wrap h2, .kc-wrap h3 {
+  font-family: Arial, 'Helvetica Neue', sans-serif;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--kc-dark);
+}
+.kc-wrap p { margin-bottom: 1.25rem; }
+.kc-wrap a {
+  color: var(--kc-orange);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color .2s;
+}
+.kc-wrap a:hover { color: var(--kc-red); }
+
+/* ══════════════════════════════════════
+   SPLIT-SCREEN HEADER
+══════════════════════════════════════ */
+.kc-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 500px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 48px rgba(0,0,0,.22);
+  margin-bottom: 52px;
+}
+
+/* Left: image pane */
+.kc-split__img {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #1a0800 0%, #5c2200 50%, #c44400 100%);
+}
+.kc-split__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(.85) saturate(1.15);
+}
+.kc-split__img figcaption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  font-family: Arial, sans-serif;
+  font-size: 10.5px;
+  color: rgba(255,255,255,.72);
+  background: rgba(0,0,0,.55);
+  padding: 6px 14px;
+  line-height: 1.45;
+}
+/* Flame overlay pattern on image pane */
+.kc-split__img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 70%, rgba(232,93,4,.25) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Right: content pane */
+.kc-split__text {
+  background: linear-gradient(150deg, #1d2535 0%, #2d1508 55%, #8b2500 100%);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.kc-split__text::before {
+  content: '';
+  position: absolute;
+  top: -50%; right: -25%;
+  width: 340px; height: 340px;
+  background: radial-gradient(circle, rgba(248,120,0,.18) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.kc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--kc-red);
+  color: var(--kc-white);
+  font-family: Arial, sans-serif;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+  width: fit-content;
+}
+.kc-badge::before { content: '🔥'; font-size: 13px; }
+
+.kc-split__text h1 {
+  font-size: clamp(19px, 2.7vw, 29px);
+  color: var(--kc-white);
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.kc-hstats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.kc-hstat {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 8px;
+  padding: 13px 10px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+}
+.kc-hstat__num {
+  font-family: Arial, sans-serif;
+  font-size: clamp(19px, 2.8vw, 27px);
+  font-weight: 900;
+  color: var(--kc-amber);
+  display: block;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.kc-hstat__lbl {
+  font-family: Arial, sans-serif;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: .7px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.35;
+}
+
+.kc-byline {
+  font-family: Arial, sans-serif;
+  font-size: 11.5px;
+  color: rgba(255,255,255,.45);
+  margin-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  padding-top: 14px;
+}
+
+/* ══════════════════════════════════════
+   SECTION LAYOUT
+══════════════════════════════════════ */
+.kc-section { margin-bottom: 52px; }
+
+.kc-section-label {
+  font-family: Arial, sans-serif;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 2.2px;
+  color: var(--kc-orange);
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.kc-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--kc-border);
+}
+
+.kc-section h2 {
+  font-size: clamp(20px, 2.9vw, 26px);
+  margin-bottom: 18px;
+}
+
+/* ── Pull Quote ── */
+.kc-quote {
+  border-left: 5px solid var(--kc-orange);
+  background: var(--kc-cream);
+  padding: 20px 24px;
+  margin: 32px 0;
+  border-radius: 0 10px 10px 0;
+}
+.kc-quote blockquote {
+  font-size: 19px;
+  font-style: italic;
+  color: var(--kc-dark);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.kc-quote cite {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: var(--kc-smoke);
+  font-style: normal;
+}
+
+/* ═══════════════════════════════════════
+   FIRE GROWTH TRACKER
+═══════════════════════════════════════ */
+.kc-tracker {
+  background: var(--kc-dark);
+  border-radius: 14px;
+  padding: 34px 32px;
+  margin: 52px 0;
+  color: var(--kc-white);
+}
+.kc-tracker__head {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--kc-white);
+  margin-bottom: 5px;
+}
+.kc-tracker__sub {
+  font-family: Arial, sans-serif;
+  font-size: 12.5px;
+  color: rgba(255,255,255,.5);
+  margin-bottom: 32px;
+}
+
+.kc-tl {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.kc-tl__step {
+  display: grid;
+  grid-template-columns: 80px 36px 1fr;
+  cursor: pointer;
+}
+.kc-tl__date {
+  font-family: Arial, sans-serif;
+  font-size: 11.5px;
+  color: rgba(255,255,255,.5);
+  padding-top: 8px;
+  text-align: right;
+  padding-right: 10px;
+}
+.kc-tl__con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.kc-tl__dot {
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  background: var(--kc-amber);
+  border: 2.5px solid var(--kc-orange);
+  margin-top: 8px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: transform .2s, box-shadow .2s;
+}
+.kc-tl__dot.active {
+  background: var(--kc-orange);
+  transform: scale(1.35);
+  box-shadow: 0 0 14px rgba(232,93,4,.65);
+}
+.kc-tl__line {
+  width: 2px;
+  flex: 1;
+  min-height: 20px;
+  background: rgba(255,255,255,.14);
+}
+.kc-tl__body {
+  padding: 5px 0 26px 16px;
+}
+.kc-tl__acres {
+  font-family: Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--kc-amber);
+  display: block;
+  line-height: 1;
+}
+.kc-tl__acres--current { color: #ff7043; }
+.kc-tl__detail {
+  font-family: Arial, sans-serif;
+  font-size: 12.5px;
+  color: rgba(255,255,255,.62);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.kc-tl__detail--current { color: rgba(255,255,255,.88); }
+.kc-bar-wrap {
+  margin-top: 8px;
+  height: 6px;
+  background: rgba(255,255,255,.1);
+  border-radius: 3px;
+  overflow: hidden;
+  max-width: 280px;
+}
+.kc-bar {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--kc-amber), var(--kc-orange));
+  transition: width .8s ease;
+}
+.kc-bar--current {
+  background: linear-gradient(90deg, var(--kc-orange), var(--kc-red));
+}
+
+/* ═══════════════════════════════════════
+   CLIMATE DASHBOARD
+═══════════════════════════════════════ */
+.kc-dash {
+  background: linear-gradient(135deg, #0d1820 0%, #1d2535 100%);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 14px;
+  padding: 34px 32px;
+  margin: 52px 0;
+  color: var(--kc-white);
+}
+.kc-dash__head {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--kc-white);
+  margin-bottom: 5px;
+}
+.kc-dash__sub {
+  font-family: Arial, sans-serif;
+  font-size: 12.5px;
+  color: rgba(255,255,255,.48);
+  margin-bottom: 34px;
+}
+
+.kc-gauges {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.kc-gauge { text-align: center; }
+.kc-gauge__wrap {
+  position: relative;
+  width: 110px;
+  height: 64px;
+  margin: 0 auto 10px;
+}
+.kc-gauge__svg { width: 110px; height: 64px; }
+.kc-gauge__bg {
+  fill: none;
+  stroke: rgba(255,255,255,.1);
+  stroke-width: 9;
+}
+.kc-gauge__fill {
+  fill: none;
+  stroke-width: 9;
+  stroke-linecap: round;
+  stroke-dasharray: 143;
+  stroke-dashoffset: 143;
+  transition: stroke-dashoffset 1.6s cubic-bezier(.4,0,.2,1);
+}
+.kc-gauge__val {
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  color: var(--kc-white);
+  white-space: nowrap;
+}
+.kc-gauge__lbl {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  color: rgba(255,255,255,.55);
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  line-height: 1.4;
+}
+.kc-tag {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 11px;
+  margin-top: 7px;
+}
+.kc-tag--red    { background: rgba(214,40,40,.3);  color: #ff8080; }
+.kc-tag--orange { background: rgba(232,93,4,.3);   color: #ffb07a; }
+.kc-tag--gold   { background: rgba(244,140,6,.3);  color: var(--kc-gold); }
+
+/* ═══════════════════════════════════════
+   STAT HIGHLIGHTS
+═══════════════════════════════════════ */
+.kc-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 36px 0;
+}
+.kc-stat {
+  text-align: center;
+  background: var(--kc-cream);
+  border: 1px solid var(--kc-border);
+  border-radius: 10px;
+  padding: 20px 12px;
+}
+.kc-stat__num {
+  font-family: Arial, sans-serif;
+  font-size: clamp(22px, 3.5vw, 34px);
+  font-weight: 900;
+  color: var(--kc-orange);
+  display: block;
+  line-height: 1;
+}
+.kc-stat__lbl {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  color: var(--kc-mid);
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════
+   SIZE COMPARISON
+═══════════════════════════════════════ */
+.kc-compare {
+  background: var(--kc-cream);
+  border: 1px solid var(--kc-border);
+  border-radius: 12px;
+  padding: 28px;
+  margin: 44px 0;
+}
+.kc-compare__title {
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--kc-dark);
+  text-align: center;
+  margin-bottom: 5px;
+}
+.kc-compare__sub {
+  font-family: Arial, sans-serif;
+  font-size: 12.5px;
+  color: var(--kc-mid);
+  text-align: center;
+  margin-bottom: 24px;
+}
+.kc-comp-rows { display: flex; flex-direction: column; gap: 11px; }
+.kc-comp-row {
+  display: grid;
+  grid-template-columns: 145px 1fr 72px;
+  align-items: center;
+  gap: 10px;
+}
+.kc-comp-name {
+  font-family: Arial, sans-serif;
+  font-size: 12.5px;
+  color: var(--kc-mid);
+  text-align: right;
+}
+.kc-comp-track {
+  height: 26px;
+  background: rgba(0,0,0,.07);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.kc-comp-fill {
+  height: 100%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  transition: width 1s ease;
+}
+.kc-comp-fill span {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--kc-white);
+  padding-left: 9px;
+  white-space: nowrap;
+}
+.kc-comp-fill--fire { background: linear-gradient(90deg, #d62828, #e85d04); }
+.kc-comp-fill--city { background: #6b8fa8; }
+.kc-comp-val {
+  font-family: Arial, sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--kc-dark);
+}
+
+/* ═══════════════════════════════════════
+   INFO BOX
+═══════════════════════════════════════ */
+.kc-infobox {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 16px;
+  align-items: start;
+  background: rgba(232,93,4,.06);
+  border: 1px solid rgba(232,93,4,.22);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 32px 0;
+}
+.kc-infobox__icon { font-size: 34px; text-align: center; padding-top: 2px; }
+.kc-infobox__body h4 {
+  font-family: Arial, sans-serif;
+  font-size: 14.5px;
+  color: var(--kc-orange);
+  margin-bottom: 6px;
+}
+.kc-infobox__body p {
+  font-size: 14px;
+  color: var(--kc-mid);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════
+   ACCORDION SAFETY TIPS
+═══════════════════════════════════════ */
+.kc-acc-intro {
+  font-family: Arial, sans-serif;
+  font-size: 13.5px;
+  color: var(--kc-mid);
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.kc-acc-item {
+  border: 1px solid var(--kc-border);
+  border-radius: 9px;
+  margin-bottom: 9px;
+  overflow: hidden;
+}
+.kc-acc-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 18px;
+  background: var(--kc-cream);
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: background .18s;
+}
+.kc-acc-btn:hover, .kc-acc-btn.open { background: #ffe8cc; }
+.kc-acc-icon {
+  width: 32px; height: 32px;
+  background: var(--kc-orange);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--kc-white);
+  font-size: 15px;
+  flex-shrink: 0;
+}
+.kc-acc-title {
+  font-family: Arial, sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--kc-dark);
+  flex: 1;
+}
+.kc-acc-arrow {
+  font-size: 11px;
+  color: var(--kc-smoke);
+  transition: transform .28s;
+  flex-shrink: 0;
+}
+.kc-acc-btn.open .kc-acc-arrow { transform: rotate(180deg); }
+.kc-acc-body {
+  display: none;
+  padding: 16px 18px 20px 62px;
+  background: var(--kc-white);
+  border-top: 1px solid var(--kc-border);
+}
+.kc-acc-body.open { display: block; }
+.kc-acc-body ul { list-style: none; padding: 0; }
+.kc-acc-body li {
+  font-size: 15px;
+  color: var(--kc-charcoal);
+  padding: 7px 0 7px 20px;
+  position: relative;
+  border-bottom: 1px dashed rgba(0,0,0,.07);
+  line-height: 1.55;
+}
+.kc-acc-body li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--kc-orange);
+}
+.kc-acc-body li:last-child { border-bottom: none; }
+
+/* ═══════════════════════════════════════
+   CONCLUSION
+═══════════════════════════════════════ */
+.kc-conclusion {
+  background: linear-gradient(135deg, #1d2535 0%, #2d1508 100%);
+  border-radius: 14px;
+  padding: 38px 36px;
+  margin-top: 52px;
+  color: rgba(255,255,255,.84);
+}
+.kc-conclusion h2 {
+  color: var(--kc-amber);
+  font-size: clamp(19px, 2.8vw, 23px);
+  margin-bottom: 16px;
+}
+.kc-conclusion p { font-size: 16px; line-height: 1.9; }
+
+/* ═══════════════════════════════════════
+   MOBILE RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width: 720px) {
+  .kc-wrap { font-size: 16px; padding: 0 14px 44px; }
+
+  /* Stack split-screen vertically */
+  .kc-split {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    border-radius: 0;
+    margin-left: -14px;
+    margin-right: -14px;
+    margin-bottom: 36px;
+  }
+  .kc-split__img { height: 230px; }
+  .kc-split__text { padding: 28px 20px 30px; }
+  .kc-split__text h1 { font-size: 21px; }
+  .kc-hstats { grid-template-columns: 1fr 1fr; }
+
+  /* Tracker */
+  .kc-tracker, .kc-dash { padding: 22px 16px; border-radius: 10px; }
+  .kc-tl__step { grid-template-columns: 66px 30px 1fr; }
+  .kc-tl__acres { font-size: 18px; }
+
+  /* Gauges: 2 columns */
+  .kc-gauges { grid-template-columns: 1fr 1fr; gap: 18px; }
+  .kc-gauge__wrap { width: 95px; height: 56px; }
+  .kc-gauge__svg  { width: 95px; height: 56px; }
+  .kc-gauge__val  { font-size: 13px; }
+
+  /* Stats row: 2x2 */
+  .kc-stats-row { grid-template-columns: 1fr 1fr; }
+
+  /* Size comparison */
+  .kc-comp-row { grid-template-columns: 100px 1fr 55px; }
+  .kc-comp-name { font-size: 11px; }
+
+  /* Info box */
+  .kc-infobox { grid-template-columns: 1fr; }
+  .kc-infobox__icon { display: none; }
+
+  /* Accordion */
+  .kc-acc-body { padding-left: 18px; }
+
+  /* Conclusion */
+  .kc-conclusion { padding: 26px 18px; border-radius: 10px; }
+}
+
+@media (max-width: 380px) {
+  .kc-hstats { gap: 7px; }
+  .kc-hstat { padding: 10px 6px; }
+  .kc-hstat__num { font-size: 17px; }
+  .kc-gauges { grid-template-columns: 1fr 1fr; }
+  .kc-stats-row { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .kc-comp-row { grid-template-columns: 85px 1fr 50px; }
+}
+</style>
+
+<div class="kc-wrap">
+
+<!-- ══════════════════════════════════════════
+     SPLIT-SCREEN HEADER
+     Image: Aerial/satellite photo of Cottonwood Fire smoke plumes over Fishlake National Forest
+     Source: InciWeb (USFS) — replace src with actual photo URL before publishing
+══════════════════════════════════════════ -->
+<div class="kc-split">
+
+  <figure class="kc-split__img">
+    <!--
+      REPLACE THIS SRC with the actual InciWeb or USFS fire photo URL.
+      Example path: https://inciweb.wildfire.gov/photos/[photo-id]/...jpg
+      NASA MODIS satellite imagery: https://firms.modaps.eosdis.nasa.gov/usfs/
+      Image must be public domain (government source).
+    -->
+    <img
+      src="https://inciweb.wildfire.gov/incident-information/utfif-cottonwood-fire"
+      alt="Smoke plumes from Utah's Cottonwood Fire rising over Fishlake National Forest in Piute and Beaver Counties, June 2026 — America's largest active wildfire"
+      title="Utah's Cottonwood Fire, June 2026 — USFS/InciWeb aerial documentation of the 93,000-acre blaze"
+      loading="eager"
+      onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(165deg,#1a0600 0%,#6b2200 45%,#c44400 75%,#e85d04 100%)'"
+    />
+    <figcaption>Cottonwood Fire burns through Fishlake National Forest, Piute and Beaver Counties, Utah — June 2026. Photo: InciWeb / U.S. Forest Service (public domain)</figcaption>
+  </figure>
+
+  <div class="kc-split__text">
+    <div class="kc-badge">Breaking &nbsp;·&nbsp; June 28, 2026</div>
+    <h1>Utah's Cottonwood Fire: 93,000 Acres, 0% Contained — America's Largest Active Wildfire</h1>
+
+    <div class="kc-hstats">
+      <div class="kc-hstat">
+        <span class="kc-hstat__num">93K+</span>
+        <span class="kc-hstat__lbl">Acres burned as of June 28</span>
+      </div>
+      <div class="kc-hstat">
+        <span class="kc-hstat__num">0%</span>
+        <span class="kc-hstat__lbl">Containment</span>
+      </div>
+      <div class="kc-hstat">
+        <span class="kc-hstat__num">6 days</span>
+        <span class="kc-hstat__lbl">Since ignition (June 22)</span>
+      </div>
+      <div class="kc-hstat">
+        <span class="kc-hstat__num">65%</span>
+        <span class="kc-hstat__lbl">Below-normal snowpack</span>
+      </div>
+    </div>
+
+    <div class="kc-byline">June 28, 2026 &nbsp;·&nbsp; Piute &amp; Beaver Counties, Utah</div>
+  </div>
+
+</div><!-- /kc-split -->
+
+
+<!-- ══════════════════════════════════════════
+     INTRO
+══════════════════════════════════════════ -->
+<div class="kc-section">
+  <div class="kc-section-label">The Fire</div>
+
+  <p>Ash started raining on the town of Marysvale, Utah, on the morning of June 24. By June 28, smoke had drifted into Nevada and Arizona, and the fire that sent that ash skyward — the Cottonwood Fire, burning in Piute and Beaver Counties — had become the largest active wildfire in the United States. Six days after igniting near Beaver, it had consumed more than 93,000 acres of terrain in the Fishlake National Forest with zero containment.</p>
+
+  <p>Utah Governor Spencer Cox put it in terms that need no translation: "the most destructive fire in state's history." He added something that carries more weight than the acreage numbers: "I've been governor for five years and I've visited firefighters fighting fires during that time. I've never seen them more scared."</p>
+
+  <p>Eagle Point Resort, a four-season mountain destination in the Fishlake National Forest, sustained major structural damage. Federal officials made the rare decision to close the Fishlake National Forest entirely through December 31, 2026 — a measure that signals how long the recovery timeline will be. Southern Utah had already seen warning signs earlier in the season: the <a href="https://www.karmactive.com/deer-creek-fire-creates-rare-pyrovortex-8925-acres-burned-0-containment-5-homes-destroyed-near-utah-colorado-border/" target="_blank" rel="noopener">Deer Creek Fire near the Utah-Colorado border produced a rare pyrovortex</a>, burning nearly 9,000 acres with zero containment — a preview of what was building across the region.</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     FIRE GROWTH TRACKER
+══════════════════════════════════════════ -->
+<div class="kc-tracker">
+  <div class="kc-tracker__head">🔥 Fire Growth Tracker</div>
+  <div class="kc-tracker__sub">Cottonwood Fire expansion — June 22 through June 28, 2026</div>
+
+  <div class="kc-tl" id="kcTimeline">
+
+    <div class="kc-tl__step" onclick="kcActivateStep(this)">
+      <div class="kc-tl__date">Jun 22</div>
+      <div class="kc-tl__con">
+        <div class="kc-tl__dot"></div>
+        <div class="kc-tl__line"></div>
+      </div>
+      <div class="kc-tl__body">
+        <span class="kc-tl__acres">~10,000 acres</span>
+        <div class="kc-tl__detail">Fire ignites near Beaver, Utah — human-caused. Piute and Beaver Counties. Immediate rapid spread into parched terrain with critically low fuel moisture.</div>
+        <div class="kc-bar-wrap"><div class="kc-bar" style="width:11%"></div></div>
+      </div>
+    </div>
+
+    <div class="kc-tl__step" onclick="kcActivateStep(this)">
+      <div class="kc-tl__date">Jun 24</div>
+      <div class="kc-tl__con">
+        <div class="kc-tl__dot"></div>
+        <div class="kc-tl__line"></div>
+      </div>
+      <div class="kc-tl__body">
+        <span class="kc-tl__acres">~60,000 acres</span>
+        <div class="kc-tl__detail">Six-fold growth in 48 hours. Ash falls on Marysvale. Eagle Point Resort is heavily damaged. NWS Salt Lake City issues the first "particularly dangerous situation" red flag warning in its history.</div>
+        <div class="kc-bar-wrap"><div class="kc-bar" style="width:65%"></div></div>
+      </div>
+    </div>
+
+    <div class="kc-tl__step" onclick="kcActivateStep(this)">
+      <div class="kc-tl__date">Jun 26</div>
+      <div class="kc-tl__con">
+        <div class="kc-tl__dot"></div>
+        <div class="kc-tl__line"></div>
+      </div>
+      <div class="kc-tl__body">
+        <span class="kc-tl__acres">71,848 acres</span>
+        <div class="kc-tl__detail">Verified incident report acreage. Wind gusts hit 45 mph with single-digit relative humidity. Governor Cox visits the fire line and calls it Utah's most destructive wildfire in recorded history.</div>
+        <div class="kc-bar-wrap"><div class="kc-bar" style="width:78%"></div></div>
+      </div>
+    </div>
+
+    <div class="kc-tl__step" onclick="kcActivateStep(this)">
+      <div class="kc-tl__date">Jun 27</div>
+      <div class="kc-tl__con">
+        <div class="kc-tl__dot"></div>
+        <div class="kc-tl__line"></div>
+      </div>
+      <div class="kc-tl__body">
+        <span class="kc-tl__acres">~92,000 acres</span>
+        <div class="kc-tl__detail">Overnight spread continues. Smoke plumes tracked into Nevada and Arizona. Air quality index across southern Utah climbs into "unhealthy" range. Containment remains at 0%.</div>
+        <div class="kc-bar-wrap"><div class="kc-bar" style="width:99%"></div></div>
+      </div>
+    </div>
+
+    <div class="kc-tl__step" onclick="kcActivateStep(this)">
+      <div class="kc-tl__date">Jun 28</div>
+      <div class="kc-tl__con">
+        <div class="kc-tl__dot active"></div>
+        <!-- no line: last step -->
+      </div>
+      <div class="kc-tl__body">
+        <span class="kc-tl__acres kc-tl__acres--current">93,000+ acres (over 145 sq mi)</span>
+        <div class="kc-tl__detail kc-tl__detail--current">America's largest active wildfire. Fishlake National Forest closed through December 31, 2026. Containment: 0%. Three-state smoke impact continues.</div>
+        <div class="kc-bar-wrap"><div class="kc-bar kc-bar--current" style="width:100%"></div></div>
+      </div>
+    </div>
+
+  </div><!-- /kc-tl -->
+</div><!-- /kc-tracker -->
+
+
+<!-- ══════════════════════════════════════════
+     WHAT DROVE THE SPREAD
+══════════════════════════════════════════ -->
+<div class="kc-section">
+  <div class="kc-section-label">What Drove the Spread</div>
+
+  <p>Fire spokesperson Alyssa Mason described the conditions with precision: <em>"single digit humidities and wind gusts around 45 miles per hour."</em> That combination — air desiccated to under 10% relative humidity and sustained 45-mph gusts — is what strips moisture from fuels and pushes fire fronts faster than suppression crews can respond. The National Weather Service office in Salt Lake City issued a red flag warning carrying the designation "particularly dangerous situation" — a label it had never applied before in its operational history.</p>
+
+  <div class="kc-quote">
+    <blockquote>"Single digit humidities and wind gusts around 45 miles per hour."</blockquote>
+    <cite>— Alyssa Mason, Cottonwood Fire Spokesperson</cite>
+  </div>
+
+  <p>The weather that day was not the root cause — it was the final condition in a cascade that had been building all winter. The 2025–26 winter was the warmest on record for Utah. Snowpack across the region hit its lowest April 1 reading ever recorded, coming in 65% below normal. When spring and early summer arrived, the forests carried almost no residual moisture in the soil, in the duff layer, or in the standing vegetation. The <a href="https://droughtmonitor.unl.edu/" target="_blank" rel="noopener">U.S. Drought Monitor</a> had classified Piute and Beaver Counties under severe-to-extreme drought conditions heading into the fire season — the same atmospheric pressure driving <a href="https://www.karmactive.com/atmospheric-thirst-worsens-droughts-40-globally-air-demands-more-water-as-planet-warms/" target="_blank" rel="noopener">worsening droughts globally as warming air demands more moisture from the land</a>.</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     CLIMATE CONDITIONS DASHBOARD
+══════════════════════════════════════════ -->
+<div class="kc-dash" id="kcDash">
+  <div class="kc-dash__head">Climate Conditions Behind the Fire</div>
+  <div class="kc-dash__sub">Utah's pre-fire-season indicators, 2025–26 — verified data</div>
+
+  <div class="kc-gauges">
+
+    <div class="kc-gauge">
+      <div class="kc-gauge__wrap">
+        <svg class="kc-gauge__svg" viewBox="0 0 110 64">
+          <path class="kc-gauge__bg" d="M 15 60 A 45 45 0 0 1 95 60" stroke-linecap="round"/>
+          <path class="kc-gauge__fill" id="kcG1" d="M 15 60 A 45 45 0 0 1 95 60" stroke="#d62828" stroke-linecap="round"/>
+        </svg>
+        <div class="kc-gauge__val" id="kcG1v">0%</div>
+      </div>
+      <div class="kc-gauge__lbl">Snowpack<br>Below Normal</div>
+      <div class="kc-tag kc-tag--red">All-time Low</div>
+    </div>
+
+    <div class="kc-gauge">
+      <div class="kc-gauge__wrap">
+        <svg class="kc-gauge__svg" viewBox="0 0 110 64">
+          <path class="kc-gauge__bg" d="M 15 60 A 45 45 0 0 1 95 60" stroke-linecap="round"/>
+          <path class="kc-gauge__fill" id="kcG2" d="M 15 60 A 45 45 0 0 1 95 60" stroke="#e85d04" stroke-linecap="round"/>
+        </svg>
+        <div class="kc-gauge__val" id="kcG2v">0%</div>
+      </div>
+      <div class="kc-gauge__lbl">Relative Humidity<br>at Peak Fire Hours</div>
+      <div class="kc-tag kc-tag--red">Critical</div>
+    </div>
+
+    <div class="kc-gauge">
+      <div class="kc-gauge__wrap">
+        <svg class="kc-gauge__svg" viewBox="0 0 110 64">
+          <path class="kc-gauge__bg" d="M 15 60 A 45 45 0 0 1 95 60" stroke-linecap="round"/>
+          <path class="kc-gauge__fill" id="kcG3" d="M 15 60 A 45 45 0 0 1 95 60" stroke="#f48c06" stroke-linecap="round"/>
+        </svg>
+        <div class="kc-gauge__val" id="kcG3v">0%</div>
+      </div>
+      <div class="kc-gauge__lbl">National Acres Burned<br>vs. 10-Year Avg</div>
+      <div class="kc-tag kc-tag--gold">231% of Avg</div>
+    </div>
+
+    <div class="kc-gauge">
+      <div class="kc-gauge__wrap">
+        <svg class="kc-gauge__svg" viewBox="0 0 110 64">
+          <path class="kc-gauge__bg" d="M 15 60 A 45 45 0 0 1 95 60" stroke-linecap="round"/>
+          <path class="kc-gauge__fill" id="kcG4" d="M 15 60 A 45 45 0 0 1 95 60" stroke="#ffb703" stroke-linecap="round"/>
+        </svg>
+        <div class="kc-gauge__val" id="kcG4v">0</div>
+      </div>
+      <div class="kc-gauge__lbl">Peak Wind Gusts<br>(mph)</div>
+      <div class="kc-tag kc-tag--orange">Extreme</div>
+    </div>
+
+  </div>
+</div><!-- /kc-dash -->
+
+
+<!-- ══════════════════════════════════════════
+     WHAT THE SCIENCE SAYS
+══════════════════════════════════════════ -->
+<div class="kc-section">
+  <div class="kc-section-label">What the Science Says</div>
+  <h2>High-Severity Fires Now Burn 30 Times More Area Than in 1985</h2>
+
+  <p>On June 22, 2026 — the same day the Cottonwood Fire was sparked near Beaver — researchers at UCLA published findings in the Proceedings of the National Academy of Sciences. The paper documented that high-severity wildfires, the kind that kill trees outright rather than burning beneath them, now consume approximately <a href="https://newsroom.ucla.edu/releases/high-severity-fires-burn-30-times-more-area-than-40-years-ago-researchers-find" target="_blank" rel="noopener">30 times more acreage than they did in 1985</a>, according to lead author Park Williams and his team. That is not incremental change. It is a structural shift in how fire behaves across western landscapes.</p>
+
+  <p>The thread connecting events like the <a href="https://www.karmactive.com/la-wildfires-5300-structures-destroyed-179700-evacuated-50b-in-damages/" target="_blank" rel="noopener">Los Angeles wildfires that destroyed more than 5,300 structures</a> and the current Cottonwood outbreak is the same underlying dynamic: warmer air pulls moisture from vegetation faster, and forests that don't experience low-severity winter burns accumulate decades of fuel. <a href="https://science.nasa.gov/earth/explore/wildfires-and-climate-change/" target="_blank" rel="noopener">NASA's research into the relationship between wildfires and climate change</a> has also documented the feedback mechanism — larger fires release more black carbon, which settles in snowpack and on glaciers, darkening their surface and accelerating melt. The <a href="https://www.karmactive.com/the-vicious-cycle-of-wildfires-and-climate-black-carbons-role-in-fueling-more-fires/" target="_blank" rel="noopener">wildfire-black carbon cycle</a> means that each fire season contributes to the conditions that make the next one worse.</p>
+
+  <p>Through March 2026, the <a href="https://www.nifc.gov/fire-information/nfn" target="_blank" rel="noopener">National Interagency Fire Center</a> had already recorded national acreage burned at 231% of the 10-year average — before the core of fire season had arrived. The <a href="https://wilkescenter.utah.edu/wildfire/" target="_blank" rel="noopener">Wilkes Center for Climate Science and Policy at the University of Utah</a> has tracked how Utah's warming winters have eroded the single most effective natural firebreak in the landscape: deep snowpack. With 2025–26 snowpack at its lowest April 1 level ever recorded, that protection essentially wasn't there this year. Across the West, <a href="https://www.karmactive.com/scientists-confirm-last-summers-heat-was-the-warmest-in-2000-years-spurring-mediterranean-wildfires/" target="_blank" rel="noopener">scientists have confirmed record-setting heat as the driver behind this generation of wildfires</a>, and regions already experiencing drought have faced <a href="https://www.karmactive.com/texas-faces-80-wildfires-as-disaster-declaration-hits-143-counties-amid-drought-whats-driving-the-flames/" target="_blank" rel="noopener">simultaneous, multi-front fire activity across entire states</a>.</p>
+
+  <div class="kc-stats-row">
+    <div class="kc-stat">
+      <span class="kc-stat__num">30×</span>
+      <div class="kc-stat__lbl">More high-severity fire area since 1985</div>
+    </div>
+    <div class="kc-stat">
+      <span class="kc-stat__num">231%</span>
+      <div class="kc-stat__lbl">Of 10-yr avg national acres by March 2026</div>
+    </div>
+    <div class="kc-stat">
+      <span class="kc-stat__num">45 mph</span>
+      <div class="kc-stat__lbl">Peak wind gusts during spread</div>
+    </div>
+    <div class="kc-stat">
+      <span class="kc-stat__num">&#8203;#1</span>
+      <div class="kc-stat__lbl">Warmest Utah winter on record (2025–26)</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SIZE COMPARISON
+══════════════════════════════════════════ -->
+<div class="kc-compare">
+  <div class="kc-compare__title">How Big Is 93,000 Acres?</div>
+  <div class="kc-compare__sub">The Cottonwood Fire in geographic context</div>
+
+  <div class="kc-comp-rows">
+    <div class="kc-comp-row">
+      <div class="kc-comp-name"><strong>Cottonwood Fire</strong></div>
+      <div class="kc-comp-track">
+        <div class="kc-comp-fill kc-comp-fill--fire" style="width:100%">
+          <span>93,000+ acres</span>
+        </div>
+      </div>
+      <div class="kc-comp-val" style="color:#d62828">~145 sq mi</div>
+    </div>
+    <div class="kc-comp-row">
+      <div class="kc-comp-name">San Francisco, CA</div>
+      <div class="kc-comp-track">
+        <div class="kc-comp-fill kc-comp-fill--city" style="width:52%">
+          <span>~30,000 acres</span>
+        </div>
+      </div>
+      <div class="kc-comp-val">47 sq mi</div>
+    </div>
+    <div class="kc-comp-row">
+      <div class="kc-comp-name">Washington D.C.</div>
+      <div class="kc-comp-track">
+        <div class="kc-comp-fill kc-comp-fill--city" style="width:43%">
+          <span>~25,000 acres</span>
+        </div>
+      </div>
+      <div class="kc-comp-val">39 sq mi</div>
+    </div>
+    <div class="kc-comp-row">
+      <div class="kc-comp-name">Manhattan, NY</div>
+      <div class="kc-comp-track">
+        <div class="kc-comp-fill kc-comp-fill--city" style="width:15%">
+          <span>~14,000 acres</span>
+        </div>
+      </div>
+      <div class="kc-comp-val">21 sq mi</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     WILDLIFE & ECOSYSTEM
+══════════════════════════════════════════ -->
+<div class="kc-section">
+  <div class="kc-section-label">Wildlife &amp; Ecosystem</div>
+  <h2>What Happens to Animals When a Forest Burns This Fast</h2>
+
+  <p>The Fishlake National Forest supports mule deer, elk, pronghorn, black bear, mountain lion, golden eagle, and a range of sensitive bat species that depend on the forest for foraging and roosting. When fire of this intensity moves through terrain at speed, the critical variable is mobility — animals with range and speed generally displace to adjacent habitat; those that can't — ground-nesting birds, small burrowing mammals, reptiles, amphibians — face direct mortality rates that rise sharply with fire severity. <a href="https://www.nps.gov/articles/assessing-wildlife-responses-to-changing-fire-regimes.htm" target="_blank" rel="noopener">National Park Service research on wildlife responses to changing fire regimes</a> has consistently found that fire severity and rate of spread matter far more than fire occurrence itself when predicting animal survival outcomes.</p>
+
+  <p>High-severity fire — the kind that eliminates the tree canopy rather than just burning the ground layer — restructures habitat at a landscape scale. <a href="https://www.fs.usda.gov/about-agency/features/extreme-wildfires-take-toll-california-wildlife" target="_blank" rel="noopener">USDA Forest Service research on extreme wildfire impacts on wildlife</a> has documented multi-year disruptions to food webs in western forests following high-severity events, with species assemblages taking decades to reestablish. The pattern has also been observed globally: research into <a href="https://www.karmactive.com/himalayan-forest-fires-surge-1500-uncover-the-devastating-impact-on-wildlife-and-ecosystems/" target="_blank" rel="noopener">surging wildfire impacts on Himalayan wildlife and ecosystems</a> found that habitat fragmentation — forcing species into disconnected islands of unburned land — frequently produces longer-term harm than the fire event itself.</p>
+
+  <div class="kc-infobox">
+    <div class="kc-infobox__icon">🦌</div>
+    <div class="kc-infobox__body">
+      <h4>Key Species in the Burn Area</h4>
+      <p>Fishlake National Forest provides primary habitat for mule deer, Rocky Mountain elk, pronghorn antelope, black bear, mountain lion, golden eagle, and several sensitive bat species classified under USFS Region 4 special concern status. High-severity fire eliminates the understory browse, mast, and forest structure these species depend on — with recovery timelines for mature mixed-conifer forest canopy measured in decades, not years.</p>
+    </div>
+  </div>
+
+  <p>The Cottonwood Fire's footprint also extends into watershed territory that communities downstream rely on. <a href="https://www.karmactive.com/wildfires-contaminate-water-for-8-years-study-reveals-sediment-levels-2000x-higher-in-some-streams/" target="_blank" rel="noopener">Research has documented wildfire-driven water contamination persisting for up to 8 years</a>, with sediment concentrations in affected drainages reaching 2,000 times baseline in documented cases. Drainages flowing out of the Fishlake burn area serve communities and agricultural operations in the Sevier River valley — the post-fire hydrological effects in those watersheds may be tracked long after the flames are out.</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     AIR QUALITY
+══════════════════════════════════════════ -->
+<div class="kc-section">
+  <div class="kc-section-label">Air Quality</div>
+  <h2>Smoke From the Cottonwood Fire Has Reached Three States</h2>
+
+  <p>Wildfire smoke is not simply haze. It carries fine particulate matter smaller than 2.5 microns (PM2.5), carbon monoxide, nitrogen oxides, benzene, formaldehyde, and — as <a href="https://www.karmactive.com/stanford-study-uncovers-toxic-airborne-particles-including-hazardous-metals-in-post-wildfire-soil/" target="_blank" rel="noopener">a Stanford study on toxic airborne particles in post-wildfire environments</a> documented — hazardous metals liberated from burned structures and soil. These aren't compounds that stop at a county line.</p>
+
+  <p>By June 26, smoke from the Cottonwood Fire was tracked across Utah, southern Nevada, and northern Arizona. Air quality index readings across Piute and Beaver Counties, and downwind communities in the Sevier valley, climbed into the "Unhealthy" and in some areas "Very Unhealthy" range for sensitive groups. The visible ash fall in Marysvale — gray dust settling on cars, porches, and outdoor surfaces — marked the outer edge of the fire's direct particulate reach. Health authorities advise that ash-fall areas represent elevated health risk even when smoke is not visibly heavy, because fine particles settle and become re-suspended with foot traffic and wind.</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SAFETY TIPS ACCORDION
+══════════════════════════════════════════ -->
+<div class="kc-section">
+  <div class="kc-section-label">Protective Guidance</div>
+  <h2>What to Do If You're in a Wildfire Smoke or Evacuation Zone</h2>
+  <p class="kc-acc-intro">This guidance reflects standard public health and emergency management recommendations. For evacuation orders and real-time fire updates, always follow local emergency management directives and check the <a href="https://inciweb.wildfire.gov/incident-information/utfif-cottonwood-fire" target="_blank" rel="noopener">InciWeb Cottonwood Fire incident page</a>.</p>
+
+  <div class="kc-acc-item">
+    <button class="kc-acc-btn open" onclick="kcToggleAcc(this)">
+      <span class="kc-acc-icon">🏠</span>
+      <span class="kc-acc-title">Sheltering Indoors</span>
+      <span class="kc-acc-arrow">▼</span>
+    </button>
+    <div class="kc-acc-body open">
+      <ul>
+        <li>Keep windows and doors closed. Seal visible gaps with damp towels or painter's tape if air quality is severe.</li>
+        <li>Run air conditioning on recirculation mode — not fresh-air intake — to avoid drawing in outside smoke.</li>
+        <li>Use a HEPA air purifier in the room where you spend most time; it makes a measurable difference in PM2.5 concentrations indoors.</li>
+        <li>Avoid activities that generate additional indoor particles: candles, incense, gas stoves at high heat, and vigorous vacuuming.</li>
+        <li>Monitor air quality readings at AirNow.gov and your county emergency management page, not just by how smoky things look outside.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="kc-acc-item">
+    <button class="kc-acc-btn" onclick="kcToggleAcc(this)">
+      <span class="kc-acc-icon">😷</span>
+      <span class="kc-acc-title">If You Must Go Outside</span>
+      <span class="kc-acc-arrow">▼</span>
+    </button>
+    <div class="kc-acc-body">
+      <ul>
+        <li>An N95 or KN95 respirator provides meaningful protection from wildfire smoke particulates — cloth masks and surgical masks do not filter fine particles effectively.</li>
+        <li>Keep outdoor time as short as possible. Physical exertion dramatically increases the volume of smoke inhaled because your breathing rate rises significantly.</li>
+        <li>Cover exposed skin during heavy ash conditions; smoke-borne particles can irritate skin over sustained contact.</li>
+        <li>Shower and change clothes after extended outdoor time in a smoke-affected area.</li>
+        <li>Do not rely on smell or visible smoke to gauge risk — dangerous PM2.5 concentrations can be present in air that looks clear.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="kc-acc-item">
+    <button class="kc-acc-btn" onclick="kcToggleAcc(this)">
+      <span class="kc-acc-icon">🚗</span>
+      <span class="kc-acc-title">Evacuation Preparedness</span>
+      <span class="kc-acc-arrow">▼</span>
+    </button>
+    <div class="kc-acc-body">
+      <ul>
+        <li>If an evacuation order is issued for your area, leave immediately — do not wait to observe the fire or assess the situation.</li>
+        <li>Prepare a go-bag in advance: water, prescription medications (multiple-day supply), identification documents, phone chargers, cash, and at least 72 hours of food.</li>
+        <li>Know at least two exit routes from your neighborhood before you need them — fires can close roads without warning.</li>
+        <li>Register for your county's emergency alert system. Most Utah counties use Everbridge or an equivalent platform for evacuation notifications.</li>
+        <li>Livestock and large animals require specific transport planning — arrange trailer access before fire season, not during it.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="kc-acc-item">
+    <button class="kc-acc-btn" onclick="kcToggleAcc(this)">
+      <span class="kc-acc-icon">💧</span>
+      <span class="kc-acc-title">Water and Food Safety After the Fire</span>
+      <span class="kc-acc-arrow">▼</span>
+    </button>
+    <div class="kc-acc-body">
+      <ul>
+        <li>Do not use tap water if your local utility has issued a precautionary boil notice — wildfire ash can contaminate water systems serving communities near the burn area.</li>
+        <li>Garden produce that was exposed to significant ash fall should be thoroughly washed before consumption; discard anything from within the direct fire perimeter area.</li>
+        <li>Private wells in affected drainages may require testing before use — ash infiltration can alter water chemistry and introduce contaminants.</li>
+        <li>Clean ash from outdoor hard surfaces using damp cloths or wet sweeping methods, not dry brooms, which re-suspend particles into the air you breathe.</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /safety section -->
+
+
+<!-- ══════════════════════════════════════════
+     CONCLUSION
+══════════════════════════════════════════ -->
+<div class="kc-conclusion">
+  <h2>Where Things Stand</h2>
+
+  <p>As of June 28, 2026, the Cottonwood Fire holds the distinction of being the largest active wildfire in the United States — 93,000 acres of Piute and Beaver County terrain transformed in six days from a human-caused ignition near Beaver into a fire that a seasoned governor described as unlike anything in state history. Zero containment. Eagle Point Resort damaged. Fishlake National Forest closed through December. Smoke in three states.</p>
+
+  <p>The conditions that allowed this are documented in the record books before the fire even started: the warmest Utah winter ever recorded, the lowest April 1 snowpack ever measured, severe drought across southern Utah, and fire-weather so extreme it produced a designation the National Weather Service in Salt Lake City had never used. These are not conditions unique to a single unfortunate week. They appear in the drought indices, the snowpack records, the NIFC acreage data, and the PNAS research — assembled, season by season, into a picture of a fire landscape that has structurally changed.</p>
+
+  <p>Governor Cox's observation that firefighters at the Cottonwood Fire were visibly more afraid than he had seen in five years of wildfire visits is one kind of measurement. The PNAS data showing a 30-fold increase in high-severity fire area since 1985 is another. Both are saying the same thing in different languages. The Cottonwood Fire is the most visible expression of that truth today.</p>
+</div>
+
+</div><!-- /kc-wrap -->
+
+
+<!-- ══════════════════════════════════════
+     JAVASCRIPT — Interactive elements
+══════════════════════════════════════ -->
+<script>
+(function() {
+  'use strict';
+
+  // ── Timeline step click handler ──
+  window.kcActivateStep = function(el) {
+    document.querySelectorAll('.kc-tl__dot').forEach(function(d) {
+      d.classList.remove('active');
+    });
+    var dot = el.querySelector('.kc-tl__dot');
+    if (dot) dot.classList.add('active');
+  };
+
+  // ── Accordion ──
+  window.kcToggleAcc = function(btn) {
+    var body = btn.nextElementSibling;
+    var isOpen = body.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.kc-acc-body').forEach(function(b) {
+      b.classList.remove('open');
+    });
+    document.querySelectorAll('.kc-acc-btn').forEach(function(b) {
+      b.classList.remove('open');
+    });
+
+    // Open clicked item if it was closed
+    if (!isOpen) {
+      body.classList.add('open');
+      btn.classList.add('open');
+    }
+  };
+
+  // ── Gauge animation ──
+  var gaugeArc = 143; // stroke-dasharray value matching the SVG half-arc
+
+  var gauges = [
+    { fillId: 'kcG1', valId: 'kcG1v', pct: 0.65, color: '#d62828', display: '65%',   numTarget: 65,  prefix: '',  suffix: '%'   },
+    { fillId: 'kcG2', valId: 'kcG2v', pct: 0.09, color: '#e85d04', display: '<10%',  numTarget: 9,   prefix: '',  suffix: '%'   },
+    { fillId: 'kcG3', valId: 'kcG3v', pct: 1.0,  color: '#f48c06', display: '231%',  numTarget: 231, prefix: '',  suffix: '%'   },
+    { fillId: 'kcG4', valId: 'kcG4v', pct: 0.75, color: '#ffb703', display: '45 mph',numTarget: 45,  prefix: '',  suffix: ' mph' }
+  ];
+
+  function animateGauges() {
+    gauges.forEach(function(g, i) {
+      setTimeout(function() {
+        var fillEl = document.getElementById(g.fillId);
+        var valEl  = document.getElementById(g.valId);
+        if (!fillEl || !valEl) return;
+
+        // Animate stroke
+        var targetOffset = gaugeArc - (g.pct * gaugeArc);
+        fillEl.style.strokeDashoffset = targetOffset;
+
+        // Animate number
+        var current = 0;
+        var step = g.numTarget / 45;
+        var timer = setInterval(function() {
+          current = Math.min(current + step, g.numTarget);
+          if (g.display.indexOf('<') === 0) {
+            valEl.textContent = g.display;
+          } else {
+            valEl.textContent = g.prefix + Math.round(current) + g.suffix;
+          }
+          if (current >= g.numTarget) {
+            clearInterval(timer);
+            valEl.textContent = g.display;
+          }
+        }, 28);
+
+      }, i * 180);
+    });
+  }
+
+  // ── Intersection Observer for gauge trigger ──
+  function onDashVisible() {
+    var dash = document.getElementById('kcDash');
+    if (!dash) return;
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            animateGauges();
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+      obs.observe(dash);
+
+      // Trigger immediately if already in viewport on load
+      var r = dash.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        setTimeout(animateGauges, 400);
+        obs.unobserve(dash);
+      }
+    } else {
+      // Fallback: animate on scroll or immediately
+      setTimeout(animateGauges, 800);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', onDashVisible);
+  } else {
+    onDashVisible();
+  }
+
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════
+     END OF WORDPRESS HTML BLOCK CONTENT
+═══════════════════════════════════════════════════════════ -->
+
+</body>
+</html>
