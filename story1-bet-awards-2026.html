@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Scoped container — does not affect rest of WordPress theme */
+        #bet2026 *,
+        #bet2026 *::before,
+        #bet2026 *::after {
+            box-sizing: border-box;
+        }
+
+        #bet2026 {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #09091A;
+            color: #F0EAE0;
+            max-width: 100%;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* ===== INTRO TEXT ===== */
+        .bet-intro {
+            padding: 3rem 1.5rem;
+            background: linear-gradient(160deg, #09091A 0%, #130A2E 100%);
+            border-bottom: 1px solid #D4AF3733;
+        }
+        .bet-intro-inner {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .bet-intro p {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            line-height: 1.85;
+            color: #DDD5C8;
+            margin: 0 0 1.3rem;
+        }
+        .bet-intro a, .bet-text a, .bet-concl a {
+            color: #D4AF37;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(212,175,55,0.35);
+            transition: border-color 0.25s;
+        }
+        .bet-intro a:hover, .bet-text a:hover, .bet-concl a:hover {
+            border-color: #D4AF37;
+        }
+
+        /* ===== SUBHEADER LABEL ===== */
+        .bet-label {
+            text-align: center;
+            font-size: 0.78rem;
+            letter-spacing: 3.5px;
+            color: #D4AF37;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-family: sans-serif;
+        }
+
+        /* ===== STATS STRIP ===== */
+        .bet-stats {
+            padding: 2.5rem 1.5rem;
+            background: #13132A;
+        }
+        .bet-stats-wrap {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+        .bet-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 1rem;
+        }
+        .bet-stat {
+            background: #09091A;
+            border: 1px solid #2A2A50;
+            border-top: 3px solid #D4AF37;
+            border-radius: 8px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .bet-stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 28px rgba(212,175,55,0.15);
+        }
+        .bet-stat-num {
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 800;
+            color: #D4AF37;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+        .bet-stat-lbl {
+            font-size: 0.82rem;
+            color: #9080A0;
+            line-height: 1.45;
+            font-family: sans-serif;
+        }
+
+        /* ===== AWARD CARDS SECTION ===== */
+        .bet-awards {
+            padding: 3rem 1.5rem;
+            background: #09091A;
+        }
+        .bet-awards-wrap {
+            max-width: 920px;
+            margin: 0 auto;
+        }
+        .bet-section-title {
+            font-size: clamp(1.3rem, 4vw, 1.9rem);
+            color: #D4AF37;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .bet-section-sub {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9080A0;
+            margin-bottom: 2.5rem;
+            font-family: sans-serif;
+        }
+        .bet-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.1rem;
+        }
+        .bet-card {
+            background: #13132A;
+            border: 1px solid #2A2A50;
+            border-radius: 10px;
+            padding: 1.4rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.25s, transform 0.25s;
+        }
+        .bet-card::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #7B2FBE;
+            transition: width 0.25s;
+        }
+        .bet-card.featured::after { background: #D4AF37; }
+        .bet-card:hover { border-color: #D4AF37; transform: translateX(3px); }
+        .bet-card:hover::after { width: 6px; }
+        .bet-card-cat {
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            color: #D4AF37;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            font-family: sans-serif;
+        }
+        .bet-card-winner {
+            font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+            font-weight: 700;
+            color: #F0EAE0;
+            margin-bottom: 0.35rem;
+        }
+        .bet-card-reveal {
+            font-size: 0.88rem;
+            color: #9080A0;
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        .bet-card.open .bet-card-reveal {
+            max-height: 200px;
+        }
+        .bet-badge {
+            display: inline-block;
+            font-size: 0.68rem;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-top: 0.6rem;
+            font-family: sans-serif;
+            letter-spacing: 0.3px;
+            background: #7B2FBE;
+            color: #fff;
+        }
+        .bet-badge.gold { background: #D4AF37; color: #09091A; }
+        .bet-card-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #2A2A50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: #D4AF37;
+            transition: background 0.25s, transform 0.3s;
+        }
+        .bet-card.open .bet-card-toggle { background: #D4AF37; color: #09091A; transform: rotate(45deg); }
+
+        /* ===== IMAGE BLOCK ===== */
+        .bet-img-block {
+            padding: 0 1.5rem 2rem;
+            background: #09091A;
+        }
+        .bet-img-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            border: 1px solid #2A2A50;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .bet-img-placeholder {
+            width: 100%;
+            min-height: 300px;
+            background: linear-gradient(135deg, #13132A, #1E0A3C);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4A3A6A;
+            font-size: 0.9rem;
+            font-family: sans-serif;
+            text-align: center;
+            padding: 2rem;
+        }
+        .bet-img-caption {
+            padding: 0.75rem 1rem;
+            font-size: 0.82rem;
+            color: #9080A0;
+            font-style: italic;
+            background: #13132A;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        /* ===== QUOTES ===== */
+        .bet-quotes {
+            padding: 3rem 1.5rem;
+            background: linear-gradient(135deg, #13132A 0%, #1E0A3C 100%);
+            border-top: 1px solid #2A2A50;
+            border-bottom: 1px solid #2A2A50;
+        }
+        .bet-quotes-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .bet-quote {
+            margin-bottom: 2rem;
+            padding: 1.5rem 1.5rem 1.5rem 2rem;
+            background: rgba(9,9,26,0.5);
+            border-left: 4px solid #D4AF37;
+            border-radius: 0 8px 8px 0;
+        }
+        .bet-quote:last-child { margin-bottom: 0; }
+        .bet-quote-text {
+            font-style: italic;
+            font-size: clamp(1rem, 2.5vw, 1.12rem);
+            color: #DDD5C8;
+            line-height: 1.8;
+            margin-bottom: 0.7rem;
+        }
+        .bet-quote-attr {
+            font-size: 0.83rem;
+            color: #D4AF37;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+
+        /* ===== MIDDLE TEXT ===== */
+        .bet-text {
+            padding: 2.5rem 1.5rem;
+            background: #13132A;
+        }
+        .bet-text-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .bet-text p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            line-height: 1.85;
+            color: #DDD5C8;
+            margin: 0 0 1.3rem;
+        }
+        .bet-text p:last-child { margin-bottom: 0; }
+
+        /* ===== TIMELINE ===== */
+        .bet-timeline {
+            padding: 3rem 1.5rem;
+            background: #09091A;
+        }
+        .bet-timeline-wrap {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        .bet-tl-list {
+            position: relative;
+            padding-left: 2rem;
+            margin-top: 2rem;
+        }
+        .bet-tl-list::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #D4AF37, #7B2FBE 80%, transparent);
+        }
+        .bet-tl-item {
+            position: relative;
+            padding: 0 0 2.2rem 1.8rem;
+        }
+        .bet-tl-item::before {
+            content: '';
+            position: absolute;
+            left: -0.45rem;
+            top: 0.35rem;
+            width: 0.9rem;
+            height: 0.9rem;
+            border-radius: 50%;
+            background: #D4AF37;
+            border: 2px solid #09091A;
+            box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
+        }
+        .bet-tl-moment {
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            color: #D4AF37;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+            font-family: sans-serif;
+        }
+        .bet-tl-title {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            font-weight: 700;
+            color: #F0EAE0;
+            margin-bottom: 0.3rem;
+        }
+        .bet-tl-desc {
+            font-size: 0.9rem;
+            color: #9080A0;
+            line-height: 1.6;
+            font-family: sans-serif;
+        }
+
+        /* ===== TRIBUTE SECTION ===== */
+        .bet-tribute {
+            padding: 2.5rem 1.5rem;
+            background: linear-gradient(135deg, #09091A, #1A0808);
+            border-top: 1px solid #3A1A1A;
+        }
+        .bet-tribute-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .bet-tribute-head {
+            font-size: clamp(1.1rem, 3vw, 1.4rem);
+            color: #C0A0A0;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #3A1A1A;
+            padding-bottom: 0.5rem;
+        }
+        .bet-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+        }
+        .bet-tag {
+            background: #2A0A0A;
+            color: #C0A0A0;
+            font-size: 0.78rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid #3A1A1A;
+            font-family: sans-serif;
+        }
+        .bet-tribute-wrap p {
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            line-height: 1.8;
+            color: #C0A0A0;
+            margin: 0;
+        }
+
+        /* ===== CONCLUSION ===== */
+        .bet-concl {
+            padding: 3rem 1.5rem;
+            background: #09091A;
+            border-top: 2px solid #D4AF3755;
+        }
+        .bet-concl-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .bet-concl p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            line-height: 1.85;
+            color: #DDD5C8;
+            margin: 0 0 1.3rem;
+        }
+        .bet-concl p:last-child { margin-bottom: 0; }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+            .bet-stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .bet-cards-grid { grid-template-columns: 1fr; }
+            .bet-tl-list { padding-left: 1.5rem; }
+        }
+        @media (max-width: 480px) {
+            .bet-stats-grid { grid-template-columns: repeat(2, 1fr); }
+            #bet2026 section { padding-left: 1rem; padding-right: 1rem; }
+        }
+    </style>
+</head>
+<body>
+<div id="bet2026">
+
+    <!-- ========== INTRO TEXT ========== -->
+    <section class="bet-intro">
+        <div class="bet-intro-inner">
+            <p>
+                The 2026 <a href="https://www.bet.com/bet-awards" target="_blank" rel="noopener">BET Awards</a>, held June 28 at the Peacock Theater in Los Angeles, delivered a night built on 20-year careers, long-awaited returns, and speeches that the crowd will be replaying for a while. Comedian Druski hosted, becoming the youngest person ever to fill that role in the ceremony's history. Four awards went to Teyana Taylor — more than any other artist in a single night. Three went to Clipse. Cardi B claimed Best Female Hip-Hop Artist. And Lauryn Hill became the first recipient of a brand-new category that BET may end up defining a generation by.
+            </p>
+            <p>
+                The evening also stopped for a tribute to the late D'Angelo — one of neo-soul's most defining voices, who died in October 2025. Six performers honored his catalogue on the Peacock Theater stage. For context on how Black music legacy endures across decades, our earlier piece on <a href="https://cruxbuzz.com/the-blues-dont-lie-the-story-of-buddy-guy/" target="_blank">Buddy Guy's 70-year career</a> covers what that kind of longevity actually costs an artist — and what it builds.
+            </p>
+            <p>
+                Three honorary awards were given out alongside the competitive categories — a first for the ceremony at this scale. Each one went to an artist or executive whose influence stretched well beyond any single album or era.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========== STATS STRIP ========== -->
+    <section class="bet-stats">
+        <div class="bet-stats-wrap">
+            <div class="bet-label">The Night in Numbers</div>
+            <div class="bet-stats-grid">
+                <div class="bet-stat">
+                    <div class="bet-stat-num">4</div>
+                    <div class="bet-stat-lbl">Awards for Teyana Taylor — Most of Any Artist</div>
+                </div>
+                <div class="bet-stat">
+                    <div class="bet-stat-num">3</div>
+                    <div class="bet-stat-lbl">Awards for Clipse — Including Album of the Year</div>
+                </div>
+                <div class="bet-stat">
+                    <div class="bet-stat-num">3</div>
+                    <div class="bet-stat-lbl">Honorary Icon Awards Presented</div>
+                </div>
+                <div class="bet-stat">
+                    <div class="bet-stat-num">12+</div>
+                    <div class="bet-stat-lbl">Artists in Lauryn Hill's Tribute Alone</div>
+                </div>
+                <div class="bet-stat">
+                    <div class="bet-stat-num">6</div>
+                    <div class="bet-stat-lbl">Nominations — Cardi B Led All Artists</div>
+                </div>
+                <div class="bet-stat">
+                    <div class="bet-stat-num">16</div>
+                    <div class="bet-stat-lbl">Years Clipse Were Apart Before This Album</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== AWARDS BOARD ========== -->
+    <section class="bet-awards">
+        <div class="bet-awards-wrap">
+            <h2 class="bet-section-title">2026 BET Awards — Key Winners</h2>
+            <p class="bet-section-sub">Tap any card to expand the full story behind each win</p>
+
+            <div class="bet-cards-grid">
+
+                <div class="bet-card featured" onclick="betToggle(this)">
+                    <div class="bet-card-cat">Icon of the Year</div>
+                    <div class="bet-card-winner">Teyana Taylor</div>
+                    <div class="bet-card-reveal">Janet Jackson appeared without announcement to present this award — Taylor's biggest artistic influence, standing in front of her on the BET stage. Taylor's reaction: "Bitch, I'm gagging. They did not tell me Janet was coming." In her speech, she said: "I worked my a— off 20 years for this. So I'm accepting what I've earned with gratitude." She closed by addressing her daughters: "If one day people remember me as an icon, I pray the two of you always remember me simply as home."</div>
+                    <span class="bet-badge gold">4 Wins Tonight</span>
+                    <div class="bet-card-toggle">+</div>
+                </div>
+
+                <div class="bet-card" onclick="betToggle(this)">
+                    <div class="bet-card-cat">Best Actress</div>
+                    <div class="bet-card-winner">Teyana Taylor</div>
+                    <div class="bet-card-reveal">Recognized for her performance in a 2025 Paul Thomas Anderson film, for which she also received a Golden Globe Award and an Academy Award nomination for Best Supporting Actress earlier in 2026.</div>
+                    <span class="bet-badge">BET Award</span>
+                    <div class="bet-card-toggle">+</div>
+                </div>
+
+                <div class="bet-card" onclick="betToggle(this)">
+                    <div class="bet-card-cat">Video Director of the Year</div>
+                    <div class="bet-card-winner">Teyana Taylor</div>
+                    <div class="bet-card-reveal">Taylor's third competitive win of the evening, recognizing a directing career she has built alongside her work as a performer, choreographer, designer, and actress across more than two decades.</div>
+                    <span class="bet-badge">BET Award</span>
+                    <div class="bet-card-toggle">+</div>
+                </div>
+
+                <div class="bet-card" onclick="betToggle(this)">
+                    <div class="bet-card-cat">Fashion Vanguard Award</div>
+                    <div class="bet-card-winner">Teyana Taylor</div>
+                    <div class="bet-card-reveal">The fourth award of her night, recognizing her role in shaping fashion standards within the entertainment and music industry over a 20-year span.</div>
+                    <span class="bet-badge">BET Award</span>
+                    <div class="bet-card-toggle">+</div>
+                </div>
+
+                <div class="bet-card featured" onclick="betToggle(this)">
+                    <div class="bet-card-cat">Album of the Year</div>
+                    <div class="bet-card-winner">Clipse — "Let God Sort Em Out"</div>
+                    <div class="bet-card-reveal">Pusha T and No Malice reunited after 16 years apart for this Pharrell Williams-produced comeback. 13 tracks. Features from Kendrick Lamar, Nas, Tyler, the Creator, and Pharrell. The Grammy Awards had nominated it for Album of the Year and Best Rap Album in February 2026 — it did not win either. Clipse also received three total wins at BET, including Best Group and Best Hip-Hop Album.</div>
+                    <span class="bet-badge gold">3 Wins Tonight</span>
+                    <div class="bet-card-toggle">+</div>
+                </div>
+
+                <div class="bet-card" onclick="betToggle(this)">
+                    <div class="bet-card-cat">Best Female Hip-Hop Artist</div>
+                    <div class="bet-card-winner">Cardi B</div>
+                    <div class="bet-card-reveal">Cardi B won for her album "Am I The Drama?" and performed a medley including "Errtime," "Hello," "Check Please," and "Pretty & Petty." She led all nominees with six total nominations going into the night.</div>
+                    <span class="bet-badge">BET Award</span>
+                    <div class="bet-card-toggle">+</div>
+                </div>
+
+                <div class="bet-card featured" onclick="betToggle(this)">
+                    <div class="bet-card-cat">Living Legend Icon Award — Inaugural</div>
+                    <div class="bet-card-winner">Ms. Lauryn Hill</div>
+                    <div class="bet-card-reveal">The first-ever recipient of BET's new Living Legend Icon Award. Ice Cube introduced the honor. Wyclef Jean narrated a career retrospective video. A 12+ artist tribute followed, featuring SZA, Doechii, Tems, Doja Cat, Nas, Rapsody, Lizzo, Queen Latifah, Common, and Hill's own children Selah, YG, and Zion Marley. Hill then surprised the room by performing "Ex-Factor" before accepting. She said: "I do this because I love y'all... I do this because I want you to have everything that I experienced."</div>
+                    <span class="bet-badge gold">First-Ever Award</span>
+                    <div class="bet-card-toggle">+</div>
+                </div>
+
+                <div class="bet-card" onclick="betToggle(this)">
+                    <div class="bet-card-cat">Best Female R&amp;B/Pop Artist</div>
+                    <div class="bet-card-winner">Kehlani</div>
+                    <div class="bet-card-reveal">Kehlani was among the early winners of the night in the R&amp;B and pop category.</div>
+                    <span class="bet-badge">BET Award</span>
+                    <div class="bet-card-toggle">+</div>
+                </div>
+
+                <div class="bet-card" onclick="betToggle(this)">
+                    <div class="bet-card-cat">Best Male R&amp;B/Pop Artist</div>
+                    <div class="bet-card-winner">Leon Thomas</div>
+                    <div class="bet-card-reveal">Leon Thomas took home Best Male R&amp;B/Pop Artist at the 2026 ceremony.</div>
+                    <span class="bet-badge">BET Award</span>
+                    <div class="bet-card-toggle">+</div>
+                </div>
+
+                <div class="bet-card featured" onclick="betToggle(this)">
+                    <div class="bet-card-cat">Ultimate Icon Award</div>
+                    <div class="bet-card-winner">Sylvia Rhone</div>
+                    <div class="bet-card-reveal">Legendary music executive Sylvia Rhone received the Ultimate Icon Award, recognizing decades of industry leadership and her role in shaping the careers of some of the biggest names in music.</div>
+                    <span class="bet-badge gold">Honorary Award</span>
+                    <div class="bet-card-toggle">+</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== IN-BETWEEN IMAGE (Teyana Taylor at BET) ========== -->
+    <!-- FEATURE IMAGE NOTE:
+         Suggested image: Teyana Taylor accepting the Icon of the Year at 2026 BET Awards (Peacock Theater, Los Angeles)
+         Source: Official BET media / Getty Images / Wikimedia Commons Category: https://commons.wikimedia.org/wiki/Category:Teyana_Taylor
+         Alt text: Teyana Taylor accepting the 2026 BET Awards Icon of the Year presented by Janet Jackson at Peacock Theater Los Angeles
+         Title: Teyana Taylor — 2026 BET Awards Icon of the Year
+         Caption: Janet Jackson walked out unannounced, and Teyana Taylor — who had listed her as a lifelong influence — could not hold it together. Four awards in one night, 20 years in the making: was Sunday the night the industry finally caught up with her?
+    -->
+    <section class="bet-img-block">
+        <div class="bet-img-inner">
+            <div class="bet-img-placeholder">
+                [Place feature image here: Teyana Taylor at 2026 BET Awards — Getty Images / Official BET Media]
+            </div>
+            <div class="bet-img-caption">
+                Janet Jackson walked out unannounced, and Teyana Taylor — who had listed her as a lifelong influence — could not hold it together. Four awards in one night, 20 years in the making: was Sunday the night the industry finally caught up with her?<br>
+                <em>Image source: Official BET Awards media / Getty Images</em>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== QUOTES ========== -->
+    <section class="bet-quotes">
+        <div class="bet-quotes-wrap">
+            <div class="bet-label">From the Stage — Direct Quotes</div>
+
+            <div class="bet-quote">
+                <div class="bet-quote-text">"Tonight they handed me a title and that title is Icon of the Year. For a little minute, I wondered if I was supposed to feel uncomfortable saying that title out loud. But nah, I worked my a— off 20 years for this. So I'm not accepting what I've earned with arrogance, I'm accepting what I've earned with gratitude."</div>
+                <div class="bet-quote-attr">— Teyana Taylor, accepting Icon of the Year, 2026 BET Awards</div>
+            </div>
+
+            <div class="bet-quote">
+                <div class="bet-quote-text">"I believe greatness isn't measured by how many people stand beneath you, it's measured by how many people stand beside you — because you're willing to reach back. That's the only legacy I care about."</div>
+                <div class="bet-quote-attr">— Teyana Taylor</div>
+            </div>
+
+            <div class="bet-quote">
+                <div class="bet-quote-text">"To my greatest masterpiece, my babies, Junie and Rue. If one day people remember me as an icon, I pray the two of you always remember me simply as home."</div>
+                <div class="bet-quote-attr">— Teyana Taylor, closing her acceptance speech</div>
+            </div>
+
+            <div class="bet-quote">
+                <div class="bet-quote-text">"I do this because I love y'all... I do this because I want you to have everything that I experienced."</div>
+                <div class="bet-quote-attr">— Ms. Lauryn Hill, accepting the Living Legend Icon Award</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MIDDLE TEXT ========== -->
+    <section class="bet-text">
+        <div class="bet-text-wrap">
+            <p>
+                Teyana Taylor's night drew from 20 years of work across music, film, dance, and fashion. The 2025 Academy Award nomination for Best Supporting Actress — for a role in a Paul Thomas Anderson film — placed her name in conversations usually reserved for entirely different circles. The Icon of the Year award at BET pulled those threads together on a single stage. Taylor's Grammy-nominated fourth album, "Escape Room" (2025), had already signaled a shift; Sunday night at the Peacock Theater placed a ceiling on what had been accumulating for two decades. Janet Jackson appearing unannounced to present the award turned an already loaded moment into one that required nothing more from the production team — the room handled it on its own.
+            </p>
+            <p>
+                For Clipse, the Album of the Year win carried a weight that came directly from its history. "Let God Sort Em Out" — Pharrell Williams-produced, tightly structured at 13 tracks, featuring Kendrick Lamar, Nas, Tyler, the Creator, and Pharrell — had been one of the most discussed hip-hop releases of 2025. The Grammy Awards nominated it for Album of the Year and Best Rap Album, then did not award either. In February 2026, Clipse did win Best Rap Performance at the Grammys — their first Grammy win ever. At BET, the album took three. That gap between Grammy recognition and BET recognition became one of the most discussed threads in music spaces well before midnight. The <a href="https://cruxbuzz.com/diddys-courtroom-drama-casts-shadows-over-his-grammy-winning-sample-but-sting-stands-firm-on-ownership/" target="_blank">history of Grammy-winning catalogues and ownership battles</a> covered here earlier adds useful context to how the industry values music differently depending on the platform.
+            </p>
+            <p>
+                Cardi B's "Am I The Drama?" medley brought four tracks to the Peacock Theater stage. Her Best Female Hip-Hop win confirmed how the album landed with the audience the show is built for. Among the broader category of pop group reunions in 2026, <a href="https://cruxbuzz.com/fifth-harmony-plans-2026-reunion-without-camila-cabello-as-work-from-home-hits-1-5b-streams/" target="_blank">Fifth Harmony's announced 2026 reunion</a> tracks what that kind of return looks like for groups who split at the height of their streaming peak — a contrast to Clipse's more complete comeback. Druski's hosting segments also generated their own conversation: he called out Ray J, re-enacted Durand Bernarr's viral Grammy stage run in a fictional "Coulda Been Records" audition bit, and — at 28 years old — became the youngest person ever to host the BET Awards.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========== IN-BETWEEN IMAGE (Lauryn Hill) ========== -->
+    <!-- SECOND IMAGE NOTE:
+         Suggested image: Lauryn Hill performing "Ex-Factor" at the 2026 BET Awards Living Legend tribute
+         Source: Official BET media / Getty Images
+         Alt text: Lauryn Hill performing Ex-Factor at the 2026 BET Awards as recipient of the first-ever Living Legend Icon Award
+         Title: Lauryn Hill — 2026 BET Awards Living Legend Icon Award and Performance
+         Caption: Twelve artists performed in tribute before Lauryn Hill walked out and performed "Ex-Factor" herself — three decades since "The Miseducation," and the room was still listening at the same volume.
+    -->
+
+    <!-- ========== D'ANGELO TRIBUTE ========== -->
+    <section class="bet-tribute">
+        <div class="bet-tribute-wrap">
+            <h3 class="bet-tribute-head">In Memory of D'Angelo — Tribute Performance</h3>
+            <div class="bet-tags">
+                <span class="bet-tag">Raye</span>
+                <span class="bet-tag">Ari Lennox</span>
+                <span class="bet-tag">Durand Bernarr</span>
+                <span class="bet-tag">BJ The Chicago Kid</span>
+                <span class="bet-tag">George Clinton</span>
+                <span class="bet-tag">Parliament-Funkadelic</span>
+            </div>
+            <p>D'Angelo died in October 2025. His catalogue — "Brown Sugar" (1995), "Voodoo" (2000), "Black Messiah" (2014) — helped define what neo-soul could be. Six performers gathered on the Peacock Theater stage to honor that body of work. Durand Bernarr's inclusion carried its own thread through the evening: he had gone viral earlier in the year for running onto the Grammy stage mid-performance, and Druski had re-staged that moment during his hosting segment. Both were on the same BET stage on the same night, which became one of those small coincidences that actually made the broadcast feel connected rather than assembled.</p>
+        </div>
+    </section>
+
+    <!-- ========== TIMELINE ========== -->
+    <section class="bet-timeline">
+        <div class="bet-timeline-wrap">
+            <h2 class="bet-section-title">How the Evening Unfolded</h2>
+            <div class="bet-tl-list">
+
+                <div class="bet-tl-item">
+                    <div class="bet-tl-moment">Show Opens</div>
+                    <div class="bet-tl-title">Druski Makes History as Youngest Host</div>
+                    <div class="bet-tl-desc">At 28, Druski became the youngest person ever to host the BET Awards. MC Lyte returned as announcer, bringing her own historic streak to the evening.</div>
+                </div>
+
+                <div class="bet-tl-item">
+                    <div class="bet-tl-moment">Early Wins</div>
+                    <div class="bet-tl-title">Kehlani and Leon Thomas Open the Night</div>
+                    <div class="bet-tl-desc">Best Female and Male R&amp;B/Pop Artist were among the first competitive categories awarded on the night.</div>
+                </div>
+
+                <div class="bet-tl-item">
+                    <div class="bet-tl-moment">Honorary Award</div>
+                    <div class="bet-tl-title">Sylvia Rhone Receives the Ultimate Icon Award</div>
+                    <div class="bet-tl-desc">Music industry executive Sylvia Rhone was recognized with one of the evening's three honorary awards for her decades-long career leading major labels and shaping the careers of multiple generational artists.</div>
+                </div>
+
+                <div class="bet-tl-item">
+                    <div class="bet-tl-moment">D'Angelo Tribute</div>
+                    <div class="bet-tl-title">Six Performers Honor an R&amp;B Giant</div>
+                    <div class="bet-tl-desc">Raye, Ari Lennox, Durand Bernarr, BJ The Chicago Kid, George Clinton, and Parliament-Funkadelic performed in tribute to D'Angelo, who died in October 2025.</div>
+                </div>
+
+                <div class="bet-tl-item">
+                    <div class="bet-tl-moment">Cardi B Performs</div>
+                    <div class="bet-tl-title">"Am I The Drama?" Medley on the BET Stage</div>
+                    <div class="bet-tl-desc">Cardi B performed "Errtime," "Hello," "Check Please," and "Pretty &amp; Petty" before winning Best Female Hip-Hop Artist. She led all nominees going into the ceremony with six total nominations.</div>
+                </div>
+
+                <div class="bet-tl-item">
+                    <div class="bet-tl-moment">Living Legend Honored</div>
+                    <div class="bet-tl-title">Lauryn Hill Receives BET's First-Ever Living Legend Icon Award</div>
+                    <div class="bet-tl-desc">Ice Cube introduced. Wyclef Jean narrated the career retrospective. SZA, Doechii, Tems, Doja Cat, Nas, Rapsody, Lizzo, Queen Latifah, Common, and Hill's own children performed. Hill then surprised the room and performed "Ex-Factor" before accepting.</div>
+                </div>
+
+                <div class="bet-tl-item">
+                    <div class="bet-tl-moment">Album of the Year</div>
+                    <div class="bet-tl-title">Clipse Win with "Let God Sort Em Out"</div>
+                    <div class="bet-tl-desc">Pusha T and No Malice claimed the top album prize — 16 years after the duo last released a full project together. The win came months after Grammy nominations that did not convert to wins.</div>
+                </div>
+
+                <div class="bet-tl-item">
+                    <div class="bet-tl-moment">The Moment of the Night</div>
+                    <div class="bet-tl-title">Janet Jackson Surprises Teyana Taylor — Icon of the Year</div>
+                    <div class="bet-tl-desc">Janet Jackson appeared without announcement to present Icon of the Year. Taylor's reaction — "Bitch, I'm gagging. They did not tell me Janet was coming." — was the most-shared broadcast moment before the show ended. Her full acceptance speech covered two decades of work, gratitude, and what she wants her daughters to remember her as.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONCLUSION TEXT ========== -->
+    <section class="bet-concl">
+        <div class="bet-concl-wrap">
+            <p>
+                The 2026 BET Awards covered a range of categories: Teyana Taylor's four wins including Icon of the Year, Best Actress, Video Director of the Year, and Fashion Vanguard; Clipse's Album of the Year for "Let God Sort Em Out" alongside two additional wins; Cardi B's Best Female Hip-Hop Artist for "Am I The Drama?"; and the inaugural Living Legend Icon Award for Lauryn Hill. Honorary recognition also went to Sylvia Rhone and Teyana Taylor's Icon of the Year. The D'Angelo tribute closed a chapter for an artist whose catalogue spanned three decades of neo-soul. Druski hosted as the youngest person ever to hold the role. The full official awards list and broadcast information are on the <a href="https://www.bet.com/bet-awards" target="_blank" rel="noopener">BET Awards official page</a>. BET's <a href="https://www.bet.com/article/3rzgnu/ms-lauryn-hill-to-receive-the-living-legend-icon-award-at-the-bet-awards-2026" target="_blank" rel="noopener">official announcement on Lauryn Hill's Living Legend Icon Award</a> details the background of the new category. For more from the entertainment world, see the full <a href="https://cruxbuzz.com/category/entertainment/" target="_blank">entertainment section on CruxBuzz</a>.
+            </p>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    function betToggle(card) {
+        const reveal = card.querySelector('.bet-card-reveal');
+        const toggle = card.querySelector('.bet-card-toggle');
+        const isOpen = card.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('#bet2026 .bet-card').forEach(function(c) {
+            c.classList.remove('open');
+            c.style.borderColor = '';
+        });
+
+        if (!isOpen) {
+            card.classList.add('open');
+            card.style.borderColor = '#D4AF37';
+        }
+    }
+</script>
+</body>
+</html>

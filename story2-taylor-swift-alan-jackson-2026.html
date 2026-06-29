@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Scoped — does not affect WordPress theme */
+        #aj2026 *,
+        #aj2026 *::before,
+        #aj2026 *::after {
+            box-sizing: border-box;
+        }
+
+        #aj2026 {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #0E1926;
+            color: #F0EBE0;
+            max-width: 100%;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* ===== SHARED LINKS ===== */
+        #aj2026 a.aj-link {
+            color: #D97706;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(217, 119, 6, 0.35);
+            transition: border-color 0.25s;
+        }
+        #aj2026 a.aj-link:hover {
+            border-color: #D97706;
+        }
+
+        /* ===== INTRO ===== */
+        .aj-intro {
+            padding: 3rem 1.5rem;
+            background: linear-gradient(160deg, #0E1926 0%, #1A2C44 100%);
+            border-bottom: 1px solid #D9770622;
+        }
+        .aj-intro-inner { max-width: 860px; margin: 0 auto; }
+        .aj-intro p {
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            line-height: 1.85;
+            color: #DDD5C0;
+            margin: 0 0 1.3rem;
+        }
+        .aj-intro p:last-child { margin-bottom: 0; }
+
+        /* ===== LABEL ===== */
+        .aj-label {
+            text-align: center;
+            font-size: 0.78rem;
+            letter-spacing: 3.5px;
+            color: #D97706;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-family: sans-serif;
+        }
+
+        /* ===== STATS ===== */
+        .aj-stats {
+            padding: 2.5rem 1.5rem;
+            background: #162234;
+        }
+        .aj-stats-wrap { max-width: 920px; margin: 0 auto; }
+        .aj-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 1rem;
+        }
+        .aj-stat {
+            background: #0E1926;
+            border: 1px solid #2A3A52;
+            border-top: 3px solid #D97706;
+            border-radius: 8px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+        .aj-stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 28px rgba(217,119,6,0.12);
+        }
+        .aj-stat-num {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            color: #D97706;
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+        .aj-stat-lbl {
+            font-size: 0.82rem;
+            color: #7A8A9A;
+            line-height: 1.45;
+            font-family: sans-serif;
+        }
+
+        /* ===== SECTION HEADING ===== */
+        .aj-section-title {
+            font-size: clamp(1.3rem, 4vw, 1.9rem);
+            color: #D97706;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .aj-section-sub {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #7A8A9A;
+            margin-bottom: 2.5rem;
+            font-family: sans-serif;
+        }
+
+        /* ===== PERFORMERS GRID ===== */
+        .aj-performers {
+            padding: 2.5rem 1.5rem;
+            background: #0E1926;
+        }
+        .aj-performers-wrap { max-width: 920px; margin: 0 auto; }
+        .aj-p-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .aj-p-tag {
+            background: #162234;
+            border: 1px solid #2A3A52;
+            color: #DDD5C0;
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-family: sans-serif;
+            transition: border-color 0.25s, color 0.25s;
+        }
+        .aj-p-tag:hover {
+            border-color: #D97706;
+            color: #D97706;
+        }
+        .aj-p-tag.headliner {
+            background: #D97706;
+            color: #0E1926;
+            border-color: #D97706;
+            font-weight: 700;
+        }
+
+        /* ===== IMAGE BLOCK ===== */
+        .aj-img-block {
+            padding: 0 1.5rem 2rem;
+            background: #0E1926;
+        }
+        .aj-img-inner {
+            max-width: 860px;
+            margin: 0 auto;
+            border: 1px solid #2A3A52;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .aj-img-placeholder {
+            width: 100%;
+            min-height: 280px;
+            background: linear-gradient(135deg, #162234, #1E2E44);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3A4A5A;
+            font-size: 0.88rem;
+            font-family: sans-serif;
+            text-align: center;
+            padding: 2rem;
+        }
+        .aj-img-caption {
+            padding: 0.75rem 1rem;
+            font-size: 0.82rem;
+            color: #7A8A9A;
+            font-style: italic;
+            background: #162234;
+            text-align: center;
+            font-family: sans-serif;
+        }
+
+        /* ===== CAREER TIMELINE ===== */
+        .aj-career {
+            padding: 3rem 1.5rem;
+            background: #162234;
+        }
+        .aj-career-wrap { max-width: 820px; margin: 0 auto; }
+        .aj-tl-list {
+            position: relative;
+            padding-left: 2rem;
+            margin-top: 2rem;
+        }
+        .aj-tl-list::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #D97706, #8B2A2A 80%, transparent);
+        }
+        .aj-tl-item {
+            position: relative;
+            padding: 0 0 2.2rem 1.8rem;
+            cursor: pointer;
+        }
+        .aj-tl-item::before {
+            content: '';
+            position: absolute;
+            left: -0.45rem;
+            top: 0.35rem;
+            width: 0.9rem;
+            height: 0.9rem;
+            border-radius: 50%;
+            background: #D97706;
+            border: 2px solid #162234;
+            box-shadow: 0 0 0 3px rgba(217,119,6,0.2);
+            transition: background 0.25s;
+        }
+        .aj-tl-item:hover::before { background: #E8A040; }
+        .aj-tl-year {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            color: #D97706;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+            font-family: sans-serif;
+        }
+        .aj-tl-title {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            font-weight: 700;
+            color: #F0EBE0;
+            margin-bottom: 0.3rem;
+        }
+        .aj-tl-desc {
+            font-size: 0.88rem;
+            color: #7A8A9A;
+            line-height: 1.6;
+            font-family: sans-serif;
+        }
+
+        /* ===== TAYLOR SWIFT REACTION SECTION ===== */
+        .aj-reaction {
+            padding: 3rem 1.5rem;
+            background: #0E1926;
+            border-top: 1px solid #2A3A52;
+        }
+        .aj-reaction-wrap { max-width: 860px; margin: 0 auto; }
+        .aj-reaction-box {
+            background: #162234;
+            border: 1px solid #2A3A52;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        .aj-reaction-title {
+            font-size: clamp(1.1rem, 3vw, 1.35rem);
+            color: #F0EBE0;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .aj-reaction-text {
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            color: #DDD5C0;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .aj-reaction-text:last-child { margin-bottom: 0; }
+
+        /* Reaction Meter */
+        .aj-meter-wrap {
+            margin: 1.5rem 0;
+        }
+        .aj-meter-label-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.82rem;
+            color: #7A8A9A;
+            margin-bottom: 0.4rem;
+            font-family: sans-serif;
+        }
+        .aj-meter-bar {
+            height: 12px;
+            border-radius: 6px;
+            background: #0E1926;
+            overflow: hidden;
+            border: 1px solid #2A3A52;
+        }
+        .aj-meter-fill {
+            height: 100%;
+            border-radius: 6px;
+            animation: meterFill 1.5s ease forwards;
+            transform-origin: left;
+        }
+        @keyframes meterFill {
+            from { width: 0%; }
+            to { width: var(--target-width); }
+        }
+
+        /* Quote pull */
+        .aj-pull-quote {
+            margin: 1.5rem 0;
+            padding: 1.2rem 1.5rem;
+            background: rgba(14,25,38,0.6);
+            border-left: 4px solid #D97706;
+            border-radius: 0 8px 8px 0;
+        }
+        .aj-pull-quote-text {
+            font-style: italic;
+            font-size: clamp(0.95rem, 2.5vw, 1.08rem);
+            color: #DDD5C0;
+            line-height: 1.75;
+            margin-bottom: 0.5rem;
+        }
+        .aj-pull-quote-attr {
+            font-size: 0.82rem;
+            color: #D97706;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+
+        /* ===== WEDDING CONTEXT ===== */
+        .aj-wedding {
+            padding: 2.5rem 1.5rem;
+            background: linear-gradient(135deg, #162234, #1A1830);
+            border-top: 1px solid #2A3A52;
+        }
+        .aj-wedding-wrap { max-width: 860px; margin: 0 auto; }
+        .aj-wedding-card {
+            background: #0E1926;
+            border: 1px solid #2A3A52;
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        .aj-wedding-head {
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+            color: #D97706;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-family: sans-serif;
+        }
+        .aj-wedding-facts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .aj-wfact {
+            padding: 1rem;
+            background: #162234;
+            border-radius: 8px;
+            border: 1px solid #2A3A52;
+        }
+        .aj-wfact-label {
+            font-size: 0.72rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #D97706;
+            margin-bottom: 0.3rem;
+            font-family: sans-serif;
+        }
+        .aj-wfact-value {
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            color: #F0EBE0;
+            font-weight: 600;
+        }
+        .aj-wedding-text {
+            font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+            color: #DDD5C0;
+            line-height: 1.8;
+        }
+
+        /* ===== MIDDLE TEXT ===== */
+        .aj-text {
+            padding: 2.5rem 1.5rem;
+            background: #162234;
+        }
+        .aj-text-wrap { max-width: 860px; margin: 0 auto; }
+        .aj-text p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            line-height: 1.85;
+            color: #DDD5C0;
+            margin: 0 0 1.3rem;
+        }
+        .aj-text p:last-child { margin-bottom: 0; }
+        .aj-text a { color: #D97706; text-decoration: none; border-bottom: 1px solid rgba(217,119,6,0.35); }
+        .aj-text a:hover { border-color: #D97706; }
+
+        /* ===== CMT DISEASE INFO ===== */
+        .aj-cmt {
+            padding: 2.5rem 1.5rem;
+            background: #0E1926;
+            border-top: 1px solid #2A3A52;
+        }
+        .aj-cmt-wrap { max-width: 860px; margin: 0 auto; }
+        .aj-cmt-card {
+            background: #162234;
+            border: 1px solid #2A3A52;
+            border-radius: 12px;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+        .aj-cmt-icon {
+            font-size: 2.5rem;
+            color: #D97706;
+        }
+        .aj-cmt-content h3 {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: #F0EBE0;
+            margin-bottom: 0.75rem;
+        }
+        .aj-cmt-content p {
+            font-size: clamp(0.9rem, 2.5vw, 1rem);
+            color: #DDD5C0;
+            line-height: 1.75;
+            margin: 0 0 0.75rem;
+        }
+        .aj-cmt-content a { color: #D97706; text-decoration: none; border-bottom: 1px solid rgba(217,119,6,0.35); }
+        .aj-cmt-content a:hover { border-color: #D97706; }
+
+        /* ===== CONCLUSION ===== */
+        .aj-concl {
+            padding: 3rem 1.5rem;
+            background: #0E1926;
+            border-top: 2px solid #D9770644;
+        }
+        .aj-concl-wrap { max-width: 860px; margin: 0 auto; }
+        .aj-concl p {
+            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            line-height: 1.85;
+            color: #DDD5C0;
+            margin: 0 0 1.3rem;
+        }
+        .aj-concl p:last-child { margin-bottom: 0; }
+        .aj-concl a { color: #D97706; text-decoration: none; border-bottom: 1px solid rgba(217,119,6,0.35); }
+        .aj-concl a:hover { border-color: #D97706; }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+            .aj-stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .aj-tl-list { padding-left: 1.5rem; }
+            .aj-cmt-card { grid-template-columns: 1fr; }
+            .aj-wedding-facts { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .aj-stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .aj-wedding-facts { grid-template-columns: 1fr; }
+            #aj2026 section { padding-left: 1rem; padding-right: 1rem; }
+            .aj-img-block { padding-left: 1rem; padding-right: 1rem; }
+        }
+    </style>
+</head>
+<body>
+<div id="aj2026">
+
+    <!-- ========== INTRO TEXT ========== -->
+    <section class="aj-intro">
+        <div class="aj-intro-inner">
+            <p>
+                On June 27, 2026, Nashville's <a href="https://nissanstadium.com/event/alan-jackson-last-call-the-finale/" target="_blank" rel="noopener" class="aj-link">Nissan Stadium</a> hosted the last full-length road show of Alan Jackson's 40-year career. "Last Call: One More for the Road — The Finale" drew 50,000 fans to a sell-out crowd that filled both the stands and the stadium floor. Country music sent some of its biggest working names to perform Jackson's songs on his final stage: Luke Bryan, Eric Church, Luke Combs, George Strait, Carrie Underwood, Miranda Lambert, Lainey Wilson, and others across a four-hour set. Jackson then performed himself. What began as a tribute to a country legend closed with a speech that landed across platforms: "If anyone has lived the American dream, it's me."
+            </p>
+            <p>
+                For a brief stretch of the evening, the conversation shifted. A pre-recorded video tribute from Taylor Swift — shown on the stadium screens during the show — drew mixed cheers and audible boos from sections of the 50,000-strong crowd. Videos captured the split reaction and spread widely. Social media lit up on both sides. The moment arrived less than a week before Swift's scheduled July 3 wedding to Travis Kelce at Madison Square Garden in New York City, which added its own layer to how the story moved.
+            </p>
+            <p>
+                Jackson's farewell came years after a Charcot-Marie-Tooth (CMT) disease diagnosis that affected his balance and made continued touring increasingly difficult. His entire Last Call tour — including the Finale at Nissan Stadium — raised funds for the <a href="https://cmtrf.org/" target="_blank" rel="noopener" class="aj-link">CMT Research Foundation</a>, the only nonprofit focused entirely on delivering treatments and a cure for the condition that affects three million people worldwide. For a broader look at what large-scale concert events involve behind the scenes, our coverage of <a href="https://cruxbuzz.com/rockville-2025-150-bands-200000-fans-and-iconic-reunions-set-daytona-stage-for-north-americas-largest-rock-festival/" target="_blank" class="aj-link">Rockville 2025's 200,000-fan festival</a> covers the logistical scale these productions reach.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========== CONCERT STATS ========== -->
+    <section class="aj-stats">
+        <div class="aj-stats-wrap">
+            <div class="aj-label">The Finale — By the Numbers</div>
+            <div class="aj-stats-grid">
+                <div class="aj-stat">
+                    <div class="aj-stat-num">50K</div>
+                    <div class="aj-stat-lbl">Sell-Out Crowd at Nissan Stadium Nashville</div>
+                </div>
+                <div class="aj-stat">
+                    <div class="aj-stat-num">4 hrs</div>
+                    <div class="aj-stat-lbl">Length of the Final Concert</div>
+                </div>
+                <div class="aj-stat">
+                    <div class="aj-stat-num">14+</div>
+                    <div class="aj-stat-lbl">Guest Artists Who Performed Jackson's Songs</div>
+                </div>
+                <div class="aj-stat">
+                    <div class="aj-stat-num">$2.25M+</div>
+                    <div class="aj-stat-lbl">Raised for CMT Research Foundation — Full Tour</div>
+                </div>
+                <div class="aj-stat">
+                    <div class="aj-stat-num">$3/ticket</div>
+                    <div class="aj-stat-lbl">$1 per Ticket + $2 Donor Match at the Finale</div>
+                </div>
+                <div class="aj-stat">
+                    <div class="aj-stat-num">40 yrs</div>
+                    <div class="aj-stat-lbl">Jackson's Recording and Touring Career</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PERFORMERS ========== -->
+    <section class="aj-performers">
+        <div class="aj-performers-wrap">
+            <h2 class="aj-section-title">Who Performed at "The Finale"</h2>
+            <p class="aj-section-sub">14+ country artists took the Nissan Stadium stage to honor Jackson's songs — before Jackson himself performed</p>
+            <div class="aj-p-grid">
+                <span class="aj-p-tag headliner">Alan Jackson</span>
+                <span class="aj-p-tag">Luke Bryan</span>
+                <span class="aj-p-tag">Eric Church</span>
+                <span class="aj-p-tag">Luke Combs</span>
+                <span class="aj-p-tag">George Strait</span>
+                <span class="aj-p-tag">Carrie Underwood</span>
+                <span class="aj-p-tag">Miranda Lambert</span>
+                <span class="aj-p-tag">Lainey Wilson</span>
+                <span class="aj-p-tag">Thomas Rhett</span>
+                <span class="aj-p-tag">Riley Green</span>
+                <span class="aj-p-tag">Cody Johnson</span>
+                <span class="aj-p-tag">Jon Pardi</span>
+                <span class="aj-p-tag">Jake Owen</span>
+                <span class="aj-p-tag">Little Big Town</span>
+                <span class="aj-p-tag">Lee Ann Womack</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURE IMAGE (Alan Jackson) ========== -->
+    <!-- IMAGE NOTE:
+         Suggested image: Alan Jackson at Nissan Stadium Nashville farewell concert, June 27, 2026
+         Source: Wikimedia Commons - https://commons.wikimedia.org/wiki/File:Alan_Jackson_1.jpg
+         or Official Nissan Stadium / Getty Images
+         Alt text: Alan Jackson performing at his Last Call One More for the Road Finale farewell concert at Nissan Stadium Nashville June 27 2026
+         Title: Alan Jackson — Last Call: One More for the Road, The Finale, Nashville June 2026
+         Caption: Alan Jackson performed his last full-length road show on June 27 at Nissan Stadium, Nashville — a four-hour farewell attended by 50,000 fans. The same stage that night carried brief footage of Taylor Swift, sparking a crowd response no one in the stadium fully predicted.
+         License: Wikimedia Commons CC BY-SA 2.0 (for Alan Jackson 1.jpg)
+    -->
+    <section class="aj-img-block">
+        <div class="aj-img-inner">
+            <div class="aj-img-placeholder">
+                [Place feature image here: Alan Jackson at Last Call Finale, Nissan Stadium Nashville — Getty Images / Official Nissan Stadium Media / Wikimedia Commons: commons.wikimedia.org/wiki/File:Alan_Jackson_1.jpg]
+            </div>
+            <div class="aj-img-caption">
+                Alan Jackson performed his last full-length road show on June 27 at Nissan Stadium, Nashville — a four-hour farewell attended by 50,000 fans. The same stage that night carried brief footage of Taylor Swift, sparking a crowd response no one in the stadium fully predicted.<br>
+                <em>Photo source: Wikimedia Commons / Official media (CC BY-SA 2.0)</em>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CAREER TIMELINE ========== -->
+    <section class="aj-career">
+        <div class="aj-career-wrap">
+            <h2 class="aj-section-title">Alan Jackson — Four Decades on the Road</h2>
+            <p class="aj-section-sub">From a U-Haul to Nashville to 75 million records sold worldwide</p>
+            <div class="aj-tl-list">
+
+                <div class="aj-tl-item">
+                    <div class="aj-tl-year">1985</div>
+                    <div class="aj-tl-title">Jackson and His Wife Drive to Nashville</div>
+                    <div class="aj-tl-desc">Jackson and his wife moved to Nashville with a U-Haul trailer to pursue a career in country music. He would later describe this as the beginning of "the American dream." In Nashville, he was initially unknown — working in the mailroom at The Nashville Network before landing a recording deal.</div>
+                </div>
+
+                <div class="aj-tl-item">
+                    <div class="aj-tl-year">1989–1990</div>
+                    <div class="aj-tl-title">First Singles and Debut Album</div>
+                    <div class="aj-tl-desc">Jackson released his debut album "Here in the Real World" in 1990. His first top 10 single launched a run of commercial success that would carry through the 1990s and 2000s.</div>
+                </div>
+
+                <div class="aj-tl-item">
+                    <div class="aj-tl-year">1990s</div>
+                    <div class="aj-tl-title">A Decade of #1 Country Singles</div>
+                    <div class="aj-tl-desc">Hits including "Chattahoochee," "Drive," "It's Five O'Clock Somewhere" (with Jimmy Buffett), "Mercury Blues," and "Gone Country" defined mainstream country radio for a decade. He sold over 44 million records in the U.S. alone.</div>
+                </div>
+
+                <div class="aj-tl-item">
+                    <div class="aj-tl-year">2001</div>
+                    <div class="aj-tl-title">"Where Were You (When the World Stopped Turning)"</div>
+                    <div class="aj-tl-desc">Released six weeks after September 11, this song became one of the most-heard country responses to the event. It won the Country Music Association's Song of the Year in 2002.</div>
+                </div>
+
+                <div class="aj-tl-item">
+                    <div class="aj-tl-year">2021</div>
+                    <div class="aj-tl-title">Jackson Publicly Reveals CMT Disease Diagnosis</div>
+                    <div class="aj-tl-desc">Jackson disclosed he had been diagnosed with Charcot-Marie-Tooth disease — a hereditary neuropathy affecting balance and sensation in the limbs — roughly a decade before going public. He continued to perform but announced the diagnosis would eventually end his touring career.</div>
+                </div>
+
+                <div class="aj-tl-item">
+                    <div class="aj-tl-year">2024–2025</div>
+                    <div class="aj-tl-title">"Last Call: One More for the Road" Tour</div>
+                    <div class="aj-tl-desc">Jackson launched his farewell tour across North America, raising over $2.25 million total for the CMT Research Foundation through a portion of every ticket sold, matched by donors. The tour ended with the Finale in Nashville.</div>
+                </div>
+
+                <div class="aj-tl-item">
+                    <div class="aj-tl-year">May 17, 2025</div>
+                    <div class="aj-tl-title">Milwaukee — The Retirement Announcement</div>
+                    <div class="aj-tl-desc">At a concert in Milwaukee, Wisconsin, Jackson formally announced the end of his touring career. He said: "It's been a long, sweet ride. It started 40 years ago this September. My wife and I drove to Nashville with an old U-Haul trailer and chased this dream."</div>
+                </div>
+
+                <div class="aj-tl-item">
+                    <div class="aj-tl-year">June 27, 2026</div>
+                    <div class="aj-tl-title">The Finale — Nissan Stadium, Nashville</div>
+                    <div class="aj-tl-desc">50,000 fans. 14+ guest artists. A four-hour concert. Jackson sat on a stool for part of his own set and said: "If anyone has lived the American dream, it's me." The show will be released as an NBC concert special later in 2026. The Country Music Hall of Fame and Belmont University both hosted live streams of the event for those without tickets.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TAYLOR SWIFT REACTION SECTION ========== -->
+    <section class="aj-reaction">
+        <div class="aj-reaction-wrap">
+            <h2 class="aj-section-title">The Tribute That Split a Stadium</h2>
+            <p class="aj-section-sub">A pre-recorded video from Taylor Swift — and what happened when it played</p>
+
+            <div class="aj-reaction-box">
+                <p class="aj-reaction-text">
+                    During the show, a pre-recorded video tribute from Taylor Swift played on the stadium screens. Swift had covered Jackson's song "Drive" in 2008 for an episode of CMT: Giants. In her message, she said: "I just want to say thank you for your decades of your incredible songwriting and performances and the way that means so much to us, the fans." She also praised "Drive" specifically: "In that song you paint such a picture and let us into details of your personal life."
+                </p>
+
+                <div class="aj-pull-quote">
+                    <div class="aj-pull-quote-text">"I just want to say thank you for your decades of your incredible songwriting and performances and the way that means so much to us, the fans."</div>
+                    <div class="aj-pull-quote-attr">— Taylor Swift, in her pre-recorded tribute video for Alan Jackson's Finale, June 27, 2026</div>
+                </div>
+
+                <p class="aj-reaction-text">
+                    The crowd's response was split. Multiple videos shared on social media captured audible booing from sections of the 50,000-person audience, alongside cheers from other sections. Much of Swift's message was difficult to hear clearly over the combined audience reaction. Fans in attendance later offered conflicting accounts of whether the boos were directed at Swift specifically or were part of a more general mixed reaction.
+                </p>
+
+                <!-- Reaction Visualization -->
+                <div class="aj-meter-wrap">
+                    <div class="aj-meter-label-row">
+                        <span>Cheers captured in shared videos</span>
+                        <span>Boos reported in sections</span>
+                    </div>
+                    <div style="display: grid; gap: 0.6rem;">
+                        <div>
+                            <div style="font-size:0.78rem; color:#7A8A9A; margin-bottom:0.3rem; font-family:sans-serif;">Crowd reaction — as reported across social media footage (contested)</div>
+                            <div class="aj-meter-bar">
+                                <div class="aj-meter-fill" style="background: linear-gradient(90deg, #D97706, #E8B84B); --target-width: 55%;" id="cheerMeter"></div>
+                            </div>
+                            <div style="font-size:0.72rem; color:#D97706; margin-top:0.25rem; font-family:sans-serif;">Cheers documented</div>
+                        </div>
+                        <div>
+                            <div class="aj-meter-bar">
+                                <div class="aj-meter-fill" style="background: linear-gradient(90deg, #8B2A2A, #C04040); --target-width: 45%;" id="booMeter"></div>
+                            </div>
+                            <div style="font-size:0.72rem; color:#C04040; margin-top:0.25rem; font-family:sans-serif;">Boos reported from sections</div>
+                        </div>
+                    </div>
+                    <div style="font-size:0.72rem; color:#5A6A7A; margin-top:0.75rem; font-family:sans-serif; font-style:italic;">Note: The breakdown above reflects contested social media accounts and is not a measured crowd survey. Accounts varied widely depending on where in the stadium the video was recorded.</div>
+                </div>
+
+                <p class="aj-reaction-text">
+                    Swift's supporters responded online with the hashtag phrases including "How Nashville Treats One Of Their Own" — pointing out that Swift grew up performing country music and had strong Nashville roots before her mainstream pop career. The incident occurred just under a week before her scheduled July 3 wedding to Travis Kelce, which added further attention to the story as it spread.
+                </p>
+
+                <p class="aj-reaction-text">
+                    Concert crowd disruptions and audience reactions at live events have become a recurrent story in 2026. <a href="https://cruxbuzz.com/nick-jonas-forced-off-stage-by-laser-pointer-in-prague-how-concert-disruption-sparked-fan-outrage/" target="_blank" class="aj-link">Our earlier report on the Nick Jonas laser pointer incident in Prague</a> covered how audience conduct at large concerts continues to draw debate about where the line sits between crowd energy and disrespect toward performers.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== IN-BETWEEN IMAGE (Taylor Swift) ========== -->
+    <!-- SECOND IMAGE NOTE:
+         Suggested image: Taylor Swift in 2026 (recent press photo, event appearance)
+         Source: Official Taylor Swift press media / Wikimedia Commons Category: https://commons.wikimedia.org/wiki/Category:Taylor_Swift
+         Alt text: Taylor Swift in 2026 days before her July 3 wedding to Travis Kelce at Madison Square Garden and following her virtual tribute at Alan Jackson's farewell concert
+         Title: Taylor Swift — Virtual Tribute at Alan Jackson's Last Concert and Pre-Wedding Week, June 2026
+         Caption: Swift's tribute message referenced a cover she first performed 18 years earlier — and set off a split crowd reaction that spread far beyond Nissan Stadium. Her MSG wedding to Travis Kelce follows on July 3.
+    -->
+
+    <!-- ========== WEDDING CONTEXT SECTION ========== -->
+    <section class="aj-wedding">
+        <div class="aj-wedding-wrap">
+            <h2 class="aj-section-title">What Else Is Happening in Swift's Week</h2>
+            <p class="aj-section-sub">The Alan Jackson incident landed days before one of the most anticipated celebrity weddings in years</p>
+
+            <div class="aj-wedding-card">
+                <div class="aj-wedding-head">Taylor Swift + Travis Kelce — What Has Been Reported</div>
+                <div class="aj-wedding-facts">
+                    <div class="aj-wfact">
+                        <div class="aj-wfact-label">Engagement Announced</div>
+                        <div class="aj-wfact-value">August 26, 2025</div>
+                    </div>
+                    <div class="aj-wfact">
+                        <div class="aj-wfact-label">Wedding Date (Reported)</div>
+                        <div class="aj-wfact-value">July 3, 2026</div>
+                    </div>
+                    <div class="aj-wfact">
+                        <div class="aj-wfact-label">Venue (Reported)</div>
+                        <div class="aj-wfact-value">Madison Square Garden, New York City</div>
+                    </div>
+                    <div class="aj-wfact">
+                        <div class="aj-wfact-label">Venue Hire Cost (Reported)</div>
+                        <div class="aj-wfact-value">~$3 million for 3 days</div>
+                    </div>
+                    <div class="aj-wfact">
+                        <div class="aj-wfact-label">Street Permit</div>
+                        <div class="aj-wfact-value">Filed July 2–4; streets around MSG closed</div>
+                    </div>
+                    <div class="aj-wfact">
+                        <div class="aj-wfact-label">NDA</div>
+                        <div class="aj-wfact-value">Included with save-the-date invitations</div>
+                    </div>
+                </div>
+                <p class="aj-wedding-text">
+                    Kelce announced engagement plans on the September 17, 2025 episode of his podcast "New Heights" with guest host Jimmy Fallon. An event planning company filed a permit with New York City in late June, which was first reported by The New York Times on June 24. One city official confirmed the July 3 date and the wedding purpose of the permit, per that report. The couple has not made a formal public statement confirming the venue or date.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SWIFT'S RECENT MUSIC CONTEXT ========== -->
+    <section class="aj-text">
+        <div class="aj-text-wrap">
+            <p>
+                The Alan Jackson tribute also came shortly after Swift's most recent chart run. "I Knew It, I Knew You" — written and produced with Jack Antonoff — serves as the emotional centerpiece of the Toy Story 5 soundtrack. It debuted at No. 1 on the <a href="https://www.billboard.com" target="_blank" rel="noopener" class="aj-link" style="color:#D97706; border-bottom-color: rgba(217,119,6,0.35);">Billboard Hot 100</a> on June 20, 2026, making it Swift's 15th career chart-topper and ninth song to debut in the top spot. The track scored 18.7 million official streams, 40.1 million radio airplay audience impressions, and 183,000 units sold in the U.S. in its first week. It ran for a second consecutive week at No. 1 on both the Hot 100 and Hot Country Songs — the latter making it her 10th leader on that chart.
+            </p>
+            <p>
+                The song's country classification matters in context of the Jackson moment. "I Knew It, I Knew You" was described at release as Swift's first country song in more than 10 years. Historically, only two other animated Disney film themes had reached the No. 1 position on the Hot 100: "A Whole New World" from Aladdin (1993) and "We Don't Talk About Bruno" from Encanto (2022). The Swift track became the third. Its concurrently strong country chart performance placed it within a genre Swift had largely moved away from following her earlier albums. The Alan Jackson tribute — at one of country music's most reverent farewell events — played out against that backdrop.
+            </p>
+            <p>
+                Jackson chose to end his career in Nashville specifically. He said: "We just felt like we had to end it all where it all started for me, and that's in Nashville — Music City — where country music lives." The Finale concert is set to be released later in 2026 as an NBC concert special. <a href="https://www.belmont.edu/stories/articles/2026/alan-jackson-last-call-finale-live-stream.html" target="_blank" rel="noopener" class="aj-link">Belmont University's Fisher Center</a> and the Country Music Hall of Fame both hosted live streams of the event for fans without access to tickets — an uncommon arrangement for a stadium concert that reflected the goodbye-level significance the industry attached to the show.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========== CMT DISEASE INFO ========== -->
+    <section class="aj-cmt">
+        <div class="aj-cmt-wrap">
+            <div class="aj-cmt-card">
+                <div class="aj-cmt-icon">&#9673;</div>
+                <div class="aj-cmt-content">
+                    <h3>Charcot-Marie-Tooth Disease — What It Is and Why This Tour Raised Money for It</h3>
+                    <p>
+                        Charcot-Marie-Tooth (CMT) disease is a hereditary neuropathy that affects the peripheral nerves — those outside the brain and spinal cord — causing progressive weakness and loss of sensation, particularly in the legs, feet, and hands. It affects balance and coordination. There is currently no cure. The condition affects approximately 3 million people worldwide, making it one of the most common inherited neurological disorders.
+                    </p>
+                    <p>
+                        Jackson was diagnosed roughly a decade before going public in 2021. His Last Call tour — including the Finale at Nissan Stadium — raised over $2.25 million total for the <a href="https://cmtrf.org/" target="_blank" rel="noopener">CMT Research Foundation</a>, the only nonprofit focused exclusively on funding CMT treatments and cures. At the Finale specifically, $1 per ticket sold was donated to the Foundation, matched by a $2 contribution from an anonymous donor — a total of $3 per ticket toward CMT research. Details of Jackson's ongoing support are documented on <a href="https://www.alanjackson.com/news/alan-jackson-extends-his-support-for-cmt-research" target="_blank" rel="noopener">his official website</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONCLUSION TEXT ========== -->
+    <section class="aj-concl">
+        <div class="aj-concl-wrap">
+            <p>
+                Alan Jackson's "Last Call: One More for the Road — The Finale" on June 27, 2026 at Nissan Stadium in Nashville covered 40 years of a career built from a U-Haul trip to Nashville in 1985 to a sold-out 50,000-person farewell. The concert featured 14+ guest performers across four hours. Jackson's speech — "If anyone has lived the American dream, it's me" — closed the evening. His entire Last Call tour raised over $2.25 million for the <a href="https://cmtrf.org/" target="_blank" rel="noopener">CMT Research Foundation</a>, with the Finale adding a $3-per-ticket contribution through ticket revenue and donor matching. A Taylor Swift video tribute played during the show and drew mixed cheers and boos from sections of the crowd — a moment that spread across social platforms and arrived days before her reported July 3 wedding to Travis Kelce at Madison Square Garden. Official event details are on the <a href="https://nissanstadium.com/event/alan-jackson-last-call-the-finale/" target="_blank" rel="noopener">Nissan Stadium event page</a>. The concert will be released later in 2026 as an NBC special. For more on entertainment news and major live events, see the <a href="https://cruxbuzz.com/category/entertainment/" target="_blank">CruxBuzz entertainment section</a>.
+            </p>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    // Animate the meter bars on scroll into view
+    (function() {
+        var meters = document.querySelectorAll('#aj2026 .aj-meter-fill');
+        function animateOnView() {
+            meters.forEach(function(m) {
+                var rect = m.parentElement.getBoundingClientRect();
+                if (rect.top < window.innerHeight && !m.style.width) {
+                    var target = m.style.getPropertyValue('--target-width');
+                    m.style.width = target;
+                }
+            });
+        }
+        window.addEventListener('scroll', animateOnView);
+        animateOnView();
+    })();
+</script>
+</body>
+</html>
