@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<style>
+#mm2026 *, #mm2026 *::before, #mm2026 *::after { box-sizing: border-box; }
+
+#mm2026 {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #1B1030;
+    color: #F3EEE3;
+    max-width: 100%;
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+#mm2026 a {
+    color: #FFC94A;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,201,74,0.45);
+    transition: border-color 0.2s ease, color 0.2s ease;
+    word-break: break-word;
+}
+#mm2026 a:hover { border-color: #FFC94A; color: #FFDD85; }
+
+#mm2026 .mm-wrap { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* INTRO */
+#mm2026 .mm-intro { padding: 2.75rem 0 2rem; }
+#mm2026 .mm-intro p { font-size: clamp(1rem, 2.3vw, 1.14rem); color: #EAE3D6; margin: 0 0 1.2rem; }
+#mm2026 .mm-kicker {
+    display: inline-block; font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase;
+    color: #FF6B6B; font-weight: 700; margin-bottom: 0.9rem; font-family: sans-serif;
+}
+
+/* SECTION HEAD */
+#mm2026 .mm-head { padding: 1.5rem 0 0.25rem; }
+#mm2026 .mm-head h2 {
+    font-size: clamp(1.4rem, 3.6vw, 2rem); margin: 0 0 0.5rem; color: #FFF7E8; font-weight: 800; line-height: 1.3;
+    font-family: Georgia, serif;
+}
+#mm2026 .mm-head p.mm-sub { color: #C9BEDD; font-size: 0.98rem; margin: 0 0 1.5rem; max-width: 640px; font-family: sans-serif; }
+
+/* STAT CARDS */
+#mm2026 .mm-stat-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.9rem; margin-bottom: 2rem;
+}
+#mm2026 .mm-stat-card {
+    background: #241A3D; border: 1px solid #3A2B5C; border-left: 4px solid #FFC94A; border-radius: 10px;
+    padding: 1.1rem 1rem; text-align: center;
+}
+#mm2026 .mm-stat-val { font-size: clamp(1.15rem, 3.2vw, 1.5rem); font-weight: 800; color: #FFC94A; font-family: sans-serif; }
+#mm2026 .mm-stat-lbl { font-size: 0.78rem; color: #C9BEDD; margin-top: 0.35rem; line-height: 1.4; font-family: sans-serif; }
+
+/* ANALYSIS TEXT */
+#mm2026 .mm-analysis { padding: 0.5rem 0 1.5rem; }
+#mm2026 .mm-analysis p { font-size: clamp(0.98rem, 2.2vw, 1.08rem); color: #EAE3D6; margin: 0 0 1.15rem; }
+
+/* IMAGE */
+#mm2026 figure.mm-figure { margin: 1rem 0 2.25rem; }
+#mm2026 figure.mm-figure img {
+    width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid #3A2B5C;
+}
+#mm2026 figure.mm-figure figcaption {
+    font-size: 0.85rem; color: #B6A9CF; margin-top: 0.65rem; line-height: 1.55; font-style: italic; font-family: sans-serif;
+}
+
+/* CHART BOX */
+#mm2026 .mm-chart-box {
+    background: linear-gradient(155deg, #241A3D 0%, #2E2049 100%); border: 1px solid #3A2B5C; border-radius: 16px;
+    padding: 1.75rem 1.25rem 1.5rem; margin-bottom: 2rem;
+}
+#mm2026 .mm-chart-canvas-wrap { position: relative; height: 340px; }
+#mm2026 .mm-chart-note { color: #B6A9CF; font-size: 0.82rem; margin-top: 1rem; line-height: 1.5; font-family: sans-serif; }
+
+/* CONCLUSION */
+#mm2026 .mm-concl { padding: 0.5rem 0 3rem; border-top: 1px solid #3A2B5C; margin-top: 0.5rem; }
+#mm2026 .mm-concl-label {
+    font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase; color: #FF6B6B; font-weight: 700;
+    margin: 2rem 0 0.9rem; font-family: sans-serif;
+}
+#mm2026 .mm-concl p { font-size: clamp(0.98rem, 2.2vw, 1.06rem); color: #D9CFEA; margin: 0; }
+
+@media (max-width: 600px) {
+    #mm2026 .mm-wrap { padding: 0 1rem; }
+    #mm2026 .mm-chart-box { padding: 1.25rem 1rem 1.25rem; }
+    #mm2026 .mm-chart-canvas-wrap { height: 300px; }
+}
+</style>
+</head>
+<body>
+<div id="mm2026">
+  <div class="mm-wrap">
+
+    <!-- ========== INTRO ========== -->
+    <section class="mm-intro">
+      <span class="mm-kicker">Box Office</span>
+      <p>"Minions &amp; Monsters," the seventh film in the Despicable Me franchise and Illumination's third Minions spinoff, opened in 4,243 North American theaters on Wednesday, July 1, 2026, and closed out the July 4th holiday frame with the smallest opening in the series' 16-year history. The film took in $61.4 million over its first five days domestically and $36.4 million across the traditional Friday-to-Sunday window, coming in below the studio's hopes for the long weekend. Despite the soft domestic number, the film opened to the best reviews of any Despicable Me or Minions entry yet, holding a 91% score on Rotten Tomatoes alongside an A- CinemaScore from opening-weekend audiences. Internationally, the film added roughly $85 million across 71 markets over the same weekend, pushing its worldwide total past $159 million. Full details on the release, including cast and runtime, are listed on <a href="https://www.illumination.com/movie/minions-monsters/" target="_blank" rel="noopener">Illumination's official movie page</a>. CruxBuzz has also covered other animated franchise milestones this year, including the <a href="https://cruxbuzz.com/super-mario-galaxy-movie-announcement-40th-anniversary/" target="_blank">Super Mario Galaxy Movie's</a> April 2026 theatrical debut.</p>
+    </section>
+
+    <!-- ========== INTERACTIVE 1: STAT CARDS ========== -->
+    <section class="mm-head">
+      <h2>Seven Films In, One Franchise-Low Weekend</h2>
+      <p class="mm-sub">The reviews were the best the series has ever received. The opening-weekend crowd was the smallest. Here is the report card.</p>
+    </section>
+    <div class="mm-stat-grid">
+      <div class="mm-stat-card"><div class="mm-stat-val">$36.4M</div><div class="mm-stat-lbl">3-day domestic opening (Fri–Sun)</div></div>
+      <div class="mm-stat-card"><div class="mm-stat-val">$61.4M</div><div class="mm-stat-lbl">5-day domestic opening (Wed–Sun)</div></div>
+      <div class="mm-stat-card"><div class="mm-stat-val">$159.8M</div><div class="mm-stat-lbl">Worldwide opening-weekend total</div></div>
+      <div class="mm-stat-card"><div class="mm-stat-val">91%</div><div class="mm-stat-lbl">Rotten Tomatoes score — best in the franchise</div></div>
+      <div class="mm-stat-card"><div class="mm-stat-val">A-</div><div class="mm-stat-lbl">CinemaScore from opening-weekend audiences</div></div>
+      <div class="mm-stat-card"><div class="mm-stat-val">4,243</div><div class="mm-stat-lbl">North American theaters at release</div></div>
+    </div>
+
+    <!-- ========== ANALYSIS 1 ========== -->
+    <section class="mm-analysis">
+      <p>Box office analyst David A. Gross, who publishes the FranchiseRe newsletter, described the result plainly: "Seven is further than any animation series has gone. Audiences are showing fatigue now," adding that "the movie will be profitable, but it's a misfire." Illumination's release calendar may have played a role too — "Minions &amp; Monsters" was originally scheduled for mid-2027 before moving up a full year to fill the July 1, 2026 date vacated when DreamWorks postponed "Shrek 5," landing in a release week that also had "Toy Story 5" still playing in its third weekend. That Pixar sequel actually out-earned "Minions &amp; Monsters" on a same-weekend basis despite already being in theaters for three weeks. The shifted release calendar can be tracked alongside other 2026 studio slate changes, including the delay of <a href="https://cruxbuzz.com/avengers-doomsday-delayed-to-dec-2026-as-marvel-cuts-3-films-and-confirms-doctor-doom-return/" target="_blank">"Avengers: Doomsday" to December 2026</a>. Full weekend-by-weekend box office data is tracked independently by <a href="https://www.the-numbers.com/movie/Minions-and-Monsters-(2026)" target="_blank" rel="noopener">The Numbers</a>.</p>
+    </section>
+
+    <!-- IMAGE (in-body) -->
+    <figure class="mm-figure">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Circle%20Cinima%20front%20Tulsa%20OK%202025-07-20%2012-59-30.jpg" alt="Illuminated movie theater marquee and entrance, representing opening weekend box office turnout for new film releases" title="Movie Theater Marquee Reflects Opening Weekend Box Office Turnout">
+      <figcaption>A theater marquee lit up for a new release — the same kind of opening-weekend turnout that came in soft for "Minions &amp; Monsters" despite the franchise's best-ever review scores. When ticket sales and critic scores move in opposite directions, which number carries more weight? (Photo: Wikimedia Commons, CC BY-SA 4.0)</figcaption>
+    </figure>
+
+    <!-- ========== INTERACTIVE 2: FRANCHISE CHART ========== -->
+    <section class="mm-head">
+      <h2>Comparing "Minions &amp; Monsters" Against Every Film Before It</h2>
+      <p class="mm-sub">Traditional Friday-to-Sunday domestic opening weekend gross for each film in the franchise, in millions of US dollars, not adjusted for inflation.</p>
+    </section>
+    <div class="mm-chart-box">
+      <div class="mm-chart-canvas-wrap"><canvas id="mmChart"></canvas></div>
+      <div class="mm-chart-note">Figures: Despicable Me (2010) $56.4M · Despicable Me 2 (2013) $83.5M · Minions (2015) $115.2M · Despicable Me 3 (2017) $72.4M · Minions: The Rise of Gru (2022) $108M · Despicable Me 4 (2024) $75M · Minions &amp; Monsters (2026) $36.4M. Source: Box Office Mojo and The Numbers.</div>
+    </div>
+
+    <!-- ========== ANALYSIS 2 ========== -->
+    <section class="mm-analysis">
+      <p>Since its 2010 launch, the Despicable Me and Minions franchise has taken in more than $5.5 billion worldwide, making it the highest-grossing animated franchise in box office history. Illumination founder and CEO Chris Meledandri has said the studio's earlier commercial track record "let us completely cut loose on this film," while director Pierre Coffin has described wanting each Minions project to feel distinct: "If I was going to pull back into that world and direct another movie with Minions, I really, really needed, just for my own sanity, to make it really different from whatever had been made before." In the studio's official box office statement, Universal's domestic distribution chief Jim Orr said, "Illumination once again provides global audiences with a film that audiences are embracing." A full franchise-wide box office history is maintained by <a href="https://www.boxofficemojo.com/franchise/fr256347909/" target="_blank" rel="noopener">Box Office Mojo</a>. Illumination's animated slate continues alongside other 2026-27 franchise activity across the industry, including <a href="https://cruxbuzz.com/pirates-of-the-caribbean-6-bruckheimer-confirms-original-cast-return-for-4-5-billion-franchise-reboot/" target="_blank">Disney's Pirates of the Caribbean 6</a>.</p>
+    </section>
+
+    <!-- ========== CONCLUSION ========== -->
+    <section class="mm-concl">
+      <div class="mm-concl-label">In Summary</div>
+      <p>"Minions &amp; Monsters" opened domestically at $61.4 million over five days and $36.4 million over the traditional three-day weekend, the lowest opening totals recorded for the Despicable Me and Minions franchise since it began in 2010. The film carried a Rotten Tomatoes score of 91% and an A- CinemaScore, its highest marks to date. An estimated $85 million production budget was reported alongside a worldwide opening gross above $159 million, with roughly $85 million of that total coming from international markets. Analyst commentary attributed the domestic result to franchise fatigue and same-weekend competition from "Toy Story 5." Full release details are listed on the franchise's <a href="https://www.minionsmovie.com/" target="_blank" rel="noopener">official site</a>, and further entertainment coverage continues on <a href="https://cruxbuzz.com/category/entertainment/" target="_blank">CruxBuzz</a>.</p>
+    </section>
+
+  </div>
+</div>
+
+<script>
+(function() {
+    function initMMChart() {
+        var el = document.getElementById('mmChart');
+        if (!el || typeof Chart === 'undefined') { return; }
+        new Chart(el.getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['Despicable Me (2010)', 'Despicable Me 2 (2013)', 'Minions (2015)', 'Despicable Me 3 (2017)', 'Minions: Rise of Gru (2022)', 'Despicable Me 4 (2024)', 'Minions & Monsters (2026)'],
+                datasets: [{
+                    label: '3-day opening weekend ($M)',
+                    data: [56.4, 83.5, 115.2, 72.4, 108, 75, 36.4],
+                    backgroundColor: ['#7C6AA6', '#7C6AA6', '#7C6AA6', '#7C6AA6', '#7C6AA6', '#7C6AA6', '#FF6B6B'],
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { callbacks: { label: function(ctx) { return '$' + ctx.parsed.y + 'M opening weekend'; } } }
+                },
+                scales: {
+                    y: { beginAtZero: true, ticks: { color: '#C9BEDD' }, grid: { color: 'rgba(255,255,255,0.06)' } },
+                    x: { ticks: { color: '#C9BEDD', font: { size: 10 } }, grid: { display: false } }
+                }
+            }
+        });
+    }
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(initMMChart, 0);
+    } else {
+        document.addEventListener('DOMContentLoaded', initMMChart);
+    }
+    window.addEventListener('load', function() {
+        if (!window.__mmChartInit) { window.__mmChartInit = true; initMMChart(); }
+    });
+})();
+</script>
+</body>
+</html>

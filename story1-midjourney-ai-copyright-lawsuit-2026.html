@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+#aic2026 *, #aic2026 *::before, #aic2026 *::after { box-sizing: border-box; }
+
+#aic2026 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #0B1220;
+    color: #E7ECF3;
+    max-width: 100%;
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+#aic2026 a {
+    color: #22D3EE;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(34,211,238,0.4);
+    transition: border-color 0.2s ease, color 0.2s ease;
+    word-break: break-word;
+}
+#aic2026 a:hover { border-color: #22D3EE; color: #67E8F9; }
+
+#aic2026 .aic-wrap { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* INTRO */
+#aic2026 .aic-intro { padding: 2.75rem 0 2rem; }
+#aic2026 .aic-intro p { font-size: clamp(1rem, 2.3vw, 1.14rem); color: #D7DEE9; margin: 0 0 1.2rem; }
+#aic2026 .aic-kicker {
+    display: inline-block; font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase;
+    color: #F5A623; font-weight: 700; margin-bottom: 0.9rem;
+}
+
+/* SECTION HEAD */
+#aic2026 .aic-head { padding: 1.5rem 0 0.25rem; }
+#aic2026 .aic-head h2 {
+    font-size: clamp(1.4rem, 3.6vw, 2rem); margin: 0 0 0.5rem; color: #F4F7FB; font-weight: 800; line-height: 1.3;
+}
+#aic2026 .aic-head p.aic-sub { color: #9FB0C7; font-size: 0.98rem; margin: 0 0 1.5rem; max-width: 640px; }
+
+/* TIMELINE */
+#aic2026 .aic-timeline-box {
+    background: #101A2E; border: 1px solid #1E2C48; border-radius: 14px; padding: 1.5rem 1.25rem 0.5rem;
+    margin-bottom: 2rem;
+}
+#aic2026 .aic-tl-item {
+    position: relative; padding: 0 0 1.5rem 1.6rem; border-left: 2px solid #21324F;
+}
+#aic2026 .aic-tl-item:last-child { border-left-color: transparent; padding-bottom: 0.25rem; }
+#aic2026 .aic-tl-item::before {
+    content: ''; position: absolute; left: -7px; top: 2px; width: 12px; height: 12px; border-radius: 50%;
+    background: #22D3EE; box-shadow: 0 0 0 4px rgba(34,211,238,0.18);
+}
+#aic2026 .aic-tl-item.is-key::before { background: #F5A623; box-shadow: 0 0 0 4px rgba(245,166,35,0.2); }
+#aic2026 .aic-tl-date { font-weight: 700; color: #67E8F9; font-size: 0.88rem; letter-spacing: 0.5px; margin-bottom: 0.2rem; }
+#aic2026 .aic-tl-item.is-key .aic-tl-date { color: #F5A623; }
+#aic2026 .aic-tl-text { color: #C7D0DE; font-size: 0.97rem; }
+#aic2026 .aic-tl-text strong { color: #F4F7FB; }
+
+/* ANALYSIS TEXT */
+#aic2026 .aic-analysis { padding: 0.5rem 0 1.5rem; }
+#aic2026 .aic-analysis p { font-size: clamp(0.98rem, 2.2vw, 1.08rem); color: #D7DEE9; margin: 0 0 1.15rem; }
+
+/* IMAGE */
+#aic2026 figure.aic-figure { margin: 1rem 0 2.25rem; }
+#aic2026 figure.aic-figure img {
+    width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid #1E2C48;
+}
+#aic2026 figure.aic-figure figcaption {
+    font-size: 0.85rem; color: #8CA0BC; margin-top: 0.65rem; line-height: 1.55; font-style: italic;
+}
+
+/* CALCULATOR */
+#aic2026 .aic-calc-box {
+    background: linear-gradient(155deg, #101A2E 0%, #17233B 100%); border: 1px solid #223452; border-radius: 16px;
+    padding: 1.75rem 1.25rem 2rem; margin-bottom: 2rem;
+}
+#aic2026 .aic-calc-label { font-weight: 700; color: #F4F7FB; margin-bottom: 0.9rem; font-size: 1rem; }
+#aic2026 .aic-calc-row { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 0.4rem; flex-wrap: wrap; }
+#aic2026 input[type="range"] {
+    flex: 1 1 200px; height: 6px; border-radius: 4px; background: #223452; outline: none; -webkit-appearance: none; accent-color: #F5A623;
+}
+#aic2026 input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: #F5A623; cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4); border: 3px solid #0B1220;
+}
+#aic2026 .aic-calc-count { min-width: 84px; text-align: right; font-weight: 800; color: #67E8F9; font-size: 1.05rem; }
+#aic2026 .aic-calc-out {
+    margin-top: 1.1rem; background: #0B1220; border: 1px dashed #33456A; border-radius: 10px; padding: 1.1rem 1.2rem;
+}
+#aic2026 .aic-calc-out .aic-calc-num {
+    font-size: clamp(1.8rem, 6vw, 2.6rem); font-weight: 800; color: #F5A623; line-height: 1.1;
+}
+#aic2026 .aic-calc-out .aic-calc-cap { color: #9FB0C7; font-size: 0.85rem; margin-top: 0.3rem; }
+#aic2026 .aic-calc-note { color: #8CA0BC; font-size: 0.85rem; margin-top: 1rem; line-height: 1.55; }
+
+/* STAT GRID */
+#aic2026 .aic-stat-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.9rem; margin-top: 1.5rem;
+}
+#aic2026 .aic-stat-card {
+    background: #0B1220; border: 1px solid #1E2C48; border-radius: 10px; padding: 1rem 0.9rem; text-align: center;
+}
+#aic2026 .aic-stat-val { font-size: clamp(1.1rem, 3vw, 1.4rem); font-weight: 800; color: #22D3EE; }
+#aic2026 .aic-stat-lbl { font-size: 0.78rem; color: #9FB0C7; margin-top: 0.3rem; line-height: 1.4; }
+
+/* CONCLUSION */
+#aic2026 .aic-concl { padding: 0.5rem 0 3rem; border-top: 1px solid #1E2C48; margin-top: 0.5rem; }
+#aic2026 .aic-concl-label {
+    font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase; color: #67E8F9; font-weight: 700;
+    margin: 2rem 0 0.9rem;
+}
+#aic2026 .aic-concl p { font-size: clamp(0.98rem, 2.2vw, 1.06rem); color: #C7D0DE; margin: 0; }
+
+@media (max-width: 600px) {
+    #aic2026 .aic-wrap { padding: 0 1rem; }
+    #aic2026 .aic-timeline-box, #aic2026 .aic-calc-box { padding: 1.25rem 1rem 0.5rem; }
+    #aic2026 .aic-calc-row { flex-direction: column; align-items: stretch; }
+    #aic2026 .aic-calc-count { text-align: left; }
+}
+</style>
+</head>
+<body>
+<div id="aic2026">
+  <div class="aic-wrap">
+
+    <!-- ========== INTRO ========== -->
+    <section class="aic-intro">
+      <span class="aic-kicker">Entertainment &amp; Law</span>
+      <p>Midjourney is trying to keep a discovery fight alive in its copyright case against Disney, Universal, and Warner Bros. Discovery, asking a federal judge in Los Angeles to force the three studios to hand over records of their own artificial intelligence use. The motion, filed in late June 2026 before U.S. District Judge John A. Kronstadt in the Central District of California, seeks to overturn a narrower order from Magistrate Judge A. Joel Richlin that limited the studios' disclosure obligations to consumer-facing AI products only. The underlying case traces back to June 11, 2025, when Disney Enterprises and NBCUniversal filed a joint lawsuit accusing the AI image generator of letting paying subscribers produce unlicensed images of characters including Darth Vader, Shrek, and Homer Simpson. Warner Bros. Discovery joined months later with its own suit naming Superman, Batman, and Bugs Bunny, and the two cases were later consolidated under Judge Kronstadt. Full docket details for the lead case, <em>Disney Enterprises, Inc. v. Midjourney, Inc.</em>, are public on <a href="https://www.courtlistener.com/docket/70513159/disney-enterprises-inc-v-midjourney-inc/" target="_blank" rel="noopener">CourtListener</a>. CruxBuzz has previously covered how generative AI is showing up inside entertainment storytelling itself, including the AI-girlfriend premise of <a href="https://cruxbuzz.com/companion-trailer-sophie-thatchers-ai-girlfriend-turns-deadly-in-new-sci-fi-horror/" target="_blank">"Companion."</a></p>
+    </section>
+
+    <!-- ========== INTERACTIVE 1: TIMELINE ========== -->
+    <section class="aic-head">
+      <h2>Hollywood vs. AI: How the Midjourney Case Reached a Federal Courtroom</h2>
+      <p class="aic-sub">A copyright fight over cartoon and movie characters is now a fight over who has to open their own AI records first. Here is how it built up, step by step.</p>
+    </section>
+    <div class="aic-timeline-box">
+      <div class="aic-tl-item is-key">
+        <div class="aic-tl-date">June 11, 2025</div>
+        <div class="aic-tl-text"><strong>Disney Enterprises and NBCUniversal sue Midjourney</strong> in the U.S. District Court for the Central District of California (Case No. 2:25-cv-05275), alleging its image generator produces unlicensed copies of characters such as Darth Vader, Shrek, and the Minions.</div>
+      </div>
+      <div class="aic-tl-item">
+        <div class="aic-tl-date">August 6, 2025</div>
+        <div class="aic-tl-text">Midjourney files its answer, asserting <strong>fair use</strong> and <strong>"unclean hands"</strong> as defenses, and notes that many of its subscribers use corporate emails tied to Disney and Universal domains.</div>
+      </div>
+      <div class="aic-tl-item is-key">
+        <div class="aic-tl-date">September 4, 2025</div>
+        <div class="aic-tl-text"><strong>Warner Bros. Discovery files a parallel suit</strong> (Case No. 2:25-cv-08376), naming Superman, Batman, Wonder Woman, Tom and Jerry, Scooby-Doo, and Bugs Bunny among the characters allegedly generated without permission.</div>
+      </div>
+      <div class="aic-tl-item">
+        <div class="aic-tl-date">November 5, 2025</div>
+        <div class="aic-tl-text">Judge Kronstadt <strong>consolidates</strong> the Disney and Warner Bros. Discovery cases "for all purposes, including trial," with the Disney case as lead docket.</div>
+      </div>
+      <div class="aic-tl-item is-key">
+        <div class="aic-tl-date">June 2026</div>
+        <div class="aic-tl-text">Magistrate Judge A. Joel Richlin rules that the studios only have to disclose <strong>consumer-facing</strong> AI products in discovery, not internal tools, training data, or model weights.</div>
+      </div>
+      <div class="aic-tl-item">
+        <div class="aic-tl-date">June 29, 2026</div>
+        <div class="aic-tl-text">Midjourney files a motion asking <strong>Judge Kronstadt to overturn</strong> that limit under Federal Rule of Civil Procedure 72(a).</div>
+      </div>
+      <div class="aic-tl-item is-key">
+        <div class="aic-tl-date">August 17, 2026</div>
+        <div class="aic-tl-text">A hearing on Midjourney's motion is scheduled at <strong>8:30 a.m.</strong> before Judge Kronstadt.</div>
+      </div>
+    </div>
+
+    <!-- ========== ANALYSIS 1 ========== -->
+    <section class="aic-analysis">
+      <p>Midjourney's defense rests on two legal ideas. The first, <strong>fair use</strong>, argues that training an AI model on large volumes of publicly available images is a transformative activity, comparable to how a human artist studies existing work, and that a user typing a prompt for "Batman" doesn't by itself prove infringement. The second, <strong>unclean hands</strong>, is an older equitable principle: a party that has engaged in the same conduct it is suing over can be barred from winning that suit. Midjourney's attorneys argue that if the studios are training their own internal AI tools on unlicensed material, that practice would count as the same conduct at issue in the case, which is why the company is demanding access to the studios' internal AI business plans, training data, and model records. The U.S. Copyright Office's own <a href="https://www.copyright.gov/ai/" target="_blank" rel="noopener">public guidance on AI and copyright</a> lays out how the fair-use analysis is applied to generative tools more broadly. The legal standard Judge Kronstadt must apply to overturn Magistrate Judge Richlin's order is a deferential one — the order must be shown to be "clearly erroneous or contrary to law," rather than simply re-argued from scratch. In the studios' original complaint, Midjourney's conduct is described in the filing itself as that of <strong>"the quintessential copyright free-rider and a bottomless pit of plagiarism."</strong> In Midjourney's own June 2026 motion, attorney Bobby Ghajar of Cooley LLP wrote that <strong>"if Plaintiffs are doing the very thing they seek to punish, that evidence goes to the heart of Midjourney's fair use and unclean hands defenses."</strong></p>
+    </section>
+
+    <!-- IMAGE 1 -->
+    <figure class="aic-figure">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Los%20Angeles%20Federal%20Courthouse%20127%20S%20Broadway%20dllu.jpg" alt="United States federal courthouse building at 127 S. Broadway in Los Angeles, venue for the Disney, Universal and Warner Bros. Discovery lawsuit against Midjourney" title="Los Angeles Federal Courthouse Hosting the Midjourney Copyright Case">
+      <figcaption>The federal courthouse in downtown Los Angeles, where the consolidated Disney, Universal, and Warner Bros. Discovery case against Midjourney is being argued before Judge John A. Kronstadt. A single ruling from this building could set the terms for how every studio handles AI-generated imagery going forward. (Photo: Wikimedia Commons, CC BY-SA 4.0)</figcaption>
+    </figure>
+
+    <!-- ========== INTERACTIVE 2: DAMAGES CALCULATOR ========== -->
+    <section class="aic-head">
+      <h2>What's Actually at Stake: The Math Behind the Lawsuit</h2>
+      <p class="aic-sub">Copyright law sets a statutory ceiling for willful infringement. Slide below to see how the studios' own exhibit list translates into dollars.</p>
+    </section>
+    <div class="aic-calc-box">
+      <div class="aic-calc-label">Number of allegedly infringed works</div>
+      <div class="aic-calc-row">
+        <input type="range" id="aicSlider" min="1" max="300" value="150" oninput="aicUpdate(this.value)">
+        <div class="aic-calc-count"><span id="aicCount">150</span> works</div>
+      </div>
+      <div class="aic-calc-out">
+        <div class="aic-calc-num" id="aicResult">$22,500,000</div>
+        <div class="aic-calc-cap">Potential statutory damages at the $150,000-per-work maximum under 17 U.S.C. § 504(c)(2)</div>
+      </div>
+      <div class="aic-calc-note">Disney and NBCUniversal's original complaint lists an exhibit of more than 150 allegedly infringed works, which is why the slider defaults there. Warner Bros. Discovery's separate suit instead seeks Midjourney's profits attributable to the alleged infringement, or the same $150,000-per-work statutory maximum as an alternative.</div>
+      <div class="aic-stat-grid">
+        <div class="aic-stat-card"><div class="aic-stat-val">3</div><div class="aic-stat-lbl">Studios suing Midjourney: Disney, NBCUniversal, Warner Bros. Discovery</div></div>
+        <div class="aic-stat-card"><div class="aic-stat-val">$150K</div><div class="aic-stat-lbl">Maximum statutory damages per willful infringement</div></div>
+        <div class="aic-stat-card"><div class="aic-stat-val">150+</div><div class="aic-stat-lbl">Works listed in the Disney/NBCUniversal exhibit</div></div>
+        <div class="aic-stat-card"><div class="aic-stat-val">Aug 17</div><div class="aic-stat-lbl">2026 hearing date before Judge Kronstadt</div></div>
+      </div>
+    </div>
+
+    <!-- ========== ANALYSIS 2 ========== -->
+    <section class="aic-analysis">
+      <p>Midjourney has said in public interviews that it has never taken venture capital funding and became profitable within months of its 2022 launch, a detail that matters here because a self-funded company absorbs a damages judgment or a content-filtering injunction differently than a venture-backed AI lab can. The Midjourney case is one of several AI-copyright disputes moving through U.S. courts at the same time. A separate class action from visual artists, <em>Andersen v. Stability AI</em>, in which Midjourney is also a defendant, is scheduled for trial in September 2026. Music publishers UMG, Concord, and ABKCO are seeking $3 billion from Anthropic in a related case over song lyrics. The New York Times' suit against OpenAI and Microsoft is also ongoing. In a separate matter concerning AI-generated authorship rather than training data, the U.S. Supreme Court declined to hear <em>Thaler v. Perlmutter</em> in March 2026, leaving in place a ruling that AI output without meaningful human creative input cannot be copyrighted. More entertainment industry coverage, including franchise and studio news, is available in CruxBuzz's <a href="https://cruxbuzz.com/category/entertainment/" target="_blank">entertainment section</a>.</p>
+    </section>
+
+    <!-- IMAGE 2 -->
+    <figure class="aic-figure">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Midjourney%20-%20Oldtimer.png" alt="AI-generated portrait of an elderly man created using Midjourney, illustrating the image-generation technology behind the copyright dispute" title="Midjourney AI-Generated Portrait at Center of Hollywood Copyright Case">
+      <figcaption>An image generated entirely by Midjourney's own AI model — the same kind of output now at the center of a federal copyright fight with three major studios. How far can a text prompt legally go before it crosses into someone else's intellectual property? (Photo: Wikimedia Commons, CC BY-SA 4.0)</figcaption>
+    </figure>
+
+    <!-- ========== CONCLUSION ========== -->
+    <section class="aic-concl">
+      <div class="aic-concl-label">In Summary</div>
+      <p>The dispute covered here traces to a June 2025 complaint filed by Disney Enterprises and NBCUniversal, later joined by Warner Bros. Discovery, over the generation of characters including Darth Vader, Shrek, Superman, and Bugs Bunny on Midjourney's image tool. Midjourney's answer raised fair use and unclean hands defenses. A magistrate judge's June 2026 order limited studio disclosure obligations to consumer-facing AI products, and Midjourney's subsequent motion asked the district judge to expand that scope ahead of an August 17, 2026 hearing. The Copyright Act's statutory damages framework, cited in the complaint, allows up to $150,000 per work for willful infringement, applied across an exhibit list of more than 150 works. Background on the fair-use framework applied to AI training is available through the U.S. Copyright Office and through <a href="https://www.law.georgetown.edu/tech-institute/research-insights/insights/disney-nbc-universal-and-dreamworks-file-major-ip-lawsuit-against-ai-image-generator-midjourney/" target="_blank" rel="noopener">Georgetown Law's Institute for Technology Law &amp; Policy</a>, and further case filings are on the public court docket. More entertainment and industry stories are available on <a href="https://cruxbuzz.com/category/entertainment/" target="_blank">CruxBuzz</a>.</p>
+    </section>
+
+  </div>
+</div>
+
+<script>
+function aicUpdate(val) {
+    document.getElementById('aicCount').textContent = val;
+    var total = parseInt(val, 10) * 150000;
+    document.getElementById('aicResult').textContent = '$' + total.toLocaleString('en-US');
+}
+</script>
+</body>
+</html>
