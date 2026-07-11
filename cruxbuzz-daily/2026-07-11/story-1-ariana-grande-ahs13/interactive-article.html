@@ -1,0 +1,226 @@
+<!-- ============================================================
+  CRUXBUZZ INTERACTIVE: Ariana Grande exits AHS Season 13
+  Paste into one WordPress "Custom HTML" block.
+  No H1, no feature image inside (set those in WordPress).
+  Self-contained: no external libraries. Scoped classes: ahs13x-
+============================================================ -->
+<style>
+  .ahs13x-wrap{max-width:860px;margin:0 auto;padding:0 4px;font-family:Georgia,'Times New Roman',serif;color:#2a2530;line-height:1.75;overflow-x:hidden;box-sizing:border-box}
+  .ahs13x-wrap *,.ahs13x-wrap *::before,.ahs13x-wrap *::after{box-sizing:border-box}
+  .ahs13x-wrap img{max-width:100%;height:auto}
+  .ahs13x-wrap p{margin:0 0 1.1em;font-size:1.04rem}
+  .ahs13x-wrap a{color:#8c1d2f;text-decoration:underline;text-underline-offset:2px}
+  .ahs13x-wrap a:hover{color:#5c0f1d}
+  .ahs13x-h2{font-family:'Palatino Linotype',Palatino,Georgia,serif;font-size:1.65rem;line-height:1.25;color:#1c1722;margin:1.6em 0 .7em;border-left:6px solid #8c1d2f;padding-left:.6em}
+  .ahs13x-kicker{display:inline-block;background:#1c1722;color:#f3e9d7;font-family:Verdana,Arial,sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.45em 1em;border-radius:2px;margin-bottom:1em}
+  /* stat cards */
+  .ahs13x-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:1.4em 0}
+  .ahs13x-stat{background:#1c1722;color:#f3e9d7;border-top:4px solid #8c1d2f;border-radius:6px;padding:1.1em .8em;text-align:center}
+  .ahs13x-stat b{display:block;font-family:Verdana,Arial,sans-serif;font-size:1.55rem;color:#e8b96a;margin-bottom:.25em}
+  .ahs13x-stat span{font-family:Verdana,Arial,sans-serif;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;opacity:.85}
+  /* timeline */
+  .ahs13x-tl{position:relative;margin:1.6em 0;padding-left:26px;border-left:3px solid #8c1d2f}
+  .ahs13x-tl-item{position:relative;margin-bottom:10px;cursor:pointer}
+  .ahs13x-tl-item::before{content:'';position:absolute;left:-35px;top:14px;width:15px;height:15px;border-radius:50%;background:#f3e9d7;border:3px solid #8c1d2f}
+  .ahs13x-tl-item.ahs13x-open::before{background:#8c1d2f}
+  .ahs13x-tl-head{background:#f6f1e7;border:1px solid #dfd3bd;border-radius:6px;padding:.7em 1em;font-family:Verdana,Arial,sans-serif;font-size:.92rem;display:flex;justify-content:space-between;align-items:center;gap:8px;transition:background .25s}
+  .ahs13x-tl-item:hover .ahs13x-tl-head{background:#efe5d2}
+  .ahs13x-tl-date{color:#8c1d2f;font-weight:bold;white-space:nowrap}
+  .ahs13x-tl-arrow{transition:transform .3s;color:#8c1d2f;flex:none}
+  .ahs13x-tl-item.ahs13x-open .ahs13x-tl-arrow{transform:rotate(180deg)}
+  .ahs13x-tl-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .ahs13x-tl-body>div{padding:.8em 1em;font-size:.97rem;background:#fffdf8;border:1px dashed #dfd3bd;border-top:0;border-radius:0 0 6px 6px}
+  /* calendar collision */
+  .ahs13x-cal{background:#1c1722;border-radius:8px;padding:1.3em 1em 1.5em;margin:1.4em 0;color:#f3e9d7;font-family:Verdana,Arial,sans-serif}
+  .ahs13x-cal h3{margin:0 0 1em;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;color:#e8b96a}
+  .ahs13x-cal-row{margin-bottom:1.1em}
+  .ahs13x-cal-label{font-size:.8rem;margin-bottom:.35em;opacity:.9}
+  .ahs13x-cal-track{position:relative;height:26px;background:#3a3245;border-radius:13px;overflow:hidden}
+  .ahs13x-cal-bar{position:absolute;top:0;height:100%;border-radius:13px;width:0;transition:width 1.2s ease}
+  .ahs13x-bar-tour{left:26%;background:linear-gradient(90deg,#c9932f,#e8b96a)}
+  .ahs13x-bar-shoot{left:32%;background:linear-gradient(90deg,#8c1d2f,#c04a5e)}
+  .ahs13x-cal-months{display:flex;justify-content:space-between;font-size:.68rem;opacity:.7;margin-top:.4em}
+  .ahs13x-cal-note{font-size:.78rem;opacity:.85;margin-top:.9em;line-height:1.5}
+  /* cast grid */
+  .ahs13x-cast{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:1.3em 0}
+  .ahs13x-card{background:#f6f1e7;border:1px solid #dfd3bd;border-radius:6px;padding:.8em;text-align:center;cursor:pointer;font-family:Verdana,Arial,sans-serif;transition:transform .2s,box-shadow .2s}
+  .ahs13x-card:hover{transform:translateY(-3px);box-shadow:0 6px 14px rgba(28,23,34,.18)}
+  .ahs13x-card b{display:block;font-size:.88rem;color:#1c1722}
+  .ahs13x-card small{display:block;font-size:.72rem;color:#6b6172;margin-top:.3em;min-height:2.1em}
+  .ahs13x-badge{display:inline-block;margin-top:.45em;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;padding:.25em .7em;border-radius:10px;background:#274427;color:#cfe7cf}
+  .ahs13x-card.ahs13x-out .ahs13x-badge{background:#8c1d2f;color:#f9dede}
+  .ahs13x-card.ahs13x-out{border:2px solid #8c1d2f}
+  /* figure */
+  .ahs13x-fig{margin:1.6em 0;text-align:center}
+  .ahs13x-fig img{border-radius:8px;box-shadow:0 6px 18px rgba(28,23,34,.25)}
+  .ahs13x-fig figcaption{font-family:Verdana,Arial,sans-serif;font-size:.8rem;color:#6b6172;margin-top:.6em;line-height:1.5;text-align:left}
+  /* accordion */
+  .ahs13x-faq{margin:1.3em 0}
+  .ahs13x-faq-item{border:1px solid #dfd3bd;border-radius:6px;margin-bottom:.6em;overflow:hidden;background:#fffdf8}
+  .ahs13x-faq-q{width:100%;text-align:left;background:#f6f1e7;border:0;padding:.85em 1em;font-family:Verdana,Arial,sans-serif;font-size:.94rem;font-weight:bold;color:#1c1722;cursor:pointer;display:flex;justify-content:space-between;gap:8px}
+  .ahs13x-faq-q span:last-child{color:#8c1d2f;flex:none}
+  .ahs13x-faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .ahs13x-faq-a>div{padding:.85em 1em;font-size:.97rem}
+  @media(max-width:600px){
+    .ahs13x-h2{font-size:1.32rem}
+    .ahs13x-stat b{font-size:1.25rem}
+    .ahs13x-tl{padding-left:18px}
+    .ahs13x-tl-item::before{left:-27px;width:12px;height:12px}
+    .ahs13x-tl-head{font-size:.84rem;flex-wrap:wrap}
+  }
+</style>
+
+<div class="ahs13x-wrap">
+
+  <span class="ahs13x-kicker">FX · American Horror Story · Season 13</span>
+
+  <p>Ariana Grande is out of <a href="https://www.fxnetworks.com/shows/american-horror-story" rel="noopener" target="_blank">American Horror Story</a> Season 13. Reports on July 10, 2026, citing production sources, said a change in the show's shooting schedule collided with the locked dates of her <a href="https://help.ticketmaster.com/hc/en-us/articles/38412542882577-Ariana-Grande-The-Eternal-Sunshine-Tour" rel="noopener" target="_blank">Eternal Sunshine Tour</a>, and that she filmed no scenes for the season. FX and 20th Television have made no public comment, and Grande has not addressed the exit on her <a href="https://www.instagram.com/arianagrande/" rel="noopener" target="_blank">official Instagram</a>. The timing stings for fans: FX had confirmed the season's September 24 premiere date only one day earlier. Casting shake-ups have been a steady theme in screen news this year, from <a href="https://cruxbuzz.com/zendaya-and-robert-pattinson-film-a24s-the-drama-in-boston-offering-216-casting-roles-for-extras/">A24's star-led production in Boston</a> to new-season builds across prestige TV like <a href="https://cruxbuzz.com/pluribus-vince-gilligan-rhea-seehorn-apple-tv-hive-mind-9-episodes-12-immune/">Vince Gilligan's Pluribus</a>.</p>
+
+  <h2 class="ahs13x-h2">The Numbers Behind the Exit</h2>
+
+  <div class="ahs13x-stats">
+    <div class="ahs13x-stat"><b>41</b><span>Tour shows, 10 cities</span></div>
+    <div class="ahs13x-stat"><b>~6M</b><span>Users in presale queue</span></div>
+    <div class="ahs13x-stat"><b>0</b><span>AHS scenes filmed</span></div>
+    <div class="ahs13x-stat"><b>Sep 24</b><span>AHS 13 premiere, FX &amp; Hulu</span></div>
+  </div>
+
+  <p>The scale gap explains the outcome. The Eternal Sunshine Tour, her fifth, opened June 6 at Oakland Arena and runs through September 1 at The O2 in London, with roughly six million users in the presale queue and London selling out in about 15 minutes, per figures around the on-sale. Full dates sit on <a href="https://www.arianagrande.com/" rel="noopener" target="_blank">arianagrande.com</a> and <a href="https://www.ticketmaster.com/ariana-grande-tickets/artist/1688071" rel="noopener" target="_blank">Ticketmaster</a>. An arena tour of that size cannot move for a supporting TV role — and in late June, Grande had already shuffled July dates in Brooklyn and Boston, an early sign the calendar was under strain.</p>
+
+  <h2 class="ahs13x-h2">Nine Months, Start to Finish: Tap the Timeline</h2>
+
+  <div class="ahs13x-tl" id="ahs13xTimeline">
+    <div class="ahs13x-tl-item">
+      <div class="ahs13x-tl-head"><span><span class="ahs13x-tl-date">Oct 31, 2025</span> — Halloween cast video drops</span><span class="ahs13x-tl-arrow">▼</span></div>
+      <div class="ahs13x-tl-body"><div>A scrolling cast list set to Vera Lynn's "I'll Be Seeing You" names Grande alongside Sarah Paulson, Evan Peters, Angela Bassett, Kathy Bates, Emma Roberts, Billie Lourd, Gabourey Sidibe, Leslie Grossman and Jessica Lange. It ends with the Coven catchphrase: "Surprise, bitch. I bet you thought you'd seen the last of me." Her role is never revealed.</div></div>
+    </div>
+    <div class="ahs13x-tl-item">
+      <div class="ahs13x-tl-head"><span><span class="ahs13x-tl-date">Spring 2026</span> — The witches assemble in New York</span><span class="ahs13x-tl-arrow">▼</span></div>
+      <div class="ahs13x-tl-body"><div>Set photos published in spring 2026 show the Robichaux Academy set rebuilt and returning cast filming in New York City, tying Season 13 back to the Coven storyline. More names join the cast through the spring.</div></div>
+    </div>
+    <div class="ahs13x-tl-item">
+      <div class="ahs13x-tl-head"><span><span class="ahs13x-tl-date">Jun 6, 2026</span> — Eternal Sunshine Tour opens</span><span class="ahs13x-tl-arrow">▼</span></div>
+      <div class="ahs13x-tl-body"><div>The 41-show run opens at Oakland Arena. The routing covers 10 cities across the US, Canada and the UK, with multi-night arena residencies, and closes September 1 at The O2, London.</div></div>
+    </div>
+    <div class="ahs13x-tl-item">
+      <div class="ahs13x-tl-head"><span><span class="ahs13x-tl-date">Late Jun 2026</span> — July dates reshuffled</span><span class="ahs13x-tl-arrow">▼</span></div>
+      <div class="ahs13x-tl-body"><div>Select July concerts move: Brooklyn's Barclays Center show shifts from July 12 to July 14, and Boston dates move from July 22 and 24 to July 23 and 26 — the first public hint that two calendars were grinding against each other.</div></div>
+    </div>
+    <div class="ahs13x-tl-item">
+      <div class="ahs13x-tl-head"><span><span class="ahs13x-tl-date">Jul 9, 2026</span> — FX locks the premiere date</span><span class="ahs13x-tl-arrow">▼</span></div>
+      <div class="ahs13x-tl-body"><div>FX announces Season 13 premieres Thursday, September 24, 2026 at 9 p.m. ET on FX and Hulu (Disney+ internationally), paired with a "13 Flavors" ice-cream-truck activation at San Diego Comic-Con.</div></div>
+    </div>
+    <div class="ahs13x-tl-item">
+      <div class="ahs13x-tl-head"><span><span class="ahs13x-tl-date">Jul 10, 2026</span> — The exit becomes public</span><span class="ahs13x-tl-arrow">▼</span></div>
+      <div class="ahs13x-tl-body"><div>Reports citing production sources say the shooting schedule — originally built so Grande could film while touring — moved into summer dates that conflicted with her locked tour routing. She shot nothing for the season. FX and 20th Television decline to comment.</div></div>
+    </div>
+  </div>
+
+  <h2 class="ahs13x-h2">Two Calendars, One Summer</h2>
+
+  <div class="ahs13x-cal" id="ahs13xCal">
+    <h3>Where the schedules collided (Jan – Dec 2026)</h3>
+    <div class="ahs13x-cal-row">
+      <div class="ahs13x-cal-label">🎤 Eternal Sunshine Tour — Jun 6 → Sep 1 (locked, sold out)</div>
+      <div class="ahs13x-cal-track"><div class="ahs13x-cal-bar ahs13x-bar-tour" data-w="24%"></div></div>
+    </div>
+    <div class="ahs13x-cal-row">
+      <div class="ahs13x-cal-label">🎬 AHS 13 summer shooting window (moved from earlier plan)</div>
+      <div class="ahs13x-cal-track"><div class="ahs13x-cal-bar ahs13x-bar-shoot" data-w="22%"></div></div>
+    </div>
+    <div class="ahs13x-cal-months"><span>Jan</span><span>Mar</span><span>May</span><span>Jul</span><span>Sep</span><span>Nov</span></div>
+    <p class="ahs13x-cal-note">The production plan originally left room for both. Once shooting moved into the summer, the overlap above became unworkable — and a sold-out arena tour is the one commitment that cannot slide. Shooting window shown indicatively; exact production dates have not been published.</p>
+  </div>
+
+  <figure class="ahs13x-fig">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ariana_Grande.jpg" alt="Ariana Grande smiling on the red carpet at a New York film premiere in July 2011" title="Ariana Grande — American Horror Story Season 13 Exit" loading="lazy" width="640">
+    <figcaption>Ariana Grande, photographed at a New York premiere in July 2011 — fifteen years on, one rewritten shooting calendar was enough to pull her out of American Horror Story Season 13 while 41 sold-out arena dates stayed locked in place. (Photo: Joella Marano via Wikimedia Commons, CC BY-SA 2.0)</figcaption>
+  </figure>
+
+  <h2 class="ahs13x-h2">Who's Still In: The Season 13 Coven — Tap a Card</h2>
+
+  <div class="ahs13x-cast">
+    <div class="ahs13x-card" data-info="Cordelia returns — set photos show her back at Robichaux Academy."><b>Sarah Paulson</b><small>Tap for status</small><span class="ahs13x-badge">In</span></div>
+    <div class="ahs13x-card" data-info="Franchise mainstay; said in January 2026 he was excited to work with Grande."><b>Evan Peters</b><small>Tap for status</small><span class="ahs13x-badge">In</span></div>
+    <div class="ahs13x-card" data-info="Two-time AHS Emmy winner (2012, 2014). Her return was the announcement's biggest shock after years of saying she was done."><b>Jessica Lange</b><small>Tap for status</small><span class="ahs13x-badge">In</span></div>
+    <div class="ahs13x-card" data-info="Won a 2014 Emmy for Coven as Delphine LaLaurie."><b>Kathy Bates</b><small>Tap for status</small><span class="ahs13x-badge">In</span></div>
+    <div class="ahs13x-card" data-info="Madison Montgomery's catchphrase closed the casting video."><b>Emma Roberts</b><small>Tap for status</small><span class="ahs13x-badge">In</span></div>
+    <div class="ahs13x-card" data-info="Voodoo queen Marie Laveau's portrayer returns to the fold."><b>Angela Bassett</b><small>Tap for status</small><span class="ahs13x-badge">In</span></div>
+    <div class="ahs13x-card" data-info="Scream Queens alum — one half of the reunion that now won't include Grande."><b>Billie Lourd</b><small>Tap for status</small><span class="ahs13x-badge">In</span></div>
+    <div class="ahs13x-card" data-info="Queenie's portrayer, back among the Robichaux witches."><b>Gabourey Sidibe</b><small>Tap for status</small><span class="ahs13x-badge">In</span></div>
+    <div class="ahs13x-card" data-info="Coven-era regular, seen in the spring set photos."><b>Leslie Grossman</b><small>Tap for status</small><span class="ahs13x-badge">In</span></div>
+    <div class="ahs13x-card ahs13x-out" data-info="Exited July 10, 2026. Zero scenes filmed. Role never revealed. No word on recasting or rewriting the part."><b>Ariana Grande</b><small>Tap for status</small><span class="ahs13x-badge">Exited</span></div>
+  </div>
+  <p id="ahs13xCastInfo" style="min-height:1.5em;font-family:Verdana,Arial,sans-serif;font-size:.9rem;color:#5c0f1d;background:#f6f1e7;border-radius:6px;padding:.7em 1em;">👆 Tap any cast card to see their Season 13 status and backstory.</p>
+
+  <p>Grande's connection to this troupe runs back a decade. She worked with Ryan Murphy, Emma Roberts and Billie Lourd on Scream Queens in 2015, and Season 13 would have been her first major series role since — arriving on the heels of her first Oscar nomination for Wicked and the November 2025 release of Wicked: For Good. The franchise she is stepping away from carries more than 90 Emmy nominations, a record tracked by the <a href="https://www.televisionacademy.com/shows/american-horror-story" rel="noopener" target="_blank">Television Academy</a>, and more than 700 million hours streamed globally per FX. Tour-versus-everything-else collisions are a running story in pop right now, as our coverage of <a href="https://cruxbuzz.com/nick-jonas-forced-off-stage-by-laser-pointer-in-prague-how-concert-disruption-sparked-fan-outrage/">Nick Jonas's disrupted Prague show</a> and the <a href="https://cruxbuzz.com/fifth-harmony-plans-2026-reunion-without-camila-cabello-as-work-from-home-hits-1-5b-streams/">Fifth Harmony reunion plans</a> keeps proving.</p>
+
+  <h2 class="ahs13x-h2">Quick Answers for Searching Fans</h2>
+
+  <div class="ahs13x-faq">
+    <div class="ahs13x-faq-item">
+      <button class="ahs13x-faq-q" type="button"><span>Why did Ariana Grande leave American Horror Story Season 13?</span><span>＋</span></button>
+      <div class="ahs13x-faq-a"><div>Per reports citing production sources, the shooting schedule changed and moved into summer 2026 dates that conflicted with her locked Eternal Sunshine Tour routing. The original plan had allowed her to film while touring.</div></div>
+    </div>
+    <div class="ahs13x-faq-item">
+      <button class="ahs13x-faq-q" type="button"><span>Did she film any scenes?</span><span>＋</span></button>
+      <div class="ahs13x-faq-a"><div>No. Reporting on the exit states she shot no scenes for the season, and her character was never publicly revealed.</div></div>
+    </div>
+    <div class="ahs13x-faq-item">
+      <button class="ahs13x-faq-q" type="button"><span>When does AHS Season 13 premiere?</span><span>＋</span></button>
+      <div class="ahs13x-faq-a"><div>Thursday, September 24, 2026 at 9 p.m. ET on FX and on <a href="https://www.hulu.com/series/american-horror-story-a67a233c-fcfe-4e8e-b000-052603ddd616" rel="noopener" target="_blank">Hulu</a>, with Disney+ carrying it internationally.</div></div>
+    </div>
+    <div class="ahs13x-faq-item">
+      <button class="ahs13x-faq-q" type="button"><span>Will she return in a future season?</span><span>＋</span></button>
+      <div class="ahs13x-faq-a"><div>Nothing has been announced either way. FX, 20th Television and Grande's team have not commented on the exit or on any future involvement.</div></div>
+    </div>
+    <div class="ahs13x-faq-item">
+      <button class="ahs13x-faq-q" type="button"><span>Where can I see her this year instead?</span><span>＋</span></button>
+      <div class="ahs13x-faq-a"><div>On tour. The Eternal Sunshine Tour runs through September 1, 2026 — dates and any remaining tickets are on <a href="https://www.arianagrande.com/" rel="noopener" target="_blank">her official site</a> and <a href="https://www.ticketmaster.com/ariana-grande-tickets/artist/1688071" rel="noopener" target="_blank">Ticketmaster</a>.</div></div>
+    </div>
+  </div>
+
+  <h2 class="ahs13x-h2">What This Report Covered</h2>
+
+  <p>This report covered Ariana Grande's departure from American Horror Story Season 13, as reported on July 10, 2026 and attributed to production sources; the schedule change that conflicted with her Eternal Sunshine Tour; the confirmation that no scenes were filmed and that her role was never revealed; the October 31, 2025 casting announcement; the returning cast, including Jessica Lange; and the season's September 24, 2026 premiere date on FX and Hulu. The tour's 41-show run, its June opening at Oakland Arena, the rescheduled July dates and its September 1 close in London were also described. Related coverage can be found in our <a href="https://cruxbuzz.com/category/entertainment/">Entertainment section</a>, including <a href="https://cruxbuzz.com/pluribus-vince-gilligan-rhea-seehorn-apple-tv-hive-mind-9-episodes-12-immune/">new-season television reporting</a> and <a href="https://cruxbuzz.com/companion-trailer-sophie-thatchers-ai-girlfriend-turns-deadly-in-new-sci-fi-horror/">horror-genre screen news</a>.</p>
+
+</div>
+
+<script>
+(function(){
+  /* timeline accordions */
+  document.querySelectorAll('#ahs13xTimeline .ahs13x-tl-item').forEach(function(item){
+    item.querySelector('.ahs13x-tl-head').addEventListener('click',function(){
+      var body=item.querySelector('.ahs13x-tl-body');
+      var open=item.classList.contains('ahs13x-open');
+      if(open){item.classList.remove('ahs13x-open');body.style.maxHeight=null;}
+      else{item.classList.add('ahs13x-open');body.style.maxHeight=body.scrollHeight+'px';}
+    });
+  });
+  /* cast cards */
+  var info=document.getElementById('ahs13xCastInfo');
+  document.querySelectorAll('.ahs13x-card').forEach(function(card){
+    card.addEventListener('click',function(){
+      info.textContent=card.querySelector('b').textContent+': '+card.getAttribute('data-info');
+    });
+  });
+  /* FAQ */
+  document.querySelectorAll('.ahs13x-faq-item').forEach(function(item){
+    item.querySelector('.ahs13x-faq-q').addEventListener('click',function(){
+      var a=item.querySelector('.ahs13x-faq-a');
+      var sym=item.querySelector('.ahs13x-faq-q span:last-child');
+      if(a.style.maxHeight){a.style.maxHeight=null;sym.textContent='＋';}
+      else{a.style.maxHeight=a.scrollHeight+'px';sym.textContent='－';}
+    });
+  });
+  /* animate calendar bars on scroll into view */
+  var cal=document.getElementById('ahs13xCal');
+  function fire(){
+    cal.querySelectorAll('.ahs13x-cal-bar').forEach(function(b){b.style.width=b.getAttribute('data-w');});
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){fire();io.disconnect();}});},{threshold:.3});
+    io.observe(cal);
+  }else{fire();}
+})();
+</script>

@@ -1,0 +1,215 @@
+<!-- ============================================================
+  CRUXBUZZ INTERACTIVE: Live-action Moana opening weekend
+  Paste into one WordPress "Custom HTML" block.
+  No H1, no feature image inside (set those in WordPress).
+  Self-contained: no external libraries. Scoped classes: mo26x-
+============================================================ -->
+<style>
+  .mo26x-wrap{max-width:860px;margin:0 auto;padding:0 4px;font-family:'Segoe UI',Helvetica,Arial,sans-serif;color:#12303b;line-height:1.7;overflow-x:hidden;box-sizing:border-box}
+  .mo26x-wrap *,.mo26x-wrap *::before,.mo26x-wrap *::after{box-sizing:border-box}
+  .mo26x-wrap img{max-width:100%;height:auto}
+  .mo26x-wrap p{margin:0 0 1.1em;font-size:1.03rem}
+  .mo26x-wrap a{color:#0b6d7f;text-decoration:underline;text-underline-offset:2px}
+  .mo26x-wrap a:hover{color:#06424d}
+  .mo26x-h2{font-size:1.6rem;line-height:1.25;color:#06424d;margin:1.6em 0 .7em;padding-bottom:.3em;border-bottom:3px solid #f4a25e}
+  .mo26x-kicker{display:inline-block;background:#0b6d7f;color:#eefbfd;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.45em 1em;border-radius:14px;margin-bottom:1em;font-weight:600}
+  .mo26x-note{font-size:.8rem;color:#5b7681;font-style:italic}
+  /* scoreboard */
+  .mo26x-board{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:1.4em 0}
+  .mo26x-tile{background:linear-gradient(160deg,#083a46,#0b6d7f);color:#eefbfd;border-radius:10px;padding:1.1em .8em;text-align:center;box-shadow:0 4px 12px rgba(8,58,70,.25)}
+  .mo26x-tile b{display:block;font-size:1.55rem;color:#ffd58a;margin-bottom:.25em}
+  .mo26x-tile span{font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;opacity:.9}
+  /* ranked bar chart */
+  .mo26x-chart{background:#f2fafb;border:1px solid #cde6ea;border-radius:10px;padding:1.2em 1em 1.4em;margin:1.4em 0}
+  .mo26x-chart h3{margin:0 0 .3em;font-size:1.05rem;color:#06424d}
+  .mo26x-chart-sub{font-size:.8rem;color:#5b7681;margin-bottom:1.1em}
+  .mo26x-row{margin-bottom:.65em;cursor:pointer}
+  .mo26x-row-label{display:flex;justify-content:space-between;font-size:.83rem;font-weight:600;margin-bottom:.2em}
+  .mo26x-row-label em{font-style:normal;color:#0b6d7f}
+  .mo26x-track{height:22px;background:#dceef1;border-radius:11px;overflow:hidden}
+  .mo26x-bar{height:100%;width:0;border-radius:11px;background:linear-gradient(90deg,#0b6d7f,#2fa3b8);transition:width 1.1s ease}
+  .mo26x-row.mo26x-hero .mo26x-bar{background:linear-gradient(90deg,#d95f2b,#f4a25e)}
+  .mo26x-row-detail{max-height:0;overflow:hidden;transition:max-height .3s ease;font-size:.85rem;color:#33555f}
+  .mo26x-row-detail>div{padding:.5em .2em .3em}
+  /* face-off */
+  .mo26x-vs{background:#083a46;border-radius:12px;padding:1.3em 1em;margin:1.4em 0;color:#eefbfd}
+  .mo26x-vs h3{margin:0 0 .9em;text-align:center;font-size:1.05rem;letter-spacing:.05em;text-transform:uppercase;color:#ffd58a}
+  .mo26x-vs-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;text-align:center;margin-bottom:1em}
+  .mo26x-vs-head b{font-size:1rem}
+  .mo26x-vs-head .mo26x-vs-badge{background:#d95f2b;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;margin:0 auto}
+  .mo26x-vs-row{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;padding:.55em .2em;border-top:1px solid rgba(238,251,253,.15);font-size:.9rem}
+  .mo26x-vs-row span:first-child{text-align:right}
+  .mo26x-vs-row span:last-child{text-align:left}
+  .mo26x-vs-cat{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;opacity:.75;text-align:center;white-space:nowrap}
+  .mo26x-win{color:#8be3a1;font-weight:700}
+  /* quotes */
+  .mo26x-quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:1.3em 0}
+  .mo26x-quote{background:#fff6ec;border-left:5px solid #f4a25e;border-radius:0 8px 8px 0;padding:1em}
+  .mo26x-quote p{font-size:.93rem;font-style:italic;margin-bottom:.6em}
+  .mo26x-quote footer{font-size:.78rem;color:#8a6a45;font-weight:600}
+  /* figure */
+  .mo26x-fig{margin:1.6em 0;text-align:center}
+  .mo26x-fig img{border-radius:10px;box-shadow:0 6px 18px rgba(8,58,70,.28)}
+  .mo26x-fig figcaption{font-size:.8rem;color:#5b7681;margin-top:.6em;line-height:1.5;text-align:left}
+  /* faq */
+  .mo26x-faq-item{border:1px solid #cde6ea;border-radius:8px;margin-bottom:.6em;overflow:hidden;background:#fff}
+  .mo26x-faq-q{width:100%;text-align:left;background:#f2fafb;border:0;padding:.85em 1em;font-size:.94rem;font-weight:700;color:#06424d;cursor:pointer;display:flex;justify-content:space-between;gap:8px;font-family:inherit}
+  .mo26x-faq-q span:last-child{color:#d95f2b;flex:none}
+  .mo26x-faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .mo26x-faq-a>div{padding:.85em 1em;font-size:.96rem}
+  @media(max-width:600px){
+    .mo26x-h2{font-size:1.3rem}
+    .mo26x-tile b{font-size:1.25rem}
+    .mo26x-vs-row{font-size:.8rem}
+    .mo26x-vs-cat{font-size:.6rem}
+    .mo26x-row-label{font-size:.76rem}
+  }
+</style>
+
+<div class="mo26x-wrap">
+
+  <span class="mo26x-kicker">Box Office · Disney · Opening Weekend</span>
+
+  <p>Disney's live-action <a href="https://movies.disney.com/moana-2026" rel="noopener" target="_blank">Moana</a> sailed into 3,875 North American theaters on Friday, July 10, 2026 — and its maiden voyage is rougher than the studio hoped. After $4.5 million in Thursday previews and a Friday of roughly $17 million, trade projections now put the three-day opening at $40 million to $45 million, well under the $60 million-plus that pre-release tracking suggested. The film, directed by Hamilton's Thomas Kail with Catherine Laga'aia in her screen debut and Dwayne Johnson back as Maui, carries a reported $250 million budget before marketing. Disney's wider theatrical chessboard is already in motion this year, from the <a href="https://cruxbuzz.com/avengers-doomsday-delayed-to-dec-2026-as-marvel-cuts-3-films-and-confirms-doctor-doom-return/">Avengers: Doomsday move to December</a> to the <a href="https://cruxbuzz.com/pirates-of-the-caribbean-6-bruckheimer-confirms-original-cast-return-for-4-5-billion-franchise-reboot/">Pirates of the Caribbean reboot</a>.</p>
+
+  <p class="mo26x-note">All figures below are trade-reported estimates as of Saturday, July 11, 2026. Studios issue official weekend estimates on Sunday.</p>
+
+  <h2 class="mo26x-h2">The Weekend Scoreboard</h2>
+
+  <div class="mo26x-board">
+    <div class="mo26x-tile"><b>$4.5M</b><span>Thursday previews</span></div>
+    <div class="mo26x-tile"><b>~$17M</b><span>Friday incl. previews</span></div>
+    <div class="mo26x-tile"><b>$40–45M</b><span>3-day projection</span></div>
+    <div class="mo26x-tile"><b>$250M</b><span>Reported budget</span></div>
+    <div class="mo26x-tile"><b>3,875</b><span>Theaters</span></div>
+    <div class="mo26x-tile"><b>PG · 1h55m</b><span>Rating · runtime</span></div>
+  </div>
+
+  <h2 class="mo26x-h2">Where Moana Lands Among Disney's Remakes — Tap Any Bar</h2>
+
+  <div class="mo26x-chart" id="mo26xChart">
+    <h3>Disney live-action remake openings (domestic, 3-day)</h3>
+    <div class="mo26x-chart-sub">Studio-reported opening weekends. Moana shown at its current projection midpoint; tap a bar for context.</div>
+    <!-- rows injected by script -->
+  </div>
+
+  <p>The comparison every number-watcher is making sits at the bottom of that chart: Snow White opened to $42.2 million in 2025, and Moana's projection lands in the same band — with a budget more than twice as large. The counter-example is only a year old, too. Lilo &amp; Stitch opened to $146 million in May 2025 on a reported $100 million budget and swam past $1 billion worldwide. Timing may be part of the answer: Moana 2 was still setting Thanksgiving records in November 2024, roughly 20 months before this remake reached theaters, and the two animated films together grossed roughly $1.7 billion worldwide — Disney detailed Moana 2's record run on <a href="https://thewaltdisneycompany.com/news/moana-2-box-office/" rel="noopener" target="_blank">its own newsroom</a>. Reviews add headwind: Rotten Tomatoes sits in the mid-30s and Metacritic at 41 as of Saturday, with Laga'aia's lead performance the one element critics consistently praise. Audience scores and CinemaScore, which often tell a friendlier story for family titles, arrive with Sunday's estimates on <a href="https://www.rottentomatoes.com/m/moana_2026" rel="noopener" target="_blank">Rotten Tomatoes</a> and <a href="https://www.boxofficemojo.com/title/tt27419466/" rel="noopener" target="_blank">Box Office Mojo</a>.</p>
+
+  <figure class="mo26x-fig">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dwayne_Johnson_Hercules_2014_(cropped).jpg" alt="Dwayne Johnson smiling at the Hercules film premiere in Sydney in 2014" title="Dwayne Johnson — Moana Live-Action Opening Weekend Box Office" loading="lazy" width="560">
+    <figcaption>Dwayne Johnson at a 2014 Sydney premiere — twelve years later his live-action Maui sails into a $40M–$45M projected opening on a $250 million budget, while a $15 million horror rival eyes a franchise record on the very same weekend. (Photo: Eva Rinaldi via Wikimedia Commons, CC BY-SA 2.0)</figcaption>
+  </figure>
+
+  <h2 class="mo26x-h2">The Other Story: A $15M Horror Film Hunting a Record</h2>
+
+  <div class="mo26x-vs">
+    <h3>Weekend face-off</h3>
+    <div class="mo26x-vs-head">
+      <b>🌊 Moana</b>
+      <div class="mo26x-vs-badge">VS</div>
+      <b>🪚 Evil Dead Burn</b>
+    </div>
+    <div class="mo26x-vs-row"><span>$250M (reported)</span><span class="mo26x-vs-cat">Budget</span><span class="mo26x-win">~$15–20M</span></div>
+    <div class="mo26x-vs-row"><span>$4.5M</span><span class="mo26x-vs-cat">Previews</span><span>$2.3M</span></div>
+    <div class="mo26x-vs-row"><span class="mo26x-win">$40–45M</span><span class="mo26x-vs-cat">3-day projection</span><span>$25–35M</span></div>
+    <div class="mo26x-vs-row"><span>~33–35%</span><span class="mo26x-vs-cat">Rotten Tomatoes</span><span class="mo26x-win">72%</span></div>
+    <div class="mo26x-vs-row"><span>PG · family</span><span class="mo26x-vs-cat">Rating · audience</span><span>R · horror</span></div>
+    <div class="mo26x-vs-row"><span>Thomas Kail</span><span class="mo26x-vs-cat">Director</span><span>Sébastien Vaniček</span></div>
+  </div>
+
+  <p>Warner Bros. and New Line's Evil Dead Burn, directed by Infested's Sébastien Vaniček and led by Souheila Yacoub, is projected between $25 million and $35 million. Anything mid-range or better beats the franchise's best openings — $25.8 million for the 2013 reboot and $24.5 million for Evil Dead Rise in 2023, a film that turned roughly $19 million of budget into $147 million worldwide. On a weekend when the giant wobbles, the sixth Evil Dead entry may deliver the healthiest return in theaters — the same low-cost horror economics we tracked around the <a href="https://cruxbuzz.com/companion-trailer-sophie-thatchers-ai-girlfriend-turns-deadly-in-new-sci-fi-horror/">Companion trailer launch</a>.</p>
+
+  <h2 class="mo26x-h2">The People Behind the Voyage, In Their Own Words</h2>
+
+  <div class="mo26x-quotes">
+    <div class="mo26x-quote">
+      <p>"Humbled to say we're bringing Moana's beautiful story to the live-action big screen! Maui changed my life (miss you grandpa) and I'm honored to partner with Disney to tell our story through the realm of music and dance, which at the core is who we are as Polynesian people."</p>
+      <footer>— Dwayne Johnson, announcing the film on his X account, April 3, 2023</footer>
+    </div>
+    <div class="mo26x-quote">
+      <p>"My grandfather comes from Fa'aala, Palauli, in Savai'i. And my grandmother is from Leulumoega Tuai on the main island of 'Upolu in Samoa." She added she was honored "to represent young girls who look like me."</p>
+      <footer>— Catherine Laga'aia, Disney casting announcement, June 2024</footer>
+    </div>
+    <div class="mo26x-quote">
+      <p>"I'm truly honored to pass this baton to the next young woman of Pacific Island descent, to honor our incredible Pacific peoples, cultures and communities."</p>
+      <footer>— Auli'i Cravalho, the original Moana and this film's executive producer, in her own social video, May 2024</footer>
+    </div>
+  </div>
+
+  <p>Laga'aia, a Sydney-born performer of Samoan heritage and daughter of actor Jay Laga'aia, fronts a cast that includes John Tui as Chief Tui, Frankie Adams as Sina and Rena Owen as Gramma Tala, with Lin-Manuel Miranda returning to write a new song, "Along the Way," performed by Laga'aia, Johnson and Cravalho. Disney again worked with the Oceanic Cultural Trust — the Pacific advisory group it describes on <a href="https://thewaltdisneycompany.com/news/oceanic-cultural-trust-moana-2/" rel="noopener" target="_blank">its corporate site</a> — spanning tattoo, choreography, history and language specialists. Filming ran from July to November 2024 in Atlanta and on O'ahu, where the Motunui village was built as a physical set, details Disney lays out in <a href="https://thewaltdisneycompany.com/news/moana-dwayne-johnson-catherine-lagaaia/" rel="noopener" target="_blank">its production feature</a>. Big-swing theatrical bets on beloved animated worlds are stacking up industry-wide — see the <a href="https://cruxbuzz.com/super-mario-galaxy-movie-announcement-40th-anniversary/">Super Mario Galaxy theatrical event</a>.</p>
+
+  <h2 class="mo26x-h2">Quick Answers Before You Buy a Ticket</h2>
+
+  <div class="mo26x-faq">
+    <div class="mo26x-faq-item">
+      <button class="mo26x-faq-q" type="button"><span>Who plays Moana in the live-action movie?</span><span>＋</span></button>
+      <div class="mo26x-faq-a"><div>Catherine Laga'aia, an Australian performer of Samoan heritage, in her feature film debut. Dwayne Johnson reprises Maui from the 2016 animated film.</div></div>
+    </div>
+    <div class="mo26x-faq-item">
+      <button class="mo26x-faq-q" type="button"><span>Is Auli'i Cravalho in it?</span><span>＋</span></button>
+      <div class="mo26x-faq-a"><div>She does not play Moana on screen — she chose in 2024 to pass the role on. She serves as executive producer and performs on the new song "Along the Way" with Laga'aia and Johnson.</div></div>
+    </div>
+    <div class="mo26x-faq-item">
+      <button class="mo26x-faq-q" type="button"><span>How are the reviews?</span><span>＋</span></button>
+      <div class="mo26x-faq-a"><div>Mixed-to-negative from critics so far: Rotten Tomatoes in the mid-30s and Metacritic at 41 as of July 11, with consistent praise for Laga'aia's performance. Audience measures like CinemaScore had not been published at the time of writing — check <a href="https://www.rottentomatoes.com/m/moana_2026" rel="noopener" target="_blank">Rotten Tomatoes</a> for live scores.</div></div>
+    </div>
+    <div class="mo26x-faq-item">
+      <button class="mo26x-faq-q" type="button"><span>Is it kid-friendly, and how long is it?</span><span>＋</span></button>
+      <div class="mo26x-faq-a"><div>Rated PG for action/peril, some scary images, rude humor and brief thematic elements. Runtime is 1 hour 55 minutes.</div></div>
+    </div>
+    <div class="mo26x-faq-item">
+      <button class="mo26x-faq-q" type="button"><span>When can I stream it?</span><span>＋</span></button>
+      <div class="mo26x-faq-a"><div>No streaming date has been announced. It is in theaters only for now; Disney's official pages at <a href="https://movies.disney.com/moana-2026" rel="noopener" target="_blank">movies.disney.com</a> and <a href="https://www.disneyplus.com/explore/articles/moana-live-action" rel="noopener" target="_blank">Disney+</a> will carry any streaming news first.</div></div>
+    </div>
+  </div>
+
+  <h2 class="mo26x-h2">What This Report Covered</h2>
+
+  <p>This report covered the live-action Moana's July 10, 2026 opening in 3,875 theaters; the $4.5 million in previews, the roughly $17 million Friday, and the $40 million to $45 million three-day projection against a reported $250 million budget; the mixed critic scores and the praise directed at Catherine Laga'aia's debut; Evil Dead Burn's $25 million to $35 million projection and the franchise records within its reach; the cast, the new Lin-Manuel Miranda song, the Oceanic Cultural Trust's involvement, and the on-record statements from Dwayne Johnson, Catherine Laga'aia and Auli'i Cravalho. Final weekend estimates are expected Sunday. Related reading is available in our <a href="https://cruxbuzz.com/category/entertainment/">Entertainment section</a>, including <a href="https://cruxbuzz.com/zendaya-and-robert-pattinson-film-a24s-the-drama-in-boston-offering-216-casting-roles-for-extras/">Hollywood production coverage</a>.</p>
+
+</div>
+
+<script>
+(function(){
+  /* ranked remake-openings chart */
+  var data=[
+    {t:"The Lion King (2019)",v:191.8,d:"Opened to $191.8M domestic — the high-water mark for Disney's live-action remakes."},
+    {t:"Beauty and the Beast (2017)",v:174.8,d:"$174.8M opening; finished over $1.2B worldwide."},
+    {t:"Lilo & Stitch (2025)",v:146.0,d:"$146M three-day start on a reported ~$100M budget; crossed $1B worldwide."},
+    {t:"The Jungle Book (2016)",v:103.3,d:"$103.3M opening; a critical and commercial win for the remake era."},
+    {t:"The Little Mermaid (2023)",v:95.5,d:"$95.5M over its three-day frame."},
+    {t:"Aladdin (2019)",v:91.5,d:"$91.5M start; legged out past $1B worldwide."},
+    {t:"Dumbo (2019)",v:46.0,d:"$46M opening; one of the softer results before 2025."},
+    {t:"Moana (2026) — projected",v:42.5,d:"Projected $40–45M as of Saturday, July 11. Final estimates arrive Sunday.",hero:true},
+    {t:"Snow White (2025)",v:42.2,d:"$42.2M opening — the comparison every projection cites this weekend."}
+  ];
+  var chart=document.getElementById('mo26xChart');
+  var max=200;
+  data.forEach(function(row){
+    var el=document.createElement('div');
+    el.className='mo26x-row'+(row.hero?' mo26x-hero':'');
+    el.innerHTML='<div class="mo26x-row-label"><span>'+row.t+'</span><em>$'+row.v.toFixed(1)+'M</em></div>'+
+      '<div class="mo26x-track"><div class="mo26x-bar" data-w="'+(row.v/max*100).toFixed(1)+'%"></div></div>'+
+      '<div class="mo26x-row-detail"><div>'+row.d+'</div></div>';
+    el.addEventListener('click',function(){
+      var det=el.querySelector('.mo26x-row-detail');
+      det.style.maxHeight=det.style.maxHeight?null:det.scrollHeight+'px';
+    });
+    chart.appendChild(el);
+  });
+  function fire(){chart.querySelectorAll('.mo26x-bar').forEach(function(b){b.style.width=b.getAttribute('data-w');});}
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){fire();io.disconnect();}});},{threshold:.2});
+    io.observe(chart);
+  }else{fire();}
+  /* FAQ */
+  document.querySelectorAll('.mo26x-faq-item').forEach(function(item){
+    item.querySelector('.mo26x-faq-q').addEventListener('click',function(){
+      var a=item.querySelector('.mo26x-faq-a');
+      var sym=item.querySelector('.mo26x-faq-q span:last-child');
+      if(a.style.maxHeight){a.style.maxHeight=null;sym.textContent='＋';}
+      else{a.style.maxHeight=a.scrollHeight+'px';sym.textContent='－';}
+    });
+  });
+})();
+</script>
