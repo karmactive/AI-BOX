@@ -1,0 +1,287 @@
+<!-- karmactive.com | Article 1 | J&K Cloudbursts July 2026 | July 17, 2026 -->
+<style>
+.jk2026*{box-sizing:border-box;margin:0;padding:0}
+.jk2026{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;max-width:860px;margin:0 auto;color:#1c1c1e;line-height:1.74;font-size:17px}
+.jk2026 a.il{color:#c8341c;text-decoration:none;border-bottom:1px solid rgba(200,52,28,.3);transition:border-color .2s}
+.jk2026 a.il:hover{border-bottom-color:#c8341c}
+.jk-meta{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#7a8a9a;font-weight:700;margin-bottom:14px}
+.jk-title{font-size:clamp(26px,5vw,44px);font-weight:900;line-height:1.12;color:#0a1628;margin:0 0 20px}
+.jk-dek{font-size:clamp(17px,2.5vw,20px);color:#3a4a5c;font-weight:400;line-height:1.55;border-left:4px solid #c8341c;padding-left:18px;margin:0 0 36px}
+.jk-body-wrap{margin-bottom:30px}
+.jk-body-wrap p{margin:0 0 22px}
+.jk-body-wrap p:first-of-type::first-letter{font-size:3.6em;font-weight:900;float:left;line-height:.83;margin:4px 7px 0 0;color:#c8341c}
+.jk-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:36px 0}
+.jk-stat{background:#f5f7fa;border-radius:12px;padding:20px 16px;text-align:center;border-top:4px solid #c8341c}
+.jk-stat-n{font-size:clamp(34px,6vw,50px);font-weight:900;color:#c8341c;line-height:1;display:block}
+.jk-stat-l{font-size:12.5px;color:#5a6a7a;margin-top:9px;font-weight:500;line-height:1.45;display:block}
+.jk-explainer{background:#fff8f0;border:1px solid #f5c897;border-radius:10px;padding:22px 26px;margin:32px 0}
+.jk-explainer-label{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#9a5500;font-weight:700;margin-bottom:8px}
+.jk-explainer p{font-size:15.5px;color:#3a2a0c;line-height:1.6;margin:0}
+.jk-h2{font-size:clamp(20px,3.5vw,28px);font-weight:800;color:#0a1628;margin:46px 0 16px;line-height:1.2}
+.jk-chart-container{position:relative;width:100%;height:270px;margin:24px 0 36px}
+.jk-incident-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0 36px}
+.jk-card{border:1px solid #dde4ee;border-radius:10px;padding:20px;background:#fff}
+.jk-card-date{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:#c8341c;font-weight:700;margin-bottom:7px}
+.jk-card-title{font-size:15px;font-weight:700;color:#0a1628;margin-bottom:10px;line-height:1.3}
+.jk-card-body{font-size:13.5px;color:#4a5a6a;line-height:1.6}
+.jk-map-container{width:100%;height:370px;border-radius:12px;overflow:hidden;margin:24px 0 36px;border:1px solid #cdd5e0}
+.jk-compare{background:#0d1f3c;color:#fff;border-radius:14px;padding:30px;margin:36px 0}
+.jk-compare-head{color:#ffd580;font-size:17px;font-weight:700;margin-bottom:20px}
+.jk-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.jk-compare-col{background:rgba(255,255,255,.07);border-radius:9px;padding:18px}
+.jk-compare-col h4{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.55);margin-bottom:12px;font-weight:600}
+.jk-compare-num{font-size:clamp(34px,5vw,48px);font-weight:900;line-height:1}
+.jk-compare-desc{font-size:13px;color:rgba(255,255,255,.72);margin-top:10px;line-height:1.5}
+.jk-pullquote{border-left:4px solid #c8341c;padding:14px 22px;margin:32px 0;background:#fff5f2;border-radius:0 9px 9px 0}
+.jk-pullquote p{font-size:18px;font-style:italic;color:#2a0a0a;line-height:1.55;margin-bottom:10px}
+.jk-pullquote cite{font-size:13px;color:#888;font-style:normal;display:block}
+.jk-alert{background:#fef3c7;border:1px solid #f59e0b;border-radius:10px;padding:20px 24px;margin:32px 0;display:flex;gap:16px;align-items:flex-start}
+.jk-alert-icon{font-size:26px;flex-shrink:0;margin-top:2px}
+.jk-alert-body{font-size:15px;color:#451a03;line-height:1.58}
+.jk-alert-body strong{color:#78350f}
+.jk-conclusion{background:#f0f4f9;border-radius:12px;padding:28px 32px;margin:44px 0 0}
+.jk-conclusion h3{font-size:14px;text-transform:uppercase;letter-spacing:.07em;color:#4a6080;margin-bottom:14px;font-weight:700}
+.jk-conclusion p{font-size:15.5px;color:#2a3a4a;line-height:1.68;margin:0 0 14px}
+.jk-conclusion p:last-child{margin:0}
+@media(max-width:680px){
+  .jk2026{font-size:16px}
+  .jk-stats-row{grid-template-columns:1fr 1fr}
+  .jk-incident-grid{grid-template-columns:1fr}
+  .jk-compare-grid{grid-template-columns:1fr}
+  .jk-map-container{height:300px}
+  .jk-body-wrap p:first-of-type::first-letter{font-size:2.8em}
+}
+</style>
+
+<div class="jk2026">
+
+<p class="jk-meta">Climate Crisis &nbsp;·&nbsp; July 17, 2026</p>
+
+<h1 class="jk-title">22 Cloudbursts in 42 Days: What Is Behind J&K's Monsoon Flash Flood Season — And Why July 19 Matters</h1>
+
+<p class="jk-dek">Jammu &amp; Kashmir has absorbed more cloudbursts this year than in any recent comparable period. Fifteen struck in just the first two weeks of July. A bigger wet spell is two days away.</p>
+
+<div class="jk-body-wrap">
+
+<p>At around 2:30 in the morning on July 7, Thathri — a town in Doda district's Chenab Valley — woke up to the sound of boulders. A cloudburst had struck somewhere in the hills above, and within minutes, a wall of mud, stones, and water moved through its streets. By daylight, 14 houses and 16 shops had been damaged. A private school building took a direct hit. About 20 vehicles were buried or swept aside. One woman was hospitalised. NH-244, the highway connecting Doda and Kishtwar, was cut off entirely.</p>
+
+<p>What happened in Thathri was not a single unlucky night. It was the most visible event in a pattern that has struck Jammu &amp; Kashmir 22 times since June 1, 2026 — roughly once every two days. Fifteen of those 22 cloudbursts hit in just the first two weeks of July alone. On July 2, when the southwest monsoon officially arrived across J&amp;K and Ladakh — one day later than its normal June 30 arrival — 12 cloudbursts struck within a single 12-hour window.</p>
+
+<p>India Meteorological Department forecasts a new, more widespread wet spell from July 19 to 21, with renewed risk of cloudbursts, flash floods, and landslides across the same vulnerable districts that have been hit repeatedly this season.</p>
+
+</div>
+
+<div class="jk-stats-row">
+  <div class="jk-stat">
+    <span class="jk-stat-n">22</span>
+    <span class="jk-stat-l">Cloudbursts since June 1, 2026</span>
+  </div>
+  <div class="jk-stat">
+    <span class="jk-stat-n">15</span>
+    <span class="jk-stat-l">Cloudbursts in the first 14 days of July</span>
+  </div>
+  <div class="jk-stat">
+    <span class="jk-stat-n">12</span>
+    <span class="jk-stat-l">Cloudbursts in just 12 hours on July 2</span>
+  </div>
+  <div class="jk-stat">
+    <span class="jk-stat-n" style="color:#16a34a">0</span>
+    <span class="jk-stat-l">Deaths in July 2026 events — vs. 199 deaths in all of 2025</span>
+  </div>
+</div>
+
+<div class="jk-explainer">
+  <div class="jk-explainer-label">What is a cloudburst?</div>
+  <p>The India Meteorological Department defines a cloudburst as rainfall exceeding 100 millimetres — about four inches — falling in one hour over a small area of roughly 20 to 30 square kilometres. That is an enormous amount of water in an extremely short time. In flat terrain, the ground can absorb some of it. In J&amp;K's Himalayan valleys — narrow, steep, with rivers already swollen by snowmelt — the same water becomes a wall of debris and boulders within minutes of hitting the hillside above.</p>
+</div>
+
+<h2 class="jk-h2">How the monsoon became a relay of strikes</h2>
+
+<div class="jk-body-wrap">
+<p>The pattern started building before the monsoon arrived. At least 14 cloudbursts hit J&amp;K in June — nine in the Jammu division, five in the Kashmir Valley. Districts in the Chenab Valley belt — Doda, Kishtwar, Reasi — and parts of south Kashmir were struck repeatedly. By the time the monsoon front crossed into J&amp;K on July 1, the ground was already saturated from a month of repeated intense rain events.</p>
+
+<p>On July 2, the monsoon trough met a weakening western disturbance over the region. The result was 12 cloudbursts within 12 hours — the most concentrated single-day cluster of the season so far. Bridges and roads were damaged in Kalalgisar and Seru villages in Doda's Bhalessa belt. Over the next 12 days, at least three more significant events struck: the Kwar hydroelectric project site on July 6, Thathri town on the night of July 6–7, and the Pahalgam tourist area in Anantnag on July 11–12. The season's tally reached 15 cloudbursts in 14 days by mid-July.</p>
+</div>
+
+<div class="jk-chart-container">
+  <canvas id="jkCloudburstChart"></canvas>
+</div>
+
+<h2 class="jk-h2">Three incidents that defined this season</h2>
+
+<div class="jk-incident-grid">
+  <div class="jk-card">
+    <div class="jk-card-date">July 6–7, 2026</div>
+    <div class="jk-card-title">Thathri Town, Doda District</div>
+    <div class="jk-card-body">A cloudburst at 2:30 AM sent mud and boulder-laden torrents through the town. Fourteen houses, 16 shops, one school, and roughly 20 vehicles were damaged or swept away. One woman was hospitalised. NH-244 was blocked. The Machail Mata Yatra route to the pilgrimage site was also affected. Lt Governor Manoj Sinha directed immediate assistance and NH-244 restoration.</div>
+  </div>
+  <div class="jk-card">
+    <div class="jk-card-date">July 6, 2026</div>
+    <div class="jk-card-title">Kwar Hydroelectric Project, Kishtwar</div>
+    <div class="jk-card-body">A debris flow inundated the tail-race-tunnel area of the 540 MW Kwar hydropower project on the Chenab River. Several dumpers, excavators, JCBs, and trucks were buried or swept away. No casualties were reported, but construction was halted and NH-244 was blocked near Prem Nagar. Researchers have noted that the same valley terrain that makes rivers suitable for power generation also makes project sites acutely vulnerable to flash flood damage.</div>
+  </div>
+  <div class="jk-card">
+    <div class="jk-card-date">July 11–12, 2026</div>
+    <div class="jk-card-title">Shangus and Pahalgam, Anantnag</div>
+    <div class="jk-card-body">Twin cloudbursts hit two areas in Anantnag district within hours of each other. The Aaripath stream and Overa Nallah — running through the Overa Wildlife Sanctuary and into the Pahalgam tourist belt — swelled and flooded hotels, huts, paddy fields, and orchards. No one was killed, but farmers and orchard owners in Chittergul village filed for compensation for crop and produce losses. District administration conducted a damage assessment on July 13.</div>
+  </div>
+</div>
+
+<h2 class="jk-h2">Where cloudbursts keep hitting in J&K</h2>
+
+<div class="jk-body-wrap">
+<p>The districts struck most often fall into two belts: the Chenab Valley districts of Doda, Kishtwar, and Reasi in the Jammu division, and the south and north Kashmir districts of Anantnag, Kulgam, and Ganderbal. Chief Minister Omar Abdullah, reviewing 15 years of cloudburst, flash flood, and landslide data in February 2026, categorised these eight districts — along with Rajouri and Udhampur — as the highest-vulnerability zones in J&amp;K. Kishtwar recorded the highest number of deaths in 2025: 66. Reasi recorded 48.</p>
+<p>J&amp;K <a href="https://www.karmactive.com/jammu-kashmir-witnesses-the-hottest-march-in-76-years/" class="il">witnessed its hottest March in 76 years in 2026</a>, a temperature trend that climate researchers link to altered moisture dynamics and western disturbance behaviour — both of which feed into the conditions that produce cloudbursts. The map below shows the key incidents and high-vulnerability districts from this season.</p>
+</div>
+
+<div class="jk-map-container" id="jkMap"></div>
+
+<h2 class="jk-h2">Zero deaths in July 2026 — and what that contrast means</h2>
+
+<div class="jk-body-wrap">
+<p>The most striking fact about July 2026 so far is the absence of deaths in any cloudburst event. This stands in direct contrast to what J&amp;K absorbed in 2025.</p>
+</div>
+
+<div class="jk-compare">
+  <div class="jk-compare-head">J&K cloudburst seasons compared: 2025 vs. July 2026</div>
+  <div class="jk-compare-grid">
+    <div class="jk-compare-col">
+      <h4>2025 Full Season</h4>
+      <div class="jk-compare-num" style="color:#ff7070">199</div>
+      <div class="jk-compare-desc">Deaths from floods, cloudbursts, and landslides across J&amp;K. More than 8,000 homes were destroyed or damaged across the territory. Kishtwar district recorded the highest single-district toll at 66 dead.</div>
+    </div>
+    <div class="jk-compare-col">
+      <h4>July 2026 (to date)</h4>
+      <div class="jk-compare-num" style="color:#7ef2a3">0</div>
+      <div class="jk-compare-desc">Deaths in any of the 15+ cloudburst events recorded in the first two weeks of July. Officials reported damage to homes, shops, roads, vehicles, and crops in Thathri, Pahalgam, and Kwar — but no fatalities in July events.</div>
+    </div>
+  </div>
+</div>
+
+<div class="jk-body-wrap">
+<p>The deadliest single event of 2025 was the August 14 cloudburst at Chisoti village in Kishtwar, which struck the Machail Mata Yatra pilgrimage route approximately 90 kilometres from Kishtwar town. Reports placed the toll at 46 to 66 dead and more than 100 injured, with up to 200 reported missing at the height of the crisis. Prime Minister Narendra Modi spoke directly with the Lt Governor and Chief Minister. Union Minister Dr. Jitendra Singh traveled overland through the night to reach the site after his flight was grounded by weather. NDRF teams, Army units, and State Disaster Response Force personnel conducted a rescue operation that authorities said could take up to 20 days.</p>
+
+<p>The absence of deaths in July 2026 is attributed partly to improved early warning systems in some districts, and partly to the fact that no single cloudburst has struck a densely populated area directly. That can change with a single event. The pattern of strikes continues, and the next significant wet spell arrives in two days.</p>
+
+<p>The <a href="https://www.karmactive.com/ndrfs-159293-lives-saved-inside-indias-elite-disaster-response-force-that-evacuated-864316-people/" class="il">NDRF has saved over 1.59 lakh lives and evacuated 8.64 lakh people</a> across India's disaster zones — the 13th Battalion based in Samba covers J&amp;K and Ladakh. In 2025, it was central to the Kishtwar crisis response. For July 2026, no mass-casualty deployment has been required — but the unit remains on standby.</p>
+</div>
+
+<div class="jk-pullquote">
+  <p>"The July to September window is the most dangerous period of the year. The interactions between western disturbances and moisture-laden monsoon winds are precisely what produce these short-duration, high-intensity events."</p>
+  <cite>— Sonam Lotus, climatologist, formerly Director, IMD Srinagar Meteorological Centre</cite>
+</div>
+
+<h2 class="jk-h2">What ICIMOD's 2026 outlook says about the Himalayan monsoon</h2>
+
+<div class="jk-body-wrap">
+<p>The International Centre for Integrated Mountain Development (ICIMOD), which monitors climate and water systems across the Hindu Kush Himalayan region, released its Hindu Kush Himalaya Monsoon Outlook for 2026 earlier this year. Its central finding is that the 2026 monsoon is expected to be hotter and drier than normal overall across the HKH region. That does not mean safer.</p>
+
+<p>ICIMOD's warning is that a drier-than-normal monsoon combined with rising temperatures actually increases the risk of sudden, intense cloudbursts. The mechanism: western disturbances — weather systems that originate over the Mediterranean and Central Asia — continue to interact with monsoon moisture even when the overall season is below normal. Those interactions concentrate enormous amounts of water in small areas over very short periods. The risk of glacial lake outburst floods (GLOFs) also rises when temperatures remain elevated, as glacier surfaces become less stable.</p>
+
+<p>The <a href="https://www.karmactive.com/hindu-kush-himalayan-snow-persistence-falls-23-6-below-normal-threatening-water-security-for-nearly-2-billion/" class="il">Hindu Kush Himalayan snowpack has fallen 23.6% below normal</a>, a stress indicator that compounds the instability of the water system across the broader region this season. The <a href="https://www.karmactive.com/indias-monsoon-season-starts-early-32c-ocean-temps-break-16-year-record-42-population-affected/" class="il">monsoon arrived against a backdrop of ocean temperatures breaking a 16-year record</a>, adding to the moisture load in the system.</p>
+
+<p>Researchers who have studied Himalayan cloudburst events from 1970 to 2024 report an increasing frequency across Uttarakhand, Himachal Pradesh, J&amp;K, and Ladakh. The <a href="https://www.karmactive.com/himachal-pradesh-may-vanish-from-map-supreme-court-issues-warning-after-173-monsoon-deaths/" class="il">Supreme Court issued a warning about Himalayan states after 173 monsoon deaths in Himachal Pradesh</a> — the same judicial attention that is now focused on how the entire mountain arc manages its exposure to intensifying precipitation events.</p>
+
+<p>Experts consistently point to non-climate factors that amplify what cloudbursts do when they arrive: construction on riverbanks and floodplains, encroachment of natural drainage channels, deforestation, road-cutting into fragile slopes, quarrying, and hydropower construction in steep terrain. The Kwar HEP incident is one example of how a climate-triggered event interacts with infrastructure to produce compounded damage.</p>
+</div>
+
+<h2 class="jk-h2">Radars, weather stations, and what gets built next</h2>
+
+<div class="jk-body-wrap">
+<p>During the February 2026 review of J&amp;K's disaster vulnerability, Chief Minister Omar Abdullah announced that IMD plans to install four new Doppler Weather Radars across the territory — one each in Doda, Rajouri, Anantnag, and Baramulla — along with 34 new automatic weather stations and snow gauges. The existing radar network has gaps precisely in the Chenab Valley corridor, the most active cloudburst zone this season. The radars would enable hyper-local precipitation forecasting and give district administrations more lead time before flash floods develop.</p>
+
+<p>Lt Governor Manoj Sinha, after the Thathri incident on July 7, confirmed via a statement from Newsonair — the government broadcaster — that he had spoken to the Deputy Commissioner of Doda and directed "immediate assistance" and restoration of NH-244. His statement noted that "several houses and shops have suffered damage" but that "fortunately, no casualties or injuries have been reported."</p>
+
+<p>Environmental researcher Dr. Tanveer Ahmad Khan, who has worked on the Lidder Valley and Pahalgam's water systems, described the Pahalgam cloudburst as "a warning signal," and called for stronger early warning systems, improved disaster preparedness, and climate-resilient infrastructure across J&amp;K's mountain districts. The <a href="https://www.karmactive.com/imd-red-alert-karnataka-telecom-punjab-rain-surge/" class="il">IMD red alert system has been increasingly activated</a> across Indian states as the monsoon season intensifies.</p>
+</div>
+
+<div class="jk-alert">
+  <div class="jk-alert-icon">⚠️</div>
+  <div class="jk-alert-body"><strong>July 19–21 forecast:</strong> IMD's bulletin issued July 15, 2026 forecasts a shift from the current relatively dry period to fairly widespread rainfall across Jammu-Kashmir-Ladakh from July 18–21, with isolated thunderstorms, lightning, and gusty winds of 40 to 60 kmph. The local Meteorological Centre has flagged this as a more significant wet spell than the preceding days. Districts in the Chenab Valley — Doda, Kishtwar, Reasi — and south and north Kashmir face renewed cloudburst, flash flood, and landslide risk as the wet spell develops.</div>
+</div>
+
+<div class="jk-body-wrap">
+<p>The <a href="https://www.karmactive.com/7-dead-as-thunderstorms-hit-france-and-flash-floods-devastate-himachal-pradesh/" class="il">regional flash flood pattern that has hit Himachal Pradesh</a> with deadly force this season is part of the same broader monsoon-western disturbance dynamic affecting J&amp;K. Each state in the Himalayan arc is facing its own sequence of high-intensity precipitation events. In J&amp;K, the pace in 2026 has been particularly concentrated: 22 events in 42 days, with no end to the season in sight.</p>
+</div>
+
+<div class="jk-conclusion">
+  <h3>What this article covered</h3>
+  <p>Jammu &amp; Kashmir has recorded 22 cloudbursts since June 1, 2026 — 15 of them in the first two weeks of July alone. Twelve struck within a single 12-hour window on July 2 when the monsoon arrived. Key incidents included the flooding of the Kwar 540 MW hydroelectric project site on July 6, the Thathri town cloudburst on the night of July 6–7 that damaged 14 houses, 16 shops, and one school, and twin cloudbursts in Anantnag on July 11–12 that flooded hotels and orchards in the Pahalgam tourist area.</p>
+  <p>No deaths have been reported in July 2026 cloudburst events, in contrast to the 199 deaths recorded across J&amp;K in the full 2025 season, which included the Chisoti/Kishtwar event that killed 46 to 66 people. ICIMOD's 2026 Hindu Kush Himalaya Monsoon Outlook has warned that a drier-than-normal season overall does not reduce cloudburst risk in the region. Chief Minister Omar Abdullah announced four new Doppler Weather Radars and 34 automatic weather stations for J&amp;K. IMD forecasts a significant new wet spell from July 19–21, with renewed cloudburst and flash flood risk for Chenab Valley and south and north Kashmir districts.</p>
+</div>
+
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+(function(){
+  // --- Chart: Cloudburst counts by period ---
+  var ctx = document.getElementById('jkCloudburstChart');
+  if(ctx){
+    new Chart(ctx,{
+      type:'bar',
+      data:{
+        labels:['June 2026\n(partial)','July 1–14,\n2026','Total since\nJune 1, 2026'],
+        datasets:[{
+          label:'Cloudbursts recorded',
+          data:[7,15,22],
+          backgroundColor:['#e57a4a','#c8341c','#8b1a0a'],
+          borderRadius:7,
+          borderSkipped:false
+        }]
+      },
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        plugins:{
+          legend:{display:false},
+          title:{display:true,text:'Cloudburst count — Jammu & Kashmir, June–July 2026',font:{size:13.5,weight:'600'},color:'#1c1c1e',padding:{bottom:18}},
+          tooltip:{callbacks:{label:function(c){return' '+c.parsed.y+' cloudbursts'}}}
+        },
+        scales:{
+          y:{beginAtZero:true,ticks:{color:'#5a6a7a',stepSize:5},grid:{color:'rgba(0,0,0,.06)'},title:{display:true,text:'Number of cloudbursts',color:'#7a8a9a',font:{size:12}}},
+          x:{ticks:{color:'#5a6a7a'},grid:{display:false}}
+        }
+      }
+    });
+  }
+
+  // --- Map: J&K affected districts/incidents ---
+  var mapEl = document.getElementById('jkMap');
+  if(mapEl && typeof L !== 'undefined'){
+    var map = L.map('jkMap',{scrollWheelZoom:false,zoomControl:true}).setView([33.6,75.5],7);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      attribution:'&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors',maxZoom:14
+    }).addTo(map);
+
+    var redOpts={radius:11,fillColor:'#c8341c',color:'#fff',weight:2.5,opacity:1,fillOpacity:.88};
+    var orangeOpts={radius:9,fillColor:'#e57a4a',color:'#fff',weight:2,opacity:1,fillOpacity:.85};
+    var greyOpts={radius:9,fillColor:'#7a8a9a',color:'#fff',weight:2,opacity:1,fillOpacity:.7};
+
+    var pts=[
+      [33.20,75.56,redOpts,'Thathri / Kwar HEP, Doda','<b>July 6–7, 2026</b><br>Thathri: 14 houses, 16 shops, 1 school damaged; NH-244 blocked.<br>Kwar 540 MW hydro project: machines buried in debris flow.'],
+      [33.73,75.13,orangeOpts,'Pahalgam / Shangus, Anantnag','<b>July 11–12, 2026</b><br>Hotels, orchards, and paddy fields flooded. Farmers demanded compensation for crop losses.'],
+      [34.68,74.63,orangeOpts,'Gurez Valley, Bandipora','<b>June 17, 2026</b><br>Cloudburst damaged houses and submerged hundreds of acres of farmland in Tulail Valley.'],
+      [33.12,75.00,orangeOpts,'Bathoi, Reasi','<b>~June 4, 2026</b><br>One of five early-season cloudbursts in Reasi district — among J&K\'s highest-vulnerability areas.'],
+      [33.73,76.05,greyOpts,'Kishtwar district (2025 reference)','<b>August 14, 2025 (prior season)</b><br>Chisoti cloudburst killed 46–66 people on the Machail Mata Yatra route. Highest 2025 district toll: 66.'],
+      [33.20,74.88,orangeOpts,'Kulgam (high-vulnerability)','Identified by CM Omar Abdullah as a high-vulnerability district based on 15 years of cloudburst/landslide data.'],
+      [34.14,74.81,orangeOpts,'Ganderbal (high-vulnerability)','Identified by CM Omar Abdullah as a high-vulnerability district based on 15 years of disaster data.']
+    ];
+
+    pts.forEach(function(p){
+      var m = L.circleMarker([p[0],p[1]],p[2]).addTo(map);
+      m.bindPopup('<div style="font-size:13px;max-width:220px;line-height:1.45"><strong>'+p[3]+'</strong><br>'+p[4]+'</div>');
+    });
+
+    var legend = L.control({position:'bottomright'});
+    legend.onAdd=function(){
+      var d=L.DomUtil.create('div','');
+      d.style.cssText='background:#fff;padding:10px 14px;border-radius:8px;font-size:12px;line-height:1.8;border:1px solid #dde4ee';
+      d.innerHTML='<b style="color:#0a1628">Map legend</b><br><span style="color:#c8341c">●</span> July 2026 major incident<br><span style="color:#e57a4a">●</span> June 2026 incident / vulnerable district<br><span style="color:#7a8a9a">●</span> 2025 reference event';
+      return d;
+    };
+    legend.addTo(map);
+  }
+})();
+</script>

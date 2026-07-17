@@ -1,0 +1,327 @@
+<!-- karmactive.com | Article 2 | Texas Hill Country Flooding July 2026 | July 17, 2026 -->
+<style>
+.tx2026*{box-sizing:border-box;margin:0;padding:0}
+.tx2026{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;max-width:860px;margin:0 auto;color:#1c1c1e;line-height:1.74;font-size:17px}
+.tx2026 a.il{color:#0d4f8a;text-decoration:none;border-bottom:1px solid rgba(13,79,138,.3);transition:border-color .2s}
+.tx2026 a.il:hover{border-bottom-color:#0d4f8a}
+.tx-meta{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#7a8a9a;font-weight:700;margin-bottom:14px}
+.tx-title{font-size:clamp(26px,5vw,44px);font-weight:900;line-height:1.12;color:#0a1628;margin:0 0 20px}
+.tx-dek{font-size:clamp(17px,2.5vw,20px);color:#3a4a5c;font-weight:400;line-height:1.55;border-left:4px solid #1a6bbf;padding-left:18px;margin:0 0 36px}
+.tx-body-wrap{margin-bottom:30px}
+.tx-body-wrap p{margin:0 0 22px}
+.tx-body-wrap p:first-of-type::first-letter{font-size:3.6em;font-weight:900;float:left;line-height:.83;margin:4px 7px 0 0;color:#1a6bbf}
+.tx-stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:36px 0}
+.tx-stat{background:#f0f5fb;border-radius:12px;padding:20px 16px;text-align:center;border-top:4px solid #1a6bbf}
+.tx-stat-n{font-size:clamp(30px,5vw,46px);font-weight:900;color:#1a6bbf;line-height:1;display:block}
+.tx-stat-l{font-size:12.5px;color:#5a6a7a;margin-top:9px;font-weight:500;line-height:1.45;display:block}
+.tx-h2{font-size:clamp(20px,3.5vw,28px);font-weight:800;color:#0a1628;margin:46px 0 16px;line-height:1.2}
+.tx-deaths-box{background:#1a1a2e;color:#fff;border-radius:14px;padding:30px;margin:32px 0}
+.tx-deaths-head{font-size:12px;text-transform:uppercase;letter-spacing:.09em;color:#aac4e0;font-weight:700;margin-bottom:20px}
+.tx-deaths-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tx-death-col{background:rgba(255,255,255,.06);border-radius:9px;padding:18px}
+.tx-death-col h4{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.5);margin-bottom:10px;font-weight:600}
+.tx-death-name{font-size:17px;font-weight:700;color:#fff;margin-bottom:6px;line-height:1.3}
+.tx-death-detail{font-size:13px;color:rgba(255,255,255,.68);line-height:1.55}
+.tx-map-container{width:100%;height:370px;border-radius:12px;overflow:hidden;margin:24px 0 36px;border:1px solid #cdd5e0}
+.tx-gauge-box{background:#fff;border:1px solid #dde4ee;border-radius:12px;padding:24px;margin:32px 0}
+.tx-gauge-box-head{font-size:13px;font-weight:700;color:#0a1628;margin-bottom:18px;text-transform:uppercase;letter-spacing:.05em}
+.tx-chart-container{position:relative;width:100%;height:280px;margin:0 0 10px}
+.tx-gauge-note{font-size:12.5px;color:#6a7a8a;line-height:1.5}
+.tx-compare{background:#0a1628;color:#fff;border-radius:14px;padding:30px;margin:36px 0}
+.tx-compare-head{color:#93c5fd;font-size:17px;font-weight:700;margin-bottom:20px}
+.tx-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tx-compare-col{background:rgba(255,255,255,.07);border-radius:9px;padding:18px}
+.tx-compare-col h4{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:rgba(255,255,255,.5);margin-bottom:12px;font-weight:600}
+.tx-compare-num{font-size:clamp(28px,4vw,42px);font-weight:900;line-height:1}
+.tx-compare-desc{font-size:13px;color:rgba(255,255,255,.72);margin-top:10px;line-height:1.5}
+.tx-abbrev-box{background:#e8f4fd;border:1px solid #93c5fd;border-radius:10px;padding:22px 26px;margin:32px 0}
+.tx-abbrev-label{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#1e40af;font-weight:700;margin-bottom:10px}
+.tx-abbrev-quote{font-size:16.5px;color:#1a2e4a;font-style:italic;line-height:1.6;margin-bottom:8px}
+.tx-abbrev-source{font-size:12.5px;color:#4a6a8a}
+.tx-info-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0 36px}
+.tx-info-card{border:1px solid #dde4ee;border-radius:10px;padding:20px;background:#fff}
+.tx-info-card-label{font-size:11.5px;text-transform:uppercase;letter-spacing:.07em;color:#1a6bbf;font-weight:700;margin-bottom:8px}
+.tx-info-card-body{font-size:14px;color:#2a3a4a;line-height:1.6}
+.tx-alert{background:#fee2e2;border:1px solid #fca5a5;border-radius:10px;padding:20px 24px;margin:32px 0;display:flex;gap:16px;align-items:flex-start}
+.tx-alert-icon{font-size:26px;flex-shrink:0;margin-top:2px}
+.tx-alert-body{font-size:15px;color:#450a0a;line-height:1.58}
+.tx-alert-body strong{color:#7f1d1d}
+.tx-timeline{margin:24px 0 36px;border-left:3px solid #1a6bbf;padding-left:24px}
+.tx-tl-item{margin-bottom:24px;position:relative}
+.tx-tl-item::before{content:'';width:12px;height:12px;background:#1a6bbf;border-radius:50%;position:absolute;left:-30px;top:4px}
+.tx-tl-date{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:#1a6bbf;font-weight:700;margin-bottom:4px}
+.tx-tl-text{font-size:15px;color:#1c1c1e;line-height:1.6}
+.tx-conclusion{background:#f0f4f9;border-radius:12px;padding:28px 32px;margin:44px 0 0}
+.tx-conclusion h3{font-size:14px;text-transform:uppercase;letter-spacing:.07em;color:#4a6080;margin-bottom:14px;font-weight:700}
+.tx-conclusion p{font-size:15.5px;color:#2a3a4a;line-height:1.68;margin:0 0 14px}
+.tx-conclusion p:last-child{margin:0}
+@media(max-width:680px){
+  .tx2026{font-size:16px}
+  .tx-stats-row{grid-template-columns:1fr 1fr}
+  .tx-deaths-grid,.tx-compare-grid,.tx-info-row{grid-template-columns:1fr}
+  .tx-map-container{height:300px}
+  .tx-body-wrap p:first-of-type::first-letter{font-size:2.8em}
+}
+</style>
+
+<div class="tx2026">
+
+<p class="tx-meta">Extreme Weather &nbsp;·&nbsp; July 17, 2026</p>
+
+<h1 class="tx-title">2 Dead, 230+ Rescued: Texas Hill Country Floods Again as Guadalupe River Rises 32 Feet in Four Hours</h1>
+
+<p class="tx-dek">One year after the July 4, 2025 disaster that killed 119 people in Kerr County alone, the same rivers are flooding again. Governor Abbott expects the rainfall totals to exceed last year's catastrophe.</p>
+
+<div class="tx-body-wrap">
+
+<p>At 3 in the morning on July 16, 2026, the National Weather Service issued a flash flood emergency for Hunt, Kerrville, and Ingram in Kerr County, Texas — telling residents the situation was "a particularly dangerous situation" and urging them to "seek higher ground now." Three to six inches of rain had already fallen across central Kerr County. More was coming at two to four inches per hour. The Guadalupe River at Center Point had just risen 32 feet in four hours.</p>
+
+<p>By Thursday morning, Kerrville — a city still bearing the wounds of the July 4, 2025 flood — ordered its residents to shelter in place. Flash flood emergencies were also declared for Uvalde County, and for the Guadalupe River corridor through Kerr and Kendall counties, and the Pedernales River through Blanco and Gillespie counties. A "large and deadly flood wave" was moving downstream from Kerrville through Center Point toward Comfort, Waring, Sisterdale, and Bergheim.</p>
+
+<p>Two people were killed. More than 230 water rescues were completed. The state deployed 85 or more boats, 20 aircraft, 200 high-profile vehicles, and more than 2,350 emergency responders from over 30 agencies. Governor Greg Abbott declared a disaster for 59 Texas counties.</p>
+
+</div>
+
+<div class="tx-stats-row">
+  <div class="tx-stat">
+    <span class="tx-stat-n">2</span>
+    <span class="tx-stat-l">Deaths confirmed — 74-year-old in Uvalde and 65-year-old in Center Point</span>
+  </div>
+  <div class="tx-stat">
+    <span class="tx-stat-n">230+</span>
+    <span class="tx-stat-l">Water rescues completed across the region</span>
+  </div>
+  <div class="tx-stat">
+    <span class="tx-stat-n">59</span>
+    <span class="tx-stat-l">Texas counties under Governor Abbott's disaster declaration</span>
+  </div>
+  <div class="tx-stat">
+    <span class="tx-stat-n">32 ft</span>
+    <span class="tx-stat-l">Guadalupe River rise at Center Point — in just four hours</span>
+  </div>
+</div>
+
+<h2 class="tx-h2">The two people who died</h2>
+
+<div class="tx-deaths-box">
+  <div class="tx-deaths-head">Confirmed fatalities — July 16, 2026</div>
+  <div class="tx-deaths-grid">
+    <div class="tx-death-col">
+      <h4>Uvalde County</h4>
+      <div class="tx-death-name">74-year-old man</div>
+      <div class="tx-death-detail">Killed as intense overnight rain submerged roads and homes in the Uvalde area. More than 40 rescues were conducted in Uvalde County alone as the flooding developed. The town received over 20 inches of rain in 48 hours — roughly six months of its typical annual rainfall.</div>
+    </div>
+    <div class="tx-death-col">
+      <h4>Center Point, Kerr County</h4>
+      <div class="tx-death-name">65-year-old man</div>
+      <div class="tx-death-detail">Swept away near Center Point as the Guadalupe River surged. This is the same stretch of river that experienced the deadliest flooding in the Hill Country's recent history just over a year earlier, on July 4, 2025.</div>
+    </div>
+  </div>
+</div>
+
+<h2 class="tx-h2">How the flooding developed: a timeline</h2>
+
+<div class="tx-timeline">
+  <div class="tx-tl-item">
+    <div class="tx-tl-date">July 12, 2026</div>
+    <div class="tx-tl-text">Governor Abbott directed TDEM to activate state emergency response resources ahead of severe weather expected to bring multiple rounds of heavy rainfall across Texas. The National Weather Service warned of a moisture-rich pattern capable of producing 10 to 20 inches of rainfall in some areas.</div>
+  </div>
+  <div class="tx-tl-item">
+    <div class="tx-tl-date">July 14, 2026</div>
+    <div class="tx-tl-text">Abbott issued a disaster declaration for 59 Texas counties and directed TDEM to continue 24-hour operations at the State Emergency Operations Center at Level II (Escalated Response). Heavy rain had already washed out roads and farmland in south-central Texas, triggering dozens of high-water rescues.</div>
+  </div>
+  <div class="tx-tl-item">
+    <div class="tx-tl-date">July 15, 2026</div>
+    <div class="tx-tl-text">Abbott publicly stated: "We are dealing with and responding to a flood that is likely going to break records." Over 1,300 state personnel from more than 30 agencies were already activated, with 800+ vehicles, 75 boats, and 20 aircraft deployed. Abbott drew a direct comparison to 2025: "The Fourth of July floods last year had rainfall of 20.29 inches. The expected rainfall during this rainstorm is expected to be more than 30 inches."</div>
+  </div>
+  <div class="tx-tl-item">
+    <div class="tx-tl-date">July 16, 2026 — 3 AM</div>
+    <div class="tx-tl-text">NWS issued a flash flood emergency for central Kerr County. The Guadalupe River at Center Point rose 32 feet in four hours. The Guadalupe at Comfort rose more than 34 feet in less than two hours, reaching major flood stage by Thursday morning. Kerrville ordered shelter in place. Flash flood emergencies issued for Uvalde County and the Guadalupe/Pedernales river corridors.</div>
+  </div>
+  <div class="tx-tl-item">
+    <div class="tx-tl-date">July 16, 2026 — Daytime</div>
+    <div class="tx-tl-text">Kerr County Judge Rob Kelly signed a local disaster declaration and formally requested assistance from the Governor. Abbott held a severe weather briefing at the State Operations Center: "Protecting life remains our top priority as we work through extraordinarily record-breaking rain." State responder count grew to 2,350 with more than 1,400 vehicles, 85+ boats, and 20 aircraft deployed.</div>
+  </div>
+</div>
+
+<h2 class="tx-h2">The area where the flooding hit hardest</h2>
+
+<div class="tx-body-wrap">
+<p>The flooding was concentrated along three river systems in south-central Texas: the Guadalupe River through Kerr and Kendall counties, the Nueces River in Uvalde County, and the Pedernales River through Blanco and Gillespie counties. Forecasters described "especially critical" conditions along each of these corridors. In Uvalde, over 20 inches of rain fell in 48 hours — with 8 inches recorded in two hours at some locations. Some spots in Ingram and Kerrville received more than 20 inches between Monday and Thursday, per preliminary NWS data.</p>
+<p>The Hunt area in Kerr County was cut off by floodwaters. Highway 39 in Kerr County was closed. Interstate 10 in the region was also affected. Texas Game Wardens alone participated in more than 40 rescues, pulling people from submerged vehicles and flooded homes. Aerial operations ran through the night and into the following day.</p>
+</div>
+
+<div class="tx-map-container" id="txMap"></div>
+
+<h2 class="tx-h2">The river numbers</h2>
+
+<div class="tx-gauge-box">
+  <div class="tx-gauge-box-head">Guadalupe River: how fast and how high</div>
+  <div class="tx-chart-container">
+    <canvas id="txRiverChart"></canvas>
+  </div>
+  <p class="tx-gauge-note">Source: National Weather Service / NOAA water gauges. The Guadalupe River at Kerrville gauge (KRRT2) tracks river stage at Kerrville. The Center Point and Comfort measurements were reported as part of the NWS flash flood emergency and official response briefings. River gauge data is available at water.noaa.gov.</p>
+</div>
+
+<h2 class="tx-h2">One year after 119 deaths: the same rivers, a different scale</h2>
+
+<div class="tx-body-wrap">
+<p>The July 4–5, 2025 Guadalupe River flood was the deadliest in modern Texas Hill Country history. A sudden, catastrophic surge struck in the early hours of Independence Day. In <a href="https://www.karmactive.com/kerr-county-death-toll-reaches-87-as-flood-recovery-efforts-continue/" class="il">Kerr County alone, the death toll reached at least 87 as recovery continued</a>, and the final confirmed toll for the county climbed to 119. <a href="https://www.karmactive.com/global-floods-kill-400-as-texas-reports-52-dead-27-missing/" class="il">Across the broader Hill Country, 52 were dead and 27 missing within the first days</a>, with the toll continuing to grow. The <a href="https://www.karmactive.com/120-dead-172-missing-texas-holds-memorial-for-flood-victims/" class="il">final regional toll reached at least 120 dead with 172 still missing</a> when the state held its memorial. The disaster drew scrutiny over flood warning systems and the operation of summer camps along the Guadalupe.</p>
+</div>
+
+<div class="tx-compare">
+  <div class="tx-compare-head">July 2025 disaster vs. July 2026 flooding — same geography, different scale</div>
+  <div class="tx-compare-grid">
+    <div class="tx-compare-col">
+      <h4>July 4–5, 2025 (Guadalupe River surge)</h4>
+      <div class="tx-compare-num" style="color:#f87171">119+</div>
+      <div class="tx-compare-desc">Deaths in Kerr County. 130+ across the broader Hill Country. Rainfall: 20.29 inches. Camp Mystic: 11 campers initially missing, dozens killed. One of the deadliest flood events in modern Texas history.</div>
+    </div>
+    <div class="tx-compare-col">
+      <h4>July 12–17, 2026 (current event)</h4>
+      <div class="tx-compare-num" style="color:#fcd34d">2</div>
+      <div class="tx-compare-desc">Confirmed deaths as of July 17. 230+ rescues. Rainfall: 30+ inches expected in some areas — Abbott compared it directly to 2025, noting higher projected totals. River levels: Guadalupe at Comfort rose 34 ft in under 2 hours.</div>
+    </div>
+  </div>
+</div>
+
+<h2 class="tx-h2">Camp Mystic is not operating this summer</h2>
+
+<div class="tx-body-wrap">
+<p>Camp Mystic — the girls' summer camp along the Guadalupe River in Hunt that became central to coverage of the July 2025 disaster, with <a href="https://www.karmactive.com/kerr-county-floods-kill-82-11-camp-mystic-campers-missing/" class="il">11 campers initially reported missing</a> — filed for Chapter 11 bankruptcy protection on June 24, 2026. The camp is not operating this summer. Its property, located directly on the Guadalupe River, was not occupied during the July 2026 flooding.</p>
+
+<p>After the 2025 disaster, Texas lawmakers passed Senate Bill 3 (SB3), which allocated approximately $50 million for flood warning sirens and emergency communication systems along flood-prone waterways. The July 2026 flooding marked the first major real-world test of those systems in the Kerr County area. Details on system performance were not yet publicly reported as of July 17.</p>
+
+<p>Texas Governor Greg Abbott, who in 2025 <a href="https://www.karmactive.com/texas-governor-honors-interstate-support-in-catastrophic-flooding/" class="il">honored the interstate support effort</a> that mobilized resources from across the country, again coordinated a multi-agency response — this time with 2,350 state responders deployed before the flooding's peak.</p>
+</div>
+
+<div class="tx-abbrev-box">
+  <div class="tx-abbrev-label">Governor Abbott — July 16, 2026 State Operations Center briefing</div>
+  <div class="tx-abbrev-quote">"Protecting life remains our top priority as we work through extraordinarily record-breaking rain."</div>
+  <div class="tx-abbrev-source">Source: Office of the Texas Governor / gov.texas.gov · Texas Division of Emergency Management / tdem.texas.gov</div>
+</div>
+
+<div class="tx-abbrev-box" style="background:#faf5ff;border-color:#c4b5fd">
+  <div class="tx-abbrev-label" style="color:#5b21b6">Kerr County Judge Rob Kelly — local disaster declaration, July 16, 2026</div>
+  <div class="tx-abbrev-quote" style="color:#2e1065">"The impact of this threat has damaged local roads and sewer systems as well as flooded several homes, schools, and structures."</div>
+  <div class="tx-abbrev-source" style="color:#5b6a7a">Source: Kerr County government · kerrcountylead.com</div>
+</div>
+
+<h2 class="tx-h2">Why this part of Texas floods repeatedly</h2>
+
+<div class="tx-body-wrap">
+<p>Meteorologists and geologists refer to the Texas Hill Country — particularly the belt running from Uvalde County north and northeast through Kerr, Kendall, Blanco, and Gillespie counties — as "Flash Flood Alley." The geography is the reason. The terrain is built on thin soil over porous limestone bedrock. When intense rain falls, the ground cannot absorb it quickly enough. Water runs off immediately into the tributaries and rivers that drain this part of the Edwards Plateau.</p>
+
+<p>Those rivers — the Guadalupe, Nueces, Pedernales, and their tributaries — can rise tens of feet in hours when enough rainfall hits their upper watersheds. The rivers are also relatively narrow and steep, channeling enormous volumes of water downstream quickly. A community 50 miles downstream can go from a dry riverbank to a life-threatening surge in under two hours, as Center Point demonstrated on the night of July 16.</p>
+
+<p>The <a href="https://www.karmactive.com/fact-check-texas-floods-not-caused-by-cloud-seeding/" class="il">flooding is driven by natural weather patterns, not cloud seeding or other interventions</a> — a point that Texas authorities have had to clarify publicly in both 2025 and 2026. The region sits at the intersection of Gulf moisture flows and the geographic funnel of the Hill Country terrain, making summer flash floods a recurring feature of the landscape rather than a random anomaly.</p>
+
+<p>The <a href="https://www.karmactive.com/texas-flash-flood-claims-27-lives-as-search-continues-for-24-missing-camp-girls/" class="il">2025 flood began with an event that killed 27 in the first hours, with 24 camp girls reported missing</a>. The 2026 event, beginning July 12 with the state already on alert, deployed resources four days before the most severe conditions arrived — a contrast in lead time that may have contributed to the lower immediate death toll, though the storm continues to develop and river levels are still high across much of the region as of July 17.</p>
+</div>
+
+<div class="tx-info-row">
+  <div class="tx-info-card">
+    <div class="tx-info-card-label">Flash Flood Alley geography</div>
+    <div class="tx-info-card-body">Uvalde, Kerr, Kendall, Blanco, Gillespie counties. Limestone karst terrain. Thin soil over porous rock. Rivers: Guadalupe, Nueces, Pedernales and their tributaries. Water runs off immediately; rivers can rise 30+ feet in hours during intense rain events.</div>
+  </div>
+  <div class="tx-info-card">
+    <div class="tx-info-card-label">Resources deployed, July 2026</div>
+    <div class="tx-info-card-body">2,350+ state emergency responders from 30+ agencies. 85+ boats. 20 aircraft. 200 high-profile vehicles. 1,400+ total vehicles. Texas Game Wardens: 40+ rescues. Aerial rescues. Operations ran 24 hours through peak flooding. State Operations Center at Level II.</div>
+  </div>
+</div>
+
+<div class="tx-alert">
+  <div class="tx-alert-icon">🔴</div>
+  <div class="tx-alert-body"><strong>Flood risk remains active:</strong> River levels across the Hill Country remain elevated as of July 17. The Guadalupe River NWS gauge at Kerrville (water.noaa.gov) continues to record above-flood-stage readings. Abbott's team has committed to continued deployment of "every resource necessary." The storm system is not over, and additional rainfall remains possible in affected areas.</div>
+</div>
+
+<div class="tx-conclusion">
+  <h3>What this article covered</h3>
+  <p>Texas Hill Country experienced catastrophic flash flooding from July 12–17, 2026. Two people were killed: a 74-year-old man in Uvalde County and a 65-year-old man in Center Point, Kerr County. More than 230 water rescues were completed, with 85 or more boats, 20 aircraft, 200 high-profile vehicles, and 2,350 state emergency responders deployed from more than 30 agencies. Governor Abbott issued a disaster declaration for 59 counties on July 14.</p>
+  <p>The Guadalupe River at Center Point rose 32 feet in four hours on July 16. The Guadalupe at Comfort rose more than 34 feet in under two hours. In Uvalde, over 20 inches of rain fell in 48 hours — roughly eight inches in two hours at peak. Abbott expected total rainfall to exceed 30 inches, compared to the 20.29 inches that fell during the July 4, 2025 Guadalupe River flood, which killed 119 in Kerr County and 130 or more across the Hill Country. Camp Mystic, central to coverage of the 2025 disaster, filed for Chapter 11 bankruptcy on June 24, 2026, and was not operating during the 2026 event. Kerr County Judge Rob Kelly signed a local disaster declaration. The flooding struck the same Flash Flood Alley geography — Uvalde, Kerr, Kendall, Blanco, and Gillespie counties — where thin limestone soil over porous bedrock sends rainfall directly into rivers that can rise tens of feet within hours.</p>
+</div>
+
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+(function(){
+  // --- River stage chart ---
+  var ctx = document.getElementById('txRiverChart');
+  if(ctx){
+    new Chart(ctx,{
+      type:'bar',
+      data:{
+        labels:['Center Point\n(4-hr rise,\nJuly 16)','Comfort\n(2-hr rise,\nJuly 16)','Uvalde\nrainfall\n(48 hrs)'],
+        datasets:[
+          {
+            label:'July 2026',
+            data:[32,34,20],
+            backgroundColor:'#1a6bbf',
+            borderRadius:6,
+            borderSkipped:false
+          },
+          {
+            label:'July 4, 2025 (reference rainfall)',
+            data:[null,null,20.29],
+            backgroundColor:'rgba(200,52,28,.5)',
+            borderRadius:6,
+            borderSkipped:false
+          }
+        ]
+      },
+      options:{
+        responsive:true,maintainAspectRatio:false,
+        plugins:{
+          legend:{position:'top',labels:{font:{size:12},boxWidth:14}},
+          title:{display:true,text:'River rise (feet) and rainfall (inches) — Texas Hill Country, July 2026',font:{size:13.5,weight:'600'},color:'#1c1c1e',padding:{bottom:16}},
+          tooltip:{callbacks:{label:function(c){return' '+c.dataset.label+': '+c.parsed.y+(c.dataIndex<2?' ft':' in')}}}
+        },
+        scales:{
+          y:{beginAtZero:true,ticks:{color:'#5a6a7a'},grid:{color:'rgba(0,0,0,.06)'},title:{display:true,text:'Feet / Inches',color:'#7a8a9a',font:{size:12}}},
+          x:{ticks:{color:'#5a6a7a'},grid:{display:false}}
+        }
+      }
+    });
+  }
+
+  // --- Map: Affected Texas counties ---
+  var mapEl = document.getElementById('txMap');
+  if(mapEl && typeof L !== 'undefined'){
+    var map = L.map('txMap',{scrollWheelZoom:false}).setView([29.8,-99.6],8);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      attribution:'&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap</a> contributors',maxZoom:14
+    }).addTo(map);
+
+    var redDark={radius:13,fillColor:'#1a6bbf',color:'#fff',weight:2.5,opacity:1,fillOpacity:.9};
+    var redMed={radius:10,fillColor:'#4a9ae0',color:'#fff',weight:2,opacity:1,fillOpacity:.85};
+    var redLight={radius:8,fillColor:'#93c5fd',color:'#fff',weight:1.5,opacity:1,fillOpacity:.8};
+
+    var pts=[
+      [30.05,-99.14,redDark,'Kerrville / Center Point, Kerr County','<b>Most affected — July 16 overnight</b><br>Flash flood emergency at 3 AM. Guadalupe rose 32 ft in 4 hrs at Center Point. 65-yr-old killed. Kerrville ordered shelter in place. Kerr County Judge signed disaster declaration.'],
+      [29.74,-99.34,redMed,'Hunt, Kerr County','<b>Hunt area cut off</b><br>Evacuations and rescues underway. Area was sealed off by floodwaters. Camp Mystic (not operating in 2026) is located here along the Guadalupe.'],
+      [29.91,-99.79,redDark,'Uvalde / Uvalde County','<b>Catastrophic flooding</b><br>74-yr-old man killed. 20+ inches of rain in 48 hrs; 8 inches in 2 hours. 40+ rescues in the county. Flash flood emergency declared.'],
+      [29.97,-98.90,redMed,'Comfort, Kendall County','<b>Guadalupe at Comfort</b><br>River rose 34+ feet in under 2 hours, reaching major flood stage. Flash flood emergency issued for Kerr/Kendall county Guadalupe corridor.'],
+      [30.26,-98.42,redLight,'Fredericksburg, Gillespie County','Flash flood emergency area — Pedernales River corridor. Gillespie County included in affected zone.'],
+      [30.10,-98.40,redLight,'Blanco County','Flash flood emergency area — Pedernales River through Blanco County. High water rescues reported.'],
+      [30.05,-99.12,redLight,'Ingram, Kerr County','NWS included in 3 AM flash flood emergency along with Kerrville and Hunt. Preliminary NWS data: 20+ inches Monday–Thursday.']
+    ];
+
+    pts.forEach(function(p){
+      var m = L.circleMarker([p[0],p[1]],p[2]).addTo(map);
+      m.bindPopup('<div style="font-size:13px;max-width:230px;line-height:1.5"><strong>'+p[3]+'</strong><br>'+p[4]+'</div>');
+    });
+
+    var legend = L.control({position:'bottomright'});
+    legend.onAdd=function(){
+      var d=L.DomUtil.create('div','');
+      d.style.cssText='background:#fff;padding:10px 14px;border-radius:8px;font-size:12px;line-height:1.85;border:1px solid #cdd5e0';
+      d.innerHTML='<b style="color:#0a1628">Map legend</b><br><span style="color:#1a6bbf">●</span> Highest impact (deaths / emergency)<br><span style="color:#4a9ae0">●</span> Major flooding / evacuations<br><span style="color:#93c5fd">●</span> Flash flood emergency zone';
+      return d;
+    };
+    legend.addTo(map);
+  }
+})();
+</script>
