@@ -1,0 +1,686 @@
+<!-- STORY 2: Truth Social Truth API / Trump Media Ethics -->
+<style>
+  /* ===================== RESET & BASE ===================== */
+  .crux-s2 * { box-sizing: border-box; margin: 0; padding: 0; }
+  .crux-s2 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1a1a2e;
+    background: #f7f8fc;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 16px 40px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  .crux-s2 a { color: #b45309; text-decoration: underline; }
+  .crux-s2 a:hover { color: #1a1a2e; }
+  .crux-s2 p { font-size: 1rem; color: #2c2c3e; margin-bottom: 1.1rem; }
+
+  /* ===================== INTRO TEXT ===================== */
+  .crux-s2 .intro-block {
+    background: #fff;
+    border-left: 5px solid #f59e0b;
+    padding: 22px 24px;
+    border-radius: 8px;
+    margin: 28px 0 24px;
+    box-shadow: 0 2px 12px rgba(245,158,11,0.08);
+  }
+
+  /* ===================== LABELS ===================== */
+  .crux-s2 .section-label {
+    display: inline-block;
+    background: #f59e0b;
+    color: #1a1a2e;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  .crux-s2 .section-label.dark { background: #1a1a2e; color: #f59e0b; }
+  .crux-s2 .section-label.red { background: #dc2626; color: #fff; }
+
+  .crux-s2 .section-heading {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 18px;
+    line-height: 1.3;
+  }
+
+  /* ===================== STOCK DECLINE GAUGE ===================== */
+  .crux-s2 .stock-wrap {
+    background: linear-gradient(135deg, #1a1a2e 0%, #0d0d20 100%);
+    border-radius: 14px;
+    padding: 28px 22px;
+    margin: 28px 0;
+    text-align: center;
+  }
+  .crux-s2 .stock-title {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .crux-s2 .stock-gauge-outer {
+    width: 180px;
+    height: 90px;
+    margin: 0 auto 18px;
+    position: relative;
+  }
+  .crux-s2 .stock-gauge-svg { width: 100%; height: 100%; }
+  .crux-s2 .stock-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .crux-s2 .stock-metric {
+    background: rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 12px 8px;
+    border-top: 2px solid #f59e0b;
+  }
+  .crux-s2 .stock-metric.red-top { border-top-color: #ef4444; }
+  .crux-s2 .stock-metric-val {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #f59e0b;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .crux-s2 .stock-metric.red-top .stock-metric-val { color: #ef4444; }
+  .crux-s2 .stock-metric-lbl {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+  }
+
+  /* ===================== TRUTH API EXPLAINER ===================== */
+  .crux-s2 .api-wrap {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 24px;
+    margin: 28px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .crux-s2 .api-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+  }
+  .crux-s2 .api-card {
+    background: #f9fafb;
+    border-radius: 10px;
+    padding: 16px 14px;
+    border-top: 3px solid #f59e0b;
+    cursor: pointer;
+    transition: box-shadow 0.22s, transform 0.22s;
+  }
+  .crux-s2 .api-card:hover {
+    box-shadow: 0 6px 20px rgba(245,158,11,0.15);
+    transform: translateY(-3px);
+  }
+  .crux-s2 .api-card-icon { font-size: 1.6rem; margin-bottom: 8px; }
+  .crux-s2 .api-card-title {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+  }
+  .crux-s2 .api-card-desc {
+    font-size: 0.8rem;
+    color: #4a5568;
+    line-height: 1.5;
+  }
+  .crux-s2 .api-note {
+    margin-top: 16px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 0.82rem;
+    color: #78350f;
+    line-height: 1.5;
+  }
+
+  /* ===================== INLINE IMAGE ===================== */
+  .crux-s2 .inline-img-wrap {
+    margin: 28px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    background: #fff;
+  }
+  .crux-s2 .inline-img-wrap img {
+    width: 100%;
+    max-height: 340px;
+    object-fit: cover;
+    display: block;
+  }
+  .crux-s2 .img-caption {
+    padding: 10px 16px 12px;
+    font-size: 0.8rem;
+    color: #555;
+    background: #f9fafb;
+    border-top: 1px solid #eee;
+    line-height: 1.5;
+  }
+
+  /* ===================== TIMELINE ===================== */
+  .crux-s2 .timeline-wrap {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 24px;
+    margin: 28px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .crux-s2 .timeline {
+    position: relative;
+    padding-left: 36px;
+    margin-top: 18px;
+  }
+  .crux-s2 .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #f59e0b, #1a1a2e);
+    border-radius: 3px;
+  }
+  .crux-s2 .tl-item {
+    position: relative;
+    margin-bottom: 22px;
+  }
+  .crux-s2 .tl-item:last-child { margin-bottom: 0; }
+  .crux-s2 .tl-dot {
+    position: absolute;
+    left: -31px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #f59e0b;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #f59e0b;
+  }
+  .crux-s2 .tl-item.key .tl-dot { background: #dc2626; box-shadow: 0 0 0 2px #dc2626; }
+  .crux-s2 .tl-date {
+    font-size: 0.73rem;
+    font-weight: 700;
+    color: #b45309;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 3px;
+  }
+  .crux-s2 .tl-item.key .tl-date { color: #dc2626; }
+  .crux-s2 .tl-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+  }
+  .crux-s2 .tl-desc {
+    font-size: 0.84rem;
+    color: #4a5568;
+    line-height: 1.5;
+  }
+
+  /* ===================== ETHICS COMPARISON ===================== */
+  .crux-s2 .ethics-wrap {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 24px;
+    margin: 28px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .crux-s2 .ethics-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 18px;
+  }
+  .crux-s2 .ethics-col {
+    border-radius: 10px;
+    padding: 18px 16px;
+  }
+  .crux-s2 .ethics-col.before {
+    background: #f0fdf4;
+    border: 1.5px solid #86efac;
+  }
+  .crux-s2 .ethics-col.after {
+    background: #fff7ed;
+    border: 1.5px solid #fdba74;
+  }
+  .crux-s2 .ethics-col-head {
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+  }
+  .crux-s2 .ethics-col.before .ethics-col-head { color: #15803d; }
+  .crux-s2 .ethics-col.after .ethics-col-head { color: #c2410c; }
+  .crux-s2 .ethics-item {
+    font-size: 0.83rem;
+    color: #374151;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    line-height: 1.4;
+  }
+  .crux-s2 .ethics-item:last-child { margin-bottom: 0; }
+  .crux-s2 .ethics-item .ei-icon { flex-shrink: 0; margin-top: 1px; }
+  .crux-s2 .ethics-law-note {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: #fef9c3;
+    border: 1px solid #fde047;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    color: #713f12;
+    line-height: 1.5;
+  }
+
+  /* ===================== QUOTE BLOCK ===================== */
+  .crux-s2 .quote-block {
+    border-left: 4px solid #f59e0b;
+    padding: 14px 20px;
+    margin: 22px 0;
+    background: #fffbeb;
+    border-radius: 0 8px 8px 0;
+  }
+  .crux-s2 .quote-text {
+    font-size: 1.05rem;
+    font-style: italic;
+    color: #1a1a2e;
+    line-height: 1.6;
+  }
+  .crux-s2 .quote-source {
+    font-size: 0.78rem;
+    color: #78350f;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+
+  /* ===================== CONCLUSION ===================== */
+  .crux-s2 .conclusion-block {
+    background: #1a1a2e;
+    border-radius: 12px;
+    padding: 26px 24px;
+    margin: 28px 0;
+    color: #e2e8f0;
+  }
+  .crux-s2 .conclusion-block p { color: #cbd5e0; margin-bottom: 0.8rem; }
+  .crux-s2 .conclusion-block p:last-child { margin-bottom: 0; }
+  .crux-s2 .conclusion-block a { color: #f59e0b; }
+  .crux-s2 .conclusion-block .section-label { background: #f59e0b; color: #1a1a2e; margin-bottom: 14px; }
+  .crux-s2 .conclusion-block .section-heading { color: #fff; margin-bottom: 14px; }
+
+  /* ===================== ACCORDION ===================== */
+  .crux-s2 .acc-wrap {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 24px;
+    margin: 28px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .crux-s2 .acc-item {
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .crux-s2 .acc-header {
+    width: 100%;
+    background: #f9fafb;
+    border: none;
+    padding: 14px 16px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    transition: background 0.2s;
+  }
+  .crux-s2 .acc-header:hover { background: #f0f2f7; }
+  .crux-s2 .acc-icon {
+    font-size: 1.1rem;
+    transition: transform 0.3s;
+    color: #f59e0b;
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+  .crux-s2 .acc-item.open .acc-icon { transform: rotate(180deg); }
+  .crux-s2 .acc-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  .crux-s2 .acc-body-inner {
+    padding: 14px 16px 16px;
+    font-size: 0.87rem;
+    color: #4a5568;
+    line-height: 1.65;
+    border-top: 1.5px solid #e5e7eb;
+  }
+  .crux-s2 .acc-body-inner strong { color: #1a1a2e; }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 600px) {
+    .crux-s2 { padding: 0 10px 32px; }
+    .crux-s2 .stock-grid { grid-template-columns: 1fr 1fr; }
+    .crux-s2 .api-cards { grid-template-columns: 1fr; }
+    .crux-s2 .ethics-row { grid-template-columns: 1fr; }
+    .crux-s2 .stock-gauge-outer { width: 140px; height: 70px; }
+    .crux-s2 .intro-block, .crux-s2 .timeline-wrap, .crux-s2 .api-wrap,
+    .crux-s2 .ethics-wrap, .crux-s2 .acc-wrap, .crux-s2 .conclusion-block { padding: 18px 14px; }
+  }
+  @media (max-width: 380px) {
+    .crux-s2 .stock-grid { grid-template-columns: 1fr; }
+    .crux-s2 .stock-metric-val { font-size: 1.2rem; }
+  }
+</style>
+
+<div class="crux-s2">
+
+  <!-- INTRO TEXT BLOCK -->
+  <div class="intro-block">
+    <span class="section-label">Business &amp; Politics · July 16–21, 2026</span>
+    <p>On July 16, 2026, Trump Media &amp; Technology Group Corp. filed a <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001849635&type=8-K&dateb=&owner=include&count=40" rel="noopener noreferrer" target="_blank">Form 8-K with the Securities and Exchange Commission</a> announcing Truth API — a paid, real-time data feed giving institutional customers millisecond-early access to posts from the top 10 Truth Social accounts. The service is set to launch August 1, 2026, and the company said it has already signed initial customers. Truth API is Trump Media's first data-licensing product.</p>
+    <p>The announcement placed a new spotlight on a conflict-of-interest question that has persisted since Trump took office: President Trump is <a href="https://cruxbuzz.com/the-future-of-social-media-supreme-court-to-revisit-section-230/" rel="noopener">Truth Social's most-followed poster</a> and the largest individual shareholder of Trump Media's publicly traded parent company (NASDAQ: DJT). DJT stock has fallen more than 70% since Trump's inauguration in January 2025, hitting an all-time low of approximately $7.06 in June 2026 — erasing roughly $6 billion in shareholder value.</p>
+    <p>Kathleen Clark, a government ethics expert at Washington University School of Law and an expert in government conflict-of-interest rules, said: <em>"He's selling expedited, privileged access to information about what he is doing as president."</em> The White House has not publicly commented on the Truth API launch. Truth Social itself was launched in 2021, after Trump was banned from Twitter and Facebook following the January 6, 2021 Capitol riot. Related social media controversies around presidential posts have been documented, including a <a href="https://cruxbuzz.com/trump-racist-video-removed-gop-backlash-apology-refused-4/" rel="noopener">past incident in which a Trump social media post was removed</a> after bipartisan backlash.</p>
+  </div>
+
+  <!-- DJT STOCK GAUGE -->
+  <div class="stock-wrap">
+    <div class="stock-title">Trump Media &amp; Technology Group (NASDAQ: DJT) — Stock Performance</div>
+    <!-- SVG Semicircle Gauge -->
+    <div class="stock-gauge-outer">
+      <svg class="stock-gauge-svg" viewBox="0 0 180 90" xmlns="http://www.w3.org/2000/svg">
+        <!-- Track -->
+        <path d="M 10 90 A 80 80 0 0 1 170 90" fill="none" stroke="#2d2d4a" stroke-width="14" stroke-linecap="round"/>
+        <!-- Fill (70% of arc = approx 126° out of 180°) -->
+        <path id="cruxS2Gauge" d="M 10 90 A 80 80 0 0 1 170 90" fill="none" stroke="#ef4444" stroke-width="14" stroke-linecap="round"
+          stroke-dasharray="251.3" stroke-dashoffset="75.4"/>
+        <!-- Center label -->
+        <text x="90" y="78" text-anchor="middle" fill="#f59e0b" font-size="22" font-weight="900" font-family="Arial">-70%</text>
+        <text x="90" y="91" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="9" font-family="Arial">since Jan 2025</text>
+      </svg>
+    </div>
+    <div class="stock-grid">
+      <div class="stock-metric red-top">
+        <div class="stock-metric-val">-70%</div>
+        <div class="stock-metric-lbl">DJT decline since inauguration</div>
+      </div>
+      <div class="stock-metric red-top">
+        <div class="stock-metric-val">$7.06</div>
+        <div class="stock-metric-lbl">All-time low (June 2026)</div>
+      </div>
+      <div class="stock-metric">
+        <div class="stock-metric-val">~$6B</div>
+        <div class="stock-metric-lbl">Shareholder value erased</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUTH API EXPLAINER CARDS -->
+  <div class="api-wrap">
+    <span class="section-label">What Is Truth API?</span>
+    <div class="section-heading">A New Paid Data Service — Aimed at Wall Street</div>
+    <p style="font-size:0.9rem;color:#4a5568;">Announced via SEC Form 8-K on July 16, 2026, signed by Scott Glabe, General Counsel of Trump Media &amp; Technology Group Corp. Here is what the service actually does:</p>
+    <div class="api-cards">
+      <div class="api-card">
+        <div class="api-card-icon">⚡</div>
+        <div class="api-card-title">Millisecond Delivery</div>
+        <div class="api-card-desc">Institutional customers receive posts from Truth Social's top 10 accounts in milliseconds — before the broader public sees them in their feeds. This is the core selling point for high-frequency trading firms.</div>
+      </div>
+      <div class="api-card">
+        <div class="api-card-icon">🏦</div>
+        <div class="api-card-title">Target: Algorithmic Traders</div>
+        <div class="api-card-desc">The service is aimed at organizations where information delays cost money: hedge funds, HFT firms, algorithmic trading operations, and institutional investors that track market-moving posts.</div>
+      </div>
+      <div class="api-card">
+        <div class="api-card-icon">🕐</div>
+        <div class="api-card-title">24/7 Coverage + Archive</div>
+        <div class="api-card-desc">Truth API provides round-the-clock, machine-readable data delivery. It also includes a historical archive of posts dating back to 2022 — since Truth Social's early operational period.</div>
+      </div>
+      <div class="api-card">
+        <div class="api-card-icon">📊</div>
+        <div class="api-card-title">Top 10 Accounts</div>
+        <div class="api-card-desc">The feed covers posts from the top 10 ranking Truth Social accounts. President Trump is the platform's most-followed poster, making his posts a primary draw for paying subscribers.</div>
+      </div>
+      <div class="api-card">
+        <div class="api-card-icon">📅</div>
+        <div class="api-card-title">Launch: August 1, 2026</div>
+        <div class="api-card-desc">TMTG confirmed the August 1, 2026 launch date in its Form 8-K and stated that initial customers were already signed and onboarding was underway before the announcement.</div>
+      </div>
+      <div class="api-card">
+        <div class="api-card-icon">💰</div>
+        <div class="api-card-title">Revenue Model</div>
+        <div class="api-card-desc">Trump Media described Truth API as its first data-licensing product and its strategy to build a "high-margin, long-term recurring revenue stream." Reports indicate pricing pitched at some customers around $100,000/month.</div>
+      </div>
+    </div>
+    <div class="api-note">
+      <strong>Source:</strong> SEC Form 8-K, filed July 16, 2026. CIK: 0001849635. Signed by Scott Glabe, General Counsel and Secretary of Trump Media &amp; Technology Group Corp. Filed via <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001849635&type=8-K&dateb=&owner=include&count=40" rel="noopener noreferrer" target="_blank">SEC EDGAR</a>.
+    </div>
+  </div>
+
+  <!-- INLINE IMAGE: Wall Street / Trading Floor -->
+  <div class="inline-img-wrap">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/NYSE_floor_2010.jpg/800px-NYSE_floor_2010.jpg"
+      alt="New York Stock Exchange trading floor where Truth API millisecond access to Trump's Truth Social posts could influence high-frequency trading decisions in 2026"
+      title="Truth API Targets High-Frequency Traders on Wall Street"
+      loading="lazy"
+      onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg/800px-Good_Food_Display_-_NCI_Visuals_Online.jpg';this.alt='Stock market trading context for Truth API launch';"
+    >
+    <div class="img-caption">
+      A trading floor where a millisecond edge in information can translate into millions of dollars — the exact market Truth API is entering, raising questions about whether a sitting president's posts should carry a price tag at all. (Public Domain via <a href="https://commons.wikimedia.org/wiki/File:NYSE_floor_2010.jpg" rel="noopener noreferrer" target="_blank">Wikimedia Commons</a>)
+    </div>
+  </div>
+
+  <!-- TRUTH SOCIAL TIMELINE -->
+  <div class="timeline-wrap">
+    <span class="section-label dark">Timeline</span>
+    <div class="section-heading">Truth Social to Truth API: A Five-Year Arc</div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">January 6, 2021</div>
+        <div class="tl-title">Trump banned from Twitter and Facebook</div>
+        <div class="tl-desc">Following the Capitol riot, major social media platforms suspended or banned Trump's accounts, prompting plans for an alternative platform.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2021</div>
+        <div class="tl-title">Truth Social launches</div>
+        <div class="tl-desc">Trump Media &amp; Technology Group launches Truth Social as Trump's primary social media outlet. The platform targets users looking for an alternative to Twitter and Facebook.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">January 20, 2025</div>
+        <div class="tl-title">Trump takes office; DJT stock peaks</div>
+        <div class="tl-desc">Trump's second inauguration creates a surge of interest in DJT shares. However, the stock begins a multi-month decline almost immediately after inauguration.</div>
+      </div>
+
+      <div class="tl-item key">
+        <div class="tl-dot"></div>
+        <div class="tl-date">June 2026</div>
+        <div class="tl-title">DJT hits all-time low: ~$7.06</div>
+        <div class="tl-desc">Trump Media shares hit their lowest point since going public — approximately $7.06 per share, representing a decline of more than 70% from inauguration-era highs and roughly $6 billion in lost shareholder value.</div>
+      </div>
+
+      <div class="tl-item key">
+        <div class="tl-dot"></div>
+        <div class="tl-date">July 16, 2026</div>
+        <div class="tl-title">Truth API announced via SEC Form 8-K</div>
+        <div class="tl-desc">Trump Media files with the SEC announcing Truth API — a paid data feed giving institutional customers millisecond access to posts from Truth Social's top 10 accounts. Launch: August 1, 2026. Customers already signed. Ethics questions immediately follow.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">August 1, 2026 (planned)</div>
+        <div class="tl-title">Truth API goes live</div>
+        <div class="tl-desc">The service is scheduled to become commercially active, with institutional trading firms gaining paid millisecond-early access to market-moving social media posts — including from the sitting president of the United States.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <div class="quote-block">
+    <div class="quote-text">"He's selling expedited, privileged access to information about what he is doing as president."</div>
+    <div class="quote-source">— Kathleen Clark, government ethics expert, Washington University School of Law</div>
+  </div>
+
+  <!-- ETHICS COMPARISON -->
+  <div class="ethics-wrap">
+    <span class="section-label red">Ethics</span>
+    <div class="section-heading">What Past Presidents Did vs. What the Law Actually Requires</div>
+    <p style="font-size:0.88rem;color:#4a5568;margin-bottom:0;">Federal conflict-of-interest law (18 U.S.C. § 208) bars US government officials from profiting off their office. But the president and vice president are <strong>specifically exempt</strong> from that statute. Here is how past administrations handled financial separation anyway — and how the current one differs:</p>
+    <div class="ethics-row">
+      <div class="ethics-col before">
+        <div class="ethics-col-head">✅ Previous Presidents (Voluntary Practice)</div>
+        <div class="ethics-item"><span class="ei-icon">•</span>Placed personal financial assets in blind trusts</div>
+        <div class="ethics-item"><span class="ei-icon">•</span>Divested from individual stocks and business holdings</div>
+        <div class="ethics-item"><span class="ei-icon">•</span>Acted as if conflict-of-interest law applied, even though it didn't</div>
+        <div class="ethics-item"><span class="ei-icon">•</span>Did not retain large equity stakes in publicly traded companies</div>
+        <div class="ethics-item"><span class="ei-icon">•</span>No personal financial benefit from White House communications</div>
+      </div>
+      <div class="ethics-col after">
+        <div class="ethics-col-head">⚠️ Trump Administration (Current Practice)</div>
+        <div class="ethics-item"><span class="ei-icon">•</span>Trump declined to place assets in a blind trust</div>
+        <div class="ethics-item"><span class="ei-icon">•</span>Retained largest-shareholder status in NASDAQ-traded DJT</div>
+        <div class="ethics-item"><span class="ei-icon">•</span>Remained Truth Social's most-followed poster while in office</div>
+        <div class="ethics-item"><span class="ei-icon">•</span>Truth API monetizes access to posts, including potentially presidential</div>
+        <div class="ethics-item"><span class="ei-icon">•</span>DJT (parent company) benefits directly from presidential posting activity</div>
+      </div>
+    </div>
+    <div class="ethics-law-note">
+      <strong>Note on the law:</strong> The president and vice president are explicitly exempted from 18 U.S.C. § 208, the federal conflict-of-interest statute. This exemption has existed since the law was enacted. All prior presidents acted voluntarily as if the law applied by divesting or establishing blind trusts. The <a href="https://www.oge.gov/" rel="noopener noreferrer" target="_blank">US Office of Government Ethics</a> provides guidance on financial disclosure and conflict management for executive branch officials, but the president is not subject to the same mandatory divestiture requirements as other officials.
+    </div>
+  </div>
+
+  <!-- FAQ ACCORDION -->
+  <div class="acc-wrap">
+    <span class="section-label">Key Questions</span>
+    <div class="section-heading">Truth API: Frequently Asked Questions</div>
+
+    <div class="acc-item">
+      <button class="acc-header" onclick="cruxS2Acc(this)">
+        Is this legal? Can a sitting president's company charge for access to their posts?
+        <span class="acc-icon">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          Under current law, <strong>yes — the president is exempt</strong> from federal conflict-of-interest statutes (18 U.S.C. § 208). The president and vice president were specifically excluded when the law was written. However, ethics experts including Kathleen Clark of Washington University School of Law argue that even if technically legal, the arrangement creates a situation where the president directly benefits financially from access to his public communications. All presidents since the law was enacted voluntarily acted as if the prohibition applied — by creating blind trusts or divesting — but Trump has not followed that practice.
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-header" onclick="cruxS2Acc(this)">
+        What exactly can trading firms do with millisecond-early access?
+        <span class="acc-icon">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          High-frequency and algorithmic trading firms use automated systems that can execute thousands of trades in the time it takes a human to blink. A Trump post about tariffs, sanctions, a ceasefire, or a specific company can move markets within seconds of being published. A firm that receives that post <strong>milliseconds before it becomes widely visible</strong> can position itself in stocks, bonds, commodities, or interest rate products before the broader market reacts. This type of speed advantage is sometimes called "latency arbitrage."
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-header" onclick="cruxS2Acc(this)">
+        Why is DJT stock down 70% if Trump is still president?
+        <span class="acc-icon">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          Trump Media's stock (DJT) is not primarily valued on fundamental business metrics like revenue or profit — it is widely considered a <strong>"meme stock"</strong> whose price has been driven largely by sentiment around Trump rather than underlying business performance. After an initial surge tied to Trump's 2024 election win, the stock declined significantly as investors questioned the platform's monetization path and revenue base. The all-time low of approximately <strong>$7.06 in June 2026</strong> represents a more than 70% drop from inauguration-era price levels, erasing roughly $6 billion in shareholder value.
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-header" onclick="cruxS2Acc(this)">
+        Who announced Truth API, and how was it disclosed?
+        <span class="acc-icon">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          The announcement was made via an <strong>SEC Form 8-K filed on July 16, 2026</strong>, and was signed by <strong>Scott Glabe, General Counsel and Secretary of Trump Media &amp; Technology Group Corp.</strong> A Form 8-K is a mandatory disclosure filing used by publicly traded companies to report material events to investors and the public. The filing is available through <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001849635&type=8-K&dateb=&owner=include&count=40" rel="noopener noreferrer" target="_blank">SEC EDGAR</a>.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONCLUSION BLOCK -->
+  <div class="conclusion-block">
+    <span class="section-label">Summary</span>
+    <div class="section-heading">What the Truth API Announcement Covered</div>
+    <p>The Truth API was announced via SEC Form 8-K on July 16, 2026, signed by Trump Media General Counsel Scott Glabe. The service — described as the company's first data-licensing product — is scheduled to launch August 1, 2026, and targets high-frequency and algorithmic trading firms. It provides real-time, millisecond-early access to posts from Truth Social's top 10 accounts, with a historical archive dating back to 2022.</p>
+    <p>DJT stock's decline of more than 70% since January 2025 and the all-time low of approximately $7.06 in June 2026 formed the business backdrop for the announcement. The conflict-of-interest concerns raised by ethics experts — centered on the president's dual role as Truth Social's most-followed poster and Trump Media's largest shareholder — were noted by observers following the disclosure. The <a href="https://cruxbuzz.com/did-trump-just-unintentionally-admit-to-rigging-the-2020-election-zuckerbergs-letter-sparks-a-controversial-self-accusation/">broader pattern of social media and financial disclosures</a> by major political figures has been a recurring subject of discussion.</p>
+    <p>The president and vice president are specifically exempt from 18 U.S.C. § 208, the federal conflict-of-interest law. All presidents prior to Trump voluntarily chose to divest or use blind trusts even though not legally required to do so. Those practices were noted in coverage of the Truth API announcement. The <a href="https://www.oge.gov/" rel="noopener noreferrer" target="_blank">Office of Government Ethics</a> has not issued a public statement specifically on this arrangement.</p>
+    <p style="font-size:0.78rem;color:#94a3b8;margin-top:12px;">Sources: <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001849635&type=8-K&dateb=&owner=include&count=40" rel="noopener noreferrer" target="_blank" style="color:#f59e0b;">SEC EDGAR (Trump Media Form 8-K)</a> · <a href="https://www.oge.gov/" rel="noopener noreferrer" target="_blank" style="color:#f59e0b;">Office of Government Ethics</a></p>
+  </div>
+
+</div><!-- /crux-s2 -->
+
+<script>
+(function(){
+  /* ---- Accordion ---- */
+  window.cruxS2Acc=function(btn){
+    var item=btn.parentElement;
+    var body=item.querySelector('.acc-body');
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.crux-s2 .acc-item').forEach(function(i){
+      i.classList.remove('open');
+      i.querySelector('.acc-body').style.maxHeight=null;
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      body.style.maxHeight=body.scrollHeight+'px';
+    }
+  };
+
+  /* ---- Gauge animate on scroll ---- */
+  var gaugeTriggered=false;
+  function animateGauge(){
+    if(gaugeTriggered)return;
+    var el=document.querySelector('.crux-s2 .stock-wrap');
+    if(!el)return;
+    var rect=el.getBoundingClientRect();
+    if(rect.top<window.innerHeight){
+      gaugeTriggered=true;
+      var path=document.getElementById('cruxS2Gauge');
+      if(path){
+        /* Animate from full offset (hidden) to partial fill (70% = 75.4 offset on 251.3 circumference) */
+        path.style.transition='stroke-dashoffset 1.5s ease';
+        path.style.strokeDashoffset='75.4';
+      }
+    }
+  }
+  window.addEventListener('scroll',animateGauge);
+  animateGauge();
+})();
+</script>

@@ -1,0 +1,719 @@
+<!-- STORY 1: Iran War / Hegseth Senate Hearing -->
+<style>
+  /* ===================== RESET & BASE ===================== */
+  .crux-s1 * { box-sizing: border-box; margin: 0; padding: 0; }
+  .crux-s1 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1a1a2e;
+    background: #f4f6fb;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 16px 40px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  .crux-s1 a { color: #c41e3a; text-decoration: underline; }
+  .crux-s1 a:hover { color: #0a1628; }
+  .crux-s1 p { font-size: 1rem; color: #2c2c3e; margin-bottom: 1.1rem; }
+
+  /* ===================== INTRO TEXT ===================== */
+  .crux-s1 .intro-block {
+    background: #fff;
+    border-left: 5px solid #c41e3a;
+    padding: 22px 24px;
+    border-radius: 8px;
+    margin: 28px 0 24px;
+    box-shadow: 0 2px 12px rgba(196,30,58,0.06);
+  }
+
+  /* ===================== SECTION LABEL ===================== */
+  .crux-s1 .section-label {
+    display: inline-block;
+    background: #c41e3a;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  .crux-s1 .section-label.navy { background: #0a1628; }
+  .crux-s1 .section-label.amber { background: #b45309; }
+
+  /* ===================== SECTION HEADING ===================== */
+  .crux-s1 .section-heading {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #0a1628;
+    margin-bottom: 18px;
+    line-height: 1.3;
+  }
+
+  /* ===================== STAT CARDS ===================== */
+  .crux-s1 .stats-wrap {
+    background: #0a1628;
+    padding: 30px 20px;
+    border-radius: 12px;
+    margin: 28px 0;
+  }
+  .crux-s1 .stats-wrap .section-heading { color: #fff; margin-bottom: 20px; font-size: 1.1rem; }
+  .crux-s1 .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 14px;
+  }
+  .crux-s1 .stat-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-top: 3px solid #c41e3a;
+    border-radius: 8px;
+    padding: 18px 14px;
+    text-align: center;
+    transition: transform 0.25s, background 0.25s;
+    cursor: default;
+  }
+  .crux-s1 .stat-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.11); }
+  .crux-s1 .stat-card.accent { border-top-color: #f59e0b; }
+  .crux-s1 .stat-num {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: #f59e0b;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .crux-s1 .stat-card.red .stat-num { color: #ef4444; }
+  .crux-s1 .stat-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.78);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+  }
+  .crux-s1 .stat-sub {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.48);
+    margin-top: 4px;
+  }
+
+  /* ===================== INLINE IMAGE ===================== */
+  .crux-s1 .inline-img-wrap {
+    margin: 28px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    background: #fff;
+  }
+  .crux-s1 .inline-img-wrap img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .crux-s1 .img-caption {
+    padding: 10px 16px 12px;
+    font-size: 0.8rem;
+    color: #555;
+    background: #f9fafb;
+    border-top: 1px solid #eee;
+    line-height: 1.5;
+  }
+
+  /* ===================== TIMELINE ===================== */
+  .crux-s1 .timeline-wrap {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 24px;
+    margin: 28px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .crux-s1 .timeline {
+    position: relative;
+    padding-left: 36px;
+    margin-top: 18px;
+  }
+  .crux-s1 .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #c41e3a, #0a1628);
+    border-radius: 3px;
+  }
+  .crux-s1 .tl-item {
+    position: relative;
+    margin-bottom: 24px;
+    cursor: pointer;
+  }
+  .crux-s1 .tl-item:last-child { margin-bottom: 0; }
+  .crux-s1 .tl-dot {
+    position: absolute;
+    left: -31px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #c41e3a;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #c41e3a;
+    transition: transform 0.2s;
+    z-index: 1;
+  }
+  .crux-s1 .tl-item:hover .tl-dot { transform: scale(1.3); }
+  .crux-s1 .tl-item.key .tl-dot { background: #f59e0b; box-shadow: 0 0 0 2px #f59e0b; }
+  .crux-s1 .tl-date {
+    font-size: 0.73rem;
+    font-weight: 700;
+    color: #c41e3a;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 3px;
+  }
+  .crux-s1 .tl-item.key .tl-date { color: #b45309; }
+  .crux-s1 .tl-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0a1628;
+    margin-bottom: 4px;
+  }
+  .crux-s1 .tl-desc {
+    font-size: 0.84rem;
+    color: #4a5568;
+    line-height: 1.5;
+  }
+  .crux-s1 .tl-expand {
+    font-size: 0.78rem;
+    color: #c41e3a;
+    margin-top: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    display: none;
+  }
+  .crux-s1 .tl-extra {
+    font-size: 0.82rem;
+    color: #555;
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: #f4f6fb;
+    border-left: 3px solid #c41e3a;
+    border-radius: 4px;
+    display: none;
+  }
+  .crux-s1 .tl-item.expanded .tl-extra { display: block; }
+
+  /* ===================== COST BREAKDOWN ===================== */
+  .crux-s1 .cost-wrap {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 24px;
+    margin: 28px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .crux-s1 .cost-total {
+    text-align: center;
+    padding: 18px;
+    background: #0a1628;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  .crux-s1 .cost-total-num {
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: #f59e0b;
+  }
+  .crux-s1 .cost-total-label {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .crux-s1 .cost-bar-wrap { margin: 10px 0 16px; }
+  .crux-s1 .cost-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: #2c2c3e;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  .crux-s1 .cost-bar-bg {
+    width: 100%;
+    height: 18px;
+    background: #e5e7eb;
+    border-radius: 9px;
+    overflow: hidden;
+  }
+  .crux-s1 .cost-bar-fill {
+    height: 100%;
+    border-radius: 9px;
+    width: 0;
+    transition: width 1.2s ease;
+  }
+  .crux-s1 .cost-bar-fill.defense { background: #c41e3a; }
+  .crux-s1 .cost-bar-fill.other { background: #0a1628; }
+  .crux-s1 .cost-bar-fill.farm { background: #f59e0b; }
+  .crux-s1 .cost-note {
+    font-size: 0.78rem;
+    color: #718096;
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: #f9fafb;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+  }
+
+  /* ===================== ACCORDION ===================== */
+  .crux-s1 .acc-wrap {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 24px;
+    margin: 28px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .crux-s1 .acc-item {
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .crux-s1 .acc-header {
+    width: 100%;
+    background: #f9fafb;
+    border: none;
+    padding: 14px 16px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #0a1628;
+    transition: background 0.2s;
+  }
+  .crux-s1 .acc-header:hover { background: #f0f2f7; }
+  .crux-s1 .acc-icon {
+    font-size: 1.1rem;
+    transition: transform 0.3s;
+    color: #c41e3a;
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+  .crux-s1 .acc-item.open .acc-icon { transform: rotate(180deg); }
+  .crux-s1 .acc-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+  .crux-s1 .acc-body-inner {
+    padding: 14px 16px 16px;
+    font-size: 0.87rem;
+    color: #4a5568;
+    line-height: 1.65;
+    border-top: 1.5px solid #e5e7eb;
+  }
+  .crux-s1 .acc-body-inner strong { color: #0a1628; }
+
+  /* ===================== QUOTE BLOCK ===================== */
+  .crux-s1 .quote-block {
+    border-left: 4px solid #c41e3a;
+    padding: 14px 20px;
+    margin: 20px 0;
+    background: #fff8f8;
+    border-radius: 0 8px 8px 0;
+  }
+  .crux-s1 .quote-text {
+    font-size: 1.02rem;
+    font-style: italic;
+    color: #1a1a2e;
+    line-height: 1.6;
+  }
+  .crux-s1 .quote-source {
+    font-size: 0.78rem;
+    color: #718096;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+
+  /* ===================== CONCLUSION ===================== */
+  .crux-s1 .conclusion-block {
+    background: #0a1628;
+    border-radius: 12px;
+    padding: 26px 24px;
+    margin: 28px 0;
+    color: #e2e8f0;
+  }
+  .crux-s1 .conclusion-block p { color: #cbd5e0; margin-bottom: 0.8rem; }
+  .crux-s1 .conclusion-block p:last-child { margin-bottom: 0; }
+  .crux-s1 .conclusion-block a { color: #f59e0b; }
+  .crux-s1 .conclusion-block .section-label { background: #c41e3a; margin-bottom: 14px; }
+  .crux-s1 .conclusion-block .section-heading { color: #fff; margin-bottom: 14px; }
+
+  /* ===================== GAS PRICE METER ===================== */
+  .crux-s1 .gas-wrap {
+    background: linear-gradient(135deg, #1e293b 0%, #0a1628 100%);
+    border-radius: 12px;
+    padding: 24px 22px;
+    margin: 28px 0;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .crux-s1 .gas-icon { font-size: 2.8rem; flex-shrink: 0; }
+  .crux-s1 .gas-content { flex: 1; min-width: 200px; }
+  .crux-s1 .gas-price {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #ef4444;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .crux-s1 .gas-label { font-size: 0.82rem; color: rgba(255,255,255,0.7); font-weight: 600; }
+  .crux-s1 .gas-note { font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 6px; line-height: 1.4; }
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width: 600px) {
+    .crux-s1 { padding: 0 10px 32px; }
+    .crux-s1 .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .crux-s1 .cost-total-num { font-size: 2rem; }
+    .crux-s1 .inline-img-wrap img { max-height: 220px; }
+    .crux-s1 .intro-block, .crux-s1 .timeline-wrap, .crux-s1 .cost-wrap,
+    .crux-s1 .acc-wrap, .crux-s1 .conclusion-block { padding: 18px 14px; }
+    .crux-s1 .gas-wrap { flex-direction: column; align-items: flex-start; gap: 10px; }
+  }
+  @media (max-width: 380px) {
+    .crux-s1 .stats-grid { grid-template-columns: 1fr; }
+    .crux-s1 .stat-num { font-size: 1.7rem; }
+  }
+</style>
+
+<div class="crux-s1">
+
+  <!-- INTRO TEXT BLOCK -->
+  <div class="intro-block">
+    <span class="section-label">Breaking · July 21, 2026</span>
+    <p>On July 21, 2026, Defense Secretary Pete Hegseth appeared before the <a href="https://www.appropriations.senate.gov/" rel="noopener noreferrer" target="_blank">Senate Appropriations Committee</a> alongside Chairman of the Joint Chiefs Gen. Dan Caine, defending a $87.6 billion supplemental spending request for the ongoing US-Iran war. Hours before the hearing, the <a href="https://www.defense.gov/" rel="noopener noreferrer" target="_blank">Pentagon</a> confirmed that nearly 100 service members had been injured in just the two weeks since July 7 — most with concussions — and that 96 percent of them had already returned to duty.</p>
+    <p>The hearing came just days after three more service members were killed over the weekend, pushing total deaths to 17 Americans killed since fighting began. Total injuries have reached more than 427, according to the Pentagon's Defense Casualty Analysis System. A <a href="https://cruxbuzz.com/anti-war-protest-or-criminal-act-marine-veteran-hit-with-7-charges-after-senate-hearing-scuffle-with-capitol-police-and-a-republican-senator/" rel="noopener">Marine veteran's arrest</a> at a Senate hearing months earlier had already put public attention on the human cost of the war. With the ceasefire having collapsed and the US now escalating operations, bipartisan scrutiny on Capitol Hill has intensified.</p>
+    <p>But the disclosed injury numbers themselves are under dispute. A U.S. official told The Intercept on July 20 that the real toll is <em>"far more"</em> than what the Pentagon has reported. Pentagon spokesperson response: "cherry-picking raw numbers without context paints a deliberately misleading and incomplete picture." The Pentagon has also noted it is not legally required to disclose all troop injury data publicly.</p>
+  </div>
+
+  <!-- STAT CARDS -->
+  <div class="stats-wrap">
+    <div class="section-heading">By the Numbers: US-Iran War (as of July 21, 2026)</div>
+    <div class="stats-grid">
+      <div class="stat-card red">
+        <div class="stat-num" data-target="17" data-suffix="">0</div>
+        <div class="stat-label">US Service Members Killed</div>
+        <div class="stat-sub">Pentagon DCAS total</div>
+      </div>
+      <div class="stat-card red">
+        <div class="stat-num" data-target="427" data-suffix="+">0</div>
+        <div class="stat-label">Total Injured</div>
+        <div class="stat-sub">Pentagon casualty tracker</div>
+      </div>
+      <div class="stat-card accent">
+        <div class="stat-num" data-target="100" data-prefix="~">0</div>
+        <div class="stat-label">Hurt in Last 2 Weeks</div>
+        <div class="stat-sub">Since July 7 resumption</div>
+      </div>
+      <div class="stat-card accent">
+        <div class="stat-num" data-target="96" data-suffix="%">0</div>
+        <div class="stat-label">Returned to Duty</div>
+        <div class="stat-sub">Of recently injured troops</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="font-size:1.6rem;" data-target="87" data-prefix="$" data-suffix=".6B">0</div>
+        <div class="stat-label">Supplemental Request</div>
+        <div class="stat-sub">White House ask to Congress</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="font-size:1.6rem;" data-target="67" data-prefix="$" data-suffix="B">0</div>
+        <div class="stat-label">Defense Portion</div>
+        <div class="stat-sub">Of total supplemental</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INLINE IMAGE: Pete Hegseth Official Portrait -->
+  <div class="inline-img-wrap">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/29th_United_States_Secretary_of_Defense_Pete_Hegseth_Official_Portrait_2025.jpg/800px-29th_United_States_Secretary_of_Defense_Pete_Hegseth_Official_Portrait_2025.jpg"
+      alt="Pete Hegseth official portrait as 29th US Secretary of Defense, defending $87.6 billion Iran war funding before Senate Appropriations Committee July 2026"
+      title="Pete Hegseth — Defense Secretary Faces Senate Over Iran War Costs"
+      loading="lazy"
+    >
+    <div class="img-caption">
+      Defense Secretary Pete Hegseth, facing a Senate panel with 17 US deaths and 427 injuries on record — the price tag for continued operations now set at $87.6 billion. (DoD photo by Chad J. McNeeley / Public Domain via <a href="https://commons.wikimedia.org/wiki/File:29th_United_States_Secretary_of_Defense_Pete_Hegseth_Official_Portrait_2025.jpg" rel="noopener noreferrer" target="_blank">Wikimedia Commons</a>)
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="timeline-wrap">
+    <span class="section-label navy">Timeline</span>
+    <div class="section-heading">How the Iran War Escalation Reached This Hearing</div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Jan 20, 2025</div>
+        <div class="tl-title">Trump takes office</div>
+        <div class="tl-desc">Administration begins new Iran policy, intensifying sanctions and military posture in the Middle East region.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Early 2026</div>
+        <div class="tl-title">US-Iran hostilities begin</div>
+        <div class="tl-desc">US military operations against Iran commence. By March 10, Pentagon reports approximately 140 service members wounded over the first 10 days.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">April 30, 2026</div>
+        <div class="tl-title">First Senate hearing on Iran war</div>
+        <div class="tl-desc">Hegseth testifies before a Senate committee on the Iran war for the first time. Lawmakers in both parties press for clarity on strategy and costs.</div>
+      </div>
+
+      <div class="tl-item key">
+        <div class="tl-dot"></div>
+        <div class="tl-date">June 24, 2026</div>
+        <div class="tl-title">White House formally requests $87.6B supplemental</div>
+        <div class="tl-desc">The administration sends Congress a supplemental funding request covering war costs ($67B defense), Ebola response, and farm aid.</div>
+      </div>
+
+      <div class="tl-item key">
+        <div class="tl-dot"></div>
+        <div class="tl-date">July 7, 2026</div>
+        <div class="tl-title">Military operations resume; ceasefire collapses</div>
+        <div class="tl-desc">A ceasefire that had temporarily paused the conflict breaks down. US operations restart. The next two weeks see nearly 100 service members injured.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">July 14, 2026</div>
+        <div class="tl-title">Naval blockade reinstated; Strait of Hormuz fee</div>
+        <div class="tl-desc">Trump reinstates a naval blockade on Iranian ports and announces a 20% fee on cargo shipped through the Strait of Hormuz. Regular gas prices return to $4/gallon.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">July 20, 2026</div>
+        <div class="tl-title">Report: Pentagon concealing true casualty count</div>
+        <div class="tl-desc">A U.S. official tells The Intercept that injuries are "far more" than Pentagon figures. Pentagon disputes the claim. That same weekend, 3 more service members are killed.</div>
+      </div>
+
+      <div class="tl-item key">
+        <div class="tl-dot"></div>
+        <div class="tl-date">July 21, 2026</div>
+        <div class="tl-title">Hegseth + Caine testify: $87.6B on the table</div>
+        <div class="tl-desc">Hegseth and Gen. Dan Caine face the Senate Appropriations Committee. Pentagon announces ~100 injured since July 7. Senate Democrats block annual defense policy bill over Iran war concerns.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- $87.6B COST BREAKDOWN -->
+  <div class="cost-wrap">
+    <span class="section-label">Interactive</span>
+    <div class="section-heading">Breaking Down the $87.6 Billion Supplemental Request</div>
+    <div class="cost-total">
+      <div class="cost-total-num">$87.6B</div>
+      <div class="cost-total-label">Total Supplemental Funding Request · White House to Congress · June 24, 2026</div>
+    </div>
+
+    <div class="cost-bar-wrap">
+      <div class="cost-bar-label">
+        <span>🔴 Defense &amp; Military Operations</span>
+        <span>$67B <em style="font-weight:400;font-size:0.78rem;">(76.5%)</em></span>
+      </div>
+      <div class="cost-bar-bg"><div class="cost-bar-fill defense" data-width="76.5"></div></div>
+    </div>
+
+    <div class="cost-bar-wrap">
+      <div class="cost-bar-label">
+        <span>🔵 Other (Ebola response, non-defense)</span>
+        <span>~$17B <em style="font-weight:400;font-size:0.78rem;">(~19.4%)</em></span>
+      </div>
+      <div class="cost-bar-bg"><div class="cost-bar-fill other" data-width="19.4"></div></div>
+    </div>
+
+    <div class="cost-bar-wrap">
+      <div class="cost-bar-label">
+        <span>🟡 Agriculture / Farm Aid</span>
+        <span>~$3.6B <em style="font-weight:400;font-size:0.78rem;">(~4.1%)</em></span>
+      </div>
+      <div class="cost-bar-bg"><div class="cost-bar-fill farm" data-width="4.1"></div></div>
+    </div>
+
+    <div class="cost-note">
+      Source: White House supplemental request submitted to Congress June 24, 2026 · Senate Appropriations Committee, July 21, 2026 hearing. Some figures are estimates based on disclosed totals; the $67B defense figure has been confirmed. Remainder allocated across Ebola outbreak response, US farmer aid, and other programs. Senate Republicans are also considering a third reconciliation bill specifically for Iran war funding.
+    </div>
+  </div>
+
+  <!-- ACCORDION: KEY FACTS -->
+  <div class="acc-wrap">
+    <span class="section-label navy">Key Facts</span>
+    <div class="section-heading">What You Need to Know: The July 21 Senate Hearing</div>
+
+    <div class="acc-item">
+      <button class="acc-header" onclick="cruxS1Acc(this)">
+        Who testified, and before which committee?
+        <span class="acc-icon">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          <strong>Defense Secretary Pete Hegseth</strong> and <strong>Chairman of the Joint Chiefs of Staff Gen. Dan Caine</strong> appeared before the <a href="https://www.appropriations.senate.gov/" rel="noopener noreferrer" target="_blank">Senate Appropriations Committee</a> on July 21, 2026. Agriculture Secretary Brooke Rolling also appeared, given the supplemental includes farm aid. The hearing was scheduled for 10 a.m. and covered the administration's $87.6 billion supplemental spending request.
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-header" onclick="cruxS1Acc(this)">
+        What are the confirmed US casualty figures?
+        <span class="acc-icon">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          According to the <a href="https://www.defense.gov/" rel="noopener noreferrer" target="_blank">Pentagon's Defense Casualty Analysis System (DCAS)</a>: <strong>17 US service members killed</strong> and <strong>427+ total injured</strong> since the start of hostilities. In the two weeks from July 7 to July 21 alone, the Pentagon confirmed approximately <strong>100 service members injured</strong>, the vast majority suffering concussions. <strong>96% of those recently injured have returned to duty.</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-header" onclick="cruxS1Acc(this)">
+        What is the Pentagon's casualty disclosure dispute about?
+        <span class="acc-icon">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          On July 20, 2026, The Intercept reported that a U.S. official said injuries were <em>"far more"</em> than what the Pentagon disclosed. The Pentagon denied this, with a spokesperson stating the department has not concealed any injuries and adding: <strong>"cherry-picking raw numbers without context paints a deliberately misleading and incomplete picture."</strong> Pentagon officials also noted the department is not legally required to release all injury data publicly. The Pentagon said injuries range from minor sprained ankles to combat-related concussions.
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-header" onclick="cruxS1Acc(this)">
+        Why are Senate Democrats blocking the defense bill?
+        <span class="acc-icon">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          Senate Democrats blocked the annual defense policy bill around the time of the July 21 hearing, registering formal discontent about President Trump's handling of the war in Iran — specifically, the collapse of the ceasefire and the resumption of military operations without clear congressional authorization. Democrats formally notified Congress that US military operations had resumed days before the block. The Appropriations Committee hearing was part of the broader legislative standoff over war funding and oversight.
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <button class="acc-header" onclick="cruxS1Acc(this)">
+        How does the Iran conflict affect gas prices?
+        <span class="acc-icon">▼</span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+          A gallon of regular gasoline has returned to an <strong>average of $4</strong> across the United States, linked to the Iran conflict's impact on Middle East shipping lanes. President Trump reinstated a naval blockade on Iranian ports in mid-July 2026 and announced a <strong>20% fee on cargo shipped through the Strait of Hormuz</strong> — a critical global oil transit corridor. These measures contributed to the rise in pump prices, which directly affects American households.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- GAS PRICE WIDGET -->
+  <div class="gas-wrap">
+    <div class="gas-icon">⛽</div>
+    <div class="gas-content">
+      <div class="gas-price">$4.00 / gal</div>
+      <div class="gas-label">Average US Regular Gasoline Price — July 2026</div>
+      <div class="gas-note">Driven by Iran conflict impact on Middle East shipping. Trump reinstated a naval blockade on Iranian ports and imposed a 20% cargo fee on Strait of Hormuz transit. The Strait carries roughly 21% of global oil trade.</div>
+    </div>
+  </div>
+
+  <!-- PENTAGON QUOTE -->
+  <div class="quote-block">
+    <div class="quote-text">"Cherry-picking raw numbers without context paints a deliberately misleading and incomplete picture."</div>
+    <div class="quote-source">— Pentagon spokesperson, July 2026, responding to reports of concealed injury data</div>
+  </div>
+
+  <!-- CONCLUSION BLOCK -->
+  <div class="conclusion-block">
+    <span class="section-label">Summary</span>
+    <div class="section-heading">What the July 21 Hearing Covered</div>
+    <p>The Senate Appropriations Committee session on July 21, 2026 was centered on the Trump administration's $87.6 billion supplemental funding request — with $67 billion designated for military operations in Iran. Defense Secretary Hegseth and Gen. Dan Caine were the primary witnesses, with Agriculture Secretary Brooke Rolling also present given the supplemental's farm aid component.</p>
+    <p>The Pentagon's announcement of nearly 100 service members injured since July 7 came alongside the acknowledgment of 17 total deaths and 427+ total injuries since the conflict began. Competing claims about the completeness of the Pentagon's casualty data ran through coverage of the hearing. A <a href="https://cruxbuzz.com/anti-war-protest-or-criminal-act-marine-veteran-hit-with-7-charges-after-senate-hearing-scuffle-with-capitol-police-and-a-republican-senator/">Senate hearing disruption by a Marine veteran</a> months earlier had already illustrated how the war has registered at street level.</p>
+    <p>Senate Democrats blocked the annual defense policy bill, and the path for the supplemental's approval remains contested, with some Republicans floating a third reconciliation bill specifically for Iran war funding. The <a href="https://cruxbuzz.com/lindsey-graham-senator-dies-71-russia-sanctions-saudi-israel-senate/">recent shift in Senate composition</a>, combined with bipartisan frustration over strategy and casualty transparency, kept the hearing's outcome uncertain even after Hegseth's testimony.</p>
+    <p style="font-size:0.78rem;color:#94a3b8;margin-top:12px;">Sources: <a href="https://www.defense.gov/" rel="noopener noreferrer" target="_blank" style="color:#f59e0b;">US Department of Defense</a> · <a href="https://www.appropriations.senate.gov/" rel="noopener noreferrer" target="_blank" style="color:#f59e0b;">Senate Appropriations Committee</a> · <a href="https://theintercept.com/2026/07/20/united-states-iran-war-casualties-cover-up-pentagon/" rel="noopener noreferrer" target="_blank" style="color:#f59e0b;">The Intercept (July 20, 2026)</a> · <a href="https://justthenews.com/government/security/pete-hegseth-dan-caine-testify-iran-war-funding-request-tuesday" rel="noopener noreferrer" target="_blank" style="color:#f59e0b;">Just The News</a></p>
+  </div>
+
+</div><!-- /crux-s1 -->
+
+<script>
+(function(){
+  /* ---- Animated counters ---- */
+  function animateCounters(){
+    var els=document.querySelectorAll('.crux-s1 .stat-num[data-target]');
+    els.forEach(function(el){
+      var target=parseInt(el.getAttribute('data-target'));
+      var prefix=el.getAttribute('data-prefix')||'';
+      var suffix=el.getAttribute('data-suffix')||'';
+      var start=0;
+      var duration=1400;
+      var step=Math.ceil(target/60);
+      var interval=setInterval(function(){
+        start+=step;
+        if(start>=target){start=target;clearInterval(interval);}
+        el.textContent=prefix+start+suffix;
+      },duration/60);
+    });
+  }
+  /* Trigger once in view */
+  var triggered=false;
+  function checkView(){
+    if(triggered)return;
+    var el=document.querySelector('.crux-s1 .stats-wrap');
+    if(!el)return;
+    var rect=el.getBoundingClientRect();
+    if(rect.top<window.innerHeight){triggered=true;animateCounters();}
+  }
+  window.addEventListener('scroll',checkView);
+  checkView();
+
+  /* ---- Cost bars animate ---- */
+  var barsTriggered=false;
+  function animateBars(){
+    if(barsTriggered)return;
+    var el=document.querySelector('.crux-s1 .cost-wrap');
+    if(!el)return;
+    var rect=el.getBoundingClientRect();
+    if(rect.top<window.innerHeight){
+      barsTriggered=true;
+      document.querySelectorAll('.crux-s1 .cost-bar-fill').forEach(function(b){
+        b.style.width=b.getAttribute('data-width')+'%';
+      });
+    }
+  }
+  window.addEventListener('scroll',animateBars);
+  animateBars();
+
+  /* ---- Accordion ---- */
+  window.cruxS1Acc=function(btn){
+    var item=btn.parentElement;
+    var body=item.querySelector('.acc-body');
+    var isOpen=item.classList.contains('open');
+    /* Close all */
+    document.querySelectorAll('.crux-s1 .acc-item').forEach(function(i){
+      i.classList.remove('open');
+      i.querySelector('.acc-body').style.maxHeight=null;
+    });
+    /* Open this if was closed */
+    if(!isOpen){
+      item.classList.add('open');
+      body.style.maxHeight=body.scrollHeight+'px';
+    }
+  };
+})();
+</script>
