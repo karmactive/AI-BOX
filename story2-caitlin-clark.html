@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caitlin Clark WNBA Safety Controversy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ===== INTRO SECTION ===== */
+        .intro-section {
+            background: linear-gradient(135deg, #1e88e5 0%, #1565c0 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .intro-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .intro-section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            opacity: 0.95;
+            margin-bottom: 0.75rem;
+        }
+
+        .intro-section a {
+            color: #ffeb3b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .intro-section a:hover {
+            opacity: 0.8;
+        }
+
+        /* ===== KEY INCIDENTS CARDS ===== */
+        .incidents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .incident-card {
+            background: white;
+            padding: 1.75rem;
+            border-radius: 10px;
+            border-top: 4px solid #1e88e5;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .incident-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+
+        .incident-type {
+            font-weight: 700;
+            color: #1e88e5;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .incident-description {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ===== CONTENT SECTION ===== */
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #1e88e5;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .content-section a {
+            color: #1e88e5;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .content-section a:hover {
+            color: #1565c0;
+            text-decoration: underline;
+        }
+
+        .quote-box {
+            background: #e3f2fd;
+            border-left: 4px solid #1e88e5;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            font-style: italic;
+            color: #333;
+        }
+
+        .quote-box strong {
+            color: #1a1a1a;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* ===== INTERACTIVE TIMELINE ===== */
+        .timeline-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .timeline-section h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #1e88e5;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #1e88e5;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: white;
+            border: 3px solid #1e88e5;
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: #1e88e5;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== STAKEHOLDER RESPONSES ===== */
+        .stakeholders-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .stakeholders-section h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #1e88e5;
+        }
+
+        .stakeholder-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stakeholder-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .stakeholder-name {
+            font-weight: 700;
+            color: #1e88e5;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stakeholder-position {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .stakeholder-quote {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-left: 3px solid #1e88e5;
+            border-radius: 4px;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        /* ===== COMPARISON STATS ===== */
+        .stats-comparison {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .stats-comparison h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #1e88e5;
+        }
+
+        .stat-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            align-items: center;
+        }
+
+        .stat-label {
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 1rem;
+        }
+
+        .stat-value {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 6px;
+            font-weight: 700;
+            color: #1e88e5;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        /* ===== ACCORDION - KEY QUESTIONS ===== */
+        .accordion-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .accordion-section h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #1e88e5;
+        }
+
+        .accordion-item {
+            border: 1px solid #e0e0e0;
+            margin-bottom: 0.75rem;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1a1a1a;
+            background: #f9f9f9;
+            transition: background 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: #f0f0f0;
+        }
+
+        .accordion-icon {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+            color: #1e88e5;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content-inner {
+            padding: 1.2rem;
+            background: white;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        /* ===== CONCLUSION SECTION ===== */
+        .conclusion-section {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ebebeb 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            border-left: 5px solid #1e88e5;
+        }
+
+        .conclusion-section h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .conclusion-section p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .conclusion-section a {
+            color: #1e88e5;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .conclusion-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .incidents-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .intro-section {
+                padding: 1.75rem;
+            }
+
+            .intro-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .content-section,
+            .timeline-section,
+            .stakeholders-section,
+            .stats-comparison,
+            .accordion-section,
+            .conclusion-section {
+                padding: 1.5rem;
+            }
+
+            .timeline {
+                padding-left: 20px;
+            }
+
+            .timeline-item::before {
+                left: -8px;
+                width: 10px;
+                height: 10px;
+            }
+
+            .stat-row {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .incidents-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-section h2 {
+                font-size: 1.2rem;
+            }
+
+            .content-section h3,
+            .timeline-section h3,
+            .stakeholders-section h3,
+            .stats-comparison h3,
+            .accordion-section h3,
+            .conclusion-section h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- INTRO SECTION -->
+        <div class="intro-section">
+            <h2>Congressional Pressure Mounts on WNBA Over Caitlin Clark Safety Concerns</h2>
+            <p>Republican lawmakers have demanded accountability from the WNBA following repeated physical incidents involving rookie sensation Caitlin Clark. The controversy escalated when Phoenix Mercury forward Alyssa Thomas received a one-game suspension for a flagrant foul involving contact to Clark's throat.</p>
+            <p>Clark responded: "First of all, I know what you're going to ask, and I did think it was a flagrant foul... The league's just got to do better protecting our players." For more <a href="https://cruxbuzz.com/tag/wnba/">WNBA coverage</a>, visit our sports section.</p>
+        </div>
+
+        <!-- INCIDENTS OVERVIEW -->
+        <div class="incidents-grid">
+            <div class="incident-card">
+                <div class="incident-type">Hip-Checks</div>
+                <div class="incident-description">Multiple instances of aggressive hip-checking during games, with limited official oversight or consequences.</div>
+            </div>
+            <div class="incident-card">
+                <div class="incident-type">Eye Pokes</div>
+                <div class="incident-description">Several plays involving contact to the face and eye area, raising player safety concerns on the court.</div>
+            </div>
+            <div class="incident-card">
+                <div class="incident-type">Throat Strike</div>
+                <div class="incident-description">Alyssa Thomas fist strike to throat (June 24), upgraded to Flagrant 2, resulting in one-game suspension.</div>
+            </div>
+            <div class="incident-card">
+                <div class="incident-type">Online Harassment</div>
+                <div class="incident-description">Players receiving hate and death threats on social media following physical incidents on the court.</div>
+            </div>
+        </div>
+
+        <!-- BACKGROUND CONTEXT -->
+        <div class="content-section">
+            <h3>Understanding the Controversy</h3>
+            <p>Caitlin Clark's rookie season in the WNBA has been marked by extraordinary success and unprecedented scrutiny. As the face of women's basketball and a transformative figure for the league, Clark's treatment on the court has become a flashpoint for broader discussions about officiating standards, player safety, and the physical nature of WNBA competition.</p>
+
+            <div class="quote-box">
+                <strong>Clark on Officiating:</strong> "Our reffing just needs to be better... I'm not a robot. I have emotions. I have feelings… I'm 24 years old trying to navigate a lot… There are times where it's hard."
+            </div>
+
+            <p>The incidents have transcended sports, drawing attention from members of Congress who cite concerns about whether the physical treatment reflects a pattern of targeting the league's most prominent player. <a href="https://cruxbuzz.com/tag/womens-sports/">The conversation extends beyond basketball</a>, touching on issues of player welfare and competitive fairness.</p>
+        </div>
+
+        <!-- TIMELINE OF EVENTS -->
+        <div class="timeline-section">
+            <h3>Major Incidents and Responses Timeline</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Early June 2026</div>
+                    <div class="timeline-description">First physical incidents involving Clark gain media attention, including hip-checks and eye pokes during games</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">June 24, 2026</div>
+                    <div class="timeline-description">Alyssa Thomas strikes Clark's throat with fist; initially called common foul by officials on the court</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">June 25-26, 2026</div>
+                    <div class="timeline-description">WNBA reviews play and upgrades to Flagrant 2 foul; Thomas receives one-game suspension</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Early July 2026</div>
+                    <div class="timeline-description">Clark breaks silence, addresses officiating concerns and harassment directed at opponents</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">July 8-9, 2026</div>
+                    <div class="timeline-description">Rep. August Pfluger and 11 Republican colleagues send letter to WNBA Commissioner Cathy Engelbert</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">July 24, 2026</div>
+                    <div class="timeline-description">Deadline for WNBA Commissioner to respond to congressional letter with three specific questions</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STAKEHOLDER RESPONSES -->
+        <div class="stakeholders-section">
+            <h3>Key Statements from Players and Officials</h3>
+
+            <div class="stakeholder-item">
+                <div class="stakeholder-name">Caitlin Clark</div>
+                <div class="stakeholder-position">Indiana Fever Guard</div>
+                <div class="stakeholder-quote">
+                    "The harassment, the hate, none of that is OK... There should never be question of character. None of that is OK, and I don't want anybody to ever experience that. The league's just got to do better protecting our players."
+                </div>
+            </div>
+
+            <div class="stakeholder-item">
+                <div class="stakeholder-name">Alyssa Thomas</div>
+                <div class="stakeholder-position">Phoenix Mercury Forward</div>
+                <div class="stakeholder-quote">
+                    "It's unfortunate that it's come to this over basketball. A lot of us, myself included, didn't even know the play took place until after the game and now we're being painted as thugs. Death threats out on us, so it's really unacceptable. It is something that needs to change in this league."
+                </div>
+            </div>
+
+            <div class="stakeholder-item">
+                <div class="stakeholder-name">Rep. August Pfluger (R-TX)</div>
+                <div class="stakeholder-position">Republican Study Committee Chairman</div>
+                <div class="stakeholder-quote">
+                    "Caitlin Clark is transforming women's sports. She has inspired a new generation of young girls to participate in athletics. Clark has been hip-checked, poked in the eye, and struck in the throat during games. These incidents go far beyond routine physical play."
+                </div>
+            </div>
+
+            <div class="stakeholder-item">
+                <div class="stakeholder-name">WNBA Commissioner Cathy Engelbert</div>
+                <div class="stakeholder-position">League Commissioner</div>
+                <div class="stakeholder-quote">
+                    "It's pretty clear that we are misaligned currently with what our stakeholders want from officiating... Change is needed to serve the WNBA to the level of excellence that is not currently being met. The WNBA vehemently condemns any and all forms of hate."
+                </div>
+            </div>
+        </div>
+
+        <!-- CONGRESSIONAL ACTION DETAILS -->
+        <div class="content-section">
+            <h3>Congressional Letter and Official Response Process</h3>
+            <p>On July 8-9, 2026, Rep. August Pfluger, chairman of the Republican Study Committee, led a bipartisan effort with 11 fellow members of Congress in sending a formal letter to <a href="https://cruxbuzz.com/tag/american-football/">WNBA Commissioner Cathy Engelbert</a> demanding greater accountability regarding the treatment of Caitlin Clark.</p>
+
+            <p>The lawmakers posed three specific questions requiring responses by July 24:</p>
+            <ol style="margin-left: 2rem; margin-bottom: 1rem;">
+                <li style="margin-bottom: 0.75rem;">How does the WNBA review and address "physical hostility and violence on the court"?</li>
+                <li style="margin-bottom: 0.75rem;">What accountability measures hold players responsible for "overly aggressive acts on the court"?</li>
+                <li>What protective steps does the league take against online harassment directed at players?</li>
+            </ol>
+
+            <p>As of mid-July, the WNBA had not publicly released a formal response to the congressional inquiry. However, Commissioner Engelbert acknowledged the need for change, stating that the league is establishing a multi-stakeholder task force to address officiating concerns and player safety.</p>
+        </div>
+
+        <!-- STATISTICS & IMPACT -->
+        <div class="stats-comparison">
+            <h3>Impact and Context</h3>
+
+            <div class="stat-row">
+                <div class="stat-label">WNBA Viewership Increase</div>
+                <div class="stat-value">All-Time High</div>
+            </div>
+
+            <div class="stat-row">
+                <div class="stat-label">Caitlin Clark's Rookie Impact</div>
+                <div class="stat-value">League Catalyst</div>
+            </div>
+
+            <div class="stat-row">
+                <div class="stat-label">Congressional Response</div>
+                <div class="stat-value">12 Lawmakers</div>
+            </div>
+
+            <div class="stat-row">
+                <div class="stat-label">Alyssa Thomas Suspension</div>
+                <div class="stat-value">1 Game</div>
+            </div>
+
+            <p style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #eee; color: #999; font-size: 0.95rem;">
+                Clark's presence has attracted unprecedented attention to women's basketball, with <a href="https://cruxbuzz.com/category/sports/">WNBA games</a> drawing record viewership numbers. This scrutiny has intensified examination of officiating standards and player safety protocols.
+            </p>
+        </div>
+
+        <!-- FAQ ACCORDION -->
+        <div class="accordion-section">
+            <h3>Frequently Asked Questions</h3>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Why are lawmakers involved in a WNBA matter?</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        Rep. Pfluger and colleagues cited concerns about player safety and accountability. Caitlin Clark's prominence and the repeated nature of incidents drew attention to potential patterns that warranted official inquiry. The lawmakers argue that the league has failed to adequately protect its most influential player from physical hostility.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>What happens if the WNBA doesn't respond to Congress?</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        While Congress cannot directly penalize a private sports league, a failure to respond raises reputational concerns. Congressional interest signals broader public concern and could impact future legislative discussions affecting the league, including potential antitrust exemptions or other regulatory matters.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Is this level of physicality typical in women's basketball?</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        The WNBA has always featured physical play comparable to men's basketball. However, officials and the league itself have acknowledged that officiating standards may be inconsistent. Commissioner Engelbert stated the league is "misaligned" with what stakeholders want, suggesting room for improvement in how contact is called and adjudicated.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>What role did social media harassment play?</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        Following the Alyssa Thomas incident, death threats and hate messages were directed at players involved. Clark specifically addressed this, emphasizing that no player should experience harassment or threats. The WNBA stated it "vehemently condemns" all forms of hate, but the speed and severity of online attacks raised questions about the league's ability to protect players off the court.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="conclusion-section">
+            <h3>Looking Forward</h3>
+            <p>The Caitlin Clark situation reflects broader discussions about player safety, officiating consistency, and the responsibilities of professional sports leagues. The WNBA's response to congressional inquiry and implementation of its multi-stakeholder task force will be closely monitored.</p>
+
+            <p>For comprehensive <a href="https://cruxbuzz.com/category/sports/">sports news and analysis</a>, continue following developments. The league's actions in response to these concerns will set precedent for how women's professional sports address player welfare and officiating standards moving forward.</p>
+
+            <p>Both <a href="https://cruxbuzz.com/tag/basketball/">basketball coverage</a> and <a href="https://cruxbuzz.com/tag/sports-news/">sports news updates</a> will track the WNBA's official response and any policy changes resulting from this controversy.</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Accordion toggle function
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const content = item.querySelector('.accordion-content');
+            const isActive = item.classList.contains('active');
+
+            // Close all accordions
+            document.querySelectorAll('.accordion-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.accordion-content').style.maxHeight = null;
+            });
+
+            // Open clicked accordion if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        }
+    </script>
+</body>
+</html>

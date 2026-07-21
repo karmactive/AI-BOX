@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick Mahomes $500M NFL Contract</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ===== INTRO SECTION ===== */
+        .intro-section {
+            background: linear-gradient(135deg, #c41e3a 0%, #8b2635 100%);
+            color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .intro-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .intro-section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            opacity: 0.95;
+            margin-bottom: 0.75rem;
+        }
+
+        .intro-section a {
+            color: #ffeb3b;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .intro-section a:hover {
+            opacity: 0.8;
+        }
+
+        /* ===== STATS CARDS ===== */
+        .stats-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.75rem;
+            border-radius: 10px;
+            border-left: 5px solid #c41e3a;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+        }
+
+        .stat-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #c41e3a;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .stat-description {
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 0.5rem;
+        }
+
+        /* ===== CONTENT SECTION ===== */
+        .content-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #c41e3a;
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .content-section a {
+            color: #c41e3a;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .content-section a:hover {
+            color: #8b2635;
+            text-decoration: underline;
+        }
+
+        .quote-box {
+            background: #f5f5f5;
+            border-left: 4px solid #c41e3a;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .quote-box strong {
+            color: #1a1a1a;
+            font-style: normal;
+        }
+
+        /* ===== TIMELINE ===== */
+        .timeline-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .timeline-section h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #c41e3a;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #c41e3a;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: white;
+            border: 3px solid #c41e3a;
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: #c41e3a;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== CHART SECTION ===== */
+        .chart-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .chart-section h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #c41e3a;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 350px;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== ACCORDION ===== */
+        .accordion-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .accordion-section h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #c41e3a;
+        }
+
+        .accordion-item {
+            border: 1px solid #e0e0e0;
+            margin-bottom: 0.75rem;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1a1a1a;
+            background: #f9f9f9;
+            transition: background 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: #f0f0f0;
+        }
+
+        .accordion-icon {
+            font-size: 1.3rem;
+            transition: transform 0.3s ease;
+            color: #c41e3a;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content-inner {
+            padding: 1.2rem;
+            background: white;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        /* ===== CONCLUSION SECTION ===== */
+        .conclusion-section {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ebebeb 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            border-left: 5px solid #c41e3a;
+        }
+
+        .conclusion-section h3 {
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .conclusion-section p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .conclusion-section a {
+            color: #c41e3a;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .conclusion-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .stat-value {
+                font-size: 1.8rem;
+            }
+
+            .intro-section {
+                padding: 1.75rem;
+            }
+
+            .intro-section h2 {
+                font-size: 1.4rem;
+            }
+
+            .content-section,
+            .timeline-section,
+            .chart-section,
+            .accordion-section,
+            .conclusion-section {
+                padding: 1.5rem;
+            }
+
+            .timeline {
+                padding-left: 20px;
+            }
+
+            .timeline-item::before {
+                left: -8px;
+                width: 10px;
+                height: 10px;
+            }
+
+            .chart-container {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-section h2 {
+                font-size: 1.2rem;
+            }
+
+            .content-section h3,
+            .timeline-section h3,
+            .chart-section h3,
+            .accordion-section h3,
+            .conclusion-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .stat-value {
+                font-size: 1.5rem;
+            }
+
+            .chart-container {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- INTRO SECTION -->
+        <div class="intro-section">
+            <h2>Chiefs QB Patrick Mahomes Secures Historic $504.75M Contract</h2>
+            <p>Kansas City Chief's star quarterback Patrick Mahomes has become the first NFL player to sign a deal valued at over half a billion dollars. The reworked contract extension runs through 2033 and includes record-breaking average annual value of $64 million.</p>
+            <p>Mahomes told Yahoo Sports: "That's my goal. I've said that since the beginning [my goal] is being ready to go Week 1. I can't predict the future and I know that it's a long process." Coach Andy Reid added: "He's handled it very well. I think the surgery went well. It looks like Dr. Cooper tightened that baby up, and it's in pretty good condition for him to work."</p>
+            <p>For more <a href="https://cruxbuzz.com/tag/nfl/">NFL coverage</a>, visit our sports section.</p>
+        </div>
+
+        <!-- KEY STATS SECTION -->
+        <div class="stats-section">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">$504.75M</div>
+                    <div class="stat-label">Total Contract Value</div>
+                    <div class="stat-description">Through 2033 season</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$64M</div>
+                    <div class="stat-label">Average Annual Value</div>
+                    <div class="stat-description">New NFL record</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$239.05M</div>
+                    <div class="stat-label">New Money Added</div>
+                    <div class="stat-description">Two-year extension</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">$522.25M</div>
+                    <div class="stat-label">With Incentives</div>
+                    <div class="stat-description">Maximum potential value</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIMELINE SECTION -->
+        <div class="timeline-section">
+            <h3>Key Dates in Mahomes' Contract Timeline</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">December 2025</div>
+                    <div class="timeline-description">Mahomes suffers torn ACL and LCL ligaments in his left knee against Los Angeles Chargers</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">June 10, 2026</div>
+                    <div class="timeline-description">Chiefs and Mahomes agree to reworked two-year contract extension worth over $500 million</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">May 2026</div>
+                    <div class="timeline-description">Mahomes participates in team OTAs, showing positive movement in recovery</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2027 Onward</div>
+                    <div class="timeline-description">New $64M average annual value begins, setting new NFL record for per-year compensation</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTRACT DETAILS SECTION -->
+        <div class="content-section">
+            <h3>Understanding the Contract Structure</h3>
+            <p>Mahomes' reworked deal extends his time with Kansas City through the 2033 season when he will be 38 years old. The contract structure includes several key components:</p>
+
+            <div class="quote-box">
+                <strong>First Four Years Guaranteed:</strong> The first four years are fully guaranteed at signing, providing security for both player and organization.
+            </div>
+
+            <p>The remaining guarantee structure follows a specific vesting pattern. About half of his 2029 earnings also become guaranteed in March 2028, with similar protection extending through 2032. This structure allows the Chiefs to manage their salary cap while ensuring Mahomes receives significant guaranteed money.</p>
+
+            <p>In 2027, Mahomes will earn $56.7 million, with annual compensation increasing each year until 2033 when he is set to make $70 million. The <a href="https://cruxbuzz.com/tag/american-football/">contract creates a $90.3 million cap hit in 2027</a>, with charges exceeding $80 million for both 2028 and 2029.</p>
+        </div>
+
+        <!-- CHART SECTION -->
+        <div class="chart-section">
+            <h3>Mahomes Contract Value Progression</h3>
+            <div class="chart-container">
+                <canvas id="contractChart"></canvas>
+            </div>
+            <p style="text-align: center; color: #999; font-size: 0.9rem; margin-top: 1rem;">Projected annual earnings from 2027-2033 based on confirmed contract terms</p>
+        </div>
+
+        <!-- RECOVERY STATUS SECTION -->
+        <div class="content-section">
+            <h3>Recovery Timeline and 2026 Season Outlook</h3>
+            <p>After undergoing surgery for his torn ACL and LCL, Mahomes has made steady progress in his rehabilitation. The quarterback expressed his goal to return for Week 1 of the 2026 season, stating: "I can't predict the future and I know that it's a long process."</p>
+
+            <p>Coach Andy Reid provided an optimistic assessment of Mahomes' recovery: "He's handled it very well. I think the surgery went well. It looks like Dr. Cooper tightened that baby up, and it's in pretty good condition for him to work."</p>
+
+            <p>Mahomes participated in team OTAs in May 2026, showcasing improved movement and strength. The <a href="https://cruxbuzz.com/tag/sports-news/">Chiefs organization remains confident</a> in his availability for the start of the regular season, though any significant setback could alter the timeline.</p>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <div class="accordion-section">
+            <h3>Frequently Asked Questions</h3>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>Why did the Chiefs rework Mahomes' contract now?</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        The rework came during Mahomes' recovery from a season-ending knee injury. By extending his contract with added guarantees, the Chiefs secured his services through 2033 while he rehabilitated. This move also strengthened Mahomes' commitment to the organization and positioned Kansas City for long-term success with their franchise quarterback.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>How does Mahomes' contract compare to other NFL quarterbacks?</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        Mahomes' $64 million average annual value surpasses previous record holder Dak Prescott of the Dallas Cowboys, who earned $60 million per year. Mahomes becomes the first player in NFL history to sign a contract with a total value exceeding $500 million, setting a new benchmark for quarterback compensation in professional football.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>What are the cap implications for the Chiefs?</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        The contract creates significant salary cap obligations, with a $90.3 million cap hit in 2027 and charges exceeding $80 million for both 2028 and 2029. These numbers represent substantial commitments that will impact the Chiefs' ability to add supporting talent, requiring strategic roster management in the coming years to maintain competitiveness.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <span>When is Mahomes expected to return to play?</span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        Mahomes expressed his goal to return for Week 1 of the 2026 season. He participated in team OTAs in May 2026 with improved movement, but recovery from ACL injuries can be unpredictable. The Chiefs have not set a definitive return date, prioritizing his full recovery over rushing him back to the field.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONCLUSION SECTION -->
+        <div class="conclusion-section">
+            <h3>What This Means for the Chiefs and the NFL</h3>
+            <p>Mahomes' record-breaking contract reflects both his proven excellence and the escalating costs of retaining elite NFL talent. The $504.75 million deal represents a significant investment by the Kansas City organization, betting on his return to full strength and continued dominance at the quarterback position.</p>
+
+            <p>For broader <a href="https://cruxbuzz.com/category/sports/">sports coverage and analysis</a>, explore our comprehensive collection of articles. The contract sets a new standard in the NFL, likely influencing future negotiations for other franchise quarterbacks across the league.</p>
+
+            <p>As Mahomes continues his rehabilitation, <a href="https://cruxbuzz.com/tag/sports-news/">sports fans will follow his progress</a> closely, with his performance in the 2026 season expected to validate this historic investment by the Chiefs organization.</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Chart.js for contract visualization
+        const ctx = document.getElementById('contractChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['2027', '2028', '2029', '2030', '2031', '2032', '2033'],
+                datasets: [{
+                    label: 'Annual Salary (Millions)',
+                    data: [56.7, 62, 65, 66, 67, 69, 70],
+                    backgroundColor: [
+                        '#c41e3a',
+                        '#b01830',
+                        '#961227',
+                        '#8b2635',
+                        '#7d1f2e',
+                        '#702327',
+                        '#c41e3a'
+                    ],
+                    borderRadius: 6,
+                    borderSkipped: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            font: { size: 12, weight: 600 },
+                            padding: 15,
+                            color: '#333'
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return '$' + context.parsed.y.toFixed(1) + 'M';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 80,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value + 'M';
+                            },
+                            color: '#666',
+                            font: { size: 11 }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            color: '#666',
+                            font: { size: 11 }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        // Accordion toggle function
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const content = item.querySelector('.accordion-content');
+            const isActive = item.classList.contains('active');
+
+            // Close all accordions
+            document.querySelectorAll('.accordion-item').forEach(i => {
+                i.classList.remove('active');
+                i.querySelector('.accordion-content').style.maxHeight = null;
+            });
+
+            // Open clicked accordion if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        }
+    </script>
+</body>
+</html>
