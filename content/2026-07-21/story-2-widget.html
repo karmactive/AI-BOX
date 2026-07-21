@@ -1,0 +1,146 @@
+<style>
+  .wbd-module {
+    --navy-950:#0a1628; --navy-900:#0f2038; --navy-800:#16304f;
+    --navy-700:#1e4269; --gold-400:#e8b84b; --gold-300:#f3cd6f;
+    --ink-100:#eef2f7; --ink-300:#c3d0e0; --ink-500:#8fa3bd;
+    box-sizing:border-box; max-width:100%; overflow-x:hidden;
+    background:linear-gradient(180deg,var(--navy-950),var(--navy-900));
+    color:var(--ink-100); border-radius:14px; padding:clamp(16px,4vw,32px);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    border:1px solid var(--navy-700);
+  }
+  .wbd-module *{box-sizing:border-box;}
+  .wbd-eyebrow{
+    color:var(--gold-400); font-size:12px; font-weight:700; letter-spacing:.14em;
+    text-transform:uppercase; margin:0 0 8px;
+  }
+  .wbd-heading{
+    font-size:clamp(19px,3.4vw,26px); font-weight:800; margin:0 0 10px; line-height:1.25;
+    color:var(--ink-100);
+  }
+  .wbd-copy{
+    font-size:14.5px; line-height:1.65; color:var(--ink-300); margin:0 0 18px; max-width:70ch;
+  }
+  .wbd-copy a{ color:var(--gold-300); text-decoration:underline; text-underline-offset:2px; }
+  .wbd-copy a:hover{ color:var(--gold-400); }
+  .wbd-stats{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+    gap:10px; margin-bottom:20px;
+  }
+  .wbd-stat{
+    background:var(--navy-800); border:1px solid var(--navy-700); border-radius:10px;
+    padding:12px 10px; text-align:center;
+  }
+  .wbd-stat b{ display:block; font-size:clamp(18px,3vw,22px); color:var(--gold-300); }
+  .wbd-stat span{ display:block; font-size:11px; color:var(--ink-500); margin-top:4px; line-height:1.3; }
+  .wbd-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px;
+  }
+  .wbd-card{
+    background:var(--navy-800); border:1px solid var(--navy-700); border-radius:10px;
+    padding:14px; cursor:pointer; transition:background .15s,border-color .15s;
+  }
+  .wbd-card:hover{ border-color:var(--gold-400); background:var(--navy-700); }
+  .wbd-card-top{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .wbd-card-owner{
+    font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    padding:2px 7px; border-radius:20px; white-space:nowrap;
+  }
+  .owner-p{ background:rgba(232,184,75,.16); color:var(--gold-300); }
+  .owner-w{ background:rgba(143,163,189,.18); color:var(--ink-300); }
+  .wbd-card-name{ font-size:15px; font-weight:700; margin:8px 0 4px; color:var(--ink-100); }
+  .wbd-card-plus{ font-size:12px; color:var(--gold-400); font-weight:700; }
+  .wbd-card-body{
+    max-height:0; overflow:hidden; transition:max-height .25s ease;
+    font-size:12.5px; color:var(--ink-300); line-height:1.5;
+  }
+  .wbd-card.open .wbd-card-body{ max-height:120px; margin-top:8px; }
+  .wbd-foot{
+    margin-top:18px; font-size:11.5px; color:var(--ink-500); line-height:1.5; border-top:1px solid var(--navy-700); padding-top:12px;
+  }
+  .wbd-foot a{ color:var(--gold-300); }
+  @media (max-width:420px){ .wbd-stats{grid-template-columns:repeat(2,1fr);} }
+</style>
+
+<div class="wbd-module">
+  <p class="wbd-eyebrow">Interactive Breakdown</p>
+  <h2 class="wbd-heading">Who Would Own What: Inside the Paused $110 Billion Paramount–Warner Bros. Discovery Deal</h2>
+  <p class="wbd-copy">
+    Tap each card to see which company currently owns it, and what would change if the
+    Paramount Warner Bros Discovery merger closes. The deal is on hold under a
+    <a href="https://oag.ca.gov/news/press-releases/quiet-set-attorney-general-bonta-secures-critical-early-win-lawsuit-block-warner" target="_blank" rel="noopener">court-ordered restraining order</a>
+    while a coalition of states pursues its case, first laid out in the
+    <a href="https://oag.ca.gov/news/press-releases/attorney-general-bonta-files-lawsuit-block-110-billion-warner-brosparamount" target="_blank" rel="noopener">original lawsuit filing</a>.
+  </p>
+
+  <div class="wbd-stats">
+    <div class="wbd-stat"><b>$110B</b><span>Reported deal value</span></div>
+    <div class="wbd-stat"><b>12</b><span>State AGs suing</span></div>
+    <div class="wbd-stat"><b>50+</b><span>Combined cable channels</span></div>
+    <div class="wbd-stat"><b>14–28</b><span>Days TRO can run</span></div>
+  </div>
+
+  <div class="wbd-grid" id="wbdGrid">
+    <div class="wbd-card">
+      <div class="wbd-card-top">
+        <span class="wbd-card-owner owner-p">Paramount</span>
+        <span class="wbd-card-plus">+</span>
+      </div>
+      <div class="wbd-card-name">CBS</div>
+      <div class="wbd-card-body">The most-watched U.S. broadcast network. Would stay under the combined company if the deal closes.</div>
+    </div>
+    <div class="wbd-card">
+      <div class="wbd-card-top">
+        <span class="wbd-card-owner owner-p">Paramount</span>
+        <span class="wbd-card-plus">+</span>
+      </div>
+      <div class="wbd-card-name">CBS News</div>
+      <div class="wbd-card-body">Paramount's news division, which would sit alongside CNN under one owner post-merger.</div>
+    </div>
+    <div class="wbd-card">
+      <div class="wbd-card-top">
+        <span class="wbd-card-owner owner-p">Paramount</span>
+        <span class="wbd-card-plus">+</span>
+      </div>
+      <div class="wbd-card-name">Paramount+</div>
+      <div class="wbd-card-body">Paramount's streaming service. Plans call for eventually combining it with HBO Max.</div>
+    </div>
+    <div class="wbd-card">
+      <div class="wbd-card-top">
+        <span class="wbd-card-owner owner-w">Warner Bros. Discovery</span>
+        <span class="wbd-card-plus">+</span>
+      </div>
+      <div class="wbd-card-name">CNN</div>
+      <div class="wbd-card-body">24-hour cable news network. One of the assets states say the merger would consolidate under one company.</div>
+    </div>
+    <div class="wbd-card">
+      <div class="wbd-card-top">
+        <span class="wbd-card-owner owner-w">Warner Bros. Discovery</span>
+        <span class="wbd-card-plus">+</span>
+      </div>
+      <div class="wbd-card-name">HBO Max</div>
+      <div class="wbd-card-body">Warner Bros. Discovery's streaming service, home to HBO's prestige TV library.</div>
+    </div>
+    <div class="wbd-card">
+      <div class="wbd-card-top">
+        <span class="wbd-card-owner owner-w">Warner Bros. Discovery</span>
+        <span class="wbd-card-plus">+</span>
+      </div>
+      <div class="wbd-card-name">50+ Cable Channels</div>
+      <div class="wbd-card-body">Includes TNT, TBS, HGTV, Food Network, MTV and Comedy Central, among others.</div>
+    </div>
+  </div>
+
+  <p class="wbd-foot">
+    Figures reflect publicly reported deal terms and court filings as of July 21, 2026. Explore more industry coverage in
+    <a href="https://cruxbuzz.com/category/entertainment/" target="_blank" rel="noopener">CruxBuzz's entertainment section</a>.
+  </p>
+</div>
+
+<script>
+  document.querySelectorAll('#wbdGrid .wbd-card').forEach(function(card){
+    card.addEventListener('click', function(){
+      card.classList.toggle('open');
+    });
+  });
+</script>

@@ -1,0 +1,297 @@
+<div class="tskw-module">
+<style>
+.tskw-module {
+  --tskw-ivory: #FBF3E9;
+  --tskw-wine: #6E1E32;
+  --tskw-wine-dark: #4E1424;
+  --tskw-gold: #B8873F;
+  --tskw-ink: #2B2320;
+  --tskw-card: #FFFFFF;
+  --tskw-border: #E6D7C3;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--tskw-ivory);
+  color: var(--tskw-ink);
+  border: 1px solid var(--tskw-border);
+  border-radius: 14px;
+  padding: clamp(16px, 4vw, 32px);
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.tskw-module *, .tskw-module *::before, .tskw-module *::after { box-sizing: border-box; }
+.tskw-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--tskw-wine);
+  margin: 0 0 8px 0;
+}
+.tskw-module h2 {
+  margin: 0 0 10px 0;
+  font-size: clamp(1.25rem, 4vw, 1.65rem);
+  line-height: 1.25;
+  color: var(--tskw-wine-dark);
+}
+.tskw-intro {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin: 0 0 20px 0;
+  max-width: 68ch;
+}
+.tskw-intro a {
+  color: var(--tskw-wine);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.tskw-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.tskw-stat {
+  background: var(--tskw-card);
+  border: 1px solid var(--tskw-border);
+  border-radius: 10px;
+  padding: 10px 14px;
+  flex: 1 1 140px;
+  min-width: 130px;
+}
+.tskw-stat .num {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--tskw-wine);
+  line-height: 1.1;
+}
+.tskw-stat .lbl {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--tskw-ink);
+  opacity: 0.8;
+  margin-top: 2px;
+}
+.tskw-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 3px solid var(--tskw-gold);
+  padding-left: 0;
+}
+.tskw-item {
+  position: relative;
+  padding: 0 0 18px 26px;
+  margin-left: -3px;
+  border-left: 3px solid var(--tskw-gold);
+}
+.tskw-item:last-child { padding-bottom: 0; }
+.tskw-dot {
+  position: absolute;
+  left: -11px;
+  top: 2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--tskw-card);
+  border: 3px solid var(--tskw-wine);
+  cursor: pointer;
+  padding: 0;
+}
+.tskw-item.is-open .tskw-dot { background: var(--tskw-wine); }
+.tskw-trigger {
+  all: unset;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+}
+.tskw-date {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tskw-gold);
+}
+.tskw-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--tskw-ink);
+  margin: 2px 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tskw-title .tskw-caret {
+  transition: transform 0.2s ease;
+  font-size: 0.8rem;
+  color: var(--tskw-wine);
+}
+.tskw-item.is-open .tskw-title .tskw-caret { transform: rotate(90deg); }
+.tskw-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+.tskw-item.is-open .tskw-panel { max-height: 240px; }
+.tskw-panel-inner {
+  padding-top: 8px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--tskw-ink);
+}
+.tskw-panel-inner a {
+  color: var(--tskw-wine);
+  font-weight: 600;
+}
+.tskw-badge {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: var(--tskw-wine);
+  color: #fff;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+.tskw-footnote {
+  margin-top: 22px;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+@media (prefers-color-scheme: dark) {
+  .tskw-module {
+    background: #241318;
+    border-color: #4E1424;
+    color: #F3E6DC;
+  }
+  .tskw-stat, .tskw-dot { background: #331A21; }
+  .tskw-stat { border-color: #5C2A38; }
+  .tskw-title { color: #F3E6DC; }
+  .tskw-panel-inner { color: #F3E6DC; }
+  .tskw-eyebrow, .tskw-stat .num { color: #E8A6BC; }
+  .tskw-date { color: #D9AE6C; }
+  .tskw-intro a, .tskw-panel-inner a { color: #E8A6BC; }
+}
+:root[data-theme="dark"] .tskw-module {
+  background: #241318;
+  border-color: #4E1424;
+  color: #F3E6DC;
+}
+:root[data-theme="dark"] .tskw-module .tskw-stat,
+:root[data-theme="dark"] .tskw-module .tskw-dot { background: #331A21; }
+:root[data-theme="dark"] .tskw-module .tskw-stat { border-color: #5C2A38; }
+:root[data-theme="dark"] .tskw-module .tskw-title,
+:root[data-theme="dark"] .tskw-module .tskw-panel-inner { color: #F3E6DC; }
+:root[data-theme="dark"] .tskw-module .tskw-eyebrow,
+:root[data-theme="dark"] .tskw-module .tskw-stat .num { color: #E8A6BC; }
+:root[data-theme="dark"] .tskw-module .tskw-date { color: #D9AE6C; }
+:root[data-theme="light"] .tskw-module {
+  background: var(--tskw-ivory);
+  color: var(--tskw-ink);
+}
+</style>
+
+<p class="tskw-eyebrow">Taylor Swift Wedding Photos Tracker</p>
+<h2>From Proposal to "I Do" to a Still-Empty Camera Roll: The Swift-Kelce Timeline</h2>
+<p class="tskw-intro">
+  This module lines up the real dates behind Taylor Swift and Travis Kelce's road to marriage, from the
+  <a href="https://www.instagram.com/p/DN4BD2TjHzz/" target="_blank" rel="noopener">garden proposal Swift posted to Instagram</a>
+  to the Madison Square Garden wedding and the ongoing wait for official pictures. Tap or click any date to open the details.
+  For more entertainment coverage, visit CruxBuzz's
+  <a href="https://cruxbuzz.com/category/entertainment/" target="_blank" rel="noopener">entertainment section</a>.
+</p>
+
+<div class="tskw-stats">
+  <div class="tskw-stat"><span class="num">1,000+</span><span class="lbl">wedding guests at MSG</span></div>
+  <div class="tskw-stat"><span class="num">36M+</span><span class="lbl">likes on the engagement post</span></div>
+  <div class="tskw-stat"><span class="num">$26M</span><span class="lbl">donated to charity pre-wedding</span></div>
+  <div class="tskw-stat"><span class="num">18 days</span><span class="lbl">without photos (as of July 21)</span></div>
+</div>
+
+<ul class="tskw-timeline" id="tskwTimeline">
+  <li class="tskw-item">
+    <button class="tskw-trigger" type="button" aria-expanded="false">
+      <span class="tskw-dot" aria-hidden="true"></span>
+      <span class="tskw-date">August 26, 2025</span>
+      <span class="tskw-title"><span class="tskw-caret">▶</span> The engagement breaks Instagram</span>
+    </button>
+    <div class="tskw-panel">
+      <div class="tskw-panel-inner">
+        Swift and Kelce announced their engagement with the caption "Your English teacher and your gym teacher are getting married."
+        The post topped 1 million reposts in six hours and eventually passed 36 million likes, landing among the
+        most-liked posts in Instagram's history.
+        <span class="tskw-badge">Verified post</span>
+      </div>
+    </div>
+  </li>
+  <li class="tskw-item">
+    <button class="tskw-trigger" type="button" aria-expanded="false">
+      <span class="tskw-dot" aria-hidden="true"></span>
+      <span class="tskw-date">Friday, July 3, 2026</span>
+      <span class="tskw-title"><span class="tskw-caret">▶</span> The Madison Square Garden wedding</span>
+    </button>
+    <div class="tskw-panel">
+      <div class="tskw-panel-inner">
+        The couple married at Madison Square Garden in New York City in front of roughly 1,000 guests.
+        Adam Sandler officiated. Both wore custom Christian Dior Haute Couture designed by Jonathan Anderson,
+        with Christian Louboutin shoes and Cartier jewelry.
+      </div>
+    </div>
+  </li>
+  <li class="tskw-item">
+    <button class="tskw-trigger" type="button" aria-expanded="false">
+      <span class="tskw-dot" aria-hidden="true"></span>
+      <span class="tskw-date">Monday, July 6, 2026</span>
+      <span class="tskw-title"><span class="tskw-caret">▶</span> Dior's runway drops a clue, not a photo</span>
+    </button>
+    <div class="tskw-panel">
+      <div class="tskw-panel-inner">
+        Three days after the wedding, Jonathan Anderson closed his
+        <a href="https://www.instagram.com/p/Dae8U_1iG2x/" target="_blank" rel="noopener">Dior Haute Couture Fall 2026 show in Paris</a>
+        with a bridal look. Anderson told press it was "an emotional thing doing someone's wedding," but Swift's actual
+        gown still was not shown.
+      </div>
+    </div>
+  </li>
+  <li class="tskw-item">
+    <button class="tskw-trigger" type="button" aria-expanded="false">
+      <span class="tskw-dot" aria-hidden="true"></span>
+      <span class="tskw-date">July 20-21, 2026</span>
+      <span class="tskw-title"><span class="tskw-caret">▶</span> Still waiting on Taylor Swift's Instagram</span>
+    </button>
+    <div class="tskw-panel">
+      <div class="tskw-panel-inner">
+        More than two weeks out, no official wedding photos have appeared. A Dior spokesperson has said Swift will post
+        the first images herself, and industry group The Knot projects the engagement and wedding could add
+        <a href="https://www.theknotww.com/press-releases/the-knot-unveils-the-swiftification-of-weddings-report-on-the-effects-of-americas-favorite-lovers-engagement-is-the-wedding-industry-ready/" target="_blank" rel="noopener">$2.2 billion in wedding-industry spending</a>
+        over two years.
+      </div>
+    </div>
+  </li>
+</ul>
+
+<p class="tskw-footnote">Dates and figures reflect public reporting available as of July 21, 2026.</p>
+</div>
+
+<script>
+(function () {
+  var items = document.querySelectorAll('#tskwTimeline .tskw-item');
+  items.forEach(function (item) {
+    var trigger = item.querySelector('.tskw-trigger');
+    if (!trigger) return;
+    trigger.addEventListener('click', function () {
+      var isOpen = item.classList.contains('is-open');
+      items.forEach(function (i) {
+        i.classList.remove('is-open');
+        var t = i.querySelector('.tskw-trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+})();
+</script>
