@@ -1,0 +1,186 @@
+<div class="cbx-piece cbx-piece--wbd">
+<style>
+.cbx-piece--wbd{
+  --wb-navy-950:#0a1628; --wb-navy-900:#0f2038; --wb-navy-800:#16304f; --wb-navy-700:#1e4269;
+  --wb-gold-400:#e8b84b; --wb-gold-300:#f3cd6f; --wb-paper:#FAFBFD;
+  --wb-ink:#1b2733; --wb-sub:#4d5c6e; --wb-border:#DCE3ED; --wb-radius:14px;
+  box-sizing:border-box; max-width:100%; overflow-x:hidden;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--wb-ink); line-height:1.7; font-size:17px;
+}
+.cbx-piece--wbd *{ box-sizing:border-box; }
+.cbx-piece--wbd .cbx-inner{ max-width:760px; margin:0 auto; padding:0 4px; }
+.cbx-piece--wbd p{ margin:0 0 1.5rem; max-width:72ch; }
+.cbx-piece--wbd a{ color:#9c5c00; font-weight:600; text-decoration:underline; text-underline-offset:2px; word-break:break-word; }
+.cbx-piece--wbd a:hover{ color:#6f4200; }
+.cbx-piece--wbd h2{
+  font-size:clamp(1.2rem,3.6vw,1.55rem); line-height:1.3; font-weight:800;
+  color:var(--wb-navy-900); margin:2.6rem 0 1.1rem; padding-bottom:.5rem;
+  border-bottom:2px solid var(--wb-border);
+}
+.cbx-piece--wbd .cbx-lede{ font-size:1.08rem; }
+.cbx-piece--wbd figure.cbx-figure{
+  margin:2rem 0; padding:0; border-radius:var(--wb-radius); overflow:hidden;
+  background:var(--wb-paper); border:1px solid var(--wb-border);
+}
+.cbx-piece--wbd figure.cbx-figure img{
+  display:block; width:100%; height:auto; max-height:460px; object-fit:cover;
+}
+.cbx-piece--wbd figure.cbx-figure figcaption{
+  padding:.9rem 1.1rem 1.1rem; font-size:.88rem; line-height:1.55; color:var(--wb-sub); font-style:italic;
+}
+.cbx-piece--wbd .cbx-closing-head{
+  font-size:clamp(1.15rem,3.4vw,1.4rem); font-weight:800; color:var(--wb-navy-900);
+  margin:2.6rem 0 1rem; padding-bottom:.5rem; border-bottom:2px solid var(--wb-border);
+}
+.cbx-piece--wbd .cbx-summary{ font-size:.98rem; color:var(--wb-sub); }
+
+/* Interactive ownership module */
+.wbd-module{
+  background:linear-gradient(180deg,var(--wb-navy-950),var(--wb-navy-900));
+  color:#eef2f7; border-radius:var(--wb-radius); padding:clamp(18px,4vw,30px);
+  border:1px solid var(--wb-navy-700); margin:2.4rem 0;
+}
+.wbd-eyebrow{ color:var(--wb-gold-400); font-size:.72rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin:0 0 .5rem; }
+.wbd-module h3{ font-size:clamp(1.1rem,3.4vw,1.35rem); font-weight:800; margin:0 0 .6rem; line-height:1.3; color:#eef2f7; }
+.wbd-copy{ font-size:.94rem; line-height:1.6; color:#c3d0e0; margin:0 0 1.3rem; max-width:66ch; }
+.wbd-stats{ display:grid; grid-template-columns:repeat(auto-fit,minmax(110px,1fr)); gap:10px; margin-bottom:1.4rem; }
+.wbd-stat{ background:var(--wb-navy-800); border:1px solid var(--wb-navy-700); border-radius:10px; padding:.7rem .55rem; text-align:center; }
+.wbd-stat b{ display:block; font-size:clamp(1.1rem,3vw,1.35rem); color:var(--wb-gold-300); }
+.wbd-stat span{ display:block; font-size:.68rem; color:#8fa3bd; margin-top:4px; line-height:1.3; }
+
+/* Market-share bar */
+.wbd-share{ margin-bottom:1.6rem; }
+.wbd-share-label{ display:flex; justify-content:space-between; font-size:.78rem; color:#c3d0e0; margin-bottom:.4rem; }
+.wbd-share-track{ height:14px; border-radius:999px; background:var(--wb-navy-800); overflow:hidden; display:flex; border:1px solid var(--wb-navy-700); }
+.wbd-share-fill{ height:100%; background:linear-gradient(90deg,var(--wb-gold-400),var(--wb-gold-300)); width:33%; }
+.wbd-share-rest{ height:100%; flex:1; }
+.wbd-share-note{ font-size:.72rem; color:#8fa3bd; margin-top:.4rem; }
+
+.wbd-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; }
+.wbd-card{
+  background:var(--wb-navy-800); border:1px solid var(--wb-navy-700); border-radius:10px;
+  padding:14px; cursor:pointer; transition:background .15s,border-color .15s; min-height:44px;
+}
+.wbd-card:hover, .wbd-card:focus-visible{ border-color:var(--wb-gold-400); background:var(--wb-navy-700); }
+.wbd-card:focus-visible{ outline:2px solid var(--wb-gold-400); outline-offset:2px; }
+.wbd-card-top{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.wbd-card-owner{ font-size:.62rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase; padding:2px 7px; border-radius:20px; white-space:nowrap; }
+.owner-p{ background:rgba(232,184,75,.16); color:var(--wb-gold-300); }
+.owner-w{ background:rgba(143,163,189,.18); color:#c3d0e0; }
+.wbd-card-name{ font-size:.95rem; font-weight:700; margin:.5rem 0 .25rem; color:#eef2f7; }
+.wbd-card-plus{ font-size:.75rem; color:var(--wb-gold-400); font-weight:800; }
+.wbd-card-body{ max-height:0; overflow:hidden; transition:max-height .25s ease; font-size:.78rem; color:#c3d0e0; line-height:1.5; }
+.wbd-card.open .wbd-card-body{ max-height:130px; margin-top:.5rem; }
+.wbd-foot{ margin-top:1.2rem; font-size:.72rem; color:#8fa3bd; line-height:1.5; border-top:1px solid var(--wb-navy-700); padding-top:.8rem; }
+
+@media (max-width:480px){
+  .cbx-piece--wbd{ font-size:16px; }
+  .wbd-stats{ grid-template-columns:repeat(2,1fr); }
+  .cbx-piece--wbd figure.cbx-figure img{ max-height:280px; }
+}
+</style>
+
+<div class="cbx-inner">
+
+<p class="cbx-lede">A federal judge has ordered a pause on the roughly $110 billion Paramount-Warner Bros. Discovery merger, freezing one of the largest media deals in history just as it appeared close to the finish line. U.S. District Judge Araceli Martínez-Olguín of the Northern District of California granted a 14-day temporary restraining order on Monday, July 20, 2026, stopping Paramount Skydance from closing its acquisition of Warner Bros. Discovery while she reviews a broader antitrust lawsuit brought by a coalition of state attorneys general. The order can be extended to as long as 28 days total.</p>
+
+<h2>What's Actually Changing Hands</h2>
+<p>For viewers who don't follow media business news closely, here's what's at stake. HBO Max is Warner Bros. Discovery's streaming service, home to shows like "House of the Dragon." Paramount+ is Paramount's competing streamer, carrying NFL games and shows tied to franchises like "Yellowstone." CBS is the most-watched broadcast television network in the United States. CNN is the 24-hour cable news network owned by Warner Bros. Discovery, while CBS News is Paramount's own news division. Beyond those flagship names, the two companies together own dozens of other cable channels, including TNT, TBS, HGTV, Food Network, MTV and Comedy Central. According to the states' court filing, a completed merger would combine two of Hollywood's five major film distributors and two of the five major basic cable channel owners, giving the combined company control of nearly one-third of theatrical motion pictures and nearly one-third of basic cable programming. Streaming competition continues elsewhere in the meantime — Apple TV+'s <a href="https://cruxbuzz.com/pluribus-vince-gilligan-rhea-seehorn-apple-tv-hive-mind-9-episodes-12-immune/" target="_blank" rel="noopener">nine-episode series "Pluribus"</a> is one example of the current field of competing platforms.</p>
+
+<figure class="cbx-figure">
+  <img src="REPLACE-WITH-IMAGE-1-URL.jpg" loading="lazy" alt="Phillip Burton Federal Building and United States Courthouse in San Francisco, home to the U.S. District Court for the Northern District of California." title="Phillip Burton Federal Building and U.S. Courthouse, San Francisco">
+  <figcaption>Inside this San Francisco courthouse, one judge's signature froze a deal covering CBS, CNN, HBO Max and dozens of cable channels — for at least 14 days, and possibly 28. [Photo: Phillip Burton Federal Building, 450 Golden Gate Ave, San Francisco — confirm current licensing before publish]</figcaption>
+</figure>
+
+<h2>Why a Dozen States Sued</h2>
+<p>On July 13, 2026, a coalition of 12 Democratic state attorneys general, led by California Attorney General Rob Bonta, filed a lawsuit to block the deal. California was joined by Arizona, Colorado, Connecticut, Massachusetts, Minnesota, Nevada, New Jersey, New Mexico, New York, Oregon and Washington. The states argue the merger would reduce competition in wide-release theatrical film distribution and in basic cable programming, meaning higher prices and less variety for moviegoers, TV viewers and news audiences, and fewer opportunities for entertainment and news creators. The lawsuit was filed in the U.S. District Court for the Northern District of California, about a month after the U.S. Department of Justice had already cleared the deal on federal antitrust grounds — meaning the state challenge runs on a separate legal track from federal review. Entertainment-industry courtrooms have stayed busy on multiple fronts this year, including a separate <a href="https://cruxbuzz.com/diddys-courtroom-drama-casts-shadows-over-his-grammy-winning-sample-but-sting-stands-firm-on-ownership/" target="_blank" rel="noopener">music-rights court battle involving Sean "Diddy" Combs</a>.</p>
+
+<div class="wbd-module">
+  <p class="wbd-eyebrow">Interactive Breakdown</p>
+  <h3>Who Owns What: Inside the Paused Deal</h3>
+  <p class="wbd-copy">Tap each card below to see which company currently owns it, and what would change if the merger closes.</p>
+
+  <div class="wbd-stats">
+    <div class="wbd-stat"><b>$110B</b><span>Reported deal value</span></div>
+    <div class="wbd-stat"><b>12</b><span>State AGs suing</span></div>
+    <div class="wbd-stat"><b>50+</b><span>Combined cable channels</span></div>
+    <div class="wbd-stat"><b>14–28</b><span>Days TRO can run</span></div>
+  </div>
+
+  <div class="wbd-share">
+    <div class="wbd-share-label"><span>Share of theatrical &amp; cable market if combined</span><span>~1/3</span></div>
+    <div class="wbd-share-track" role="img" aria-label="Combined company would control nearly one-third of theatrical film distribution and basic cable programming, per the states' court filing">
+      <div class="wbd-share-fill"></div>
+      <div class="wbd-share-rest"></div>
+    </div>
+    <p class="wbd-share-note">Figure cited in the state attorneys general's court filing for both wide-release theatrical film and basic cable programming.</p>
+  </div>
+
+  <div class="wbd-grid" id="wbdGrid">
+    <div class="wbd-card" tabindex="0" role="button" aria-expanded="false">
+      <div class="wbd-card-top"><span class="wbd-card-owner owner-p">Paramount</span><span class="wbd-card-plus">+</span></div>
+      <div class="wbd-card-name">CBS</div>
+      <div class="wbd-card-body">The most-watched U.S. broadcast network. Would stay under the combined company if the deal closes.</div>
+    </div>
+    <div class="wbd-card" tabindex="0" role="button" aria-expanded="false">
+      <div class="wbd-card-top"><span class="wbd-card-owner owner-p">Paramount</span><span class="wbd-card-plus">+</span></div>
+      <div class="wbd-card-name">CBS News</div>
+      <div class="wbd-card-body">Paramount's news division, which would sit alongside CNN under one owner post-merger.</div>
+    </div>
+    <div class="wbd-card" tabindex="0" role="button" aria-expanded="false">
+      <div class="wbd-card-top"><span class="wbd-card-owner owner-p">Paramount</span><span class="wbd-card-plus">+</span></div>
+      <div class="wbd-card-name">Paramount+</div>
+      <div class="wbd-card-body">Paramount's streaming service. Plans call for eventually combining it with HBO Max.</div>
+    </div>
+    <div class="wbd-card" tabindex="0" role="button" aria-expanded="false">
+      <div class="wbd-card-top"><span class="wbd-card-owner owner-w">Warner Bros. Discovery</span><span class="wbd-card-plus">+</span></div>
+      <div class="wbd-card-name">CNN</div>
+      <div class="wbd-card-body">24-hour cable news network. One of the assets states say the merger would consolidate under one company.</div>
+    </div>
+    <div class="wbd-card" tabindex="0" role="button" aria-expanded="false">
+      <div class="wbd-card-top"><span class="wbd-card-owner owner-w">Warner Bros. Discovery</span><span class="wbd-card-plus">+</span></div>
+      <div class="wbd-card-name">HBO Max</div>
+      <div class="wbd-card-body">Warner Bros. Discovery's streaming service, home to HBO's prestige TV library.</div>
+    </div>
+    <div class="wbd-card" tabindex="0" role="button" aria-expanded="false">
+      <div class="wbd-card-top"><span class="wbd-card-owner owner-w">Warner Bros. Discovery</span><span class="wbd-card-plus">+</span></div>
+      <div class="wbd-card-name">50+ Cable Channels</div>
+      <div class="wbd-card-body">Includes TNT, TBS, HGTV, Food Network, MTV and Comedy Central, among others.</div>
+    </div>
+  </div>
+
+  <p class="wbd-foot">Figures reflect publicly reported deal terms and court filings as of July 21, 2026.</p>
+</div>
+
+<h2>What Bonta and Paramount Are Saying</h2>
+<p>Announcing the restraining order, Bonta's office said, "My office and attorneys general nationwide have secured an emergency order blocking the unlawful merger of Warner Bros. and Paramount. This is a critical first win in our case to ensure this megamerger never sees the light of day," a statement <a href="https://oag.ca.gov/news/press-releases/quiet-set-attorney-general-bonta-secures-critical-early-win-lawsuit-block-warner" target="_blank" rel="noopener">posted on the California Department of Justice's website</a>. Paramount pushed back in its <a href="https://www.paramount.com/press/state-attorneys-general-challenge-to-proposed-merger-defies-evidence-based-antitrust-enforcement-and-must-be-rejected-delay-in-closing-of-transaction-only-benefits-big-tech-and-harms-consumers-and-hollywood-talent" target="_blank" rel="noopener">official response</a>, saying the states' case "reflects a fundamentally flawed application of the antitrust laws and is wrong on both the facts and the law," and that it would "vigorously defend the transaction and demonstrate that this challenge is inconsistent with sound competition policy and the competitive realities of the media marketplace."</p>
+
+<figure class="cbx-figure">
+  <img src="REPLACE-WITH-IMAGE-2-URL.jpg" loading="lazy" alt="California Attorney General Rob Bonta, who is leading the 12-state lawsuit against the Paramount-Warner Bros. Discovery merger." title="California Attorney General Rob Bonta">
+  <figcaption>Rob Bonta calls the merger "unlawful" — will a 14-day pause be enough to stop a $110 billion deal from closing? [Photo: California Department of Justice, official portrait — pull current headshot from oag.ca.gov/about before publish]</figcaption>
+</figure>
+
+<h2>The Deal's Timeline So Far</h2>
+<p>Paramount and Warner Bros. Discovery <a href="https://www.paramount.com/press/paramount-to-acquire-warner-bros-discovery-to-form-next-generation-global-media-and-entertainment-company" target="_blank" rel="noopener">announced their merger agreement</a> earlier in 2026, after Paramount outbid a rival agreement Warner Bros. Discovery had previously reached with Netflix. Warner Bros. Discovery shareholders approved the deal in the spring. Martínez-Olguín has set a preliminary injunction hearing for August 3, 2026; if she grants that injunction, the merger could remain frozen for months. Past media megadeals have gone different ways under antitrust review — the Comcast-NBCUniversal combination was approved with conditions in 2011, while the Justice Department separately sued to block AT&amp;T's acquisition of Time Warner before ultimately losing in court.</p>
+
+<h2 class="cbx-closing-head">Where Things Stand Now</h2>
+<p class="cbx-summary">A temporary restraining order was issued on Monday, July 20, 2026, by U.S. District Judge Araceli Martínez-Olguín, pausing Paramount Skydance's acquisition of Warner Bros. Discovery for 14 days, with a possible extension to 28 days. The order followed a lawsuit filed July 13, 2026, by 12 state attorneys general led by California's Rob Bonta. A preliminary injunction hearing is scheduled for August 3, 2026. Further entertainment-industry coverage is available in CruxBuzz's <a href="https://cruxbuzz.com/category/entertainment/" target="_blank" rel="noopener">entertainment section</a>.</p>
+
+</div>
+</div>
+
+<script>
+(function () {
+  document.querySelectorAll('#wbdGrid .wbd-card').forEach(function (card) {
+    function toggle() {
+      var open = card.classList.toggle('open');
+      card.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    card.addEventListener('click', toggle);
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+})();
+</script>

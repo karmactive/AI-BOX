@@ -1,0 +1,219 @@
+<div class="cbx-piece cbx-piece--swift">
+<style>
+.cbx-piece--swift{
+  --sw-ivory:#FBF3E9; --sw-paper:#FFFDFB; --sw-wine:#7A2440; --sw-wine-dark:#54172C;
+  --sw-gold:#B8873F; --sw-gold-deep:#8C6427; --sw-ink:#2B2320; --sw-sub:#5B4E47;
+  --sw-border:#E9DCC8; --sw-radius:14px;
+  box-sizing:border-box; max-width:100%; overflow-x:hidden;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--sw-ink); line-height:1.7; font-size:17px;
+}
+.cbx-piece--swift *{ box-sizing:border-box; }
+.cbx-piece--swift .cbx-inner{ max-width:760px; margin:0 auto; padding:0 4px; }
+.cbx-piece--swift p{ margin:0 0 1.5rem; max-width:72ch; }
+.cbx-piece--swift a{ color:var(--sw-wine); font-weight:600; text-decoration:underline; text-underline-offset:2px; word-break:break-word; }
+.cbx-piece--swift a:hover{ color:var(--sw-wine-dark); }
+.cbx-piece--swift h2{
+  font-size:clamp(1.2rem,3.6vw,1.55rem); line-height:1.3; font-weight:800;
+  color:var(--sw-wine-dark); margin:2.6rem 0 1.1rem; padding-bottom:.5rem;
+  border-bottom:2px solid var(--sw-border);
+}
+.cbx-piece--swift .cbx-lede{ font-size:1.08rem; color:var(--sw-ink); }
+.cbx-piece--swift figure.cbx-figure{
+  margin:2rem 0; padding:0; border-radius:var(--sw-radius); overflow:hidden;
+  background:var(--sw-ivory); border:1px solid var(--sw-border);
+}
+.cbx-piece--swift figure.cbx-figure img{
+  display:block; width:100%; height:auto; max-height:460px; object-fit:cover;
+}
+.cbx-piece--swift figure.cbx-figure figcaption{
+  padding:.9rem 1.1rem 1.1rem; font-size:.88rem; line-height:1.55; color:var(--sw-sub); font-style:italic;
+}
+.cbx-piece--swift .cbx-closing-head{
+  font-size:clamp(1.15rem,3.4vw,1.4rem); font-weight:800; color:var(--sw-wine-dark);
+  margin:2.6rem 0 1rem; padding-bottom:.5rem; border-bottom:2px solid var(--sw-border);
+}
+.cbx-piece--swift .cbx-summary{ font-size:.98rem; color:var(--sw-sub); }
+
+/* Interactive timeline widget */
+.tskw-module{
+  background:linear-gradient(180deg,var(--sw-paper),var(--sw-ivory));
+  border:1px solid var(--sw-border); border-radius:var(--sw-radius);
+  padding:clamp(18px,4vw,30px); margin:2.4rem 0;
+}
+.tskw-eyebrow{
+  text-transform:uppercase; letter-spacing:.12em; font-size:.72rem; font-weight:800;
+  color:var(--sw-gold-deep); margin:0 0 .5rem;
+}
+.tskw-module h3{ margin:0 0 .6rem; font-size:clamp(1.1rem,3.4vw,1.35rem); line-height:1.3; color:var(--sw-wine-dark); font-weight:800; }
+.tskw-intro{ font-size:.95rem; line-height:1.6; color:var(--sw-sub); margin:0 0 1.4rem; max-width:66ch; }
+.tskw-stats{ display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; margin-bottom:1.5rem; }
+.tskw-stat{ background:var(--sw-paper); border:1px solid var(--sw-border); border-radius:10px; padding:.7rem .6rem; text-align:center; }
+.tskw-stat .num{ display:block; font-size:clamp(1.1rem,3vw,1.35rem); font-weight:800; color:var(--sw-wine); line-height:1.1; }
+.tskw-stat .lbl{ display:block; font-size:.72rem; color:var(--sw-sub); margin-top:4px; line-height:1.3; }
+.tskw-timeline{ list-style:none; margin:0; padding:0; }
+.tskw-item{ position:relative; padding:0 0 1.1rem 1.7rem; margin-left:2px; border-left:3px solid var(--sw-gold); }
+.tskw-item:last-child{ padding-bottom:0; }
+.tskw-dot{
+  position:absolute; left:-11px; top:2px; width:20px; height:20px; min-width:20px; border-radius:50%;
+  background:var(--sw-paper); border:3px solid var(--sw-wine); padding:0;
+}
+.tskw-item.is-open .tskw-dot{ background:var(--sw-wine); }
+.tskw-trigger{
+  all:unset; display:flex; align-items:center; gap:.5rem; cursor:pointer; width:100%;
+  min-height:44px; padding:.15rem 0;
+}
+.tskw-trigger:focus-visible{ outline:2px solid var(--sw-wine); outline-offset:3px; border-radius:4px; }
+.tskw-datecol{ display:flex; flex-direction:column; }
+.tskw-date{ font-size:.72rem; font-weight:800; letter-spacing:.03em; text-transform:uppercase; color:var(--sw-gold-deep); }
+.tskw-title{ font-size:1rem; font-weight:700; color:var(--sw-ink); margin-top:.15rem; }
+.tskw-caret{ margin-left:auto; transition:transform .2s ease; font-size:.8rem; color:var(--sw-wine); flex-shrink:0; }
+.tskw-item.is-open .tskw-caret{ transform:rotate(90deg); }
+.tskw-panel{ max-height:0; overflow:hidden; transition:max-height .28s ease; }
+.tskw-item.is-open .tskw-panel{ max-height:220px; }
+.tskw-panel-inner{ padding:.6rem 0 0; font-size:.92rem; line-height:1.55; color:var(--sw-sub); }
+.tskw-badge{
+  display:inline-block; margin-top:.5rem; font-size:.68rem; font-weight:800; background:var(--sw-wine);
+  color:#fff; padding:3px 9px; border-radius:999px;
+}
+.tskw-footnote{ margin-top:1.4rem; font-size:.78rem; color:var(--sw-sub); opacity:.85; }
+
+@media (max-width:480px){
+  .cbx-piece--swift{ font-size:16px; }
+  .tskw-stats{ grid-template-columns:repeat(2,1fr); }
+  .cbx-piece--swift figure.cbx-figure img{ max-height:280px; }
+}
+</style>
+
+<div class="cbx-inner">
+
+<p class="cbx-lede">Taylor Swift wedding photos still have not surfaced, more than two weeks after the singer married Kansas City Chiefs tight end Travis Kelce. The couple wed on Friday, July 3, 2026, at Madison Square Garden in New York City, in front of roughly 1,000 guests. As of July 21, no official pictures from the celebration have appeared on Taylor Swift's Instagram or anywhere else. The clearest word on timing has come from Dior: a company spokesperson told the New York Times that Swift plans to post the first images herself, the same way she revealed her <a href="https://www.instagram.com/p/DN4BD2TjHzz/" target="_blank" rel="noopener">engagement to Kelce in August 2025</a>.</p>
+
+<h2>Inside the Madison Square Garden Ceremony</h2>
+<p>The Swift-Kelce wedding was officiated by Adam Sandler. Swift's brother, Austin Swift, served as her Man of Honor, and Kelce's brother, Jason Kelce, stood in as best man — neither had a full wedding party. Both wore custom Christian Dior Haute Couture designed by Jonathan Anderson, paired with Christian Louboutin shoes and Cartier jewelry. Swift's publicist, Tree Paine, confirmed in a statement that the looks were "designed by Jonathan Anderson … in close collaboration with the Bride and Groom." Madison Square Garden was reworked into a garden-style setting for the night.</p>
+<p>Ahead of the ceremony, the couple gave $26 million to 20 charities, including food banks, children's hospitals, and education programs. City Harvest, which received $1 million, called the gift "a love letter to New York, and a bold commitment to our efforts to ensure that no New Yorker goes hungry," according to CEO Jilly Stephens.</p>
+
+<figure class="cbx-figure">
+  <img src="REPLACE-WITH-IMAGE-1-URL.jpg" loading="lazy" alt="Travis Kelce kneeling to propose to Taylor Swift in a garden, from the August 26, 2025 engagement announcement photos." title="Taylor Swift and Travis Kelce's engagement announcement photo, August 26, 2025">
+  <figcaption>One garden proposal photo earned 36 million Instagram likes — the wedding photos everyone is now waiting for haven't earned a single one yet. [Photo: Instagram/@taylorswift, Aug. 26, 2025 — confirm licensing before publish]</figcaption>
+</figure>
+
+<h2>Why Dior Says the Photos Are Coming, Eventually</h2>
+<p>Jonathan Anderson, who designed the dress, spoke to WWD about the process on July 6, saying, "It was a joy to work with her. We became very good friends," and calling it "an emotional thing doing someone's wedding." He made those comments the same week he closed his Dior Haute Couture Fall 2026 runway show in Paris with a bridal look — a look posted to <a href="https://www.instagram.com/p/Dae8U_1iG2x/" target="_blank" rel="noopener">Dior's own Instagram account</a> that fueled speculation but was not Swift's actual gown.</p>
+
+<div class="tskw-module">
+  <p class="tskw-eyebrow">Interactive Timeline</p>
+  <h3>From Proposal to "I Do" to a Still-Empty Camera Roll</h3>
+  <p class="tskw-intro">Tap any date to open the details behind Taylor Swift and Travis Kelce's road to marriage — from the engagement announcement to the ongoing wait for official wedding pictures.</p>
+
+  <div class="tskw-stats">
+    <div class="tskw-stat"><span class="num">1,000+</span><span class="lbl">wedding guests at MSG</span></div>
+    <div class="tskw-stat"><span class="num">36M+</span><span class="lbl">likes on the engagement post</span></div>
+    <div class="tskw-stat"><span class="num">$26M</span><span class="lbl">donated to charity pre-wedding</span></div>
+    <div class="tskw-stat"><span class="num">18 days</span><span class="lbl">without photos (as of July 21)</span></div>
+  </div>
+
+  <ul class="tskw-timeline" id="tskwTimeline">
+    <li class="tskw-item is-open">
+      <button class="tskw-trigger" type="button" aria-expanded="true">
+        <span class="tskw-dot" aria-hidden="true"></span>
+        <span class="tskw-datecol">
+          <span class="tskw-date">August 26, 2025</span>
+          <span class="tskw-title">The engagement breaks Instagram</span>
+        </span>
+        <span class="tskw-caret" aria-hidden="true">▶</span>
+      </button>
+      <div class="tskw-panel">
+        <div class="tskw-panel-inner">
+          Swift and Kelce announced their engagement with the caption "Your English teacher and your gym teacher are getting married." The post topped 1 million reposts in six hours and eventually passed 36 million likes, ranking among the most-liked posts in Instagram's history.
+          <span class="tskw-badge">Record-setting post</span>
+        </div>
+      </div>
+    </li>
+    <li class="tskw-item">
+      <button class="tskw-trigger" type="button" aria-expanded="false">
+        <span class="tskw-dot" aria-hidden="true"></span>
+        <span class="tskw-datecol">
+          <span class="tskw-date">Friday, July 3, 2026</span>
+          <span class="tskw-title">The Madison Square Garden wedding</span>
+        </span>
+        <span class="tskw-caret" aria-hidden="true">▶</span>
+      </button>
+      <div class="tskw-panel">
+        <div class="tskw-panel-inner">
+          The couple married at Madison Square Garden in front of roughly 1,000 guests. Adam Sandler officiated. Both wore custom Christian Dior Haute Couture designed by Jonathan Anderson, with Christian Louboutin shoes and Cartier jewelry.
+        </div>
+      </div>
+    </li>
+    <li class="tskw-item">
+      <button class="tskw-trigger" type="button" aria-expanded="false">
+        <span class="tskw-dot" aria-hidden="true"></span>
+        <span class="tskw-datecol">
+          <span class="tskw-date">Monday, July 6, 2026</span>
+          <span class="tskw-title">Dior's runway drops a clue, not a photo</span>
+        </span>
+        <span class="tskw-caret" aria-hidden="true">▶</span>
+      </button>
+      <div class="tskw-panel">
+        <div class="tskw-panel-inner">
+          Three days after the wedding, Jonathan Anderson closed his Dior Haute Couture Fall 2026 show in Paris with a bridal look. Anderson told press it was "an emotional thing doing someone's wedding," but Swift's actual gown still was not shown.
+        </div>
+      </div>
+    </li>
+    <li class="tskw-item">
+      <button class="tskw-trigger" type="button" aria-expanded="false">
+        <span class="tskw-dot" aria-hidden="true"></span>
+        <span class="tskw-datecol">
+          <span class="tskw-date">July 20-21, 2026</span>
+          <span class="tskw-title">Still waiting on Taylor Swift's Instagram</span>
+        </span>
+        <span class="tskw-caret" aria-hidden="true">▶</span>
+      </button>
+      <div class="tskw-panel">
+        <div class="tskw-panel-inner">
+          More than two weeks out, no official wedding photos have appeared. A Dior spokesperson has said Swift will post the first images herself, without giving a date.
+        </div>
+      </div>
+    </li>
+  </ul>
+  <p class="tskw-footnote">Dates and figures reflect public reporting available as of July 21, 2026.</p>
+</div>
+
+<h2>No Documentary, But Talk of Something Bigger</h2>
+<p>Camera crews were spotted around Madison Square Garden on the wedding day, which set off rumors of a streaming special. Entertainment Tonight later reported, citing sources, that the wedding itself was not filmed for a documentary or a streaming release. Even so, unnamed insiders quoted in other reporting suggest the delay is about controlling the story, with speculation that a future coffee-table book, documentary, or album could eventually tie into the photo rollout. None of that has been confirmed by Swift, Kelce, or their representatives.</p>
+
+<figure class="cbx-figure">
+  <img src="REPLACE-WITH-IMAGE-2-URL.jpg" loading="lazy" alt="Jonathan Anderson's closing bridal look at the Christian Dior Haute Couture Fall 2026 show in Paris on July 6, 2026." title="Dior Haute Couture Fall 2026 closing wedding gown, Paris, July 6, 2026">
+  <figcaption>Jonathan Anderson closed his Paris runway show with a wedding gown three days after dressing Swift for her own ceremony — so which dress came first? [Photo: Paris Haute Couture Fashion Week runway, July 6, 2026 — verify photographer credit before publish]</figcaption>
+</figure>
+
+<h2>The Wedding-Industry Ripple Effect</h2>
+<p>Swift's engagement announcement in August 2025 topped 1 million reposts within six hours and climbed past 36 million likes, ranking among the most-liked posts in Instagram's history. That track record is part of why the wedding photos are being watched so closely. Separately, <a href="https://www.theknotww.com/press-releases/the-knot-unveils-the-swiftification-of-weddings-report-on-the-effects-of-americas-favorite-lovers-engagement-is-the-wedding-industry-ready/" target="_blank" rel="noopener">The Knot Worldwide's "Swiftification of Weddings" report</a> projects that the engagement and wedding could add $2.2 billion in wedding-related spending globally over the next two years, driven by attire, jewelry, floral, and travel purchases. More wedding-and-celebrity coverage is available in CruxBuzz's <a href="https://cruxbuzz.com/category/entertainment/" target="_blank" rel="noopener">entertainment section</a>.</p>
+
+<h2 class="cbx-closing-head">What We Know As of July 21</h2>
+<p class="cbx-summary">Taylor Swift and Travis Kelce married on July 3, 2026, at Madison Square Garden in New York City in front of about 1,000 guests. Adam Sandler officiated. Both wore custom Christian Dior Haute Couture designed by Jonathan Anderson. The couple donated $26 million to 20 charities ahead of the ceremony. A Dior spokesperson said Swift plans to release the first wedding photos on her Instagram account, without giving a date. Entertainment Tonight reported the wedding was not filmed for a documentary or streaming release. As of July 21, 2026, no official wedding photos had been released. Further coverage is available on <a href="https://cruxbuzz.com/" target="_blank" rel="noopener">CruxBuzz</a>.</p>
+
+</div>
+</div>
+
+<script>
+(function () {
+  var items = document.querySelectorAll('#tskwTimeline .tskw-item');
+  items.forEach(function (item) {
+    var trigger = item.querySelector('.tskw-trigger');
+    if (!trigger) return;
+    trigger.addEventListener('click', function () {
+      var isOpen = item.classList.contains('is-open');
+      items.forEach(function (i) {
+        i.classList.remove('is-open');
+        var t = i.querySelector('.tskw-trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+})();
+</script>
