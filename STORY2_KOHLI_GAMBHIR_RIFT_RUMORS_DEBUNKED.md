@@ -5,17 +5,62 @@
 
 ## SEO METADATA
 
-**Title:** कोहली-गंभीर विवाद की अफवाहें खत्म, कोचिंग स्टाफ ने दिया साफ जवाब
+### PRIMARY TITLE OPTIONS
+**Title Option 1 (Primary):** कोहली-गंभीर विवाद की अफवाहें खत्म, कोचिंग स्टाफ ने दिया साफ जवाब
 
-**Meta Description:** कोहली और गंभीर के बीच खटास की अफवाहें फैल रहीं थीं, लेकिन भारत के बल्लेबाजी कोच सितंशु कोटक ने साफ किया कि दोनों दिन में 10-12 बार बातचीत करते हैं।
+**Title Option 2 (Alternative):** विराट कोहली और गौतम गंभीर के बीच कोई विरोध नहीं - सितंशु कोटक का आधिकारिक बयान
 
-**Slug:** kohli-gambhir-rift-rumors-debunked-coaching-staff-statement
+**Title Option 3 (Viral Focus):** कोहली-गंभीर ड्रामा खत्म: "दिन में 10-12 बार बातचीत करते हैं"
 
-**Focus Keyword:** Virat Kohli Gautam Gambhir cricket team
+### META DESCRIPTION (160 Characters)
+**Primary Meta:** कोहली और गंभीर के बीच अफवाहें फैल रही थीं, लेकिन भारत के बल्लेबाजी कोच सितंशु कोटक ने स्पष्ट किया कि दोनों दिन में 10-12 बार बातचीत करते हैं। सभी अफवाहें झूठ हैं।
 
-**Categories:** Sports
+**Extended Meta (200 Characters):** इंग्लैंड दौरे में विराट कोहली और हेड कोच गौतम गंभीर के बीच तनाव की अफवाहें फैलीं, लेकिन भारत के बल्लेबाजी कोच सितंशु कोटक ने प्रेस कॉन्फ्रेंस में साफ किया: दोनों दिन में 10-12 बार बातचीत करते हैं। कोई विरोध नहीं है।
 
-**Tags:** Sports, India, Cricket, Coaching Staff, IPL, Team Dynamics, Media
+### SEO SLUG OPTIONS
+**Primary Slug:** kohli-gambhir-rift-rumors-debunked-coaching-staff-statement
+
+**Alternative Slug:** virat-kohli-gautam-gambhir-no-rift-2026
+
+**Short Slug:** kohli-gambhir-rift-statement-2026
+
+### FOCUS KEY PHRASE
+**4-Word Focus Phrase:** "Virat Kohli Gautam Gambhir"
+
+**Alternative 4-Word Phrases:**
+- Kohli Gambhir no rift
+- Sitanshu Kotak press conference
+- India cricket team harmony
+- Coach dismisses rift rumors
+
+### CATEGORIES
+**Primary Category:** Sports
+
+**Secondary Categories:**
+- Culture / Sports
+- India (Regional)
+- Cricket News
+- Team Management
+
+### TAGS (High-Priority SEO)
+**Primary Tags (2-5):**
+1. Sports
+2. Cricket
+3. India Cricket Team
+4. Virat Kohli
+5. Gautam Gambhir
+
+**Extended Tags:**
+- Sitanshu Kotak
+- England Tour 2026
+- Team Dynamics
+- Cricket Coaching
+- India Sports News
+- IPL Cricket
+- Cricket Controversies
+- Media Rumors
+- Team Management
+- Cricket Updates India
 
 ---
 

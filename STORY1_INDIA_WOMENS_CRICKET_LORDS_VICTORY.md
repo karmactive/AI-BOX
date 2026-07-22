@@ -5,17 +5,59 @@
 
 ## SEO METADATA
 
-**Title:** लॉर्ड्स पर भारतीय महिलाओं की शानदार जीत - पहली बार टेस्ट मैच जीते
+### PRIMARY TITLE OPTIONS
+**Title Option 1 (Primary):** लॉर्ड्स पर भारतीय महिलाओं की शानदार जीत - पहली बार टेस्ट मैच जीते
 
-**Meta Description:** भारतीय महिला क्रिकेट टीम ने लॉर्ड्स पर पहली महिला टेस्ट मैच जीता। क्रांति गौड़ के 5 विकेट और यास्तिका भाटिया के 113 रन के शतक से भारत ने इंग्लैंड को 270 रन से हराया।
+**Title Option 2 (Alternative):** भारतीय महिला क्रिकेट टीम का ऐतिहासिक विजय - यास्तिका भाटिया का शतक, क्रांति गौड़ के 5 विकेट
 
-**Slug:** india-women-cricket-historic-test-victory-lords-2026
+**Title Option 3 (Viral Focus):** महिला क्रिकेट का स्वर्णिम पल: भारत ने लॉर्ड्स पर रचा इतिहास
 
-**Focus Keyword:** India women cricket test Lords
+### META DESCRIPTION (160 Characters)
+**Primary Meta:** भारतीय महिला क्रिकेट टीम ने लॉर्ड्स पर पहली महिला टेस्ट मैच जीता। यास्तिका भाटिया के 113 रन और क्रांति गौड़ के 5 विकेट से भारत ने इंग्लैंड को 270 रन से हराया। 37,846 दर्शकों का नया रिकॉर्ड।
 
-**Categories:** Sports
+**Extended Meta (200 Characters):** भारत की महिला क्रिकेट टीम ने 13 जुलाई 2026 को लॉर्ड्स में इतिहास रचा। यास्तिका भाटिया के शानदार 113-रन शतक और 22 साल की क्रांति गौड़ के 5 विकेट (37 रन देकर) से भारत ने इंग्लैंड को 270 रन से परास्त किया।
 
-**Tags:** Sports, India, Women, Cricket, Lords, Test Match, Women's Cricket
+### SEO SLUG OPTIONS
+**Primary Slug:** india-women-cricket-historic-test-victory-lords-2026
+
+**Alternative Slug:** bharat-mahila-cricket-lords-test-victory-2026
+
+**Short Slug:** women-cricket-lords-victory-2026
+
+### FOCUS KEY PHRASE
+**4-Word Focus Phrase:** "India women cricket test"
+
+**Alternative 4-Word Phrases:**
+- Yastika Bhatia Lords century
+- Kranti Gaud five wickets
+- Women Test cricket history
+- Lord's women cricket victory
+
+### CATEGORIES
+**Primary Category:** Sports
+
+**Secondary Categories:** 
+- Culture / Sports
+- India (Regional)
+- Women in Sports
+
+### TAGS (High-Priority SEO)
+**Primary Tags (2-5):**
+1. Sports
+2. Women Cricket
+3. India Cricket Team
+4. Test Match
+5. Lord's Cricket Ground
+
+**Extended Tags:**
+- Yastika Bhatia
+- Kranti Gaud
+- England vs India
+- Women's Test Cricket
+- Cricket History
+- Indian Women's Cricket
+- International Cricket
+- Sports News India
 
 ---
 
