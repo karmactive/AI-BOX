@@ -1,0 +1,42 @@
+name: Publish Articles to WordPress
+
+on:
+  # Run manually from GitHub Actions tab — pick a date to publish
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Article date prefix (e.g. 2026-07-23). Leave blank to publish all.'
+        required: false
+        default: ''
+
+  # Also auto-run when new article HTML files are pushed to this branch
+  push:
+    branches:
+      - claude/trending-recall-news-karmactive-f17s06
+    paths:
+      - 'articles/**.html'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Publish articles to WordPress
+        env:
+          WP_USERNAME: ${{ secrets.WP_USERNAME }}
+          WP_PASSWORD: ${{ secrets.WP_PASSWORD }}
+        run: |
+          DATE="${{ github.event.inputs.date }}"
+          if [ -n "$DATE" ]; then
+            python scripts/publish_articles.py "$DATE"
+          else
+            python scripts/publish_articles.py
+          fi
