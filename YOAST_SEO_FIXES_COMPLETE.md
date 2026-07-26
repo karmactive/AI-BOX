@@ -226,3 +226,27 @@ All updates verified via direct REST API calls and confirmed in WordPress backen
 ✓ Hurricane
 
 All incorrect tag assignments have been replaced with the correct, contextually relevant tags from the Karmactive tag taxonomy.
+
+---
+
+## CATEGORY CORRECTIONS (FOLLOW-UP)
+
+**Date:** July 27, 2026 (Update)
+
+Initial category assignments were incorrect and have been corrected:
+
+### Article 1: Time-Restricted Eating (ID: 270942)
+- **Previous:** Sport (ID: 38) ❌
+- **Corrected:** Health (ID: 34) ✅
+
+### Article 2: Edmonton Severe Thunderstorm (ID: 270943)
+- **Previous:** Activism (ID: 53) ❌
+- **Corrected:** News (ID: 63) + Weather (ID: 2058) ✅
+
+### Article 3: Pacific Hurricanes (ID: 270944)
+- **Previous:** Activism (ID: 53) ❌
+- **Corrected:** Disaster (ID: 2515) + News (ID: 63) ✅
+
+All categories now accurately reflect article content and topics. Articles properly organized within Karmactive taxonomy.
+
+✅ **FINAL STATUS: ALL METADATA COMPLETE AND ACCURATE**
