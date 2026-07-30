@@ -1,0 +1,150 @@
+<section class="cbmh-wrap">
+<style>
+.cbmh-wrap{--cbmh-bg:#FFF7F2;--cbmh-card:#FFFFFF;--cbmh-text:#3A2230;--cbmh-sub:#6B4C58;--cbmh-plum:#5C1F3B;--cbmh-plum-deep:#3E1329;--cbmh-rose:#E8899A;--cbmh-rose-soft:#F6D3D9;--cbmh-gold:#C79A4B;--cbmh-border:#F0D9DE;
+  max-width:760px;margin:0 auto;padding:0 4px;font-family:Georgia,'Times New Roman',serif;color:var(--cbmh-text);line-height:1.65;box-sizing:border-box;}
+.cbmh-wrap *{box-sizing:border-box;}
+.cbmh-wrap p{margin:0 0 16px 0;font-size:1.05rem;}
+.cbmh-wrap a{color:var(--cbmh-plum);text-decoration:underline;text-decoration-color:var(--cbmh-rose);text-underline-offset:3px;font-weight:600;}
+.cbmh-wrap a:hover{color:var(--cbmh-plum-deep);}
+.cbmh-kicker{display:inline-block;background:var(--cbmh-plum);color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:14px;}
+.cbmh-lede{font-size:1.18rem;font-weight:600;color:var(--cbmh-plum-deep);}
+.cbmh-h2{font-family:Arial,Helvetica,sans-serif;font-size:1.5rem;color:var(--cbmh-plum-deep);margin:34px 0 6px 0;line-height:1.3;}
+.cbmh-subcopy{font-family:Arial,Helvetica,sans-serif;font-size:0.92rem;color:var(--cbmh-sub);margin:0 0 18px 0;font-style:italic;}
+.cbmh-timeline{border-left:3px solid var(--cbmh-rose);padding-left:0;margin:0 0 24px 0;list-style:none;}
+.cbmh-timeline details{background:var(--cbmh-card);border:1px solid var(--cbmh-border);border-left:none;border-radius:0 10px 10px 0;margin:0 0 10px -3px;padding:0;overflow:hidden;box-shadow:0 1px 3px rgba(92,31,59,0.06);}
+.cbmh-timeline summary{cursor:pointer;list-style:none;font-family:Arial,Helvetica,sans-serif;padding:14px 18px;min-height:44px;display:flex;align-items:center;gap:12px;font-weight:700;color:var(--cbmh-plum-deep);border-left:3px solid var(--cbmh-gold);background:linear-gradient(90deg,var(--cbmh-rose-soft),var(--cbmh-card) 70%);}
+.cbmh-timeline summary::-webkit-details-marker{display:none;}
+.cbmh-timeline summary::before{content:"+";font-size:1.3rem;line-height:1;color:var(--cbmh-plum);flex:0 0 auto;width:20px;text-align:center;}
+.cbmh-timeline details[open] summary::before{content:"\2212";}
+.cbmh-tdate{font-size:0.78rem;letter-spacing:0.05em;color:var(--cbmh-sub);text-transform:uppercase;display:block;font-weight:700;}
+.cbmh-ttitle{display:block;font-size:1rem;}
+.cbmh-timeline .cbmh-tbody{padding:4px 18px 18px 50px;font-size:0.98rem;color:var(--cbmh-text);}
+.cbmh-timeline .cbmh-tbody p{margin:0 0 10px 0;font-size:0.98rem;}
+.cbmh-timeline .cbmh-tbody blockquote{margin:10px 0;padding:10px 14px;background:var(--cbmh-rose-soft);border-left:3px solid var(--cbmh-plum);border-radius:6px;font-style:italic;font-size:0.94rem;}
+.cbmh-stats-intro{margin-top:6px;}
+.cbmh-stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:8px 0 26px 0;}
+.cbmh-card{background:var(--cbmh-card);border:1px solid var(--cbmh-border);border-radius:14px;padding:18px 18px 20px 18px;box-shadow:0 2px 6px rgba(92,31,59,0.07);}
+.cbmh-card h3{font-family:Arial,Helvetica,sans-serif;font-size:1.05rem;margin:0 0 4px 0;color:var(--cbmh-plum-deep);}
+.cbmh-card .cbmh-role{font-family:Arial,Helvetica,sans-serif;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--cbmh-gold);font-weight:700;display:block;margin-bottom:10px;}
+.cbmh-card ul{margin:0 0 12px 0;padding-left:18px;font-size:0.92rem;}
+.cbmh-card li{margin-bottom:8px;}
+.cbmh-card p.cbmh-linkline{font-family:Arial,Helvetica,sans-serif;font-size:0.85rem;margin:10px 0 0 0;}
+.cbmh-conclusion{background:var(--cbmh-rose-soft);border-radius:12px;padding:18px 20px;margin-top:28px;}
+.cbmh-conclusion p{margin:0 0 10px 0;font-size:0.98rem;}
+.cbmh-conclusion p:last-child{margin-bottom:0;}
+.cbmh-tag{font-family:Arial,Helvetica,sans-serif;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--cbmh-plum);font-weight:700;margin-bottom:6px;display:block;}
+
+@media (max-width:768px){
+  .cbmh-stats-grid{grid-template-columns:1fr;}
+  .cbmh-wrap{padding:0 2px;}
+  .cbmh-timeline .cbmh-tbody{padding-left:18px;}
+}
+@media (max-width:375px){
+  .cbmh-lede{font-size:1.08rem;}
+  .cbmh-h2{font-size:1.28rem;}
+  .cbmh-timeline summary{padding:12px 12px;font-size:0.95rem;}
+}
+
+@media (prefers-color-scheme: dark){
+  .cbmh-wrap{--cbmh-bg:#241019;--cbmh-card:#2E1521;--cbmh-text:#F3E3E9;--cbmh-sub:#D8B7C3;--cbmh-plum:#F0A6C0;--cbmh-plum-deep:#FBD8E6;--cbmh-rose:#B85C74;--cbmh-rose-soft:#3A1826;--cbmh-gold:#E4BE7A;--cbmh-border:#4A2436;}
+  .cbmh-kicker{background:var(--cbmh-plum);color:#2A0F1B;}
+  .cbmh-timeline summary{background:linear-gradient(90deg,var(--cbmh-rose-soft),var(--cbmh-card) 70%);}
+}
+:root[data-theme="dark"] .cbmh-wrap{--cbmh-bg:#241019;--cbmh-card:#2E1521;--cbmh-text:#F3E3E9;--cbmh-sub:#D8B7C3;--cbmh-plum:#F0A6C0;--cbmh-plum-deep:#FBD8E6;--cbmh-rose:#B85C74;--cbmh-rose-soft:#3A1826;--cbmh-gold:#E4BE7A;--cbmh-border:#4A2436;}
+:root[data-theme="light"] .cbmh-wrap{--cbmh-bg:#FFF7F2;--cbmh-card:#FFFFFF;--cbmh-text:#3A2230;--cbmh-sub:#6B4C58;--cbmh-plum:#5C1F3B;--cbmh-plum-deep:#3E1329;--cbmh-rose:#E8899A;--cbmh-rose-soft:#F6D3D9;--cbmh-gold:#C79A4B;--cbmh-border:#F0D9DE;}
+</style>
+
+<span class="cbmh-kicker">Celebrity Relationships</span>
+
+<p class="cbmh-lede">Madison Beer is engaged. The 27-year-old singer said yes to Los Angeles Chargers quarterback Justin Herbert on July 28, 2026, after a proposal staged beneath an arbor of white flowers. Beer shared the news on her <a href="https://www.instagram.com/madisonbeer/" target="_blank" rel="noopener">official Instagram</a> with two words: "Meet my fiancé."</p>
+
+<p>Herbert, 28, posted the same photos on his own account. One image shows him on one knee, ring box open, while Beer crouches in front of him mid-reaction. Within a day, the joint post had drawn more than 5.7 million likes, with the NFL's own account among those leaving congratulations below it.</p>
+
+<p>Beer and Herbert were first photographed together in August 2025, while she was filming one of her music videos around Los Angeles. Neither confirmed anything at the time. That changed on October 5, 2025, when Beer was seen kissing Herbert on the sideline before the Chargers' game against the Washington Commanders, a moment that settled months of speculation without either of them saying a word to a reporter.</p>
+
+<!-- FEATURE IMAGE GOES HERE -->
+
+<p>Jewelry experts who reviewed the engagement photos estimated the center stone at more than 15 carats, cut in an elongated cushion shape, with a value they placed anywhere from $500,000 to over $1 million. Neither Beer nor Herbert has confirmed a price. The ring shows up clearly across every angle Beer posted, which is likely why it became the second most discussed detail of the announcement, right after the caption itself.</p>
+
+<h2 class="cbmh-h2">The year that led to a proposal</h2>
+<p class="cbmh-subcopy">Tap or click each date below to see what happened between Beer and Herbert, from the first photos together to the engagement post.</p>
+
+<div class="cbmh-timeline">
+<details>
+<summary><span class="cbmh-ttitle"><span class="cbmh-tdate">August 2025</span>Rumors start on a video set</span></summary>
+<div class="cbmh-tbody">
+<p>Beer and Herbert were photographed together while she was shooting a music video around Los Angeles. Photos of the two later leaving a friend's house in Redondo Beach followed, and dating speculation began.</p>
+</div>
+</details>
+<details>
+<summary><span class="cbmh-ttitle"><span class="cbmh-tdate">October 5, 2025</span>A sideline kiss confirms it</span></summary>
+<div class="cbmh-tbody">
+<p>Beer was seen kissing Herbert on the sideline before the Chargers hosted the Washington Commanders. It was the clearest public confirmation of the relationship to that point.</p>
+</div>
+</details>
+<details>
+<summary><span class="cbmh-ttitle"><span class="cbmh-tdate">March 5, 2026</span>Herbert's birthday post for Beer</span></summary>
+<div class="cbmh-tbody">
+<p>On Beer's birthday, Herbert posted a black-and-white photo of the two of them with a caption that read:</p>
+<blockquote>"Happy birthday to my favorite person of all time. I love you so much. You've changed my life forever."</blockquote>
+</div>
+</details>
+<details>
+<summary><span class="cbmh-ttitle"><span class="cbmh-tdate">March 10, 2026</span>Beer returns the favor</span></summary>
+<div class="cbmh-tbody">
+<p>Five days later, on Herbert's birthday, Beer posted Instagram stories that read:</p>
+<blockquote>"happy birthday baby boy, i am so lucky to be yours, you are my dream come true... life saver... love u so"</blockquote>
+</div>
+</details>
+<details>
+<summary><span class="cbmh-ttitle"><span class="cbmh-tdate">July 13, 2026</span>Beer wraps her Locket Tour</span></summary>
+<div class="cbmh-tbody">
+<p>Beer closed out The Locket Tour, her fourth headlining run, with a show in New York City, ending a stretch of 32 dates across Europe and North America that started in May.</p>
+</div>
+</details>
+<details>
+<summary><span class="cbmh-ttitle"><span class="cbmh-tdate">July 28, 2026</span>The proposal and the announcement</span></summary>
+<div class="cbmh-tbody">
+<p>Herbert proposed beneath a flower-covered arbor. Beer posted the photos with the caption "Meet my fiancé," and Herbert posted the same set on his own account soon after.</p>
+</div>
+</details>
+</div>
+
+<p>Beer and Herbert built separate careers well before their timelines crossed. Below is a side-by-side look at where each one stands professionally, using figures pulled from their official pages.</p>
+
+<div class="cbmh-stats-grid">
+<div class="cbmh-card">
+<span class="cbmh-tag">Music</span>
+<h3>Madison Beer</h3>
+<span class="cbmh-role">Singer-songwriter, age 27</span>
+<ul>
+<li>Debut album <em>Life Support</em> (2021) peaked at No. 65 on the Billboard 200.</li>
+<li><em>Silence Between Songs</em> (2023) peaked at No. 86 and earned a Grammy nomination for Best Immersive Audio Album.</li>
+<li>Third album <em>Locket</em> released January 16, 2026, followed by a 32-date global tour that wrapped in July.</li>
+<li>Single "Make You Mine" topped a Billboard airplay chart and passed 200 million Spotify streams.</li>
+</ul>
+<p class="cbmh-linkline">See her catalog on <a href="https://open.spotify.com/artist/2kRfqPViCqYdSGhYSM9R0Q" target="_blank" rel="noopener">Spotify</a>.</p>
+</div>
+<div class="cbmh-card">
+<span class="cbmh-tag">Football</span>
+<h3>Justin Herbert</h3>
+<span class="cbmh-role">Chargers quarterback, age 28</span>
+<ul>
+<li>Drafted No. 6 overall out of Oregon during the 2020 NFL Draft.</li>
+<li>Named AP NFL Offensive Rookie of the Year after his 2020 season.</li>
+<li>Career totals through 2025: 24,820 passing yards and 163 total touchdowns.</li>
+<li>Two-time Pro Bowl selection, in 2021 and 2025, under a five-year, $262.5 million contract extension signed ahead of the 2023 season.</li>
+</ul>
+<p class="cbmh-linkline">Full stats at <a href="https://www.nfl.com/players/justin-herbert/" target="_blank" rel="noopener">NFL.com</a> and his <a href="https://www.chargers.com/team/players-roster/justin-herbert/" target="_blank" rel="noopener">Chargers.com player page</a>.</p>
+</div>
+</div>
+
+<p>This engagement lands amid a busy stretch for celebrity milestones. Actress Emma Roberts <a href="https://cruxbuzz.com/emma-roberts-marries-cody-john-sun-valley-idaho/" target="_blank" rel="noopener">married Cody John</a> in Idaho just days earlier, and Millie Bobby Brown's <a href="https://cruxbuzz.com/millie-bobby-brown-and-jake-bongiovi-take-their-relationship-to-the-next-level/" target="_blank" rel="noopener">engagement to Jake Bongiovi</a> made headlines the same way Beer and Herbert's did, with a carefully staged Instagram post. Pedro Pascal's public outings with Rafael Olarra also kept <a href="https://cruxbuzz.com/pedro-pascal-rafael-olarra-nyc-la-sightings-male-visibility/" target="_blank" rel="noopener">celebrity relationship coverage</a> active earlier this year, while on the music side, Ella Langley's <a href="https://cruxbuzz.com/ella-langley-choosin-texas-14-weeks-billboard-record/" target="_blank" rel="noopener">record-tying chart run</a> unfolded around the same window as Beer's.</p>
+
+<p>You can follow Herbert directly on his <a href="https://www.instagram.com/justinherbert/" target="_blank" rel="noopener">own Instagram account</a>, where the proposal photos remain pinned to the top of his page as of this writing.</p>
+
+<div class="cbmh-conclusion">
+<p>Madison Beer and Justin Herbert announced their engagement on July 28, 2026, through a joint Instagram post captioned "Meet my fiancé." The two were first photographed together in August 2025 and were publicly linked after a sideline kiss ahead of the Chargers' October 5, 2025 game against the Washington Commanders. Both posted birthday messages for each other on Instagram in March 2026. Beer's music catalog includes the albums Life Support, Silence Between Songs, and Locket, the last of which was supported by a 32-date tour that ended July 13, 2026. Herbert was drafted No. 6 overall by the Chargers in 2020, was named Offensive Rookie of the Year, and has made two Pro Bowl appearances while playing under a five-year, $262.5 million contract extension.</p>
+</div>
+
+</section>
