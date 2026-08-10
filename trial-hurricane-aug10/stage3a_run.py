@@ -9,6 +9,8 @@ start = draft.find("## Three Atlantic")
 end = draft.find("\n---", start)
 article = draft[start:end].strip()
 
+d = FirefoxDriver(spawn=False)   # connect to the persistent geckodriver on 9445, reuse existing tabs
+
 PROMPT = ("You are a professional fact checker. Fact-check the following news article sentence by sentence. "
           "For each sentence say: is it factual? Are there inaccuracies or made-up details? Cross-check the "
           "key numbers (NHC formation percentages, NOAA 2026 season counts, Saharan Air Layer wind speeds, "

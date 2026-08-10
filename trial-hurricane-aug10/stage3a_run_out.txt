@@ -1,5 +1,10 @@
 Traceback (most recent call last):
-  File "C:\Users\Hp\OneDrive\karmactive-pipeline\trial-hurricane-aug10\stage3a_run.py", line 21, in <module>
-    d._switch(d.tabs[model]); time.sleep(2)
-    ^
-NameError: name 'd' is not defined. Did you mean: 'id'?
+  File "C:\Users\Hp\OneDrive\karmactive-pipeline\trial-hurricane-aug10\stage3a_run.py", line 12, in <module>
+    d = FirefoxDriver(spawn=False)   # connect to the persistent geckodriver on 9445, reuse existing tabs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hp\AppData\Local\hermes\firefox_driver.py", line 23, in __init__
+    self._new_session()
+  File "C:\Users\Hp\AppData\Local\hermes\firefox_driver.py", line 62, in _new_session
+    if not self.session: raise RuntimeError(f"No session: {s}")
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: No session: {'value': {'error': 'session not created', 'message': 'Session is already started', 'stacktrace': ''}}
