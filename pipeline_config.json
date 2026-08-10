@@ -1,0 +1,45 @@
+{
+  "repo": "C:\\Users\\Hp\\OneDrive\\karmactive-pipeline",
+  "onedrive_sync": true,
+  "wp": {
+    "endpoint": "https://www.karmactive.com/wp-json/wp/v2/posts",
+    "media": "https://www.karmactive.com/wp-json/wp/v2/media",
+    "use_www": true
+  },
+  "tools": {
+    "claude": {
+      "method": "cli",
+      "cmd": "claude -p",
+      "logged_in": false,
+      "mcp_repo": true
+    },
+    "chatgpt": {
+      "method": "browser",
+      "url": "https://chatgpt.com",
+      "logged_in": "unknown"
+    },
+    "gemini": {
+      "method": "browser",
+      "url": "https://gemini.google.com",
+      "logged_in": "unknown"
+    },
+    "copilot": {
+      "method": "browser",
+      "url": "https://copilot.microsoft.com",
+      "logged_in": "unknown"
+    },
+    "hermes": {
+      "method": "native",
+      "role": "orchestrator+factcheck+package+publish"
+    }
+  },
+  "stages": [
+    "stage0",
+    "stage1",
+    "stage2",
+    "stage3a",
+    "stage3b",
+    "stage4_5",
+    "published"
+  ]
+}
