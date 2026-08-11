@@ -1,0 +1,9 @@
+# Never commit secrets or generated publish artifacts
+wp_pass.txt
+posts.json
+prep_posts.py
+build_publish*.py
+wp_api.py
+set_featured_images.py
+__pycache__/
+*.pyc

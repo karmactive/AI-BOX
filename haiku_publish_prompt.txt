@@ -1,0 +1,16 @@
+PUBLISH TASK (execute now, do not ask):
+Run this command and report results verbatim:
+
+  cd /c/Users/Hp/OneDrive/karmactive-pipeline && python publish_posts.py
+
+Prerequisites already prepared (do NOT modify them):
+- posts.json : 7 articles with resolved WP category IDs, tag IDs, author IDs, staggered dates (start 20h ago, 10-30min gaps), meta descriptions (200 chars), focus keyphrases (4 words).
+- wp_pass.txt : the publishing password (already present, do not print it).
+- publish_posts.py : the publisher. It POSTs each article to https://www.karmactive.com/wp-json/wp/v2/posts with status=publish, embeds the external/internal links into the body, sets rank_math meta (description + focus keyword).
+
+STEP 1: Execute `python publish_posts.py`.
+STEP 2: After it finishes, read publish_results.json and report, for each of the 7 posts: status (published/failed), returned post id, and link.
+STEP 3: If any post FAILED, show the error text and retry that post once.
+STEP 4: Confirm the total count published. Do NOT print the password from wp_pass.txt.
+
+Report concisely.
