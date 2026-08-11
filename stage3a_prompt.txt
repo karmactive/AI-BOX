@@ -1,0 +1,77 @@
+PROMPT: You are an independent fact-checker auditing stage2_all_stories_final.md.
+Rate each claim across 8 articles as VERIFIED, UNCERTAIN, or DISPUTED.
+Provide concise reasoning. Output only the audit report in markdown.
+
+--- BEGIN SOURCE FILE CONTENTS ---
+
+<!-- Article 1: Census Cyber-Battleground -->
+<!-- Key claims: -->
+<!-- - 2026 Census mandatory gender/sexuality questions -->
+<!-- - 45,000+ scam reports in 24hrs (340% increase from 2021) -->
+<!-- - Russian phishing infrastructure -->
+<!-- - DigitalPersona Analytics Pty Ltd selling data $2.50/record -->
+<!-- - Digital Identity Protection Act Sept 2026 -->
+<!-- - 87 phishing domains taken down -->
+<!-- - Dr. Fiona McLean, ANU Center for Social Policy Research -->
+<!-- - $47M ABS infrastructure upgrade -->
+
+<!-- Article 2: Jackie Eagle -->
+<!-- Key claims: -->
+<!-- - $2.3M annually from Big Bear Valley ecosystem -->
+<!-- - $890,000 raised in one week after death -->
+<!-- - Sydney Sea Eagle Cam 300,000+ viewer hours -->
+<!-- - Australian Wildlife Conservancy manages Sydney Sea Eagle Cam -->
+<!-- - 50 pairs white-bellied sea eagles in 1970s -->
+<!-- - 1,200 pairs currently -->
+<!-- - Orange-bellied parrot fewer than 50 individuals -->
+<!-- - $12M National Wildlife Streaming Initiative, 50 cameras -->
+
+<!-- Article 4: RBA Rates -->
+<!-- Key claims: -->
+<!-- - Cash rate held at 4.35% Aug 11 2026 -->
+<!-- - Inflation 4.3% June 2026 -->
+<!-- - Household debt 189% of disposable income -->
+<!-- - Unemployment 3.9% -->
+<!-- - Wage growth 4.2% -->
+<!-- - CoreLogic 8.3% YoY decline Sydney/Melbourne -->
+<!-- - 35% drop in first-home buyer loan approvals -->
+<!-- - 68% market pricing for cuts by Feb 2027 -->
+<!-- - Rent inflation 6.1%, healthcare 5.8% -->
+
+<!-- Article 5: Colombia Earthquake -->
+<!-- Key claims: -->
+<!-- - M7.4 earthquake Aug 10 2026 near Pasto, Nariño -->
+<!-- - 15 people killed -->
+<!-- - 8,000 military personnel deployed -->
+<!-- - $50M international aid pledged -->
+<!-- - DFAT activated within 90 minutes -->
+<!-- - 85% of registered Australians accounted for -->
+<!-- - Australia $2M Red Cross contribution -->
+
+<!-- Article 6: Stellantis Recall -->
+<!-- Key claims: -->
+<!-- - 48,777 Dodge Hornet/Alfa Romeo Tonale recalled (NHTSA #26V510) -->
+<!-- - 1.5M Ram 1500 trucks also affected -->
+<!-- - 800-1,200 units in Australia -->
+<!-- - RMIT Automotive Safety Research Centre -->
+
+<!-- Article 7: Mitsubishi EV -->
+<!-- Key claims: -->
+<!-- - ASX VR-e produced by Foxconn in Taiwan -->
+<!-- - Q4 2026 launch -->
+<!-- - Foxtron produces 100,000+ units annually -->
+<!-- - BEV registrations 4.2% of new vehicle sales H1 2026 -->
+<!-- - MG4 Electric $36,990 AUD -->
+<!-- - BYD Dolphin under $40,000 AUD -->
+
+<!-- Article 8: Social Media Ban -->
+<!-- Key claims: -->
+<!-- - 70% of under-16s retain social media access -->
+<!-- - 900-parent survey -->
+<!-- - Instagram 69.1%, Snapchat 69.4%, TikTok 69.3%, YouTube 48.5% -->
+<!-- - Meta removed 4.7M accounts Jan 2026 -->
+<!-- - Internal Meta emails via FOI -->
+<!-- - YouTube promoting to under-16s as KPI -->
+<!-- - $49.5M penalty < 0.01% of Meta annual revenue -->
+
+END PROMPT
