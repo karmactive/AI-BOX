@@ -120,7 +120,7 @@ The Allahabad High Court's answer is clear: individual choice prevails, and thos
 
 The Allahabad High Court's ruling establishes a powerful precedent: adult citizens have absolute rights to choose their faith, and any confinement against that choice—whether by family or state—constitutes a serious constitutional violation warranting substantial compensation.
 
-The ₹25 lakh award, split between father and state, signals that both private actors and public officials will be held accountable for violating fundamental rights.
+The ₹25 lakh award, split between father and state, means both private actors and public officials can be held accountable for violating fundamental rights.
 
 Whether the ruling translates into systemic change in how law enforcement handles religious conversion cases remains to be seen. But for now, two women are free—and the legal system has affirmed that their freedom to choose their faith is inviolable.
 

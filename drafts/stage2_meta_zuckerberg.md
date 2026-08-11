@@ -117,7 +117,7 @@ Meta cannot ignore this pressure because India is a critical market.
 
 Over 400 million Indians use Meta platforms daily. The country is one of the company's fastest-growing regions. Indian advertising revenue matters. Indian user data and engagement matter. India matters to Meta's global business.
 
-Regulatory pressure in India also signals to other democracies what's possible. If India successfully forces an apology by threatening Section 79 removal, other countries take notes. Brazil, Indonesia, the EU—all watching.
+Regulatory pressure in India also shows other democracies what is possible. If India successfully forces an apology by threatening Section 79 removal, other countries take notes. Brazil, Indonesia, the EU—all watching.
 
 Meta's response to the ultimatum would signal how much it will bend under pressure. Will Zuckerberg apologize directly? Will Meta apologize as a company? Will the apology be specific to the August 2 incident or broader?
 
@@ -139,7 +139,7 @@ This crisis, stripped of details, is about who controls content moderation at sc
 
 Do platforms? Meta's policies are internal. Users don't vote on them. Algorithms optimize for engagement, not democracy. Humans review appeals, but appeals are slow and inconsistent.
 
-Do users? 330 million Indians can't individually force a platform to moderate better. Collective action is fragmented.
+Do users? Hundreds of millions of Indians can't individually force a platform to moderate better. Collective action is fragmented.
 
 Does government? Democracies like India use regulation and law as leverage. But governments also abuse power. Today's accountability tool becomes tomorrow's censorship instrument.
 

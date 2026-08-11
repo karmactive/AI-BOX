@@ -28,7 +28,7 @@ meta_description: "Four blue and one white peafowl donated Aug 7 by Arindam Bagc
 
 When nations want to make a point without words, they sometimes send animals. India just proved that logic works at the United Nations.
 
-On August 7, last week, India's Permanent Representative Arindam Bagchi handed over five young peacocks to the UN Office at Geneva—a gift that signals something deeper than mere diplomacy. These birds represent a calculated blend of cultural pride, environmental messaging, and strategic positioning on the world stage. But they also raise harder questions: Does symbolic wildlife diplomacy work when a nation's own conservation record remains contested?
+On August 7, last week, India's Permanent Representative Arindam Bagchi handed over five young peacocks to the UN Office at Geneva—a gift that points to something deeper than mere diplomacy. These birds represent a calculated blend of cultural pride, environmental messaging, and strategic positioning on the world stage. But they also raise harder questions: Does symbolic wildlife diplomacy work when a nation's own conservation record remains contested?
 
 The five birds include four blue peafowl and one white-feathered male. Tatiana Valovaya, Director-General of the UN Office in Geneva, received them personally. This wasn't a spontaneous gesture. India revived a tradition that stretches back 45 years, to 1981, when then-Prime Minister Indira Gandhi sent a breeding pair of peacocks from Delhi Zoo to the same UN office. That pair thrived for decades, becoming fixtures in the UN's Ariana Park, a sprawling 46-hectare green space on the Geneva grounds.
 

@@ -20,7 +20,7 @@ meta_description: "FM insists UPI remains free as opposition walks out over Taxa
 
 # UPI Tax Fear: Why Parliament's Quiet Bill Matters for Digital India
 
-Imagine a street vendor in Mumbai checking his phone at day's end. For years, UPI transfers have been free. No cuts, no fees. A small businessman in Delhi accepts payments directly from customers into his account. Same deal—zero cost. That picture could be changing. Not tomorrow. Maybe not visibly. But a bill quietly moving through Parliament might put invisible charges into the system that runs India's digital payments revolution.
+Imagine a street vendor in Mumbai checking his phone at day's end. For years, UPI transfers have been free. No cuts, no fees. A small businessman in Delhi accepts payments directly from customers into his account. Same deal—zero cost. That picture could be changing. Not tomorrow. Maybe not visibly. But a bill quietly moving through Parliament might put invisible charges into the system that runs India's digital payments.
 
 The Taxation and Other Laws (Amendment) Bill landed in winter session debate like a grenade wrapped in technical language. Opposition members immediately smelled the threat: UPI transactions could soon have charges attached. The Finance Minister rushed to deny it. "UPI will remain free for consumers," Nirmala Sitharaman said. But the words that followed were careful: "The vast majority of merchant transactions would remain free."
 
@@ -28,7 +28,7 @@ Vast majority. Not all. That precision matters.
 
 ## The Bill Nobody Asked For
 
-India has pushed digital payments hard. Prime Minister Narendra Modi made it a centerpiece of financial inclusion. Poor farmers, street vendors, small traders—they skipped credit cards and went straight to UPI. The Unified Payments Interface became the heart of Digital India. Nearly 10 billion transactions per month flow through it now. Free. Frictionless. Revolutionary.
+India has pushed digital payments hard. Prime Minister Narendra Modi made it a centerpiece of financial inclusion. Poor farmers, street vendors, small traders—they skipped credit cards and went straight to UPI. The Unified Payments Interface became the heart of Digital India. Billions of transactions flow through it every month. Free. Frictionless.
 
 Then came Section 10A of the Payment and Settlement Systems Act, 2007. This section protects UPI from taxation. It exempts certain payment systems from tax. The Amendment Bill changes that. It rewrites Section 10A. In technical terms, it narrows the exemption. In practical terms, it opens the door for taxes on transactions that have never been taxed before.
 
@@ -48,7 +48,7 @@ So which merchant transactions lose their free status? Nobody knows yet. That's 
 
 This is how invisible costs work in India. The government doesn't announce them. They creep in through administrative procedure. A small fee here. A compliance cost there. By the time anyone notices, millions are already paying.
 
-For street vendors and small traders—the group Modi said digital payments would help most—this is a real problem. Many operate on margins of 2-3 percent. A 1 percent transaction fee wipes out their profit. They go back to cash. The digital payment revolution stops at their counter.
+For street vendors and small traders—the group Modi said digital payments would help most—this is a real problem. Many operate on margins of 2-3 percent. A 1 percent transaction fee wipes out their profit. They go back to cash. The digital payment shift stops at their counter.
 
 ## The US-India Money Angle
 

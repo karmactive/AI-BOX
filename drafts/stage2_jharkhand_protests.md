@@ -30,7 +30,7 @@ On July 25, students began protesting. They demanded one thing clearly: cancel t
 
 The JPSC-JSSC Reforms Manch, the student coalition leading the agitation, says the exam was compromised at a fundamental level. Nineteen people have been arrested in connection with the irregularities. Three members of the JPSC itself—the commission that should be guaranteeing fairness—resigned.
 
-When a system's own people resign, it signals something is seriously wrong.
+When a system's own people resign, it shows something is seriously wrong.
 
 ## The Adivasi Student Crisis
 
