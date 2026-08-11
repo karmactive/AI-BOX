@@ -1,0 +1,39 @@
+# Stage 1 Haiku Analysis — 8 India Stories (Aug 11, 2026)
+# Model: claude -p --model haiku
+# Task: Analyze trending stories, classify by priority, identify missing angles, flag primary sources
+
+You are an investigative journalist analyzing 8 trending news stories for karmactive.com. For each story, provide:
+1. Story priority classification (CRITICAL/HIGH/MEDIUM)
+2. Missing angles not covered by mainstream sources
+3. Expert/institutional voices that should be quoted
+4. Primary source links to verify
+5. Suggested word count and author beat assignment
+
+Stories:
+
+1. **Air India A320neo Altitude Drop** — Flight AI2379 (Phuket-Delhi, Aug 4) lost ~300 feet mid-cruise. Official sources now confirm triple hydraulic-system failure + flight-control anomaly, not turbulence. 17 injured. DGCA classified as "Serious Incident". Aircraft: VT-EXO. Nine technical warnings in one minute. Autopilot disconnected, both elevators faulted, all three hydraulic systems affected. Pilot applied nose-down input manually. Airbus being pulled into probe.
+
+2. **Delhi-NCR H1N1 Flu Surge** — 1,344 confirmed cases this season vs 229 all of last year. >600% increase. 69% of Delhi households reporting flu-like symptoms. Doctors cite monsoon temperature drops as driver. AIIMS confirms H3N2 also rising. Health Minister Pankaj Singh confirms all treated, no deaths.
+
+3. **Allahabad HC Religious Conversion** — HC ruled two Hindu women (35, 20) who converted to Islam entitled to decide faith. Ordered father + UP government to jointly pay ₹25 lakh compensation. Justice Sandeep Jain. Habeas corpus petition Aug 6. Declared women "free to reside."
+
+4. **Santy Sharma Death Threat** — Rapper/Bigg Boss contestant received death threats after calling for reservation reforms ("Arakshan Hatao"). Claims YouTube permanently deleted channel. Threats for speaking on reservation reform. Puneet Vasishtha supported him.
+
+5. **Meta/Zuckerberg Apology to PM Modi** — Zuckerberg apologized to Indian government over CSAM, deepfakes, platform errors. Parliamentary panel gave 3-day ultimatum. PM Modi's Facebook post temporarily removed Aug 2. MeitY meetings Aug 5-6.
+
+6. **India Donates 5 Peacocks to UN Geneva** — 4 blue peafowl, 1 white male. Ceremony Aug 7 by Ambassador Arindam Bagchi. Revives 1981 Indira Gandhi tradition. Ariana Park, UNOG.
+
+7. **Jharkhand Student Protests** — Protesting recruitment exam irregularities. Devendra Nath Mahto on hunger strike (9 days), hospitalized after lathi-charge. Lost 10.5 kg. JPSC-JSSC exams. BJP bandh Aug 11.
+
+8. **UPI Transaction Tax** — Parliament Winter Session. FM Sitharaman insists UPI remains free. Opposition CPI(M)/AAP walked out. Amends Section 10A of Payment and Settlement Systems Act, 2007.
+
+For each story, output:
+## [Story Name]
+- Priority: [CRITICAL/HIGH/MEDIUM]
+- Missing angles: [bullet points]
+- Expert/institution voices: [who should comment]
+- First-hand sources: [gov/official URLs only]
+- Word count: [target]
+- Author beat: [Sunita/Govind/Rahul/Sonali/karmactive-staff]
+
+Keep responses factual, cross-verified. No third-party media summaries.

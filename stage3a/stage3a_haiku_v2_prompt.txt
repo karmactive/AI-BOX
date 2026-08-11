@@ -1,0 +1,28 @@
+STAGE 3A FACT-CHECK — Claude Haiku (fresh session) on v2 drafts
+Model: claude -p --model haiku
+
+Verify these 8 v2 Stage 2 drafts against the VERIFIED BASELINE. Read each:
+drafts/stage2_haiku_v2_air_india.md
+drafts/stage2_haiku_v2_delhi_h1n1.md
+drafts/stage2_haiku_v2_allahabad_hc.md
+drafts/stage2_haiku_v2_meta.md
+drafts/stage2_haiku_v2_jharkhand.md
+drafts/stage2_haiku_v2_upi.md
+drafts/stage2_haiku_v2_santy.md
+drafts/stage2_haiku_v2_peacocks.md
+
+VERIFIED BASELINE (allowed facts):
+- AI2379 A320neo VT-EXO, Aug 4, 17 injured (4 crew), 137 pax + 8 crew, triple hydraulic failure, 9 warnings/min, autopilot disconnect, stall recovery, DGCA Serious Incident, ICAO Annex 13, Airbus+BEA, pilot screening pending
+- Delhi H1N1: 1344 vs 229, 600%+ increase, 69% households, H3N2 co-circulation (AIIMS), no deaths, Pankaj Singh, monsoon driver
+- Allahabad: 2 women (35,20) Hindu->Islam, habeas Aug 6, Justice Sandeep Jain, 25L (50% father Anil Kumar Bhatia + 50% state), confined since 2021
+- Meta: PM Modi FB post removed Aug 2 for 5-6hrs, automated, Dubey 3-day ultimatum, Section 79 threat, Joel Kaplan MeitY Aug 5-6, CSAM/deepfake
+- Jharkhand: JPSC-JSSC, Mahto 9-day hunger strike, lathi-charge, lost 10.5kg, glucose 53, 19 arrested, since July 25, BJP bandh Aug 11, 3 JPSC resigned, 28% Adivasi
+- UPI: Taxation & Other Laws Amendment Bill, Section 10A PSS Act 2007, Sitharaman "UPI remains free", CPI(M)/AAP walkout
+- Santy: Reservation Hatao August Kranti, Andheri West, 11yr YouTube deleted, death threats, CJP remarks, Puneet Vasishtha support
+- Peacocks: 4 blue + 1 white, Aug 7, Arindam Bagchi, Tatiana Valovaya (UNOG), 1981 Indira Gandhi, 3-month quarantine Ariana Park, Dr Tobias Blaha
+
+For each file: list any claim that CONTRADICTS baseline or is UNSOURCED (invented numbers, names, quotes, maintenance records, statistics not in baseline). Rate VERIFIED / UNCERTAIN / DISPUTED. Flag [FACT NEEDED] placeholders.
+
+Output report and SAVE to: stage3a/stage3a_haiku_v2_aug11.md
+
+Then state: STAGE 3A v2 CLEAN or LIST VIOLATIONS.

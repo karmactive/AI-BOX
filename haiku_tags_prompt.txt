@@ -1,0 +1,27 @@
+You are helping map 5 news articles to EXISTING categories and tags on the WordPress site karmactive.com. The site's REAL category and tag vocabulary was extracted from its live sitemap.xml (authoritative — do NOT invent any term that is not on the list).
+
+RULES:
+- Categories: the file already carries per-article category names. Map each to the nearest EXISTING sitemap category (provided below). Do NOT create new categories. If a file category has no exact match, pick the closest existing one.
+- Tags: choose 2–5 tags PER ARTICLE, ALL from the sitemap tag candidate lists below. Do NOT invent tags. Prefer specific, topical tags over generic ones.
+- Output ONLY a compact block: for each article, the article number, final category IDs/names (from sitemap), and 2–5 final tag names (from sitemap). Nothing else.
+
+=== EXISTING SITEMAP CATEGORIES (full list) ===
+activism, adventure, africa, agriculture, archaeology, architecture, artificial intelligence, artivism, asia, astronomy, australia, aviation, beauty, business, canada, carbon, china, climate, computing, conservation, crime, culture, design, disaster, discovery, electric, energy, entertainment, environment, europe, fashion, fitness, food drinks, forest, guides, health, history, hydrogen, india, indigenous, infestation, latest, latin america, lifestyle, marine life, maritime, materials, mobility, nature, news, ocean, opinion, paleontology, plant based, plant life, plastic, policy, politics, pollution, public transportation, recycle, robotics, science, space, sport, sustainability, technology, travel, uk, usa, viral, waste, water, weather, wildlife, world
+
+=== EXISTING SITEMAP TAG CANDIDATES (topic-relevant subset) ===
+climate, climate crisis, climate change impact, climate impact, climate science, climate policy, climate adaptation, colombia, conservation uk, disaster, disaster response, disaster relief, drinking water, drought, earthquake, emergency, emergency response, environment, environmental crisis, environmental disaster, environmental health, environmental impact, europe heatwave, extreme weather, flood, flooding, freshwater, global health, glp 1, health alert, health risk, health risks, heatwave, heat wave, natural disaster, obesity, public health, public health crisis, seismic, water, water conservation, water pollution, water quality, water scarcity, water security, water shortage, weight loss, weight loss drugs, wildfire, wildfires
+
+=== ARTICLES (file categories in brackets; pick existing sitemap matches) ===
+ART1 — "BBC Weather Cuts 2026: Presenters Leave as UK Heatwave Claims 2,877 Lives"
+  File categories: Environment, Health, Business/Policy, UK, Disaster
+ART2 — "SW Water Hosepipe Ban 2026: Privatized Water System Fails Amid Drought Crisis"
+  File categories: Environment, UK, Business/Policy, Disaster
+ART3 — "Colombia Earthquake 2026: 7.4-Magnitude Quake Exposes Preparedness Gaps"
+  File categories: Environment, Disaster, Science, International
+ART4 — "Mounjaro Deaths UK: 216 Cases Linked to MHRA Approval of New GLP-1 Drug"
+  File categories: Health, Policy, Pharmaceutical
+ART5 — "New Forest Fire 2026: Vehicle Blaze Spreads Amid Record UK Drought Conditions"
+  File categories: Environment, Disaster, Climate
+
+For each ART, return:
+ART#: CATEGORIES: <existing sitemap category names>; TAGS: <2-5 existing sitemap tags>

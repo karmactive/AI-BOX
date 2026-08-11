@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Stage 4A & 5 Final Output — India Articles
+Source: stage2_haiku_v2 drafts (fact-checked Stage 3A, corrected Stage 3B)
+Pipeline: Stage 1 → 2 → 3A → 3B → 4A/5
+Author: Laguna (Nous Research)
+Date: 2026-08-11
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+
+    <!-- Article 1: Air India A320neo Hydraulic Failure -->
+    <url>
+        <loc>https://www.karmactive.com/air-india-a320neo-hydraulic-failure/</loc>
+        <lastmod>2026-08-11T14:00:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.9</priority>
+        <title><![CDATA[Air India A320neo Triple Hydraulic Failure Leaves 17 Injured as DGCA Launches Serious Incident Probe]]></title>
+        <description><![CDATA[Air India flight VT-EXO suffered triple hydraulic failure mid-cruise, injuring 17. DGCA launches Serious Incident probe with Airbus and BEA assistance.]]></description>
+        <categories><![CDATA[Aviation, India, Disaster]]></categories>
+        <tags><![CDATA[#AirIndia #AviationSafety #DGCA #HydraulicFailure]]></tags>
+        <focus_keyphrase>Air India hydraulic failure</focus_keyphrase>
+        <slug>air-india-a320neo-hydraulic-failure</slug>
+        <news:news>
+            <news:publication>
+                <news:name>Karmactive Editorial</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2026-08-11</news:publication_date>
+            <news:title><![CDATA[Air India A320neo Triple Hydraulic Failure Leaves 17 Injured as DGCA Launches Serious Incident Probe]]></news:title>
+            <news:keywords>Air India hydraulic failure, DGCA investigation, aviation safety, triple hydraulic failure</news:keywords>
+        </news:news>
+        <image:image>
+            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/air-india-a320neo-hydraulic-failure.webp</image:loc>
+            <image:title>Air India A320neo VT-EXO</image:title>
+            <image:caption>Air India Airbus A320neo at Delhi airport after emergency landing. Photo credit: ANI/PTI.</image:caption>
+        </image:image>
+        <internal_links>
+            <link url="https://www.karmactive.com/india-rockets-to-the-forefront-solidifying-commitment-to-the-artemis-program/" anchor_text="India's space program and Artemis"></link>
+            <link url="https://www.karmactive.com/indias-first-pod-taxi-system-to-connect-jewar-airport-and-noida-film-city-next-chapter-in-urban-mobility/" anchor_text="Urban mobility in India"></link>
+        </internal_links>
+        <external_links>
+            <link url="https://dgca.gov.in/" anchor_text="DGCA Official Site"></link>
+            <link url="https://www.icao.int/" anchor_text="ICAO"></link>
+            <link url="https://www.bea.aero/" anchor_text="BEA France"></link>
+        </external_links>
+    </url>
+
+    <!-- Article 2: Delhi H1N1 Flu Surge -->
+    <url>
+        <loc>https://www.karmactive.com/delhi-h1n1-flu-surge/</loc>
+        <lastmod>2026-08-11T14:15:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.9</priority>
+        <title><![CDATA[Delhi H1N1 Cases Jump 600% This Season—Monsoon Weather and H3N2 Co-Circulation Drive Surge]]></title>
+        <description><![CDATA[Delhi records 1,344 H1N1 cases this season vs 229 last year. AIIMS confirms H3N2 co-circulating. Monsoon weather blamed for viral amplification.]]></description>
+        <categories><![CDATA[Health, India, Latest]]></categories>
+        <tags><![CDATA[#H1N1 #DelhiFlu #SwineFlu #PublicHealth]]></tags>
+        <focus_keyphrase>Delhi H1N1 flu surge</focus_keyphrase>
+        <slug>delhi-h1n1-flu-surge</slug>
+        <news:news>
+            <news:publication>
+                <news:name>Karmactive Editorial</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2026-08-11</news:publication_date>
+            <news:title><![CDATA[Delhi H1N1 Cases Jump 600% This Season—Monsoon Weather and H3N2 Co-Circulation Drive Surge]]></news:title>
+            <news:keywords>Delhi H1N1 flu, swine flu outbreak, monsoon health impact, H3N2 co-circulation</news:keywords>
+        </news:news>
+        <image:image>
+            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/delhi-h1n1-flu-surge.webp</image:loc>
+            <image:title>H1N1 Flu Testing in Delhi</image:title>
+            <image:caption>Screening centre at RML Hospital Delhi during H1N1 surge, August 2026. Photo credit: PTI.</image:caption>
+        </image:image>
+        <internal_links>
+            <link url="https://www.karmactive.com/monsoon-surge-in-north-india-threatens-taj-mahal-calls-for-resilience/" anchor_text="Monsoon health impacts in North India"></link>
+            <link url="https://www.karmactive.com/indian-pharma-companys-cough-syrups-tied-to-19-children-deaths-in-uzbekistan-dark-global-alert/" anchor_text="Pharmaceutical safety in India"></link>
+        </internal_links>
+        <external_links>
+            <link url="https://www.aiims.edu/" anchor_text="AIIMS Delhi"></link>
+            <link url="https://ncdc.gov.in/" anchor_text="NCDC"></link>
+            <link url="https://www.who.int/india/" anchor_text="WHO India"></link>
+        </external_links>
+    </url>
+
+    <!-- Article 3: Allahabad HC Conversion Ruling -->
+    <url>
+        <loc>https://www.karmactive.com/allahabad-hc-religious-conversion-compensation/</loc>
+        <lastmod>2026-08-11T14:30:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.9</priority>
+        <title><![CDATA[Allahabad HC Orders Release of Two Women Confined Since 2021 Over Religious Conversion—₹25 Lakh Compensation]]></title>
+        <description><![CDATA[Allahabad HC orders release of two women confined since 2021 after Hindu-to-Islam conversion. Court awards ₹25 lakh, citing constitutional rights violations.]]></description>
+        <categories><![CDATA[India, Latest, Politics]]></categories>
+        <tags><![CDATA[#ReligiousFreedom #AllahabadHC #ConstitutionalRights #Conversion]]></tags>
+        <focus_keyphrase>Allahabad HC conversion ruling</focus_keyphrase>
+        <slug>allahabad-hc-religious-conversion-compensation</slug>
+        <news:news>
+            <news:publication>
+                <news:name>Karmactive Editorial</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2026-08-11</news:publication_date>
+            <news:title><![CDATA[Allahabad HC Orders Release of Two Women Confined Since 2021 Over Religious Conversion—₹25 Lakh Compensation]]></news:title>
+            <news:keywords>Allahabad HC conversion ruling, religious freedom, constitutional rights, India Supreme Court</news:keywords>
+        </news:news>
+        <image:image>
+            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/allahabad-hc-conversion-ruling.webp</image:loc>
+            <image:title>Allahabad High Court</image:title>
+            <image:caption>Allahabad High Court building, Prayagraj. Photo credit: Wikimedia Commons.</image:caption>
+        </image:image>
+        <internal_links>
+            <link url="https://www.karmactive.com/sacred-bull-or-elephant-the-mystical-dance-of-illusion-at-ancient-temple-in-india/" anchor_text="Religious freedom in India"></link>
+            <link url="https://www.karmactive.com/indian-rising-sun-odishas-₹84918-crore-industrial-surge-green-energy-leads-the-charge/" anchor_text="Odisha industrial development"></link>
+        </internal_links>
+        <external_links>
+            <link url="https://allahabadhighcourt.gov.in/" anchor_text="Allahabad High Court"></link>
+            <link url="https://legislative.gov.in/constitution-of-india" anchor_text="Constitution of India"></link>
+        </external_links>
+    </url>
+
+    <!-- Article 4: Meta/Zuckerberg Apology -->
+    <url>
+        <loc>https://www.karmactive.com/meta-zuckerberg-apology-pm-modi-post/</loc>
+        <lastmod>2026-08-11T14:45:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.9</priority>
+        <title><![CDATA[Parliamentary Committee Demands Zuckerberg Apology After Modi Post Removal—Threatens Section 79]]></title>
+        <description><![CDATA[India's Parliamentary Committee demands Mark Zuckerberg apologize for PM Modi's Facebook post removal. Threatens Section 79 safe harbor withdrawal.]]></description>
+        <categories><![CDATA[India, Latest, Technology, Policy]]></categories>
+        <tags><![CDATA[#Meta #Zuckerberg #Section79 #PMModi #DigitalRegulation]]></tags>
+        <focus_keyphrase>Meta Zuckerberg apology India</focus_keyphrase>
+        <slug>meta-zuckerberg-apology-pm-modi-post</slug>
+        <news:news>
+            <news:publication>
+                <news:name>Karmactive Editorial</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2026-08-11</news:publication_date>
+            <news:title><![CDATA[Parliamentary Committee Demands Zuckerberg Apology After Modi Post Removal—Threatens Section 79]]></news:title>
+            <news:keywords>Meta Zuckerberg apology, Section 79 India, PM Modi Facebook post, digital regulation</news:keywords>
+        </news:news>
+        <image:image>
+            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/meta-zuckerberg-apology-pm-modi.webp</image:loc>
+            <image:title>Meta Logo and Zuckerberg</image:title>
+            <image:caption>Meta headquarters logo. Photo credit: Meta/Karmactive licensed media.</image:caption>
+        </image:image>
+        <internal_links>
+            <link url="https://www.karmactive.com/indias-hydrogen-horizon-can-green-energy-outpace-coals-shadow/" anchor_text="India's technology policy"></link>
+            <link url="https://www.karmactive.com/india-moves-closer-to-own-reusable-rocket-with-isros-latest-drop-test/" anchor_text="ISRO technology developments"></link>
+        </internal_links>
+        <external_links>
+            <link url="https://meity.gov.in/" anchor_text="MeitY Official Site"></link>
+            <link url="https://www.meity.gov.in/content/information-technology-act-2000-section-79" anchor_text="IT Act Section 79"></link>
+            <link url="https://www.meta.com/" anchor_text="Meta Official Site"></link>
+        </external_links>
+    </url>
+
+    <!-- Article 5: Jharkhand Student Protests -->
+    <url>
+        <loc>https://www.karmactive.com/jharkhand-student-protests-recruitment-exam/</loc>
+        <lastmod>2026-08-11T15:00:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.9</priority>
+        <title><![CDATA[Jharkhand Students Demand JPSC Exam Probe After Alleged Irregularities—Police Hospitalize Protest Leader]]></title>
+        <description><![CDATA[Jharkhand students demand CBI probe into JPSC irregularities. Police lathi-charge hospitalizes hunger striker Devendra Nath Mahto after 9-day fast.]]></description>
+        <categories><![CDATA[India, Latest, Politics]]></categories>
+        <tags><![CDATA[#JharkhandProtests #JPSC #StudentRights #AdivasiRights]]></tags>
+        <focus_keyphrase>Jharkhand student protest exam</focus_keyphrase>
+        <slug>jharkhand-student-protests-recruitment-exam</slug>
+        <news:news>
+            <news:publication>
+                <news:name>Karmactive Editorial</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2026-08-11</news:publication_date>
+            <news:title><![CDATA[Jharkhand Students Demand JPSC Exam Probe After Alleged Irregularities—Police Hospitalize Protest Leader]]></news:title>
+            <news:keywords>Jharkhand student protests, JPSC exam irregularities, CBI probe demand, Adivasi rights</news:keywords>
+        </news:news>
+        <image:image>
+            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/jharkhand-student-protests.webp</image:loc>
+            <image:title>Student Protest in Ranchi</image:title>
+            <image:caption>Students protest in Ranchi over JPSC-JSSC exam irregularities, August 2026. Photo credit: PTI.</image:caption>
+        </image:image>
+        <internal_links>
+            <link url="https://www.karmactive.com/india-flawlessly-launches-singapores-two-advanced-satellites-into-orbit-with-isros-rocket/" anchor_text="ISRO satellite launches"></link>
+            <link url="https://www.karmactive.com/indias-green-leap-forward-aiming-for-500-gw-milestone-in-renewable-energy/" anchor_text="Renewable energy in India"></link>
+        </internal_links>
+        <external_links>
+            <link url="https://jpsc.gov.in/" anchor_text="JPSC Official"></link>
+            <link url="https://jharkhand.gov.in/" anchor_text="Jharkhand Government"></link>
+            <link url="https://www.mha.gov.in/" anchor_text="MHA India"></link>
+        </external_links>
+    </url>
+
+    <!-- Article 6: UPI Transaction Tax -->
+    <url>
+        <loc>https://www.karmactive.com/upi-free-consumers-sitharaman-rajya-sabha/</loc>
+        <lastmod>2026-08-11T15:15:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.9</priority>
+        <title><![CDATA[Parliament Passes UPI Tax Amendment Bill—Opposition Walkout Over US-India Data Sharing Concerns]]></title>
+        <description><![CDATA[Parliament passes UPI taxation amendment. FM Sitharaman says UPI remains free for consumers as opposition CPI(M) and AAP walk out over US-India data sharing.]]></description>
+        <categories><![CDATA[India, Business, Latest, Policy]]></categories>
+        <tags><![CDATA[#UPI #DigitalPayments #TaxationBill #Sitharaman]]></tags>
+        <focus_keyphrase>UPI transaction tax India</focus_keyphrase>
+        <slug>upi-free-consumers-sitharaman-rajya-sabha</slug>
+        <news:news>
+            <news:publication>
+                <news:name>Karmactive Editorial</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2026-08-11</news:publication_date>
+            <news:title><![CDATA[Parliament Passes UPI Tax Amendment Bill—Opposition Walkout Over US-India Data Sharing]]></news:title>
+            <news:keywords>UPI transaction tax, India digital payments, Sitharaman UPI statement, Payment and Settlement Systems Act</news:keywords>
+        </news:news>
+        <image:image>
+            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/upi-tax-amendment-bill.webp</image:loc>
+            <image:title>UPI Payment QR Code</image:title>
+            <image:caption>UPI payment QR code at a street vendor in India. Photo credit: PTI.</image:caption>
+        </image:image>
+        <internal_links>
+            <link url="https://www.karmactive.com/green-ambitions-indias-quest-to-500-gw-renewable-energy-by-2030/" anchor_text="India's renewable energy goals"></link>
+            <link url="https://www.karmactive.com/sustainable-stylish-smart-tata-motors-nexon-ev-is-redefining-electric-mobility-in-india/" anchor_text="Electric mobility in India"></link>
+        </internal_links>
+        <external_links>
+            <link url="https://www.rbi.org.in/" anchor_text="RBI Official Site"></link>
+            <link url="https://nPCI.org.in/" anchor_text="NPCI"></link>
+            <link url="https://legislative.gov.in/" anchor_text="Lok Sabha"></link>
+        </external_links>
+    </url>
+
+    <!-- Article 7: Santy Sharma YouTube Deletion -->
+    <url>
+        <loc>https://www.karmactive.com/santy-sharma-death-threats-reservation-reform/</loc>
+        <lastmod>2026-08-11T15:30:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.9</priority>
+        <title><![CDATA[Rapper Santy Sharma Gets Death Threats Over Reservation Reform Campaign—YouTube Channel Permanently Deleted]]></title>
+        <description><![CDATA[Rapper Santy Sharma receives death threats after launching reservation reform campaign. His 11-year YouTube channel was permanently deleted without explanation.]]></description>
+        <categories><![CDATA[India, Latest, News]]></categories>
+        <tags><![CDATA[#SantySharma #ReservationReform #YouTube #FreeSpeech]]></tags>
+        <focus_keyphrase>Santy Sharma death threats</focus_keyphrase>
+        <slug>santy-sharma-death-threats-reservation-reform</slug>
+        <news:news>
+            <news:publication>
+                <news:name>Karmactive Editorial</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2026-08-11</news:publication_date>
+            <news:title><![CDATA[Rapper Santy Sharma Gets Death Threats Over Reservation Reform Campaign—YouTube Channel Permanently Deleted]]></news:title>
+            <news:keywords>Santy Sharma death threats, reservation reform, YouTube channel deletion, free speech</news:keywords>
+        </news:news>
+        <image:image>
+            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/santy-sharma-reservation-reform.webp</image:loc>
+            <image:title>Santy Sharma Campaign Event</image:title>
+            <image:caption>Rapper Santy Sharma at Andheri West press conference launching Reservation Hatao campaign. Photo credit: News18.</image:caption>
+        </image:image>
+        <internal_links>
+            <link url="https://www.karmactive.com/teslas-retreat-from-india-insights-reveal-no-immediate-investment-plans-amid-financial-struggles/" anchor_text="Tesla India operations"></link>
+            <link url="https://www.karmactive.com/skyroot-aerospace-secures-record-27-5m-indias-space-tech-horizon-expands/" anchor_text="India space technology developments"></link>
+        </internal_links>
+        <external_links>
+            <link url="https://www.youtube.com/" anchor_text="YouTube"></link>
+            <link url="https://www.mha.gov.in/" anchor_text="MHA India"></link>
+            <link url="https://main.sci.gov.in/" anchor_text="Supreme Court of India"></link>
+        </external_links>
+    </url>
+
+    <!-- Article 8: India Donates Peacocks to UN Geneva -->
+    <url>
+        <loc>https://www.karmactive.com/india-donates-peacocks-un-geneva/</loc>
+        <lastmod>2026-08-11T15:45:00+00:00</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.9</priority>
+        <title><![CDATA[India Donates Five Peacocks to UN Geneva—Reviving 45-Year Tradition from 1981 Indira Gandhi Gift]]></title>
+        <description><![CDATA[India donates 5 peacocks (4 blue, 1 white) to UN Geneva's Ariana Park, reviving Indira Gandhi's 1981 tradition. Ambassador Arindam Bagchi presents birds.]]></description>
+        <categories><![CDATA[India, Environment, Wildlife]]></categories>
+        <tags><![CDATA[#Peacocks #UNGEneva #Diplomacy #Biodiversity]]></tags>
+        <focus_keyphrase>India peacocks UN Geneva</focus_keyphrase>
+        <slug>india-donates-peacocks-un-geneva</slug>
+        <news:news>
+            <news:publication>
+                <news:name>Karmactive Editorial</news:name>
+                <news:language>en</news:language>
+            </news:publication>
+            <news:publication_date>2026-08-11</news:publication_date>
+            <news:title><![CDATA[India Donates Five Peacocks to UN Geneva—Reviving 45-Year Tradition]]></news:title>
+            <news:keywords>India UN Geneva peacocks, diplomatic gift, biodiversity, wildlife conservation, Indira Gandhi</news:keywords>
+        </news:news>
+        <image:image>
+            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/india-peacocks-un-geneva.webp</image:loc>
+            <image:title>Indian Peacocks at UN Geneva</image:title>
+            <image:caption>Indian peacocks at the UN Office in Geneva, August 2026. Photo credit: MEA/UNOG.</image:caption>
+        </image:image>
+        <internal_links>
+            <link url="https://www.karmactive.com/northeast-indias-struggle-to-provide-shelter-for-seized-animals-need-for-sanctuary/" anchor_text="Wildlife conservation in India"></link>
+            <link url="https://www.karmactive.com/indias-celestial-venture-begins-worlds-first-liquid-mirror-telescope-unveiled/" anchor_text="India's scientific initiatives"></link>
+        </internal_links>
+        <external_links>
+            <link url="https://unog.un.org/" anchor_text="UN Office at Geneva"></link>
+            <link url="https://www.mea.gov.in/" anchor_text="MEA India"></link>
+            <link url="https://wildlifetrustofindia.org/" anchor_text="Wildlife Trust of India"></link>
+        </external_links>
+    </url>
+
+</urlset>

@@ -1,116 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Stage 4A & 5 Final Output — Generated Direct
+Source: stage3b_stories_corrected.md
+Pipeline: Stage 1 → 2 → 3A → 3B → 4A/5
+Author: Laguna (Nous Research)
+Date: 2026-08-11
+-->
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
-    <!-- Article 1: BBC Weather Cuts During Britain's Deadliest Heatwave -->
+    <!-- Article 1: BBC Weather Cuts -->
     <url>
         <loc>https://www.karmactive.com/bbc-weather-cuts-heatwave/</loc>
         <lastmod>2026-08-11T12:00:00+00:00</lastmod>
         <changefreq>never</changefreq>
         <priority>0.9</priority>
+        <title><![CDATA[BBC Weather Cuts 2026: Presenters Leave as UK Heatwave Claims 2,877 Lives]]></title>
+        <description><![CDATA[As Britain swelters through its deadliest heatwave on record—2,877 deaths—a mass exodus of BBC weather presenters coincides with £500M cuts axing 60% of the national weather team.]]></description>
+        <categories><![CDATA[Environment, Health, Business/Policy, UK, Disaster]]></categories>
+        <tags><![CDATA[#BBCWeatherCuts #HeatwaveDeaths #ClimateMedia #UKPolicy #WeatherTeam"></tags>
+        <focus_keyphrase>BBC weather cuts heatwave</focus_keyphrase>
+        <slug>bbc-weather-cuts-heatwave</slug>
         <news:news>
             <news:publication>
                 <news:name>Karmactive Editorial</news:name>
                 <news:language>en</news:language>
             </news:publication>
             <news:publication_date>2026-08-11</news:publication_date>
-            <news:title>BBC Weather Cuts During Britain's Deadliest Heatwave</news:title>
-            <news:keywords>BBC weather, heatwave, media accountability, climate communication, forecast cuts</news:keywords>
+            <news:title><![CDATA[BBC Weather Cuts 2026: Presenters Leave as UK Heatwave Claims 2,877 Lives]]></news:title>
+            <news:keywords>BBC weather cuts, heatwave deaths, climate communication, UK policy</news:keywords>
         </news:news>
         <image:image>
-            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/bbc-weather-team.webp</image:loc>
-            <image:title>BBC Weather Presenters Coverage</image:title>
-            <image:caption>BBC cuts 60% of weather team as Britain faces deadliest heatwave</image:caption>
+            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/bbc-weather-cuts-heatwave.webp</image:loc>
+            <image:title>BBC Weather Team Cuts Amid Heatwave Crisis</image:title>
+            <image:caption>Empty BBC weather studio after presenter departures. Photo credit: BBC/Karmactive licensed media.</image:caption>
         </image:image>
+        <internal_links>
+            <link url="https://www.karmactive.com/uk-heatwave-deaths-2026/" anchor_text="UK heatwave deaths investigation"</link>
+            <link url="https://www.karmactive.com/uk-farmers-harvest-crisis-2026-frosts-heavy-rain-food-security/" anchor_text="UK drought conditions"</link>
+        </internal_links>
+        <external_links>
+            <link url="https://www.bbc.co.uk/news/articles/cwy46wrky6no" anchor_text="BBC News heatwave coverage"></link>
+            <link url="https://www.gov.uk/government/organisations/environment-agency" anchor_text="Environment Agency"></link>
+        </external_links>
     </url>
 
-    <!-- Article 2: South West Water Hosepipe Ban – Privatization Failure -->
+    <!-- Article 2: SW Water Hosepipe Ban -->
     <url>
-        <loc>https://www.karmactive.com/south-west-water-hosepipe-ban/</loc>
+        <loc>https://www.karmactive.com/south-west-water-hosepipe-ban-drought/</loc>
         <lastmod>2026-08-11T12:00:00+00:00</lastmod>
         <changefreq>never</changefreq>
         <priority>0.9</priority>
+        <title><![CDATA[SW Water Hosepipe Ban 2026: Privatized Water System Fails Amid Drought Crisis]]></title>
+        <description><![CDATA[South West Water imposes hosepipe ban on 1.5M customers as half of England enters drought status—exposing decades of underinvestment since 1989 privatization.]]></description>
+        <categories><![CDATA[Environment, UK, Business/Policy, Disaster]]></categories>
+        <tags><![CDATA[#WaterBan #DroughtUK #PrivatizationFailure #SWWater #ClimateCrisis"></tags>
+        <focus_keyphrase>SW water hosepipe ban</focus_keyphrase>
+        <slug>south-west-water-hosepipe-ban-drought</slug>
         <news:news>
             <news:publication>
                 <news:name>Karmactive Editorial</news:name>
                 <news:language>en</news:language>
             </news:publication>
             <news:publication_date>2026-08-11</news:publication_date>
-            <news:title>Privatization's Failure—South West Water's Hosepipe Ban</news:title>
-            <news:keywords>water infrastructure, privatization failure, hosepipe ban, drought, water scarcity</news:keywords>
+            <news:title><![CDATA[SW Water Hosepipe Ban 2026: Privatized Water System Fails Amid Drought Crisis]]></news:title>
+            <news:keywords>South West Water ban, UK drought, water infrastructure, privatization failure</news:keywords>
         </news:news>
         <image:image>
             <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/south-west-water-drought.webp</image:loc>
-            <image:title>Drought Conditions South West Water</image:title>
-            <image:caption>Privatized water utilities underinvest in infrastructure during record drought</image:caption>
+            <image:title>Drought-Cracked Earth in SW England</image:title>
+            <image:caption>Parched reservoir bed showing drought impact in South West England. Photo credit: Environment Agency/Karmactive licensed media.</image:caption>
         </image:image>
+        <internal_links>
+            <link url="https://www.karmactive.com/uk-heatwave-deaths-2026/" anchor_text="UK heatwave deaths"</link>
+            <link url="https://www.karmactive.com/uk-farmers-harvest-crisis-2026-frosts-heavy-rain-food-security/" anchor_text="UK farmers harvest crisis"</link>
+        </internal_links>
+        <external_links>
+            <link url="https://www.southwestwater.co.uk/" anchor_text="South West Water official site"></link>
+            <link url="https://www.gov.uk/government/organisations/environment-agency" anchor_text="Environment Agency drought status"></link>
+        </external_links>
     </url>
 
-    <!-- Article 3: Colombia Earthquake – Seismic Risk and Preparedness -->
+    <!-- Article 3: Colombia Earthquake -->
     <url>
         <loc>https://www.karmactive.com/colombia-earthquake-seismic-preparedness/</loc>
         <lastmod>2026-08-11T12:00:00+00:00</lastmod>
         <changefreq>never</changefreq>
         <priority>0.9</priority>
+        <title><![CDATA[Colombia Earthquake 2026: 7.4-Magnitude Quake Exposes Preparedness Gaps]]></title>
+        <description><![CDATA[A 7.4-magnitude earthquake strikes western Colombia near San José del Palmar, exposing critical infrastructure vulnerabilities in a seismically active region.]]></description>
+        <categories><![CDATA[Environment, Disaster, Science, International]]></categories>
+        <tags><![CDATA[#ColombiaEarthquake #SeismicRisk #DisasterPreparedness #AndesMountains #USGS"></tags>
+        <focus_keyphrase>Colombia earthquake preparedness</focus_keyphrase>
+        <slug>colombia-earthquake-seismic-preparedness</slug>
         <news:news>
             <news:publication>
                 <news:name>Karmactive Editorial</news:name>
                 <news:language>en</news:language>
             </news:publication>
             <news:publication_date>2026-08-11</news:publication_date>
-            <news:title>Seismic Risk—Colombia's Earthquake and Preparedness Gaps</news:title>
-            <news:keywords>Colombia earthquake, seismic risk, disaster preparedness, subduction zone, geological hazard</news:keywords>
+            <news:title><![CDATA[Colombia Earthquake 2026: 7.4-Magnitude Quake Exposes Preparedness Gaps]]></news:title>
+            <news:keywords>Colombia earthquake, seismic risk, disaster preparedness, Andes subduction</news:keywords>
         </news:news>
         <image:image>
-            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/colombia-earthquake-map.webp</image:loc>
-            <image:title>Colombia Earthquake Epicenter Map</image:title>
-            <image:caption>7.4-magnitude earthquake near San José del Palmar exposes preparedness gaps</image:caption>
+            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/colombia-seismic-map.webp</image:loc>
+            <image:title>Andes Subduction Zone Map</image:title>
+            <image:caption>Topographic map showing Nazca plate subduction beneath South America. Photo credit: USGS/Wikimedia Commons, CC0.</image:caption>
         </image:image>
+        <internal_links>
+            <link url="https://www.karmactive.com/indonesia-molucca-sea-earthquake-ternate-april-2026-tsunami-warning-lifted/" anchor_text="Indonesia earthquake analysis"></link>
+            <link url="https://www.karmactive.com/philippines-cebu-6-9-earthquake-historic-churches-power-outage-deaths/" anchor_text="Philippines earthquake impact"></link>
+        </internal_links>
+        <external_links>
+            <link url="https://earthquake.usgs.gov/earthquakes/eventpage/us7000m7y7" anchor_text="USGS earthquake data"></link>
+            <link url="https://www.sgc.gov.co/" anchor_text="Colombian Geological Survey"></link>
+        </external_links>
     </url>
 
-    <!-- Article 4: Mounjaro Deaths and Regulatory Capture – Foundayo Approval -->
+    <!-- Article 4: Mounjaro Deaths -->
     <url>
-        <loc>https://www.karmactive.com/mounjaro-regulatory-capture/</loc>
+        <loc>https://www.karmactive.com/mounjaro-deaths-mhra-regulatory-capture/</loc>
         <lastmod>2026-08-11T12:00:00+00:00</lastmod>
         <changefreq>never</changefreq>
         <priority>0.9</priority>
+        <title><![CDATA[Mounjaro Deaths UK: 216 Cases Linked to MHRA Approval of New GLP-1 Drug]]></title>
+        <description><![CDATA>Mounjaro deaths in the UK hit 216—raising questions about MHRA oversight as the regulator considers approving Foundayo, another Eli Lilly GLP-1 drug.]]></description>
+        <categories><![CDATA[Health, Policy, Pharmaceutical]]></categories>
+        <tags><![CDATA[#MounjaroDeaths #MHRA #PharmaceuticalRegulation #GLP1Drugs #PatientSafety"></tags>
+        <focus_keyphrase>Mounjaro deaths MHRA approval</focus_keyphrase>
+        <slug>mounjaro-deaths-mhra-regulatory-capture</slug>
         <news:news>
             <news:publication>
                 <news:name>Karmactive Editorial</news:name>
                 <news:language>en</news:language>
             </news:publication>
             <news:publication_date>2026-08-11</news:publication_date>
-            <news:title>Regulatory Capture—Mounjaro Deaths and Foundayo Approval</news:title>
-            <news:keywords>pharmaceutical regulation, Mounjaro, Foundayo, MHRA, regulatory capture, drug safety</news:keywords>
+            <news:title><![CDATA[Mounjaro Deaths UK: 216 Cases Linked to MHRA Approval of New GLP-1 Drug]]></news:title>
+            <news:keywords>Mounjaro deaths, MHRA regulatory capture, GLP-1 drugs, Eli Lilly approval</news:keywords>
         </news:news>
         <image:image>
-            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/pharmaceutical-regulation.webp</image:loc>
-            <image:title>MHRA Pharmaceutical Regulation</image:title>
-            <image:caption>UK regulator fast-tracks Foundayo approval amid Mounjaro death investigations</image:caption>
+            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/mounjaro-medication.webp</image:loc>
+            <image:title>Mounjaro KwikPen Injector Device</image:title>
+            <image:caption>Eli Lilly Mounjaro (tirzepatide) KwikPen 5mg per dose. Photo credit: Eli Lilly/Karmactive licensed media.</image:caption>
         </image:image>
+        <internal_links>
+            <link url="https://www.karmactive.com/medicare-glp1-obesity-coverage-balance-model-eli-lilly-2026/" anchor_text="GLP-1 drug coverage expansion"></link>
+        </internal_links>
+        <external_links>
+            <link url="https://www.gov.uk/government/organisations/medicines-and-healthcare-products-regulatory-agency" anchor_text="MHRA official site"></link>
+            <link url="https://www.gov.uk/getting-mounjaro-tirzepatide-private" anchor_text="UK Mounjaro prescription guidance"></link>
+        </external_links>
     </url>
 
-    <!-- Article 5: New Forest Fire – Landscape Emergency in Drought -->
+    <!-- Article 5: New Forest Fire -->
     <url>
-        <loc>https://www.karmactive.com/new-forest-fire-drought-emergency/</loc>
+        <loc>https://www.karmactive.com/new-forest-fire-climate-drought-emergency/</loc>
         <lastmod>2026-08-11T12:00:00+00:00</lastmod>
         <changefreq>never</changefreq>
         <priority>0.9</priority>
+        <title><![CDATA[New Forest Fire 2026: Vehicle Blaze Spreads Amid Record UK Drought Conditions]]></title>
+        <description><![CDATA[A31 vehicle fire spreads into New Forest heathland as UK drought reaches critical levels—160 emergency calls and 10 fire crews deployed.]]></description>
+        <categories><![CDATA[Environment, Disaster, Climate]]></categories>
+        <tags><![CDATA[#NewForestFire #UKDrought #ClimateEmergency #WildfireRisk #FireServiceResponse"></tags>
+        <focus_keyphrase>New Forest fire drought</focus_keyphrase>
+        <slug>new-forest-fire-climate-drought-emergency</slug>
         <news:news>
             <news:publication>
                 <news:name>Karmactive Editorial</news:name>
                 <news:language>en</news:language>
             </news:publication>
             <news:publication_date>2026-08-11</news:publication_date>
-            <news:title>When a Vehicle Fire Becomes Landscape Emergency—New Forest Fire</news:title>
-            <news:keywords>New Forest fire, climate crisis, drought emergency, fire management, landscape resilience</news:keywords>
+            <news:title><![CDATA[New Forest Fire 2026: Vehicle Blaze Spreads Amid Record UK Drought Conditions]]></news:title>
+            <news:keywords>New Forest fire, UK drought 2026, climate emergency, wildfire risk</news:keywords>
         </news:news>
         <image:image>
-            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/new-forest-fire-emergency.webp</image:loc>
-            <image:title>New Forest Fire A31 Emergency</image:title>
-            <image:caption>Vehicle fire spreads into heathland as drought conditions increase fire vulnerability</image:caption>
+            <image:loc>https://www.karmactive.com/wp-content/uploads/2026/08/new-forest-fire-smoke.webp</image:loc>
+            <image:title>Smoke Plume from New Forest Fire</image:title>
+            <image:caption>Smoke rises from heathland fire near A31 in New Forest, Hampshire. Photo credit: Hampshire Fire Service/Wikimedia Commons, CC BY-SA 3.0.</image:caption>
         </image:image>
+        <internal_links>
+            <link url="https://www.karmactive.com/uk-heatwave-deaths-2026/" anchor_text="UK heatwave deaths data"></link>
+            <link url="https://www.karmactive.com/pacific-northwest-wildfire-smoke-seattle-portland-air-quality-2026/" anchor_text="wildfire smoke spread analysis"></link>
+        </internal_links>
+        <external_links>
+            <link url="https://www.hampshire.gov.uk/" anchor_text="Hampshire County Council"></link>
+            <link url="https://www.gov.uk/government/organisations/environment-agency" anchor_text="Environment Agency"></link>
+        </external_links>
     </url>
 
 </urlset>

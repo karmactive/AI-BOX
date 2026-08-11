@@ -1,0 +1,24 @@
+STAGE 3B VERIFICATION — Claude Haiku (fresh session) on cleaned v2 drafts
+Model: claude -p --model haiku
+
+Verify these 8 cleaned v2 Stage 2 drafts are factually complete and free of gaps.
+Read each: drafts/stage2_haiku_v2_*.md
+
+VERIFIED BASELINE:
+- AI2379 A320neo VT-EXO, Aug 4, 17 injured, 137 pax + 8 crew, triple hydraulic, 9 warnings/min, stall recovery, DGCA Serious Incident, ICAO Annex 13, Airbus+BEA, pilot screening pending
+- Delhi H1N1: 1344 vs 229, 600%+ increase, 69% households, H3N2 co-circulation (AIIMS), no deaths, Pankaj Singh, monsoon driver
+- Allahabad: 2 women (35,20) Hindu->Islam, habeas Aug 6, Justice Sandeep Jain, 25L (50% father Anil Kumar Bhatia + 50% state), confined since 2021
+- Meta: PM Modi FB post removed Aug 2 for 5-6hrs automated, Dubey 3-day ultimatum, Section 79 threat, Joel Kaplan MeitY Aug 5-6, CSAM/deepfake
+- Jharkhand: JPSC-JSSC, Mahto 9-day hunger strike lost 10.5kg glucose 53, lathi-charge, 19 arrested, since July 25, BJP bandh Aug 11, 3 JPSC resigned, 28% Adivasi
+- UPI: Taxation & Other Laws Amendment Bill, Section 10A PSS Act 2007, Sitharaman "UPI remains free", CPI(M)/AAP walkout
+- Santy: Reservation Hatao August Kranti, Andheri West, 11yr YouTube deleted, death threats, CJP remarks, Puneet Vasishtha support
+- Peacocks: 4 blue + 1 white, Aug 7, Arindam Bagchi, Tatiana Valovaya (UNOG), 1981 Indira Gandhi, 3-month quarantine Ariana Park, Dr Tobias Blaha
+
+CHECK:
+1. No [FACT NEEDED]/[DATE NEEDED]/[PERSON NAME UNCLEAR] placeholders remain (should be 0)
+2. No prohibited words: tapestry, beacon, symphony, testament, melody, revolution, revolutionary, groundbreaking, ground-breaking, unveil, uncover, unearth, unleash, underscore, reminds, reminder, significant, navigate, marking, picture, imagine, isn't just, not just, more than a, not only, big gun, scoop, illustrates, signals, demonstrates, highlights, catalyzes, represents, "raises questions", discover, find
+3. No contradictions with baseline (crew/pax, judge title, compensation split, dates)
+4. No fabricated numbers/names/quotes not in baseline
+
+For each file: CLEAN or LIST ISSUES. Overall: STAGE 3B v2 COMPLETE or INCOMPLETE.
+Save report to: stage3b/stage3b_haiku_v2_verification.md

@@ -1,0 +1,40 @@
+Parsed 5 articles
+ART1 | title=BBC Weather Cuts 2026: Presenters Leave as UK Heatwave Claims 2,877 Li
+   slug=bbc-weather-cuts-heatwave | focus=bbc weather cuts heatwave | metalen=156 | author=224
+   cats=['environment', 'health', 'uk', 'disaster'] (ids [16921, 34, 20262, 2515])
+   tags=['heatwave', 'extreme weather', 'public health crisis', 'health alert'] (ids [22924, 8018, 14100, 14497])
+   wc=323 paras=12 links=6 date_gmt=2026-08-10T16:58:22
+ART2 | title=SW Water Hosepipe Ban 2026: Privatized Water System Fails Amid Drought
+   slug=south-west-water-hosepipe-ban-drought | focus=sw water hosepipe ban | metalen=158 | author=224
+   cats=['environment', 'uk', 'disaster', 'policy'] (ids [16921, 20262, 2515, 19564])
+   tags=['drought', 'water scarcity', 'water conservation', 'water shortage'] (ids [1270, 869, 11070, 898])
+   wc=260 paras=10 links=7 date_gmt=2026-08-10T17:20:22
+ART3 | title=Colombia Earthquake 2026: 7.4-Magnitude Quake Exposes Preparedness Gap
+   slug=colombia-earthquake-seismic-preparedness | focus=colombia earthquake preparedness gaps | metalen=158 | author=3
+   cats=['disaster', 'science', 'latin america'] (ids [2515, 37, 3828])
+   tags=['earthquake', 'seismic', 'disaster', 'colombia'] (ids [1141, 22776, 21528, 1194])
+   wc=218 paras=9 links=6 date_gmt=2026-08-10T17:41:22
+ART4 | title=Mounjaro Deaths UK: 216 Cases Linked to MHRA Approval of New GLP-1 Dru
+   slug=mounjaro-deaths-mhra-regulatory-capture | focus=mounjaro deaths mhra approval | metalen=149 | author=224
+   cats=['health', 'policy'] (ids [34, 19564])
+   tags=['glp 1', 'weight loss drugs', 'public health crisis', 'health alert'] (ids [22990, 22989, 14100, 14497])
+   wc=167 paras=9 links=5 date_gmt=2026-08-10T18:05:22
+ART5 | title=New Forest Fire 2026: Vehicle Blaze Spreads Amid Record UK Drought Con
+   slug=new-forest-fire-climate-drought-emergency | focus=new forest fire drought | metalen=136 | author=4
+   cats=['environment', 'disaster', 'climate'] (ids [16921, 2515, 1952])
+   tags=['wildfire', 'drought', 'climate crisis', 'extreme weather'] (ids [7528, 1270, 397, 8018])
+   wc=180 paras=9 links=6 date_gmt=2026-08-10T18:27:22
+PUBLISHED art1 -> id=271801 status=publish url=https://www.karmactive.com/bbc-weather-cuts-heatwave/
+PUBLISHED art2 -> id=271803 status=publish url=https://www.karmactive.com/south-west-water-hosepipe-ban-drought/
+PUBLISHED art3 -> id=271805 status=publish url=https://www.karmactive.com/colombia-earthquake-seismic-preparedness/
+PUBLISHED art4 -> id=271807 status=publish url=https://www.karmactive.com/mounjaro-deaths-mhra-regulatory-capture/
+PUBLISHED art5 -> id=271809 status=publish url=https://www.karmactive.com/new-forest-fire-climate-drought-emergency/
+
+==== POST-PUBLISH AUDIT ====
+id=271801 TITLE:Y META:Y FOCUS:Y CATS:Y LINKS:Y status=publish
+id=271803 TITLE:Y META:Y FOCUS:Y CATS:Y LINKS:Y status=publish
+id=271805 TITLE:Y META:Y FOCUS:Y CATS:Y LINKS:Y status=publish
+id=271807 TITLE:Y META:Y FOCUS:Y CATS:Y LINKS:Y status=publish
+id=271809 TITLE:Y META:Y FOCUS:Y CATS:Y LINKS:Y status=publish
+
+WROTE deliverable: C:\Users\Hp\OneDrive\karmactive-pipeline\stage4_stage5_published.html

@@ -1,0 +1,100 @@
+Safety	safety	245	859
+Public Health	public-health	9693	798
+Research	research	619	676
+Environmental Impact	environmental-impact	5319	489
+Climate Change	climatechange	99	459
+Environment	environment	75	453
+Health Alert	health-alert	14497	449
+California	california	598	383
+Health Risks	health-risks	8814	380
+Electric Vehicles	electric-vehicles	2196	361
+Innovation	innovation	4091	352
+Wildlife Conservation	wildlife-conservation	9317	338
+Recall	recall	20036	297
+NASA	nasa	183	289
+Species	species	734	273
+Endangered Species	endangered-species	861	267
+Biodiversity	biodiversity	520	256
+Automobile	automobile	2453	255
+Study	study	4101	254
+Renewable Energy	renewable-energy	1453	252
+EV	ev	2197	249
+Food Safety	food-safety	11423	230
+Tesla	tesla	2452	210
+Disease	disease	402	203
+Natural Disaster	natural-disaster	89	201
+Health	health	19649	200
+Texas	texas	3520	171
+Healthcare	healthcare	395	168
+Weather	weather	641	163
+Battery	battery	2565	163
+Sustainable Transportation	sustainable-transportation	8139	163
+Australia	australia	359	150
+Global Warming	global-warming	396	149
+Transportation	transportation	2036	148
+Green Technology	green-technology	8117	148
+Space Exploration	space-exploration	7828	147
+food recall	food-recall	20271	138
+Ecosystem	ecosystem	4738	133
+Air Pollution	air-pollution	121	130
+Automotive Innovation	automotive-innovation	8345	130
+Emissions	emissions	1439	129
+Population	population	852	124
+Tourism	tourism	1207	124
+Clean Energy	clean-energy	1381	124
+Conservation	conservation	19648	122
+marine conservation	marine-conservation	7946	117
+UK	uk	72	111
+Electric Cars	electric-cars	4121	111
+Satellite	satellite	203	107
+New York	new-york	2456	103
+Cancer	cancer	1288	101
+Artificial Intelligence	artificial-intelligence	3719	100
+India	india	19654	99
+Elon Musk	elon-musk	2294	97
+SpaceX	spacex	2349	97
+Lawsuit	lawsuit	6187	97
+FDA Recall	fda-recall	15900	97
+Scientists	scientists	883	94
+Florida	florida	2170	87
+Urban Mobility	urban-mobility	8866	87
+Sea	sea	108	84
+Moon	moon	2708	84
+FDA	fda	19944	81
+Government	government	1104	80
+Product Recall	product-recall	17290	77
+Canada	canada	167	75
+National Park	national-park	666	75
+Solar Energy	solar-energy	2347	75
+Storm	storm	639	70
+Earth	earth	1279	70
+Birds	birds	232	69
+Invasive Species	invasive-species-2	2900	69
+Food	food	1908	68
+United Nations	united-nations	193	67
+Fish	fish	591	67
+Power	power	2037	66
+Rocket	rocket	2834	65
+Sustainable	sustainable	381	63
+Policy	policy	7520	63
+Emergency Response	emergency-response	9570	61
+All Electric	all-electric	2668	60
+MTA	mta	20178	59
+Vaccination	vaccination	20244	59
+Plastic	plastic	59	56
+Fire	fire	2114	56
+Space Technology	space-technology	21026	56
+Launch	launch	2835	55
+technology	technology	19636	54
+Infrastructure	infrastructure	20077	53
+Solar Power	solar-power	2370	52
+Environmental Conservation	environmental-conservation	8415	52
+Habitat	habitat	2344	51
+Minnesota	minnesota	2598	51
+Mental Health	mental-health	807	50
+Sustainable Travel	sustainable-travel	7785	48
+Flooding	flooding	18072	48
+Travel	travel	20588	45
+Mars	mars	2751	43
+Transport	transport	4654	43
+Sustainable Technology	sustainable-technology	8489	42

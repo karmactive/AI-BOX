@@ -1,0 +1,112 @@
+# STAGE 2 DRAFT BRIEF — karmactive.com (8 India Stories, Aug 11 2026)
+
+You are a senior investigative journalist (30 years experience) writing for karmactive.com.
+Write factual, plain-language news articles. Short sentences. Issue-first hook.
+
+## HARD RULES (karmactive style guide)
+- NO fabricated facts. Every number/name/quote must come from the VERIFIED FACTS below.
+- NO prohibited words: tapestry, beacon, symphony, testament, melody, revolution, revolutionary, groundbreaking, ground-breaking, unveil, uncover, unearth, unleash, underscore, reminds, reminder, significant, navigate, marking, picture, imagine, isn't just, not just, more than a, not only, big gun, scoop, illustrates, signals, demonstrates, highlights, catalyzes, represents, "raises questions", discover, find.
+- NO "according to source document" phrasing in body.
+- Conclusion: passive/neutral recap only. No active-impact verbs. No new analysis.
+- If you don't have a fact, DO NOT invent it. Write "[FACT NEEDED]" instead.
+- Keep analytical/speculative lines clearly hedged with "may", "could", "if", OR omit them.
+
+## VERIFIED FACTS (from primary sources: The Hindu, India Today, ANI, Live Mint, Bar & Bench, LiveLaw, Economic Times, Indian Express, News18)
+
+### STORY 1: Air India A320neo Altitude Drop (author: Govind)
+- Flight AI2379, Airbus A320neo, registration VT-EXO, Phuket–Delhi, Aug 4 2026
+- Lost ~300 feet mid-cruise; 17 injured (4 cabin crew with spinal/neck injuries)
+- 137 passengers (incl. 3 infants) + 8 crew (2 pilots, 6 cabin)
+- DGCA classified as "Serious Incident"; AAIB investigating under ICAO Annex 13
+- Airbus + France's BEA assisting
+- Nine technical warnings within one minute (automated post-flight report)
+- Autopilot disconnected; both elevators faulted; all three hydraulic systems affected
+- Stall warning; pilot applied manual nose-down input to recover
+- Pilot-in-command psychoactive screening requires confirmatory test (initial result "requiring further analysis"); both pilots off roster
+- ALPA India (Capt. Sam Thomas) confirmed triple hydraulic failure
+- Air India's initial statement blamed "turbulence"; later statements dropped it
+- Angle: government accountability, aviation safety oversight, corporate transparency
+
+### STORY 2: Delhi-NCR H1N1 Flu Surge (author: Sunita)
+- 1,344 confirmed H1N1 cases this season vs 229 all of last year (600%+ increase)
+- 69% of Delhi households report flu-like symptoms (ANI)
+- Health Minister Pankaj Singh: all 1,344 treated and discharged, no deaths
+- AIIMS confirms H3N2 also rising (co-circulation)
+- Doctors cite monsoon temperature drops as driver
+- Dr Sanjeev Sinha (AIIMS): monsoon temp drop increases virus spread
+- Dr Satish Koul (Fortis): 7-10 H1N1 patients/day in OPD; elderly/children/chronically ill at higher risk
+- Dr Atul Kakar (Sir Ganga Ram): high-grade fever, joint/muscle pain, weakness
+- Angle: public health preparedness, environmental drivers, healthcare access
+
+### STORY 3: Allahabad HC Religious Conversion (author: Govind)
+- Two women (ages 35, 20) converted Hindu→Islam; unlawfully confined by father
+- Habeas corpus petition heard by Justice Sandeep Jain, Aug 6 2026
+- Court declared them "free to reside at any place and with any person of their own choice"
+- ₹25 lakh compensation: 50% from father (Anil Kumar Bhatia), 50% from delinquent public servant/state
+- Confined since 2021; UP government permitted continuation of detention
+- Court: "exceptionally grave violation of constitutional rights"
+- Angle: bodily autonomy, constitutional rights, state failure
+
+### STORY 4: Meta/Zuckerberg Apology to PM Modi (author: Govind)
+- PM Modi's Facebook post removed Aug 2 2026 for 5-6 hours; Meta blamed automated moderation
+- Parliamentary Standing Committee (chair: BJP MP Nishikant Dubey) gave 3-day ultimatum for Zuckerberg "unqualified apology"
+- Threat: withdraw Section 79 IT Act safe harbour if no apology
+- Concerns also: CSAM, deepfakes, content demeaning women
+- MeitY meetings Aug 5-6; Meta delegation led by Chief Global Affairs Officer Joel Kaplan
+- Kaplan met Electronics & IT Secretary S. Krishnan; also scheduled IT Minister Ashwini Vaishnaw
+- Committee recommendation NOT binding; govt decides under IT Act
+- Angle: tech platform oversight, child protection, regulatory precedent
+
+### STORY 5: Jharkhand Student Protests (author: Rahul)
+- Students protest alleged JPSC-JSSC recruitment exam irregularities
+- Demands: cancel 14th JPSC Civil Services Exam; CBI probe
+- Devendra Nath Mahto (JLKM leader) 9-day hunger strike; hospitalized after lathi-charge; lost 10.5 kg; blood glucose 53
+- Police used water cannons, tear gas, lathi-charge; 19 arrested
+- Protest since July 25; BJP state-wide bandh Aug 11
+- 3 JPSC members resigned
+- Jharkhand 28%+ tribal (Adivasi) population
+- Angle: social justice, Adivasi rights, education access, police crackdown
+
+### STORY 6: UPI Transaction Tax (author: Sunita)
+- Taxation and Other Laws (Amendment) Bill amends Section 10A of Payment and Settlement Systems Act, 2007
+- FM Nirmala Sitharaman: "UPI will remain free for consumers"; "vast majority of merchant transactions would remain free"
+- Opposition (CPI(M), AAP) walked out; accused govt of subservience to US directives
+- Rajya Sabha passed Bankers' Books Evidence Bill amid walkout
+- Angle: digital rights, financial inclusion, small-trader impact
+
+### STORY 7: Santy Sharma Death Threat Controversy (author: Govind)
+- Rapper/social media personality Santy Sharma (Bigg Boss contestant) received death threats after calling for reservation reform
+- Launched "Reservation Hatao — August Kranti" campaign at Andheri West, Mumbai press conference
+- Claims YouTube permanently deleted his 11-year-old channel after backlash
+- YouTube has NOT publicly confirmed reason for deletion
+- Tied to CJP (Chief Justice of India) remarks earlier this week
+- Bigg Boss fame Puneet Vasishtha publicly supported him
+- Sharma: "Threats won't silence me"
+- Angle: free speech, platform censorship, intimidation of commentators
+
+### STORY 8: India Donates Peacocks to UN Geneva (author: Govind)
+- Five peacocks (4 blue, 1 white male) donated to UN Office at Geneva (UNOG)
+- Ceremony Aug 7 2026 by Ambassador Arindam Bagchi; received by Tatiana Valovaya (UNOG DG)
+- Revives 1981 tradition: Indira Gandhi sent breeding pair from Delhi Zoo
+- 3-month quarantine in enclosed habitat before roaming Ariana Park (46-hectare UN grounds)
+- Vet oversight: Dr Tobias Blaha (Bioparc Genève)
+- UNOG to launch naming competition
+- Angle: soft power, biodiversity diplomacy, conservation symbolism
+
+## OUTPUT INSTRUCTIONS
+For EACH story, write a complete article with:
+- YAML frontmatter: title, author, date (2026-08-11), categories, word_count, sources[]
+- Issue-first hook, plain language, short sentences
+- Only verified facts above; mark gaps as [FACT NEEDED]
+- Neutral conclusion
+Write each story to its own file under drafts/ using the exact filenames:
+1. drafts/stage2_air_india_hydraulic.md
+2. drafts/stage2_delhi_h1n1_flu.md
+3. drafts/stage2_allahabad_hc_conversion.md
+4. drafts/stage2_meta_zuckerberg.md
+5. drafts/stage2_jharkhand_protests.md
+6. drafts/stage2_upi_tax.md
+7. drafts/stage2_santy_sharma.md
+8. drafts/stage2_peacocks_un.md
+
+Begin with Story 1 and write all 8. Write as much as the output limit allows per story; if truncated, note "[TRUNCATED — continue in next pass]".
