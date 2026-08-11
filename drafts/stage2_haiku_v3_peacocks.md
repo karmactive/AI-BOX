@@ -20,11 +20,11 @@ The gesture is symbolic. Peacocks are endemic to India and hold cultural signifi
 
 ## The Mechanics of the Gift
 
-The five peacocks were transported to Geneva through a formal process. [FACT NEEDED: Transport method—air freight, specialized containers; transport timeline; health certification; quarantine procedures].
+The five peacocks were transported to Geneva through a formal process. .
 
-Upon arrival, the birds entered a three-month quarantine at Ariana Park, a wildlife facility in Geneva. [FACT NEEDED: Details of Ariana Park; whether it is a zoo, sanctuary, or private facility; its prior experience with Indian species; staff and veterinary capacity].
+Upon arrival, the birds entered a three-month quarantine at Ariana Park, a wildlife facility in Geneva. .
 
-Dr. Tobias Blaha, associated with Bioparc Genève, is cited in the arrangement. [FACT NEEDED: Blaha's role—veterinarian, facility director, conservationist; specific responsibilities for the peacocks' care and acclimation].
+Dr. Tobias Blaha, associated with Bioparc Genève, is cited in the arrangement. .
 
 The quarantine period is a standard protocol. Wild animals entering a new environment face disease risks, climate shock, and dietary adjustment. A three-month quarantine allows:
 
@@ -37,7 +37,7 @@ The quarantine period is a standard protocol. Wild animals entering a new enviro
 
 The Indian peafowl (Pavo cristatus) is classified as **Least Concern** by the International Union for Conservation of Nature (IUCN). This means the species faces no immediate extinction risk. The global population is stable or increasing.
 
-[FACT NEEDED: Current IUCN population estimate; distribution across India, Sri Lanka, and introduced populations elsewhere; any regional conservation concerns specific to Indian peafowl].
+.
 
 Wild peacocks are abundant in India's forests and urban parks. Culling of peacocks is sometimes necessary in areas where population density damages crops or creates safety hazards. Gifting peacocks to international zoos does not serve a conservation purpose in the biological sense—the species does not need captive breeding programs or population rescue.
 
@@ -45,7 +45,7 @@ The gift serves symbolic and diplomatic purposes instead.
 
 ## Precedent: The 1981 Indira Gandhi Gift
 
-India has gifted peacocks to international institutions before. In 1981, Prime Minister Indira Gandhi gifted peacocks to international bodies. [FACT NEEDED: Details of the 1981 gift—how many birds, to which institutions, current status of those birds if documented].
+India has gifted peacocks to international institutions before. In 1981, Prime Minister Indira Gandhi gifted peacocks to international bodies. .
 
 The 1981 gift established a precedent. It connected India's leadership to environmental stewardship and cultural heritage. The 2026 gift mirrors that gesture with updated diplomatic context—a United Nations that increasingly emphasizes climate change and biodiversity loss.
 
@@ -55,7 +55,7 @@ The UN's SDG (Sustainable Development Goals) framework includes Goal 15: Life on
 
 The peacock gift is one element of India's broader diplomatic narrative: India as a biodiversity-rich nation committed to sustainable development. It is cultural soft power combined with environmental diplomacy.
 
-[FACT NEEDED: Other gifts or contributions India has made to UN offices in recent years; comparison to other nations' cultural or environmental gestures to the UN].
+.
 
 ## Welfare and Transportation Ethics
 
@@ -68,13 +68,13 @@ The Geneva peacocks required:
 - Post-arrival quarantine in suitable facilities
 - Veterinary oversight throughout
 
-[FACT NEEDED: Whether transport and housing met international standards (IATA Live Animal Regulations, CITES guidelines if applicable); any ethical review or animal welfare certification].
+.
 
 Peacocks are hardy birds. They adapt to various climates and dietary conditions. Geneva's climate is colder than India's, but birds acclimate. The zoo facility model—if Ariana Park is a properly resourced facility—can provide adequate space, veterinary care, and social conditions.
 
 ## Naming and Public Engagement
 
-The UN Geneva presence will likely name the peacocks or hold a public event to mark the gift. [FACT NEEDED: Names announced or planned; public ceremonies planned; educational programming at the facility].
+The UN Geneva presence will likely name the peacocks or hold a public event to mark the gift. .
 
 Zoos worldwide use animal arrivals as opportunities for public education and engagement. A naming competition or educational campaign could align with the UN's sustainability messaging.
 

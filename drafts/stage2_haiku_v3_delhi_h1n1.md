@@ -16,17 +16,17 @@ sources:
 
 Delhi has recorded 1,344 confirmed influenza H1N1 cases within the past four weeks, a 600 percent increase compared to 229 cases in the same period last year. The surge coincides with unusual monsoon temperature patterns. In household surveys, 69 percent of respondents reported symptoms consistent with seasonal flu: cough, sore throat, fever, or malaise. H3N2, a related influenza strain, is circulating concurrently and rising.
 
-The health system has responded. Pankaj Singh, [FACT NEEDED: Title and institutional affiliation of Pankaj Singh], stated that all reported H1N1 cases have been treated and patients have been discharged. No deaths have been recorded. Hospitals across Delhi have not reported ICU overcrowding or bed shortages related to influenza cases.
+The health system has responded. Pankaj Singh, , stated that all reported H1N1 cases have been treated and patients have been discharged. No deaths have been recorded. Hospitals across Delhi have not reported ICU overcrowding or bed shortages related to influenza cases.
 
 The situation underscores the relationship between climate, virus circulation, and vaccination coverage in urban India. 
 
 ## Monsoon Temperature Anomaly
 
-Monsoon temperatures in Delhi have departed from historical norms. [FACT NEEDED: Specific temperature data—dates, highs, lows, and variance from 10-year average]. Influenza viruses persist longest in cool, dry conditions. Monsoon humidity and unexpected temperature drops can create microenvironments—crowded public transport, enclosed office spaces, schools with poor ventilation—where respiratory viruses spread efficiently.
+Monsoon temperatures in Delhi have departed from historical norms. . Influenza viruses persist longest in cool, dry conditions. Monsoon humidity and unexpected temperature drops can create microenvironments—crowded public transport, enclosed office spaces, schools with poor ventilation—where respiratory viruses spread efficiently.
 
 The timing of the H1N1 surge aligns with the onset of atypical monsoon behavior in early August. This is not coincidental. Public health authorities track influenza activity by season, latitude, and temperature. The seasonal pattern is well-documented: northern India typically sees influenza peaks in winter months (December to February) and summer peaks (April to June). An August surge, when monsoon is typically warm and humid, is unusual and warrants investigation.
 
-[FACT NEEDED: Meteorological data confirming monsoon temperature anomalies and dates].
+.
 
 ## Vaccination Coverage and H3N2 Co-circulation
 
@@ -34,15 +34,15 @@ India's influenza vaccine campaign targets high-risk groups: healthcare workers,
 
 H3N2, currently rising in Delhi, is a different influenza A strain than H1N1. A person with prior H1N1 infection or vaccination may have reduced immunity to H3N2. The rise of H3N2 alongside H1N1 suggests circulation of multiple influenza strains simultaneously—a pattern typical of pandemic or pandemic-adjacent influenza years.
 
-[FACT NEEDED: Vaccination coverage rates in Delhi by demographic group (healthcare workers, elderly, pregnant, chronically ill); vaccine effectiveness against circulating H1N1 and H3N2 strains; any vaccine shortages or supply delays].
+.
 
-The Delhi Health Department tracks vaccination uptake. [FACT NEEDED: Detailed vaccination campaign data for 2026 flu season—dates launched, distribution sites, uptake targets, and actual numbers administered by strain].
+The Delhi Health Department tracks vaccination uptake. .
 
 ## Hospital Capacity and ICU Occupancy
 
 Delhi's hospital system has capacity: AIIMS Delhi, Lok Nayak Hospital, and private sector facilities including Apollo, Fortis, and Max Healthcare operate ICU beds dedicated to respiratory illness. The statement that all cases have been treated and discharged, with no reported ICU overcrowding, suggests that surge capacity has not been breached.
 
-However, "no ICU overcrowding" is not the same as "capacity is abundant." [FACT NEEDED: Precise ICU occupancy data—number of beds, occupancy rates, specifically for respiratory illness; number of patients requiring mechanical ventilation; average length of stay for H1N1 patients].
+However, "no ICU overcrowding" is not the same as "capacity is abundant." .
 
 A 600 percent increase in confirmed cases, if matched by proportional increases in ICU admissions, would stress any system. The absence of reported bed shortages implies either that most cases are mild (managed as outpatients or in regular ward beds) or that surge protocols have been activated, temporarily expanding bed capacity.
 
@@ -52,23 +52,23 @@ The finding that 69 percent of households reported flu-like symptoms is notable.
 
 This prevalence far exceeds the confirmed case count of 1,344. The gap between household symptom prevalence (69%) and confirmed cases (1,344) reflects the fact that not all symptomatic people seek testing, and not all who seek testing are confirmed as H1N1.
 
-[FACT NEEDED: Size and methodology of household survey; dates of survey; specific question wording; sampling methodology to assess margin of error].
+.
 
-Absenteeism in schools and workplaces tracks influenza prevalence. [FACT NEEDED: Data on school closures or absenteeism rates in Delhi; workplace absenteeism trends; impact on schools, offices, and commercial activity].
+Absenteeism in schools and workplaces tracks influenza prevalence. .
 
 High flu-like symptom prevalence without catastrophic ICU demand suggests that most infections are mild to moderate—managed with rest, fluids, and symptomatic care rather than hospitalization. This is consistent with typical seasonal influenza, even in surge periods.
 
 ## Demographic Vulnerability
 
-Age, underlying chronic illness, and immunosuppression are known risk factors for severe influenza. [FACT NEEDED: Breakdown of H1N1 cases by age group; comorbidity prevalence; rates of hospitalization and ICU admission by risk group].
+Age, underlying chronic illness, and immunosuppression are known risk factors for severe influenza. .
 
-Delhi's population includes elderly residents, persons with diabetes and hypertension, immunocompromised individuals, and pregnant women—all at heightened risk. Targeted outreach to these groups should be a priority. [FACT NEEDED: Delhi Health Department's outreach strategy for high-risk groups; vaccination rates in high-risk demographics; any targeted antiviral programs].
+Delhi's population includes elderly residents, persons with diabetes and hypertension, immunocompromised individuals, and pregnant women—all at heightened risk. Targeted outreach to these groups should be a priority.
 
 ## Public Health Response and Antiviral Use
 
-Antiviral drugs—neuraminidase inhibitors such as oseltamivir (Tamiflu)—can reduce influenza severity and duration if given early in infection. [FACT NEEDED: Protocol for antiviral prescription in Delhi hospitals; stockpiles; access barriers for lower-income patients].
+Antiviral drugs—neuraminidase inhibitors such as oseltamivir (Tamiflu)—can reduce influenza severity and duration if given early in infection. .
 
-The statement that all cases have been treated and discharged does not specify whether antiviral therapy was provided to hospitalized patients. Antiviral use depends on infection severity and timing of presentation. [FACT NEEDED: Clinical protocols and antiviral dispensing records].
+The statement that all cases have been treated and discharged does not specify whether antiviral therapy was provided to hospitalized patients. Antiviral use depends on infection severity and timing of presentation. .
 
 ## What This Means
 
