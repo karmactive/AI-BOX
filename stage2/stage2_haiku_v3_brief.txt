@@ -1,0 +1,57 @@
+# STAGE 2 DRAFT BRIEF — karmactive.com (8 India Stories, Aug 11 2026)
+# ATTACHED: Stage 1 research + suggestions reports (Haiku analysis + human report)
+# MODEL: Claude Haiku (fresh session)
+
+You are a senior investigative journalist (30 years experience) writing for karmactive.com.
+Factual, plain-language news. Short sentences. Issue-first hook.
+
+====================================================================
+ATTACHED STAGE 1 REPORTS (use the missing angles, expert voices, and
+key facts below to deepen each article — but ONLY use verified facts;
+never invent quotes, statistics, or sources not listed)
+====================================================================
+
+--- STAGE 1 HAIKU REPORT (priority, author, word target, angles) ---
+1. Air India A320neo (CRITICAL, Govind, 2,200-2,800w): Missing angles: hydraulic cascade root cause (design vs maintenance); VT-EXO maintenance history; pilot protocol for triple-system failure; passenger long-term medical follow-up; A320neo global fleet safety directive; why 9 warnings in 1 min. Experts: DGCA Serious Incident lead, Airbus eng, independent aero engineer (IIT), Air India Chief Pilot, aviation medical officer. Key facts: VT-EXO, 17 injured (4 crew), autopilot disconnected, both elevators faulted, all 3 hydraulics affected, stall warning, manual nose-down recovery, 300-ft loss. AAIB "Serious Incident" under ICAO Annex 13. Airbus+BEA assisting. Pilot psychoactive screening (initial "requiring further analysis").
+2. Delhi H1N1 (HIGH, Sunita, 1,400-1,600w): Missing angles: vaccination coverage differential; ICU/bed capacity; H3N2 co-circulation; monsoon temp anomaly; demographic vulnerability; absenteeism. Experts: AIIMS Epidemiology, Delhi Health vaccination lead, WHO SEARO, NCDC, infectious disease specialist. Key facts: 1,344 vs 229 (600%+ increase); 69% households flu symptoms; H3N2 rising; Pankaj Singh: all treated/discharged, no deaths; monsoon temp drops.
+3. Allahabad HC (HIGH, Govind, 1,600-1,900w): Missing angles: judicial precedent vs past HC; compensation enforcement; father's appeal; women's post-judgment safety; comparative jurisprudence; Art 25 vs 21. Experts: Justice Sandeep Jain, constitutional scholar (DU/Jamia), women's rights NGO, UP Law Minister. Key facts: 2 women (35,20) Hindu->Islam; habeas Aug 6; father + UP govt jointly pay 25L; "free to reside at any place and with any person of their own choice"; confinement since 2021; "exceptionally grave violation of constitutional rights."
+4. Santy Sharma (MEDIUM, Govind, 1,000-1,200w): Missing angles: threat content verification; Meta/YouTube moderation log; systematic threats vs reservation advocates; police FIR status; YouTube deletion reason/appeal; silencing pattern. Experts: Meta India Policy, cybercrime police, digital rights advocate, reservation expert, Puneet Vasishtha. Key facts: "Arakshan Hatao — August Kranti" at Andheri West press conf; 11-yr YouTube channel deleted; threats for reservation commentary; Bigg Boss contestant.
+5. Meta/Zuckerberg (HIGH, Govind, 1,600-1,900w): Missing angles: parliamentary panel CSAM/deepfake findings; Meta compliance roadmap; PM post deletion error vs intentional; Google/X/Twitter comparison; data localization; Zuckerberg visit signals. Experts: Parl committee chair, Meta India Policy, MeitY, ORF/Takshashila, IFF. Key facts: PM Modi Aug 2 FB post removed 5-6hrs; Meta "automated moderation"; Dubey 3-day ultimatum; Section 79 threat; CSAM/deepfake; MeitY Aug 5-6; Joel Kaplan (Meta CGAO).
+6. Peacocks UN (MEDIUM, Govind, 700-900w): Missing angles: peacock IUCN status; why UN Geneva; transport/welfare; 1981 Indira Gandhi precedent; UN sustainability; cost-benefit. Experts: Arindam Bagchi, MEA, MoEFCC, WII researcher, UNEP. Key facts: 4 blue + 1 white; Aug 7; Bagchi to Tatiana Valovaya (UNOG DG); 1981 precedent; 3-month quarantine Ariana Park; Dr Tobias Blaha (Bioparc Genève); naming competition.
+7. Jharkhand (HIGH, Rahul, 1,300-1,600w): Missing angles: specific irregularities; Mahto medical verification; JPSC-JSSC pattern; govt remedy; lathi-charge verification; job market impact. Experts: JPSC-JSSC Chairman, Jharkhand Police, student union, Mahto, labor analyst. Key facts: cancel 14th JPSC, CBI probe; Mahto 9-day hunger strike, hospitalized after lathi-charge, lost 10.5kg, glucose 53; water cannons/tear gas/lathi-charge; 19 arrested; BJP bandh Aug 11; since July 25; Adivasi-majority state.
+8. UPI Tax (HIGH, Sunita, 1,500-1,800w): Missing angles: FM amendment language; RBI position; transaction impact modeling; opposition objections; GST comparison; small business impact. Experts: Sitharaman, RBI Governor, NPCI CEO, NASSCOM, opposition spokesperson, small biz federation. Key facts: Taxation & Other Laws Amendment Bill; Section 10A PSS Act 2007; Sitharaman "UPI remains free"; "vast majority of merchant transactions would remain free"; CPI(M)/AAP walkout.
+
+====================================================================
+HARD RULES (karmactive style guide)
+====================================================================
+- NO fabricated facts. Use ONLY the key facts above. If a detail is missing, write [FACT NEEDED] — never invent.
+- NO prohibited words: tapestry, beacon, symphony, testament, melody, revolution, revolutionary, groundbreaking, ground-breaking, unveil, uncover, unearth, unleash, underscore, reminds, reminder, significant, navigate, marking, picture, imagine, isn't just, not just, more than a, not only, big gun, scoop, illustrates, signals, demonstrates, highlights, catalyzes, represents, "raises questions", discover, find.
+- NO "according to source document" phrasing in body.
+- Conclusion: passive/neutral recap only.
+- Keep analytical lines clearly hedged with "may"/"could"/"if" OR omit them.
+
+====================================================================
+OUTPUT INSTRUCTIONS
+====================================================================
+For EACH story, write a complete article hitting the assigned word target:
+1. Air India — aim 2,200-2,800 words
+2. Delhi H1N1 — aim 1,400-1,600 words
+3. Allahabad HC — aim 1,600-1,900 words
+4. Santy Sharma — aim 1,000-1,200 words
+5. Meta — aim 1,600-1,900 words
+6. Peacocks — aim 700-900 words
+7. Jharkhand — aim 1,300-1,600 words
+8. UPI — aim 1,500-1,800 words
+
+Each file: YAML frontmatter (title, author, date 2026-08-11, categories, word_count, sources[]).
+Use EXACT filenames (write fresh, do not overwrite prior v2):
+1. drafts/stage2_haiku_v3_air_india.md
+2. drafts/stage2_haiku_v3_delhi_h1n1.md
+3. drafts/stage2_haiku_v3_allahabad_hc.md
+4. drafts/stage2_haiku_v3_santy.md
+5. drafts/stage2_haiku_v3_meta.md
+6. drafts/stage2_haiku_v3_peacocks.md
+7. drafts/stage2_haiku_v3_jharkhand.md
+8. drafts/stage2_haiku_v3_upi.md
+
+NOTE ON LENGTH: If the output limit truncates a story, end with [CONTINUE] and I will request the remainder in a follow-up prompt. Write as much as possible per story before the limit. Begin with Story 1.
