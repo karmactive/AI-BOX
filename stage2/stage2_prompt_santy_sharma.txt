@@ -1,0 +1,33 @@
+STAGE 2 DRAFT — karmactive.com
+Model: Claude Haiku
+Style: Investigative journalist, issue-first, plain language
+Word target: 1,200 words
+
+# Santy Sharma Death Threat Controversy — Free Speech vs Platform Censorship
+
+Write a full Stage 2 article draft. Save it to: /c/Users/Hp/OneDrive/karmactive-pipeline/drafts/stage2_santy_sharma.md
+
+## KEY FACTS (verified)
+- Rapper/social media personality Santy Sharma (Bigg Boss contestant) received death threats after calling for reservation reforms ("Arakshan Hatao")
+- Launched "Reservation Hatao — August Kranti" campaign at press conference in Andheri West, Mumbai
+- Claims YouTube permanently deleted his 11-year-old channel after hate messages/backlash
+- YouTube has NOT publicly confirmed reason for deletion
+- Controversy ties to CJP (Chief Justice of India) remarks earlier this week that sparked backlash
+- Bigg Boss fame Puneet Vasishtha publicly supported him
+- Sharma: "Threats won't silence me. If speaking the truth comes with a price, I'm ready to pay it."
+
+## ANGLES
+- Censorship / free speech / social media platform accountability
+- Social media platform censorship: YouTube's content moderation during political controversies
+- Death threats and intimidation of public commentators on reservation reform
+- Broader pattern of silencing critics through both state and platform mechanisms
+
+## WRITING RULES
+- Issue-first hook
+- Plain language, short sentences
+- No banned words
+- No "according to source document" phrasing
+- Factual only; conclusion passive/neutral recap
+- Include YAML frontmatter: title, author (Govind), date (2026-08-11), categories, word_count, sources[]
+
+Generate the complete draft now and write it to the file.

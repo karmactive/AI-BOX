@@ -1,0 +1,37 @@
+STAGE 2 DRAFT — karmactive.com
+Model: Claude Haiku
+Style: Investigative journalist, issue-first, plain language
+Word target: 1,600 words
+
+# Jharkhand Student Protests — Recruitment Exam Irregularities
+
+Write a full Stage 2 article draft. Save it to: /c/Users/Hp/OneDrive/karmactive-pipeline/drafts/stage2_jharkhand_protests.md
+
+## KEY FACTS (verified)
+- Students protesting alleged irregularities in Jharkhand recruitment exams (JPSC-JSSC)
+- Core demands: Cancel 14th JPSC Civil Services Examination; CBI probe into exam irregularities
+- Devendra Nath Mahto (JLKM leader) on 9-day hunger strike, hospitalized after police lathi-charge
+- Lost 10.5 kg during protest; blood glucose dropped to 53
+- Police used water cannons, tear gas, lathi-charge
+- 19 people arrested so far in connection with exam irregularities
+- Protest ongoing since July 25; march to Assembly planned Aug 10-11
+- BJP announced state-wide bandh for Aug 11
+- Jharkhand has 28%+ tribal (Adivasi) population — protest led largely by Adivasi students
+- JPSC-JSSC Reforms Manch leading agitation; govt held 6 rounds of talks, no breakthrough
+- 3 JPSC members resigned amid protests
+
+## ANGLES
+- Social justice / education / government accountability / Adivasi rights
+- Systemic barriers facing Adivasi youth in competitive exams
+- Police crackdown on peaceful student protests
+- Political weaponization of student movements
+
+## WRITING RULES
+- Issue-first hook
+- Plain language, short sentences
+- No banned words
+- No "according to source document" phrasing
+- Factual only; conclusion passive/neutral recap
+- Include YAML frontmatter: title, author (Rahul), date (2026-08-11), categories, word_count, sources[]
+
+Generate the complete draft now and write it to the file.

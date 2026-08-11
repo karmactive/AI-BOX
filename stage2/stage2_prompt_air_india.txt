@@ -1,0 +1,54 @@
+STAGE 2 DRAFT — karmactive.com editorial pipeline
+Model: Claude Haiku (cost-efficient content drafting)
+Style: Investigative journalist persona, issue-first narrative, plain language
+Word target: 6,500 words (technical complexity + human impact + gov accountability)
+
+# Air India A320neo Altitude Drop — Technical Failure, Not Turbulence
+
+## CORE ISSUE
+Air India flight AI2379 (Phuket-Delhi, Aug 4) experienced a triple hydraulic system failure + flight-control anomaly, NOT turbulence. 17 injured. DGCA classified it as a "Serious Incident". Airbus being pulled into the probe.
+
+## KEY FACTS TO VERIFY
+- Aircraft: Airbus A320neo, registration VT-EXO
+- Nine technical warnings within one minute (automated post-flight report)
+- Autopilot disconnected, both elevators faulted, all three hydraulic systems affected
+- Pilot applied nose-down input manually to recover from stall warning
+- 17 injured (including 4 cabin crew with spinal/neck injuries)
+- AAIB has seized flight recorders
+- Airbus + BEA (France) assisting investigation
+- Pilot-in-command psychoactive screening requires confirmatory testing
+
+## DEEP DIVE ANGLES
+1. Why did Air India initially blame turbulence? Corporate cover-up or miscommunication?
+2. What maintenance history does VT-EXO have? DGCA records request
+3. Systemic aviation safety oversight — India's aircraft certification & maintenance audit gap
+4. Pilot screening protocol and union response (ALPA India, Captain Sam Thomas)
+5. Passenger accounts and medical follow-up
+6. Airbus A320neo hydraulic system architecture and rarity of triple failure
+7. Broader context: India's aviation safety oversight capacity
+
+## WRITING REQUIREMENTS
+- 6,500 words, justified by complexity
+- Issue-first hook
+- Plain language, short sentences
+- No banned words (tapestry, symphony, groundbreaking, etc.)
+- No source attribution phrasing in body ("according to source document")
+- Factual only — no speculation, no paraphrased quotes
+- Conclusion: passive/neutral recap only
+
+## PRIMARY SOURCES TO VERIFY
+- The Hindu: "Not turbulence: Air India A320 suffered rare flight-control event before 300-foot altitude drop"
+- India Today: "Hydraulic failure, autopilot glitch: Inside Air India flight that dropped 300 feet"
+- ANI passenger injury footage
+- Civil Aviation Ministry statements
+- DGCA Serious Incident classification
+- Airbus ICAO Annex 13 compliance statement
+
+## OUTPUT FORMAT
+Save to: drafts/stage2_air_india_hydraulic.md
+Include YAML frontmatter with title, author, date, categories, word_count, sources[]
+Write the full article body in markdown.
+
+---
+
+Generate the complete Stage 2 draft now.

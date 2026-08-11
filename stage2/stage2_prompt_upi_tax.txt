@@ -1,0 +1,33 @@
+STAGE 2 DRAFT — karmactive.com
+Model: Claude Haiku
+Style: Investigative journalist, issue-first, plain language
+Word target: 1,800 words
+
+# UPI Transaction Tax — Parliament Winter Session Drama
+
+Write a full Stage 2 article draft. Save it to: /c/Users/Hp/OneDrive/karmactive-pipeline/drafts/stage2_upi_tax.md
+
+## KEY FACTS (verified)
+- Finance Minister Nirmala Sitharaman faced opposition heat over Taxation and Other Laws (Amendment) Bill
+- Opponents claimed it would introduce charges on UPI transactions
+- FM: "UPI will remain free for consumers"; "vast majority of merchant transactions would remain free"
+- Bill amends Section 10A of the Payment and Settlement Systems Act, 2007
+- Rajya Sabha passed the Bankers' Books Evidence Bill amid opposition walkout
+- Opposition (CPI(M), AAP) accused govt of subservience to US directives
+- Debate over US-India financial data sharing implications under the new Bill
+
+## ANGLES
+- Digital rights / government policy / economic justice
+- Financial inclusion vs hidden transaction costs on digital payments
+- US-India financial data sharing implications
+- Impact on small traders and street vendors using UPI
+
+## WRITING RULES
+- Issue-first hook
+- Plain language, short sentences
+- No banned words
+- No "according to source document" phrasing
+- Factual only; conclusion passive/neutral recap
+- Include YAML frontmatter: title, author (Sunita), date (2026-08-11), categories, word_count, sources[]
+
+Generate the complete draft now and write it to the file.

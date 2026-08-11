@@ -1,0 +1,35 @@
+STAGE 2 DRAFT — karmactive.com
+Model: Claude Haiku
+Style: Investigative journalist, issue-first, plain language
+Word target: 1,800 words
+
+# Meta/Zuckerberg Apology to PM Modi — Tech Platform Accountability
+
+Write a full Stage 2 article draft. Save it to: /c/Users/Hp/OneDrive/karmactive-pipeline/drafts/stage2_meta_zuckerberg.md
+
+## KEY FACTS (verified)
+- PM Modi's Facebook post temporarily removed Aug 2, 2026, for 5-6 hours
+- Meta blamed "automated content moderation systems" (technical error)
+- Parliamentary Standing Committee on Communications & IT (chair: BJP MP Nishikant Dubey) gave Meta CEO 3-day ultimatum to issue "unqualified apology"
+- Threat: withdraw Section 79 safe harbour protection if Zuckerberg fails to apologise
+- Beyond PM post: concerns over CSAM (child sexual abuse material), deepfakes, content demeaning women
+- MeitY meetings Aug 5-6 with Meta global delegation led by Chief Global Affairs Officer Joel Kaplan
+- Meta met Electronics & IT Secretary S. Krishnan; also scheduled to meet IT Minister Ashwini Vaishnaw
+- Committee recommendation is NOT binding; final decision rests with government under IT Act
+
+## ANGLES
+- Government accountability / tech platform oversight / child protection
+- Pattern: Meta's recurring content moderation failures in India (this is not the first PM-level restriction)
+- Parliamentary panel's threat to withdraw Section 79 immunity — what legal precedent does this set?
+- Global CSAM detection failures
+- India is a critical market for Meta; regulatory pressure mounting
+
+## WRITING RULES
+- Issue-first hook
+- Plain language, short sentences
+- No banned words (tapestry, symphony, groundbreaking, beacon, etc.)
+- No "according to source document" phrasing
+- Factual only; conclusion passive/neutral recap
+- Include YAML frontmatter: title, author (Govind), date (2026-08-11), categories, word_count, sources[]
+
+Generate the complete draft now and write it to the file.

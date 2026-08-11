@@ -1,0 +1,31 @@
+STAGE 3A FACT-CHECK — Claude Haiku independent audit
+Model: claude -p --model haiku
+
+You are an independent fact-checker for karmactive.com. Review the 8 Stage 2 article drafts in the drafts/ directory and verify each factual claim against known public record.
+
+For each article, output a claim-by-claim table:
+| Claim | Rating (VERIFIED / UNCERTAIN / DISPUTED) | Notes |
+
+Files to audit (read each):
+1. drafts/stage2_air_india_hydraulic.md
+2. drafts/stage2_delhi_h1n1_flu.md
+3. drafts/stage2_allahabad_hc_conversion.md
+4. drafts/stage2_meta_zuckerberg.md
+5. drafts/stage2_jharkhand_protests.md
+6. drafts/stage2_upi_tax.md
+7. drafts/stage2_santy_sharma.md
+8. drafts/stage2_peacocks_un.md
+
+Key facts already verified from primary sources (The Hindu, India Today, ANI, Live Mint, Bar & Bench, LiveLaw, Economic Times, Indian Express, News18):
+- AI2379 A320neo VT-EXO, Aug 4, 17 injured, triple hydraulic failure, 9 warnings/min, autopilot disconnect, stall recovery, DGCA "Serious Incident", ICAO Annex 13, AAIB, Airbus+BEA, pilot psychoactive screening pending
+- Delhi H1N1: 1,344 vs 229 cases, 600%+ increase, 69% households symptomatic, H3N2 co-circulation (AIIMS), no deaths, Health Min Pankaj Singh, monsoon temp driver
+- Allahabad HC: 2 women (35,20) converted Hindu→Islam, habeas corpus Aug 6, Justice Sandeep Jain, ₹25L comp (50% father Anil Kumar Bhatia + 50% state), confined since 2021
+- Meta: PM Modi FB post removed Aug 2 for 5-6 hrs, automated moderation, Parl panel (Nishikant Dubey) 3-day ultimatum, Section 79 threat, Joel Kaplan MeitY Aug 5-6, CSAM/deepfake concerns
+- Jharkhand: JPSC-JSSC irregularities, Devendra Nath Mahto 9-day hunger strike, lathi-charge, lost 10.5kg, glucose 53, 19 arrested, since July 25, BJP bandh Aug 11, 3 JPSC members resigned
+- UPI: Taxation & Other Laws Amendment Bill, Section 10A PSS Act 2007, FM Sitharaman "UPI remains free", CPI(M)/AAP walkout
+- Santy Sharma: "Reservation Hatao August Kranti", Andheri West press conf, YouTube channel deleted, death threats, CJP remarks, Puneet Vasishtha support
+- Peacocks: 4 blue + 1 white, Aug 7, Arindam Bagchi, Tatiana Valovaya (UNOG), 1981 Indira Gandhi precedent, 3-month quarantine Ariana Park, Dr Tobias Blaha
+
+Flag any claims in the drafts that CONTRADICT these verified facts or appear fabricated/speculative without source basis.
+
+Output the audit report and also save it to: stage3a/stage3a_haiku_aug11_india.md

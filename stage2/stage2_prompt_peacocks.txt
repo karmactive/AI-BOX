@@ -1,0 +1,34 @@
+STAGE 2 DRAFT — karmactive.com
+Model: Claude Haiku
+Style: Investigative journalist, issue-first, plain language
+Word target: 900 words
+
+# India Donates 5 Peacocks to UN Office in Geneva
+
+Write a full Stage 2 article draft. Save it to: /c/Users/Hp/OneDrive/karmactive-pipeline/drafts/stage2_peacocks_un.md
+
+## KEY FACTS (verified)
+- India donated five young peacocks (4 blue peafowl, 1 white-feathered male) to UN Office at Geneva (UNOG)
+- Ceremony held Aug 7, 2026, by India's Permanent Representative Arindam Bagchi
+- Received by Tatiana Valovaya, Director-General of UN Geneva (UNOG)
+- Revives tradition dating to 1981 when PM Indira Gandhi sent a breeding pair from Delhi Zoo
+- Birds in enclosed habitat for 3 months before roaming freely in Ariana Park (46-hectare UN grounds)
+- Dr Tobias Blaha (Bioparc Genève vet) overseeing care
+- UNOG to launch naming competition
+- Symbol: "grace, beauty, resilience" — India's biodiversity commitment
+
+## ANGLES
+- Soft power / environment / biodiversity / international relations
+- Soft power projection through biodiversity diplomacy
+- Environmental symbolism at UN vs India's domestic conservation record
+- Cost and logistics of international wildlife donation
+
+## WRITING RULES
+- Issue-first hook
+- Plain language, short sentences
+- No banned words
+- No "according to source document" phrasing
+- Factual only; conclusion passive/neutral recap
+- Include YAML frontmatter: title, author (Govind), date (2026-08-11), categories, word_count, sources[]
+
+Generate the complete draft now and write it to the file.
