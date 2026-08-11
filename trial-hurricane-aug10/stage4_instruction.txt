@@ -1,0 +1,11 @@
+You are an editor. Apply ONLY the corrections listed below to the news article in stage2_draft.md. Edit the file IN PLACE using the Edit tool. Do not research, do not fact-check, do not rewrite anything not listed.
+
+Corrections from fact-check report (stage3a_factcheck.md):
+1. Change "200 AM EDT outlook on Monday, August 10" -> "800 AM EDT outlook on Monday, August 10" (the NHC Tropical Weather Outlook with these specifics is the 800 AM EDT issuance).
+2. For the Bermuda-area trough, change "is moving quickly westward" -> "is moving quickly eastward, well to the north of Bermuda" (NHC states it moves eastward, north of Bermuda).
+3. Norcross quote: the substance is verified (Cabo Verde system most likely to develop, no threat to land). Keep the quote only if the wording is as written; if unsure, keep it but ensure no fabricated wording. Do not alter the quote otherwise.
+
+Rules:
+- Use Read on stage2_draft.md first, then Edit only the two text changes above.
+- Change nothing else (tone, structure, other numbers all stay).
+- When done, print a one-line summary of what you changed.

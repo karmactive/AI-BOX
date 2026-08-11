@@ -1,0 +1,39 @@
+# Stage 4A & 5 Task — Sitemap-Guided SEO Formatting
+
+## Source Data
+- Stage 3B file: stage3b_stories_corrected.md
+- Karmactive sitemap: C:\Users\Hp\Desktop\karmactive.com XML Sitemap.xml
+- Live sitemap example: https://www.karmactive.com/post-sitemap8.xml
+
+## Task Instructions
+Using the sitemap XML structure and SEO elements:
+
+1. Read stage3b_stories_corrected.md
+2. Extract/verify the following for EACH article:
+   - COMBINED TITLE (from article headline)
+   - META DESCRIPTION (200 characters max, includes keywords)
+   - CATEGORIES (from file only: Environment, Health, UK, Business/Policy, Disaster)
+   - TAGS (2-5 from article content)
+   - FOCUS KEYPHRASE (4 words)
+   - SEO SLUG (derived from title)
+3. Convert external links to anchor text in body copy
+4. Format as valid XML using Yoast sitemap schema
+5. Save as: stage4a_stage5_final_draft.xml
+
+## Example Format (from live karmactive sitemap):
+```xml
+<url>
+    <loc>https://www.karmactive.com/sample-post-slug/</loc>
+    <lastmod>2026-08-11T00:00:00+00:00</lastmod>
+    <image:image>
+        <image:loc>https://www.karmactive.com/wp-content/uploads/[image-path].webp</image:loc>
+    </image:image>
+</url>
+```
+
+## Output Requirements:
+- Valid XML structure
+- One entry per article (5 total)
+- SEO metadata included
+- Anchor-text linked body content
+- No new categories beyond what's in source
