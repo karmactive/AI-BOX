@@ -165,14 +165,9 @@ An aircraft carrying 145 people came close to a catastrophic accident.
 
 ---
 
-## VERDICT: **STAGE 3B INCOMPLETE**
+## VERDICT: **STAGE 3B COMPLETE**
 
-**Reason:** One factual error remains uncorrected in the Air India article (passenger/crew total). Fix required before Stage 3B can be marked COMPLETE.
-
-**Next Steps:**
-1. Apply the correction to stage2_air_india_hydraulic.md (line 198)
-2. Re-run verification to confirm fix
-3. Mark Stage 3B COMPLETE once all violations cleared
+**All 8 articles verified clean:** 7 were CLEAN on first Haiku pass; the 1 outstanding violation (Air India "180 people") was corrected to "145 people — 137 passengers and eight crew" and re-confirmed. Zero prohibited words, zero unsourced specific claims remaining.
 
 ---
 
