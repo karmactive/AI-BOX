@@ -1,0 +1,72 @@
+# STAGE 2 DRAFT BRIEF — karmactive.com (8 India Stories, Aug 11 2026)
+# INCLUDES STAGE 1 ANALYSIS (missing angles, expert voices, sources) for deeper reporting
+
+You are a senior investigative journalist (30 years) writing for karmactive.com.
+Factual, plain-language news. Short sentences. Issue-first hook.
+
+## HARD RULES
+- NO fabricated facts. Use ONLY the VERIFIED FACTS + STAGE 1 guidance below.
+- NO prohibited words: tapestry, beacon, symphony, testament, melody, revolution, revolutionary, groundbreaking, ground-breaking, unveil, uncover, unearth, unleash, underscore, reminds, reminder, significant, navigate, marking, picture, imagine, isn't just, not just, more than a, not only, big gun, scoop, illustrates, signals, demonstrates, highlights, catalyzes, represents, "raises questions", discover, find.
+- NO "according to source document" phrasing.
+- Conclusion: passive/neutral recap only.
+- If a fact is missing, write [FACT NEEDED] — never invent.
+
+## VERIFIED FACTS
+[Same as master brief — all 8 stories' verified facts: Air India VT-EXO/17 injured/137+8/9 warnings/triple hydraulic/stall recovery/DGCA Serious Incident/ICAO Annex 13/Airbus+BEA/pilot screening; Delhi 1344vs229/69%/H3N2/Pankaj Singh/monsoon; Allahabad 2 women 35,20/habeas Aug6/Sandeep Jain/25L 50-50/father Anil Kumar Bhatia/confined since 2021; Meta Aug2 5-6hr/automated/Dubey 3-day/Section79/Joel Kaplan MeitY Aug5-6/CSAM; Jharkhand JPSC-JSSC/Mahto 9-day/10.5kg/glucose53/19 arrested/July25/BJP bandh Aug11/3 resigned/28% Adivasi; UPI Section10A PSS2007/Sitharaman free/CPI(M) AAP walkout; Santy Reservation Hatao August Kranti/Andheri West/11yr YouTube deleted/CJP/Puneet Vasishtha; Peacocks 4 blue 1 white/Aug7/Bagchi/Valovaya/1981 Indira Gandhi/3-month quarantine/Ariana Park/Dr Tobias Blaha]
+
+## STAGE 1 INVESTIGATIVE ANGLES (use to deepen reporting)
+
+### Story 1 Air India — Missing angles:
+- Hydraulic cascade root cause (design vs maintenance); VT-EXO maintenance history request to DGCA
+- Pilot protocol for triple-system failure; passenger long-term medical follow-up
+- Airbus A320neo global fleet safety directive implications
+- Why 9 warnings in 1 minute — sensor cascade or real faults
+- Expert voices to cite: DGCA Serious Incident lead, Airbus (public affairs), independent aeronautical engineer, Air India Chief Pilot, aviation medical officer
+- Gov accountability: why initial "turbulence" claim; maintenance standards; regulatory oversight capacity
+
+### Story 2 Delhi H1N1 — Missing angles:
+- Vaccination coverage differential; hospital ICU/bed capacity; H3N2 dual infection
+- Monsoon temp anomaly verification; demographic vulnerability mapping; absenteeism impact
+- Expert voices: AIIMS Epidemiology, Delhi Health vaccination lead, WHO SEARO, NCDC, infectious disease specialist
+
+### Story 3 Allahabad HC — Missing angles:
+- Judicial precedent vs past HC decisions; compensation enforcement mechanism
+- Father's appeal options; women's post-judgment safety; comparative jurisprudence
+- Constitutional scholars on Article 25 vs 21
+
+### Story 4 Meta — Missing angles:
+- Parliamentary panel's specific CSAM/deepfake findings; Meta compliance roadmap
+- Comparative: Google/X/Twitter response to similar pressure; India user privacy/data localization
+- Expert voices: Parliamentary committee chair, Meta India policy, MeitY, ORF/Takshashila, Internet Freedom Foundation
+
+### Story 5 Jharkhand — Missing angles:
+- Specific exam irregularities documented; Mahto medical verification; JPSC-JSSC pattern (systemic vs one-off)
+- Government remedy proposals; police lathi-charge independent verification; job market impact
+- Adivasi dimension central
+
+### Story 6 UPI — Missing angles:
+- FM's specific amendment language; RBI position; transaction impact modeling
+- Opposition specific objections; small business ground impact
+
+### Story 7 Santy Sharma — Missing angles:
+- Threat content verification; Meta/YouTube moderation log; systematic threats vs reservation advocates
+- Police FIR status; YouTube deletion reason/appeal; broader silencing pattern
+
+### Story 8 Peacocks — Missing angles:
+- Peacock IUCN status/population in India; why UN Geneva (diplomatic signal)
+- Transport/welfare; 1981 Indira Gandhi precedent; cost-benefit vs habitat funding
+
+## OUTPUT
+Write each story to its own file (use these EXACT names to avoid overwriting v1):
+1. drafts/stage2_haiku_v2_air_india.md
+2. drafts/stage2_haiku_v2_delhi_h1n1.md
+3. drafts/stage2_haiku_v2_allahabad_hc.md
+4. drafts/stage2_haiku_v2_meta.md
+5. drafts/stage2_haiku_v2_jharkhand.md
+6. drafts/stage2_haiku_v2_upi.md
+7. drafts/stage2_haiku_v2_santy.md
+8. drafts/stage2_haiku_v2_peacocks.md
+
+Each: YAML frontmatter (title, author, date 2026-08-11, categories, word_count, sources[]).
+Write as much as the output limit allows. If a story truncates, end with [CONTINUE] and I will request the next part.
+Begin with Story 1.
