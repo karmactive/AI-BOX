@@ -2,9 +2,13 @@
 title: 11-year-old YouTube creator silenced — Santy Sharma, death threats, platform moderation, and chilling effect on free speech
 author: Karmactive Editorial
 date: 2026-08-11
-categories: [free-speech, child-safety, social-media, platform-moderation]
 word_count: 1445
 sources: [YouTube moderation logs, police FIR reports, child protection advocates, platform transparency reports, Puneet Vasishtha (investigator/officer)]
+categories: ["India", "Social Media", "Politics"]
+tags: ["Santy Sharma", "reservation", "YouTube", "free speech", "death threats"]
+focus_keyphrase: "Santy Sharma death threats"
+seo_slug: "santy-sharma-death-threats"
+meta_description: "Rapper Santy Sharma received death threats after calling for reservation reform; his YouTube channel was deleted. Free speech debate."
 ---
 
 ## An 11-year-old activist deleted from YouTube: Death threats, platform silence, and the price of dissent

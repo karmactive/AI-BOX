@@ -2,9 +2,13 @@
 title: India sends five peacocks to UN Geneva — diplomatic gesture, animal welfare questions, and 1981 precedent
 author: Karmactive Editorial
 date: 2026-08-11
-categories: [diplomacy, wildlife, united-nations, india-soft-power]
 word_count: 1523
 sources: [Ministry of External Affairs, UN Secretariat, Convention on International Trade in Endangered Species (CITES), Indian veterinary authorities, Dr Tobias Blaha (wildlife medicine)]
+categories: ["Environment", "India", "International"]
+tags: ["peacocks", "UN Geneva", "biodiversity", "soft power", "wildlife"]
+focus_keyphrase: "India peacocks UN Geneva"
+seo_slug: "india-peacocks-un-geneva"
+meta_description: "India donated five peacocks to UN Office at Geneva, reviving a 1981 tradition. They quarantine three months in Ariana Park."
 ---
 
 ## Five peacocks to UN Geneva: India's feathered diplomacy, welfare concerns, and the 1981 echo

@@ -2,9 +2,13 @@
 title: Delhi H1N1 outbreak tracking — monsoon surge, vaccination gaps, H3N2 co-circulating
 author: Karmactive Editorial
 date: 2026-08-11
-categories: [public-health, delhi, outbreak, pandemic-response]
 word_count: 1623
 sources: [Delhi Health Department, AIIMS epidemiology unit, NCDC, WHO SEARO, hospital admissions data, weather service]
+categories: ["Health", "India"]
+tags: ["H1N1", "Delhi flu", "swine flu", "monsoon health"]
+focus_keyphrase: "Delhi H1N1 flu surge"
+seo_slug: "delhi-h1n1-flu-surge"
+meta_description: "Delhi reports 1,344 H1N1 cases this season versus 229 last year, a 600% rise. AIIMS confirms H3N2 also circulating."
 ---
 
 ## Delhi H1N1 spike: 1,344 cases this season versus 229 last year

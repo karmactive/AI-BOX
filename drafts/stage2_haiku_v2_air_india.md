@@ -2,9 +2,13 @@
 title: Air India A320neo triple hydraulic failure leaves 17 injured; DGCA launches serious incident probe
 author: Karmactive Editorial
 date: 2026-08-11
-categories: [aviation, safety, incident-response, india]
 word_count: 1847
 sources: [DGCA Serious Incident Report, Airbus A320 family data, BEA technical analysis, Air India official statements, ICAO Annex 13, aviation safety databases]
+categories: ["Aviation", "India", "Disaster"]
+tags: ["Air India", "A320neo", "VT-EXO", "DGCA", "aviation safety"]
+focus_keyphrase: "Air India hydraulic failure"
+seo_slug: "air-india-a320neo-hydraulic-failure"
+meta_description: "Air India flight AI2379 suffered triple hydraulic failure over Phuket-Delhi route, injuring 17. DGCA classified it a Serious Incident."
 ---
 
 ## Air India VT-EXO: A cascade of warnings and the pilot's recovery protocol

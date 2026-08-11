@@ -2,9 +2,13 @@
 title: UPI fee debate escalates — Finance Minister Sitharaman, opposition walkout, payment system at inflection point
 author: Karmactive Editorial
 date: 2026-08-11
-categories: [fintech, digital-payments, regulation, parliament]
 word_count: 1456
 sources: [Finance Ministry statements, RBI circulars, Payment System Regulation 2007, parliamentary records, UPI transaction data]
+categories: ["Business", "India", "Technology"]
+tags: ["UPI", "Sitharaman", "digital payments", "taxation bill"]
+focus_keyphrase: "UPI transaction tax"
+seo_slug: "upi-transaction-tax"
+meta_description: "FM Sitharaman says UPI will remain free as Taxation and Other Laws Amendment Bill amends Section 10A of PSS Act 2007."
 ---
 
 ## UPI's free model in question: Opposition walkout over fee proposal

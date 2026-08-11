@@ -2,9 +2,13 @@
 title: Allahabad HC orders relief for two women confined since 2021 — habeas petition success and enforcement questions
 author: Karmactive Editorial
 date: 2026-08-11
-categories: [law, human-rights, women-safety, custody-dispute]
 word_count: 1456
 sources: [Allahabad High Court judgment, habeas corpus petitions, Justice Sandeep Jain, court records, Constitution of India (Articles 21, 25)]
+categories: ["Law", "Human Rights", "India"]
+tags: ["Allahabad High Court", "religious freedom", "habeas corpus", "women rights"]
+focus_keyphrase: "Allahabad HC religious conversion"
+seo_slug: "allahabad-hc-religious-conversion"
+meta_description: "Allahabad High Court freed two women who converted to Islam and ordered 25 lakh compensation from father and state."
 ---
 
 ## Allahabad High Court: Two women freed after five years of confinement; habeas writ issued

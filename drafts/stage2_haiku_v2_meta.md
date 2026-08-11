@@ -2,9 +2,13 @@
 title: Meta faces India government pressure on CSAM, data localization — parliamentary scrutiny and compliance timeline
 author: Karmactive Editorial
 date: 2026-08-11
-categories: [tech-policy, social-media, child-safety, india-regulation]
 word_count: 1589
 sources: [Meta India statements, MeitY press releases, Parliamentary committee records, Joel Kaplan (Meta Global Affairs VP), Section 79 IT Act 2000, intermediary guidelines]
+categories: ["Technology", "India", "Government"]
+tags: ["Meta", "Zuckerberg", "PM Modi", "Section 79", "CSAM"]
+focus_keyphrase: "Meta Zuckerberg apology India"
+seo_slug: "meta-zuckerberg-apology-india"
+meta_description: "Meta CEO Zuckerberg apologised to India over content errors after PM Modi post was removed and parliamentary panel threatened Section 79."
 ---
 
 ## Meta under scrutiny: CSAM compliance, automated systems, and Section 79 liability

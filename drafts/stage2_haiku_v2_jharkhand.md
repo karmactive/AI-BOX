@@ -2,9 +2,13 @@
 title: Jharkhand exam fraud allegations — JPSC-JSSC irregularities, BJP bandh, Adivasi job reservation crisis
 author: Karmactive Editorial
 date: 2026-08-11
-categories: [education, exam-fraud, public-sector-jobs, adivasi-rights]
 word_count: 1687
 sources: [Jharkhand Public Service Commission, Jharkhand Staff Selection Commission, police reports, BJP statements, Adivasi civil society groups, news reports]
+categories: ["India", "Politics", "Social Justice"]
+tags: ["Jharkhand", "exam scam", "student protest", "Adivasi", "JPSC"]
+focus_keyphrase: "Jharkhand exam protest"
+seo_slug: "jharkhand-exam-protest"
+meta_description: "Jharkhand students protest JPSC-JSSC exam irregularities; leader Devendra Mahto hospitalised after lathi-charge on hunger strike."
 ---
 
 ## Jharkhand public exams under fire: Irregularities, arrests, and political fallout
