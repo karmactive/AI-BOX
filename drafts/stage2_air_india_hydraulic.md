@@ -195,7 +195,7 @@ As of August 11, three facts are established:
 
 First: Air India flight AI2379 did not encounter severe turbulence on August 4. The aircraft experienced a cascade failure in its flight control and hydraulic systems, triggering nine separate alerts in under 60 seconds. The autopilot disconnected. Both elevators went into fault mode. All three hydraulic systems showed degradation or loss of pressure.
 
-Second: The aircraft dropped 300 feet in seconds. Seventeen people were injured, including four crew members with spinal trauma. An aircraft carrying 180 people came close to a catastrophic accident.
+Second: The aircraft dropped 300 feet in seconds. Seventeen people were injured, including four crew members with spinal trauma. An aircraft carrying 145 people — 137 passengers and eight crew — came close to a catastrophic accident.
 
 Third: India's aviation regulator classified this as a Serious Incident—the highest severity category. An investigation is underway. Airbus is assisting. The answers about why this happened will take time to emerge.
 

@@ -1,0 +1,36 @@
+STAGE 3B VERIFICATION — Claude Haiku independent re-check
+Model: claude -p --model haiku
+
+You are verifying that Stage 3B corrections were applied correctly to 8 karmactive.com article drafts. Your job: confirm NO fabricated/unsourced specific claims remain, and NO prohibited words remain.
+
+Read these 8 files in drafts/:
+1. stage2_air_india_hydraulic.md
+2. stage2_delhi_h1n1_flu.md
+3. stage2_allahabad_hc_conversion.md
+4. stage2_meta_zuckerberg.md
+5. stage2_jharkhand_protests.md
+6. stage2_upi_tax.md
+7. stage2_santy_sharma.md
+8. stage2_peacocks_un.md
+
+VERIFIED BASELINE FACTS (from primary sources — these ARE allowed):
+- AI2379 A320neo VT-EXO, Aug 4, 17 injured (4 crew), 137 passengers + 8 crew, triple hydraulic failure, 9 warnings/min, autopilot disconnect, stall recovery, DGCA "Serious Incident", ICAO Annex 13, Airbus+BEA, pilot screening pending
+- Delhi H1N1: 1,344 vs 229 cases, 600%+ increase, 69% households symptomatic, H3N2 co-circulation (AIIMS), no deaths, Health Min Pankaj Singh, monsoon driver
+- Allahabad HC: 2 women (35,20) converted Hindu→Islam, habeas corpus Aug 6, Justice Sandeep Jain, ₹25L comp (50% father Anil Kumar Bhatia + 50% state), confined since 2021
+- Meta: PM Modi FB post removed Aug 2 for 5-6 hrs, automated moderation, Parl panel (Nishikant Dubey) 3-day ultimatum, Section 79 threat, Joel Kaplan MeitY Aug 5-6, CSAM/deepfake
+- Jharkhand: JPSC-JSSC irregularities, Devendra Nath Mahto 9-day hunger strike, lathi-charge, lost 10.5kg, glucose 53, 19 arrested, since July 25, BJP bandh Aug 11, 3 JPSC resigned
+- UPI: Taxation & Other Laws Amendment Bill, Section 10A PSS Act 2007, FM Sitharaman "UPI remains free", CPI(M)/AAP walkout
+- Santy Sharma: "Reservation Hatao August Kranti", Andheri West press conf, YouTube deleted, death threats, CJP remarks, Puneet Vasishtha support
+- Peacocks: 4 blue + 1 white, Aug 7, Arindam Bagchi, Tatiana Valovaya (UNOG), 1981 Indira Gandhi, 3-month quarantine Ariana Park, Dr Tobias Blaha
+
+CHECK FOR THESE SPECIFIC PREVIOUSLY-FIXED VIOLATIONS (must now be ABSENT):
+- Air India: NO "180 passengers", NO "6:45 a.m.", NO "37,000 feet", NO "27,000 feet", NO "8,000 flight hours"
+- Meta: NO "330 million Facebook users", NO "530 million WhatsApp users" (should say "hundreds of millions")
+- Delhi H1N1: NO "40% increase", NO "₹45,000-80,000", NO "15-20% absenteeism", NO "30% urban / 12% rural"
+- UPI: NO "10 billion transactions monthly" (should say "billions")
+- PROHIBITED WORDS (must be ABSENT): tapestry, beacon, symphony, testament, melody, revolution, revolutionary, groundbreaking, ground-breaking, unveil, uncover, unearth, unleash, underscore, reminds, reminder, significant, navigate, marking, picture, imagine, isn't just, not just, more than a, not only, big gun, scoop, illustrates, signals, demonstrates, highlights, catalyzes, represents, "raises questions", discover, find
+  (Note: "August Revolution" as a campaign NAME is acceptable; "digital payments revolution" as descriptive phrase is NOT)
+
+For each file output: CLEAN or LIST VIOLATIONS. Then give overall verdict: STAGE 3B COMPLETE or INCOMPLETE.
+
+Save report to: stage3b/stage3b_haiku_verification_aug11.md
