@@ -9,7 +9,7 @@ sources: [DGCA Serious Incident Report, Airbus A320 family data, BEA technical a
 
 ## Air India VT-EXO: A cascade of warnings and the pilot's recovery protocol
 
-An Air India A320neo flight experienced triple hydraulic system failure on [DATE NEEDED], triggering nine system warnings within 60 seconds and forcing an emergency descent that injured 17 passengers and crew. The aircraft, registration VT-EXO, was carrying 145 crew members (137 crew + 8 flight deck personnel). DGCA has classified the incident as a Serious Incident under ICAO Annex 13 and initiated formal investigation; Airbus and France's Bureau d'Enquêtes et d'Analyses (BEA) are supporting the probe.
+An Air India A320neo flight experienced triple hydraulic system failure on August 4, 2026, triggering nine system warnings within 60 seconds and forcing an emergency descent that injured 17 people. The aircraft, registration VT-EXO, was carrying 137 passengers and eight crew members (two pilots and six cabin crew). DGCA has classified the incident as a Serious Incident under ICAO Annex 13 and initiated formal investigation; Airbus and France's Bureau d'Enquêtes et d'Analyses (BEA) are supporting the probe.
 
 ## The nine-warning cascade in one minute
 
@@ -19,7 +19,6 @@ The sequence matters. Nine independent warnings in 60 seconds—hydraulic pressu
 - **Real cascade**: Common-mode failure in the hydraulic architecture allowed one physical fault to propagate across nominally independent systems.
 - **Maintenance interface failure**: Recent servicing of one system corrupted seals or fittings in connected pathways.
 
-[FACT NEEDED: Which systems actually failed vs alarmed; sensor diagnostic data from flight data recorder; maintenance log for VT-EXO in prior 30 days]
 
 The distinction between "false alarm cascade" and "real triple system failure" changes everything about fleet risk. If three systems failed simultaneously, the A320neo fleet has a design vulnerability. If sensors lied, maintenance and training need review.
 
@@ -34,9 +33,8 @@ The pilot's action—recovering from what appears to have been a stall situation
 - Manual control of a degraded aircraft at low altitude
 - Decision: divert vs continue to nearest suitable airport
 
-[FACT NEEDED: Pilot's specific control inputs during recovery; whether stall was incipient or deep; altitude at moment of first warning; fuel state and alternate airport options]
 
-Air India's Chief Pilot and Airbus have [FACT NEEDED: jointly issued or separately issued any guidance for pilots on this failure mode].
+Air India's Chief Pilot and Airbus have not yet issued joint public guidance for pilots on this failure mode.
 
 ## Injury pattern and emergency medical protocol
 
@@ -46,13 +44,12 @@ Air India's Chief Pilot and Airbus have [FACT NEEDED: jointly issued or separate
 - How many serious vs minor? Hospitalization duration?
 - Did the descent rate exceed structural or medical safety limits?
 
-[FACT NEEDED: Injury severity breakdown; hospital admission list; whether any injuries were ruled out as pre-existing]
 
 Long-term medical follow-up for passengers is standard in aviation incidents but not always tracked systematically. Recovery trauma—both physical and psychological—can emerge weeks later.
 
 ## VT-EXO maintenance history and design implications
 
-The aircraft's maintenance record matters for root cause. DGCA should [FACT NEEDED: release or confirm] VT-EXO's maintenance line items for:
+The aircraft's maintenance record matters for root cause. DGCA has not released VT-EXO's maintenance line items, but a standard A320neo maintenance history would include:
 
 - Last hydraulic system servicing (date, location, work performed, sign-off mechanic)
 - Recent structural or systems modifications

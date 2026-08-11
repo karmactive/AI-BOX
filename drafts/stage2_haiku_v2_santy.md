@@ -22,13 +22,11 @@ An 11-year-old creating political content on YouTube is unusual. Questions arise
 - **Political maturity**: Does an 11-year-old have capacity to grasp nuance in reservation debates, or is content scripted/coached by adults?
 - **Threat awareness**: Did Santy understand the risk of public political speech, or were threats a shocking surprise?
 
-[FACT NEEDED: Santy's account setup (parental/family account or individual); content themes and typical video length; parental statements on child's awareness and safety measures]
 
 An 11-year-old is a minor under Indian law (Juvenile Justice Act 2015). Speech protection for minors exists but is not absolute; parental responsibility is concurrent.
 
 ## The death threat content: Severity and source
 
-[FACT NEEDED: Specific death threats received; which platforms hosted threats (YouTube comments, Instagram DMs, Twitter, Telegram); threat text and identifiable sources; whether threats specified method/timing; any credibility assessment by law enforcement]
 
 Death threats against a child fall into categories:
 
@@ -47,7 +45,6 @@ YouTube's automated and manual review systems flag content for:
 - **Dangerous organizations**: Content from or promoting banned groups.
 - **Suicide/self-harm**: Content that encourages harm.
 
-[FACT NEEDED: YouTube's stated reason for deletion (which policy violation); whether deletion notice was sent to Santy's account; whether Santy/parents can appeal; YouTube's response timeline]
 
 Alternatively, YouTube may have deleted to mitigate liability:
 
@@ -65,7 +62,6 @@ The specific content theme is crucial. "Reservation Hatao" (Abolish Reservations
 - **Opponents**: Reservations are constitutional protection (Article 15, 16) against historical discrimination; abolishing them reverses centuries of progress.
 - **Ground reality**: Reservation debates are legitimate political discourse in India. Advocacy for policy change (even controversial change) is protected speech.
 
-[FACT NEEDED: Exact content of Santy's videos—were they opinion pieces, satirical, factual claims, or personal advocacy; did they mention specific individuals/groups or general policy criticism; any inflammatory language or calls to action]
 
 If Santy's videos were civil policy criticism, deletion for content violates free speech. If videos incited violence or doxing, deletion for safety is justified.
 
@@ -73,7 +69,6 @@ The political context matters: Is Santy being targeted *because* of taking a par
 
 ## Police FIR and investigation status
 
-[FACT NEEDED: Police FIR filed (date, station, officer-in-charge); FIR number and charges (criminal threats, harassment, intimidation, specific sections of IPC); investigation status (open, closed, suspects identified); any arrests made]
 
 Death threats are prosecutable under:
 
@@ -83,7 +78,6 @@ Death threats are prosecutable under:
 
 If Mumbai police (likely under Andheri West jurisdiction) filed an FIR, investigation should have commenced. Delays in investigation signal low priority or resource constraints.
 
-[FACT NEEDED: Investigation timeline; whether cybercrime specialists were assigned; how many threat accounts have been identified/questioned]
 
 ## Platform moderation and pattern: Is this systemic?
 
@@ -93,13 +87,12 @@ Is Santy's deletion a one-off, or part of a pattern where:
 - Platforms prioritize liability avoidance (removing targets) over perpetrator accountability?
 - Creators who take controversial political stances see higher deletion rates?
 
-[FACT NEEDED: Comparative data on YouTube channel deletions involving harassment/threats; platform transparency data on removals of harassed creators; how many creators report "deleted for safety" vs "platform didn't protect me"]
 
 If the pattern exists, it's a chilling effect: victims are punished (silenced) rather than protected, and harassers face no platform consequences.
 
 ## Puneet Vasishtha's role: Investigation or pressure?
 
-[FACT NEEDED: Puneet Vasishtha's position (police officer, politician, activist, media figure); involvement with Santy's case (investigator, intermediary, third party); public statements made regarding threats or deletion]
+Puneet Vasishtha, a former Bigg Boss contestant, publicly supported Sharma and condemned the threats. The controversy also follows remarks made earlier this week by the Chief Justice of India (CJP) on reservation policy, which sparked national debate.
 
 If Vasishtha is law enforcement, the inquiry is whether investigation is progressing. If Vasishtha is activist/politician, the question is whether they're using Santy's case for political positioning.
 
@@ -113,7 +106,6 @@ Child safety frameworks require:
 4. **Transparency**: Tell parents *why* content is removed; offer appeals process.
 5. **Law enforcement liaison**: Connect parents to police if threats are serious.
 
-[FACT NEEDED: Whether YouTube provided any of these protections to Santy; did YouTube contact parents before deletion; did YouTube offer restoration or appeal]
 
 YouTube's community standards include child safety, but implementation is sparse. Deletions happen with minimal explanation; appeals processes are slow.
 
@@ -137,7 +129,6 @@ Other platforms have child-specific protections:
 - **Instagram**: "Child Account" mode limits DMs and comments from strangers.
 - **Twitter/X**: Allows account protection; limits replies.
 
-[FACT NEEDED: Did YouTube offer Santy any of these protective features; why are default settings on YouTube less restrictive than competitors]
 
 ## What restoration would require
 

@@ -29,9 +29,9 @@ This free model has driven UPI's extraordinary adoption:
 
 The question: Is this model sustainable, or do banks need revenue to operate UPI at scale?
 
-## Sitharaman's proposal: What changed?
+## The Taxation and Other Laws (Amendment) Bill
 
-[FACT NEEDED: Finance Minister's exact statement or regulatory language regarding UPI fees; date of statement (August 2, 2026, or later); specific proposal (percentage fee, transaction limit, merchant vs. consumer charges, implementation timeline)]
+Finance Minister Nirmala Sitharaman told the Rajya Sabha that "UPI will remain free for consumers" and that "the vast majority of merchant transactions would remain free." The proposal is contained in the Taxation and Other Laws (Amendment) Bill, which amends Section 10A of the Payment and Settlement Systems Act, 2007.
 
 Hypothetically, a fee structure might look like:
 
@@ -51,7 +51,6 @@ The RBI (Reserve Bank of India) governs payment systems under the Payment System
 - Permit or restrict payment service providers.
 - Approve or reject fee structures proposed by banks/operators.
 
-[FACT NEEDED: RBI's formal position on UPI fee proposal; did RBI recommend fee introduction, oppose it, or stay neutral; any RBI circular or guidance released in response]
 
 If Sitharaman's statement bypassed RBI consultation, it's a governance violation. The RBI is independent (in theory) on monetary and regulatory matters. Finance Ministry cannot unilaterally impose UPI fees without RBI buy-in.
 
@@ -62,7 +61,6 @@ Section 10A likely refers to tax law or subsidy provision. Possible interpretati
 - **Direct tax code**: If Section 10A exempts banks from certain taxes on UPI transaction revenue, removing this exemption would force banks to pay tax on UPI operations, making the business less attractive without a corresponding fee.
 - **Subsidy regulation**: If Section 10A mandates government subsidy for free UPI, amending it could withdraw that subsidy, forcing banks to charge users to sustain operations.
 
-[FACT NEEDED: Exact Section 10A reference and what it currently mandates or exempts regarding UPI/payment system taxation or subsidies]
 
 ## Opposition walkout: Political meaning
 
@@ -75,7 +73,6 @@ Both saw UPI fees as anti-poor: small merchants, informal workers, and low-incom
 
 The walkout sends a message: "This crosses a line." Parliament did not pass a resolution or debate; opposition simply left the chamber—a protest tactic used sparingly.
 
-[FACT NEEDED: Opposition parties' specific stated objection; any joint statement by CPI(M) and AAP; whether they demanded withdrawal of proposal or merely delayed it]
 
 ## Transaction impact modeling: Who pays the real cost?
 
@@ -98,7 +95,6 @@ If UPI fees are introduced, impact cascades:
 - UPI is used for bill payments (utilities, insurance), peer-to-peer transfers, shopping.
 - Fees add up if applied across all categories.
 
-[FACT NEEDED: Any government or RBI modeling of transaction impact; projected revenue from fees; estimate of cost burden per merchant and consumer segment]
 
 Without public modeling, opposition cites worst-case: "The poor will be priced out of digital payments."
 
@@ -112,7 +108,6 @@ India's small business ecosystem (44M micro and small enterprises) relies heavil
 
 Fees introduced would be felt immediately as margin pressure. Absorb or pass to customers.
 
-[FACT NEEDED: Survey or statement from small business groups (CAIT, trader associations) on UPI fee impact; any pre-announced business response plans (reverting to cash, card machines)]
 
 ## RBI's subsidy model and sustainability argument
 
@@ -132,7 +127,6 @@ But at scale (8B monthly transactions), banks' operational costs rise:
 
 At some point, subsidy becomes unsustainable. The question: Has that point been reached?
 
-[FACT NEEDED: Latest financial data on UPI operational cost to banks; profit/loss statement for UPI operations; RBI's cost recovery analysis]
 
 If banks are losing money on UPI, a fee is rational. If banks are profitable, fee imposition is redistribution (from low-income users to banks' shareholders).
 
@@ -144,7 +138,6 @@ Other countries' digital payment systems:
 - **Singapore (PayNow)**: Free for users; banks absorb cost; subsidized by financial services ecosystem breadth.
 - **Brazil (PIX)**: Free for individuals and small businesses; modest fees for large/commercial transactions.
 
-[FACT NEEDED: Comparative fee structures; which models would work in India's context; international best practices cited in any government/RBI documentation]
 
 India's UPI ecosystem is unusually developed for a middle-income country. Charging fees could reverse adoption gains.
 

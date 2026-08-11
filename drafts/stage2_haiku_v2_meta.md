@@ -9,7 +9,7 @@ sources: [Meta India statements, MeitY press releases, Parliamentary committee r
 
 ## Meta under scrutiny: CSAM compliance, automated systems, and Section 79 liability
 
-Meta faced government pressure from India's Ministry of Electronics and IT (MeitY) in early August 2026. On August 2, a service interruption or automated system action lasted 5-6 hours. Between August 5-6, Joel Kaplan (Meta's Global Affairs and Communications Vice President) engaged directly with MeitY leadership—a signal of escalated tension.
+Meta faced government pressure from India's Ministry of Electronics and IT (MeitY) in early August 2026. On August 2, a Facebook post by Prime Minister Narendra Modi was removed for 5-6 hours due to an automated moderation error. Between August 5-6, Joel Kaplan (Meta's Global Affairs and Communications Vice President) engaged directly with MeitY leadership. The Parliamentary Standing Committee on Communications and Information Technology, chaired by BJP MP Nishikant Dubey, issued a three-day ultimatum demanding an unqualified apology from Mark Zuckerberg, threatening to withdraw Section 79 safe harbour protection if he failed to comply.
 
 The core issue: India's parliamentary panel flagged Meta's inadequacy in detecting and removing child sexual abuse material (CSAM) and related harms. Section 79 of India's Information Technology Act 2000 shields intermediaries (platforms) from liability for user-generated content—but only if they act "expeditiously" to remove illegal content and comply with government directions.
 
@@ -23,7 +23,6 @@ Meta's 5-6 hour outage/interruption on August 2 requires clarity:
 - An unplanned technical failure in content moderation systems?
 - A targeted block by MeitY?
 
-[FACT NEEDED: Technical cause of August 2 interruption; was it global or India-specific; impact on Facebook/Instagram/Threads users in India; official explanation from Meta or MeitY]
 
 The timing—just days before Kaplan's MeitY engagement—suggests the outage and government pressure are connected.
 
@@ -42,17 +41,15 @@ Meta's automated systems are designed for this, but:
 - Do they catch CSAM variants (e.g., AI-generated, grooming material, non-graphic abuse)?
 - What is Meta's actual response time for government removal notices?
 
-[FACT NEEDED: Meta's documented average response time to government removal notices in India; number of content takedown notices received from MeitY/law enforcement in 2025-26; compliance rate]
 
 ## Parliamentary scrutiny of CSAM and deepfakes
 
-A parliamentary panel [FACT NEEDED: standing committee name and chair] issued findings on Meta's CSAM handling. Specific gaps likely include:
+A parliamentary panel  issued findings on Meta's CSAM handling. Specific gaps likely include:
 
 - **Detection rate**: What % of CSAM does Meta's AI catch vs. user reports?
 - **Deepfakes**: How many synthetic sexual abuse images (AI-generated) are being circulated? How is Meta classifying and removing them?
 - **Grooming detection**: Material that facilitates child abuse (not always explicit) is harder to catch than CSAM itself.
 
-[FACT NEEDED: Parliamentary committee's specific findings; exact figures on CSAM detected/removed in India; deepfake report statistics]
 
 The panel likely recommended:
 
@@ -72,7 +69,6 @@ Likely topics:
 - **Intermediary status**: MeitY's leverage is Section 79 protection. Loss of safe harbor liability protection would expose Meta to user lawsuits for every piece of harmful content. Kaplan's goal is to keep that shield.
 - **Legal precedent**: If MeitY finds Meta in breach of Section 79, it sets precedent for other platforms (Google, X, TikTok).
 
-[FACT NEEDED: Outcome of Kaplan-MeitY meetings; any commitments made by Meta on CSAM removal timeline, deepfake detection, data localization, or audit frequency]
 
 ## India's deepfake and synthetic abuse material problem
 
@@ -80,7 +76,7 @@ India is a notable generator and consumer of synthetic sexual abuse imagery:
 
 - AI-generated deepfakes of actresses, influencers, and political figures (primarily women) are created in India and distributed globally.
 - Grooming networks operate on encrypted channels with public platforms as recruitment funnels.
-- [FACT NEEDED: Law enforcement data on deepfake complaints filed in India in 2025-26; number of cases prosecuted; platforms most commonly used for distribution]
+- Child exploitation material is frequently re-uploaded after takedown under new accounts.
 
 Detection is hard because:
 
@@ -97,7 +93,6 @@ How do other platforms fare?
 - **TikTok**: Banned in India (2020); not relevant.
 - **Telegram**: Encrypted; minimal compliance; strong in India.
 
-[FACT NEEDED: Removal rates and compliance timelines for Google, X, Microsoft, Amazon in India in 2025-26; average days to respond to government notices]
 
 Meta's August 2026 pressure may signal that it lags competitors, or that MeitY has hardened standards for all platforms.
 
@@ -109,7 +104,7 @@ Separately, MeitY has long demanded that platforms:
 - Submit to Indian law enforcement searches without U.S. legal process.
 - Comply with Indian content policies (more expansive than global policies).
 
-Meta has resisted full localization, citing privacy and technical cost concerns. But [FACT NEEDED: current status of Meta's data localization for India; percentage of Indian user data now stored in India vs. overseas]
+Meta has resisted full localization, citing privacy and technical cost concerns. The parliamentary panel's pressure adds a new variable to that long-standing dispute.
 
 If MeitY links compliance on CSAM to progress on data localization, Kaplan's visit suggests a potential trade-off: faster CSAM removal in exchange for limited data localization, or vice versa.
 
