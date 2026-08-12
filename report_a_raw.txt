@@ -1,0 +1,59 @@
+# STAGE 1 RESEARCH + OUTLINE REPORT A
+
+Two critical stories aligned with karmactive.com's public-interest beat:
+
+---
+
+## STORY 1: CANDIDA AURIS — THE RISING ANTIBIOTIC RESISTANCE CRISIS
+
+**Suggestions**
+- Framing: Not just a hospital problem — it's a systemic antibiotic resistance (AR) failure; CDC urgency + state-by-state spread warrant accountability reporting
+- Missing angles: Why eligibility/import gaps remain after missed FSIS steps (regulatory lag); why echinocandin data is "limited"; patient/family testimony from invasive infection survivors
+- Keywords/SEO: antibiotic resistance, multidrug-resistant fungal infection, CDC warning, healthcare-acquired infection, antifungal treatment gap, hospital screening failure
+- Expert voices: CDC epidemiologists, hospital infection control directors, patient advocacy groups (especially for the 1-in-3 mortality in invasive cases)
+- Stats to highlight: 6,304 cases 2024, rising yearly; 27 states; 1-in-3 death rate from invasive infection
+
+**Elaboration**
+Candida auris has emerged as a urgent antibiotic-resistance threat — the CDC reported 6,304 clinical cases in 2024 alone, with numbers rising year-over-year. The fungus is now present in 27 states and has proven resistant to at least one antifungal in multiple strains, a marker of the AR crisis deepening. It spreads readily in healthcare facilities, making hospital infection control a crucial accountability angle: facilities must implement screening protocols and rigorous hand hygiene/environmental cleaning to contain outbreaks. Bloodstream, wound, and ear infections are the primary vectors. The mortality rate underscores urgency: approximately 1 in 3 patients with invasive infection die, yet treatment options remain constrained — echinocandin is the preferred antifungal, but clinical data remains limited. This gap between infection severity and treatment certainty is a regulatory/research accountability story.
+
+**Draft Hook & Outline**
+*While America battles one health crisis after another, a silent fungal killer spreads through hospitals across 27 states — and doctors say we're running out of answers.*
+
+- **What Is Candida Auris?** (definition, fungal nature vs. bacterial, why it's different)
+- **Where It Spreads & Why Hospitals Can't Stop It** (healthcare-facility transmission, screening failures, why infection control is failing)
+- **The Mortality Question** (1-in-3 death rate, symptom variability, at-risk populations)
+- **Why Treatment is Failing** (echinocandin limits, limited clinical data, AR backdrop)
+- **What Regulators Are & Aren't Doing** (CDC alerts, state tracking gaps, facility accountability)
+
+**Conclusion**
+Candida auris now afflicts over 6,300 documented patients, with confirmed cases in 27 states and multidrug-resistant strains emerging. The fungus spreads in healthcare settings, causes bloodstream and wound infections with approximately 30% mortality in invasive cases, and responds primarily to echinocandin — a drug with limited clinical evidence. Hospital screening and hand-hygiene protocols remain the main containment tools as data on treatment options lags behind the spread.
+
+---
+
+## STORY 2: MASSACHUSETTS ABORTION LAW — THE ELIMINATION OF THE 24-WEEK LIMIT
+
+**Suggestions**
+- Framing: State-level accountability during federal uncertainty; Gov. Healey's explicit Trump-proofing language signals anticipation of national rollback
+- Missing angles: How MA providers will implement the shift (training, liability readiness); patient access disparities (travel from restriction states); Planned Parenthood/clinic commentary; religious/medical ethics pushback
+- Keywords/SEO: Massachusetts abortion law H.5595, 24-week ban eliminated, reproductive rights, patient-provider autonomy, Healey abortion, state abortion protections, post-Dobbs state action
+- Expert voices: Reproductive-rights advocates (Guttmacher, NARAL), MA physicians/OBGYNs, legal scholars on state preemption, faith-based groups opposed
+- Missing stat: How many MA abortions occur post-24 weeks; comparison to other protective states (NY, CA, VT)
+
+**Elaboration**
+On Aug. 10–11, 2026, Gov. Maura Healey signed H.5595, fundamentally reshaping Massachusetts abortion law. The legislation eliminates a 24-week gestational limit that had permitted abortion only in narrow circumstances after that threshold — life threat, general health threat, or lethal fetal anomaly. Under H.5595, that framework disappears; the decision now rests entirely with the pregnant person and their provider, with no arbitrary gestational cutoff. Healey's explicit language — "no matter what Donald Trump or Republicans in Congress or the Supreme Court does" — signals anticipatory action against potential federal bans. The bill removes all exceptions language, transferring medical judgment from legislators to clinicians and patients. Opponents have raised concerns about late-term abortion access and oversight, while the Guttmacher Institute notes MA previously enforced a 24-week ban with those exceptions. The move aligns MA with a coalition of protective states but adds a unique dimension: the complete removal of gestational thresholds makes it a rare legislative stance.
+
+**Draft Hook & Outline**
+*As the nation waits for a national abortion ban, one state just bet everything on patients and doctors — and pointedly rejected what Washington might do next.*
+
+- **What H.5595 Changes** (before: 24-week ban with exceptions; after: no gestational limit, patient+provider decision)
+- **Healey's Explicit Gambit** (Trump-proofing language, state action as shield, timing amid federal uncertainty)
+- **How It Affects MA Providers** (liability shift, training readiness, clinic capacity)
+- **Who It Protects & Who It Doesn't** (MA patients vs. those traveling from restrictive states; access disparities)
+- **The Broader AR Landscape** (where MA stands among protective states; exceptions vs. no-exception frameworks)
+
+**Conclusion**
+Governor Maura Healey signed H.5595 on Aug. 10–11, eliminating Massachusetts' 24-week abortion limit and related exceptions framework. Decisions on abortion now rest with the pregnant person and their provider without gestational restrictions. The law removes a four-part framework that previously permitted abortions after 24 weeks only for life threat, general health threat, or lethal fetal diagnosis. Healey explicitly framed the bill as a shield against potential federal bans.
+
+---
+
+**Next steps**: REPORT B will cover remaining stories (Chicago Tornado, Corte Argentino Beef Recall, O'Hare Delays) with same structure. Ready when you need it.

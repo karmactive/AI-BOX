@@ -1,5 +1,6 @@
 # Never commit secrets or generated publish artifacts
 wp_pass.txt
+wp_pass_sunita.txt
 posts.json
 publish_results.json
 build_publish*.py
