@@ -82,19 +82,19 @@ Some platforms may need to adjust operations or payment structures to comply. Fo
 
 ## STEP 3: FINAL FACTUAL VERSION
 
-Australia's delivery workers have new workplace protections as of today, August 17. The Fair Work Commission's first-ever minimum standards order now applies to people who deliver food, drinks, and groceries through apps like Uber Eats and DoorDash.
+Australia's delivery workers have new workplace protections as of today, August 17. The [Fair Work Commission's first-ever minimum standards order](https://www.fwc.gov.au/) now applies to people who deliver food, drinks, and groceries through apps like Uber Eats and DoorDash.
 
 The order sets a minimum pay rate of $31.30 per engaged hour. If a platform's workers earn less than this amount over an earnings period (up to 21 days), the platform must top up the difference. This isn't automatic—platforms calculate earnings across the full period and cover any shortfall before the next cycle starts.
 
-The rules apply to workers who use vehicles like cars or bikes to deliver items. People using vehicles larger than one tonne are excluded. These workers remain independent contractors, not employees. The order doesn't convert them into full-time staff, but it does create enforceable baseline protections.
+The rules apply to workers who use vehicles like cars or bikes to deliver items. People using vehicles larger than one tonne are excluded. These [workers remain independent contractors](https://www.karmactive.com/tag/worker-rights/), not employees. The order doesn't convert them into full-time staff, but it does create enforceable baseline protections.
 
 Beyond pay, the new standards cover personal accident insurance. Workers who get injured while working through these platforms now have coverage. The order also includes formal dispute resolution processes, so if something goes wrong, there's a clear way to address it. Platforms must provide workers with detailed information about how earnings are calculated, what expenses are covered, and how deactivation works.
 
 Workers also gain new rights to organise. They can now appoint workplace delegates and establish feedback forums where the platform must listen to worker concerns. Significant changes to platform operations require consultation with workers first.
 
-The Fair Work Ombudsman will enforce these standards. Platforms that fail to comply face fines. Workers who believe they've been treated unfairly can lodge complaints.
+The [Fair Work Ombudsman](https://www.fairwork.gov.au/) will enforce these standards. Platforms that fail to comply face fines. Workers who believe they've been treated unfairly can lodge complaints.
 
-This order matters because it's the first of its kind in Australia. No previous minimum standards order covered gig workers. The Transport Workers' Union applied for these protections over a year ago, arguing that app-based delivery workers needed baseline rights without becoming employees. The Commission spent months hearing evidence and consulting before issuing the draft order in July. Workers and platforms both had chances to respond to the proposal.
+This order matters because it's the first of its kind in Australia. No previous minimum standards order covered gig workers. The [Transport Workers' Union](https://www.twu.com.au/) applied for these protections over a year ago, arguing that app-based delivery workers needed baseline rights without becoming employees. The Commission spent months hearing evidence and consulting before issuing the draft order in July. Workers and platforms both had chances to respond to the proposal.
 
 The agreement shows a middle ground: workers get protection without employment status. They keep flexibility but gain minimum pay, insurance, and formal complaint processes. For people doing delivery work, it means knowing what they'll earn and having recourse if something goes wrong.
 
