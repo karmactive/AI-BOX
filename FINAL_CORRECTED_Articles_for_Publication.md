@@ -90,7 +90,7 @@ Government School Infrastructure, RTE Compliance, Education Policy, Activism, Ru
 
 ## ARTICLE CONTENT (580 words)
 
-A school building with a toilet isn't the same as a school with a working toilet. This gap between "having something" and "having something that actually works" is what the [**School Thik Karo campaign** → https://cjp.org.in] is trying to fix in Maharashtra and beyond.
+A school building with a toilet isn't the same as a school with a working toilet. This gap between "having something" and "having something that actually works" is what the School Thik Karo campaign is trying to fix in Maharashtra and beyond.
 
 The campaign started in August 2026 from a village called Santuk Pimpri in Hingoli district. Led by Abhijeet Dipke through Citizens for Justice and Peace, teams visit government schools and check what actually exists versus what's written in official records. They look for clean drinking water, functioning toilets, classrooms that don't leak, and working electricity. Parents and local residents do these inspections together, creating a community record.
 
@@ -100,7 +100,7 @@ Why does this matter? India has 1.47 million government schools. According to th
 
 These percentages hide a crucial reality. A school might have a toilet on its list but students can't use it because the door is broken or there's no water supply. A classroom might have an electricity connection but no bulbs or wiring. This is where School Thik Karo steps in—documenting the gap between "exists" and "works."
 
-The campaign follows India's [**Right to Education Act rules** → https://www.mhrd.gov.in/rte]], which require certain standards. Schools should have separate, clean toilets for boys and girls. They should provide clean drinking water. Classrooms need to be structurally safe. These aren't new demands—they're the law since 2009.
+The campaign follows India's [**Right to Education Act rules** → https://www.mhrd.gov.in/rte], which require certain standards. Schools should have separate, clean toilets for boys and girls. They should provide clean drinking water. Classrooms need to be structurally safe. These aren't new demands—they're the law since 2009.
 
 When these audits happen, they sometimes embarrass local officials into action. In response, state governments have started their own initiatives. Rajasthan announced a ₹12,500 crore school modernization program. Other states are reviewing infrastructure under pressure from both the campaign's findings and the media coverage they attract.
 
