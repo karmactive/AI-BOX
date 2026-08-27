@@ -90,7 +90,7 @@ Government School Infrastructure, RTE Compliance, Education Policy, Activism, Ru
 
 ## ARTICLE CONTENT (580 words)
 
-A school building with a toilet isn't the same as a school with a working toilet. This gap between "having something" and "having something that actually works" is what the School Thik Karo campaign is trying to fix in Maharashtra and beyond.
+A school building with a toilet isn't the same as a school with a working toilet. This gap between "having something" and "having something that actually works" is what the [**School Thik Karo campaign** → https://www.cockroachjantaparty.org/campaign/school-thik-karo] is trying to fix in Maharashtra and beyond.
 
 The campaign started in August 2026 from a village called Santuk Pimpri in Hingoli district. Led by Abhijeet Dipke through Citizens for Justice and Peace, teams visit government schools and check what actually exists versus what's written in official records. They look for clean drinking water, functioning toilets, classrooms that don't leak, and working electricity. Parents and local residents do these inspections together, creating a community record.
 
