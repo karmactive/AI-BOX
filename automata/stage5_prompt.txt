@@ -1,0 +1,92 @@
+You are an experienced senior writer at Karmactive.com news publication.
+
+For ALL 9 articles below, produce Stage 5 metadata following STEP 1 and STEP 2 exactly as specified.
+
+=== TITLE RULES (apply to both steps) ===
+- Title Case throughout
+- Single continuous sentence — NEVER split into two parts with a colon or dash
+- Under 120 characters for combined title, under 70 characters for short title
+- Primary keyword within first 50 characters
+- Factually accurate — partially reveal a catchy stat to create curiosity (clickbait-light)
+- NO promotional/praising language
+- BANNED WORDS: beacon, tapestry, testament, groundbreaking, melody, revolution, unveil, uncover, unleash, unearth, symphony, underscores, reminds us, discover, imagine, picture this, is not just, not just, more than a, big gun, dance, in the
+- Rhetorical devices allowed: metaphor, allusion, alliteration, rhetorical question, analogy
+- Try to integrate a quote from official source/organisation where it adds credibility and curiosity
+- News-type titles — NOT blog-type titles
+- Strictly factual — no invented statistics or speculation
+
+=== META DESCRIPTION RULES ===
+- Under 200 characters exactly
+- SEO and AEO optimised
+- BANNED: dive, discover, find, read, explore
+- Mild clickbait effect — hint at the key stat or implication
+
+=== SLUG RULES ===
+- Lowercase, hyphens only, no stop words
+- Include primary keywords, meaningful, not too short
+- SEO/AEO best practices
+
+=== CATEGORIES AVAILABLE (use ONLY from this list, include IDs) ===
+Business (31), Canada (20132), Culture (32), Energy (2173), Environment (16921), Health (34), India (115), Latest (1), Lifestyle (8721), Mobility (2538), Nature (54), News (63), Policy (19564), Science (37), Sustainability (57), Technology (56), Transportation (12397), USA (1373), World (40)
+
+=== TAGS AVAILABLE (2–5 per article, use ONLY these IDs, no new tags) ===
+Electric Scooter (9782), Electric Vehicles (2196), EV (2197), India (19654), Mobility (20937), Electric Bike (3999), Fast Charging (7982), Battery (2565), Battery Technology (3955), Automobile (2453)
+Government Jobs (22888), SSC (22886), Recruitment (22887), Employment (21586), Government Policy (22835), India (19654)
+Smartphone (3603), Technology (19636), India (19654), Software (21525), AI Technology (19706)
+Floods (265), Flooding (18072), Natural Disaster (89), Disaster Response (21630), Flash Flood (21758), Nepal (use tag if exists — check tags: not in list, skip), Disaster Relief (7983), Deaths (716)
+EPFO (22881), India (19654), Government Policy (22835), Benefits (21093), Employment (21586), Pension (22181)
+Uttar Pradesh (372), India (19654), Labor Laws (20526), Worker Benefits (22931), Government Policy (22835), Employment (21586)
+Women (19457), Deaths (716), Activism (22553), History (136), Human Rights (19762)
+Netherlands (890), Global Economy (20896), Banking (21355), Economy (21218)
+El Niño (22765), El Nino Forecast (23014), Climate Change (99), Extreme Weather (8018), NOAA (5421), WMO (11980), Monsoon (1085)
+
+=== OUTPUT FORMAT (produce this exact structure for all 9 articles) ===
+
+=== ARTICLE [N]: [Original Headline] ===
+
+STEP 1 — TITLE OPTIONS:
+T1: [creative title — alliteration or metaphor, under 120 chars]
+T2: [creative title — rhetorical question or stat-reveal, under 120 chars]
+T3: [creative title — quote-driven or allusion, under 120 chars]
+
+STEP 2 — CHOSEN METADATA:
+COMBINED TITLE (<120 chars): [best combined title from step 1]
+SHORT TITLE (<70 chars): [condensed version with primary keyword]
+META DESCRIPTION (<200 chars): [SEO/AEO meta with mild clickbait]
+FOCUS KEY PHRASE (4 words): [4 words]
+SEO SLUG: [slug-format]
+CATEGORIES: [Name (ID), Name (ID)]
+TAGS: [Name (ID), Name (ID), Name (ID)]
+
+---
+
+=== ARTICLE 1: Simple Energy Wave Electric Scooter ===
+Simple Energy launched the Wave electric scooter at ₹1,09,999 introductory ex-showroom price. Three named variants — Wave S, Wave, Wave+ — across six configurations. Wave+ claims 243 km on a 5 kWh pack (IDC figures — Indian Driving Cycle regulatory test, not real-world guarantee). Wave S tops at 70 km/h (2.2 kWh) or 75 km/h (2.7 kWh); Wave and Wave+ at 90 km/h. Up to 70 litres combined storage. Seat height 775 mm, flat floorboard. Standard 15A home socket needs 8+ hours for largest pack. GripSense traction control on Wave and Wave+ only — entry Wave S uses standard CBS. Battery chemistry undisclosed. Eligible for PM E-DRIVE subsidies. Prior Simple One had delivery backlog issues. Key hook: 70L storage — largest focus area for families.
+
+=== ARTICLE 2: SSC JE Recruitment 2026 ===
+SSC announced 1,748 tentative vacancies for Junior Engineers — Civil, Mechanical, Electrical. Applications open September 2, close September 22, 2026, at 23:00 hrs. Fee deadline September 23. Correction window September 27–28 only. Paper-I CBT October/November 2026: 200 questions, 200 marks (50 General Intelligence, 50 General Awareness, 100 General Engineering), 2 hours, 0.25 negative marking. Paper-II December 2026: objective, 300 marks, domain-specific. Pay: Grade Level 6, 7th CPC, ₹35,400–₹1,12,400/month. New OTR rule: live photo via webcam/mobile, plain white background — scanned passport photos rejected. BRO = Border Roads Organisation. Department breakdowns in official notification at ssc.gov.in. Critical date is September 22 application close.
+
+=== ARTICLE 3: Samsung Galaxy S26 FE ===
+Announced August 27, 2026. Available select markets from September 4. FE = Fan Edition — more accessible S-series entry. 6.7-inch Dynamic AMOLED 2X, 120 Hz, 1,900 nits. Exynos 2500, 3nm GAA. 8GB RAM baseline. 50MP main (OIS) + 12MP ultrawide + 8MP telephoto 3x optical zoom + 12MP front. 4,900 mAh battery, 45W wired, 15W wireless. 29 hours video playback (Samsung lab claim). IP68, Gorilla Glass Victus+, aluminium frame. 7 major Android OS upgrades + 7 years security patches. Launches with One UI 9, Android 17. Key hook: 7-year software commitment separates it from competitors.
+
+=== ARTICLE 4: Nepal Bhotekoshi-Trishuli Floods ===
+As of September 3, 2026 noon: NDRRMA reports 1,252 deaths, 4,216 unaccounted for. Districts: Rasuwa, Nuwakot, Dhading, Chitwan, Gorkha. Devighat worst-hit in Nuwakot. Flood arrived in approximately one minute. Nepal Telecom: 83 mobile towers damaged. Ncell: 27 sites affected. Nuwakot ~90% power restored by Sept 3. Chapali-Devighat right circuit energised as part of restoration; 31 transformers still undergoing restoration. 300-person shelter at Devighat. Flash-flood risk still HIGH as of Sept 3 — upstream rainfall continues. Drinking water contamination from silt. Developing story — death toll may rise.
+
+=== ARTICLE 5: EPFO UAN Activation via UMANG ===
+EPFO member portal no longer supports UAN activation — discontinued. Activation now via UMANG app (Unified Mobile Application for New-age Governance) using Aadhaar-based face authentication. Requires: Aadhaar number, Aadhaar-linked mobile number, Aadhaar Face RD application. UMANG handles both: new UAN allotment activation AND existing inactive UAN activation. Why: FY2024-25 only 44.68 lakh of 1.26 crore allotted UANs activated = 35.30% activation rate. Portal still works for: claim tracking, UAN retrieval, death claims. Separate June 2025 reform: ₹5 lakh auto-settlement ceiling for advance claims under Form 31 (illness, housing, education) — NOT resignation/final settlement.
+
+=== ARTICLE 6: Uttar Pradesh UPCOS ===
+Launched September 2, 2026 at Lok Bhawan, Lucknow. UPCOS = Uttar Pradesh Corporation for Outsource Services. Registered Section 8 non-profit public limited company under Companies Act 2013. Covers ~3.5 lakh (350,000) outsourced/contractual workers across state departments, agencies, universities. Wages: ₹16,000–₹20,000/month (skilled/semi-skilled). 26 billable days/month, 3-year term contracts. Salary by fifth of each month, direct electronic transfer. EPF, ESI, accidental insurance mandatory. ₹15,000 ex-gratia funeral assistance if worker dies in service. Not regularisation — workers remain outsourced. Portal launched alongside. Government documented complaints: deductions, delayed pay, EPF/ESI non-compliance, reservation violations.
+
+=== ARTICLE 7: Gloria Steinem ===
+Died September 2, 2026, New York City, age 92. Gloria Steinem Foundation announced: died peacefully at home, cause undisclosed. Co-founded Ms. Magazine — preview issue 1971, first standalone January 1972 — first US national magazine run and controlled entirely by women. Co-founded National Women's Political Caucus 1971 with Shirley Chisholm, Bella Abzug, Betty Friedan, Fannie Lou Hamer and others. Chester Bowles fellowship, late 1950s, India — influenced by Gandhian grassroots organising. Prominent advocate: Equal Rights Amendment, Equal Credit Opportunity Act of 1974 (prohibited sex/marital status discrimination in credit). Coalition work with Dorothy Pitman Hughes, Flo Kennedy. Presidential Medal of Freedom 2013. August 27, 2026: Ms. republished her 1987 piece — not new writing. Foundation hosts 50+ Talking Circles since 2022.
+
+=== ARTICLE 8: Netherlands Gold Reserves ===
+DNB (De Nederlandsche Bank) transferred 86 metric tonnes of gold from Federal Reserve Bank of New York AND Bank of Canada (Ottawa) to Bank of England, London. Transfer period: March–August 2026 (6 months). Previously ~313 tonnes combined in US and Canada. Now ~31% domestic (Zeist Cash Operations Centre), ~31% Bank of England London. London = LBMA hub — London Bullion Market Association — major global gold trading/settlement centre. DNB reasons: crisis preparedness, better tradability/liquidity at LBMA, geographic diversification, easier emergency availability. Central banks bought ~850 tonnes gold in 2025, down from 1,000+ tonnes in 2022–24. US dollar still ~57% of global official FX reserves (ECB June 2026). NOT simple repatriation — diversification. NOT de-dollarisation.
+
+=== ARTICLE 9: El Niño 2026 ===
+WMO September 2026 update: El Niño firmly established — nearly 100% likelihood persisting through February 2027. Expected to reach "very strong" intensity, peaking end-2026. WMO: September–November 2026 above-normal temperatures across almost all land areas globally. Indian Ocean Dipole (IOD): positive IOD expected to develop, seasonal mean forecast 0.9°C above normal. WMO explicitly states El Niño strength alone does not determine regional impact magnitude. Drought risk elevated: Southeast Asia, eastern Australia, parts of Southern Africa. Increased heavy precipitation risk: west coast South America, parts of southern US. Elevated coral bleaching risk globally. National meteorological/hydrological services stepping up preparedness. Forecasting certainty unusually high.
+
+---
+
+Produce ALL 9 articles' metadata now in sequence. Do not skip any. Follow the exact output format above.

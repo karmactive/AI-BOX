@@ -1,0 +1,185 @@
+# STAGE 5 METADATA — ALL 9 ARTICLES
+
+---
+
+=== ARTICLE 1: Simple Energy Wave Electric Scooter ===
+
+STEP 1 — TITLE OPTIONS:
+
+T1: Simple Energy Wave Electric Scooter Runs 243 Kilometers For Under ₹1.1 Lakh
+T2: Simple Energy's Wave E-Scooter Offers 70 Litres Storage At ₹1,09,999 Launch Price
+T3: Can A Budget E-Scooter Pack 243 Km Range, 70L Storage, And Pay Just ₹1.1 Lakh Monthly?
+
+STEP 2 — CHOSEN METADATA:
+
+COMBINED TITLE (<120 chars): Simple Energy Wave Electric Scooter Runs 243 Kilometers For Under ₹1.1 Lakh
+SHORT TITLE (<70 chars): Wave E-Scooter 243 Km Range ₹1.1 Lakh
+META DESCRIPTION (<200 chars): Simple Energy's new Wave e-scooter delivers up to 243 km range and massive 70-litre storage across three variants starting ₹1,09,999, offering family-sized capacity with PM E-DRIVE subsidy eligibility.
+FOCUS KEY PHRASE (4 words): Electric Scooter Range Storage
+SEO SLUG: simple-energy-wave-electric-scooter-243km-range
+CATEGORIES: Mobility (2538), Transportation (12397)
+TAGS: Electric Scooter (9782), EV (2197), India (19654), Mobility (20937)
+
+---
+
+=== ARTICLE 2: SSC JE Recruitment 2026 ===
+
+STEP 1 — TITLE OPTIONS:
+
+T1: SSC Opens 1,748 Junior Engineer Posts Closing September 22, 2026 With ₹1.12 Lakh Monthly Pay
+T2: SSC Junior Engineer Recruitment 2026 Welcomes 1,748 Civil, Mechanical, Electrical Roles
+T3: Can You Land An SSC Junior Engineer Role By September 22 With 200-Mark Paper-I Exam?
+
+STEP 2 — CHOSEN METADATA:
+
+COMBINED TITLE (<120 chars): SSC Opens 1,748 Junior Engineer Posts Closing September 22, 2026 With ₹1.12 Lakh Monthly Pay
+SHORT TITLE (<70 chars): SSC JE Recruitment 1,748 Posts September 22
+META DESCRIPTION (<200 chars): SSC Junior Engineer recruitment 2026 opens 1,748 vacancies across Civil, Mechanical, Electrical roles. Applications close September 22. Pay Grade Level 6 ₹1.12 lakh monthly. New OTR webcam photo rule applies.
+FOCUS KEY PHRASE (4 words): SSC Junior Engineer Recruitment
+SEO SLUG: ssc-junior-engineer-recruitment-2026-1748-vacancies
+CATEGORIES: News (63), Policy (19564)
+TAGS: Government Jobs (22888), SSC (22886), Recruitment (22887), Employment (21586)
+
+---
+
+=== ARTICLE 3: Samsung Galaxy S26 FE ===
+
+STEP 1 — TITLE OPTIONS:
+
+T1: Samsung Galaxy S26 FE Promises Seven Years Of Software Updates, Security, And Premier Features
+T2: Samsung Galaxy S26 FE Launches September 4 With 120Hz Display, 50MP Camera, Seven-Year Support
+T3: Galaxy S26 FE Combines 4,900 mAh Battery, Premium Display, And Unmatched Software Longevity
+
+STEP 2 — CHOSEN METADATA:
+
+COMBINED TITLE (<120 chars): Samsung Galaxy S26 FE Promises Seven Years Of Software Updates, Security, And Premier Features
+SHORT TITLE (<70 chars): Galaxy S26 FE Seven-Year Support Launch
+META DESCRIPTION (<200 chars): Samsung Galaxy S26 FE launches September 4 with 6.7-inch 120Hz AMOLED display, Exynos 2500 chip, and industry-leading seven-year major OS upgrades plus security commitment. Fan Edition pricing strategy.
+FOCUS KEY PHRASE (4 words): Galaxy S26 FE Smartphone
+SEO SLUG: samsung-galaxy-s26-fe-seven-year-software-support
+CATEGORIES: Technology (56), News (63)
+TAGS: Smartphone (3603), Technology (19636), India (19654)
+
+---
+
+=== ARTICLE 4: Nepal Bhotekoshi-Trishuli Floods ===
+
+STEP 1 — TITLE OPTIONS:
+
+T1: Nepal Floods Kill 1,252 In Bhotekoshi-Trishuli Deluge With 4,216 Still Unaccounted For
+T2: Death Toll Climbs To 1,252 As Nepal's Flash Flood Surge Swallows Thousands In Minutes
+T3: Devighat Devastated As Nepal's One-Minute Flash Flood Leaves 1,252 Dead, Thousands Missing
+
+STEP 2 — CHOSEN METADATA:
+
+COMBINED TITLE (<120 chars): Nepal Floods Kill 1,252 In Bhotekoshi-Trishuli Deluge With 4,216 Still Unaccounted For
+SHORT TITLE (<70 chars): Nepal Floods 1,252 Deaths September 2026
+META DESCRIPTION (<200 chars): Nepal flash floods across Bhotekoshi-Trishuli kill 1,252, with 4,216 unaccounted. Devighat worst-hit in Nuwakot. 83 mobile towers downed, water contaminated. High flash-flood risk continues September 3.
+FOCUS KEY PHRASE (4 words): Nepal Flash Flood Disaster
+SEO SLUG: nepal-floods-bhotekoshi-trishuli-1252-deaths
+CATEGORIES: News (63), World (40)
+TAGS: Floods (265), Natural Disaster (89), Flash Flood (21758), Deaths (716), Disaster Response (21630)
+
+---
+
+=== ARTICLE 5: EPFO UAN Activation via UMANG ===
+
+STEP 1 — TITLE OPTIONS:
+
+T1: EPFO Discontinues Member Portal UAN Activation, Mandates Aadhaar Face Auth Via UMANG App
+T2: Only 35 Percent Of Eligible Members Activated, EPFO Shifts UAN Process Entirely To UMANG
+T3: EPFO Tackles Low Activation With Mandatory UMANG App Switch And Aadhaar Face Authentication
+
+STEP 2 — CHOSEN METADATA:
+
+COMBINED TITLE (<120 chars): EPFO Discontinues Member Portal UAN Activation, Mandates Aadhaar Face Auth Via UMANG App
+SHORT TITLE (<70 chars): EPFO UAN UMANG App Aadhaar Shift
+META DESCRIPTION (<200 chars): EPFO discontinues member portal UAN activation; shifts to UMANG app requiring Aadhaar face authentication. Only 35% of 1.26 crore allotted UANs activated. June 2025 ₹5 lakh auto-settlement cap for advances.
+FOCUS KEY PHRASE (4 words): EPFO UAN Activation UMANG
+SEO SLUG: epfo-uan-activation-umang-app-migration-aadhaar
+CATEGORIES: News (63), Policy (19564), India (115)
+TAGS: EPFO (22881), Government Policy (22835), Employment (21586), Pension (22181), Benefits (21093)
+
+---
+
+=== ARTICLE 6: Uttar Pradesh UPCOS ===
+
+STEP 1 — TITLE OPTIONS:
+
+T1: Uttar Pradesh Launches UPCOS To Standardize ₹16,000–₹20,000 Monthly Wages For 350,000 Outsourced Workers
+T2: Uttar Pradesh Creates Formal Framework For 3.5 Lakh Outsourced Workers Via New UPCOS Portal
+T3: UPCOS Guarantees Mandatory EPF, ESI, Funeral Aid For Uttar Pradesh's 350,000 Contractual Employees
+
+STEP 2 — CHOSEN METADATA:
+
+COMBINED TITLE (<120 chars): Uttar Pradesh Launches UPCOS To Standardize ₹16,000–₹20,000 Monthly Wages For 350,000 Outsourced Workers
+SHORT TITLE (<70 chars): UPCOS Uttar Pradesh 350,000 Workers
+META DESCRIPTION (<200 chars): Uttar Pradesh launches UPCOS September 2, standardizing 350,000 outsourced workers' wages ₹16,000–₹20,000 monthly with mandatory EPF, ESI, ₹15,000 funeral assistance. Non-regularisation framework via portal.
+FOCUS KEY PHRASE (4 words): Uttar Pradesh Labor Scheme
+SEO SLUG: uttar-pradesh-upcos-350000-outsourced-workers-wages
+CATEGORIES: News (63), Policy (19564), India (115)
+TAGS: Uttar Pradesh (372), Labor Laws (20526), Worker Benefits (22931), Government Policy (22835), Employment (21586)
+
+---
+
+=== ARTICLE 7: Gloria Steinem ===
+
+STEP 1 — TITLE OPTIONS:
+
+T1: Gloria Steinem, Ms. Magazine Founder And Feminist Pioneer, Dies At 92
+T2: Gloria Steinem, Who Founded The First Women-Run National Magazine, Dead At 92
+T3: Gloria Steinem, Architect Of Women's Political Movement And Ms. Magazine, Dies September 2
+
+STEP 2 — CHOSEN METADATA:
+
+COMBINED TITLE (<120 chars): Gloria Steinem, Ms. Magazine Founder And Feminist Pioneer, Dies At 92
+SHORT TITLE (<70 chars): Gloria Steinem Feminist Icon Dies 92
+META DESCRIPTION (<200 chars): Gloria Steinem, co-founder of Ms. Magazine (first US national magazine run entirely by women) and National Women's Political Caucus, dies September 2 at 92. Presidential Medal of Freedom recipient.
+FOCUS KEY PHRASE (4 words): Gloria Steinem Feminist Icon
+SEO SLUG: gloria-steinem-dies-september-2026-feminist-pioneer
+CATEGORIES: News (63), Culture (32), World (40)
+TAGS: Women (19457), Activism (22553), History (136), Deaths (716), Human Rights (19762)
+
+---
+
+=== ARTICLE 8: Netherlands Gold Reserves ===
+
+STEP 1 — TITLE OPTIONS:
+
+T1: Netherlands Shifts 86 Tonnes Of Gold To London's LBMA Hub In Major Central Bank Diversification
+T2: Netherlands Transfers Gold From New York And Ottawa To London For Improved Trading Liquidity
+T3: DNB Moves 31 Percent Of Gold Reserves To London, Completing Six-Month Strategic Reallocation
+
+STEP 2 — CHOSEN METADATA:
+
+COMBINED TITLE (<120 chars): Netherlands Shifts 86 Tonnes Of Gold To London's LBMA Hub In Major Central Bank Diversification
+SHORT TITLE (<70 chars): Netherlands Gold Reserves London Move
+META DESCRIPTION (<200 chars): DNB transfers 86 metric tonnes gold from Federal Reserve New York and Bank of Canada to Bank of England March–August 2026. Diversification strategy prioritizes LBMA liquidity, crisis preparedness over repatriation.
+FOCUS KEY PHRASE (4 words): Central Bank Gold Diversification
+SEO SLUG: netherlands-gold-reserves-london-bank-england-transfer
+CATEGORIES: News (63), Business (31), World (40)
+TAGS: Global Economy (20896), Banking (21355), Economy (21218)
+
+---
+
+=== ARTICLE 9: El Niño 2026 ===
+
+STEP 1 — TITLE OPTIONS:
+
+T1: WMO Confirms El Niño Nearly Certain Through February 2027, Raising Global Drought-Flood Risks
+T2: El Niño Set To Reach Very Strong Intensity By End-2026, WMO Forecasts With Unusually High Certainty
+T3: El Niño Threatens Southeast Asia Drought, South America Flooding, And Coral Bleaching Through February 2027
+
+STEP 2 — CHOSEN METADATA:
+
+COMBINED TITLE (<120 chars): WMO Confirms El Niño Nearly Certain Through February 2027, Raising Global Drought-Flood Risks
+SHORT TITLE (<70 chars): El Niño 2026 WMO Severe Forecast
+META DESCRIPTION (<200 chars): WMO forecasts El Niño persisting through February 2027 with very strong intensity, nearly 100% certainty. September–November above-normal global temperatures. Drought risk SE Asia, Australia; flooding Americas.
+FOCUS KEY PHRASE (4 words): El Niño Climate Forecast
+SEO SLUG: el-nino-2026-wmo-forecast-severe-drought-flooding
+CATEGORIES: News (63), Environment (16921), Science (37)
+TAGS: El Niño (22765), El Nino Forecast (23014), Climate Change (99), Extreme Weather (8018), WMO (11980)
+
+---
+
+**ALL 9 ARTICLES COMPLETE**
