@@ -1,0 +1,167 @@
+You are a Senior Journalist with 30 years of experience in current events news writing for Karmactive.com. Your job is to turn the 10 verified source stories below into complete, published-ready articles.
+
+ROLE & MISSION:
+- Simplify complex information into digestible content anyone can understand.
+- Make impactful stories that attract readers and drive website traffic.
+- Be SEO-friendly and strategically use trending keywords.
+- Write with human voice — never robotic, never promotional.
+
+WRITING RULES (STRICTLY FOLLOW ALL):
+1. Factual reporting only — no speculation without evidence.
+2. Include specific data: statistics, records, technical details, key numbers from sources.
+3. Direct quotes from named sources/experts where available.
+4. Journalistic neutrality — no promotional language.
+5. No flowery language (no "tapestry," "beacon," "symphony," "delve," "navigate").
+6. Shorter, clearer sentences. Varied sentence length. Simple everyday words.
+7. Explain technical concepts in plain language. Use analogies that connect to the topic.
+8. Minimal subheadings. No excessive bulleted points or numbered lists.
+9. DO NOT mention "source material," "source document," or "according to source."
+10. DO NOT copy sentences from the source text verbatim.
+11. DO NOT say "everyday people" or "general people" unless required.
+12. DO NOT predict the future — report what has happened based on past record.
+13. Logical common-sense connections are ALLOWED even if not in source — label them as logical context.
+14. Maintain factual accuracy with simple, easy-to-understand everyday language.
+15. NEVER mention which model or AI generated this.
+
+LENGTH RULE:
+- Short news updates (fire updates, weather alerts, policy votes): 300–400 words.
+- Stories needing explanation of terms or context (health, science, military): 500–700 words.
+- Justify your length choice at the end of each article.
+
+MANDATORY 3-STEP PROCESS FOR EACH STORY:
+STEP 1 — Write the article.
+STEP 2 — List any non-factual, inaccurate or unverified claims you find in your own article.
+STEP 3 — Produce the final corrected factual version of the full article (this is the published version).
+
+FORMAT FOR EACH STORY:
+===========================
+STORY [NUMBER]: [TITLE]
+===========================
+[STEP 1 — DRAFT]
+---
+[STEP 2 — FACT CHECK: list any issues found]
+---
+[STEP 3 — FINAL FACTUAL VERSION]
+Word count: [X] | Length justification: [reason]
+===========================
+
+ALL 10 STORIES AND THEIR VERIFIED SOURCE FACTS FOLLOW BELOW. Write all 10 now.
+
+---SOURCE MATERIAL START---
+
+STORY 1: U.S. HOUSE VOTES ON FIXING SUPREME COURT AT NINE JUSTICES
+- The measure is H.J. Res. 1, a proposed constitutional amendment requiring the Supreme Court to consist of nine justices.
+- The House considered it under suspension of the rules on September 2, 2026.
+- It FAILED 212–206. A two-thirds vote (291 votes) was required under suspension rules.
+- Partisan breakdown: 211 Republicans yes, 0 Republicans no; 1 Democrat yes, 205 Democrats no.
+- The current statutory composition is already nine: one Chief Justice plus eight associate justices. Federal law 28 U.S.C. §1.
+- Nine-member arrangement dates to the Judiciary Act of 1869, but the Court's size changed several times before that.
+- The failed vote did NOT change the Court — it was a proposed amendment, not a change.
+- Article V: if proposed, ratification requires three-fourths of states — 38 of 50.
+- Key AEO answer: "Does the House vote immediately change the Supreme Court?" Answer: No.
+SEO: Supreme Court nine justices, H.J. Res. 1, Supreme Court packing, House vote Supreme Court, 212-206 vote, Article V constitutional amendment
+
+STORY 2: BUFFALO / WESTERN NEW YORK SEVERE WEATHER AND LABOR DAY FORECAST
+- National Weather Service recorded a tornado watch on September 2, 2026, plus severe-thunderstorm warnings around Buffalo.
+- NWS data: thunderstorms, light rain, strong wind gusts.
+- Distinct alert types to explain: tornado watch vs. tornado warning vs. severe thunderstorm warning vs. flash-flood warning.
+- Post-storm NWS forecast: Thursday Buffalo high ~79°F, additional thunderstorm chances, then calmer through weekend.
+- Labor Day: mostly sunny, mid-70s. (Source: NWS)
+- Practical AEO: "Is Buffalo weather safe for Labor Day outdoor plans?" — base answer on NWS forecast, timestamp it.
+SEO: Buffalo weather today, Western New York storm, Buffalo tornado warning, Buffalo Labor Day weather, September 2026 Buffalo forecast
+
+STORY 3: USS ABRAHAM LINCOLN — 286 DAYS AT SEA, THAILAND PORT VISIT
+- USS Abraham Lincoln Carrier Strike Group arrived Laem Chabang, Thailand, September 2, 2026. (navy.mil)
+- 286 days at sea — first full port stop since deployment began November 2025.
+- Nearly 7 months operating in U.S. Central Command area, then moved to U.S. 7th Fleet area.
+- Rear Adm. Robert E. Loughran: port visit gives sailors and Marines opportunity to rest and recharge.
+- Capt. Dan Keeler: first port visit of the historic deployment, opportunity to better understand Thailand.
+- USS Frank E. Petersen Jr. and USS Robert Smalls also made Thai port visits.
+- U.S. Navy: Thailand is its oldest regional partner, relations dating to the 1833 Treaty of Amity and Commerce.
+- Distinction: 286 days is period at sea — not continuously in one combat zone.
+SEO: USS Abraham Lincoln Thailand, 286 days at sea, Laem Chabang, USS Abraham Lincoln deployment 2026, US Navy Thailand
+
+STORY 4: GIBBY FIRE, ORANGE COUNTY
+- CAL FIRE: Gibby Fire started September 2, 2026 near Ortega Highway and Gibby Road.
+- Size: 216 acres. Containment: 0% as of September 2 updates.
+- Cause: under investigation.
+- SR-74/Ortega Highway closed eastbound at Gateway in Rancho Mission Viejo, westbound at Grand in Lake Elsinore.
+- Shelter-in-place: Orange County and Riverside County.
+- Fire grew from ~130 acres to 216 acres as crews assessed. Do not lock to early figure.
+- Include clearly dated Latest Update box.
+- CAL FIRE links to Orange County Fire Authority jurisdiction.
+AEO: Where is it? Is Ortega Highway open? What areas shelter-in-place? What caused it? Is it contained?
+SEO: Gibby Fire, Orange County wildfire, Ortega Highway fire, Gibby Fire evacuation, Gibby Fire latest update
+
+STORY 5: CHINA DISPLAYING SCIENTISTS / HARSH GOENKA'S INDIA COMPARISON
+- Harsh Goenka made an August 31, 2026 statement contrasting Chinese public displays of scientists with Indian hoardings of politicians and film stars.
+- Frame as his argument/commentary — not as established fact about China.
+- Safe construction: "Harsh Goenka argued that India should give greater public visibility to scientists, teachers, doctors and innovators, contrasting Indian hoardings with what he described as public displays of scientists in China."
+- Do not state China has a nationwide government programme without a Chinese government/institutional primary source.
+- Avoid simplistic "China good / India bad" framing.
+- This is a commentary/news-reaction story.
+SEO: Harsh Goenka scientists, scientists on billboards India, China scientists giant screens, Indian scientists public recognition
+
+STORY 6: SOUTHEAST WISCONSIN'S UNUSUAL SEPTEMBER HEAT
+- NWS data: Wisconsin temperatures in the 80s, heat-index values reaching upper 80s. Thunderstorm chances in parts of state.
+- Explain: temperature = actual air temp; heat index = how hot it feels with humidity factored in.
+- Low/mid-80s can feel considerably warmer with high humidity.
+- Do NOT call it a "heat wave" unless NWS formally supports that for the specific location.
+- Story combines warmth, humidity, intermittent rain/thunderstorms.
+- Public interest: hydration, prolonged outdoor exposure, rapidly developing thunderstorms.
+SEO: Wisconsin weather September 2026, Milwaukee heat, Southeast Wisconsin weather, Wisconsin humidity, Wisconsin thunderstorms
+
+STORY 7: SIX-YEAR-OLD QUEENSLAND BOY'S DEATH AND SCURVY (CONNOR DEAN)
+- Queensland Coroners Court: Non-inquest findings into the death of Connor Dean, dated August 28, 2026.
+- Official finding: severe vitamin C deficiency; a multivitamin whose label did NOT list vitamin C; cardiac arrest following general anaesthetic; vitamin C deficiency the likely underlying factor.
+- Coroner: severe vitamin C deficiency most likely underlying factor in the cardiac arrest.
+- Queensland Health: vitamin C is one of 13 essential vitamins; vitamin C deficiency causes scurvy.
+- Critical distinction: taking a multivitamin ≠ receiving vitamin C — label did not list vitamin C.
+- Scurvy = disease from inadequate vitamin C.
+- Case is medically unusual without saying scurvy has disappeared entirely.
+- Lead with Queensland Coroners Court, not secondary descriptions.
+SEO: scurvy child Queensland, vitamin C deficiency, Connor Dean, scurvy symptoms, can children get scurvy, Queensland coroner scurvy
+
+STORY 8: VICTORIAN TODDLER DEATH AFTER PETTING-FARM STEC INFECTION
+- Three-year-old girl died; second child seriously ill; connected to a petting farm.
+- STEC = Shiga toxin-producing E. coli; HUS = Haemolytic Uraemic Syndrome.
+- Victoria Dept of Health: STEC/VTEC is a notifiable infection; HUS is an urgent notifiable condition.
+- Symptoms: severe abdominal pain, diarrhoea, bloody diarrhoea.
+- Children under five particularly susceptible to HUS.
+- HUS can involve renal failure and thrombocytopenia.
+- Incubation period: generally 2–8 days, averaging 3–4 days. (Health Victoria)
+- Prevention: handwashing, avoid contaminated food/water. (Health Victoria)
+- NOTE: Case-specific details from media — attribute appropriately. Use Dept of Health for medical explanation.
+Prevention section for parents after petting farm visit.
+SEO: petting farm E coli, STEC Victoria, HUS children, E coli symptoms children, petting zoo infection Australia
+
+STORY 9: POLESTAR 4 SUV ARRIVES/EXPANDS IN AUSTRALIA
+- Polestar Australia: two variants — coupé (virtual rear window) and SUV (physical rear window, conventional profile).
+- Australian SUV specs (Polestar official): 100 kWh battery; rear motor 200 kW/272 hp; dual motor 400 kW/544 hp.
+- WLTP range: 630 km (rear motor), 600 km (dual motor).
+- DC charging: up to 200 kW; 10–80% in ~30 minutes under stated conditions.
+- Cargo: 1,665 litres folded rear vs. 1,536 litres for coupé.
+- Manufactured in Busan, South Korea.
+- Answer buyer questions: SUV vs. coupé, range, charging, luggage space, motor outputs, where made.
+SEO: Polestar 4 SUV Australia, Polestar 4 range, Polestar 4 vs coupé, Polestar 4 100 kWh battery, Polestar 4 charging
+
+STORY 10: 17-YEAR-OLD HU JIAHAO AND ACHALINUS MIRABILIS (NEW SNAKE SPECIES)
+- Hu Jiahao, 17, spent more than 40 nights searching for an elusive snake. (ecns.cn)
+- 2026 paper formally describes Achalinus mirabilis sp. nov. from Kuocang Mountain, Zhejiang. (FAO AGRIS)
+- Research method: integrative approach — molecular phylogenetic analysis, morphological comparison, examination of type material.
+- CO1 fragment genetic divergence: uncorrected p-distances of 9.5%–10.9%.
+- Paper also reassesses Achalinus jinggangensis.
+- Published in Zoosystematics and Evolution, 2026. (ResearchGate)
+- Hu considered an important contributor by Zhejiang Forest Resources Monitoring Center.
+- NOT simply "a teenager found a snake" — required field collection + formal taxonomic and molecular analysis.
+How science recognises a new species (include this as explainer):
+1. Finding an unusual specimen is only the beginning.
+2. Researchers compare physical characteristics.
+3. Genetic evidence is examined.
+4. Existing species and type specimens are compared.
+5. Evidence formally published and species named.
+SEO: Hu Jiahao snake, new snake species China, Achalinus mirabilis, Kuocang Mountain snake, citizen science China, new species 2026
+
+---SOURCE MATERIAL END---
+
+Now write all 10 stories following the mandatory 3-step process. One file, all stories in sequence. Do not skip any story. Do not skip any step.
