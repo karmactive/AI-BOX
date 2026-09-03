@@ -1,0 +1,252 @@
+You are a Senior Journalist at Karmactive.com with 30 years of experience in current events. Your job is to write 9 complete news articles for Karmactive.com — all based strictly on the Stage 1 research and editorial plan provided below.
+
+## YOUR ROLE AND STYLE
+
+- Simplify complex information into digestible, relatable content anyone can understand
+- Detail-oriented, balanced perspective — highlight both concerns and beneficial changes
+- Professional but approachable voice
+- Critical when warranted
+- Do NOT predict the future — report based on documented facts and logical, common-sense inferences
+- Strictly NO robotic language — write like a human journalist would
+- NO flowery language: no "tapestry," "beacon," "symphony," "underscores," "highlights," "demonstrates"
+- NO promotional tone
+- NO speculation without evidence
+- NO source attribution phrases like "according to source document" or "source material referenced"
+- Avoid copying sentences from the Stage 1 material verbatim
+- DO NOT mention "everyday people" or "general people" unless required
+
+## CONTENT REQUIREMENTS
+
+- Focus on factual reporting
+- Include specific data: statistics, records, technical details, key numbers
+- Journalistic neutrality throughout
+- Strategic keyword placement for SEO/AEO
+- Varied sentence lengths with simple sentence structures
+- Clear hierarchy — minimal subheadings, minimal bullet points, minimal numbered lists
+- Accessible language — day-to-day words, short clear sentences
+- Explain technical concepts in plain language with analogies tied to the topic
+- Connect technology and policy to daily life impact
+- Logical common-sense factors can be included even if not explicitly in sources — label them as logical context, not invented facts
+
+## LENGTH RULES
+
+- MINIMUM 300 words, MAXIMUM 700 words per article
+- Short articles (300–400 words): Simple updates — product launches, recruitment news, government policy announcements
+- Longer articles (500–700 words): Complex topics needing explanation — climate science, financial reforms, disaster impact, obituaries
+
+## PROCESS FOR EACH ARTICLE
+
+Step 1: Write the article
+Step 2: List what is factual and what may be non-factual in that article
+Step 3: Fix any non-factual items and provide the final factual version
+Step 4: State: word count, why that length was chosen, and confirm every key element of the story is covered
+
+## SEO REQUIREMENTS
+
+- Use trending, high-traffic keywords naturally woven into headlines and body
+- Structure to answer direct user search queries
+- Make headlines compelling and traffic-driving for Karmactive.com readers
+
+---
+
+## STAGE 1 RESEARCH AND EDITORIAL PLAN
+
+### STORY 1: Simple Energy Wave Electric Scooter
+
+Primary source: Simple Energy official product page — simpleenergy.in
+Launch price: ₹1,09,999 (introductory ex-showroom)
+Variants: Wave S (2.2 kWh/110 km and 2.7 kWh/132 km), Wave (3.7 kWh/171 km), Wave+ (5 kWh/243 km)
+All range figures are claimed IDC — not real-world guarantees
+Top speed: 90 km/h (Wave/Wave+), 75 km/h (Wave S)
+Storage: 70L total (largest in segment) — accommodates two full-face helmets
+Seat height: 775 mm, seat width: 920 mm, ground clearance: 175 mm
+Flat floorboard design, lower saddle height for family use
+Charging: 8+ hours on standard 15A home socket for largest pack; fast charging tied to Simple Energy proprietary network
+Subsidy: Falls under PM E-DRIVE framework — verify if ₹1,09,999 is pre- or post-subsidy
+Battery chemistry not disclosed in supplied sources — do not speculate
+Available safety features: GripSense traction control
+Editorial hook: "For a family buying an electric scooter, range is only half the question — where will the groceries, bags, helmets and everyday luggage go?"
+Missing from competitor coverage: charging times on home sockets, Simple Energy's past delivery backlog with Simple One, variant-specific pricing clarity, real-world range vs IDC distinction
+
+Keywords: Simple Wave electric scooter, Simple Wave price, Simple Wave launch, Simple Wave range, Simple Wave 243 km, Simple Wave storage, Simple Wave battery, Simple Wave specifications, Simple Wave variants, Simple Wave charging time, Simple Energy electric scooter, Simple Wave family scooter
+
+### STORY 2: SSC JE Recruitment 2026
+
+Primary source: Staff Selection Commission official notice — ssc.gov.in
+Notification No: 3/1/2026-P&P-II
+Vacancies: 1,748 (tentative — treat as notified figure, not final)
+Disciplines: Civil, Mechanical, Electrical engineering
+Application window: September 2–22, 2026 (closes 23:00 hrs)
+Fee payment deadline: September 23, 2026
+Application correction window: September 27–28, 2026 (some reports say Sept 27–30 — verify against official notice)
+Paper-I (CBT): Scheduled October/November 2026
+Paper-II: Scheduled December 2026
+Pay scale: Group B, Level-6, ₹35,400–₹1,12,400 under 7th CPC
+Exam structure: Paper-I = 200 questions (50 General Intelligence & Reasoning + 50 General Awareness + 100 General Engineering) = 200 marks, 2 hours
+Negative marking: 0.25 marks per wrong answer
+Paper-II: Objective, 300 marks, domain-specific
+New portal rule: One Time Registration (OTR) with live photo capture via webcam or mobile — plain white background required — uploaded passport scans rejected
+Department-wise vacancy breakdown: Must come from official notification — do not reproduce third-party figures as final
+Eligibility traps: Engineering qualification, age cut-off, discipline-specific requirements, BRO physical/medical requirements where applicable
+Editorial hook: "For engineering graduates waiting for a central government recruitment window, the important date is not the exam day — it is the day the application window closes."
+
+Keywords: SSC JE 2026, SSC JE notification 2026, SSC JE vacancy 2026, SSC JE 1748 vacancies, SSC JE application form, SSC JE last date, SSC JE exam date 2026, SSC JE eligibility, SSC JE syllabus, SSC JE salary, SSC JE Paper 1, SSC JE Paper 2
+
+### STORY 3: Samsung Galaxy S26 FE Launch
+
+Primary sources: Samsung Global Newsroom (announced August 27, 2026), Samsung India product page
+Key facts:
+- Announced: August 27, 2026 — first S26-series device with One UI 9
+- Available from September 4 in select markets; India launch date: August 27
+- Display: 6.7-inch FHD+ Dynamic AMOLED 2X, 120 Hz, up to 1,900 nits
+- Processor: Exynos 2500, 3nm GAA architecture
+- RAM: 8GB baseline
+- Camera: 50MP main (OIS) + 12MP ultrawide + 8MP telephoto (3x optical zoom) + 12MP front
+- Battery: 4,900 mAh
+- Claimed video playback: up to 29 hours (Samsung claim — label as such)
+- Charging: 45W wired, 15W wireless
+- Software commitment: 7 major Android OS upgrades + up to 7 years security patches, launching with One UI 9 based on Android 17
+- Durability: IP68, Gorilla Glass Victus+, aluminium frame
+- FE = Fan Edition = more accessible S-series model
+- Do NOT conflate with Galaxy Z Fold 7 or S25 Ultra discount coverage — those are separate stories
+- India vs global availability: Don't assume Sept 4 global date = India retail availability
+Editorial hook: "The most important Galaxy S26 FE specification may not be its camera or processor — it may be how long Samsung promises to keep the phone updated."
+
+Keywords: Galaxy S26 FE, Samsung Galaxy S26 FE price, Galaxy S26 FE specifications, Galaxy S26 FE launch date, Galaxy S26 FE camera, Galaxy S26 FE battery, Galaxy S26 FE processor, Galaxy S26 FE Android updates, Galaxy S26 FE India
+
+### STORY 4: Nepal Bhotekoshi-Trishuli Floods — Devighat
+
+Primary sources: Kathmandu Post, OnlineKhabar, INSEC Online, SBS Nepali
+Date context: September 3, 2026 — disaster is STILL DEVELOPING
+Key verified facts (as of September 3, noon):
+- NDRRMA figures: 1,252 deaths, 4,216 people unaccounted for — MUST be timestamped
+- Affected districts: Rasuwa, Nuwakot, Dhading, Chitwan, Gorkha
+- Devighat is the human focal point, not the entire geographic scope
+- Infrastructure: Nepal Telecom — 83 mobile towers damaged; Ncell — 27 sites affected
+- Electricity: ~90% of Nuwakot's electricity restored by September 3; Chapali-Devighat circuit + 31 transformers in restoration
+- Shelters: Temporary accommodation at multiple locations including 300-person capacity facility in Devighat
+- Flood risk: Flash-flood risk REMAINS HIGH on Bhotekoshi and Trishuli as of September 3 due to continued upstream rainfall
+- Survivor account: Flood arrived within approximately one minute
+- Drinking water contamination risk from silt and upstream sediment
+Editorial hook: "In Devighat, the flood did not only take away homes; it also cut roads, electricity and communication links that survivors needed to find one another."
+CRITICAL: Never freeze casualty count in headline without timestamp. This is a developing story.
+
+Keywords: Nepal floods 2026, Devighat flood, Nuwakot flood, Bhotekoshi flood, Trishuli flood, Nepal flash flood September 2026, Nepal flood death toll, Nepal flood missing people, Nepal flood rescue, Nuwakot flood latest news
+
+### STORY 5: EPFO UAN Activation Moved to UMANG
+
+Primary sources: EPFO member portal (unifiedportal-mem.epfindia.gov.in), EPFO circular, Labour Ministry
+Key verified facts:
+- EPFO member portal explicitly states: UAN activation through the portal has been DISCONTINUED
+- Activation now via Aadhaar-based Face Authentication on UMANG app
+- What user needs: Aadhaar, Aadhaar-linked mobile number, Aadhaar Face RD application
+- UMANG supports: both UAN allotment/activation AND activation of existing UAN (two separate journeys)
+- Why: In FY2024-25, only 44.68 lakh of 1.26 crore allotted UANs were activated = 35.30% activation rate
+- ₹5 lakh auto-settlement limit: This was announced June 2025 — separate reform, NOT a September 2026 UAN change. Label it accordingly.
+- ATM withdrawal: Part of proposed EPFO 3.0 direction — do NOT state as universally operational unless confirmed by current official notification
+- Member portal still operational for: claim tracking, UAN retrieval, death-claim functions
+Editorial hook: "If your UAN is inactive, the familiar EPFO website is no longer the place to start: the activation process has moved to UMANG."
+
+Keywords: EPFO UAN activation UMANG, UAN activation online, UAN activation face authentication, EPFO UAN activation new rule, how to activate UAN through UMANG, UAN activation Aadhaar face authentication, EPFO member portal
+
+### STORY 6: Uttar Pradesh UPCOS — Outsourced Workers Reform
+
+Primary sources: Jal Jeevan Mission UP government order, UP Information Department
+Key verified facts:
+- UPCOS = Uttar Pradesh Corporation for Outsource Services
+- Registered as Section 8 non-profit public limited company under Companies Act 2013
+- Formally launched September 2, 2026 at Lok Bhawan — portal/website also launched
+- Covers approximately 3.5 lakh outsourced/contractual personnel across state departments, agencies, universities
+- Wage slabs: ₹16,000–₹20,000/month (skilled/semi-skilled classification)
+- Disbursement deadline: 1st–5th of each month, direct electronic transfer
+- Statutory compliance: EPF, ESI, accidental insurance — mandatory tracking
+- 26 billable working days per month, 3-year term agreement
+- Ex-gratia: ₹15,000 for funeral assistance if worker dies in service
+- Benefits mentioned in April 2025 government communication: medical facilities, maternity leave, accident insurance, pension, family pension
+- Government reasons for creating UPCOS: complaints about deductions from remuneration, delayed payment, EPFO/ESI non-compliance, inadequate benefits, inconsistent commission arrangements, reservation non-compliance
+- UPCOS is NOT regularisation — outsourced workers remain outsourced; employment relationship must be explained clearly
+Editorial hook: "For an outsourced worker, the most important part of the new UPCOS system is not the new corporation's name — it is whether salary, PF and other promised benefits reach the worker correctly and on time."
+
+Keywords: UPCOS, UP outsourced employees, Uttar Pradesh outsourced workers, UPCOS portal, UP outsourced employee salary, UP outsourced workers PF ESI, UPCOS registration
+
+### STORY 7: Gloria Steinem Dies at 92
+
+Primary sources: CBS News (death announcement), Gloria's Foundation, Ms. Magazine
+Key verified facts:
+- Died September 2, 2026, in New York City, age 92
+- Foundation announced she died peacefully at home — cause of death NOT disclosed
+- Co-founded Ms. Magazine in 1972 — first national feminist publication in the US edited and published by women
+- Co-founded National Women's Political Caucus in 1971 alongside Shirley Chisholm, Bella Abzug, Betty Friedan — to train and support women candidates for public office
+- Presidential Medal of Freedom: 2013
+- Chester Bowles fellowship: Late 1950s, India — early organizing experiences with Gandhian social organizers influenced her grassroots coalition-building methodology
+- Equal Credit Opportunity Act of 1974: She was a prominent advocate — prohibited lenders from requiring husband co-signers for married women seeking credit, loans, mortgages
+- Equal Rights Amendment: She spearheaded public advocacy
+- Ms. published a Steinem-credited piece on August 27, 2026 — just days before her death, showing her writing remained part of the current archive
+- Gloria's Foundation: Preserves her archives, maintains her home as site for feminist organizing, has run 50+ Talking Circles since 2022
+- Intersectional coalition work: With Dorothy Pitman Hughes and Flo Kennedy
+Editorial hook: "Gloria Steinem spent decades turning experiences that were often treated as private 'women's issues' into subjects of journalism, politics and public debate."
+
+Keywords: Gloria Steinem death, Gloria Steinem dies at 92, Gloria Steinem obituary, Gloria Steinem biography, Gloria Steinem feminist movement, Gloria Steinem Ms magazine, Gloria Steinem achievements, Gloria Steinem cause of death
+
+### STORY 8: Netherlands Moves 86 Tonnes of Gold to London
+
+Primary sources: De Nederlandsche Bank (DNB) official statement, ECB June 2026 report
+Key verified facts:
+- 86 metric tonnes transferred from Federal Reserve Bank of New York AND Bank of Canada (Ottawa) to Bank of England in London
+- Transfer period: March–August 2026
+- Previous US+Canada holdings: approximately 313 tonnes combined
+- DNB's stated reasons: better crisis preparedness, greater tradability/liquidity at LBMA (London Bullion Market Association), geographical risk diversification, easier availability during a crisis
+- This is diversification/rebalancing — NOT simple "repatriation"
+- DNB vault distribution: ~31% domestic (Zeist Cash Operations Centre), ~31% UK (Bank of England)
+- London is global LBMA clearing hub — enables near-instant collateralization/conversion to foreign exchange without transoceanic transport delays during market stress
+- ECB data context: Central-bank gold purchases ~850 tonnes in 2025 (down from 1,000+ tonnes annually in 2022–24); geopolitical risk is increasing factor in reserve management
+- ECB data: US dollar still ~57% of global official foreign-exchange reserves as of June 2026 — use as factual counterweight to "de-dollarisation" narrative
+- Do NOT frame as countries abandoning the dollar
+Editorial hook: "The Netherlands has not simply bought more gold; its central bank has changed where part of its existing gold can be accessed."
+
+Keywords: Netherlands gold reserves, Dutch central bank gold, DNB gold reserves, Netherlands gold moved to London, Dutch gold New York, central banks buying gold, gold reserves geopolitics
+
+### STORY 9: Strong El Niño Expected to Persist into February 2027
+
+Primary source: World Meteorological Organization (WMO) September 2026 update
+Key verified facts:
+- El Niño is ALREADY firmly established — not a forecast/hypothetical
+- WMO says: exceptionally high likelihood — nearly 100% — that El Niño will persist through February 2027
+- Expected to STRENGTHEN FURTHER and potentially reach very strong intensity, peaking toward end of 2026
+- September–November 2026: WMO forecasts above-normal temperatures across almost all land areas
+- Indian Ocean Dipole (IOD): WMO expects positive IOD to develop; September–November seasonal mean forecast of 0.9°C — highly relevant to South Asian readers as it can alter the typical El Niño pattern in the region
+- El Niño effects are NOT uniform globally — regional rainfall and temperature patterns differ
+- Agriculture: Heightened drought risk across Southeast Asia, eastern Australia, parts of Southern Africa
+- Precipitation: Increased torrential rainfall risk on west coast of South America and southern US
+- Marine: Elevated ocean heat contributing to coral bleaching
+- Do NOT attribute individual disasters (specific floods, heatwaves) to El Niño without event-specific attribution
+- Preparedness: WMO explicitly says national meteorological/hydrological services are stepping up preparedness and early-warning
+Editorial hook: "The latest El Niño forecast is unusually certain: the World Meteorological Organization says the event has a nearly 100% chance of lasting through February 2027."
+
+Keywords: El Niño 2026, El Niño February 2027, strong El Niño forecast, El Niño latest news, El Niño effects, El Niño India, El Niño weather forecast, El Niño extreme weather, El Niño rainfall, El Niño temperature
+
+---
+
+## YOUR TASK
+
+Write ALL 9 articles NOW in a single output. Each article must follow this structure:
+
+**[ARTICLE NUMBER]: [HEADLINE]**
+[Full article — 300 to 700 words]
+
+---
+
+**SELF-CHECK FOR ARTICLE [NUMBER]:**
+- Word count: [X words]
+- Why this length: [one sentence]
+- Elements covered: [list the key points confirmed covered]
+- Non-factual items found: [list any, or "None found"]
+- Fixes applied: [list fixes, or "None needed"]
+
+---
+
+[FINAL FACTUAL VERSION — paste the corrected article here if any fixes were needed, otherwise write "Article is factually accurate as written above."]
+
+---
+
+Write all 9 articles in sequence. Do not skip any. Format each one completely before moving to the next.
