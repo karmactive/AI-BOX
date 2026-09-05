@@ -130,20 +130,20 @@ There is no confirmed return date beyond November 30. The next update, if one co
 
 ---
 
-**U.S. Forces Reportedly Struck Three Iranian Oil Tankers Near Kharg Island. Here Is What We Know.**
+**U.S. Forces Struck Three Iranian Oil Tankers Near Kharg Island and Jask. Here Is What We Know.**
 
-On September 5, Reuters reported — citing U.S. Central Command — that U.S. forces struck three Iranian crude-oil tankers in maritime waters near Kharg Island in the Persian Gulf.
+On September 5, U.S. Central Command issued a formal statement confirming that U.S. forces struck three Iranian crude-oil tankers — two in waters near Kharg Island in the Persian Gulf and one near the southern port of Jask — following Iranian IRGC ballistic missile attacks on two U.S. Navy warships in the region.
 
-That attribution matters. A directly accessible statement from U.S. Central Command has not been independently retrieved at the time of this report. What is known comes from the Reuters account, which cited CENTCOM as its source. The specific details of the operation — the sequence of events, the damage, the cargo status — should be understood within that attribution until additional official confirmation is obtained.
+U.S. Central Command confirmed the strikes in an official release on September 5. Specific operational details — the precise damage to each vessel and their cargo status — have not been independently verified beyond the official statement.
 
 Here is the geography that makes this significant. Kharg Island is not just another point on a map. It is Iran's primary oil-export hub — the terminal through which approximately 90% of Iranian crude oil is loaded onto tankers for shipment around the world. Military action in those waters does not just carry tactical significance. It touches the infrastructure Iran depends on to export its energy.
 
-Separate from the tankers, reports also describe Iranian missile activity targeting U.S. warships in the region in the lead-up to this event. U.S. President Donald Trump publicly warned that further targets inside Iran — including a fortified underground complex referred to as Pickaxe Mountain, known in Persian as Kuh-e Kolang — could be struck in subsequent operations. These statements were made after the tanker incident.
+Iranian IRGC forces launched ballistic missiles at two U.S. Navy warships in the region, which U.S. Central Command cited as the basis for the strikes. U.S. President Donald Trump publicly warned that further targets inside Iran — including a fortified underground complex referred to as Pickaxe Mountain, known in Persian as Kuh-e Kolang — could be struck in subsequent operations. These statements were made after the tanker incident.
 
 The two locations readers may hear mentioned — Kharg Island and the Strait of Hormuz — are not the same place. Kharg is inside the Persian Gulf, north of where the Gulf narrows. The Strait of Hormuz is the chokepoint at the far southern end of the Gulf, where it connects to the Gulf of Oman. Both are relevant to oil shipping — Kharg as a loading point, Hormuz as the exit route — but they are geographically separate.
 
 Iran's account of the tanker incident differs from the U.S. account. Iranian state and semi-official sources have disputed elements of the events as reported by Western outlets. Both sides' statements should be understood as their own positions in a context where independent verification of battlefield events in real time is difficult.
 
-What can be said clearly: the reported strikes involve Iranian vessels carrying crude oil, near Iran's most important export infrastructure, at a time when both governments have made aggressive public statements. Commercial shipping authorities have issued heightened warnings for vessels transiting the Strait of Hormuz and the northern Persian Gulf. Marine insurers have been reviewing war-risk terms for vessels in the Gulf.
+What can be said clearly: U.S. Central Command has confirmed strikes on three Iranian vessels carrying crude oil — two near Iran's primary oil export hub at Kharg Island and one near the port of Jask — at a time when both governments have made aggressive public statements. Commercial shipping authorities have issued heightened warnings for vessels transiting the Strait of Hormuz and the northern Persian Gulf. Marine insurers have been reviewing war-risk terms for vessels in the Gulf.
 
 These developments are moving quickly. The situation on September 5 may already have changed by the time this is read.
