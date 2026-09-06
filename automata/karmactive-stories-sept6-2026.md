@@ -1,5 +1,7 @@
 # Karmactive.com — News Stories | September 6, 2026
-## Stage 3B — Factually Corrected Final Version (All 8 Stories)
+## Stage 4B — Links Embedded (Internal + External)
+
+> **CMS implementation note:** All external links should have `target="_blank" rel="noopener noreferrer"` applied in the WordPress editor. Markdown link syntax below hides raw URLs from readers as required.
 
 ---
 
@@ -25,7 +27,7 @@ You need to be an Australian resident living outside the Northern Territory. NT 
 
 The voucher covers accommodation only — at participating caravan parks, campgrounds, wayside inns, and roadhouses across the Red Centre and Barkly region. The voucher is for eligible accommodation; it is not a general travel-expense payment. If your accommodation booking costs less than $500, the leftover balance is forfeited — there's no change or cash-back.
 
-Bookings must go through Tourism Central Australia's official system or one of its Visitor Information Centres. You can't use it at just any accommodation you find online.
+Bookings must go through [Tourism Central Australia's official system](https://www.discovercentralaustralia.com/drive-vouchers) or one of its Visitor Information Centres. You can't use it at just any accommodation you find online.
 
 **When do you need to travel?**
 
@@ -33,9 +35,9 @@ Successful applicants will be notified on October 5, 2026. Bookings must be lock
 
 **The bigger funding picture**
 
-This voucher campaign sits inside a $5 million Red Centre Marketing Boost, which itself is part of an $8.5 million Red Centre investment package. The rest of that money includes a $1 million Alice Springs Revival and Resilience grant program and a $2.5 million Red Centre Tourism Development Fund.
+This voucher campaign sits inside a $5 million Red Centre Marketing Boost, which itself is part of an [8.5 million Red Centre investment package](https://www.trademinister.gov.au/minister/don-farrell/media-release/getting-more-aussies-road-red-centre). The rest of that money includes a $1 million Alice Springs Revival and Resilience grant program and a $2.5 million Red Centre Tourism Development Fund.
 
-For anyone already planning a road trip through Central Australia, the voucher reduces accommodation costs by up to $500. For anyone who wasn't planning the trip, $500 off a caravan park doesn't automatically make it cheap — the cost of getting there from the eastern seaboard still falls entirely on you.
+For anyone already planning a [road trip through Central Australia](https://www.karmactive.com/bate-bay-australia-best-beach-2026-tourism-rankings-130-point-assessment/), the voucher reduces accommodation costs by up to $500. For anyone who wasn't planning the trip, $500 off a caravan park doesn't automatically make it cheap — the cost of getting there from the eastern seaboard still falls entirely on you.
 
 Applications are open now through September 30 at Tourism Central Australia's website.
 
@@ -51,7 +53,7 @@ Applications are open now through September 30 at Tourism Central Australia's we
 
 ---
 
-Michigan released two sets of school assessment data this week, and they tell different stories. One is about how high schoolers are scoring on the SAT. The other is about how third graders performed against Michigan's English language arts standards.
+[Michigan released two sets of school assessment data this week](https://www.michigan.gov/mde/news-and-information/press-releases/2026/09/04/mi-must-continue-plans-to-improve-student-proficiency), and they tell different stories. One is about how high schoolers are scoring on the SAT. The other is about how third graders performed against Michigan's English language arts standards.
 
 **The reading picture — and why it matters more**
 
@@ -59,7 +61,7 @@ Michigan's 2026 M-STEP results show that 38.2% of third graders were proficient 
 
 To be clear about what that number means: the M-STEP measures whether students are meeting Michigan's academic standards. It is not, in the state's own words, a standalone test for determining whether a child is at grade level. That's an important qualification — it means reading a headline that says "61.8% of Michigan third graders can't read" would be inaccurate. The state says M-STEP results should always be interpreted alongside classroom work and other assessment tools.
 
-State Superintendent Glenn Maleyko said Michigan must continue working to improve proficiency across all subjects and grades. The state's Department of Education pointed specifically to evidence-based instruction approaches, including the Science of Reading, as part of ongoing efforts.
+[State Superintendent Glenn Maleyko](https://www.michigan.gov/mde/about-us/superintendent-office/glenn-maleyko) said Michigan must continue working to improve proficiency across all subjects and grades. The state's Department of Education pointed specifically to [evidence-based instruction approaches, including the Science of Reading](https://www.karmactive.com/teachers-day-2026-radhakrishnan-69-national-awards-murmu-ai-guru-purnima/), as part of ongoing efforts.
 
 Reading proficiency also declined in several other grades, though most test results across the 20 reported assessments stayed within two percentage points of 2025 results.
 
@@ -67,7 +69,7 @@ Reading proficiency also declined in several other grades, though most test resu
 
 The statewide 2026 combined SAT average came in at about 945.1. That's down from 954 in 2025 and well below the pre-pandemic 2019 average of roughly 985.1. The 2026 English/reading-writing average was about 485; math came in around 460.
 
-The Detroit News analyzed school-level data and ranked Michigan high schools by average SAT score:
+The Detroit News analyzed school-level data and ranked [Michigan high schools](https://www.karmactive.com/detroit-severe-thunderstorm-warning-80000-power-outage-wayne-county-september-2026/) by average SAT score:
 
 1. International Academy, Troy — 1301.8
 2. International Academy of Macomb — 1241.8
@@ -96,15 +98,15 @@ Both the statewide SAT average and third-grade M-STEP ELA proficiency were lower
 
 ---
 
-El Niño is not coming — it's already here. And the latest forecasts from both Australia's Bureau of Meteorology and the World Meteorological Organization suggest it could keep intensifying well into 2027.
+El Niño is not coming — it's already here. And the latest forecasts from both Australia's Bureau of Meteorology and the [World Meteorological Organization](https://www.karmactive.com/el-nino-2026-wmo-forecast-severe-drought-flooding/) suggest it could keep intensifying well into 2027.
 
 **What the numbers actually say**
 
-The Bureau of Meteorology's most recent assessment, issued on September 1, put the relative Niño3.4 index at +2.45°C for the week ending August 30. The Niño3.4 index measures sea surface temperature in a key stretch of the central tropical Pacific. Australia's threshold for declaring El Niño is +0.80°C under its current measurement method.
+The [Bureau of Meteorology's most recent assessment](https://www.bom.gov.au/climate/enso/), issued on September 1, put the relative Niño3.4 index at +2.45°C for the week ending August 30. The Niño3.4 index measures sea surface temperature in a key stretch of the central tropical Pacific. Australia's threshold for declaring El Niño is +0.80°C under its current measurement method.
 
-Models forecast continued warming through spring in the southern hemisphere, with expected values forecast to rise above the highest levels recorded since reliable records began in 1950. That's not the same as confirming this is the strongest El Niño ever measured — it is a forecast, and forecasts carry uncertainty. But the direction is clear.
+Models forecast continued warming through spring in the southern hemisphere, with expected values forecast to rise above the [highest levels recorded since reliable records began in 1950](https://www.karmactive.com/australia-super-el-nino-strongest-since-1950-climate-warning/). That's not the same as confirming this is the strongest El Niño ever measured — it is a forecast, and forecasts carry uncertainty. But the direction is clear.
 
-The WMO places the likelihood of El Niño persisting through February 2027 at almost 100%, and expects it to strengthen into what it classifies as a very strong event.
+The [WMO](https://wmo.int/news/media-centre/el-nino-set-become-very-strong-raising-risks-of-extreme-weather-2027) places the likelihood of El Niño persisting through February 2027 at almost 100%, and expects it to strengthen into what it classifies as a very strong event.
 
 **What El Niño actually is**
 
@@ -128,15 +130,15 @@ Historical context from the Bureau shows that the 2015–16 very strong El Niño
 
 ---
 
-Greater Sydney faced two simultaneous emergencies on Saturday, September 5 — a Total Fire Ban declared due to extreme fire danger, and severe winds that knocked out power to tens of thousands of households at the same time.
+Greater Sydney faced [two simultaneous emergencies](https://www.karmactive.com/sydney-33c-september-heatwave-total-fire-ban-el-nino-record/) on Saturday, September 5 — a Total Fire Ban declared due to [extreme fire danger](https://www.karmactive.com/australia-spring-bushfire-outlook-2026/), and severe winds that knocked out power to tens of thousands of households at the same time.
 
-Fire danger across Greater Sydney was rated Extreme on September 5. The NSW Rural Fire Service declared a Total Fire Ban, which also triggered closures of multiple national park tracks, trails, and some camping areas. Under a Total Fire Ban, fires in the open are prohibited, including solid-fuel barbecues and burn-offs. Specific conditions apply to some gas and electric appliances. Permits are revoked until the ban lifts.
+Fire danger across Greater Sydney was rated Extreme on September 5. The [NSW Rural Fire Service declared a Total Fire Ban](https://www.rfs.nsw.gov.au/fire-information/fdr-and-tobans), which also triggered closures of multiple national park tracks, trails, and some camping areas. Under a Total Fire Ban, fires in the open are prohibited, including solid-fuel barbecues and burn-offs. Specific conditions apply to some gas and electric appliances. Permits are revoked until the ban lifts.
 
 At the same time, gale-force winds were moving through the region.
 
 **The power story**
 
-By 5pm on September 5, Endeavour Energy — the distributor responsible for Western Sydney and surrounding areas — reported approximately 50,000 customers without power across more than 250 fault sites. Wind gusts reached 100 km/h in affected areas.
+By 5pm on September 5, [Endeavour Energy](https://www.endeavourenergy.com.au/about-us/newsroom/windy-conditions-saturday-5-september-730pm) — the distributor responsible for Western Sydney and surrounding areas — reported approximately 50,000 customers without power across more than 250 fault sites. Wind gusts reached 100 km/h in affected areas.
 
 The next morning, the September 6 update put the number at 62,256 customers affected, still with more than 250 fault sites active.
 
@@ -162,7 +164,7 @@ The NSW RFS and Endeavour Energy were both still managing active sites as of the
 
 ---
 
-The Jharkhand High Court issued a ruling on August 31, 2026, that could mean higher pension payments for government employees who retired on June 30 — but what they're receiving is not an extra salary payment, and getting that distinction right matters.
+The [Jharkhand High Court](https://jharkhandhighcourt.nic.in/) issued a ruling on August 31, 2026, that could mean higher pension payments for government employees who retired on June 30 — but what they're receiving is not an extra salary payment, and getting that distinction right matters.
 
 **The problem for June 30 retirees**
 
@@ -170,11 +172,11 @@ Under the applicable pay rules, annual salary increments fall on July 1. An empl
 
 **What the court decided**
 
-The Jharkhand High Court ruled, in petitions filed by Satyadev Prasad, Vijay Kumar Srivastava & Ors. v State of Jharkhand before Justice Deepak Roshan, that eligible employees who retired on June 30, after completing the required preceding year of service, are entitled to one notional annual increment for the purpose of calculating their pension and other retirement benefits.
+The Jharkhand High Court ruled, in petitions filed by Satyadev Prasad, Vijay Kumar Srivastava & Ors. v State of Jharkhand before Justice Deepak Roshan, that eligible employees who retired on June 30, after completing the required preceding year of service, are entitled to one notional annual increment for the purpose of calculating their [pension and other retirement benefits](https://www.karmactive.com/uk-state-pension-triple-lock-4-8-rise/).
 
 The word "notional" is important. This is not an order for the government to pay a higher salary to someone who has already retired. It is an instruction that, when calculating pensionary and retiral benefits, the increment that would have been received on July 1 must be included in the base figure used for those calculations. The practical effect is higher retirement payments going forward — not a backdated active salary.
 
-The court relied on the Supreme Court's earlier ruling in the C.P. Mundinamani case, which established that an increment earned through completion of a full year's service cannot be withheld simply because the employee is not physically on duty when the date of accrual arrives.
+The court relied on the [Supreme Court's earlier ruling in the C.P. Mundinamani case](https://www.karmactive.com/district-judges-seven-states-retire-62-court-delays/), which established that an increment earned through completion of a full year's service cannot be withheld simply because the employee is not physically on duty when the date of accrual arrives.
 
 **Who benefits — and when**
 
@@ -202,7 +204,7 @@ Surendra Singh Choudhary, known online as Bittu Tabahi, lives in Biaora in Rajga
 
 **The response**
 
-On September 4, Boyan Slat — the Dutch founder and CEO of The Ocean Cleanup, a Netherlands-based nonprofit that develops large-scale technologies to remove plastic from oceans and rivers — publicly replied to a post about Choudhary's work with two words:
+On September 4, Boyan Slat — the Dutch founder and CEO of [The Ocean Cleanup](https://theoceancleanup.com/), a Netherlands-based nonprofit that develops large-scale technologies to remove plastic from oceans and rivers — publicly replied to a post about Choudhary's work with two words:
 
 "Come work for us."
 
@@ -214,7 +216,7 @@ Choudhary's effort drew attention at the state level. Madhya Pradesh Chief Minis
 
 **What The Ocean Cleanup does**
 
-The organisation designs systems to collect plastic passively — using the movement of water and current to funnel waste into collection systems. It operates in oceans and rivers globally. Its river interceptor program is specifically designed for waterways like the Ajnar.
+The organisation designs systems to collect plastic passively — using the movement of water and current to funnel waste into collection systems. It operates in oceans and rivers globally. [Its river interceptor program is specifically designed for waterways like the Ajnar](https://www.karmactive.com/remote-sensing-innovation-tracks-plastic-pollution-in-freshwaters/).
 
 Whether Choudhary ends up formally joining that work or not, his months of cleanup on the Ajnar River drew public recognition from a state chief minister and a public invitation from one of the most recognised names in river pollution work globally.
 
@@ -230,13 +232,13 @@ Whether Choudhary ends up formally joining that work or not, his months of clean
 
 ---
 
-The Punjab government has announced a proposal to raise Dearness Allowance for a specific group of around 85,000 state employees from 42% to 60% — an increase of 18 percentage points. Industries Minister Aman Arora made the announcement following a Cabinet Sub-Committee recommendation.
+The Punjab government has announced a proposal to raise Dearness Allowance for a specific group of around 85,000 state employees from 42% to 60% — an increase of 18 percentage points. Industries Minister Aman Arora made the announcement following a [Cabinet Sub-Committee recommendation](https://finance.punjab.gov.in/).
 
 But this is not a pay rise for all Punjab government employees. The detail that matters is which employees are covered.
 
 **Who this applies to**
 
-This DA adjustment covers employees who were recruited on or after July 17, 2020. These staff members are paid under the Central government's 7th Pay Commission pay matrix, which Punjab adopted for employees hired from that date. Their DA rate was at 42%. The proposed change brings it to 60%, aligning it more closely with the central government's DA rate for staff on the same pay structure.
+This DA adjustment covers employees who were recruited on or after July 17, 2020. These staff members are paid under the Central government's [7th Pay Commission pay matrix](https://www.karmactive.com/uttar-pradesh-upcos-350000-outsourced-workers-wages/), which Punjab adopted for employees hired from that date. Their DA rate was at 42%. The proposed change brings it to 60%, aligning it more closely with the central government's DA rate for staff on the same pay structure.
 
 Employees hired before July 17, 2020, are on older Punjab state pay scales and are not covered by this particular announcement. Those employees — represented by various trade union bodies — have separately and repeatedly demanded action on pending DA installments and arrears that remain unresolved. This announcement does not address those outstanding arrears.
 
@@ -268,7 +270,7 @@ The 14.2-kilogram domestic cylinder — the one used in most Indian homes for co
 
 **Why the prices move differently**
 
-Commercial cylinders are priced closer to market rates, which means they respond faster to changes in international gas benchmarks. Oil Marketing Companies review commercial LPG prices monthly and adjust based on global propane and butane import costs, including international LPG import benchmarks.
+Commercial cylinders are priced closer to market rates, which means they respond faster to changes in international gas benchmarks. Oil Marketing Companies review commercial LPG prices monthly and adjust based on [global propane and butane import costs](https://www.karmactive.com/russia-india-energy-trade-lpg-gasoline-hormuz-disruption/), including [international LPG import benchmarks](https://www.karmactive.com/india-lpg-imports-us-67-percent-iran-war/).
 
 This September revision on commercial cylinders follows two consecutive months in which prices had been reduced — so this is a reversal of recent direction, not an ongoing streak of increases.
 
@@ -278,10 +280,10 @@ For a small dhaba or tea stall using three to four commercial cylinders a month,
 
 Households cooking at home on domestic cylinders are not affected by this revision.
 
-City-by-city figures vary. For the most current pricing in your city, check directly with Indian Oil Corporation, HPCL, or BPCL — the three Oil Marketing Companies that publish monthly price revisions.
+City-by-city figures vary. For the most current pricing in your city, check directly with [Indian Oil Corporation](https://iocl.com/prices-of-petroleum-products), HPCL, or BPCL — the three Oil Marketing Companies that publish monthly price revisions.
 
 ---
 
-*End of Stage 3B corrected articles — all 8 stories, September 6, 2026*
+*End of Stage 4B linked articles — all 8 stories, September 6, 2026*
 *File: karmactive-stories-sept6-2026.md*
 *Location: /home/user/AI-BOX/automata/*
