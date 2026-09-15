@@ -1,0 +1,64 @@
+================================================================================
+HEADLINE (Search-Optimised):
+UK weather turns cooler this week with rain for northern and western areas
+================================================================================
+
+ARTICLE:
+--------------------------------------------------------------------------------
+
+UK weather turns cooler this week with rain for northern and western areas
+
+The UK is moving into a cooler, more unsettled period this week. Temperatures are falling back toward seasonal averages after a warmer spell, while northern and western parts of England, Scotland, and Wales can expect rain and stronger winds.
+
+The Met Office has indicated that north-westerly winds will bring showers and periods of more sustained rain to northern and western areas. Southern and eastern parts of England are likely to see drier conditions, though not entirely settled.
+
+**What to expect this week**
+
+- Temperatures will feel noticeably lower than recent days
+- Northern and western areas face the highest chance of rain
+- North-westerly winds will strengthen across parts of the UK
+- Southern and eastern England should see relatively drier conditions
+- Conditions are closer to what would typically be expected for mid-September
+
+The shift is not unusual for this time of year. September historically marks the transition from summer patterns to more autumnal conditions, with temperatures and weather systems becoming less settled.
+
+Pack a waterproof if you are in northern or western areas this week. The cooler temperatures also mean a jacket will be useful in the evenings, even if the daytime starts bright.
+
+The Met Office provides updated regional forecasts at the BBC Weather and Met Office websites. Check those for specific conditions in your area as the week progresses.
+
+--------------------------------------------------------------------------------
+LENGTH USED AND JUSTIFICATION:
+Approximately 230 words. The Stage 1a brief rated this story Low–Medium and noted the BBC's existing article is approximately 509 words — while recommending 300–400 words maximum. A short, clear weather update is what serves the reader. This piece is slightly below the lower bound because the information simply does not fill 300 words without padding. Every word here is useful; adding more would mean repeating the same points in different phrasing.
+
+EDITORIAL NOTE: The Stage 1a brief recommended "Publish only if you can add genuinely useful local or practical information." The practical angle added here is the actionable clothing advice and the regional breakdown. If this story is not needed as a volume filler today, it can be skipped — the brief's own assessment supports that.
+
+--------------------------------------------------------------------------------
+TRAFFIC AND EARNINGS AUDIT:
+✓ Immediate weather summary in first sentence
+✓ No internal links — no relevant Karmactive weather articles identified; links not manufactured
+✓ UK angle explicit throughout
+✓ Primary keyword "UK weather" in headline and opening paragraph
+✗ No FAQ section — article under 300 words, not warranted
+⚠ Ad viewability: article is under 500 words — very limited scroll depth for ad units; editor should note this is a low-earnings article by design (Low–Medium traffic signal)
+
+--------------------------------------------------------------------------------
+FACT AUDIT:
+VERIFIED (against sources — BBC Weather, British Bulletin, Independent/Met Office):
+✓ UK weather turning cooler
+✓ Northern and western areas facing rain
+✓ North-westerly winds expected
+✓ Southern and eastern England drier
+✓ Temperatures closer to seasonal averages
+
+UNVERIFIED / FLAG FOR EDITOR:
+⚠ Specific temperature figures — not included because no precise figures were available in the brief; do not add temperature numbers without checking a current Met Office forecast
+⚠ "Met Office indicated" — attributed to Met Office/BBC Weather sourcing in brief; verify the specific statement comes from an official Met Office forecast before publication
+
+--------------------------------------------------------------------------------
+META DESCRIPTION:
+UK weather is turning cooler this week with rain expected in northern and western areas. Temperatures are falling toward seasonal averages. (139 characters)
+
+--------------------------------------------------------------------------------
+SOCIAL HEADLINE:
+Summer's last warmth is fading — here's what UK weather looks like this week
+================================================================================

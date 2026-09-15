@@ -1,0 +1,76 @@
+================================================================================
+HEADLINE (Search-Optimised):
+Calcutta High Court orders full building reconstruction and ₹10 lakh compensation after demolition exceeded lawful limits
+================================================================================
+
+ARTICLE:
+--------------------------------------------------------------------------------
+
+Calcutta High Court orders full building reconstruction and ₹10 lakh compensation after demolition exceeded lawful limits
+
+Authorities in West Bengal have been ordered to rebuild a demolished two-storey building, provide free alternative accommodation to its residents, and pay ₹10 lakh in compensation — after the Calcutta High Court found that the demolition went beyond what the law permitted.
+
+The case involved a private building that state authorities demolished on the grounds of alleged encroachment on government land. The court accepted that some encroachment existed. But it found that the demolition extended to parts of the structure that were not encroaching — meaning the authorities had demolished a lawfully standing building along with the unlawful portion. That distinction is the basis of the ruling.
+
+**What the court ordered**
+
+The Calcutta High Court directed authorities to:
+
+- Reconstruct the petitioners' two-storey building in accordance with its sanctioned plan
+- Provide free alternative accommodation to the petitioners until reconstruction is complete
+- Pay ₹10 lakh in compensation
+- Complete the reconstruction within two years of the judgment being communicated
+
+The court did not overturn the authority to act against encroachment. It ruled on the proportionality of the action — that demolishing the entire structure, including parts not subject to the encroachment, crossed the line between enforcement and excess.
+
+**Why the remedy matters more than the demolition**
+
+Demolition orders against alleged encroachments have been a recurring legal flashpoint across India. Courts have addressed the practice in various states, with rulings generally distinguishing between targeted removal of unlawful construction and wholesale demolition of private property.
+
+This ruling is notable because the court's response was not simply to criticise the demolition or to award compensation alone. It ordered reconstruction — a significantly more demanding remedy that requires the state to actively restore what it wrongly destroyed, not merely pay for the loss.
+
+The two-year reconstruction deadline creates an enforceable timeline. Failure to comply within that window would expose the relevant authorities to contempt proceedings. The order to provide free alternative accommodation in the interim ensures the affected residents are not left homeless while awaiting reconstruction.
+
+The case was decided by the Calcutta High Court and reported by The Indian Express and LawLens. The specific identities of the petitioners and the bench have not been included in widely available public summaries of the ruling.
+
+The judgment adds to a body of case law that constrains the exercise of demolition powers — particularly where the demolition affects private residential structures beyond the specific area subject to any legitimate enforcement action.
+
+--------------------------------------------------------------------------------
+LENGTH USED AND JUSTIFICATION:
+Approximately 400 words. This is a legal news story. The key elements are the court's finding, the specific remedies ordered, and why the remedy is more significant than a standard penalty. All three are covered without speculation about broader political or policy dimensions beyond what the judgment supports. No FAQ section: the article is below 600 words and the key PAA question ("What did the Calcutta High Court order after the demolition?") is answered in the second and third paragraphs.
+
+--------------------------------------------------------------------------------
+TRAFFIC AND EARNINGS AUDIT:
+✓ Core ruling in opening paragraph
+✓ Ordered remedies in clear structured list
+✓ No internal links — no specific relevant Karmactive legal articles identified in brief; links not manufactured
+✓ Primary keyword "Calcutta High Court demolition" in headline and opening
+✓ No return visitor trigger flagged — this is a concluded judgment, no pending development announced
+✗ FAQ section not included — conditions not met (under 600 words, fewer than 3 highly specific PAA questions)
+
+--------------------------------------------------------------------------------
+FACT AUDIT:
+VERIFIED (against primary sources — The Indian Express, LawLens):
+✓ Demolition of petitioners' two-storey building by state authorities
+✓ Alleged encroachment on government land as stated basis for demolition
+✓ Court found demolition exceeded the encroachment area
+✓ Reconstruction ordered in accordance with sanctioned plan
+✓ Free alternative accommodation to be provided during reconstruction
+✓ ₹10 lakh compensation ordered
+✓ Two-year reconstruction deadline from communication of judgment
+
+UNVERIFIED / FLAG FOR EDITOR:
+⚠ Names of petitioners and bench — not included in publicly available summaries; if available from the full judgment, may be added for E-E-A-T value
+⚠ Specific case number and date of judgment — not confirmed in available source summaries; add if obtainable from the full court record
+
+--------------------------------------------------------------------------------
+META DESCRIPTION:
+Calcutta High Court ordered reconstruction of a demolished building, free accommodation and ₹10 lakh compensation after finding the demolition exceeded lawful limits. (162 characters — trim by 2 if needed)
+
+META DESCRIPTION (trimmed):
+Calcutta HC ordered rebuilding of a demolished home and ₹10 lakh compensation after finding the demolition went beyond what the law permitted. (145 characters)
+
+--------------------------------------------------------------------------------
+SOCIAL HEADLINE:
+Calcutta High Court tells authorities: rebuild what you demolished — and pay ₹10 lakh for going too far
+================================================================================

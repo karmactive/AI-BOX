@@ -1,0 +1,78 @@
+================================================================================
+HEADLINE (Search-Optimised):
+Nairobi wins 2029 World Athletics Championships in African first as London bid falls short
+================================================================================
+
+ARTICLE:
+--------------------------------------------------------------------------------
+
+Nairobi wins 2029 World Athletics Championships in African first as London bid falls short
+
+Nairobi has been selected to host the 2029 World Athletics Championships, making Kenya's capital the first African city to stage the event in its 49-year history. The decision was announced on September 15, 2026, with Munich separately confirmed as the host for the 2031 edition.
+
+London had submitted a major competing bid and was widely considered a strong contender. The choice of Nairobi over one of the world's most recognised athletics venues is a notable shift for a sport that has held its flagship championship primarily in North America, Europe, and Asia.
+
+**Why this decision matters beyond the headline**
+
+Africa has produced some of the most dominant athletes in the history of the World Athletics Championships. Distance runners from Kenya and Ethiopia have won a disproportionate share of medals across decades of competition. The championships have never been held on the continent where so many of its champions come from.
+
+Hosting the event in Nairobi in 2029 changes that. It also gives the sport an opportunity to build its audience in a region where athletics is genuinely popular at a grassroots level, rather than a niche spectator sport.
+
+For Kenya specifically, this is a major infrastructure and tourism moment. Reuters confirmed that Kasarani Stadium in Nairobi is being renovated ahead of the 2029 event. Kasarani has a history with major athletics — it hosted the 1987 All-Africa Games — but staging the World Athletics Championships requires a significantly higher standard of facility and logistics than any previous event held there.
+
+**What happened to London's bid**
+
+London's bid was backed by the existing infrastructure of the London Stadium, one of the few venues in the world capable of hosting a major championships at short notice without significant renovation. The city hosted the 2017 World Championships, which drew strong attendance and broad media coverage.
+
+The Guardian confirmed that London was passed over in favour of Nairobi. No official explanation for the selection decision was provided in publicly available World Athletics statements at the time of announcement. Bids are typically assessed on a combination of financial guarantees, government support, venue quality, experience, and strategic objectives — the last of which, in this case, clearly included geographic expansion.
+
+**The Munich confirmation**
+
+The simultaneous selection of Munich for 2031 gives World Athletics two consecutive championships outside its traditional heartland — Africa followed by continental Europe. Munich hosted the European Championships in 2022 with considerable success, making it a lower-risk selection for 2031 while Nairobi takes on the more complex organisational challenge of 2029.
+
+World Athletics' hosting bidding calendar had scheduled the 2029 host selection for September 2026, meaning the Nairobi decision landed on schedule.
+
+The next major dates for the Nairobi 2029 preparation will involve the formal host city agreement and the publication of the event schedule. Coverage will continue as those details emerge.
+
+--------------------------------------------------------------------------------
+LENGTH USED AND JUSTIFICATION:
+Approximately 450 words. This is a breaking news story with medium-high traffic potential. The key angles — first African host, London's failed bid, Munich for 2031 — are covered cleanly. There is no justification for a long history of African athletics here; that would be padding dressed as context. No FAQ section: the article did not meet the three-condition threshold (fewer than 3 highly specific PAA questions that require extended answers at this length). The Priority PAA ("Where will the 2029 World Athletics Championships be held?") is answered in the opening paragraph.
+
+--------------------------------------------------------------------------------
+TRAFFIC AND EARNINGS AUDIT:
+✓ Answer to primary search question in first paragraph
+✓ No internal links included — no specific relevant Karmactive athletics articles were identified in the Stage 1a brief for this story; links not manufactured
+✓ UK/international angle present — London bid, Munich 2031
+✓ Priority PAA answered in opening (Nairobi, first African host, Munich 2031)
+✓ Primary keyword "2029 World Athletics Championships" in headline and first paragraph
+✓ Return visitor trigger present in closure ("formal host city agreement... coverage will continue")
+✗ FAQ section not included — conditions not fully met at this length target
+
+--------------------------------------------------------------------------------
+FACT AUDIT:
+VERIFIED (against primary sources — Reuters, World Athletics bidding calendar):
+✓ Nairobi selected as 2029 World Athletics Championships host
+✓ First African city to host the championships
+✓ Munich selected for 2031
+✓ Kasarani Stadium being renovated (Reuters)
+✓ World Athletics hosting calendar had September 2026 as selection date
+✓ London bid confirmed as competitor (Guardian)
+✓ London hosted 2017 World Championships
+
+LOGICALLY SELF-EVIDENT (inference):
+~ "Disproportionate share of medals" — factually accurate as a general statement about Kenyan/Ethiopian distance dominance; specific medal counts not cited
+~ Selection criteria list (financial guarantees, government support, etc.) — standard World Athletics bid evaluation criteria; not specific to this decision's documentation
+~ Kasarani 1987 All-Africa Games — verify this specific historical fact before publication
+
+UNVERIFIED / FLAG FOR EDITOR:
+⚠ Kasarani hosting the 1987 All-Africa Games — confirm this historical detail before publication
+⚠ No official World Athletics statement explaining the London vs Nairobi decision rationale — article correctly notes this; do not add a rationale not found in official sources
+
+--------------------------------------------------------------------------------
+META DESCRIPTION:
+Nairobi will host the 2029 World Athletics Championships, becoming the first African city to stage the event. London's bid was passed over. Munich gets 2031. (157 characters)
+
+--------------------------------------------------------------------------------
+SOCIAL HEADLINE:
+Nairobi beats London to host the 2029 World Athletics Championships — the first ever held in Africa
+================================================================================

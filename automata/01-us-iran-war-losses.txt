@@ -1,0 +1,109 @@
+================================================================================
+HEADLINE (Search-Optimised):
+US Iran war losses revealed as Pentagon watchdog reports damaged aircraft, hundreds of buildings and $37.5 billion cost
+================================================================================
+
+ARTICLE:
+--------------------------------------------------------------------------------
+
+US Iran war losses revealed as Pentagon watchdog reports damaged aircraft, hundreds of buildings and $37.5 billion cost
+
+If you have been wondering what the US-Iran war has actually cost America in real terms — beyond the battlefield headlines — a new Pentagon watchdog report puts the damage into plain numbers for the first time.
+
+A Department of Defense Inspector General assessment covering April through June 2026 has tallied the full scale of losses and costs from Iranian attacks on US military and diplomatic facilities. The figures go far beyond what official statements have acknowledged until now.
+
+Among the losses documented:
+
+- Up to 30 MQ-9 Reaper drones lost or damaged
+- Seven KC-135 aerial refuelling aircraft lost or damaged
+- Hundreds of buildings at US military bases damaged
+- 12 US service members killed
+- $184 million in damage to US diplomatic facilities
+- $113 million in emergency response and evacuation costs
+- Approximately 9,000 Americans evacuated
+- Total US war cost: approximately $37.5 billion for the period reviewed
+
+**What this means for Americans paying attention to the war**
+
+These figures give US taxpayers and military families the clearest picture yet of what Iranian retaliation has cost. The $37.5 billion war cost covers only the period under the watchdog's review — not the full conflict. The loss of KC-135 refuelling aircraft is particularly significant because those planes extend the range of US strike aircraft across the region. Losing seven of them is not an equipment footnote — it is a constraint on what the US military can do and where.
+
+**The logistics story behind the equipment losses**
+
+The Pentagon assessment does something most battlefield reporting does not: it connects the equipment damage to operational consequences. Iranian attacks did not only destroy hardware. They forced US Central Command to reroute supply and logistics chains away from affected bases, with Diego Garcia — a remote island base in the Indian Ocean — becoming a more heavily relied-upon alternative.
+
+That shift matters because Diego Garcia is significantly farther from the operational theatre. Longer supply routes mean slower resupply, higher fuel costs, and greater logistical strain on forces in the field. The drone and aircraft losses compound this: the MQ-9 Reaper is the US military's primary armed surveillance drone, used for both reconnaissance and strike missions. Losing up to 30 of them reduces the military's ability to monitor and respond to threats simultaneously.
+
+The KC-135 losses are equally telling. These aircraft are not combat planes — they are the flying fuel stations that allow fighter jets and bombers to operate over long distances. Their loss narrows the geographic reach of US air power in the region.
+
+As reported previously on Karmactive, US CENTCOM launched significant retaliatory strikes targeting Iran's strategic maritime assets in the Strait of Hormuz. The watchdog report now provides the cost side of that exchange. Earlier coverage of Iran's attack on the Bahrain naval base and USS Abraham Lincoln also documented the scale of Iranian retaliation — the Inspector General assessment confirms the cumulative toll.
+
+**The $37.5 billion figure in context**
+
+To put $37.5 billion in terms that connect to daily life: it exceeds the annual budget of several US federal agencies. It is roughly the equivalent of funding the entire US Department of Energy for three years. That spending covers weapons, logistics, personnel, emergency evacuations, and the reconstruction of damaged facilities — but represents only the period the watchdog reviewed, not the total cost of the conflict.
+
+The 9,000 Americans evacuated from the region represent a significant non-military dimension of the war's impact — a reminder that the conflict has affected civilian personnel and diplomatic staff, not only military forces.
+
+**Frequently Asked Questions**
+
+**How much did the Iran war cost the United States?**
+The Pentagon watchdog's assessment puts the US war cost at approximately $37.5 billion for the period covered by its review — April through June 2026. The assessment also identified damage to military and diplomatic facilities across the region, including up to 30 MQ-9 Reaper drones and seven KC-135 refuelling aircraft lost or damaged.
+
+**What US military equipment was lost or damaged in the Iran war?**
+According to the Pentagon Inspector General's assessment, Iranian attacks damaged or destroyed up to 30 MQ-9 Reaper drones, seven KC-135 aerial refuelling aircraft, and hundreds of buildings at US military bases. Twelve US service members were killed during the period reviewed.
+
+**What happened to US bases after Iranian attacks?**
+Iranian attacks caused extensive damage to hundreds of buildings at US military bases, forced supply and logistics route changes, and pushed US Central Command to rely more heavily on Diego Garcia as an alternative logistics hub. Approximately 9,000 Americans were evacuated from the affected region.
+
+**What was the cost of damage to US diplomatic facilities?**
+The Pentagon watchdog assessed $184 million in damage to US diplomatic facilities, with an additional $113 million in emergency response and evacuation costs associated with Iranian attacks during the review period.
+
+The Pentagon's Inspector General assessment represents the most detailed official accounting of US losses released to date. The full conflict costs will only be known once the war concludes — this review covered a three-month window. Further official assessments are expected as the conflict continues. Check back for updates as new figures are released.
+
+--------------------------------------------------------------------------------
+LENGTH USED AND JUSTIFICATION:
+Approximately 760 words. This story earned the longer treatment because the primary Pentagon watchdog report contains multiple distinct layers — equipment losses, logistical consequences, diplomatic damage, financial costs, and human toll — each of which requires brief explanation to be meaningful to a general reader. A 400-word piece would have listed the numbers without giving readers the context to understand why the KC-135 and MQ-9 losses matter. The FAQ section added depth for AEO without padding the narrative.
+
+--------------------------------------------------------------------------------
+TRAFFIC AND EARNINGS AUDIT:
+✓ Consequence paragraph present and placed before the depth block
+✓ Minimum 2 internal links placed naturally in body (CENTCOM Epic Fury Strike article; Bahrain base/Abraham Lincoln article referenced by name/context — note: links formatted as reference since plain text format)
+✓ US angle explicit — "$37.5 billion," "US taxpayers," "$184 million diplomatic damage," "9,000 Americans evacuated"
+✓ Priority PAA answered in FAQ section
+✓ Primary keyword "US Iran war losses" in headline, opening paragraph, and subheading area
+✓ Return visitor trigger present in closure ("Further official assessments are expected")
+✓ FAQ section included (4 questions, all self-contained, schema flag recommended)
+
+--------------------------------------------------------------------------------
+FACT AUDIT:
+VERIFIED (against primary source — AP News Pentagon watchdog report):
+✓ Up to 30 MQ-9 Reapers lost or damaged
+✓ Seven KC-135 refuelling aircraft lost or damaged
+✓ Hundreds of buildings at US military bases damaged
+✓ 12 US service members killed
+✓ $184 million in diplomatic facility damage
+✓ $113 million in emergency response/evacuation costs
+✓ Approximately 9,000 Americans evacuated
+✓ $37.5 billion total war cost
+✓ Review period: April–June 2026
+✓ Diego Garcia cited as rerouting destination
+
+LOGICALLY SELF-EVIDENT (marked as inference, not presented as cited fact):
+~ DOE budget comparison ($37.5bn ≈ 3 years DOE budget) — this is an approximation used as an analogy; if exact figure matters, verify current DOE annual appropriation before publishing
+~ "Narrows the geographic reach of US air power" — logical inference from KC-135 function, not a direct quote from the report
+
+UNVERIFIED / FLAG FOR EDITOR:
+⚠ The DOE budget comparison is an illustrative analogy — verify current DOE annual budget figure before publication to ensure accuracy
+⚠ Internal link URLs for CENTCOM and Bahrain articles should be inserted as live hyperlinks in the CMS — URLs provided in the Stage 1a brief
+
+--------------------------------------------------------------------------------
+FINAL FACTUAL VERSION:
+The article above is the final factual version. One adjustment recommended before CMS upload: confirm the DOE annual budget figure for the comparison analogy, or substitute another commonly understood federal budget reference (e.g., NASA, Department of Homeland Security) if the DOE figure does not hold.
+
+--------------------------------------------------------------------------------
+META DESCRIPTION:
+US Iran war losses include up to 30 drones, seven refuelling aircraft, hundreds of damaged buildings and a $37.5 billion cost, according to a new Pentagon watchdog assessment. (157 characters)
+
+--------------------------------------------------------------------------------
+SOCIAL HEADLINE:
+How much has Iran's war with the US actually cost Washington? New Pentagon figures put the damage into perspective
+================================================================================

@@ -1,0 +1,88 @@
+================================================================================
+HEADLINE (Search-Optimised):
+Digital ID can now prove your age for alcohol purchases in England and Wales — here's what changes
+================================================================================
+
+ARTICLE:
+--------------------------------------------------------------------------------
+
+Digital ID can now prove your age for alcohol purchases in England and Wales — here's what changes
+
+Pubs, bars, and shops in England and Wales can now accept approved digital identity apps as proof of age when you buy alcohol. Your physical driving licence and passport still work — nothing about those has changed. This is simply a new option now available alongside them.
+
+The change came into effect following new rules that allow participating venues to accept digital identity services that meet the government's verification requirements. The shift was announced by the government as part of a broader push to support digital identity infrastructure across the UK.
+
+**What you can use — and what the venues must do**
+
+Not every digital ID app qualifies. The service must meet the applicable government digital identity and attributes trust framework — the set of requirements that establishes whether a verification service is reliable enough to use for age-restricted purchases. Apps that do not meet those standards cannot be used for alcohol age verification under the new rules.
+
+On the venue side, acceptance is voluntary. A pub or shop is not required to accept digital ID — the new rules give them the option, not an obligation. If a venue does not yet accept digital ID, your physical ID remains the fallback.
+
+In practical terms, this mirrors how contactless payment works alongside chip-and-PIN: both are valid, acceptance varies by location, and the older method never disappears.
+
+**What this does not change**
+
+The most common misreading of this story is worth addressing directly. Digital ID does not replace your passport or driving licence for alcohol purchases. Physical identification remains fully valid everywhere it was valid before. No venue is required to stop accepting physical ID.
+
+The change also does not mean you can use any app on your phone. A selfie-based app or a photo of your driving licence stored in your camera roll does not qualify. The service must have been assessed against the government's trust framework.
+
+The government previously announced the rollout of digital driving licences for around 50 million UK drivers — a separate but related development covered on Karmactive. That programme provides an official digital credential that could potentially be used within the digital ID system, though the specific qualification of any individual app or service depends on trust framework assessment.
+
+**Why this matters for the high street**
+
+The government's framing of this change explicitly linked it to supporting pubs, bars, and hospitality venues — sectors that have faced sustained pressure over costs and footfall since the pandemic. Reducing friction at the point of sale, particularly for younger customers who routinely carry smartphones but not physical wallets, is part of the rationale.
+
+There is also a privacy dimension. A digital verification service can confirm that a person is over 18 without revealing their exact date of birth, address, or other personal details stored on a physical driving licence. That selective disclosure is one of the arguments for digital ID over physical documents.
+
+**Frequently Asked Questions**
+
+**Can I use digital ID to buy alcohol in England and Wales?**
+Yes. New rules allow participating pubs, clubs, and shops in England and Wales to accept approved digital identity services as proof of age for alcohol purchases. The option is voluntary for venues, and physical identification remains fully valid everywhere. Digital services must meet the government's trust framework requirements to qualify.
+
+**Does my physical ID still work for buying alcohol?**
+Yes. Nothing has changed for physical identification. Driving licences, passports, and other accepted physical ID remain valid for age verification. The new rules add a digital option — they do not remove any existing form of acceptable ID.
+
+**Which digital ID apps are accepted for alcohol purchases?**
+Only apps and services that have been assessed against the UK government's digital identity and attributes trust framework qualify. The government has not published a single definitive approved-app list in its initial announcement. Check with individual venues or the government's digital identity guidance for currently approved services.
+
+The rollout of digital ID for alcohol purchases will expand as more venues adopt the technology and more services gain trust framework certification. Check back for updates as the list of qualifying services develops.
+
+--------------------------------------------------------------------------------
+LENGTH USED AND JUSTIFICATION:
+Approximately 580 words. This story combines a new rule, a practical consumer question, and a nuance that needs to be addressed directly (digital ID does not replace physical ID). Those three elements require explanation — a 300-word brief would have left the misreading uncorrected. The FAQ section was included because three distinct and highly searchable questions exist, and the article targets 500+ words. The piece does not pad: each section earns its place.
+
+--------------------------------------------------------------------------------
+TRAFFIC AND EARNINGS AUDIT:
+✓ Consequence paragraph woven into opening — direct answer to "can I use my phone for ID?" in first sentence
+✓ 1 internal link placed naturally in body (UK Digital Driving Licences article) — only one genuinely relevant Karmactive article provided; second link not manufactured
+✓ UK angle explicit throughout — England and Wales, government trust framework, high street, hospitality
+✓ Priority PAA answered in FAQ section
+✓ Primary keyword "digital ID alcohol UK" in headline and opening paragraph
+✓ Return visitor trigger present in closure ("expand as more venues adopt the technology")
+✓ FAQ section included — 3 self-contained questions, schema flag recommended
+
+--------------------------------------------------------------------------------
+FACT AUDIT:
+VERIFIED (against primary source — GOV.UK government announcement):
+✓ Pubs, clubs, and shops in England and Wales can accept digital ID for alcohol age verification
+✓ Acceptance is voluntary for venues
+✓ Physical ID remains valid
+✓ Services must meet the digital identity and attributes trust framework
+
+LOGICALLY SELF-EVIDENT (inference):
+~ Contactless vs chip-and-PIN analogy — editorial illustration, not a cited fact; accurate as an analogy
+~ Privacy/selective disclosure point — standard characteristic of digital identity systems; not specific to a UK official statement but logically accurate
+~ "50 million UK drivers" figure from separately published Karmactive article — verify against original source before publication
+
+UNVERIFIED / FLAG FOR EDITOR:
+⚠ "Government has not published a single definitive approved-app list" — verify whether a specific qualifying services list has been published alongside or since the initial announcement
+⚠ The connection between digital driving licences and this alcohol-purchase scheme — the article frames it as "potentially" qualifying; do not strengthen this to a firm statement without confirmation that digital driving licences specifically meet the trust framework for alcohol age verification
+
+--------------------------------------------------------------------------------
+META DESCRIPTION:
+People in England and Wales can use approved digital IDs to prove their age when buying alcohol. Physical ID remains valid. Here's how the new system works. (158 characters)
+
+--------------------------------------------------------------------------------
+SOCIAL HEADLINE:
+Pubs can now accept your phone as ID for alcohol — but not every app qualifies
+================================================================================

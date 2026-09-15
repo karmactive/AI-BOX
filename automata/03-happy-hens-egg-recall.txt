@@ -1,0 +1,98 @@
+================================================================================
+HEADLINE (Search-Optimised):
+Happy Hens egg recall expands after 23 Salmonella illnesses in California as officials warn consumers
+================================================================================
+
+ARTICLE:
+--------------------------------------------------------------------------------
+
+Happy Hens egg recall expands after 23 Salmonella illnesses in California as officials warn consumers
+
+If you have bought Happy Hens organic eggs in Southern California or along the Central Coast recently, California health officials want you to stop eating them immediately and throw them away.
+
+The California Department of Public Health issued a recall warning after 23 residents reported illness linked to Happy Hens brand organic in-shell eggs. Seven people have been hospitalised. No deaths have been reported as of September 8, 2026.
+
+**How to check if your eggs are affected**
+
+The recalled product is Happy Hens organic in-shell eggs. To identify affected eggs:
+
+- Look for egg handler code **CA-0677** printed on the carton
+- Check the lot or date code on the carton — affected codes include **223, 226, and 237**
+- Sell-by dates range from September 10 to September 24, 2026
+
+If your eggs match any of these details, do not eat them. Do not serve them to others. Do not sell them. Place them in a sealed bag and throw them in an outside bin, or follow your local authority's food disposal instructions.
+
+**Where the eggs were sold**
+
+The affected eggs were distributed across Southern California and the Central Coast. Distribution channels included grocery stores, restaurants, and farmers markets. The California Department of Public Health has not released a full list of specific stores, so if you purchased organic eggs in these areas within the past few weeks, checking the carton code is the safest step.
+
+**What the official investigation found**
+
+FDA environmental testing of the Happy Hens poultry facilities found two poultry-housing samples that tested positive for Salmonella Enteritidis — the specific strain linked to the outbreak. That finding is significant because it connects the illnesses directly to conditions at the source rather than handling or distribution.
+
+Salmonella Enteritidis is one of the most common causes of food-related illness in the US. Symptoms typically include diarrhoea, fever, and stomach cramps appearing six hours to six days after exposure. Most healthy adults recover without treatment, but the illness can be more severe for older adults, young children, and people with weakened immune systems — exactly the groups most likely to be affected by a seven-hospitalisation outbreak from 23 confirmed cases.
+
+For context on how Salmonella egg recalls are handled at the federal level, Karmactive has previously covered the FDA's Class I recall process for Salmonella-contaminated eggs — Class I being the highest-risk category the agency assigns to recalled food products.
+
+**What to do if you feel unwell**
+
+If you have eaten Happy Hens eggs recently and have developed stomach symptoms, fever, or diarrhoea, contact your healthcare provider. Tell them you may have eaten recalled eggs. Reporting your illness also helps health authorities track the outbreak and identify additional cases.
+
+**Frequently Asked Questions**
+
+**Which Happy Hens eggs are recalled?**
+The recalled products are Happy Hens organic in-shell eggs with egg handler code CA-0677. Affected lot and date codes include 223, 226, and 237, with sell-by dates from September 10 to September 24, 2026. California health officials advise consumers not to eat, serve, or sell any affected eggs.
+
+**What should I do with recalled Happy Hens eggs?**
+Do not eat them. Place them in a sealed bag and dispose of them in an outside bin. Wash your hands and any surfaces the eggs may have touched with soap and warm water. If you have already eaten the eggs and feel unwell, contact your doctor or healthcare provider.
+
+**How many people have been affected by the Happy Hens Salmonella outbreak?**
+As of September 8, 2026, California health officials had confirmed 23 illness cases linked to the outbreak, with seven people hospitalised. No deaths have been reported. The official case count may increase as the investigation continues.
+
+The outbreak investigation remains open. California health authorities are continuing to monitor reported cases. Check back for updates if you are in the affected distribution area.
+
+--------------------------------------------------------------------------------
+LENGTH USED AND JUSTIFICATION:
+Approximately 580 words. This is a consumer safety story with transactional search intent — the reader needs to know whether their eggs are affected and what to do. That question can be answered completely and clearly in under 600 words. Longer coverage would have added outbreak epidemiology that the reader neither needs nor will use. The FAQ section was included because three specific answerable PAA questions exist and the article targets 500+ words.
+
+--------------------------------------------------------------------------------
+TRAFFIC AND EARNINGS AUDIT:
+✓ Consequence paragraph present — "If you have bought Happy Hens organic eggs... throw them away" is the opening hook, consequence is woven throughout
+✓ 1 internal link placed naturally in body (FDA Class I Recall article) — Stage 1a brief flagged a second link only if genuinely relevant; no second manufactured link added
+✓ US angle explicit — California, Southern California, Central Coast, FDA, CDPH
+✓ Priority PAA answered in FAQ section
+✓ Primary keyword "Happy Hens egg recall" in headline and opening section
+✓ Return visitor trigger present ("outbreak investigation remains open")
+✓ FAQ section included — 3 self-contained questions, schema flag recommended
+
+--------------------------------------------------------------------------------
+FACT AUDIT:
+VERIFIED (against primary source — California Department of Public Health, September 8 2026):
+✓ Brand: Happy Hens
+✓ Product: organic in-shell eggs
+✓ Egg handler code: CA-0677
+✓ Lot/date codes: 223, 226, 237
+✓ Sell-by dates: September 10 to September 24, 2026
+✓ 23 illnesses confirmed as of September 8
+✓ 7 hospitalisations
+✓ No deaths reported
+✓ Distribution: Southern California and Central Coast
+✓ Distribution channels: grocery stores, restaurants, farmers markets
+✓ FDA environmental testing: two poultry-housing samples positive for Salmonella Enteritidis
+
+LOGICALLY SELF-EVIDENT (inference):
+~ Salmonella Enteritidis symptoms description (6 hours to 6 days) — standard CDC guidance for this strain; verify against current CDC Salmonella fact sheet before publication
+~ Severity note for older adults, young children, immunocompromised — standard public health guidance, not specific to this outbreak's sourcing
+
+UNVERIFIED / FLAG FOR EDITOR:
+⚠ "Full list of specific stores" not released — confirmed absence noted in article; if CDPH releases a retailer list before publication, add it
+⚠ Symptom timeline (6 hours to 6 days) should be verified against current CDC Salmonella Enteritidis guidance before publication
+
+--------------------------------------------------------------------------------
+META DESCRIPTION:
+Happy Hens organic eggs are recalled in California after 23 Salmonella illnesses. Check your carton for egg code CA-0677 and lot numbers 223, 226 or 237. (155 characters)
+
+--------------------------------------------------------------------------------
+SOCIAL HEADLINE:
+California egg recall: Happy Hens organic eggs linked to Salmonella outbreak — how to check if yours are affected
+================================================================================
