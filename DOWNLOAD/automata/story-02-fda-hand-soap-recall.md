@@ -1,22 +1,24 @@
 # Hand Soap Recall Hits 15 States as Six Products Face Bacterial Contamination Warning
 
-Check your kitchen and bathroom sinks now. Six foaming hand soap products sold across 15 US states have been recalled over confirmed bacterial contamination, and several are still sitting in active household bathrooms because the products carry expiration dates as late as March 2028.
+Check your kitchen and bathroom sinks now. Six hand soap products — five foaming varieties and one liquid soap — sold across 15 US states have been recalled over confirmed bacterial contamination, and several may still be in active household bathrooms because the products carry expiration dates as late as March 2028.
 
-The FDA issued a Class II recall classification on September 11, 2026, covering six foaming hand soaps manufactured by Intercon Chemical Company of St. Louis, Missouri. The affected products are contaminated with bacteria from two families: *Pseudomonas* (specifically *Pseudomonas aeruginosa*, *Pseudomonas putida*, and *Pseudomonas monteilii*) and *Serratia* (specifically *Serratia marcescens* and *Serratia nematodiphila*). The voluntary recall itself began on June 29, 2026 — more than ten weeks before the FDA applied its formal classification.
+The FDA issued a Class II recall classification on September 11, 2026, covering six hand soap products manufactured by Intercon Chemical Company of St. Louis, Missouri. The affected products are contaminated with bacteria from two families: *Pseudomonas* (specifically *Pseudomonas aeruginosa*, *Pseudomonas putida*, and *Pseudomonas monteilii*) and *Serratia* (specifically *Serratia marcescens* and *Serratia nematodiphila*). The voluntary recall itself began on June 29, 2026 — more than ten weeks before the FDA applied its formal classification.
 
-**If you shop at Ingles Markets supermarkets in the Southeast, this recall directly applies to you.** The retail consumer product in this recall is the Laura Lynn brand — a store-brand soap sold at Ingles Markets locations across the region. The other recalled products are institutional dispenser refills used in commercial and office settings. Contaminated bottles already in household bathrooms pose a direct infection risk for young children, older adults, and anyone with open wounds or a weakened immune system. Stop using the product immediately, do not pour it down the drain (aerosol droplets from draining can carry bacteria), and return the container to the store for a full refund.
+**If you shop at Ingles Markets supermarkets in the Southeast, this recall directly applies to you.** Two of the six recalled products are Laura Lynn retail store-brand soaps sold at Ingles Markets locations across the region. The other four recalled products are commercial dispenser refills used in office and institutional settings. Contaminated bottles already in household bathrooms pose a direct infection risk for young children, older adults, and anyone with open wounds or a weakened immune system. Stop using the product immediately and return consumer retail purchases to the store for a refund.
 
-## Which Soaps Were Recalled
+## Which Products Were Recalled
 
-The six recalled products are all foaming hand soaps. The retail consumer product is:
+The six recalled products include five foaming hand soaps and one liquid hand soap. The two retail consumer products are:
 
-- **Laura Lynn Foaming Hand Soap** — pear-scented and apple-scented variants, sold at Ingles Markets
+- **Laura Lynn Foaming Pear Scent Hand Soap with Moisturizers** (7.5 oz) — sold at Ingles Markets
+- **Laura Lynn Honey Apple Crisp Liquid Hand Soap** (8 oz) — sold at Ingles Markets
 
-The remaining five products are commercial and institutional dispenser refills:
+The four commercial and institutional dispenser refill products are:
 
-- Clearly Better brand foaming hand soaps
-- Vestis brand foaming hand soaps
-- Summit 150 brand foaming hand soaps
+- Clearly Better by Intercon Foaming Pear Hand Soap With Aloe (1000 mL)
+- Intercon Foaming Pear Hand Soap With Aloe (28.7 oz)
+- Summit 150 Foaming Hand Soap (28.7 oz)
+- Vestis Foaming Hand Soap, Fresh Pear Scent (33.8 oz)
 
 All six products were manufactured by Intercon Chemical Company.
 
@@ -30,6 +32,8 @@ An FDA Class II recall indicates that exposure to the contaminated product may c
 
 *Serratia marcescens* poses similar risks in wound or eye contact scenarios. It is recognizable in bathrooms by its tendency to leave a pink or reddish biofilm on surfaces — if you have noticed that discoloration near your sink, it is worth checking whether a recalled product was in use.
 
+Note: If you experience a skin rash, folliculitis, eye irritation, or any signs of infection after using a recalled product, contact a healthcare provider. Do not attempt to self-diagnose based on a specific symptom timeline, as exposure outcomes vary by individual health status.
+
 ## Why the Gap Between Recall Start and FDA Classification
 
 The voluntary recall began June 29, 2026. The FDA's formal Class II classification did not follow until September 11 — a gap of more than ten weeks. During that period, no formal consumer warning was issued, and products with expiration dates through March 2028 remained on shelves and in bathrooms.
@@ -38,10 +42,9 @@ This is not unusual in the FDA recall process. Manufacturers often initiate volu
 
 ## What To Do Now
 
-1. **Stop using the product immediately** if it matches the Laura Lynn, Clearly Better, Vestis, or Summit 150 foaming hand soaps from Intercon Chemical
+1. **Stop using the product immediately** if it matches any of the six recalled Laura Lynn, Clearly Better, Intercon, Vestis, or Summit 150 hand soap products manufactured by Intercon Chemical
 2. **Verify your lot code** against the FDA enforcement record before concluding your product is safe
-3. **Do not pour it down the sink** — aerosolized droplets during draining carry the same bacteria
-4. **Return it to the place of purchase** for a full refund — Ingles Markets customers should contact their nearest store location
+3. **Return retail consumer purchases to the place of purchase** for a refund — Ingles Markets customers should contact their nearest store location for the Laura Lynn products
 
 Potential state health department advisories may follow if secondary infections linked to the recall are reported. Check the FDA recall database and state health department pages for updates as this situation develops.
 
@@ -56,7 +59,7 @@ Six foaming hand soaps manufactured by Intercon Chemical Company of St. Louis, M
 An FDA Class II recall means the contaminated product may cause temporary or reversible health problems for most people, with a remote chance of serious illness. For healthy adults with unbroken skin, the risk from brief exposure is typically low. The risk is higher for children, older adults, and anyone with cuts, wounds, or a weakened immune system.
 
 **What are the symptoms of Pseudomonas infection from contaminated soap?**
-Pseudomonas aeruginosa infections can cause skin rashes, folliculitis (inflamed hair follicles), eye infections, and — in cases where bacteria enter through wounds — more serious soft tissue or bloodstream infections. Symptoms from skin exposure typically appear within 8–72 hours. Anyone who suspects an infection after using a recalled product should contact a healthcare provider.
+Pseudomonas aeruginosa infections can cause skin rashes, folliculitis (inflamed hair follicles), eye infections, and — in cases where bacteria enter through wounds — more serious soft tissue or bloodstream infections. Anyone who suspects an infection after using a recalled product should contact a healthcare provider.
 
 ---
 

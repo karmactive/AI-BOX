@@ -2,7 +2,7 @@
 
 If your organization uses AI tools built on frontier models, the people who designed the safety constraints on those tools are leaving. That is the practical dimension of Jacob Coxon's resignation from Anthropic, and it is not an isolated event.
 
-Jacob Coxon, a senior alignment researcher at Anthropic, publicly resigned from the company citing concerns that commercial pressure to release powerful AI models is outpacing the safety work required to deploy them responsibly. Coxon's departure was made public on September 15, 2026, and arrived during a week when the broader question of frontier AI development speed had generated unusual public convergence among industry leaders.
+Jacob Coxon, a pretraining researcher at Anthropic, publicly resigned from the company citing concerns that commercial pressure to release powerful AI models is outpacing the safety work required to deploy them responsibly. Coxon announced his resignation on September 8, 2026, with the move gaining national prominence following a TIME profile published on September 15. His departure arrived during a week when the broader question of frontier AI development speed had generated unusual public convergence among industry leaders.
 
 **For businesses and professionals deploying AI tools in enterprise environments, high-level departures from safety teams carry a direct operational implication.** When top safety engineers leave frontier AI labs over deployment timelines, they are signaling that internal hazard testing is under pressure from commercial release schedules. Organizations relying on autonomous AI agents for workflows, customer interactions, or data analysis should not assume that model providers have resolved internal safety questions before deployment. Building independent verification pipelines for AI outputs — rather than relying solely on provider safety assurances — is a practical response to this signal.
 
@@ -34,7 +34,7 @@ For organizations making procurement decisions about AI tools, the most actionab
 
 Independent evaluation of AI tools before deploying them in high-stakes environments — screening outputs, stress-testing edge cases, and establishing human review checkpoints for consequential decisions — is not redundant with whatever the model provider has done internally. It is complementary to it.
 
-The debate over frontier AI pacing will continue through congressional hearings on AI safety disclosures expected later in 2026. Those proceedings will provide the next significant public assessment of whether safety practices at leading AI labs match their published commitments.
+The debate over frontier AI pacing will continue as regulators and legislators assess whether safety practices at leading AI labs match their published commitments.
 
 ---
 

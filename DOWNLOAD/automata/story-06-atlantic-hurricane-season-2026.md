@@ -2,7 +2,7 @@
 
 If you live on the US Atlantic or Gulf Coast and you have been watching a storm-free summer with growing confidence, the atmospheric science tells a more cautious story.
 
-The 2026 Atlantic hurricane season passed its statistical peak — the climatological high point centered on September 10 to 11 — without a single hurricane forming. As of mid-September 2026, no named storms have reached hurricane strength in the Atlantic basin. That is historically extraordinary. By this point in a normal season, the basin would typically have seen multiple named storms and at least one or two hurricanes.
+The 2026 Atlantic hurricane season passed its statistical peak — the climatological high point centered on September 10 to 11 — without a single hurricane forming. As of September 15, 2026, the National Hurricane Center recorded five named storms, zero hurricanes, and zero major hurricanes for the season. The Accumulated Cyclone Energy (ACE) index — a measure of total storm activity — stood at just 4.4, approximately 94% below the 1991–2020 normal. That is an unusually inactive showing for this point in the season. In a typical year, the basin would expect multiple hurricanes and significantly higher ACE totals by mid-September.
 
 **Coastal residents should not interpret the current quiet as a signal that hurricane risk has ended for the year.** The Atlantic hurricane season runs through November 30. Late-season storms forming in October in the Caribbean and the Gulf of Mexico historically have less warning time before landfall because they develop closer to the coast. Extreme ocean surface temperatures remain stored in the tropical Atlantic, the Caribbean, and the Gulf. If the atmospheric conditions that have suppressed storm formation shift in the coming weeks, rapidly intensifying storms remain possible with less lead time for evacuation.
 
@@ -24,7 +24,7 @@ The combination of all three — dust, dry air, and shear — has suppressed sto
 
 The Accumulated Cyclone Energy (ACE) index measures the total activity of a hurricane season by combining storm intensity and duration. A season with zero named storms has essentially zero ACE. By comparison, a typical Atlantic season produces around 15 named storms and the equivalent of roughly 100 units of ACE.
 
-The 2026 season's ACE is at a historic low for this point in the calendar. But ACE can still accumulate — a single major hurricane in October would shift the seasonal totals considerably.
+The 2026 season's ACE of 4.4 is at an exceptionally low level for mid-September, running 94% below the 1991–2020 baseline. But ACE can still accumulate — a single major hurricane in October would shift the seasonal totals considerably.
 
 ## Why October Matters More Than Most People Expect
 
@@ -39,7 +39,7 @@ Coastal homeowners and business operators in Florida, the Gulf Coast states, and
 **FAQ**
 
 **Why has the 2026 Atlantic hurricane season been so quiet?**
-The 2026 Atlantic hurricane season has seen record-low activity due to persistent Saharan dust outbreaks, widespread dry air at mid-levels of the atmosphere, and strong vertical wind shear across the main development region. These factors have suppressed storm formation despite record-warm ocean surface temperatures that would otherwise support hurricane development.
+As of mid-September 2026, the Atlantic hurricane season had produced five named storms but zero hurricanes, with an ACE index of 4.4 — 94% below the 1991–2020 normal. The suppression is due to persistent Saharan dust outbreaks, widespread dry air at mid-levels of the atmosphere, and strong vertical wind shear across the main development region. These factors have prevented storm organization despite elevated ocean surface temperatures.
 
 **Can a hurricane still form in September and October?**
 Yes. The Atlantic hurricane season runs through November 30. The statistical peak is September 10–11, but significant and destructive storms have formed in October and November historically. Late-season storms that develop in the Caribbean or Gulf of Mexico can move toward coastal areas with less warning time because of their proximity to land.

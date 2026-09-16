@@ -2,7 +2,7 @@
 
 If you checked your investment account this morning and found it lower, two numbers explain most of what happened: crude oil climbing toward $88 per barrel, and the 10-year US Treasury yield pushing toward the 5% level.
 
-US stock index futures declined in pre-market trading on September 15, 2026, with the S&P 500, Nasdaq, and Dow Jones Industrial Average all pointing lower before the opening bell. The Nasdaq, which is weighted heavily toward technology companies, led the declines. Crude oil futures rose, with West Texas Intermediate approaching $88 per barrel. The yield on the benchmark 10-year US Treasury note moved higher, approaching the psychologically significant 5% level.
+US stock index futures declined in pre-market trading on September 15, 2026, with the S&P 500, Nasdaq, and Dow Jones Industrial Average all pointing lower before the opening bell. The Nasdaq, which is weighted heavily toward technology companies, led the declines. Crude oil futures rose, with West Texas Intermediate approaching $88 per barrel. The yield on the benchmark 10-year US Treasury note moved higher, hitting the psychologically significant 5.00% mark.
 
 **Rising oil prices and climbing bond yields put direct downward pressure on stock portfolios, particularly those with significant exposure to technology and growth stocks.** When Treasury yields rise, the math of stock valuation changes: future earnings become worth less in today's dollars when the discount rate — the interest rate used to value future cash flows — goes up. Institutional investors move money from growth stocks into fixed income when bonds offer better yield-adjusted returns. Retail investors with tech-heavy index funds in 401(k) accounts will see those funds underperform on days like this. The long-term investment case for diversified portfolios does not change based on one morning's pre-market reading.
 
@@ -24,7 +24,7 @@ A 10-year yield approaching 5% is significant for several reasons:
 
 **Tech stock valuations**: Technology companies are particularly sensitive to yield moves because their valuations are built on expectations of earnings years in the future. The higher the discount rate, the lower the present value of those future earnings. A small move in yields can produce a larger move in high-multiple tech stock prices.
 
-**The competition effect**: When a 10-year government bond pays close to 5% with zero credit risk, institutional investors have a genuine alternative to equities for income generation. That shifts asset allocation decisions.
+**The competition effect**: When a 10-year government bond pays close to 5% with very low credit risk, institutional investors have a genuine alternative to equities for income generation. That shifts asset allocation decisions.
 
 ## Why Defensive Stocks Held Up
 
@@ -37,8 +37,6 @@ This tells you something specific about what institutional investors are doing: 
 One morning's pre-market decline does not change the long-term performance of a diversified retirement portfolio. The relevant question is not whether the S&P 500 is down this morning but whether the conditions causing today's decline — sticky service inflation, elevated energy prices, higher-for-longer interest rates — represent a sustained shift or a temporary spike.
 
 Bond auction data released around the time of the pre-market session suggested that algorithmic hedging against persistent service sector inflation was a significant driver of Treasury yield movement — a more structural factor than a one-day oil price move.
-
-Retail investors who are more than ten years from retirement have historically been better served by holding through single-day macro moves than by trading against them. That observation is not investment advice — it is a pattern in the historical data.
 
 The Federal Reserve's next policy decision and weekly crude oil inventory data will be the next concrete indicators of whether today's pressures ease or persist.
 

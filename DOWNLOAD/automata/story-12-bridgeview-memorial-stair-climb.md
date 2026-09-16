@@ -4,7 +4,7 @@ Bridgeview firefighters will hold their sixth annual 9/11 Memorial Stair Climb a
 
 The event is organized by Bridgeview Fire Fighters Local 4330 and is open to community participants, spectators, and supporters. This year's climb moves to SeatGeek Stadium from the previous venue at Swallow Cliff, a change that provides expanded parking and wider spectator access for the southwest suburban Chicago community.
 
-Funds raised through the stair climb support local firefighter benevolent programs and first responder mental health initiatives. The mental health focus reflects an ongoing recognition within the first responder community that the psychological toll of emergency work — including the lasting trauma carried by survivors and family members of the September 11 attacks — requires dedicated, sustained support.
+Funds raised through the stair climb benefit the 100 Club of Chicago, which provides financial support to the families of first responders killed or catastrophically injured in the line of duty. The 100 Club focus reflects an ongoing recognition within the first responder community that the psychological and financial toll of emergency work — including the lasting burden carried by survivors and family members of the September 11 attacks — requires dedicated, sustained support.
 
 ## Event Details
 

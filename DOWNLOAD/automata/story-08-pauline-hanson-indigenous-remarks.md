@@ -4,7 +4,7 @@ Australian Senator Pauline Hanson has issued a statement of regret following wid
 
 The remarks, made during a podcast recording, drew immediate responses from government and opposition leaders including Prime Minister Anthony Albanese. Hanson subsequently issued a statement expressing regret for any hurt caused by her words. Senate Hansard records of the subsequent parliamentary exchanges confirm the apology was conditional in its phrasing — Hanson expressed sorrow "if people were hurt" while defending her broader political record and critique of Indigenous affairs programs.
 
-**For Australian citizens and community leaders watching parliamentary conduct, the bipartisan nature of the condemnation is politically significant.** Both government and opposition leadership publicly criticised the remarks, creating unusual cross-party unity in responding to racial commentary from a minor party senator. The political pressure generated will directly influence how One Nation navigates preference negotiations and participation in federal legislative debate on Indigenous affairs funding — a set of debates that affects policy outcomes for communities across the country.
+**For Australian citizens and community leaders watching parliamentary conduct, the bipartisan nature of the condemnation is notable.** Both government and opposition leadership publicly criticised the remarks, with responses from Prime Minister Anthony Albanese and opposition leaders crossing party lines.
 
 ## What Hanson Said
 
@@ -14,9 +14,9 @@ The characterisation drew formal parliamentary responses. Prime Minister Albanes
 
 ## The Nature of the Apology
 
-Hansard records — the official transcript of Australian parliamentary proceedings — document the subsequent exchange. Hanson's response did not constitute an unconditional retraction of her views. The conditional phrasing of the apology ("if people were hurt") is standard in Australian political discourse as a way of acknowledging an emotional reaction without withdrawing the substantive position. The distinction matters because unconditional apologies carry different parliamentary and public weight.
+Hansard records — the official transcript of Australian parliamentary proceedings — document the subsequent exchange. Hanson's response did not constitute an unconditional retraction of her views. The conditional phrasing of the apology ("if people were hurt") means Hanson acknowledged an emotional reaction without withdrawing her substantive position. Unconditional and conditional apologies carry different parliamentary and public weight, and Hansard records the distinction clearly.
 
-The timing of the apology preceded a scheduled Senate censure motion. Censure votes in the Australian Senate are formal expressions of parliamentary disapproval and, while they do not carry legal consequences, they carry political weight and are part of the parliamentary record. The apology gave Coalition members the ability to soften their support for censure proceedings without having to continue a prolonged public dispute.
+The timing of the apology preceded a scheduled Senate censure motion. Censure votes in the Australian Senate are formal expressions of parliamentary disapproval and, while they do not carry legal consequences, they carry political weight and are part of the parliamentary record.
 
 ## Context in Australian Politics
 
@@ -24,9 +24,7 @@ Pauline Hanson leads One Nation, a minor party that has occupied a significant p
 
 The current episode is not the first time remarks from Hanson have generated bipartisan parliamentary condemnation. The pattern of controversial statement followed by qualified response followed by censure discussion has recurred across her political career.
 
-For Indigenous Australians, the substantive political question is not the apology itself but how the episode affects ongoing Senate debates about Indigenous affairs funding and policy. Those debates involve real allocation decisions across health, education, land rights, and self-determination programs. Political pressure from this incident will be visible in how senators from various parties position themselves in those subsequent legislative discussions.
-
-The Senate censure motion proceedings and any developments in One Nation's preference negotiations will provide the next concrete indicators of how this episode has shifted the political landscape. Those developments will be reported as they occur.
+Senate debates on Indigenous affairs funding and policy — covering health, education, land rights, and self-determination programs — continue as separate legislative matters. The Senate censure motion proceedings will be the next formal parliamentary development from this episode. Those proceedings will be reported as they occur.
 
 ---
 

@@ -2,7 +2,7 @@
 
 If you use AI tools for work, research, or personal decisions, the safety testing question matters to you — because right now, every major AI company is largely grading its own homework.
 
-Elon Musk has proposed that leading artificial intelligence companies — including xAI, OpenAI, Google DeepMind, and Anthropic — should be required to allow rival laboratories to test each other's models before public release. Musk put forward the idea publicly, arguing that a company's own safety team cannot catch every vulnerability in a system it designed and built. The "grading your own homework" framing captures the problem: self-testing has an obvious structural blind spot.
+Elon Musk has proposed that leading artificial intelligence companies — including xAI, OpenAI, Google DeepMind, Anthropic, Meta, and leading Chinese AI laboratories — should be required to allow rival laboratories to test each other's models before public release. Musk put forward the idea publicly, arguing that a company's own safety team cannot catch every vulnerability in a system it designed and built. The "grading your own homework" framing captures the problem: self-testing has an obvious structural blind spot.
 
 ## What Musk Actually Proposed
 

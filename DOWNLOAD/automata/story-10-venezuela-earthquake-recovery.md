@@ -4,7 +4,7 @@ Venezuela's June 2026 earthquakes caused $14.831 billion in direct damage and ec
 
 The two figures are different measures of different things, and both matter. The $14.831 billion represents what was destroyed or disrupted: buildings collapsed, infrastructure damaged, economic activity lost. The $21 billion figure represents what it would take to rebuild Venezuela's affected regions to a level of resilience that reduces future vulnerability — not just replacing what existed before, but financing the improvements needed to withstand future events.
 
-**For international investors, regional manufacturers, and development finance institutions watching Venezuela, this assessment defines the scale of the financing gap.** Without substantial external capital and credible legal protections for cross-border investment, Venezuela's industrial and residential recovery will remain incomplete. Chronic power rationing and infrastructure deficits are already suppressing economic activity. The $21 billion figure sets the upper bound of what structured recovery programs would need to mobilise — a number that will not move quickly given current sanctions environments and the country's limited access to international capital markets.
+**For international investors, regional manufacturers, and development finance institutions watching Venezuela, this assessment defines the scale of the financing gap.** Without substantial external capital and credible legal protections for cross-border investment, Venezuela's industrial and residential recovery will remain incomplete. Chronic power rationing and infrastructure deficits are already suppressing economic activity. The $21 billion figure represents what structured recovery programs are estimated to need to mobilise — a number that will not move quickly given current sanctions environments and the country's limited access to international capital markets.
 
 ## What the Earthquakes Damaged
 
@@ -18,15 +18,15 @@ Venezuela's electrical grid was already in a state of significant deterioration 
 
 The $21 billion recovery figure is larger than the $14.831 billion damage figure for a straightforward reason: rebuilding something exactly as it was does not protect it from being destroyed again in the same way. Modern disaster recovery frameworks — including the UNDP assessment framework used here — factor in the cost of resilience: building to higher standards, relocating structures out of high-risk zones, upgrading utility networks that were substandard before the disaster, and maintaining emergency response systems going forward.
 
-For Venezuela, the gap between damage costs and recovery costs is also inflated by the pre-existing state of infrastructure. Replacing a power transmission line that was already 30 years past its maintenance cycle with a modern equivalent costs more than restoring the original. The UNDP framework counts the upgrade as part of the recovery need, not as an extra.
+For Venezuela, the gap between damage costs and recovery costs is also inflated by the pre-existing state of infrastructure. Replacing degraded power transmission lines with modern equivalents costs more than restoring what existed before. The UNDP framework counts the upgrade as part of the recovery need, not as an extra.
 
 ## Financing Challenges
 
 Venezuela faces significant obstacles to mobilising the capital required for recovery. US and European sanctions on Venezuelan state entities limit the government's access to multilateral lending facilities and restrict the terms on which international investors can operate. The legal framework for protecting foreign investment in Venezuelan infrastructure projects remains uncertain.
 
-The UNDP assessment does not resolve these financing obstacles — it quantifies the need. The practical question for recovery is which combination of multilateral development bank lending, private investment, diaspora remittances, and restructured sovereign instruments could reach the $21 billion target over a decade.
+The UNDP assessment does not resolve these financing obstacles — it quantifies the need. The practical question for recovery is which combination of multilateral development bank lending, private investment, diaspora remittances, and restructured sovereign instruments could reach the $21 billion target.
 
-Regional economic observers and Latin American infrastructure investors will be watching how Venezuelan authorities respond to the UNDP assessment and whether it generates traction with international creditors. The next formal checkpoint will come through UNDP and regional development bank communications on the assessment's findings.
+The next formal checkpoint will come through UNDP and regional development bank communications on the assessment's findings.
 
 ---
 

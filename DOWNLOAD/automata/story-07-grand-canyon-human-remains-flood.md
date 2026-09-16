@@ -2,9 +2,9 @@
 
 Search crews working at Grand Canyon National Park have recovered a third set of human remains near Crystal Rapid, weeks after a deadly flash flood struck the canyon on August 29, 2026.
 
-The National Park Service confirmed the recovery near Crystal Rapid. The remains were transferred to the Coconino County Medical Examiner's office for identification. As of the latest available reporting, no official identification had been released. The discovery came during infrastructure repair operations at the canyon, not during an active search mission — demonstrating how late-monsoon sediment deposits bury and subsequently expose flood casualties weeks after the initial event.
+The National Park Service confirmed the recovery near Crystal Rapid. The remains were transferred to the Coconino County Medical Examiner's office for identification. As of the latest available reporting, no official identification had been released. The discovery occurred weeks after the original flood event, with investigators continuing work at the site.
 
-**If you are planning a backcountry hike or camping trip in the Grand Canyon or northern Arizona, check the National Park Service's official trail status page before you go.** Trail closures from the August 29 flood remain in effect across parts of the canyon. Flash flooding permanently alters canyon terrain — destabilizing trail beds, creating new rockfall zones, and changing the paths that water travels during future storms. Even trails that appear passable can be structurally compromised in ways that are not visible from the surface.
+**If you are planning a backcountry hike or camping trip in the Grand Canyon or northern Arizona, check the National Park Service's official trail status page before you go.** Trail closures from the August 29 flood remain in effect across parts of the canyon. Flash flooding can significantly alter canyon terrain — destabilizing trail beds, creating new rockfall zones, and changing the paths that water travels during future storms. Even trails that appear passable can be structurally compromised in ways that are not visible from the surface.
 
 ## What Happened in August
 
