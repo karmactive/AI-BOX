@@ -18,23 +18,23 @@ BYD says abnormal wear of the spare-wheel support cable can cause the cable to f
 
 ### What Owners Need to Do Right Now
 
-For affected BYD Shark 6 owners, the immediate issue is the spare wheel rather than the vehicle's propulsion system. BYD says owners should remove the spare wheel until the recall repair is completed because the support cable can wear and fail, potentially allowing the wheel to detach. Owners can check their VIN through BYD's recall information and arrange the free repair with a dealer.
+For affected BYD Shark 6 owners, the immediate issue is the spare wheel rather than the vehicle's propulsion system. BYD's interim instruction concerns removal of the spare wheel; owners should follow the recall notice and contact a dealer. The spare-wheel support cable can wear and fail, potentially allowing the wheel to detach.
 
-Removing the spare wheel is the interim action BYD is recommending before the dealer repair takes place. The vehicle remains driveable — the recall concerns the under-vehicle spare wheel carrier, not the drivetrain or any other vehicle system.
+Owners can check their VIN and arrange the free repair with a dealer. Removing the spare wheel is the interim action BYD is recommending before the dealer repair takes place.
 
 ### Why the Cable Fails
 
 BYD has explained the fault mechanism. Three conditions can cause abnormal cable wear: incorrect installation during manufacturing, incorrect tray positioning, or insufficient fastening torque when the spare wheel assembly was fitted. Any of these can accelerate wear on the support cable. Once the cable wears past a failure point, it can no longer hold the spare wheel assembly in place.
 
-For Karmactive's earlier coverage on the BYD Shark 6, including its pricing and specifications, see our previous Shark 6 article. The recall does not affect the vehicle's performance or powertrain components.
+For Karmactive's earlier coverage on the BYD Shark 6, including its pricing and specifications, see our previous Shark 6 article. The reported defect concerns the spare-wheel support assembly.
 
 ### The Free Repair
 
-BYD will replace the spare-wheel lifter assembly at no charge to the owner. The repair takes approximately 30 minutes at an authorised BYD dealer. Owners do not need to bring any documentation other than their vehicle — the dealer can confirm recall status directly from the VIN.
+BYD will replace the Spare Wheel Lifter Assembly with an updated design free of charge. The repair takes approximately 30 minutes at an authorised BYD dealer. The dealer can confirm recall status directly from the VIN, though vehicles may need to remain with the dealer longer depending on workshop scheduling.
 
 ### How to Check Your VIN
 
-All three Shark 6 variants are included in the 32,009 BYD recall. Owners who assumed their trim level was unaffected should verify directly — the recall applies across all Shark 6 configurations currently registered in Australia.
+All three Shark 6 variants are included in the 32,009 BYD recall. Owners who assumed their trim level was unaffected should verify directly — the recall applies to the three listed Australian variants covered by this recall.
 
 To confirm whether a specific vehicle is covered, owners can search the VIN number through the Australian Government product safety recall database at productsafety.gov.au, or contact their nearest authorised BYD dealer.
 
@@ -46,10 +46,10 @@ To confirm whether a specific vehicle is covered, owners can search the VIN numb
 BYD recalled 32,009 Shark 6 vehicles in Australia because a spare-wheel support cable can develop abnormal wear and fail, potentially allowing the spare wheel to detach while the vehicle is in use. Incorrect installation, tray positioning or fastening torque can each cause the abnormal wear.
 
 **Should BYD Shark 6 owners remove the spare wheel?**
-Yes. BYD is advising affected owners to remove the spare wheel from under the vehicle until the recall repair is completed. The concern is that a worn cable may fail and allow the wheel to separate from the vehicle. The vehicle can still be driven; it is only the spare wheel carrier that presents a risk.
+Yes. BYD's interim instruction concerns removal of the spare wheel from under the vehicle until the recall repair is completed. The concern is that a worn cable may fail and allow the wheel to separate from the vehicle. Owners who need to drive should follow this interim measure.
 
 **Is the BYD Shark 6 recall repair free?**
-Yes. BYD will replace the spare-wheel lifter assembly free of charge at an authorised dealer. The repair takes approximately 30 minutes.
+Yes. BYD will replace the spare-wheel lifter assembly free of charge at an authorised dealer. The repair takes approximately 30 minutes, although vehicles may need to remain with the dealer for longer depending on workshop scheduling.
 
 **Which BYD Shark 6 variants are affected?**
 All three Australian variants are included: the Premium (28,543 vehicles), the Performance (2,100 vehicles) and the Dynamic Cab Chassis (1,366 vehicles). The recall covers 32,009 vehicles in total.
@@ -64,9 +64,9 @@ BYD's recall of 32,009 Australian Shark 6 vehicles covers all three variants ove
 
 ## LENGTH USED AND JUSTIFICATION
 
-**Word count: 530 words**
+**Word count: 520 words**
 
-Target was 450–550 words. This falls within the brief at 530. The length is appropriate for a consumer recall: the action is clear early, the technical explanation is present without padding, the FAQ covers the five most-searched questions. Every element is covered — variant breakdown, fault mechanism, interim action, free repair, VIN checking. Nothing cut, nothing padded.
+Target was 450–550 words. This falls within the brief at 520. The length is appropriate for a consumer recall: the action is clear early, the technical explanation is present without padding, the FAQ covers the four most-searched questions. Every element is covered — variant breakdown, fault mechanism, interim action, free repair, VIN checking.
 
 ---
 
@@ -85,26 +85,25 @@ Target was 450–550 words. This falls within the brief at 530. The length is ap
 
 | Claim | Source | Status |
 |---|---|---|
-| 32,009 vehicles recalled | CarExpert (BYD statement) | Verified |
-| Premium variant: 28,543 | CarExpert | Verified |
-| Performance variant: 2,100 | CarExpert | Verified |
-| Dynamic Cab Chassis: 1,366 | CarExpert | Verified |
-| Spare-wheel support cable fault | BYD via CarExpert | Verified |
-| Abnormal wear causes potential detachment | BYD via CarExpert | Verified |
-| Three causes: installation, tray position, torque | BYD via CarExpert | Verified |
-| Repair: replace spare-wheel lifter assembly | BYD via CarExpert | Verified |
-| Repair is free of charge | BYD via CarExpert | Verified |
-| Repair takes approximately 30 minutes | BYD via CarExpert | Verified |
-| BYD advising owners to remove spare wheel | BYD via CarExpert | Verified |
-| productsafety.gov.au as the VIN check resource | Standard Australian government recall resource | Self-evident/verified |
+| 32,009 vehicles recalled | CarExpert / 4x4australia / BYD statement | Verified |
+| Premium variant: 28,543 | Multiple Australian automotive sources | Verified |
+| Performance variant: 2,100 | Multiple Australian automotive sources | Verified |
+| Dynamic Cab Chassis: 1,366 | Multiple Australian automotive sources | Verified |
+| Spare-wheel support cable fault | BYD via Australian news sources | Verified |
+| Abnormal wear causes potential detachment | BYD via multiple sources | Verified |
+| Three causes: installation, tray position, torque | BYD via multiple sources | Verified |
+| Repair: replace spare-wheel lifter assembly | BYD via Australian news sources | Verified |
+| Repair is free of charge | BYD via multiple sources | Verified |
+| Repair takes approximately 30 minutes | BYD via multiple sources | Verified |
+| BYD advising owners to remove spare wheel | BYD via multiple sources | Verified |
 
-Safety information sourced exclusively from BYD's own statement reproduced by CarExpert, consistent with Stage 1b risk flag.
+Safety information sourced from BYD's own statement reproduced by multiple Australian automotive news sources.
 
 ---
 
 ## FINAL FACTUAL VERSION
 
-No changes required. Article as written above is the final factual version.
+Changes made: Softened "vehicle remains driveable" categorical claim to "BYD's interim instruction concerns removal of the spare wheel; owners should follow the recall notice." Removed unsupported claim about "documentation" requirement. Added qualifier that "vehicles may need to remain with the dealer longer depending on workshop scheduling." Changed "All three configurations currently registered" to "all three listed Australian variants covered by this recall."
 
 ---
 
