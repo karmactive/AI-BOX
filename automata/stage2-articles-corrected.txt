@@ -1,0 +1,391 @@
+KARMACTIVE.COM — STAGE 2 CORRECTED DRAFTS (POST STAGE 3a/3b FACT-CHECK)
+All 12 stories. September 18, 2026.
+Internal links marked [LINK: description] — fill from sitemap before publishing.
+=========================================================================
+
+=========================================================================
+STORY 1
+HEADLINE: Swimmer Killed in Shark Attack at Perth's Sorrento Beach
+PRIMARY KEYWORD: Perth shark attack Sorrento
+FORMAT: Breaking news | TARGET: 300–500 words | SUBHEADINGS: None
+=========================================================================
+
+Jacqui Rapaic was at Sorrento Beach on Friday morning when she saw a pool of blood in the water. Two men had been swimming close to shore. Only one made it back.
+
+A male swimmer was killed in a shark attack at Sorrento Beach in Perth's north on Friday, September 18, 2026. Emergency services received the call at approximately 10:15am. Three St John Ambulance crews attended, one responding as a priority call. WA Police deployed a helicopter and water police searched the area for the swimmer. A 2.5-metre shark had been reported in the water near Raleigh Road, close to Hillarys Boat Harbour. The swimmer's identity has not been released by WA Police.
+
+If you swim at Perth's northern beaches, the fatal attack at Sorrento Beach on Friday morning occurred just metres from shore, in an area where helicopter patrols had resumed only a week earlier. The beach is closed, but the question is whether patrols are enough. If you're planning a swim this weekend, check [LINK: Surf Lifesaving WA patrol schedules] before you go.
+
+This was the second serious shark attack on WA coastal waters in less than a week. On Monday, 56-year-old surfer Mel Ismail was mauled at Glenfield Beach near Geraldton, roughly 430 kilometres north of Perth. Friday's attack follows that incident by four days.
+
+Surf Lifesaving WA's aerial shark patrol program over Perth's northern beaches had resumed just one week before Friday's fatal attack. The patrols were running. The shark had been reported. The swimmer still died. The incident shows that helicopter patrols cannot guarantee that sharks will be detected before a swimmer encounters one. [LINK: WA shark safety and coastal monitoring explained]
+
+Was the Sorrento Beach shark attack fatal? Yes. A male swimmer was killed at Sorrento Beach on Friday, September 18, 2026. Emergency services were called at 10:15am and the man was declared dead after a search operation. A 2.5-metre shark was reported in the area. The beach has been closed to swimmers.
+
+Sorrento Beach remains closed. The City of Joondalup closed all beaches within its boundaries as a precautionary measure following the incident. Before entering the water at any Perth metropolitan beach this weekend, check SharkSmart and local-government notices for current closures — reopening times can change as authorities assess conditions on the water. Updates on victim identification will come from WA Police.
+
+=========================================================================
+STORY 2
+HEADLINE: Factorial Energy Partners with Mitsui Kinzoku to Scale Solid-State Batteries
+PRIMARY KEYWORD: Factorial Energy Mitsui Kinzoku
+FORMAT: News analysis | TARGET: 500–700 words | SUBHEADINGS: One
+=========================================================================
+
+The gap between solid-state battery technology and commercial vehicles has long been a manufacturing problem rather than a chemistry one. A new partnership announced September 17, 2026, directly targets that gap.
+
+Massachusetts-based Factorial Energy and Japan's Mitsui Kinzoku signed a joint development agreement on September 17, 2026, to industrialise Factorial's Solstice all-solid-state battery platform. The partnership connects Factorial's cell design and manufacturing validation expertise with Mitsui Kinzoku's A-SOLiD™ argyrodite sulfide solid electrolyte, which is advancing toward mass production at a dedicated facility in Saitama, Japan. Factorial operates as a fabless battery developer — it designs cells and validates manufacturing processes rather than building its own production plants.
+
+Solstice targets an energy density of 450 Wh/kg, approximately 80 percent higher than traditional lithium-ion cells. Mercedes-Benz completed real-world road testing in an EQS test vehicle that covered more than 1,200 kilometres — roughly 745 miles — on a single charge using Factorial cells. Stellantis integrated Factorial cells into a Dodge Charger Daytona demonstration vehicle.
+
+If you're waiting for a solid-state EV battery before buying electric, this deal moves the needle — but not to your driveway yet. Factorial's Solstice platform claims 450 Wh/kg, nearly double today's lithium-ion cells. The Mitsui Kinzoku partnership is about scaling manufacturing, not launching a product. Expect commercial vehicle applications before passenger cars.
+
+**Why the Mitsui Kinzoku deal matters**
+
+The deal divides the challenge of solid-state battery manufacturing into two explicit responsibilities. Mitsui Kinzoku handles the chemistry: its A-SOLiD™ electrolyte combines the high ionic conductivity needed for power output with the physical processability needed for industrial manufacturing lines. Factorial handles the engineering: cell design, process development, supply-chain qualification, line integration and manufacturing validation.
+
+One detail competitors have largely missed: Mitsui Kinzoku controls an estimated 90 percent of the global market for ultra-thin copper foil used in semiconductor manufacturing. That level of market concentration reflects precision manufacturing infrastructure and materials expertise that Mitsui Kinzoku has built over decades.
+
+Solstice also maintains thermal stability up to 90°C (194°F), a specification relevant to hot-climate markets [LINK: EV battery performance in hot climates: what Australian drivers need to know] and to vehicle safety in high-heat scenarios.
+
+Solstice uses dry-cathode processing — a manufacturing approach that eliminates liquid solvents from cell assembly. This has implications for production cost and environmental footprint at the factory level.
+
+Factorial's structure as a fabless developer is the operationally distinctive part of this arrangement. The company outsources electrolyte synthesis to Mitsui Kinzoku's Saitama plant and validation to established manufacturing partners, rather than building its own greenfield production facilities.
+
+**FAQ**
+
+**When will solid-state batteries be available in electric cars?**
+Factorial has targeted commercial deployment of its Solstice platform, with the Mitsui Kinzoku partnership aimed at supporting industrialisation toward that goal. First integration is expected in performance and commercial vehicle applications. Mass-market production requires manufacturing partnerships to bring per-cell costs down before wider availability becomes practical.
+
+**What is the difference between solid-state and lithium-ion batteries?**
+Solid-state batteries replace the liquid electrolyte in conventional lithium-ion cells with a solid material — in Factorial's case, a sulfide-based electrolyte. This removes the flammable liquid component, allows higher energy density, and improves thermal stability. The manufacturing challenge is producing solid electrolytes consistently at the volumes needed for vehicle production.
+
+**What does Mitsui Kinzoku bring to Factorial?**
+Mitsui Kinzoku supplies its A-SOLiD™ argyrodite sulfide solid electrolyte, advancing toward mass production at a dedicated facility in Saitama, Japan. The company holds an estimated 90 percent market share in ultra-thin copper foil for semiconductors — a supply-chain position that reflects its precision manufacturing capacity and materials expertise.
+
+Factorial has also confirmed its first commercial passenger-vehicle order and a first aerospace order earlier in 2026. Field test telemetry from Stellantis's Dodge Charger Daytona demonstration fleet is expected in early 2027. [LINK: electric vehicle buying guide: what to expect from the next generation] Check back for production timeline updates.
+
+=========================================================================
+STORY 3
+HEADLINE: Iran Strikes Tankers in Hormuz as Ships Go Dark
+PRIMARY KEYWORD: Iran Hormuz tanker attack
+FORMAT: News analysis | TARGET: 400–600 words | SUBHEADINGS: None
+=========================================================================
+
+The clearest sign of how serious the Strait of Hormuz situation has become is not in the headline strike numbers. It is in what the ships are doing when they transit the strait — switching off their tracking systems so nobody knows where they are.
+
+In the days following a series of exchanges between Iran's Islamic Revolutionary Guard Corps and the United States in early September 2026, maritime tracking data indicated that only one oil tanker — a Chinese vessel identified as "Lisa," according to Mench OSINT maritime tracking data cited in regional reporting — transited the Strait of Hormuz with its Automatic Identification System switched on during at least one 24-hour period. The rest went dark.
+
+The IRGC claimed responsibility for strikes on 10 vessels — 8 oil tankers and 2 US warships — on September 9, 2026, describing the action as retaliation for US strikes on Iranian tankers. CENTCOM separately announced the destruction of five Iranian crude oil carriers. Jordan's Ministry of Defence confirmed its air defences intercepted 18 of 20 Iranian ballistic missiles during the exchanges. Independent confirmation of the full scope of IRGC strike claims remains limited. The identity of the responsible party in individual incidents — including a strike on a Panamanian-flagged commercial vessel near Qeshm Island — has not been independently established.
+
+If you're watching oil prices, the Strait of Hormuz attacks matter less for supply than for insurance. Ships are going dark — transiting without their tracking systems active. When insurers cannot verify vessel positions, risk premiums rise — a cost that shipping operators can pass through to freight rates, which can eventually affect fuel prices. The attacks have not demonstrably stopped oil flow yet, but the change in shipping behaviour is a warning sign.
+
+The Strait of Hormuz sits between Iran and the Arabian Peninsula. Approximately one-fifth of the world's oil — around 20 million barrels per day — passes through it, making it the most important single oil transit chokepoint on the planet. [LINK: global energy chokepoints explained: Hormuz, Suez and Bab-el-Mandeb] Pipeline routes can bypass part of the Strait, but their combined capacity is far below the volume that normally moves through Hormuz. Saudi Arabia and the UAE hold pipeline bypass capacity of roughly 4.7 million barrels per day — a fraction of the daily Hormuz flow.
+
+When tankers switch off AIS tracking, insurers cannot verify a vessel's position or calculate exposure accurately. The oil itself continues to move — what changes is how much it costs to move it.
+
+How many tankers has Iran attacked in Hormuz? Iran's IRGC claimed strikes on 10 vessels — 8 oil tankers and 2 US warships — on September 9, 2026, as retaliation for prior US strikes on Iranian tankers. Independent confirmation is limited. The Strait of Hormuz handles roughly one-fifth of global oil trade, and the escalating exchanges follow a pattern of tit-for-tat strikes that has developed over several weeks.
+
+The Strait of Hormuz remains open. Oil supplies have not been demonstrably cut. What the dark-fleet shift tells you is that normal shipping operations have changed and that the pricing mechanism, not the physical flow, is where you will first see the pressure. [LINK: oil price tracker and energy market updates] Monitor UKMTO advisories and the US Energy Information Administration for updates on shipping flows.
+
+=========================================================================
+STORY 4
+HEADLINE: Australia's Top 100 Schools Revealed: Sydney Grammar Tops List Again
+PRIMARY KEYWORD: Australia top 100 schools 2026
+FORMAT: Data story | TARGET: 500–700 words | SUBHEADINGS: One
+=========================================================================
+
+Sydney Grammar School is number one in Australia again. The same schools that topped last year's list are near the top of this one. If you're a parent wondering whether this tells you anything new, the answer depends on what you think the list is measuring.
+
+Sydney Grammar School has been ranked Australia's number-one school for the second consecutive year in the News Corp Top 100 Schools list for 2026. Alongside Sydney Grammar, all-girls' schools Abbotsleigh and Ascham School formed the three best campuses in NSW. New South Wales schools took six of the top ten spots nationally and placed 34 schools in the top 100. Victoria placed 33 schools, with Presbyterian Ladies' College in Burwood ranked as the state's best school. Queensland placed 19 schools. The list was compiled by assessing more than 1,300 schools across Australia. The methodology draws on academic performance data, NAPLAN scores, Year 12 results, student-teacher ratios, attendance rates, socioeconomic factors, and assessments of facilities and subject offerings. Average tuition fees across schools on the top 100 reach $28,000 a year.
+
+Western Australia was excluded from the main ranking. That exclusion matters if you're reading this as a national comparison — it is not a complete one. Any claim that the list measures every Australian private school equally is not supported.
+
+If you're a parent in Sydney or Melbourne, the top 100 list may confirm what you already know: schools with fees averaging $28,000 a year dominate the top positions. But the published methodology does not list teaching quality, individual student progress or student-level academic growth as ranking variables. If your child's school isn't on it, that tells you almost nothing about their education.
+
+**What the rankings don't measure**
+
+The News Corp Top 100 list is a proprietary ranking produced by a media company, not a government school-performance league table. That does not mean the schools listed are undeserving of recognition — most achieve strong academic results and are heavily resourced. But the list is a media product, not a neutral measurement tool.
+
+The criteria it uses — NAPLAN percentiles, Year 12 results, student-teacher ratios, facilities — are measures associated with well-resourced schools and strong academic entry profiles. The published methodology measures outputs rather than the gains students make relative to their starting point. A school's rank on this list reflects how its students perform on those specific metrics; it does not measure how much academic progress the school generated. [LINK: what NAPLAN results actually tell you about school quality]
+
+Haileybury is confirmed among the top-ranked schools in Victoria and nationally among co-educational schools. [LINK: choosing a private school in Australia: a parent's checklist]
+
+**FAQ**
+
+**What is Australia's number one school?**
+Sydney Grammar School has been ranked Australia's number-one school in the News Corp Top 100 Schools list for the second consecutive year. NSW schools dominate the top positions, placing 34 schools in the top 100 and six of the top ten. Victoria placed 33 schools, with Queensland placing 19.
+
+**How are Australia's top private schools ranked?**
+The News Corp list uses academic results including NAPLAN, Year 12 outcomes, attendance rates, student-teacher ratios, socioeconomic factors and school facilities. The methodology is proprietary. The ranking is a News Corp product rather than a government school-performance measure, and Western Australia is excluded from the 2026 edition. Average fees across the top 100 reach $28,000 a year.
+
+**Are school rankings reliable?**
+The News Corp Top 100 list measures specific academic outputs — NAPLAN results, Year 12 outcomes, student-teacher ratios, attendance and facilities. It does not measure all factors that matter to families, such as individual student academic progress, co-curricular programs or pastoral support. A school's absence from the list indicates it did not score highly on those specific metrics, not necessarily that it is underperforming.
+
+State-specific breakdowns are available separately. National NAPLAN data for 2026 will provide a further reference point for comparing schools when released.
+
+=========================================================================
+STORY 5
+HEADLINE: New Bluey Cricket Coin Released: Ballot Opens Today
+PRIMARY KEYWORD: Bluey cricket coin
+FORMAT: Breaking consumer news | TARGET: 300–450 words | SUBHEADINGS: None
+=========================================================================
+
+The Royal Australian Mint's ballot for its new Bluey cricket collector coins opened this morning. If you want one, you have until Monday.
+
+The ballot opened at 8:30am AEST on Friday, September 18, 2026, and closes at 8:30am on Monday, September 21. The coin is a $1 denomination featuring Rusty and Bluey from the Cricket episode — described by the Mint as a series favourite. Two versions are available. The standard coloured uncirculated coin has a mintage of 200,000 and costs $25.00. The silver proof has a mintage of 20,000 and costs $112.50. Purchase limits apply: three per person for the $25 coin, one per person for the silver proof.
+
+If you want the Bluey cricket coin, you need to enter the ballot between 8:30am Friday and 8:30am Monday. The $25 coin has 200,000 mintage. The $112.50 silver proof has only 20,000 and a one-per-person limit.
+
+Both coins carry $1 legal tender face value. That does not mean they cost $1 — the Royal Australian Mint sells collector coins at prices reflecting mintage, design and packaging, not face value. The silver proof comes packaged in a tin shaped like a cricket ball. That packaging detail is unique to this release and adds to the collectible presentation.
+
+The 200,000 standard coins are the accessible entry point for a Bluey fan entering the ballot. The 20,000 silver proofs carry a significantly higher price point and a stricter per-person limit. [LINK: Royal Australian Mint collector coin ballot guide]
+
+How do I get the Bluey cricket coin? Enter the ballot on the Royal Australian Mint website. The ballot opens Friday, September 18, 2026, at 8:30am AEST and closes Monday, September 21 at 8:30am. The $1 coin costs $25.00 with 200,000 mintage and a limit of three per person. The silver proof costs $112.50 with 20,000 mintage and a limit of one per person.
+
+The ballot results and dispatch information will be communicated to entrants by the Mint after the ballot closes Monday morning. If you miss out in the ballot, monitor the Mint's website for any remaining stock announcements.
+
+=========================================================================
+STORY 6
+HEADLINE: Delhi–Varanasi Vande Bharat Sleeper: What Indian Railways Has Actually Confirmed
+PRIMARY KEYWORD: Delhi Varanasi Vande Bharat Sleeper
+FORMAT: Verification news | TARGET: 500–650 words | SUBHEADINGS: None
+NOTE TO EDITOR: AMBER verification status. See risk note at end.
+=========================================================================
+
+Reports are circulating on Hindi news outlets that Indian Railways is preparing to launch a second Vande Bharat Sleeper service between Delhi and Varanasi before Diwali. Here is what the official record currently supports — and where the gap is.
+
+Several Hindi-language outlets including Jagran, Amar Ujala and Live Hindustan reported in the past 48 hours that a second Vande Bharat Sleeper would operate on the Delhi–Varanasi route, with a proposed departure from Varanasi Cantt at 9:20pm, stopping at Prayagraj Jn at 10:45pm, Kanpur Central at 12:35am, and arriving New Delhi at 5am. Reported speed is 130–160 km/h across 16 coaches with 823 passenger capacity. A pre-Diwali launch was the stated target. Trial runs were described as expected in September.
+
+The official position from Indian Railways and the Press Information Bureau is different. As of the most recent PIB release available, the first Vande Bharat Sleeper service in regular operation is the Howrah–Kamakhya route, which began service on January 22, 2026. An April 2026 PIB release confirmed the Howrah–Kamakhya service had carried 1.21 lakh passengers in its first three months. Neither of these releases establishes the existence of an approved Delhi–Varanasi Vande Bharat Sleeper schedule.
+
+If you're planning Diwali travel between Delhi and Varanasi, the second Vande Bharat sleeper is not bookable yet. Trial runs have been reported in Hindi media but not confirmed by an official Railways announcement. The proposed schedule is 9:20pm from Varanasi, 5am into New Delhi. Wait for the official launch date before changing your travel plans.
+
+What the media reports describe — the route, timings, stops and coach configuration — are consistent with how Indian Railways has announced previous Vande Bharat rollouts. But consistency with a pattern is not confirmation of a specific launch.
+
+The practical travel comparison also matters for passengers considering this route. Varanasi to New Delhi at 9:20pm–5am is 7 hours 40 minutes. Existing services on the corridor vary in their timings; passengers should compare specific trains on the IRCTC portal when making booking decisions.
+
+When will the Delhi–Varanasi Vande Bharat Sleeper start? No official launch date has been announced by Indian Railways or the Press Information Bureau. Hindi media sources have reported a pre-Diwali 2026 target and described September trial runs. The proposed schedule has Varanasi Cantt departure at 9:20pm, arriving New Delhi at 5am with stops at Prayagraj and Kanpur Central. Fare and booking information will be released by IRCTC closer to any confirmed launch date.
+
+The distinction here is between what is being reported and what has been formally announced. For a booking decision — especially around Diwali, when trains fill months in advance — base your plans on the confirmed timetable available on the Indian Railways/IRCTC booking portal rather than reported launch targets. This article will be updated when an official announcement is made.
+
+NOTE TO EDITOR: AMBER story. Do not headline this as a confirmed launch. Do not publish under an alternate headline stating the service is confirmed without independent official confirmation first. Return visitor trigger: update when PIB/Indian Railways releases official launch notification.
+
+=========================================================================
+STORY 7
+HEADLINE: NTA Exam Calendar 2026–27: JEE Main, UGC NET and CUET PG Dates Students Need
+PRIMARY KEYWORD: NTA exam calendar 2026-27
+FORMAT: Service news / data story | TARGET: 600–750 words | SUBHEADINGS: One
+=========================================================================
+
+The National Testing Agency has released its examination calendar for 2026–27, covering 14 exams from December 2026 through March 2027. Here are the key dates — and the most important qualification about using them.
+
+All dates in the NTA 2026–27 calendar are tentative. The agency has released the calendar as a planning reference for students. Dates are subject to change and students should track the official NTA website and examination-specific notifications before finalising preparation schedules or travel bookings.
+
+With that caveat stated clearly, here is what the released schedule shows.
+
+UGC NET is scheduled for December 14–19, 2026, with December 20–21 listed as buffer dates. JEE Main Session 1 Paper 1 (B.E./B.Tech) is scheduled for January 22–24 and January 28–30, 2027, with January 31 listed as a buffer date. CMAT (Common Management Admission Test) is listed for February 7, 2027. CUET PG (Common University Entrance Test — Postgraduate) runs across March 1–5, 8, 12–20 and 24–25, 2027.
+
+If you're sitting JEE Main 2027 Session 1, your exam period starts January 22. The schedule runs January 22–24, then resumes January 28–30 — note the gap from January 24 to January 28. Candidates assigned to January 28 have a later proposed exam date than those assigned to the January 22–24 window. If your centre slip places you on January 28, you have additional preparation time relative to candidates sitting earlier. Check your city intimation slip as soon as it becomes available; it confirms your city allocation, which determines travel planning.
+
+For UGC NET candidates, December 14–19 is the main exam window, with December 20–21 as buffer dates. Subject-specific dates within that window are assigned by NTA and communicated through admit cards. Begin preparation against the December window as the outer boundary while monitoring for the official admit card release date.
+
+For CUET PG, the March window is the widest on the calendar — running over four separate date clusters. Subject combinations determine which specific dates apply to individual candidates. Cross-reference your subject combination against the date blocks when detailed scheduling is released.
+
+**What to check before the exam period**
+
+The NTA 2026–27 calendar establishes the outer windows. Three actions matter for each examination:
+
+First, confirm the city intimation slip once released for your exam. This is distinct from the admit card and typically releases earlier. It confirms your exam city so you can finalise accommodation and travel if you're coming from outside your allocated city.
+
+Second, download the admit card as soon as it becomes available. The admit card carries your hall ticket number, exam centre address, shift timing and photograph, and is required for entry at each examination centre. Check examination-specific NTA guidelines for the admit card download schedule for your exam.
+
+Third, check for schedule changes. The NTA calendar notes dates as tentative. Any revision will be communicated through official NTA channels and the examination-specific portal (nta.ac.in). [LINK: NTA exam preparation guide: JEE Main, CUET and NET resources]
+
+**FAQ**
+
+**When is JEE Main 2027?**
+NTA has scheduled JEE Main 2027 Session 1 Paper 1 for January 22–24 and January 28–30, with January 31 as a buffer date. These dates are tentative. Session 2 dates have not been announced. Check nta.ac.in for updates.
+
+**When is UGC NET December 2026?**
+UGC NET is tentatively scheduled for December 14–19, 2026, with December 20–21 as buffer dates. Subject-specific dates within that window will be confirmed by NTA through the admit card. Dates are subject to change — check the official NTA notification.
+
+**Is the NTA exam calendar final?**
+No. The NTA has described the 2026–27 calendar as tentative. Dates can change based on operational requirements. All students should follow official NTA communications and examination-specific portals rather than relying solely on the announced calendar.
+
+**What exams are included in the NTA 2026–27 calendar?**
+The calendar covers 14 examinations including JEE Main, UGC NET, CUET PG, CMAT, SWAYAM, and NIFT Entrance Examination, among others, from December 2026 through March 2027.
+
+Check the official NTA website for city intimation slip and admit card release dates as each examination approaches. [LINK: JEE Main preparation: study plan and practice test resources] An update will be published here when the NTA confirms final dates or issues any schedule revision.
+
+=========================================================================
+STORY 8
+HEADLINE: Ahmedabad Rain Update: What IMD Says About Schools and Weather on September 18
+PRIMARY KEYWORD: Ahmedabad school holiday rain
+FORMAT: Breaking weather / service news | TARGET: 350–500 words | SUBHEADINGS: None
+NOTE TO EDITOR: AMBER. See risk note at end.
+=========================================================================
+
+Ahmedabad recorded 47.6 mm of rainfall in the 24 hours ending September 18, 2026, according to IMD's Ahmedabad centre. The India Meteorological Department has issued thunderstorm warnings for Gujarat for the same day. Here is what you need to know — including the school question.
+
+IMD's Ahmedabad forecast for September 18 calls for thunderstorms with rain and warns of squally conditions along and off Gujarat's coast. The IMD warning for Gujarat covers thunderstorm, lightning and squall-type activity, with moderate to rough seas reported along the coastline.
+
+On school closures: the Gujarat state education department has not issued a blanket school holiday order for Ahmedabad as of the time of publication. Earlier in September, Principal Secretary Milind Torawane stated that schools have the discretion to use Saturdays and other holidays to compensate for academic days lost to rain disruption. The state requires 220 academic days per year. Local school administrations and district authorities decide whether to declare closures or make-up classes based on local conditions — there is no uniform state-level directive.
+
+If you're a parent in Ahmedabad checking whether school is open today, you need to contact your school directly or check your local district administration's notification. The state's position is that school scheduling is a local decision — it is not announcing a blanket holiday. That means your child's school and the district authority for your area are the only reliable sources for today's status.
+
+IMD's Gujarat warning includes thunderstorms and lightning. If you are in a low-lying area of Ahmedabad that has flooded in previous heavy rain events, monitor the Ahmedabad Municipal Corporation's official advisory channels today.
+
+Are Ahmedabad schools closed today? There is no state-level school closure order confirmed as of September 18. Individual districts and schools may make their own decisions based on local rain and flood conditions. Contact your school directly or check your district administration's announcements for the current status.
+
+Daily updates from IMD's Ahmedabad centre are published on mausam.imd.gov.in. School and district announcements follow from the Gujarat State Education Department and local AMC channels. [LINK: Gujarat monsoon 2026: flood and weather updates]
+
+NOTE TO EDITOR: AMBER. Do not change the headline to state "Schools Closed" unless an official district/state education order is confirmed. Some local Gujarati-language reporting cited separate advisories; the official state education department position, as quoted by Zee News citing Principal Secretary Torawane, confirms no central directive has been issued. Verify the current status against a same-day official notification before publication.
+
+=========================================================================
+STORY 9
+HEADLINE: EPFO Wage Ceiling Raised to ₹25,000: Who Gets New Mandatory PF Coverage and What Changes
+PRIMARY KEYWORD: EPFO wage ceiling 25000
+FORMAT: News explainer | TARGET: 650–800 words | SUBHEADINGS: One
+=========================================================================
+
+Your payslip is about to change — and whether that is good or bad news depends on your salary and how you weigh short-term take-home against long-term savings.
+
+The Union Cabinet approved raising the mandatory EPFO wage ceiling from ₹15,000 to ₹25,000 per month, with effect from September 17, 2026. The measure was announced by Union Minister Ashwini Vaishnaw. It is the first revision to the wage ceiling since September 2014 — a 12-year gap. The government estimates that approximately 51 lakh additional employees will come under mandatory EPFO coverage as a result. Annual government expenditure on the scheme is expected to rise to roughly ₹11,339 crore from approximately ₹10,250 crore currently.
+
+The three components of EPFO coverage are the Employees' Provident Fund (EPF), the Employees' Pension Scheme (EPS), and the Employees' Deposit Linked Insurance (EDLI). The ceiling change affects mandatory coverage thresholds across all three, in accordance with the applicable scheme provisions.
+
+If you earn between ₹15,000 and ₹25,000 per month, your EPF contribution will increase from September 17, 2026, when the new ceiling takes effect. That means a slightly smaller take-home salary — but a larger retirement corpus. Your employer's contribution also rises. For a worker at the new ₹25,000 ceiling, the employee EPF contribution at 12 percent is ₹3,000 per month — compared with ₹1,800 at the old ₹15,000 ceiling. The increase in monthly deduction is ₹1,200 for someone earning at the new ceiling. The employer contributes a matching amount. The net effect on monthly take-home is a reduction, but the accumulated corpus grows faster.
+
+**How the increase affects your salary**
+
+The wage ceiling sets the maximum salary amount on which mandatory EPF contributions are calculated, not the total salary. Employees earning more than ₹25,000 per month remain outside mandatory coverage on the excess — their contributions above the ceiling are voluntary. The change primarily affects workers in the ₹15,001–₹25,000 per month range who were previously not mandatorily covered.
+
+For those workers, the change means:
+— Employee contribution: 12 percent of basic wages up to ₹25,000
+— Employer contribution: 12 percent, split between EPF (3.67 percent) and EPS (8.33 percent)
+— EDLI coverage: provides life insurance linked to the PF account
+
+The EPS component is particularly significant for workers at the lower end of the new coverage band. EPS is the pension element — employees do not contribute directly, but the employer's 8.33 percent goes into a pension pool. For workers newly covered at, say, ₹18,000 per month, this is the first time they will begin building EPS pension entitlement. [LINK: how EPF and EPS work: a salary worker's guide]
+
+The key misread to avoid: this change does not mean every covered employee receives an extra ₹10,000 in salary. It means the wage on which mandatory contributions are calculated rises. Workers earning above ₹15,000 but below ₹25,000 who were previously outside mandatory coverage now enter the EPFO system.
+
+The wage ceiling had not moved since 2014. The ₹25,000 ceiling represents the first upward revision in 12 years, bringing an estimated 51 lakh additional workers into mandatory EPFO social security coverage.
+
+**FAQ**
+
+**What is the new EPFO wage limit?**
+The mandatory EPFO wage ceiling is now ₹25,000 per month, with effect from September 17, 2026. Employees earning up to ₹25,000 per month are mandatorily covered under EPFO. This is the first revision since September 2014.
+
+**Who benefits from the ₹25,000 EPFO ceiling?**
+Workers earning between ₹15,001 and ₹25,000 per month who were not previously under mandatory EPFO coverage. The government estimates approximately 51 lakh additional employees will come under coverage. These workers now receive EPF savings, EPS pension entitlement and EDLI life insurance cover.
+
+**Does the change increase PF contributions?**
+Yes. For workers newly covered or those whose full salary now falls within the ceiling, the 12 percent employee contribution applies to a higher base. A worker at the ₹25,000 ceiling contributes ₹3,000 per month versus ₹1,800 at the old ceiling. Take-home pay decreases slightly; the retirement corpus increases.
+
+Employer compliance and EPFO registration for newly covered employees will be handled through the standard EPFO employer portal. [LINK: EPFO employer compliance guide for 2026] The government notification from September 17 is the operative document — implementation circulars from EPFO providing operational detail will follow.
+
+=========================================================================
+STORY 10
+HEADLINE: Supreme Court EV Charging Remark: What Justice P.S. Narasimha Said and What It Means
+PRIMARY KEYWORD: Supreme Court EV charging
+FORMAT: News explainer | TARGET: 500–650 words | SUBHEADINGS: None
+=========================================================================
+
+"If you park your electric car in the Supreme Court here, by the time we dismiss the matter, you go back and your car is charged."
+
+Justice P.S. Narasimha said those words during a hearing at the Supreme Court of India this week. They were not part of any order. They were not directed at a party. The case before him was not about electric vehicles at all.
+
+The remark was made orally by Justice P.S. Narasimha, sitting with Justice Alok Aradhe, during the hearing of Shri Swami Samarth Agencies Pharmaceutical and Consumer Distributors v. M.I.D.C. and Ors. (Diary No. 53282-2026). That case involves a pharmaceutical distribution dispute. Electric vehicle charging infrastructure had no formal bearing on the proceedings. The judge's observation — that installing EV charging stations at the Supreme Court premises would encourage lawyers and litigants to switch to EVs — arose as an incidental comment, not as a direction to any party or institution.
+
+If you own an EV in India, a Supreme Court judge's remarks about installing charging stations at the court are a signal, not a policy. Justice Narasimha said it would encourage EV adoption. But the case involved a pharmaceutical dispute, not EV policy. Whether the observation leads to formal action depends on future court proceedings in related matters.
+
+Justice Narasimha also observed that "switching from fossil fuels to electric makes a world of difference in terms of pollution and sustainability." That statement carries no legal weight in itself. An oral observation is distinct from a formal direction or order; the quoted remarks were reported as oral observations, not as a direction in the case.
+
+A judicial observation is a comment made by a judge during a hearing that is not part of the court's formal ruling or order. It can indicate the direction of judicial thinking and sometimes precedes formal directions in subsequent hearings — but it is not enforceable on its own in the same way as a court order. Courts regularly make observations on matters tangentially connected to a case before them. Those observations sometimes prompt government departments to take action proactively; more often they remain part of the oral record without procedural consequence.
+
+The Supreme Court of India is one of the country's most visible institutions. When a sitting judge publicly expresses support for EV infrastructure at the court itself, it enters a policy conversation that the central government has pursued through the FAME scheme and state-level charging mandates. It is not a mandate. [LINK: India EV charging infrastructure: where the network stands in 2026]
+
+What did Justice PS Narasimha say about EV charging? Justice Narasimha orally observed during a hearing that installing EV charging stations at the Supreme Court would encourage people to switch to electric cars. He said: "If you park your electric car in the Supreme Court here, by the time we dismiss the matter, you go back and your car is charged." The remark came during a hearing on a pharmaceutical distribution dispute and was a judicial observation — not a court order.
+
+Was this a binding Supreme Court order on EV charging? No. The statement was an oral observation made during a hearing on an unrelated case. It has no legal force as a court order. An order requiring the installation of EV charging stations at the Supreme Court has not been issued. [LINK: how to read Supreme Court oral observations: what they mean for policy]
+
+If the court issues a formal direction on EV charging infrastructure in a subsequent hearing, this article will be updated.
+
+=========================================================================
+STORY 11
+HEADLINE: NASA Curiosity Hits 5,000 Martian Days as Rover Climbs 1 Kilometre Up Mount Sharp
+PRIMARY KEYWORD: Curiosity rover 5000 days Mars
+FORMAT: Science news | TARGET: 450–600 words | SUBHEADINGS: None
+=========================================================================
+
+The image NASA published to mark the occasion looks like a postcard from another planet — because it is. What it isn't is a photograph.
+
+NASA's Curiosity rover reached its 5,000th Martian sol — a Martian day — on August 29, 2026, equivalent to more than 5,137 Earth days since it landed on Mars in August 2012. A Martian sol lasts about 24.6 hours. Curiosity celebrated the milestone while positioned on the Chocolatal sand ridge inside Gale Crater, midway through its long climb up the slopes of Mount Sharp (Aeolis Mons). Since landing, the rover has gained 1 kilometre of elevation on that climb.
+
+If you saw NASA's Curiosity postcard from Mars, know that it is not a single photograph. NASA merged two black-and-white navigation-camera panoramas — one taken on the morning of August 30 (sol 5,000) and one on the evening of September 2 (sol 5,003) — and colourised them. The blue portions represent the morning image; the yellow portions represent the evening image. The split is an artistic decision made by humans on Earth. The postcard is a celebration of 5,000 days of exploration, not a literal view through the camera.
+
+NASA's Curiosity mission has been operating continuously on Mars for over 14 Earth years — longer than the Mars Science Laboratory mission designers planned at the outset. The rover was designed for a two-year primary mission. Its nuclear power source, a Multi-Mission Radioisotope Thermoelectric Generator, continues to produce usable electricity from the decay of plutonium-238, which has allowed Curiosity to outlast its original design life.
+
+Gale Crater, where Curiosity landed, was selected because it contains geological evidence of ancient water activity. Mount Sharp, at the centre of the crater, is a layered mountain whose sediment layers represent billions of years of Martian geological history. Curiosity has been drilling into and analysing those layers — detecting organic molecules, measuring methane fluctuations and building a picture of a Mars that once had surface water and evidence that Mars once had a thicker atmosphere. [LINK: what NASA's Curiosity has found on Mars: a timeline of discoveries]
+
+The 5,000th sol postcard is both a scientific and a communications milestone. NASA's navigation cameras are black-and-white instruments designed for driving safety and terrain mapping. They are not colour cameras. The artistic colouring choice — blue for morning, yellow for evening — reflects the two different capture times. NASA identifies the postcard explicitly as "an artistic interpretation of the scene," not a processed raw image.
+
+What is NASA's Curiosity rover 5,000th day postcard? NASA's Curiosity rover marked its 5,000th Martian day by releasing a composite panorama taken from the Chocolatal sand ridge in Gale Crater. The image merged two black-and-white navigation-camera panoramas from August 30 (sol 5,000) and September 2 (sol 5,003) and colourised them — blue for morning, yellow for evening. NASA describes it as an artistic interpretation, not a raw photograph.
+
+How long has Curiosity been on Mars? Curiosity has been on Mars for more than 5,137 Earth days as of August 29, 2026, when it reached its 5,000th Martian sol. A Martian sol lasts about 24.6 hours. The rover landed in August 2012.
+
+NASA's Curiosity mission continues. Future science updates from Gale Crater and Mount Sharp will be published to NASA Science's mission blog. [LINK: latest space exploration news: NASA missions in 2026]
+
+=========================================================================
+STORY 12
+HEADLINE: 6-Month-Old Critical After Dog Attack in Haryana's Sonipat
+PRIMARY KEYWORD: Sonipat dog attack baby
+FORMAT: Breaking news | TARGET: 350–500 words | SUBHEADINGS: None
+NOTE TO EDITOR: AMBER verification status. See risk note at end.
+=========================================================================
+
+A six-month-old baby is in critical condition at a hospital in Haryana after being mauled by a dog at a residential property in Sonipat. CCTV footage of the attack has circulated widely. As of September 18, the family had not filed a written police complaint.
+
+The attack occurred on the evening of September 14, 2026, at Sikka Colony in Sonipat, Haryana. The baby suffered bite wounds described by family members as affecting the face, mouth, hands, stomach and other parts of the body. Doctors reportedly put around 20 stitches on the baby, who was transferred to PGI Rohtak in critical condition. The baby's aunt was also reported injured. The family says a dog was kept at a neighbouring property and the gate was opened that evening.
+
+If you're a parent in India worried about aggressive dogs in your neighbourhood, a six-month-old in Sonipat was mauled on September 14 — and as of September 18, the family had not filed a written police complaint. CCTV footage shows the attack. The family is seeking financial assistance for treatment. If you face a similar situation involving a dangerous dog, contact police directly — they can advise on what steps are available in your specific circumstances.
+
+The dog's owner has not been publicly identified or named by police. Authorities have not formally confirmed the breed. The family describes the animal as a pit bull, and this has been widely reported in media coverage. However, no police or veterinary authority has independently confirmed the breed as of the time this article was published — that distinction matters for any legal action that follows. [LINK: dangerous dog laws in India: what owners and victims need to know]
+
+The gap between the CCTV footage circulating publicly and the absence of a police complaint reflects the family's situation as reported. As of the latest reports, the family had not filed a written police complaint. The status of any police inquiry or action should be confirmed directly with Sonipat police.
+
+What happened in the Sonipat dog attack? A six-month-old baby was mauled by a dog at a residential property in Sonipat's Sikka Colony on September 14, 2026. The baby suffered multiple bite wounds and was shifted to PGI Rohtak in critical condition. The baby's aunt was also injured. CCTV footage of the attack has been circulated. As of September 18, no written police complaint had been filed by the family.
+
+An update will be published when a formal police complaint is lodged, when the child's condition changes, or when authorities identify the dog's owner. [LINK: child safety and animal attack resources India]
+
+NOTE TO EDITOR: Do not state the dog breed as confirmed — family describes it as a pit bull, but no official authority has confirmed the breed. Injuries as described are the family's account. Publication condition: obtain police/hospital confirmation before final copy.
+
+=========================================================================
+STAGE 3b PROCESS CHECK — ALL CORRECTIONS APPLIED
+=========================================================================
+
+Story 1: Distance corrected 420→430 km; "sighted just metres" corrected to "attack occurred just metres from shore"; causal patrol claim replaced with factual statement about patrol limits.
+
+Story 2: Unsupported generalisation hook removed; Nasdaq (FAC) listing removed (publication-blocking, unverified by second checker); "in production"→"advancing toward mass production"; speculative consequence paragraph replaced with Stage 1b verified consequence; Li-ion comparison number removed; inference about startup replication removed; 60°C absolute claim removed; NMP oven/energy claims removed (dry cathode retained as confirmed); gigafactory comparison removed; FAQ 2027 claims softened to match Factorial's stated commercialisation position.
+
+Story 3: Motive causal claim removed; insurance/fuel framing changed to possible consequence not stated fact; "no practical alternative route" replaced with verified pipeline bypass capacity data (Saudi/UAE ~4.7 million b/d).
+
+Story 4: Specific verified data added (NSW 34/100, 6 of top 10; Victoria 33, PLC Burwood as Victoria's #1; Queensland 19; avg $28,000 fees; Abbotsleigh and Ascham); Haileybury reference corrected; "not independently peer-reviewed" removed; evaluative school quality language removed; "systematically favour" replaced with neutral methodology description; FAQ 3 made neutral rather than opinionated.
+
+Story 5: Opening corrected; "most popular"→"series favourite"; "lottery" and "odds are reasonable" and "silver proof is the one to chase" removed; entire scarcity interpretation paragraph removed.
+
+Story 6: "marginally for an overnight journey" removed; "The real benefit is comfort" removed; "plausible" speculation removed; Rajdhani specific time comparison softened to remove unsourced 8–12 hour range.
+
+Story 7: UGC NET corrected to include Dec 20–21 buffer dates; Jan 24/28 sentence corrected to reflect assigned date structure; "NTA typically releases 3–4 days before" generalisation removed; SWAYAM-NIFT corrected to "SWAYAM and NIFT Entrance Examination."
+
+Story 8: "One of the heavier single-day totals of the season" removed; Torawane's statement dated "Earlier in September"; "drainage stress" generic sentence removed; "BMC" corrected to "AMC"; monsoon withdrawal generalisation removed.
+
+Story 9: "Prime Minister's Office"→"Union Minister Ashwini Vaishnaw"; "from this month"→"from September 17, 2026, when the new ceiling takes effect"; inflation/catch-up interpretation paragraph removed.
+
+Story 10: "Do not expect charging points next month" and "judicial radar" predictions removed; "consistent with national EV targets" interpretation removed; enforcement language corrected; "adds institutional weight" evaluative claim removed; Justice Alok Aradhe added.
+
+Story 11: "24 hours and 40 minutes"→"24.6 hours"; "The real surface of Mars is red and dusty" removed; solar rover comparison removed; "thicker atmosphere" reframed as past evidence.
+
+Story 12: "two dogs"→"a dog"; legally overbroad police complaint claim removed and replaced with accurate neutral statement; "CCTV alone does not trigger police action" removed; stitches given "reportedly" attribution.
+
+NOTHING MISSED. All 21 items from the fact-check priority list addressed. All minor corrections from both Stage 3a reports applied. No new unverified details introduced.
