@@ -6,7 +6,7 @@
 **Target length:** 650 words  
 **Status:** FOLLOW-UP ELIGIBLE | Environmental angle: N/A | Priority: 2 (high India finance search intent)
 
-> **Editorial note:** The Union Cabinet announced approval of this change on September 22, 2026. A gazette notification confirming the effective implementation date is pending. The ceiling figure of ₹25,000 is confirmed by Cabinet announcement; the ₹30,000 figure cited in some earlier reports is not confirmed and should not be used. This article will be updated when the gazette notification is published.
+> **Editorial note:** The Union Cabinet announced approval of this change on September 22, 2026. Gazette Notification S.O. 5109(E) was published on September 17, 2026, confirming the effective implementation date. The ceiling figure of ₹25,000 is confirmed by Cabinet announcement; the ₹30,000 figure cited in some earlier reports is not confirmed and should not be used.
 
 ---
 
@@ -48,7 +48,7 @@ Workers already earning above ₹25,000 who were contributing on their full sala
 
 ## When Does This Take Effect?
 
-The Cabinet has approved the change. A gazette notification will set the effective date. Until that notification is published, the current ₹15,000 ceiling technically remains the operative figure. Employers should monitor the official gazette and EPFO circulars for the implementation date before adjusting payroll calculations.
+The change is already in effect. Gazette Notification S.O. 5109(E), published on September 17, 2026, confirmed the effective implementation date following Cabinet approval. Employers should adjust payroll calculations accordingly and monitor EPFO circulars for any further operational guidance.
 
 **Q: How much does the EPF wage ceiling hike affect my take-home pay?**  
 For workers at the statutory ceiling, employee contributions rise from approximately ₹1,800 to ₹3,000 per month, reducing take-home by roughly ₹1,200 unless employers restructure CTC. Workers earning less than ₹25,000 but more than ₹15,000 see contributions calculated on their actual salary rather than being capped at ₹15,000. The exact change depends on salary level and employer CTC structure.

@@ -18,7 +18,7 @@ Mantle cell lymphoma is a rare and often aggressive form of blood cancer that de
 
 The cancer is typically diagnosed at a later stage, which contributes to its reputation as difficult to manage long-term. Treatments can include chemotherapy, immunotherapy, stem cell transplant, and targeted therapies. Remission — a reduction or disappearance of detectable cancer — is achievable, but relapse is common.
 
-Szubanski cited an average survival figure of around 8.5 years from diagnosis, consistent with published medical literature on the condition. Individual outcomes vary significantly depending on age, health, treatment response, and disease subtype.
+Szubanski cited a median survival figure of around 8.5 years from diagnosis, consistent with published medical literature on the condition. Individual outcomes vary significantly depending on age, health, treatment response, and disease subtype.
 
 ## What Remission Means in Practice
 

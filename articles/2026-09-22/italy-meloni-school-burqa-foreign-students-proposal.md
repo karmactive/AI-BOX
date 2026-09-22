@@ -30,7 +30,7 @@ A constitutional law professor, Salvatore Curreri, cited by Italian media, quest
 
 ## How It Becomes Law
 
-The measure must first go to the Council of Ministers (cabinet) for approval. If approved, it enters the parliamentary process, where it must pass within 60 days to remain a government decree rather than requiring full legislative procedure. Opposition figures, including Green Europe MEP Angelo Bonelli, have already announced plans to challenge the proposal.
+The measure must first go to the Council of Ministers (cabinet) for approval. If approved, it enters the parliamentary process — the precise legislative form (whether a decreto-legge or a standard government bill) has not yet been specified by the government. Opposition figures, including Green Europe MEP Angelo Bonelli, have already announced plans to challenge the proposal.
 
 The timeline means Italians will have a clearer picture of whether this becomes law within roughly two months. The political calendar also matters: Italian regional elections and European-level pressure from the further-right FN bloc (led by MEP Roberto Vannacci) are part of the context in which Meloni is making this announcement.
 

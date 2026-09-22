@@ -34,7 +34,7 @@ The practical aim is a rotation of items you already eat, bought a little ahead 
 - Tea, coffee, and long-life fruit juice
 
 **Practical additions:**
-- Bottled water (at least 2 litres per person per day for 3 days as a baseline)
+- Bottled water (at least 2.5–3 litres per person per day for 3 days as a baseline)
 - A manual tin opener (a power cut makes electric ones useless)
 - Matches or a lighter, and candles
 - A battery or wind-up radio

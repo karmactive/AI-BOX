@@ -8,13 +8,13 @@
 
 ---
 
-A yellow-bellied sea snake washed up at Crystal Cove in Orange County, California — the first confirmed sighting of the species in the state since 2018. The encounter was accidental: a woman walking on the beach picked up what she assumed was an ordinary object, returned the snake to the water, and only later discovered what she had been handling.
+A yellow-bellied sea snake washed up at Crystal Cove in Orange County, California — the first confirmed sighting of the species in the state since 2018. The encounter was accidental: Jackie Aguilar, walking on the beach on the night of September 11, used a palm frond to guide the snake back into the water, and only later discovered what she had been handling.
 
 Yellow-bellied sea snakes (*Hydrophis platurus*) are one of the most widely distributed sea snake species in the world, found throughout the Indo-Pacific. They are also highly venomous. But the detail that matters most if you're a Southern California beachgoer: experts say they generally pose no danger to people who leave them alone.
 
 ## What Happened at Crystal Cove
 
-The woman reportedly used an object to guide the snake back into the ocean before she knew what species it was. The encounter ended without incident. Video of the snake circulated on social media after the fact.
+Aguilar used a palm frond to guide the snake back into the ocean before she knew what species it was. The encounter ended without incident. Video of the snake circulated on social media after the fact.
 
 The Los Angeles Times confirmed the sighting was the first in California since 2018, when two separate Orange County sightings were recorded. Outside those years, documented California sightings are rare enough to be individually newsworthy.
 
