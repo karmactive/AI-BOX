@@ -13,7 +13,7 @@
 
 US President Donald Trump and Chinese President Xi Jinping are meeting in Washington this week, with talks covering artificial intelligence governance, semiconductor export restrictions and sanctions enforcement. For anyone watching US-China relations, the question is not whether the two governments disagree — it is which disagreements they can actually resolve in a single summit.
 
-The White House meeting is drawing attention across technology, finance and foreign policy. Topics on the table include AI safety protocols, semiconductor export controls, Chinese access to advanced AI chips, possible US sanctions tied to Iran, rare-earth supply chains and Taiwan. No comprehensive agreement is expected. What is possible is a narrower set of working-level commitments — and for the technology sector, even a narrow deal on AI communication could matter.
+The White House meeting is drawing attention across technology, finance and foreign policy. Topics on the table include AI safety protocols, possible US sanctions tied to Iran, rare-earth supply chains and Taiwan. China has pushed for semiconductor export controls and access to advanced AI chips to be on the agenda, though US Trade Representative Jamieson Greer indicated these were not part of the preliminary American agenda going in. No comprehensive agreement is expected. What is possible is a narrower set of working-level commitments — and for the technology sector, even a narrow deal on AI communication could matter.
 
 If you work in technology, manufacturing or any sector affected by US-China trade policy, the summit's most practical impact is likely to come through what gets agreed — or quietly shelved — on chip exports and AI rules. A new communication channel on AI incidents reaching national-security level is the most concrete outcome most analysts expect. Structural changes to trade policy are unlikely from a single meeting.
 
@@ -70,7 +70,7 @@ City investigators built their calculations directly from DoorDash's internal pl
 
 Rosendo Tacam, a delivery worker and organizer with Los Deliveristas Unidos and the Workers Justice Project, was among those who filed a complaint with the city. He had worked more than 80 hours per week before being deactivated without receiving pay for his final week of deliveries. His case was part of the evidence that underpinned the city's investigation.
 
-The settlement also requires a three-year independent compliance monitoring arrangement. Researchers from Princeton University's Workers' Algorithm Observatory and the Workers Justice Project will have access to DoorDash's dispatch data to verify the company's compliance with the city's minimum pay rules going forward. This is described as the first municipal requirement of its kind in the United States.
+The settlement also requires a three-year independent compliance monitoring arrangement. DoorDash must submit detailed monthly data reports to the DCWP for three years. The Workers Justice Project and Princeton University's Workers' Algorithm Observatory will develop worker-side software that allows workers to share their own trip and earnings data directly with the DCWP. A $4.3 million fund supports this program. This is described as the first municipal requirement of its kind in the United States.
 
 DoorDash must also rewrite its dispatch software to eliminate pay rates that fall below the minimum on grouped or batched orders — a practice that allowed the platform to average down pay on multi-stop deliveries.
 
@@ -89,15 +89,15 @@ For workers with eligibility questions, the NYC Department of Consumer and Worke
 
 # 3. NAURU RENAMES ITSELF NAOERO
 
-**Headline:** Nauru Announces New Name at UN: Why the Island Nation Will Be Called Naoero
+**Headline:** Nauru Is Now Naoero: The Official Name Change and What It Means
 
 **Status:** NEW | **Format:** International explainer | **Target:** 500–700 words | **Env. angle:** Sea-level/rising-seas context (attributed, secondary)
 
 ---
 
-At the United Nations General Assembly in New York, the president of a small Pacific island nation told the world to stop using the colonial-era name it had carried for more than a century. The country is Nauru. From now on, it wants to be called Naoero.
+At the United Nations General Assembly in New York, the president of a small Pacific island nation used his address to present to the world the indigenous name his country had officially adopted months earlier. The country was Nauru. It is now Naoero.
 
-President David Adeang used his September 22, 2026, address to the UN General Assembly to announce that the country had officially adopted Naoero — a restoration of the name Nauruans have historically used among themselves. The UN's terminology database records the change as effective June 26, 2026. The country's international identification code is also changing, from NRU to NRO. Adeang described the change as a restoration of language and national identity rather than a rebranding. The pronunciation of Naoero differs from the anglicized "Nauru" that became standard through colonial administration.
+President David Adeang used his September 22, 2026, address to the UN General Assembly to formally present to the world that the country had officially adopted Naoero — a restoration of the name Nauruans have historically used among themselves. The official change had already taken effect on June 26, 2026, before the General Assembly address. The UN's terminology database records the change as effective June 26, 2026. The country's international identification code is also changing, from NRU to NRO. Adeang described the change as a restoration of language and national identity rather than a rebranding. The pronunciation of Naoero differs from the anglicized "Nauru" that became standard through colonial administration.
 
 For anyone following Pacific news, international agreements or global geography, the change has practical implications. Official documents, maps, diplomatic correspondence and databases will update from Nauru to Naoero over time. The UN has already updated its own terminology records. Other international institutions and media organizations are expected to follow, though individual timelines vary by institution.
 
@@ -107,11 +107,9 @@ The General Assembly address covered more than the name change. Adeang also rais
 
 AP reported that Adeang described Naoero as the name the people of the island have used among themselves, and said it was time for the international community to use it as well. The change was formally registered with the UN before the General Assembly address, making the speech an announcement of an accomplished fact rather than a proposal.
 
-The name Nauru entered international use during German colonial administration in the late 19th century, when colonial officials recorded it in a form closer to German phonetics. The name Naoero predates that period.
-
 Whether countries and institutions need to update formal treaties, passports or official records depends on the specific document. Countries with bilateral agreements using the name Nauru will typically update references when those agreements are reviewed or renewed, rather than requiring immediate formal amendments.
 
-Naoero has a population of roughly 10,000 people and is one of the smallest nations in the world by area. It sits in the central Pacific, north of the Solomon Islands.
+Naoero has a population of roughly 12,000 people and is one of the smallest nations in the world by area. It sits in the central Pacific, north of the Solomon Islands.
 
 The decision to restore the name while speaking at the UN — the body that manages international recognition and naming records — was deliberate in its timing. Adeang's address paired the identity announcement with his country's stated concerns about sea levels, placing both within the broader context of what small island nations are navigating at the international level.
 
@@ -132,15 +130,15 @@ The decision to restore the name while speaking at the UN — the body that mana
 
 ---
 
-National Australia Bank customers woke on September 23 to find their mobile app, internet banking and phone lines down across the board. As of the latest update from NAB, most services have been restored — but some business customers are still reporting login problems.
+National Australia Bank customers reported service disruptions from shortly after midday on September 23, when the mobile app, internet banking and phone lines went down across multiple platforms. As of the latest update from NAB, most services have been restored — but some business customers are still reporting login problems.
 
 NAB confirmed a digital outage that affected multiple services simultaneously: internet banking, the NAB mobile app, NAB Connect, NAB Trade, NAB Broker, JBWere and customer-service phone lines. The bank said most services had been restored, but some business customers continued to experience login issues after the main recovery. NAB did not publicly disclose a cause. The bank confirmed that no scheduled maintenance was planned during the affected period.
 
 If you are a NAB personal banking customer, your app and online banking access should be working again. If you are a business customer still unable to log in to NAB Connect or NAB Trade, no specific resolution time has been given. Check NAB's official app and status page for live updates — third-party outage trackers can lag behind the actual situation. Do not rely on social media reports about the cause: NAB has not disclosed what caused the outage, and any specific cause being circulated — including suggestions of a cyberattack — is speculation, not confirmed fact.
 
-For customers who missed a payment or experienced a transaction error during the outage, NAB's standard process is to contact the bank directly and flag the issue with a time-stamped record of the failed transaction.
+For customers who missed a payment or experienced a transaction error during the outage, contacting the bank directly with a time-stamped record of the failed transaction is the recommended step.
 
-The outage affected multiple major banking services simultaneously, which is unusual for routine technical failures. But the absence of any explanation from NAB means the nature of the problem remains unknown.
+The outage affected multiple major banking services simultaneously. The absence of any explanation from NAB means the nature of the problem remains unknown.
 
 **Closure:** NAB has restored most services. Business customers still experiencing issues should monitor NAB's official updates directly. The bank has not indicated when a full explanation will be provided.
 
@@ -169,7 +167,7 @@ For Australian fans, this is the end of an era in Australian pub rock. Rose Tatt
 
 Rose Tattoo's debut album established a raw, blues-influenced sound that stood apart from the more polished rock coming from the US and UK at the time. The band built a loyal following in parts of Europe and the UK, where their albums charted, even as mainstream commercial breakthrough in Australia remained elusive. Their 1981 album "Assault & Battery" remains among the most celebrated hard rock records to come out of the country.
 
-Anderson's solo career brought him the song most Australians of a certain age can sing: "Suddenly," released in 1981 as part of the soundtrack to the film *Hooky and the Hammerhead*. It reached the top of the Australian charts and introduced Anderson to an audience far beyond Rose Tattoo's existing fanbase.
+Anderson's solo career brought him his biggest hit, "Suddenly," released in July 1987 via Mushroom Records. The song became famous after featuring in the iconic Neighbours wedding episode of Scott Robinson (Jason Donovan) and Charlene Mitchell (Kylie Minogue). It reached number two on the ARIA Singles Chart and number three on the UK Singles Chart, introducing Anderson to an audience far beyond Rose Tattoo's existing fanbase.
 
 At 4 feet 11 inches, Anderson became one of Australian rock's most recognizable performers — known for his powerful voice, heavy tattoos and an on-stage presence that made him seem considerably larger than his physical size. He was the band's consistent center for more than five decades, through lineup changes, hiatuses and a commercial landscape that repeatedly shifted beneath him.
 
@@ -206,7 +204,7 @@ If you shop for cosmetics at Kmart's Broadway or Broadmeadows stores, you now ne
 
 **Why retailers are locking up low-priced products**
 
-A social media video showing the secured cosmetics received more than one million views on Instagram and more than 430,000 views on TikTok within days. The reaction was divided: some shoppers said secured shelves meant products would actually be in stock rather than stolen before they could reach them, while others said it creates queues and discourages the impulse purchases that drive cosmetics aisle revenue.
+A social media video showing the secured cosmetics received more than one million views within days. The reaction was divided: some shoppers said secured shelves meant products would actually be in stock rather than stolen before they could reach them, while others said it creates queues and discourages the impulse purchases that drive cosmetics aisle revenue.
 
 Kmart is not alone in testing new approaches to theft. Other Australian retailers including Big W, Coles, Woolworths and Chemist Warehouse have introduced different security measures across various product categories in recent years.
 
@@ -231,7 +229,7 @@ Whether Kmart extends the trial depends on whether theft reduction at Broadway a
 
 ---
 
-The US Department of Justice and Live Nation reached a proposed settlement this year to resolve a major antitrust case against Ticketmaster's parent company. Several of Ticketmaster's direct competitors have now filed formal objections with the court, arguing the proposed terms would leave the company's market dominance largely intact. A federal judge is expected to review the settlement before October ends.
+The US Department of Justice and Live Nation reached a proposed settlement in March 2026, mid-trial, to resolve the federal portion of a major antitrust case against Ticketmaster's parent company. However, 33 states and the District of Columbia declined to join the DOJ's settlement and continued the case to a jury. On April 15, 2026, a federal jury returned a verdict finding Live Nation and Ticketmaster liable on all federal and state antitrust claims. The jury set damages at $1.72 per primary concert ticket sold. The case is now in the remedies phase, where the court is determining what structural or behavioral changes the company must make. Several of Ticketmaster's direct competitors have also filed formal objections with the court regarding the DOJ's proposed terms, arguing they would leave the company's market dominance largely intact. A federal judge is expected to review the DOJ's proposed settlement before October ends.
 
 The proposed final judgment between the DOJ and Live Nation Entertainment includes a $280 million fund, a 15 percent cap on primary Ticketmaster service fees, a maximum four-year term for exclusive ticketing contracts, and divestiture of booking control or ownership at 13 amphitheaters. The document is a proposed judgment — not a final ruling. Federal courts review consent decrees of this type during a public comment period before a judge decides whether to approve them. Judicial review is expected before the end of October 2026.
 
@@ -280,7 +278,7 @@ Dollar General's chief executive said this week that customers earning $100,000 
 
 Todd Vasos, Dollar General's chief executive, made the comments at the Goldman Sachs Global Consumer and Retail Conference on September 20, 2026. He described higher-income shoppers — including those earning above $100,000 a year — as increasingly seeking out discount options because of sustained inflation and other household cost pressures. ConsumerAffairs independently reported the same observation on September 22. Vasos did not say that every person earning $100,000 is in financial difficulty. He described a behavioral shift in the company's own customer mix — more higher-income shoppers choosing discount retail for everyday purchases than Dollar General's management had historically seen.
 
-If you earn six figures and have found yourself checking prices more carefully, shopping at discount retailers, or cutting spending on things you used to buy without thinking, you are not alone in that behavior. Vasos's observation is specific to Dollar General's customer base, not a universal claim about every US household at that income level. But it reflects a real shift in how sustained inflation changes spending habits — including among people who are not in financial difficulty by conventional measures.
+If you earn six figures and have found yourself checking prices more carefully, shopping at discount retailers, or cutting spending on things you used to buy without thinking, Vasos's observation points to a broader pattern. His remarks are specific to Dollar General's customer base, not a universal claim about every US household at that income level. But they reflect a real shift in how sustained inflation changes spending habits — including among people who are not in financial difficulty by conventional measures.
 
 **What is actually driving the change**
 
@@ -288,7 +286,7 @@ Vasos attributed the shift to several ongoing cost pressures: food, fuel, insura
 
 The shift toward discount retail among higher-income shoppers is not the same as financial distress. Vasos's observation is about where people are choosing to spend money on everyday items — not about whether they are missing rent payments or struggling to cover necessities. That distinction matters because some coverage of his remarks conflated the CEO's specific observation with a broader claim that six-figure households can no longer afford a comfortable lifestyle. That is not what the data supports.
 
-Dollar General competes with Walmart, Aldi and other discount retailers for this expanding segment. The company has been growing its store network, particularly in rural and small-town locations where large supermarket chains do not operate. The CEO's observation that higher-income shoppers are visiting Dollar General more often is consistent with the company's interest in broadening its customer base — Vasos has an obvious commercial reason to highlight that trend in a positive way. That does not make the observation wrong, but it is worth keeping in mind when weighing how far to generalize it.
+Dollar General competes with Walmart, Aldi and other discount retailers for this expanding segment. The company has been growing its store network, particularly in rural and small-town locations where large supermarket chains do not operate. The CEO's observation that higher-income shoppers are visiting Dollar General more often is consistent with the company's interest in broadening its customer base — Vasos's public remarks on this trend serve that commercial interest. That does not make the observation wrong, but it is worth keeping in mind when weighing how far to generalize it.
 
 Vasos also noted that the same cost pressures are more acute for the lower-income households that have always made up Dollar General's core customer base. The observation was not that higher-income shoppers are now struggling as much as lower-income ones — it was that the category of people seeking discounts on everyday spending has grown across income levels.
 
@@ -311,7 +309,7 @@ There are limits to how much weight to put on a single CEO's remarks at one inve
 
 ---
 
-Astronomical autumn arrived in the Northern Hemisphere on September 22 and 23, 2026. If you are expecting the day to be split perfectly in half — exactly 12 hours of daylight and 12 hours of darkness — the equinox does not actually deliver that. Here is what happened, what changes now, and why equal daylight comes later than most people think.
+The 2026 autumnal equinox arrived at 00:05 UTC on September 23, marking the official start of astronomical autumn in the Northern Hemisphere. If you are expecting the day to be split perfectly in half — exactly 12 hours of daylight and 12 hours of darkness — the equinox does not actually deliver that. Here is what happened, what changes now, and why equal daylight comes later than most people think.
 
 The 2026 autumnal equinox occurred at 00:05 UTC on September 23, which was 8:05 p.m. EDT on September 22 in the United States and approximately 5:35 a.m. IST on September 23 in India. At this moment, the Sun's center crossed the plane of Earth's equator, marking the start of astronomical autumn in the Northern Hemisphere. In the Southern Hemisphere, the same event marks the start of astronomical spring.
 
@@ -356,12 +354,21 @@ No. Daylight and darkness are only roughly equal. The atmosphere bends sunlight 
 
 **Internal links:** All 9 articles require 2–4 Karmactive internal links placed naturally in the depth block. These cannot be added without access to the live articles list. Karmactive editor to insert before publication.
 
-**Unverified facts flagged for editorial check before publication:**
-- Trump-Xi: Specific AI dialogue framework details need confirmation against official White House/State Dept. statements
-- Angry Anderson: "Hooky and the Hammerhead" film credit — verify correct title against primary source
-- Dollar General: Specific fuel price figures and Harris Poll data omitted from draft pending verification
+**Stage 3B corrections applied (September 23, 2026):**
+- Trump-Xi: Chip controls clarified — not on preliminary US agenda per US Trade Representative Greer; China pushed for inclusion
+- Angry Anderson: "Suddenly" corrected — July 1987 release, Neighbours Scott/Charlene wedding, ARIA #2 / UK #3; fabricated 1981 film removed
+- DoorDash: WAO compliance description corrected — DoorDash submits monthly reports to DCWP; WAO/WJP develop worker-side software; $4.3M fund noted
+- Ticketmaster: Jury verdict added — 33 states/DC rejected DOJ settlement; April 15 2026 jury found liability on all claims; $1.72/ticket damages; remedies phase noted
+- Naoero: Population corrected to ~12,000 (2026 estimate); German etymology paragraph removed (unsupported); headline and opening corrected to reflect June 26 change predated UN speech
+- NAB: Timing corrected to midday (not morning); "across the board" → "across multiple platforms"; unsupported "unusual" and "standard process" claims removed
+- Kmart: Unverified TikTok figure (430,000) removed; confirmed 1M+ total views retained
+- Dollar General: "you are not alone in that behavior" removed; "obvious commercial reason" neutralised
+- Equinox: Opening sentence fixed to specify single moment at 00:05 UTC September 23
+
+**Remaining editorial items:**
+- All articles: 2–4 Karmactive internal links to be inserted by editor before publication
 - Ticketmaster: $280M fund allocation details — verify against DOJ court filing
-- Naoero: Population figure (~10,000) — verify against current official source
+- Trump-Xi: AI dialogue framework details — confirm against official White House/State Dept. statements
 
 **Stories not written (per Stage 1b):**
 - Kevin Fong: Hold (evergreen, insufficient primary-source material)
