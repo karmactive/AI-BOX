@@ -42,8 +42,6 @@ Delhi Police had imposed prohibitory restrictions under Section 163 of the Bhara
 
 For Delhi commuters and civic observers, the immediate confrontation has cooled following the release of detained student leaders from custody. However, student groups have announced continued pressure campaigns over Election Commission transparency, ensuring the controversy surrounding the SIR will remain an active political flashpoint through the winter.
 
-<h2>What the Protest Cannot Actually Achieve</h2>
-
 The core demand — removal of Chief Election Commissioner Gyanesh Kumar — runs into a constitutional wall that has received minimal coverage in the daily protest reporting. Under Article 324(5) of the Constitution of India, the CEC cannot be dismissed by the President or Cabinet through executive order. Removal follows the same grounds and procedure as removing a Supreme Court judge: under Article 124(4), an address must be supported by a majority of the total membership of each House of Parliament and by not less than two-thirds of members present and voting, followed by the President's order. The procedure also includes a formal inquiry process.
 
 The gap between the stated demand for immediate executive action and its constitutional impossibility explains the sustained deadlock. The legal path to removing a sitting Chief Election Commissioner requires a parliamentary supermajority that currently does not appear to be available.
@@ -65,8 +63,6 @@ A dog walk at midnight on Wurtulla Beach turned into an overnight military opera
 Queensland Police established a beach exclusion zone after the walker reported the object to emergency services. The Australian Defence Force's Explosive Ordnance Disposal team assessed the shell — an approximately 11-kilogram World War II-era 25-pound high-explosive projectile — as unsafe to move. Specialists conducted a controlled detonation at around 4 a.m. Wurtulla Beach reopened once the exclusion zone was lifted that morning.
 
 For beachgoers along the Sunshine Coast, emergency services confirmed the controlled detonation was carried out and the exclusion zone has been lifted. However, coastal erosion and tidal activity can return buried ordnance to the surface, and locals discovering encrusted metallic or cylindrical objects should never touch them and should immediately call Triple Zero (000) for specialist ADF disposal.
-
-<h2>Why WWII Shells Keep Turning Up on Queensland Beaches</h2>
 
 The Sunshine Coast region hosted Allied military activity during World War II. When seasonal tidal currents or storm surge strips material from dune faces and shallow offshore areas, rounds that have been buried for decades can return to the surface.
 
@@ -233,8 +229,6 @@ United Airlines is running a direct pitch to Delta Medallion and American AAdvan
 United's own promotion page confirms the structure. Eligible members — those holding current elite status with Delta or American — can apply for a United Premier status match by October 15, 2026. Once approved, matched status activates for a 90-day challenge period. To retain the matched status beyond that window and extend it through January 31, 2028, you must meet the required spending thresholds on United or United Express flights within 90 days. The thresholds by status tier are: Premier Silver requires $1,500 in qualifying spend; Premier Gold requires $3,000; Premier Platinum requires $4,500; Premier 1K requires $7,000. United has positioned the promotion around its ongoing Starlink high-speed Wi-Fi fleet rollout and competitive cabin upgrades, targeting travelers dissatisfied with recent loyalty program changes at the other carriers.
 
 Before applying for United's status match, review your travel calendar for the next 90 days. Only spending on flights operated directly by United or United Express counts toward the retention requirements per the promotion terms. If you cannot meet the spending thresholds within 90 days, you will lose the trial status. Members who previously received a United status match within the recent prior period may also be subject to re-application restrictions — verify your eligibility in the current promotion terms before applying.
-
-<h2>Who Should and Shouldn't Apply</h2>
 
 The application deadline and the 90-day retention window are the two hard constraints. Applying speculatively — without a realistic path to meeting the spending threshold within 90 days on United-operated routes — means losing the matched status and potentially your ability to apply again.
 
