@@ -10,6 +10,8 @@
 
 **ARTICLE ID:** 278908
 
+**ASSIGNED AUTHOR:** Sonali Tiwary (ID: 224)
+
 **PRIMARY TITLE (SEO/AEO Optimized):**  
 Coast Guard Suspends Search for Medical Transport Plane Off Nantucket — 6 Aboard, Debris Found, No Survivors
 
@@ -40,6 +42,8 @@ Nantucket | Plane Crash | Coast Guard | NTSB | Atlantic Ocean
 ## ARTICLE 2 (Priority 2) — Salata Salmonella Recall
 
 **ARTICLE ID:** 278909
+
+**ASSIGNED AUTHOR:** Tejal Somvanshi (ID: 96)
 
 **PRIMARY TITLE (SEO/AEO Optimized):**  
 488-Case Salmonella Outbreak Triggers Salata Dressing Recall — Jalapeños Contaminated, FDA Class I Alert
@@ -72,6 +76,8 @@ Salmonella | Food Recall | FDA | Jalapeños | Outbreak | Salata Dressings
 
 **ARTICLE ID:** 278910
 
+**ASSIGNED AUTHOR:** Tejal Somvanshi (ID: 96)
+
 **PRIMARY TITLE (SEO/AEO Optimized):**  
 Russian Lab Researcher Dies at Siberian Anti-Plague Institute — 197 Under Monitoring, Pneumonia Suspected
 
@@ -102,6 +108,8 @@ Russia | Irkutsk | Plague | Lab Safety | Rospotrebnadzor | Siberia
 ## ARTICLE 4 (Priority 4) — Walgreens Eye Drops Recall
 
 **ARTICLE ID:** 278911
+
+**ASSIGNED AUTHOR:** Tejal Somvanshi (ID: 96)
 
 **PRIMARY TITLE (SEO/AEO Optimized):**  
 Walgreens Eye Drops Recalled: 750,000 Units Pulled Over Sterility Concerns — Check Your Lot Number
@@ -134,6 +142,8 @@ Recall | FDA | Walgreens | Eye Drops | Sterility | Pharmacy
 
 **ARTICLE ID:** 278912
 
+**ASSIGNED AUTHOR:** Govind Tekale (ID: 3)
+
 **PRIMARY TITLE (SEO/AEO Optimized):**  
 "All Bombers Withdrawn" — RAF Fairford B-1Bs Return Home Amid Terror Investigation, 25-Year-Old Arrested
 
@@ -164,6 +174,8 @@ RAF Fairford | B-1B Bombers | UK Terrorism | Counter-Terrorism | Iran | Military
 ## ARTICLE 6 (Priority 6) — Brazil Election Runoff 2026
 
 **ARTICLE ID:** 278913
+
+**ASSIGNED AUTHOR:** Rahul Somvanshi (ID: 4)
 
 **PRIMARY TITLE (SEO/AEO Optimized):**  
 "Flávio Bolsonaro 47%, Lula 45%": Brazil's Amazon Hangs in the Balance — What the Runoff Means
@@ -196,6 +208,8 @@ Brazil | Election | Flávio Bolsonaro | Lula | Amazon Deforestation | INPE
 
 **ARTICLE ID:** 278914
 
+**ASSIGNED AUTHOR:** Sonali Tiwary (ID: 224)
+
 **PRIMARY TITLE (SEO/AEO Optimized):**  
 Gulf of Mexico Storm Watch: NHC Says 50% Chance Over 7 Days — Here's What Forecasters Actually Predict
 
@@ -226,6 +240,8 @@ Hurricane | Gulf of Mexico | NHC | Tropical Weather | Storm Watch | Preparedness
 ## ARTICLE 8 (Priority 8) — Trump $5,000 Checks Proposal
 
 **ARTICLE ID:** 278915
+
+**ASSIGNED AUTHOR:** Govind Tekale (ID: 3)
 
 **PRIMARY TITLE (SEO/AEO Optimized):**  
 Trump Promises $5,000 to Every Adult Citizen — Why the CRFB Says "$1.2 Trillion" Doesn't Add Up
@@ -258,6 +274,8 @@ Trump | Federal Budget | Tariffs | CRFB | Stimulus | Campaign Promise
 
 **ARTICLE ID:** 278916
 
+**ASSIGNED AUTHOR:** Sunita Somvanshi (ID: 57)
+
 **PRIMARY TITLE (SEO/AEO Optimized):**  
 "$3.94 Record": Texas Gas Prices Hit Most Expensive September Ever — Crude Oil and Iran Conflict to Blame
 
@@ -288,6 +306,8 @@ Gas Prices | Texas | Crude Oil | Energy | AAA | Refinery Utilization
 ## ARTICLE 10 (Priority 10) — E85 Bioethanol Fuel
 
 **ARTICLE ID:** 278917
+
+**ASSIGNED AUTHOR:** Rahul Somvanshi (ID: 4)
 
 **PRIMARY TITLE (SEO/AEO Optimized):**  
 "E85 Is 59% Cheaper at the Pump" — But Here's Why Your Real Savings Per Gallon Tell a Different Story
@@ -320,6 +340,8 @@ E85 Fuel | Bioethanol | Fuel Economy | Gas Prices | Sustainable Energy | AFDC
 
 **ARTICLE ID:** 278918
 
+**ASSIGNED AUTHOR:** Tejal Somvanshi (ID: 96)
+
 **PRIMARY TITLE (SEO/AEO Optimized):**  
 Alan Alda at 90: "It's Just a Hobby" — 12 Years Living With Parkinson's, Still Working and Juggling
 
@@ -351,18 +373,31 @@ Alan Alda | Parkinson's Disease | Health | Aging | Celebrity Profile | Neurology
 
 **Total Articles:** 11  
 **ID Range:** 278908–278918  
+**All authors assigned:** Based on editorial expertise and category alignment  
 **All titles:** SEO-optimized, news-style, clickbait elements via partial stat reveal, rhetorical question structure, or quote integration  
 **All descriptions:** Factual, under 160 characters, keyword-rich  
 **All slugs:** Hyphenated, descriptive, include primary keyword  
 **All tags:** Validated against Karmactive editorial taxonomy  
 **All categories:** Existing site categories, no new additions  
 
+## Author Assignment Summary
+
+| Author | Articles | IDs |
+|--------|----------|-----|
+| Tejal Somvanshi (96) | 4 | Salata, Russia Lab, Walgreens, Alan Alda |
+| Rahul Somvanshi (4) | 2 | Brazil, E85 |
+| Govind Tekale (3) | 2 | RAF Fairford, Trump |
+| Sonali Tiwary (224) | 2 | Nantucket, Gulf |
+| Sunita Somvanshi (57) | 1 | Texas Gas |
+
 **Next steps for editor:**
-1. Add internal links (minimum 2, maximum 4 per article) using keyword suggestions provided
-2. Verify categories and tags against Karmactive CMS taxonomy
-3. Assign featured images if not auto-pulled from article body
-4. Set publish date and time per editorial calendar
-5. Configure SEO plugin fields with provided data
+1. Populate CMS author ID field with assigned author numbers
+2. Add internal links (minimum 2, maximum 4 per article) using keyword suggestions provided
+3. Verify categories and tags against Karmactive CMS taxonomy
+4. Assign featured images if not auto-pulled from article body
+5. Set publish date and time per editorial calendar
+6. Configure SEO plugin fields (title, slug, meta description, focus key phrase) with provided data
+7. Add author byline and link to author archive page from CMS
 
 ---
 
