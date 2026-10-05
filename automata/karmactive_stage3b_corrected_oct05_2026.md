@@ -116,23 +116,11 @@ For pet owners and municipalities across Texas, Major's federal lawsuit tests th
 
 A temporary restraining order is not an acquittal, a reversal of the dangerous dog finding, or a path home for Major. It is a procedural pause while a federal court considers threshold questions about the case.
 
-Lilly's federal claims include disability-related arguments and assertions about Major's service-animal status. The complaint's requested remedies — including what alternative to euthanasia is being sought — are the controlling legal document on what the lawsuit actually asks for.
+Lilly's federal claims include disability-related arguments and assertions about Major's service-animal status. The complaint's requested remedies — including what alternative to euthanasia is being sought — are the controlling legal document on what the lawsuit actually asks for. Shane Lilly's lawsuit argues that the municipal dangerous dog hearing failed to adequately account for Major's service-animal role. According to reporting, the lawsuit seeks alternatives to euthanasia rather than return of Major to domestic pet custody. That distinction matters: even a favorable outcome for Lilly may not place Major back in domestic pet ownership.
 
-Shane Lilly's lawsuit argues that the municipal dangerous dog hearing failed to adequately account for Major's service-animal role. According to reporting, the lawsuit seeks alternatives to euthanasia rather than return of Major to domestic pet custody. That distinction matters: even a favorable outcome for Lilly may not place Major back in domestic pet ownership.
+Whether a municipal court's dangerous dog proceeding adequately considered federal disability law and ADA service-animal protections is the legal question at stake in the federal suit. It is also an unsettled question in Texas federal jurisprudence. Most dangerous dog cases do not reach federal courts. They end at the state court level, as Major's did before this filing. If the federal district court finds that the disability-law and service-animal arguments have merit, Major's case could establish a precedent requiring additional procedural steps in service-animal cases before shelters execute court-mandated euthanasias in Texas.
 
-<h2>The Constitutional and Disability Law Question</h2>
-
-Whether a municipal court's dangerous dog proceeding adequately considered federal disability law and ADA service-animal protections is the legal question at stake in the federal suit. It is also an unsettled question in Texas federal jurisprudence. Most dangerous dog cases do not reach federal courts. They end at the state court level, as Major's did before this filing.
-
-If the federal district court finds that the disability-law and service-animal arguments have merit, Major's case could establish a precedent requiring additional procedural steps in service-animal cases before shelters execute court-mandated euthanasias in Texas.
-
-Online petitions demanding that Major be returned to his owner describe a resolution that the legal proceedings may not offer. The choice the court faces is between execution of the state order and whatever alternative relief Lilly has requested in the filed complaint.
-
-<h2>Did the Federal Court Save Major?</h2>
-
-Not permanently. A federal judge issued a reported temporary restraining order halting Major's euthanasia by Austin Animal Services. The order pauses enforcement while federal courts assess whether the municipal court's dangerous dog proceedings properly accounted for disability-law and service-animal considerations under federal law. A federal hearing in Austin this week will determine next steps.
-
-The federal hearing in Austin this week is the next decision point. The outcome will clarify whether the federal court intends to take the case or defer to the already-adjudicated Texas proceedings.
+Online petitions demanding that Major be returned to his owner describe a resolution that the legal proceedings may not offer. A federal judge issued a reported temporary restraining order halting Major's euthanasia by Austin Animal Services. The order pauses enforcement while federal courts assess whether the municipal court's dangerous dog proceedings properly accounted for disability-law and service-animal considerations under federal law. The federal hearing in Austin this week is the next decision point and will clarify whether the federal court intends to take the case or defer to the already-adjudicated Texas proceedings.
 
 ---
 
@@ -150,27 +138,9 @@ For Australian superannuation members, Cabana's warning does not signal fund col
 
 <h2>Why the Super System Is More Exposed Than It Looks</h2>
 
-Australia's compulsory superannuation pool has grown to $4.5 trillion over decades of mandatory contributions. That pool has significant exposure to US equity and bond markets, which is the direct channel through which Cabana's rate-pressure scenario would affect Australian members.
+Australia's compulsory superannuation pool has grown to $4.5 trillion over decades of mandatory contributions. That pool has significant exposure to US equity and bond markets, which is the direct channel through which Cabana's rate-pressure scenario would affect Australian members. Bank of America's analysis argues that Australian super funds have structured their portfolios for a long accumulation phase, holding significant allocations in unlisted assets: domestic infrastructure, commercial property, and private equity. These assets generate long-term returns but cannot be converted to cash quickly if a fund needs to meet a spike in retirement drawdowns. The RBA's current domestic rate setting adds a second pressure point: Australian household budgets and super fund return expectations are under simultaneous pressure from both the domestic cash rate and the potential for further US rate increases that Cabana identifies.
 
-Bank of America's analysis argues that Australian super funds have structured their portfolios for a long accumulation phase. They hold significant allocations in unlisted assets: domestic infrastructure, commercial property, and private equity. These assets generate long-term returns but cannot be converted to cash quickly if a fund needs to meet a spike in retirement drawdowns.
-
-The RBA's current domestic rate setting adds a second pressure point. Australian household budgets and super fund return expectations are under simultaneous pressure from both the domestic cash rate and the potential for further US rate increases that Cabana identifies.
-
-<h2>What This Means for Your Balance</h2>
-
-The scenario Cabana describes does not threaten fund solvency. APRA oversight, mandatory capital standards, and the structure of the super guarantee are designed to prevent fund collapse. The risk Cabana flags is narrower: potential valuation pressure on balanced options if both US rates and Australian rates remain elevated while asset valuations face headwinds.
-
-Super account balances are investment-linked. They reflect the value of the underlying assets the fund holds and can rise or fall with market conditions. They are not guaranteed deposits.
-
-Members still decades from retirement have time to absorb periods of lower near-term returns. The calculation is different for members aged 55 to 65 who are approaching or entering the drawdown phase. Those members carry sequence-of-returns risk: a period of below-average returns at the start of retirement permanently reduces the balance available for the remainder of retirement.
-
-Reviewing the unlisted asset allocation in your fund's default balanced option is the practical step. Most fund dashboards now disclose what percentage of a balanced option sits in unlisted infrastructure, commercial property, or private equity versus listed shares and cash.
-
-<h2>Are Australian Super Funds in Financial Trouble?</h2>
-
-No, based on Cabana's own framing of the warning. His concern is about market and valuation pressure on Australian super funds' US asset holdings, not a forecast of fund insolvency or collapse. APRA regulation, capital standards, and the super guarantee structure are all designed to prevent the latter scenario.
-
-The next APRA quarterly superannuation performance and liquidity disclosure is the primary data point to watch for evidence of whether Cabana's concerns are materializing in fund returns.
+The scenario Cabana describes does not threaten fund solvency. APRA oversight, mandatory capital standards, and the structure of the super guarantee are designed to prevent fund collapse. The risk Cabana flags is narrower: potential valuation pressure on balanced options if both US rates and Australian rates remain elevated. Super account balances are investment-linked — they reflect the value of the underlying assets the fund holds and can rise or fall with market conditions. They are not guaranteed deposits. Members approaching the drawdown phase carry sequence-of-returns risk: a period of below-average returns at the start of retirement permanently reduces the balance available for the remainder of retirement. Reviewing the unlisted asset allocation in your fund's default balanced option is the practical step. The next APRA quarterly superannuation performance and liquidity disclosure is the primary data point to watch for evidence of whether Cabana's concerns are materializing in fund returns.
 
 ---
 
@@ -188,25 +158,9 @@ Patients currently managing obesity or type 2 diabetes with semaglutide or tirze
 
 <h2>What the Glucagon Receptor Actually Does</h2>
 
-Most coverage of retatrutide focuses on the 28% weight loss figure. The less-reported aspect of the trial data concerns what the glucagon receptor pathway is proposed to contribute beyond appetite suppression.
+Most coverage of retatrutide focuses on the 28% weight loss figure. The less-reported aspect of the trial data concerns what the glucagon receptor pathway is proposed to contribute beyond appetite suppression. GLP-1 and GIP receptor activation — the mechanisms in semaglutide and tirzepatide — primarily reduce appetite by slowing gastric emptying and signaling satiety to the brain. The glucagon receptor is proposed to work differently: it may increase energy expenditure and drive hepatic fat clearance. That proposed mechanism is part of why retatrutide's trial program includes separate investigation into metabolic liver disease endpoints. Retatrutide is being studied as a potential treatment for metabolic dysfunction-associated steatotic liver disease (MASLD) — the condition previously called NAFLD or fatty liver — as part of its broader clinical program. MASLD affects an estimated 25%–30% of adults in the United States.
 
-GLP-1 and GIP receptor activation — the mechanisms in semaglutide and tirzepatide — primarily reduce appetite by slowing gastric emptying and signaling satiety to the brain. The glucagon receptor is proposed to work differently: it may increase energy expenditure and drive hepatic fat clearance. The liver metabolizes more fatty acids under glucagon stimulation. That proposed mechanism is part of why retatrutide's trial program includes separate investigation into metabolic liver disease endpoints.
-
-Retatrutide is being studied as a potential treatment for metabolic dysfunction-associated steatotic liver disease (MASLD) — the condition previously called NAFLD or fatty liver — as part of its broader clinical program. MASLD affects an estimated 25%–30% of adults in the United States.
-
-For the [growing population using GLP-1 medications for weight management](https://www.karmactive.com/glp1-ozempic-wegovy-weight-loss-guide/), this distinction matters. Patients who have experienced a plateau on semaglutide or tirzepatide represent a population for whom the triple agonist mechanism could offer a clinically distinct option — when it becomes available.
-
-<h2>Safety Signals and What They Mean</h2>
-
-Phase 3 data also documented safety considerations. Resting heart rate increases were recorded during the trial, peaking around week 24 before stabilizing. Nausea, vomiting, and gastrointestinal side effects — common across the GLP-1 class — were also reported. The triple agonist mechanism does not eliminate these; the addition of glucagon receptor activation introduces its own metabolic effects, including potential impacts on blood sugar in patients without diabetes.
-
-This is not a drug that will be handed out without physician oversight. The trial data supports a prescription model with active monitoring.
-
-<h2>When Will Retatrutide Be Approved?</h2>
-
-Retatrutide is completing its Phase 3 clinical program under the TRIUMPH trial series. Eli Lilly has indicated it plans to submit a BLA to the FDA in Q1 2027. If filing proceeds on that timeline and review follows standard pathways, commercial availability through pharmacies is unlikely before late 2027. The UK's MHRA review timeline will follow FDA action. Nothing about the current data accelerates that calendar for patients seeking prescriptions today.
-
-Upcoming data presentations at major metabolism and endocrinology conferences are the next major milestones for the retatrutide evidence base. Check back as those presentations are confirmed.
+Phase 3 data also documented safety considerations. Resting heart rate increases were recorded during the trial, peaking around week 24 before stabilizing. Nausea, vomiting, and gastrointestinal side effects — common across the GLP-1 class — were also reported. The addition of glucagon receptor activation introduces its own metabolic effects, including potential impacts on blood sugar in patients without diabetes. The trial data supports a prescription model with active monitoring, not self-directed use. For the [growing population using GLP-1 medications for weight management](https://www.karmactive.com/glp1-ozempic-wegovy-weight-loss-guide/), retatrutide represents a clinically distinct option — when it becomes available. Eli Lilly has indicated it plans to submit a BLA to the FDA in Q1 2027. If filing proceeds on that timeline and review follows standard pathways, commercial availability through pharmacies is unlikely before late 2027. Check back as upcoming conference data presentations are confirmed.
 
 ---
 
@@ -222,23 +176,11 @@ The camera station was installed in the Sierra Caral mountain range by a joint c
 
 This photographic evidence validates predictions from international biological corridor models, showing that at least one jaguar did navigate a human-altered landscape when minimal tree canopy remained intact. For conservation donors and environmental policymakers, the sighting emphasizes the importance of protecting the narrow buffer tracts in eastern Guatemala before expanding agricultural activity reduces the remaining connections between regional jaguar populations.
 
-<h2>What the Photograph Actually Proves</h2>
+<h2>What the Photograph Actually Proves — and What It Doesn't</h2>
 
-Conservation organizations are right to call this a significant confirmation, but it is easy to misread what the camera trap data shows. Panthera representatives described camera-trap shots of jaguars as a "luxury treat" that occurs only once every decade — a characterization of how rare such documentation is, not a claim that this specific corridor has been formally assessed as nearly severed.
+Conservation organizations are right to call this a significant confirmation, but it is easy to misread what the camera trap data shows. Panthera representatives described camera-trap shots of jaguars as a "luxury treat" that occurs only once every decade — a characterization of how rare such documentation is, not a claim that this specific corridor has been formally assessed as nearly severed. The jaguar photographed was not resident in the area. The motion-activated record shows a transit: the cat moved through the available forest and continued. For genetic connectivity between Guatemala and Honduras jaguar populations, any documented crossing matters. But a single documented crossing is evidence the corridor is being used — it does not by itself establish the frequency of jaguar movement or the overall health of the connection.
 
-The jaguar photographed was not resident in the area. The motion-activated record shows a transit. The cat moved through the available forest and continued. For genetic connectivity between Guatemala and Honduras jaguar populations, any documented crossing matters. But a single documented crossing is evidence that the corridor is being used — it does not by itself establish the frequency of jaguar movement or the overall health of the connection.
-
-Panthera, the wild cat conservation organization with active Guatemala-Honduras corridor programs, describes the binational landscape as one of the key remaining jaguar movement zones in Central America. [Panthera's corridor field data](https://www.karmactive.com/jaguar-conservation-central-america-panthera/) from the region shows that habitat fragmentation from agricultural expansion is the primary driver of jaguar range contraction in this area.
-
-<h2>The Legal Gap That the Camera Image Doesn't Show</h2>
-
-The camera trap image circulating in conservation media shows a jaguar in forest. It does not show the aerial view: the strip of trees the jaguar used is surrounded on both sides by cleared agricultural land, and parts of that strip sit on private smallholder farmland with varying conservation protections.
-
-Conservation teams working in the Sierra Caral area are engaged in ongoing work to formalize land protections in the buffer zones through which jaguars like this one transit. Without securing those protections, agricultural clearing decisions could narrow the remaining forest connections in this section of the corridor.
-
-<h2>What Is the Jaguar Wildlife Corridor in Central America?</h2>
-
-The jaguar corridor is a network of protected forests and agricultural buffer zones connecting fragmented habitats from Mexico through Central America and into South America. It allows jaguars — solitary apex predators with large home ranges — to travel between territories for hunting and breeding, preventing genetic isolation in separated populations. The Guatemala-Honduras section documented in this camera trap sighting is one of the most vulnerable remaining connections in the corridor network. [Conservation Biology research on Central American corridor fragmentation](https://www.karmactive.com/central-america-wildlife-corridors-biodiversity/) shows that narrow pinch-points in the corridor are at risk of functional severance under current land-use pressure.
+Panthera, the wild cat conservation organization with active Guatemala-Honduras corridor programs, describes the binational landscape as one of the key remaining jaguar movement zones in Central America. [Panthera's corridor field data](https://www.karmactive.com/jaguar-conservation-central-america-panthera/) from the region shows that habitat fragmentation from agricultural expansion is the primary driver of jaguar range contraction in this area. The camera trap image circulating in conservation media shows a jaguar in forest. It does not show the aerial view: the strip of trees the jaguar used is surrounded on both sides by cleared agricultural land, and parts of that strip sit on private smallholder farmland with varying conservation protections. Conservation teams working in the Sierra Caral area are engaged in ongoing work to formalize land protections in the buffer zones through which jaguars transit. The jaguar corridor connects fragmented habitats from Mexico through Central America into South America, allowing jaguars to travel between territories for hunting and breeding. [Conservation Biology research on Central American corridor fragmentation](https://www.karmactive.com/central-america-wildlife-corridors-biodiversity/) shows that narrow pinch-points in the corridor are at risk of functional severance under current land-use pressure.
 
 Formal boundary decisions on the proposed Sierra Caral protected area expansion are expected in the coming months. Conservation partners have indicated that land tenure negotiations with local landholders are ongoing. The outcome of those negotiations will determine whether the corridor documented in this photograph remains usable.
 
