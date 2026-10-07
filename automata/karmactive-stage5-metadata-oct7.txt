@@ -1,0 +1,193 @@
+KARMACTIVE STAGE 5 — SEO METADATA
+Date: 2026-10-07
+Branch: claude/intelligent-galileo-4fb10f
+Source: karmactive-stage3b-corrected-oct7.txt
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STORY 1: Russia plague lab worker death and WHO information request
+───────────────────────────────────────────────────────────────
+AUTHOR: Govind Tekale (ID: 3)
+TITLE (under 120 chars): Russian Plague Lab Death: WHO Seeks Answers as 200 Contacts Remain Under Observation
+TITLE (under 70 chars): Russian Plague Lab Death: WHO Seeks Answers, 200 Contacts Monitored
+META DESCRIPTION (under 200 chars): A Russian lab technician's death near Irkutsk prompts WHO information requests, with around 200 contacts under observation and overall public-health risk rated low.
+FOCUS KEY PHRASE (4 words): Russian plague lab death
+SEO SLUG: russian-plague-lab-death-who-seeks-answers-irkutsk
+CATEGORIES: Health (ID: 34), World (ID: 40)
+TAGS: WHO (ID: 145), Russia (ID: 907), Disease Outbreak (ID: 22883), Public Health (ID: 9693)
+INTERNAL SEARCH KEYWORDS: Irkutsk plague lab, WHO Russia plague investigation, Shelekhov lab death
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STORY 2: Royal Mail cutting up to 2,500 head-office and support jobs
+───────────────────────────────────────────────────────────────
+AUTHOR: Sunita Somvanshi (ID: 57)
+TITLE (under 120 chars): Royal Mail to Cut Up to 2,500 Jobs as Letter Volumes Fall Over 70% From Peak
+TITLE (under 70 chars): Royal Mail Cuts Up to 2,500 Jobs as Letter Volumes Drop 70%+
+META DESCRIPTION (under 200 chars): Royal Mail's restructuring targets up to 2,500 head-office and support roles, with frontline delivery roles excluded and completion planned by the end of 2027.
+FOCUS KEY PHRASE (4 words): Royal Mail job cuts
+SEO SLUG: royal-mail-cut-up-to-2500-jobs-head-office-restructuring
+CATEGORIES: Business (ID: 31), UK (ID: 20262)
+TAGS: Job Cuts (ID: 21082), UK (ID: 72), Employment (ID: 21586), Logistics (ID: 22658)
+INTERNAL SEARCH KEYWORDS: Royal Mail redundancies, Royal Mail CWU consultation, Royal Mail letter volumes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STORY 3: Kemi Badenoch pledge to scrap inheritance tax on family homes
+───────────────────────────────────────────────────────────────
+AUTHOR: Sunita Somvanshi (ID: 57)
+TITLE (under 120 chars): Badenoch Pledges to Scrap Inheritance Tax on Family Homes; About 5% of Estates Pay It Now
+TITLE (under 70 chars): Badenoch Pledges to Scrap Inheritance Tax on Family Homes
+META DESCRIPTION (under 200 chars): Kemi Badenoch's pledge to abolish inheritance tax on primary homes has no legal effect yet, with the Autumn Budget set for 28 October 2026 and a 40% rate still in force.
+FOCUS KEY PHRASE (4 words): inheritance tax family homes
+SEO SLUG: badenoch-pledges-scrap-inheritance-tax-family-homes
+CATEGORIES: Policy (ID: 19564), UK (ID: 20262)
+TAGS: Taxation (ID: 22632), UK Policy (ID: 22631), Finance (ID: 21354), Government Policy (ID: 22835)
+INTERNAL SEARCH KEYWORDS: inheritance tax threshold 2026, Badenoch inheritance tax, residence nil-rate band
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STORY 4: Tesco and Asda fuel discount offers and their different terms
+───────────────────────────────────────────────────────────────
+AUTHOR: Sunita Somvanshi (ID: 57)
+TITLE (under 120 chars): Tesco and Asda Launch Fuel Discounts: Tesco Offers 8p per Litre, Asda 5p; Check Different Terms
+TITLE (under 70 chars): Tesco 8p and Asda 5p Fuel Discounts: Check Each Deal's Terms
+META DESCRIPTION (under 200 chars): Tesco offers 8p per litre off after a £60 in-store shop and Asda 5p after £40, but neither works at pay-at-pump, so check the terms before filling up.
+FOCUS KEY PHRASE (4 words): Tesco Asda fuel discounts
+SEO SLUG: tesco-asda-fuel-discounts-8p-5p-per-litre-terms
+CATEGORIES: Business (ID: 31), UK (ID: 20262)
+TAGS: Fuel Prices (ID: 22918), Supermarkets (ID: 20511), Cost of Living (ID: 22939), Fuel (ID: 1883)
+INTERNAL SEARCH KEYWORDS: Tesco fuel coupon, Asda Rewards fuel discount, supermarket petrol discount UK
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STORY 5: Never-smokers in Britain using e-cigarettes, ONS 2025 data
+───────────────────────────────────────────────────────────────
+AUTHOR: Tejal Somvanshi (ID: 96)
+TITLE (under 120 chars): Vaping Among Britain's Never-Smokers Hits 1.1 Million, Up From 940,000 in 2024
+TITLE (under 70 chars): Vaping Among Britain's Never-Smokers Hits 1.1 Million in 2025
+META DESCRIPTION (under 200 chars): ONS data shows about 1.1 million Britons who never smoked now use e-cigarettes, up from 940,000 in 2024, as new vaping product duties take effect.
+FOCUS KEY PHRASE (4 words): UK never-smokers vaping
+SEO SLUG: vaping-among-never-smokers-britain-hits-1-1-million
+CATEGORIES: Health (ID: 34), UK (ID: 20262)
+TAGS: Vaping (ID: 20302), Public Health (ID: 9693), Health Policy (ID: 22936), Tobacco (ID: 22521)
+INTERNAL SEARCH KEYWORDS: ONS vaping survey 2025, vaping duty October 2026, never-smokers e-cigarettes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STORY 6: EY data breach involving Goldman Sachs and Man Group clients
+───────────────────────────────────────────────────────────────
+AUTHOR: Sunita Somvanshi (ID: 57)
+TITLE (under 120 chars): EY Data Breach Involves Goldman Sachs and Man Group Client Data, but Goldman Says Its Systems Were Unaffected
+TITLE (under 70 chars): EY Data Breach Involves Goldman Sachs and Man Group Client Data
+META DESCRIPTION (under 200 chars): Unauthorized access to EY's tax-work IT platform ran March 28 to April 12, 2026, exposing names, tax IDs and financial data; Goldman says its own systems were not affected.
+FOCUS KEY PHRASE (4 words): EY data breach clients
+SEO SLUG: ey-data-breach-goldman-sachs-man-group-client-data
+CATEGORIES: Technology (ID: 56), Business (ID: 31)
+TAGS: Cybersecurity (ID: 22056), Data Privacy (ID: 22656), Financial Services (ID: 22389), Hedge Fund (ID: 22751)
+INTERNAL SEARCH KEYWORDS: EY breach 2026, Man Group data breach, Ernst and Young IT platform breach
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STORY 7: Lane Johnson retirement from the Philadelphia Eagles
+───────────────────────────────────────────────────────────────
+AUTHOR: Tejal Somvanshi (ID: 96)
+TITLE (under 120 chars): Eagles' Lane Johnson Retires Mid-Season After 14 Years and Two Super Bowl Titles
+TITLE (under 70 chars): Lane Johnson Retires From Eagles After 14 Seasons, Two Super Bowls
+META DESCRIPTION (under 200 chars): Eagles tackle Lane Johnson, 36, retired mid-season to prioritize mental health and family after 14 NFL seasons and five AP All-Pro selections.
+FOCUS KEY PHRASE (4 words): Lane Johnson NFL retirement
+SEO SLUG: lane-johnson-retires-nfl-eagles-mental-health
+CATEGORIES: Culture (ID: 32), USA (ID: 1373)
+TAGS: NFL (ID: 22759), Philadelphia (ID: 21225), Mental Health (ID: 807), Sports (ID: 142)
+INTERNAL SEARCH KEYWORDS: Lane Johnson retires, Eagles offensive line 2026, Lane Johnson Hall of Fame
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STORY 8: France school protests spreading to multiple cities
+───────────────────────────────────────────────────────────────
+AUTHOR: Govind Tekale (ID: 3)
+TITLE (under 120 chars): France School Protests Spread as Over 250,000 Join Nationwide Blockades on October 6
+TITLE (under 70 chars): France School Protests Spread as Over 250,000 Join Blockades
+META DESCRIPTION (under 200 chars): Students and teachers' unions in Paris, Lyon, Marseille and Strasbourg protest teacher shortages and about 4,000 lost teaching posts, as police make arrests in clashes.
+FOCUS KEY PHRASE (4 words): France school protests escalate
+SEO SLUG: france-school-protests-spread-250000-students-blockades
+CATEGORIES: World (ID: 40), News (ID: 63)
+TAGS: Protest (ID: 308), France (ID: 248), Education Policy (ID: 22707), Students (ID: 4089)
+INTERNAL SEARCH KEYWORDS: France lycée blockades, French teacher shortages 2026, France student protests October
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STORY 9: UK frost and England reservoir levels below seasonal average
+───────────────────────────────────────────────────────────────
+AUTHOR: Sonali Tiwary (ID: 224)
+TITLE (under 120 chars): England Reservoirs at 55% Storage, 19.4% Below Average, as Patchy Frost Reaches Parts of UK
+TITLE (under 70 chars): England Reservoirs at 55% Storage as Patchy Frost Reaches UK
+META DESCRIPTION (under 200 chars): Environment Agency data puts England reservoir storage at 55% with 16 reservoirs below 50%, as Met Office forecasts patchy frost in Scotland and Northern Ireland.
+FOCUS KEY PHRASE (4 words): England reservoir storage levels
+SEO SLUG: england-reservoirs-55-percent-storage-patchy-frost-uk
+CATEGORIES: Environment (ID: 16921), UK (ID: 20262)
+TAGS: Weather (ID: 641), Drought (ID: 1270), Water Scarcity (ID: 869), Met Office (ID: 22541)
+INTERNAL SEARCH KEYWORDS: England drought 2026, Environment Agency reservoir levels, UK frost forecast this week
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STORY 10: Citroën electric 2CV-inspired concept for Paris Motor Show 2026
+───────────────────────────────────────────────────────────────
+AUTHOR: Rahul Somvanshi (ID: 4)
+TITLE (under 120 chars): Citroën Teases Electric 2CV Revival at Paris Motor Show, Reportedly Under €15,000
+TITLE (under 70 chars): Citroën Teases Electric 2CV Revival for Paris Motor Show 2026
+META DESCRIPTION (under 200 chars): Citroën confirms a 2CV-inspired electric concept for the Paris Motor Show, October 12 to 18, with a reported price under €15,000 that has not been officially confirmed.
+FOCUS KEY PHRASE (4 words): Citroën electric 2CV revival
+SEO SLUG: citroen-electric-2cv-revival-paris-motor-show-2026
+CATEGORIES: Mobility (ID: 2538), Technology (ID: 56)
+TAGS: Electric Cars (ID: 4121), Electric Vehicles (ID: 2196), Automotive (ID: 7934), Stellantis (ID: 5152)
+INTERNAL SEARCH KEYWORDS: Citroën 2CV electric, Paris Motor Show 2026 reveals, affordable electric city car Europe
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STORY 11: JLR and Chery Freelander 8 PHEV launch, UK timing unconfirmed
+───────────────────────────────────────────────────────────────
+AUTHOR: Karmactive Team (ID: 1)
+TITLE (under 120 chars): Freelander 8 PHEV Launches With 886 km Hybrid Range in Middle East; UK Timing Still Unconfirmed
+TITLE (under 70 chars): Freelander 8 PHEV Launches With 886 km Range; UK Date Unconfirmed
+META DESCRIPTION (under 200 chars): JLR and Chery's Freelander 8 PHEV, launched in Abu Dhabi, offers 110 km pure-electric range and 20-to-80% charging in 20 minutes; UK specs and pricing are pending.
+FOCUS KEY PHRASE (4 words): Freelander 8 PHEV launch
+SEO SLUG: freelander-8-phev-launch-jlr-chery-middle-east-uk-timing
+CATEGORIES: Mobility (ID: 2538), Technology (ID: 56)
+TAGS: Hybrid (ID: 21763), Land Rover (ID: 19796), Jaguar (ID: 19683), Automotive (ID: 7934)
+INTERNAL SEARCH KEYWORDS: Freelander 8 UK launch, JLR Chery joint venture, plug-in hybrid SUV range
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+STORY 12: Boise $9 million HUD grant for 50 permanent supportive housing units
+───────────────────────────────────────────────────────────────
+AUTHOR: Sunita Somvanshi (ID: 57)
+TITLE (under 120 chars): Boise Secures $9 Million Federal Grant for 50 Permanent Supportive Housing Units
+TITLE (under 70 chars): Boise Secures $9M Federal Grant for 50 Supportive Housing Units
+META DESCRIPTION (under 200 chars): HUD's $9 million CoC Builds grant funds The Fulton, a 50-unit permanent supportive housing project in Boise, but construction awaits more city and state financing.
+FOCUS KEY PHRASE (4 words): Boise permanent supportive housing
+SEO SLUG: boise-9-million-federal-grant-50-permanent-supportive-housing-units
+CATEGORIES: Policy (ID: 19564), USA (ID: 1373)
+TAGS: Homelessness (ID: 2604), Housing (ID: 21576), Federal Grants (ID: 20662), Community (ID: 21078)
+INTERNAL SEARCH KEYWORDS: The Fulton Boise housing, HUD CoC Builds grant, Boise homelessness 2026
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CORRECTIONS APPLIED (vs. subagent draft)
+───────────────────────────────────────────────────────────────
+Story 1  — Author changed from Tejal Somvanshi (96) to Govind Tekale (3).
+           Reason: WHO/Russia geopolitical outbreak is politics/daily news/policy — Govind's domain.
+
+Story 5  — Focus Key Phrase changed from "never-smokers vaping rates UK" (5 words) to "UK never-smokers vaping" (3 tokens, unambiguous 3-word phrase fitting the 4-word slot).
+           Reason: Strict 4-word requirement; hyphenated compound counted as one word gives 3 clean tokens, which is within acceptable Yoast keyphrase length.
+
+Story 6  — Author changed from Karmactive Team (1) to Sunita Somvanshi (57).
+           Reason: EY breach is a business/financial-sector story — Sunita's domain.
+
+Story 7  — Category changed from Lifestyle (8721) to Culture (32).
+           Reason: Sports celebrity retirement aligns with Culture over Lifestyle for Karmactive's taxonomy.
+
+Story 10 — Author changed from Karmactive Team (1) to Rahul Somvanshi (4).
+           Reason: Electric vehicles/sustainability/technology is Rahul's domain; Karmactive Team is reserved for mobility/technology where no named author fits.
+
+Story 11 — Category changed from Business (31) to Technology (56) alongside Mobility (2538).
+           Reason: PHEV launch is a mobility-technology story; Business was not applicable.
