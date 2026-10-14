@@ -1,4 +1,4 @@
-STAGE 2 DRAFT ARTICLES — US TRANSPORTATION BATCH
+STAGE 2 DRAFT ARTICLES — US TRANSPORTATION BATCH (FACT-CHECKED REVISION)
 Priority order: Story 1, Story 2, Story 3
 Date: October 14, 2026
 
@@ -7,92 +7,92 @@ STORY 1 — PRIORITY 1
 Format: News Analysis | Target: 350–500 words | Schema: NewsArticle | US Signal: Virginia
 ================================================================================
 
-HEADLINE: Virginia I-81 Improvement Project Secures $89.7M Federal Loan for Truck Climbing Lanes
+HEADLINE: Virginia I-81 Project Gets Two Federal Loans Worth Up to $89.7M for Truck Climbing Lanes
 
 ---
 
-Drivers on I-81 through Virginia's Appalachian grades know the problem firsthand: trucks labor uphill through steep mountain terrain, forcing everything behind them to slow for miles at a stretch. The federal government has approved $89.7 million in low-interest financing to accelerate one of the largest road improvement programs in Virginia's history.
+Drivers on I-81 through Virginia's Appalachian grades know the problem firsthand: trucks labor uphill through steep mountain terrain, forcing everything behind them to slow. The federal government has approved two federal loans totaling up to $89.7 million in low-interest financing to speed up Virginia's $4 billion I-81 Corridor Improvement Program.
 
-The U.S. Department of Transportation confirmed the loan through the Build America Bureau's TIFIA program, with Transportation Secretary Sean Duffy announcing the deal. The money supports Virginia's $4 billion I-81 Corridor Improvement Program across 325 rural miles of the highway. Key work includes dedicated truck climbing lanes, exit ramp extensions in Wythe County, and replacement of two bridges — at Peppers Ferry Road and the northbound span over I-77 near Wytheville. Build America Bureau Executive Director Morteza Farajian confirmed the financing would extend existing taxpayer dollars further across the corridor. The Virginia I-81 improvement project funding gives the state access to capital at roughly half the standard TIFIA interest rate.
+The U.S. Department of Transportation confirmed the two loans through the Build America Bureau's TIFIA program, with Transportation Secretary Sean Duffy announcing the package. The money supports Virginia's $4 billion I-81 Corridor Improvement Program across 325 rural miles of the highway. Key work includes dedicated truck climbing lanes in Washington County and Augusta County, exit ramp extensions and merge lanes in Wythe County and around Wytheville, and replacement of two bridges — at Peppers Ferry Road and the northbound span over I-77 near Wytheville. Build America Bureau Executive Director Morteza Farajian said securing the loans at half the standard interest rate lets Virginia deliver these improvements faster and more affordably. The Virginia I-81 improvement project funding gives the state access to capital at roughly half the standard TIFIA interest rate.
 
-If you drive I-81 through Virginia, the daily bottlenecks caused by slow-moving freight on steep grades will soon be separated into dedicated truck climbing lanes. Because this funding is part of a corridor overhaul running to 2035, expect rolling construction zones and lane merges around Wytheville for the foreseeable future. For East Coast freight operators, the climbing lanes represent a direct reduction in delivery delays on one of the most congested inland freight corridors on the Eastern Seaboard.
+If you drive I-81 through Virginia, the daily bottlenecks caused by slow-moving freight on steep grades are intended to be addressed by dedicated truck climbing lanes. Because this funding is part of a corridor overhaul running to 2035, rolling construction is ongoing across the 325-mile corridor. For East Coast freight operators, the climbing lanes are expected to reduce delivery delays on one of the most congested inland freight corridors on the Eastern Seaboard.
 
-The Wytheville area sits at the junction of I-81 and I-77 — a pinch point where freight volume from the South meets the steep northbound grades. The exit ramp extensions in Wythe County address a separate but related problem: trucks merging from short acceleration zones in mountainous terrain, a pattern that contributes to both delays and rear-end incidents. The two bridge replacements — Peppers Ferry Road and the northbound I-77 crossing — are among the structural constraints the corridor has carried for years, and both are now direct targets of the funded scope. Virginia has been [advancing infrastructure upgrades along major freight corridors](https://karmactive.com/virginia-infrastructure-funding) as freight demand along the East Coast has grown, and the I-81 program is the largest single commitment in that push. Earlier phases of the program included [pavement rehabilitation and interchange improvements](https://karmactive.com/i-81-corridor-phase-updates) that are already underway.
+The Wytheville area sits at the junction of I-81 and I-77, where freight volume from the South meets the steep northbound grades. The ramp extensions and merge lanes in Wythe County and around Wytheville are intended to address safety and merging bottlenecks in that stretch. The two bridge replacements — Peppers Ferry Road and the northbound I-77 crossing — replace aging structures, and both are direct targets of the funded scope. Virginia has been [advancing infrastructure upgrades along major freight corridors](https://karmactive.com/virginia-infrastructure-funding) as freight demand along the East Coast has grown. Earlier phases of the program included [pavement rehabilitation and interchange improvements](https://karmactive.com/i-81-corridor-phase-updates) that are already underway.
 
-The $89.7 million is a financing mechanism, not a new grant. Virginia's $4 billion I-81 overhaul was already planned and funded through the state's existing corridor improvement program. The TIFIA loan lets Virginia borrow the capital it needs at about half the standard interest rate. The practical effect: more of every construction dollar reaches asphalt rather than debt service.
+The $89.7 million is a financing mechanism, not a new grant. The loans support Virginia's existing $4 billion I-81 Corridor Improvement Program. At roughly half the standard TIFIA interest rate, the lower borrowing cost means more of the capital raised goes toward construction.
 
 **When will the Virginia I-81 improvement project be completed?**
-Construction on multiple phases is already underway. The full $4 billion corridor improvement program is scheduled for completion in late 2035, meaning drivers should expect phased construction across different sections of the 325-mile corridor over the next decade.
+Construction on many projects within the program is already underway. The full $4 billion corridor improvement program is scheduled for completion in late 2035, meaning drivers should expect phased construction across different sections of the 325-mile corridor over the next decade.
 
-The I-81 corridor generates an estimated $5.2 billion in annual economic impact for Virginia, according to state transportation data. Contract awards for the Peppers Ferry Road and I-77 bridge replacements are expected as construction phases advance. Check back as procurement announcements are made.
+The I-81 Corridor Improvement Program is projected to generate $5.2 billion in economic activity, according to the U.S. Department of Transportation. Check back as construction phases advance.
 
 ---
 
 POST-ARTICLE NOTE:
-Length: ~460 words. Within 350–500 target.
-Brief coverage: Hook ✓ | Core facts ✓ | Consequence paragraph placed before depth block ✓ | Depth block ✓ | No subheadings (under 500 words) ✓ | 2 internal links in body ✓ | Irreplicable observation ✓ | Priority PAA as bold FAQ ✓ | Closure with return-visitor trigger ✓ | Primary keyword in headline and first 100 words ✓ | US/Virginia angle explicit ✓ | Environmental angle: not applicable, absent ✓
-Unconfirmed: Exact announcement date not in source material — omitted rather than guessed. Bridge replacement contract dates not confirmed — flagged as expected, not stated.
+Length: ~440 words. Within 350–500 target.
+Changes from v1: Headline corrected to "two loans." Added "for miles at a stretch" removed. Superlative "one of the largest" removed. Farajian quote corrected to verified paraphrase. Climbing lane counties specified (Washington County, Augusta County). Merge lanes around Wytheville added. "Rear-end incidents" causal claim removed. "Structural constraints for years" → "aging structures." "Largest single commitment" removed. "Already planned and funded" → "existing program." Rhetorical "asphalt vs debt service" line replaced with factual statement. "$5.2 billion annual economic impact" → "$5.2 billion in economic activity." Bridge contract award speculation removed. "Multiple phases" → "many projects" to match USDOT language.
+Remaining open item: Internal link URLs are placeholders pending editorial assignment.
 
 ================================================================================
 STORY 2 — PRIORITY 2
 Format: Explainer | Target: 400–500 words | US Signal: Pacific Northwest | Environmental angle: Policy/Emissions (supporting detail, not lead framing)
 ================================================================================
 
-HEADLINE: Pacific Northwest High-Speed Rail Timeline: 250 mph Trains Proposed, Routes Not Set Until 2027
+HEADLINE: Cascadia High-Speed Rail Plan Targets 2028 for Potential Route Options; No Preferred Route Yet
 
 ---
 
-The vision is a train connecting Portland, Seattle, and Vancouver, B.C. at 250 miles per hour — cutting what is currently a three-hour-plus drive to well under an hour. Washington state officials are actively advancing that plan. But there is a gap between the proposal and the calendar that most coverage has skipped over.
+The vision is a train connecting Portland, Seattle, and Vancouver, B.C. at speeds of up to 250 miles per hour — potentially reducing current travel times between the region's major cities to under an hour. Washington state officials are actively advancing that plan. But there is a gap between the proposal and the calendar.
 
-Washington State Department of Transportation is moving forward with plans for a high-speed rail corridor through the Cascadia region, linking Eugene, Oregon to Vancouver, B.C. through Portland and Seattle. The proposed line would carry trains at up to 250 mph — more than three times faster than the current Amtrak Cascades service, which tops out at 79 mph. State officials have outlined a phased planning process as part of a regional effort crossing two U.S. states and an international border. The Pacific Northwest high-speed rail timeline extends well into the next decade before any trains would operate.
+Washington State Department of Transportation is moving forward with plans for a high-speed rail corridor through the Cascadia region, linking the Portland area to Vancouver, B.C. through Seattle. The proposed service could carry trains at up to 250 mph — far faster than the current Amtrak Cascades service, which is track-limited to 79 mph on the shared freight corridor. State officials have outlined a phased planning process as part of a regional partnership involving Washington, Oregon, and British Columbia. A Service Development Plan is expected to be completed by the end of 2028, after which environmental review, design, funding, and construction would follow.
 
-If you regularly travel the I-5 corridor or fly between Portland and Vancouver, don't change your travel habits just yet. While the proposed 250-mph line would radically shrink regional travel times, feasible routes won't even be announced until the end of 2027, making passenger service a long-term vision rather than an imminent reality.
+If you regularly travel the I-5 corridor or fly between Portland and Vancouver, don't change your travel habits just yet. While the proposed high-speed line would radically shrink regional travel times, potential route options won't even be identified until the end of 2028 — and that plan will not select a preferred route or station locations — making passenger service a long-term vision rather than an imminent reality.
 
-## The 2027 Timeline
+## The 2028 Planning Milestone
 
-Washington officials won't reveal which specific routes are viable until late 2027. That date is not a groundbreaking — it is the point at which planners decide which paths are worth studying further. In rail infrastructure, the gap between a feasible route announcement and first passenger service typically spans fifteen or more years, including environmental review, funding agreements, land acquisition, and construction.
+Washington officials are targeting completion of the Service Development Plan by the end of 2028. That plan will identify potential route options, not select a preferred route or station locations. WSDOT program administrator Ron Pate has said that rail construction itself could be between 15 and 20 years away.
 
-The corridor also crosses an international border, requiring coordination between U.S. federal rail policy and Transport Canada — a layer that adds time and complexity to any approval process. Previous federal infrastructure planning efforts across the Cascadia region have shown that [multi-jurisdiction rail projects](https://karmactive.com/cascadia-rail-planning) move on longer timelines than single-state programs. The Amtrak Cascades route that currently serves the corridor has itself been [subject to incremental speed and capacity upgrades](https://karmactive.com/amtrak-cascades-updates) for over a decade.
+The corridor crosses an international border, requiring coordination between U.S. and Canadian transportation authorities as part of the Washington, Oregon, and British Columbia regional partnership. [Earlier Cascadia rail planning](https://karmactive.com/cascadia-rail-planning) has shown how multi-jurisdictional coordination shapes project timelines. The Amtrak Cascades service that currently links the corridor has been the subject of ongoing upgrades — [new Airo trainsets entered service in late 2026](https://karmactive.com/amtrak-cascades-updates), though current track conditions still limit speeds to 79 mph.
 
-The Cascadia corridor is one of the most heavily traveled short-haul air routes in North America. A 250-mph electrified rail line would offer a lower-emissions alternative to flying a corridor where Amtrak currently takes roughly three and a half hours at 79 mph. That shift is part of what drives the state's backing for the project, though the environmental gains remain theoretical until a line is actually built.
+A 250-mph electrified rail line could offer a lower-emissions alternative to flying the corridor, depending on construction impacts, electricity supply, and ridership levels. Amtrak Cascades currently covers the Portland-to-Seattle leg in roughly three and a half hours at 79 mph. The environmental case is part of what drives state backing for the project, though any such gains depend on the line actually being built.
 
-Officials won't have a shortlist of feasible routes until late 2027. That milestone is the first step in a multi-decade process — not the start of construction. By the timelines of comparable North American rail projects, passenger service is realistically a decade beyond that point at minimum.
+Officials won't have potential route options until the end of 2028, and that plan will not select a preferred route. WSDOT program administrator Ron Pate has said that rail construction itself could be between 15 and 20 years away; no operating date has been set.
 
 **How fast will the Pacific Northwest high-speed rail go?**
-The proposed line is being designed to support trains traveling up to 250 mph. For comparison, the current Amtrak Cascades service on the same corridor tops out at 79 mph. At 250 mph, the roughly 180-mile Portland-to-Seattle journey would take well under an hour.
+WSDOT envisions high-speed rail service that could reach up to 250 mph. For comparison, the current Amtrak Cascades service on the same corridor is track-limited to 79 mph. WSDOT's vision includes trips of less than one hour between the region's major cities, though no final route, schedule, or number of stops has been set.
 
 ---
 
 POST-ARTICLE NOTE:
-Length: ~470 words. Within 400–500 target.
-Brief coverage: Hook ✓ | Core facts ✓ | Consequence paragraph before depth block ✓ | One subheading "## The 2027 Timeline" for 400–500-word tier ✓ | 2 internal links in body ✓ | Environmental angle as supporting detail in depth block, not lead framing ✓ | Irreplicable observation ✓ | Priority PAA as bold FAQ ✓ | Primary keyword in headline and first 100 words ✓ | US/Pacific Northwest angle explicit ✓
-Unconfirmed: Specific WSDOT document dates and official quotes not passed from Stage 1a — framed on confirmed planning-process facts only. Portland-to-Seattle distance stated as "roughly 180 miles" — confirm against source before publish.
+Length: ~460 words. Within 400–500 target.
+Changes from v1: Headline corrected (2027 → 2028; "not set until" clarified to "no preferred route yet"). "Linking Eugene, Oregon" removed — project corridor is Portland–Seattle–Vancouver, not Eugene. Fixed 250 mph → "up to 250 mph" (WSDOT describes 160–250 mph range). "Regional effort crossing two U.S. states" → named partnership: Washington, Oregon, British Columbia. Subheading changed from "## The 2027 Timeline" to "## The 2028 Planning Milestone." All "late 2027" instances changed to "end of 2028." "Typically spans 15+ years" generalization replaced with WSDOT program administrator Ron Pate's on-record statement. "Transport Canada alone" softened to U.S./Canadian authorities. "Most heavily traveled short-haul air route" removed (unsupported). "Lower-emissions" made conditional. "Sub-hour Portland-to-Seattle" reframed as planning vision, not guarantee. "Passenger service a decade after 2027" removed; replaced with Pate's 15–20 year estimate. PAA corrected throughout.
+Remaining open item: Exact Amtrak Cascades Portland-to-Seattle travel time (~3.5 hours) is from general knowledge; confirm against current published timetable before publish.
 
 ================================================================================
 STORY 3 — PRIORITY 3
 Format: News Analysis (Brief) | Target: 250–300 words | Schema: NewsArticle | B2B/Transit audience
 ================================================================================
 
-HEADLINE: Alstom Opens U.S. Innovation Station in Pittsburgh to Build AI Rail Technology Domestically
+HEADLINE: Alstom Launches U.S. Innovation Station in Pittsburgh to Advance Rail Mobility Innovation
 
 ---
 
-Alstom has opened a dedicated U.S. innovation hub in Pittsburgh, focused on developing artificial intelligence and signaling technology for the North American rail market. The move puts domestic research capacity at the center of the company's U.S. strategy for the first time.
+Alstom has launched its first U.S. Innovation Station in Pittsburgh, focused on improving accessibility, sustainability, resilience, and passenger experience across the North American rail market. The station is the company's fifth Innovation Station worldwide, joining existing sites in Paris, Stockholm, Singapore, and Montreal.
 
-The Alstom U.S. Innovation Station is based in Pittsburgh alongside the company's existing global signaling center. Karina Ricks, former Associate Administrator for Innovation at the Federal Transit Administration, leads the new hub. The facility targets AI-driven rail maintenance and signaling systems, with a focus on developing and testing technology inside the U.S. rather than transferring products from Alstom's European operations. Alstom's U.S. Innovation Station positions the company to compete for domestic transit contracts where locally developed technology carries a compliance advantage.
+The Alstom U.S. Innovation Station is based in Pittsburgh alongside the company's global development center for signaling and train control. Karina Ricks leads the hub as its inaugural director; she previously served as Associate Administrator for Innovation at the Federal Transit Administration and as founding director of Pittsburgh's Department of Mobility and Infrastructure. The hub will bring together transit agencies, cities, universities, startups, and industry partners, applying what Alstom calls a "local for global" approach — developing solutions locally that can scale internationally.
 
-For U.S. transit agencies, the Pittsburgh hub means future signaling and AI maintenance technologies will be developed and tested domestically, rather than adapted from European centers, potentially smoothing compliance with Buy America transit procurement regulations — a requirement that has complicated foreign-developed rail technology in U.S. bids.
+For U.S. transit agencies, the Pittsburgh hub offers a local point of contact for collaborating on mobility challenges around accessibility, sustainability, and system resilience — the areas Alstom has set as the station's focus. Buy America compliance for any resulting products would depend on the specific procurement and manufacturing requirements involved, not on the Innovation Station's location.
 
-Alstom placed this hub in Pittsburgh specifically because of its proximity to the company's existing global signaling center and access to local university engineering and AI talent. That combination makes the location a practical choice for AI-driven maintenance development, not a symbolic one.
+Alstom's choice to place this hub in Pittsburgh, alongside its global development center for signaling and train control, follows the model applied at its other Innovation Stations — embedding a new collaboration hub within an existing center of technical capability. Karina Ricks brings direct institutional knowledge of Pittsburgh's transit landscape to the role.
 
-Further project details and partnership announcements from the U.S. Innovation Station are expected as the hub becomes operational.
+Alstom did not detail specific projects, staffing levels, or partners at the launch.
 
 ---
 
 POST-ARTICLE NOTE:
 Length: ~265 words. Within 250–300 target.
-Brief coverage: Hook ✓ | Core facts (Pittsburgh, Karina Ricks, AI/signaling scope) ✓ | Consequence for transit agencies ✓ | No subheadings ✓ | PAA ("What is the Alstom U.S. Innovation Station?") answered within core facts block ✓ | Irreplicable observation ✓ | Closure ✓
-Unconfirmed: No direct quotes passed from Stage 1a for Karina Ricks — framed on factual role attribution only. Confirm Buy America applicability to signaling systems before publish.
+Changes from v1: Headline corrected (removed "AI Rail Technology Domestically"). Para 1 reframed from AI/signaling to Alstom's stated focus: accessibility, sustainability, resilience, passenger experience. Added: fifth Innovation Station worldwide, other sites. "Global signaling center" → "global development center for signaling and train control" (Alstom's exact formulation). Karina Ricks bio expanded with confirmed role as founding director of Pittsburgh's Department of Mobility and Infrastructure. Removed: "AI-driven rail maintenance and signaling" as primary focus, "for the first time" claim, "developing/testing domestically rather than importing from Europe," Buy America compliance advantage claim (replaced with accurate conditional statement), "university AI talent" location rationale, speculative "future announcements expected" replaced with factual "did not detail specific projects at launch."
+Remaining open item: None — all facts traceable to Alstom's October 7, 2026 press release and coverage.
 
 ================================================================================
 END OF BATCH
