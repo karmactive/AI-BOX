@@ -1,10 +1,14 @@
-# Karmactive Article 1 of 3 — Flu / October 23, 2026
+# Karmactive — All Three Articles / October 23, 2026
+
+---
+
+# Article 1 of 3 — Flu / October 23, 2026
 
 ---
 
 ## WordPress Metadata
 
-**Title:** Why Is the Flu Starting So Early in 2026? CDC Week 40 Data Explain the H1N1 G155E Mutation
+**Title:** Why Is the Flu Starting So Early in 2026? CDC Week 40 Data on the H1N1 G155E Mutation
 
 **Slug:** flu-season-2026-early-h1n1-g155e-mutation-cdc-week-40
 
@@ -24,7 +28,7 @@
 
 ---
 
-Seasonal influenza typically arrives in force in late November or December. In October 2026, surveillance data from both the United States and Japan are showing a pattern that public health officials describe as earlier than usual — driven by a mutated H1N1 strain whose altered surface protein may help it partially evade immunity built up in prior seasons. The primary figures come directly from the CDC FluView Week 40 Surveillance Report (week ending October 10, 2026) and first-hand surveillance records from Japan's Ministry of Health, Labour and Welfare (厚生労働省).
+Seasonal influenza typically arrives in force in late November or December. In October 2026, surveillance data from both the United States and Japan are showing a pattern that public health officials describe as earlier than usual — associated with a mutated H1N1 strain whose altered surface protein may help it partially evade immunity built up in prior seasons. The primary figures come directly from the CDC FluView Week 40 Surveillance Report (week ending October 10, 2026) and first-hand surveillance records from Japan's Ministry of Health, Labour and Welfare (厚生労働省).
 
 ---
 
@@ -34,11 +38,11 @@ A child coming home with a fever in early October is not unusual. Clinical labor
 
 Clinical laboratory positivity in the United States reached 5.0 percent during Week 40 (the week ending October 10, 2026), up from 3.9 percent in Week 39, according to the CDC FluView Week 40 Surveillance Report. Out of 45,331 respiratory specimens tested by clinical laboratories that week, 2,270 came back positive. Influenza A accounted for 97.9 percent of those clinical-laboratory positives. Separately, among influenza A viruses subtyped by public health laboratories, 96.4 percent — 242 of 251 specimens — were identified as A(H1N1)pdm09. The CDC reported that while indicators were rising, national influenza activity remained low and within expected seasonal variation, with the highest activity in West Coast HHS Regions 9 and 10.
 
-The early surge is being driven by an H1N1 variant carrying the G155E mutation on its hemagglutinin surface protein gene, which alters the virus's antigenic properties and may help it partially evade some existing immunity. Professor Samuel Scarpino, executive director of the Institute for Experiential AI and professor of public health at Northeastern University, put it plainly:
+The early surge is associated with an H1N1 variant carrying the G155E mutation on its hemagglutinin surface protein gene, which alters the virus's antigenic properties and may help it partially evade some existing immunity. Professor Samuel Scarpino, executive director of the Institute for Experiential AI and professor of public health at Northeastern University, put it plainly:
 
 > "What we're seeing in the U.S. right now is almost entirely H1N1, carrying a mutation that helps it evade some existing immunity."
 
-The same mutation was detected in Japan as early as May 2026. Japan's Ministry of Health, Labour and Welfare (厚生労働省) — publishing weekly sentinel-clinic figures (定点当たり報告数) and tracking school and daycare closures (インフルエンザ様疾患発生報告) — recorded roughly 11.35 patients per clinic in the week ending October 4, 2026, compared with 1.56 patients per clinic in the same week of 2025, a approximately sevenfold increase. Japan announced the beginning of its 2026 influenza epidemic on August 28 — its second-earliest such announcement since 1999.
+The same mutation was detected in Japan as early as May 2026. Japan's Ministry of Health, Labour and Welfare (厚生労働省) — publishing weekly sentinel-clinic figures (定点当たり報告数) and tracking school and daycare closures (インフルエンザ様疾患発生報告) — recorded roughly 11.35 patients per clinic in the week ending October 4, 2026, compared with 1.56 patients per clinic in the same week of 2025, approximately 7.3 times as high. Japan announced the beginning of its 2026 influenza epidemic on August 28 — its second-earliest such announcement since 1999.
 
 ---
 
@@ -82,13 +86,13 @@ The practical implication: oseltamivir remains effective for the large majority 
 
 Human immune responses to influenza are shaped by the strain a person first encountered in childhood — a phenomenon epidemiologists call "immune imprinting." After the 2009 H1N1 pandemic replaced earlier circulating H1N1 strains, the G155E mutation may help the virus partially evade immunity in some age groups. Preliminary testing suggests that teenagers and young adults may have less protection against the current strain, though this does not make the vaccine ineffective.
 
-The mutation was first documented circulating widely in Japan in spring 2026, giving researchers and public health agencies several months of lead time before it arrived at scale in North American surveillance data.
+The mutation was first documented in Japan as early as May 2026, giving researchers and public health agencies several months of lead time before it became prominent in US surveillance data.
 
 ---
 
 ### Practical Guidance: Vaccination, Antivirals, and When to Act
 
-**Get vaccinated in October.** Public health experts including Professor Neil Maniar of Northeastern University and the CDC advise obtaining the seasonal flu vaccine in October, before Thanksgiving and holiday gathering season. Laboratory data confirm that the 2026–27 vaccine antigens closely match the dominant circulating strains.
+**Get vaccinated in October.** Public health experts including Professor Neil Maniar of Northeastern University and the CDC advise obtaining the seasonal flu vaccine in October, before Thanksgiving and holiday gathering season. Laboratory testing indicates that the 2026–27 vaccine antigens closely match the dominant circulating strains.
 
 **Start antivirals early for high-risk individuals.** For older adults, young children, pregnant people, and those with chronic health conditions, starting prescription antivirals (oseltamivir or baloxavir) within 48 hours of symptom onset significantly reduces severity and duration. The CDC advises that antivirals should be started as early as possible and are especially important for people at higher risk of complications; high-risk or severely ill patients may benefit even when treatment begins later than 48 hours.
 
@@ -98,7 +102,7 @@ The mutation was first documented circulating widely in Japan in spring 2026, gi
 
 ### Long-Term Perspective: Early Seasons and Global Spread Patterns
 
-The 2026–27 season represents one of the earlier US influenza openings in recent years. Japan's experience — where the epidemic threshold was crossed in late August 2026, the second-earliest such crossing since 1999 — suggests the G155E variant has been circulating and accumulating transmission advantage for several months before it registered in US clinical laboratories. The convergence of high H1N1 dominance (96.4 percent of subtyped public-health-lab specimens), near-complete subclade concentration (99.6 percent in D.3.1.1), and early geographic spread indicate that this variant has strong selective advantage in the current immune landscape.
+The 2026–27 season represents one of the earlier US influenza openings in recent years. Japan's experience — where the epidemic threshold was crossed in late August 2026, the second-earliest such crossing since 1999 — suggests the G155E variant has been circulating and accumulating transmission advantage for several months before it registered in US clinical laboratories. The convergence of high H1N1 dominance (96.4 percent of subtyped public-health-lab specimens), near-complete subclade concentration (99.6 percent in D.3.1.1), and early geographic spread are consistent with this variant having competitive advantage in the current immune landscape.
 
 ---
 
@@ -138,11 +142,11 @@ In summary, the October 2026 CDC and Japan surveillance data documented higher-t
 | CDC FluView Week 40 2026 | Intro and throughout |
 | baloxavir oseltamivir antiviral flu 2026 | Section 2 antiviral bullets |
 
+---
 
 ---
 
-
-# Karmactive Article 2 of 3 — Southern Plains Drought / October 23, 2026
+# Article 2 of 3 — Southern Plains Drought / October 23, 2026
 
 ---
 
@@ -168,7 +172,7 @@ In summary, the October 2026 CDC and Japan surveillance data documented higher-t
 
 ---
 
-Grocery bills shaped by crop shortfalls, dry taps in rural wells, and flash-flood warnings on the same county roads that were cracked with drought just days earlier — October 2026 brought all three to millions of households across Kansas, Oklahoma, and Texas. The primary data come from the NOAA / NIDIS Southern Plains Drought Status Update published October 22, 2026, authored by researchers from CIRES/University of Colorado Boulder, Texas A&M University, the Oklahoma Climatological Survey, Kansas State University, and the National Weather Service.
+Crop shortfalls that could affect food prices, concerns about rural well water levels, and flash-flood risks on roads that had been cracked by drought just weeks earlier — October 2026 brought all three as potential pressures to millions of households across Kansas, Oklahoma, and Texas. The primary data come from the NOAA / NIDIS Southern Plains Drought Status Update published October 22, 2026, authored by researchers from CIRES/University of Colorado Boulder, Texas A&M University, the Oklahoma Climatological Survey, Kansas State University, and the National Weather Service.
 
 ---
 
@@ -190,7 +194,7 @@ For Kansas, September 2026 marked the end of more than a year of unbroken above-
 
 ### What Does the NOAA/NIDIS Drought Map Show for the Southern Plains?
 
-The sustained heat drove soil moisture levels to critically low levels across the region. By late September 2026, **84 percent** of the Southern Plains DEWS (Drought Early Warning System) region — an area encompassing an estimated **26.7 million residents** — had entered moderate-to-exceptional drought (D1 through D4) as classified by the US Drought Monitor. That represented the largest drought extent in the Southern Plains DEWS region since 2022.
+Record heat and below-normal rainfall contributed to worsening soil-moisture deficits and expanding drought across the region. By late September 2026, **84 percent** of the Southern Plains DEWS (Drought Early Warning System) region — an area encompassing an estimated **26.7 million residents** — had entered moderate-to-exceptional drought (D1 through D4) as classified by the US Drought Monitor. That represented the largest drought extent in the Southern Plains DEWS region since 2022.
 
 Dallas recorded **67 consecutive rainless days** from July 16 to September 20, 2026, tying the city's second-longest dry streak on record. Oklahoma winter wheat growers, who typically begin seeding in September and early October, faced delayed planting due to the sustained precipitation deficit.
 
@@ -198,7 +202,7 @@ Dallas recorded **67 consecutive rainless days** from July 16 to September 20, 2
 
 ### What Happened When Hurricane Polo Remnants Hit the Drought Zone?
 
-The sequence that followed Dallas's dry streak illustrates a phenomenon climatologists describe as "drought whiplash": an abrupt shift from prolonged deficit to extreme rainfall, with the soil too hardened to absorb either event effectively.
+The sequence that followed Dallas's dry streak illustrates what is sometimes described as "drought whiplash": an abrupt shift from prolonged deficit to extreme rainfall, with the soil too hardened to absorb either event effectively.
 
 Remnants of Hurricane Polo stalled over the Southern Plains from September 28 to October 3, 2026. Dallas-Fort Worth Airport recorded its **9th wettest single day on record** on October 1 — while Dallas County was simultaneously classified as **Exceptional Drought (D4)** by the US Drought Monitor. In the Texas Panhandle, farmers reported that early October moisture pooled on the surface rather than seeping to deeper soil levels, limiting root-depth recharge despite the rainfall totals.
 
@@ -208,9 +212,9 @@ The coexistence of a record-wet single day and exceptional drought on the same c
 
 ### Historical Context: Why Back-to-Back Extremes Are More Damaging Than Either Alone
 
-The Southern Plains is no stranger to drought. The 2011–2012 drought remains the most severe in the region's modern record, and the 2022 drought produced drought extents comparable to what NOAA/NIDIS documented in 2026. What sets the 2026 sequence apart is the combination of a record-shattering temperature anomaly (+8.8°F regional average in a single month), the speed of the transition from 67-day dry streak to one of the wettest single days on record, and the fact that the rainfall arrived while the region was simultaneously in exceptional drought.
+The Southern Plains is no stranger to drought. The 2011–2012 drought was among the most severe on record in the region, and the 2022 drought produced drought extents comparable to what NOAA/NIDIS documented in 2026. What sets the 2026 sequence apart is the combination of a record-shattering temperature anomaly (+8.8°F regional average in a single month), the speed of the transition from 67-day dry streak to one of the wettest single days on record, and the fact that the rainfall arrived while the region was simultaneously in exceptional drought.
 
-For agriculture, a slow and sustained soil recharge over weeks is far more beneficial than an equivalent volume of rainfall concentrated in hours. Saturated surface runoff bypasses the subsoil layers where winter wheat roots develop, meaning even a rainfall record does not automatically translate into recovered planting conditions.
+For agriculture, a slow and sustained soil recharge over weeks is far more beneficial than an equivalent volume of rainfall concentrated in hours. Surface runoff can limit deep-soil recharge in the subsoil layers where winter wheat roots develop, meaning even a rainfall record does not automatically translate into recovered planting conditions.
 
 ---
 
@@ -230,7 +234,7 @@ The 60-to-90-day precipitation deficit across the Southern Plains carries implic
 
 NOAA and NIDIS project that the 2026–2027 El Niño should bring above-normal winter precipitation to the Southern Plains from November 2026 through January 2027. However, the pace and geographic distribution of that precipitation will determine whether multi-month soil moisture deficits are reversed before spring — particularly for deep-rooted crops and depleted groundwater systems.
 
-The 132-year temperature record broken in September 2026 places the event within the context of a multi-decadal warming trend across the Southern Plains. The CIRES/University of Colorado Boulder, Texas A&M University, Oklahoma Climatological Survey, Kansas State University, and National Weather Service researchers who authored the NIDIS assessment identified the September anomaly as both a product of persistent high-pressure systems and consistent with the region's observed long-term warming trajectory.
+The 132-year temperature record broken in September 2026 places the event within the context of a multi-decadal warming trend across the Southern Plains. The CIRES/University of Colorado Boulder, Texas A&M University, Oklahoma Climatological Survey, Kansas State University, and National Weather Service researchers who authored the NIDIS assessment noted that the September anomaly was consistent with the region's observed long-term warming trajectory.
 
 ---
 
@@ -270,11 +274,11 @@ In summary, the October 22, 2026 NOAA / NIDIS data documented a record-warm Sept
 | US Drought Monitor D4 exceptional drought Texas | Section 3 body |
 | CIRES University of Colorado NIDIS drought 2026 | Section 1 attribution |
 
+---
 
 ---
 
-
-# Karmactive Article 3 of 3 — Health Insurance Premiums / October 23, 2026
+# Article 3 of 3 — Health Insurance Premiums / October 23, 2026
 
 ---
 
@@ -300,7 +304,7 @@ In summary, the October 22, 2026 NOAA / NIDIS data documented a record-warm Sept
 
 ---
 
-Every October, millions of American workers open their employer's open-enrollment packet and discover what health coverage will cost their household for the next calendar year. In 2026, the average worker at a large employer saw $6,840 deducted from annual paychecks for family coverage; at a small employer, that figure reached $9,687. The total employer-sponsored family premium — employer and worker contributions combined — crossed $28,303 for the first time. These figures come from the 28th annual KFF 2026 Employer Health Benefits Survey, published October 22, 2026, based on interviews with 1,937 firms representing nearly 157 million non-elderly Americans.
+Every October, millions of American workers open their employer's open-enrollment packet and discover what health coverage will cost their household for the next calendar year. In 2026, the average worker at a large employer contributed $6,840 annually toward family coverage; at a small employer, that figure reached $9,687. The total employer-sponsored family premium — employer and worker contributions combined — reached $28,303, a new benchmark. These figures come from the 28th annual KFF 2026 Employer Health Benefits Survey, published October 22, 2026, based on interviews with 1,937 firms representing nearly 157 million non-elderly Americans.
 
 ---
 
@@ -308,7 +312,7 @@ Every October, millions of American workers open their employer's open-enrollmen
 
 The $28,303 average annual employer-sponsored family premium represents the combined amount that employers and workers together pay for family coverage. It rose 5 percent over 2025 — faster than both wage growth (3.7 percent) and inflation (2.7 percent) in the same period. Workers' share of that total averaged $7,471 for the year, a 9 percent increase, or $621 more than in 2025. The average annual single-coverage premium reached $9,804, also up 5 percent.
 
-Family premiums have risen 28 percent over the past five years, a cumulative increase that substantially outpaced wage growth over the same period. The compounding effect of 9 percent annual increases in worker contributions against 3.7 percent wage growth creates a structural gap that household budgets absorb year after year.
+Family premiums have risen 28 percent over the past five years, a cumulative increase that substantially outpaced wage growth over the same period. The 9 percent increase in worker contributions in 2026 — against 3.7 percent wage growth — illustrates the structural gap that household budgets must absorb, a gap that widens further if the trend continues.
 
 ---
 
@@ -323,7 +327,7 @@ The KFF survey documents a substantial gap between the cost burden placed on wor
 | Small firm (10–199 workers) | $9,687 | 37% |
 | Large firm (200+ workers) | $6,840 | 25% |
 
-Nearly one in three small-firm workers — 31 percent — pay $12,000 or more annually for family health coverage. That threshold represents a cost level comparable to a month's take-home pay for many middle-income households.
+Nearly one in three small-firm workers — 31 percent — pay $12,000 or more annually for family health coverage.
 
 Workers' average annual single-coverage contribution was $1,672 overall.
 
@@ -340,7 +344,7 @@ Among the 88 percent of covered workers enrolled in a plan with a general annual
 | Small firm (10–199 workers) | $2,624 | 55% |
 | Large firm (200+ workers) | $1,772 | — |
 
-At small firms, more than half of covered workers (55 percent) face single-coverage deductibles of $2,000 or more — meaning they must pay the first $2,000 or more of their own medical costs before insurance begins covering most services.
+At small firms, more than half of covered workers (55 percent) face single-coverage deductibles of $2,000 or more — meaning they generally must pay the first $2,000 or more of their own medical costs before insurance begins covering most services, subject to their specific plan's coverage rules.
 
 ---
 
@@ -351,8 +355,8 @@ GLP-1 agonists — a class of drugs including semaglutide (Ozempic, Wegovy) that
 The 2026 KFF survey found:
 
 - Only **18 percent** of firms with 200 or more workers cover GLP-1 agonists primarily for weight loss
-- **29 percent** of all surveyed firms reported that covering GLP-1 drugs had a significant impact on their drug costs
-- **12 percent** of firms in the survey stopped covering GLP-1s for weight loss in the past year
+- Among firms with 200 or more workers that cover GLP-1 agonists for weight loss, **29 percent** reported that covering GLP-1 drugs had a significant impact on their drug costs
+- Among firms with 200 or more workers, **12 percent** stopped covering GLP-1 agonists for weight loss in the past year
 
 The combination of high unit costs and growing utilization has prompted many employers to either limit or drop weight-loss GLP-1 coverage, while simultaneously driving interest in discount and generic drug procurement programs.
 
@@ -362,7 +366,7 @@ The combination of high unit costs and growing utilization has prompted many emp
 
 The $28,303 family premium in 2026 is 28 percent higher than in 2021. The pattern of premiums and worker contributions outpacing both wages and inflation over the same period is documented in each annual KFF survey. The gap is most acute for workers at small firms, where the contribution share (37 percent) is nearly 50 percent higher than at large firms (25 percent), and where deductibles average $852 more per year than at large employers.
 
-The KFF Employer Health Benefits Survey has tracked employer-sponsored insurance costs annually since 1999. At 28 years of continuous data, it represents the most comprehensive longitudinal record of employer health coverage costs in the United States.
+The KFF Employer Health Benefits Survey has tracked employer-sponsored insurance costs annually since 1999. At 28 years of continuous data, it represents one of the longest-running annual benchmarks of employer health coverage costs in the United States.
 
 ---
 
@@ -370,7 +374,7 @@ The KFF Employer Health Benefits Survey has tracked employer-sponsored insurance
 
 Open enrollment for many employer-sponsored plans falls in October and November. Workers facing high deductibles or large premium contributions can take several evidence-based steps during the enrollment window:
 
-**Compare plan options against your actual utilization.** A high-deductible health plan (HDHP) with a lower monthly premium can cost less overall for a healthy worker with few anticipated medical expenses, but more for a worker with regular prescriptions, specialist visits, or chronic conditions. The average specialist copay in 2026 is $46; the average primary-care copay is $27.
+**Compare plan options against your actual utilization.** A high-deductible health plan (HDHP) with a lower monthly premium can cost less overall for a healthy worker with few anticipated medical expenses, but more for a worker with regular prescriptions, specialist visits, or chronic conditions.
 
 **Check whether a Health Savings Account (HSA) is available.** HSAs are available only with qualifying high-deductible health plans. Contributions are made with pre-tax dollars, grow tax-free, and can be withdrawn tax-free for qualified medical expenses. Workers at firms that offer an HDHP option should compare the HSA tax savings against the higher out-of-pocket exposure before selecting a plan.
 
@@ -378,21 +382,21 @@ Open enrollment for many employer-sponsored plans falls in October and November.
 
 **Ask about generic and discount drug programs.** Whether or not an employer uses a formal third-party discount vendor, many generic drugs are available at significantly reduced cost through programs such as Mark Cuban Cost Plus Drugs, GoodRx, or SingleCare, independent of insurance.
 
-**For small-firm workers paying $12,000 or more.** Workers who find themselves in the 31 percent of small-firm employees paying $12,000 or more per year for family coverage should evaluate whether marketplace coverage (ACA exchange plans) or a spouse's employer-sponsored plan, if available, offers a lower total cost when premiums, deductibles, and out-of-pocket maximums are compared.
+**For small-firm workers paying $12,000 or more.** Workers who find themselves in the 31 percent of small-firm employees paying $12,000 or more per year for family coverage may want to evaluate whether marketplace coverage (ACA exchange plans, for which income-based premium tax credits may be available depending on whether the employer's plan meets affordability standards) or a spouse's employer-sponsored plan, if available, offers a lower total cost when premiums, deductibles, and out-of-pocket maximums are compared.
 
 ---
 
 ### Long-Term Effects and Sustainability
 
-The KFF survey data document a sustained multi-year trend: average family premiums have risen 28 percent in five years, worker contributions have risen 9 percent in the most recent year alone, and deductibles at small firms average $852 more than at large firms. These figures describe a cost structure in which the financial burden of health coverage falls most heavily on workers at smaller employers and those with higher health utilization — the households least positioned to absorb further increases.
+The KFF survey data document a sustained multi-year trend: average family premiums have risen 28 percent in five years, worker contributions rose 9 percent in the most recent year, and deductibles at small firms average $852 more than at large firms. These figures describe a cost structure in which the financial burden of health coverage falls most heavily on workers at smaller employers and those with higher health utilization — the households least positioned to absorb further increases.
 
-The debate over GLP-1 coverage reflects a broader tension in employer health financing: drugs with high per-unit costs and broad potential utilization can produce significant budget pressure even before utilization scales to its full potential. The 12 percent of firms that dropped GLP-1 weight-loss coverage in the past year and the 29 percent reporting significant cost impact suggest that employer coverage decisions on this drug class are still in active flux heading into the 2027 plan year.
+The debate over GLP-1 coverage reflects a broader tension in employer health financing: drugs with high per-unit costs and broad potential utilization can produce significant budget pressure even before utilization scales to its full potential. The share of large employers that stopped GLP-1 weight-loss coverage in the past year and the share reporting significant cost impact suggest that employer coverage decisions on this drug class are still in active flux heading into the 2027 plan year.
 
 ---
 
 ### Pre-Conclusion Summary
 
-The data reviewed in this article covered the KFF 2026 Employer Health Benefits Survey, published October 22, 2026, based on 1,937 firm interviews representing nearly 157 million non-elderly Americans. Average annual employer-sponsored family premiums were reported at $28,303 (up 5 percent year-over-year), outpacing wage growth of 3.7 percent and inflation of 2.7 percent. Workers' average annual family contribution was $7,471 (up 9 percent, or $621 more than 2025), and the average single contribution was $1,672. Small-firm family contributions averaged $9,687 (37 percent of premium) versus $6,840 (25 percent) at large firms, and 31 percent of small-firm workers paid $12,000 or more annually. The average single-coverage deductible was $1,955 overall ($2,624 at small firms, $1,772 at large firms), with 55 percent of small-firm workers facing deductibles of $2,000 or more. Eighteen percent of firms with 200 or more workers covered GLP-1 agonists for weight loss, 29 percent of all surveyed firms reported significant GLP-1 cost impact, and 12 percent of firms stopped covering GLP-1s for weight loss in the past year. Family premiums have risen 28 percent over the past five years.
+The data reviewed in this article covered the KFF 2026 Employer Health Benefits Survey, published October 22, 2026, based on 1,937 firm interviews representing nearly 157 million non-elderly Americans. Average annual employer-sponsored family premiums were reported at $28,303 (up 5 percent year-over-year), outpacing wage growth of 3.7 percent and inflation of 2.7 percent. Workers' average annual family contribution was $7,471 (up 9 percent, or $621 more than 2025), and the average single contribution was $1,672. Small-firm family contributions averaged $9,687 (37 percent of premium) versus $6,840 (25 percent) at large firms, and 31 percent of small-firm workers paid $12,000 or more annually. The average single-coverage deductible was $1,955 overall ($2,624 at small firms, $1,772 at large firms), with 55 percent of small-firm workers facing deductibles of $2,000 or more. Eighteen percent of firms with 200 or more workers covered GLP-1 agonists for weight loss; among those firms, 29 percent reported significant GLP-1 cost impact; and among firms with 200 or more workers, 12 percent stopped covering GLP-1 agonists for weight loss in the past year. Family premiums have risen 28 percent over the past five years.
 
 ---
 
