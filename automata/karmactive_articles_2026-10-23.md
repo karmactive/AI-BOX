@@ -163,6 +163,168 @@ Why does this matter beyond geology? Subduction zones are one of the main ways t
 ---
 ---
 
+---
+---
+
+## STAGE 5 — SEO METADATA (All 5 Articles)
+
+---
+
+### ARTICLE 1 — Ron Duguay / Colorectal Cancer
+
+**STEP 1 — Title Options:**
+1. Colorectal Cancer Can No Longer Be Called an Old Person's Disease
+2. Colon Cancer Is Climbing 3% a Year in Adults Under 50 While Falling for Seniors
+3. 158,850 Americans Face Colon Cancer Diagnoses This Year Alone
+4. Long Hair, Hockey Stardom, Stage 4 Colon Cancer Claimed Ron Duguay at 69
+5. Colon Cancer Creeping Into Every Generation Born Since 1950
+
+**STEP 2 — Combined Titles:**
+- Option A (≤120 chars): Ron Duguay Died at 69 From Colon Cancer While Rates Climb 3% a Year Under 50
+- Option B (≤70 chars): Colon Cancer Rising 3% a Year in Adults Under 50
+
+**Meta Description:** Ron Duguay died of Stage 4 colon cancer at 69. ACS data show colorectal cancer rising 3% a year in adults aged 20 to 49, with most diagnosed late.
+
+**Focus Key Phrase:** colon cancer young adults
+
+**SEO Slug:** ron-duguay-colon-cancer-young-adults
+
+**Categories:**
+- health (ID: N/A)
+- culture/sport (ID: N/A)
+
+**Tags:**
+- cancer (ID: N/A)
+- athletes (ID: N/A)
+- death (ID: N/A)
+- public-health (ID: N/A)
+
+---
+
+### ARTICLE 2 — Simone Biles / Housing Market
+
+**STEP 1 — Title Options:**
+1. Five to Six Days Is Still Extraordinarily Fast, But Most Home Sellers Wait Longer
+2. Simone Biles Sold Her Houston Home in Days While the National Median Hits 33 Days
+3. Why 21% Is the Number Keeping First-Time Buyers Out of Reach
+4. Waiting Longer, Stretching Budgets, Competing With Cash Buyers Is the New Normal
+5. Buying a First Home Used to Happen in Late 20s, Now It Happens in the Forties
+
+**STEP 2 — Combined Titles:**
+- Option A (≤120 chars): Simone Biles's Houston Home Sold in Days, But the National Median Sits at 33 Days on the Market
+- Option B (≤70 chars): Simone Biles Home Sold Fast While Typical Sellers Wait 33 Days
+
+**Meta Description:** Simone Biles's Houston home sold within about a week. NAR data puts the national median at 33 days on the market, and first-time buyers' share is the lowest since 1981.
+
+**Focus Key Phrase:** housing market right now
+
+**SEO Slug:** simone-biles-home-sale-housing-market
+
+**Categories:**
+- business (ID: N/A)
+- lifestyle (ID: N/A)
+
+**Tags:**
+- housing (ID: N/A)
+- property (ID: N/A)
+- celebrity (ID: N/A)
+- economy (ID: N/A)
+
+---
+
+### ARTICLE 3 — Amitabh Bachchan / Digital Detox
+
+**STEP 1 — Title Options:**
+1. Even a Modest, Intentional Break From the Feed Can Do Something Real
+2. What 2,503 Participants Revealed About Cutting Back on Social Media
+3. Cutting Social Media Lowers Depression, But Not General Stress
+4. Why a Social Media Break May Lower Depression Through Less Comparison
+5. Just 15 to 20 Fewer Minutes of Social Media a Day Moved the Needle
+
+**STEP 2 — Combined Titles:**
+- Option A (≤120 chars): Amitabh Bachchan Stepped Away From Social Media on Doctor's Orders, While Cutting Back Lowers Depression
+- Option B (≤70 chars): Social Media Breaks Lower Depression, But Not General Stress
+
+**Meta Description:** Amitabh Bachchan took a social media break on medical advice. A review of 2,503 participants found cutting use lowered depression symptoms but not general stress.
+
+**Focus Key Phrase:** social media mental health
+
+**SEO Slug:** social-media-break-depression-study
+
+**Categories:**
+- health (ID: N/A)
+- culture/entertainment (ID: N/A)
+
+**Tags:**
+- mental-health (ID: N/A)
+- social-media (ID: N/A)
+- celebrity (ID: N/A)
+- health-research (ID: N/A)
+
+---
+
+### ARTICLE 4 — Exeter Solar Storm / Railway History
+
+**STEP 1 — Title Options:**
+1. The Story Had a Typo at Its Core, Scientists Say
+2. The Solar Storm Train Story Was Seven Years Off, With a Line That Did Not Exist Yet
+3. A 16-Minute Delay on a Line That Did Not Exist Yet
+4. History Books Said 1841, But the Solar Storm Likely Hit in 1848
+5. Solar Storms, Delayed Trains, Seven-Year Historical Error
+
+**STEP 2 — Combined Titles:**
+- Option A (≤120 chars): Scientists Fixed a 178-Year-Old Train Story, Moving the Solar Storm From 1841 to 1848
+- Option B (≤70 chars): Solar Storm Train Story Was Off by Seven Years
+
+**Meta Description:** Researchers say a train delay blamed on a solar storm happened in 1848, not 1841, when the Exeter line had opened. The fix reshuffles early space weather history.
+
+**Focus Key Phrase:** solar storm railway history
+
+**SEO Slug:** exeter-railway-solar-storm-1848-correction
+
+**Categories:**
+- science (ID: N/A)
+- culture/history (ID: N/A)
+
+**Tags:**
+- space-weather (ID: N/A)
+- solar (ID: N/A)
+- history (ID: N/A)
+- train (ID: N/A)
+
+---
+
+### ARTICLE 5 — Papua New Guinea Eclogite / Subduction
+
+**STEP 1 — Title Options:**
+1. Change From Hot to Cold Subduction Was Unexpected, Researchers Say
+2. A Beach Rock From 4 Million Years Ago Reveals How Earth Recycles Carbon
+3. Why a Rock at 45 Kilometers Hit 700 Degrees, Nearly Matching Its 800 Peak
+4. Garnet, Coesite, Eclogite From Papua New Guinea Challenge Subduction Models
+5. Peculiar Papua New Guinea Pebble Puzzles Geoscientists
+
+**STEP 2 — Combined Titles:**
+- Option A (≤120 chars): A Rock From a Papua New Guinea Beach Hit 700 Degrees at 45 Kilometers, Nearly Matching Its 90 km Peak
+- Option B (≤70 chars): Papua New Guinea Rock Challenges How Scientists Model Subduction
+
+**Meta Description:** Coesite in a Papua New Guinea eclogite shows the rock was buried beyond 90 km, and its temperature history challenges current subduction models.
+
+**Focus Key Phrase:** papua new guinea rock
+
+**SEO Slug:** papua-new-guinea-rock-subduction-heat
+
+**Categories:**
+- science (ID: N/A)
+- environment/carbon (ID: N/A)
+
+**Tags:**
+- earth-science (ID: N/A)
+- carbon (ID: N/A)
+- scientific-research (ID: N/A)
+
+---
+---
+
 ## STAGE 3B PROCESS VERIFICATION CHECKLIST
 
 - [x] All 5 articles independently verified via web search before corrections
